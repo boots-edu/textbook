@@ -37,7 +37,7 @@ jobs:
           cd ../
       - name: Copy Library
         run: |
-          cp library/dist/index.js assets/js/boots-library.js
+          cp library/dist/index.js source/assets/js/boots-library.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
