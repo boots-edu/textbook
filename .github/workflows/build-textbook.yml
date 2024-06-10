@@ -27,6 +27,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup NPM
+        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Build Library
+        run: |
+          cd library
+          npm run build
+          cp dist/index.js ../assets/js/boots-library.js
+          cd ../
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
