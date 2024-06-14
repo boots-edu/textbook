@@ -8,6 +8,14 @@ nav_order: 0
 
 Let's learn how to write object-oriented TypeScript code!
 
+1. [Introduction](text/1-introduction/index.md)
+   1. [Welcome](text/1-introduction/welcome.md)
+   2. [Setup](text/1-introduction/setup.md)
+   3. [Basics of TypeScript](text/1-introduction/basics.md)
+2. [Loops and Arrays](text/2-loops/index.md)
+   1. [Loops](text/2-loops/loops.md)
+   2. [Arrays](text/2-loops/arrays.md)
+
 
 ```typescript
 class Greeter {
