@@ -88,6 +88,8 @@ window.addEventListener('load', function() {
     editButton.classList.add("btn", "btn-primary");
     editButton.appendChild(document.createTextNode("✏️"));
     editButton.style.float = 'right';
+    editButton.style.position = 'relative';
+    editButton.style.zIndex = "100";
     editButton.onclick = () => {
       setupAce(area, area.textContent);
       editButton.remove();
