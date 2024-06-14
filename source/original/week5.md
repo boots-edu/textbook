@@ -42,11 +42,11 @@ Are you here?
   * You must log into poll everywhere
 * If you have any issues let me know immediately\.
 
-![](img/CISC181-Week%2050.png)
+![](../../images/CISC181-Week%2050.png)
 
 https://pollev\.com/gregsilber
 
-![](img/CISC181-Week%2051.png)
+![](../../images/CISC181-Week%2051.png)
 
 ---
 
@@ -563,7 +563,7 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
     * [https://classroom\.github\.com/a/x0PXgY0z](https://classroom.github.com/a/x0PXgY0z)
   * Let’s first take a minute and look at the code changes\.  These have been updated to line up with this week’s lectures and material \(and modified a bit to get ready for what comes next\)\.
 
-![](img/CISC181-Week%2052.png)
+![](../../images/CISC181-Week%2052.png)
 
 __Topic: __  __Classes\-Inheritance__
 
@@ -575,5 +575,5 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
     * [https://classroom\.github\.com/a/x0PXgY0z](https://classroom.github.com/a/x0PXgY0z)
   * Follow the instructions in the triangle\.ts file to create another class\.  Look at the other classes which have all been updated to match this week’s lecture slides\.
 
-![](img/CISC181-Week%2053.png)
+![](../../images/CISC181-Week%2053.png)
 

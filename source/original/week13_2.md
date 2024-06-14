@@ -77,7 +77,7 @@ __Topic: Recursion__
 
 __Recursion Rules__
 
-![](img/CISC181-Week%2013-Part%2020.png)
+![](../../images/CISC181-Week%2013-Part%2020.png)
 
 A recursive algorithm must have a base case or stop condition
 
@@ -209,7 +209,7 @@ Trees are a basic data structure that we can use to represent data in a parent c
 
 Many problems can be modeled as a tree\.  As a matter of fact HTML is actually a tree representation since a parent element can have multiple child elements\.
 
-![](img/CISC181-Week%2013-Part%2021.jpg)
+![](../../images/CISC181-Week%2013-Part%2021.jpg)
 
 __Topic: Recursion__
 

@@ -11,7 +11,7 @@ Spring 2024
       * Please review the rules for the testing center to make sure you don’t have any problems\.
 * And now\, back to our show\!\!\!
 
-![](img/CISC181-Week%2080.jpg)
+![](../../images/CISC181-Week%2080.jpg)
 
 __Topic: Testing__
 
@@ -27,7 +27,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-![](img/CISC181-Week%2081.jpg)
+![](../../images/CISC181-Week%2081.jpg)
 
 * Verification and Validation
   * __Verification__  refers to the set of tasks that ensure that the software correctly implements a specific function\. It means “Are we building the  _product correctly_ ?”\.
@@ -79,7 +79,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-![](img/CISC181-Week%2082.png)
+![](../../images/CISC181-Week%2082.png)
 
 __Topic: Testing__
 

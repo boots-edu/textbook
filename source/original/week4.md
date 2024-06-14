@@ -141,7 +141,7 @@ __Classes__  allow us to combine data and methods into a grouping or  _class_  a
 * The rectangle class has a number of  _empty_  methodsthat we want to create to query the rectangle objectsabout their characteristics\.
 * You will be able to run npm run test on them to seeif they are working\.
 
-![](img/CISC181-Week%2040.png)
+![](../../images/CISC181-Week%2040.png)
 
 __Topic: __  __Classes__
 

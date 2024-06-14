@@ -329,7 +329,7 @@ __Topic: Generics__  _Generics_  allow for creation of reusable code that where 
 
 <span style="color:#D4D4D4">\}</span>
 
-![](img/CISC181-Week%20110.jpg)
+![](../../images/CISC181-Week%20110.jpg)
 
 # 
 
@@ -341,7 +341,7 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 * We say that it is a contract\, because the object mustimplement the things in the interface\, and usersof the object are guaranteed that those things areimplemented\.
 * Can contain property or method signatures but not implementations\.
 
-![](img/CISC181-Week%20111.png)
+![](../../images/CISC181-Week%20111.png)
 
 __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of data \(or a class\) without values or implementation\.
 

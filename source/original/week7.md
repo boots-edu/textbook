@@ -3,7 +3,7 @@ CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
 # Week 7
 Spring 2024
 
-![](img/CISC181-Week%2070.png)
+![](../../images/CISC181-Week%2070.png)
 
 ---
 
@@ -1088,9 +1088,9 @@ Producing well documented\, high quality\, efficient and readable code is always
   * Look what happens when I hover over the polygon class in vscode now\.  I now get help on using this class constructor\.
   * We can also generated detailed technical documentation automatically by using the typedoc command\.  See it here: [https://www\.eecis\.udel\.edu/~silber/docs/classes/Polygon\.html](https://www.eecis.udel.edu/~silber/docs/classes/Polygon.html)
 
-![](img/CISC181-Week%2071.png)
+![](../../images/CISC181-Week%2071.png)
 
-![](img/CISC181-Week%2072.png)
+![](../../images/CISC181-Week%2072.png)
 
 __Topic: Comments__
 
@@ -1100,7 +1100,7 @@ Quality\, well formatted comments make your code more usable\, manageable\, and 
 
 There are other things we can do to improve code quality as well\.
 
-![](img/CISC181-Week%2073.jpg)
+![](../../images/CISC181-Week%2073.jpg)
 
 __Topic: Naming__
 
@@ -1274,7 +1274,7 @@ __Topic: General Code Quality__
 
 Programmers should always try to create efficient\, readable\, and maintainable code\.  It’s not that hard to do it right\.
 
-![](img/CISC181-Week%2074.jpg)
+![](../../images/CISC181-Week%2074.jpg)
 
 In addition to good comments and names\, it is important to write code that is easy to understand\.  Unless there is an efficiency gain\, try not to combine too much work on one line\, as it will be harder to decode what that line does later and also harder to debug\.
 
@@ -1284,7 +1284,7 @@ Programmers should always try to create efficient\, readable\, and maintainable 
 
 Good formatting\, indenting\, and consistency of style are important to maintaining a large code base\.  Many organizations will dictate these types of things\.
 
-![](img/CISC181-Week%2075.jpg)
+![](../../images/CISC181-Week%2075.jpg)
 
   * Indents are 2 or 4 spaces
   * Braces at the end of lines or on a new line
@@ -1294,5 +1294,5 @@ Good formatting\, indenting\, and consistency of style are important to maintain
 
 # 
 
-![](img/CISC181-Week%2076.jpg)
+![](../../images/CISC181-Week%2076.jpg)
 

@@ -85,7 +85,7 @@ We will have a discord channel for the course\.  TA’s will monitor the discord
 
 Office hours are blocked so we can be available\.  If you need help outside these times\, just ask the TA or instructor to schedule an appointment\.   __We are here to help\.__
 
-![](img/CISC181-Week%2010.jpg)
+![](../../images/CISC181-Week%2010.jpg)
 
 # But first…
 
@@ -133,13 +133,13 @@ The equation y=mx\+c represents every possible straight line\.
 
 y=2x\+4 represents a specific line\.  By assigning a value to the variable x we can compute the appropriate y for this line\.
 
-![](img/CISC181-Week%2011.png)
+![](../../images/CISC181-Week%2011.png)
 
 __Review Topic: Variables__
 
 A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
 
-![](img/CISC181-Week%2012.png)
+![](../../images/CISC181-Week%2012.png)
 
 Just like we can use variables in math to create an expression that represents a line\, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values\.
 
@@ -500,7 +500,7 @@ search
 
 trim/trimStart/trimEnd
 
-![](img/CISC181-Week%2013.jpg)
+![](../../images/CISC181-Week%2013.jpg)
 
 __More on Boolean Expressions:  __
 

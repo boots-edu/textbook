@@ -3,7 +3,7 @@ CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
 # Week 10
 Spring 2024
 
-![](img/CISC181-Week%20100.png)
+![](../../images/CISC181-Week%20100.png)
 
 ---
 
@@ -205,7 +205,7 @@ Since counter is bound already\, updating it updates the webpage automatically\.
 
 __Topic: Advanced __  __WebEz__  __Dynamic components__
 
-![](img/CISC181-Week%20101.png)
+![](../../images/CISC181-Week%20101.png)
 
 This is what our website looks like when we run it\.
 
@@ -217,7 +217,7 @@ If we type in the text boxes\, our member variables are automatically updated\.
 
 __Topic: Advanced __  __WebEz__  __Dynamic components__
 
-![](img/CISC181-Week%20102.png)
+![](../../images/CISC181-Week%20102.png)
 
 * This is what our website looks like after we press new item twice\, comment twice\, then new item a third time\.
   * Since the click handler updated count\, the correct count is displayed\.
@@ -563,7 +563,7 @@ Once it is closed\, the gray background goes away and the rest of the page will 
 
 With this screen\, the only thing I can do is click ok\.
 
-![](img/CISC181-Week%20103.png)
+![](../../images/CISC181-Week%20103.png)
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
@@ -607,7 +607,7 @@ We subscribe to the EventSubject returned by the popup method to see when the wi
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-![](img/CISC181-Week%20104.png)
+![](../../images/CISC181-Week%20104.png)
 
 You can see the two buttons displayed as we requested\.
 
@@ -698,7 +698,7 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-![](img/CISC181-Week%20105.png)
+![](../../images/CISC181-Week%20105.png)
 
 Here you can see the output aftera call to plsWait\.show\(true\)\.
 
@@ -716,7 +716,7 @@ Just like the popup\, the rest of thewebsite is grayed out and cannotbe interact
 
 __Topic: Advanced __  __WebEz__  __Timers__
 
-![](img/CISC181-Week%20106.jpg)
+![](../../images/CISC181-Week%20106.jpg)
 
 * Sometimes we want to do something periodically while our site is displayed
   * Update a timer
@@ -804,5 +804,5 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 __Topic: Advanced __  __WebEz__  __Timers__
 
-![](img/CISC181-Week%20107.gif)
+![](../../images/CISC181-Week%20107.gif)
 

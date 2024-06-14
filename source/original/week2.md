@@ -13,7 +13,7 @@ A  __loop__  is a control flow structure in programming that allows us to repeat
     * The while loop
     * The for loop
 
-![](img/CISC181-Week%2020.jpg)
+![](../../images/CISC181-Week%2020.jpg)
 
 __Review Topic: __  __Loops__
 
@@ -204,7 +204,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-![](img/CISC181-Week%2021.gif)
+![](../../images/CISC181-Week%2021.gif)
 
 __Review Topic: __  __Loops__
 
@@ -390,7 +390,7 @@ A  __loop__  is a control flow structure in programming that allows us to repeat
 
 For reference\, here is the while loop version from before
 
-![](img/CISC181-Week%2022.gif)
+![](../../images/CISC181-Week%2022.gif)
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">sillyMultiply</span>  <span style="color:#D4D4D4">\(</span>  <span style="color:#D4D4D4">x:number\,y:number</span>  <span style="color:#D4D4D4">\):number\{</span>
 
@@ -436,7 +436,7 @@ So now we can create more complex program logic\, but repeating sections of our 
 
 There is another format of the for loop designed to work on collections of things \(like arrays\) in typescript that we will get to in a little while\, but first we need to talk about those collections\.
 
-![](img/CISC181-Week%2023.png)
+![](../../images/CISC181-Week%2023.png)
 
 __Review Topic: __  __Arrays__
 
@@ -687,7 +687,7 @@ An  __array __ is an ordered list of values of the same type where each element 
 
 There are many other methods for manipulating arrays many we will cover later in the semester\.  This set should be sufficient for the time being\.
 
-![](img/CISC181-Week%2024.jpg)
+![](../../images/CISC181-Week%2024.jpg)
 
 __Back to loops for a second__
 

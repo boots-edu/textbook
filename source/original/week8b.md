@@ -3,7 +3,7 @@ CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
 # Week 8
 Spring 2024
 
-![](img/CISC181-Week%208b0.png)
+![](../../images/CISC181-Week%208b0.png)
 
 ---
 
@@ -18,7 +18,7 @@ __Topic: __  __Anoymous__  __ Functions__
 
 A function that is declared with no name is an  _anonymous function\._
 
-![](img/CISC181-Week%208b1.jpg)
+![](../../images/CISC181-Week%208b1.jpg)
 
 Normally\, when we create a function or method\, we define it with a name that we can use to reference it \(call it\) later\.
 

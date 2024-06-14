@@ -26,21 +26,9 @@ __How to state a problem recursively__
   * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
   * Now we have the same problem\, only there are fewer balls to lookat\.
 
-![](img/CISC181-Week%2013-Part%2010.wmf)
+![](../../images/CISC181-Week%2013-Part%2010.wmf)
 
-![](img/CISC181-Week%2013-Part%2011.wmf)
-
-__Topic: Recursion__
-
-__How to state a problem recursively__
-
-* Let’s look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
-* Restate the problem:
-  * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
-  * Now we have the same problem\, only there are fewer balls to lookat\.
-  * Eventually\, we will either find a yellow ball
-
-![](img/CISC181-Week%2013-Part%2012.wmf)
+![](../../images/CISC181-Week%2013-Part%2011.wmf)
 
 __Topic: Recursion__
 
@@ -52,7 +40,19 @@ __How to state a problem recursively__
   * Now we have the same problem\, only there are fewer balls to lookat\.
   * Eventually\, we will either find a yellow ball
 
-![](img/CISC181-Week%2013-Part%2013.wmf)
+![](../../images/CISC181-Week%2013-Part%2012.wmf)
+
+__Topic: Recursion__
+
+__How to state a problem recursively__
+
+* Let’s look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
+* Restate the problem:
+  * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
+  * Now we have the same problem\, only there are fewer balls to lookat\.
+  * Eventually\, we will either find a yellow ball
+
+![](../../images/CISC181-Week%2013-Part%2013.wmf)
 
 __Topic: Recursion__
 
@@ -126,7 +126,7 @@ __Topic: Recursion__
 
 __Recursion Rules__
 
-![](img/CISC181-Week%2013-Part%2014.png)
+![](../../images/CISC181-Week%2013-Part%2014.png)
 
 A recursive algorithm must have a base case or stop condition
 
@@ -398,7 +398,7 @@ Trees are a basic data structure that we can use to represent data in a parent c
 
 Many problems can be modeled as a tree\.  As a matter of fact HTML is actually a tree representation since a parent element can have multiple child elements\.
 
-![](img/CISC181-Week%2013-Part%2015.jpg)
+![](../../images/CISC181-Week%2013-Part%2015.jpg)
 
 __Topic: Recursion__
 

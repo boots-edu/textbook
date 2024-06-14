@@ -13,7 +13,7 @@ Trees are a basic data structure that we can use to represent data in a parent c
 
 Many problems can be modeled as a tree\.  As a matter of fact HTML is actually a tree representation since a parent element can have multiple child elements\.
 
-![](img/CISC181-Week%2013-Part%2030.jpg)
+![](../../images/CISC181-Week%2013-Part%2030.jpg)
 
 __Topic: Recursion__
 

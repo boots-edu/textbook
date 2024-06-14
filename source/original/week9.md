@@ -55,7 +55,7 @@ Here are two of the common tag types\.  The outerdiv is not really doing anythin
 
 The 2 paragraph tags simply output the text to the browser with paragraph spacing between them\.
 
-![](img/CISC181-Week%2090.png)
+![](../../images/CISC181-Week%2090.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -71,7 +71,7 @@ Tags in action:
 
 By removing the \<p>\</p> tags\, and adding a <br/>I get line spacing instead of paragraph spacing\.
 
-![](img/CISC181-Week%2091.png)
+![](../../images/CISC181-Week%2091.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -89,7 +89,7 @@ Here is a simple login screen\.
 
 Notice the placeholder attribute being set \(and the type attribute\)
 
-![](img/CISC181-Week%2092.png)
+![](../../images/CISC181-Week%2092.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -113,7 +113,7 @@ And here are a set of radio buttons:
 
 If they have the same name\, they will act as a group\, where selecting one deselects the others\.
 
-![](img/CISC181-Week%2093.png)
+![](../../images/CISC181-Week%2093.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -141,7 +141,7 @@ Note the id attribute\.  This uniquely identifies that object\.Every object in a
 
 Later\, this will be a very important attribute when we start building our projects\.
 
-![](img/CISC181-Week%2094.png)
+![](../../images/CISC181-Week%2094.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -165,7 +165,7 @@ Web development in vscode:
 
 Clicking this button\, will bring up a preview panel on the right which will change automatically as you edit the file\.
 
-![](img/CISC181-Week%2095.png)
+![](../../images/CISC181-Week%2095.png)
 
 __Topic: Basic Web Development__  __HTML__
 
@@ -173,7 +173,7 @@ Web development in vscode:
 
 Makes things a lot easier\.
 
-![](img/CISC181-Week%2096.png)
+![](../../images/CISC181-Week%2096.png)
 
 __Topic: Basic Web Development__  __HTML__
 
@@ -192,7 +192,7 @@ Here is our example\, with id and class tags added
 
 Still looks the same\, but now we have things to style\.
 
-![](img/CISC181-Week%2097.png)
+![](../../images/CISC181-Week%2097.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
@@ -218,7 +218,7 @@ To reference an id in a style\, we put a \# in front\.
 
 The style for the outer div tag is \#loginForm
 
-![](img/CISC181-Week%2098.png)
+![](../../images/CISC181-Week%2098.png)
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">div </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">loginForm</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>
 
@@ -244,7 +244,7 @@ Now we have a 5 pixel margin around our input elements\.
 
 Now what can we do about the buttons\.  Remember\, theywere both defined with a class of btn\.  For classes\, we specify the style by preceding the class name with a “\.”\.  So btn is referenced as \.btn\.
 
-![](img/CISC181-Week%2099.png)
+![](../../images/CISC181-Week%2099.png)
 
 <span style="color:#D7BA7D">\#loginForm</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D7BA7D">input</span>  <span style="color:#D4D4D4">\{</span>
 
@@ -276,7 +276,7 @@ What a difference it makes when we add just a little bit of styling to our tags\
 
 <span style="color:#D4D4D4">\}</span>
 
-![](img/CISC181-Week%20910.png)
+![](../../images/CISC181-Week%20910.png)
 
 __Topic: Basic Web Development__  __HTML__
 
@@ -286,7 +286,7 @@ We will provide you with resources to look up what you needand vs code has excel
 
 This is an incredibly useful skill that is worth learning foryour future careers\.
 
-![](img/CISC181-Week%20911.jpg)
+![](../../images/CISC181-Week%20911.jpg)
 
 __Topic: Basic Web Development__  __HTML – Box Positioning__
 
@@ -337,7 +337,7 @@ To get started\, we need to install the WebEZ command line tool from NPM\.
 
 To create a new project called Example Project\, we can use the cli to build \(scaffold\) the code\.
 
-![](img/CISC181-Week%20912.png)
+![](../../images/CISC181-Week%20912.png)
 
 Here is the command to create your project\.  It will create a fully working website with one component in it \(MainComponent\)\.
 
@@ -345,9 +345,9 @@ This installs a basic WebEz project with a single component in it that you can e
 
 You are only interested in what is inside the src/app folder \(src\\app on Windows\)
 
-![](img/CISC181-Week%20913.png)
+![](../../images/CISC181-Week%20913.png)
 
-![](img/CISC181-Week%20914.png)
+![](../../images/CISC181-Week%20914.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -357,9 +357,9 @@ If we navigate to the src/app folder at a command prompt\, we can add more compo
 
 This will create a folder with the 4 files in it \(Just like MainComponent\)
 
-![](img/CISC181-Week%20915.png)
+![](../../images/CISC181-Week%20915.png)
 
-![](img/CISC181-Week%20916.png)
+![](../../images/CISC181-Week%20916.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -391,7 +391,7 @@ We can run this to make sure it worked with npm run start\.  We should see the d
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"next"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Next</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">></span>
 
-![](img/CISC181-Week%20917.png)
+![](../../images/CISC181-Week%20917.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -425,7 +425,7 @@ If you run it you will see the image img1\.jpg\.
 
 <span style="color:#D4D4D4">\}</span>
 
-![](img/CISC181-Week%20918.png)
+![](../../images/CISC181-Week%20918.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -446,7 +446,7 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 <span style="color:#569CD6">public</span>  <span style="color:#D4D4D4"> image: number = </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
-![](img/CISC181-Week%20919.png)
+![](../../images/CISC181-Week%20919.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -489,7 +489,7 @@ If we are at the end\, we disable the next button
 
 <span style="color:#D4D4D4">    \}</span>
 
-![](img/CISC181-Week%20920.png)
+![](../../images/CISC181-Week%20920.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
@@ -532,23 +532,23 @@ If we are at the beginning\, we disable the previous button
 
 <span style="color:#D4D4D4">    \}</span>
 
-![](img/CISC181-Week%20921.png)
+![](../../images/CISC181-Week%20921.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-![](img/CISC181-Week%20922.png)
+![](../../images/CISC181-Week%20922.png)
 
 Initially\, the previous button is disabled\, and the image displays img1\.jpg\.
 
 Clicking next enables the previous button\, and disables the next button while loading img2\.jpg\.
 
-![](img/CISC181-Week%20923.png)
+![](../../images/CISC181-Week%20923.png)
 
-![](img/CISC181-Week%20924.png)
+![](../../images/CISC181-Week%20924.png)
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-![](img/CISC181-Week%20925.png)
+![](../../images/CISC181-Week%20925.png)
 
 There really isn’t much more to it\.  Bind decorators connect properties to elements\.  If we change the property\, the element changes \(NOT THE OTHER WAY AROUND\)\.
 

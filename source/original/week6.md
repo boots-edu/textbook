@@ -14,11 +14,11 @@ Are you here?
   * You must log into poll everywhere
 * If you have any issues let me know immediately\.
 
-![](img/CISC181-Week%2060.png)
+![](../../images/CISC181-Week%2060.png)
 
 https://pollev\.com/gregsilber
 
-![](img/CISC181-Week%2061.png)
+![](../../images/CISC181-Week%2061.png)
 
 ---
 
@@ -647,13 +647,13 @@ __Topic: __  __Classes\-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types\.
 
-![](img/CISC181-Week%2062.png)
+![](../../images/CISC181-Week%2062.png)
 
 In other words\, in our fruit example\, we provided a public interface for all fruits that included the method getDescription\(\)\.  Regardless of the type of fruit\, the public interface does not change\, and the language is able to  _dispatch_  the method call to the appropriate subclass for us automatically\.
 
 This type of  _polymorphism_  is  _subclass or subtype polymorphism\._   There are other types of polymorphism including ad\-hoc polymorphism and parametric polymorphism\.  We will examine parametric polymorphism later\.
 
-![](img/CISC181-Week%2063.png)
+![](../../images/CISC181-Week%2063.png)
 
 __Topic: __  __Classes\-Polymorphism__
 
@@ -666,13 +666,13 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
     * Follow the instructions in the README\.md
     * Hint\, if you open it in vscode\, you can click the preview button in the upper right to view it\.
 
-![](img/CISC181-Week%2064.png)
+![](../../images/CISC181-Week%2064.png)
 
 __Topic: __  __Classes\-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types\.
 
-![](img/CISC181-Week%2065.png)
+![](../../images/CISC181-Week%2065.png)
 
 * So with creative use of subclass polymorphism\, we can provide a generic interface to all objects that share a base class\, with a default behavior\.
 * Let’s take a look at what we did last time…
@@ -681,7 +681,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
   * Since drawables has a draw method\, this is fine\.
   * Since the shapes also had a draw method\, the system calls the correct version\, based on the type of the object\, not the type of the variable holding it\.
 
-![](img/CISC181-Week%2066.png)
+![](../../images/CISC181-Week%2066.png)
 
 __Topic: __  __Classes\-Polymorphism__
 
