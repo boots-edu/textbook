@@ -32,7 +32,9 @@ Read error messages, and ask questions. Talk to humans as needed to get help, an
 
 ## Environment Setup
 
-#### **Download [Visual Studio Code](https://code.visualstudio.com/download)**
+### Get VSCode
+
+**Download [Visual Studio Code](https://code.visualstudio.com/download)**
 
 VS Code is an IDE (Integrated Development Environment) that you will program in. Previously, you were using Thonny.
 
@@ -52,7 +54,9 @@ Then, search for `Prettier` and click install:
 
 Make sure you have installed the extensions that are in the images above. These are the correct versions!
 
-#### **Next, Download and Install [Node](https://nodejs.org/en/download/)**
+### Get Node
+
+**Next, Download and Install [Node](https://nodejs.org/en/download/)**
 
 You should use the installer for the most recent **LTS** version. The link will take you to the correct download page.
 
@@ -117,7 +121,9 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 
 {: .warning-title}
 
-#### **Next, Download and Install [Git](https://git-scm.com/downloads)**
+### Get Git
+
+**Next, Download and Install [Git](https://git-scm.com/downloads)**
 
   * For Windows: You can download and use the installer.
   * For Mac: There are a few options you can choose from on the download page. 
@@ -129,7 +135,9 @@ $ brew install git
 
 
 
-#### **Finally, [Create a GitHub Account](https://github.com/signup)** (if you don't already have one)
+### Create GitHub Account
+
+**Finally, [Create a GitHub Account](https://github.com/signup)** (if you don't already have one)
 
 Once you have verified that everything has been installed correctly, you are ready to move on!
 
