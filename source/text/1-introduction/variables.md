@@ -134,29 +134,41 @@ TODO: Picture of this compiler error, or at least a danger box example
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with a "===", "<==",">==" or a simple "<" or ">" and the result of the expression will have the type  _boolean_  _._
+In typescript, we do this with:
+* `===`: test if equal
+* `!==`: test if not equal
+* `<=`: test if less than or equal to,
+* `>=`: test if greater than or equal to
+* `<`: test if less than
+* `>`: test if greater than
 
-let myValue:number=5;
+{: .info-title}
+Note that the equality operator is `===` (three equal signs) and not `==` (two equal signs). There is a double equal operator (`==`) operator, but it is not recommended to use it since it is not type safe. Most modern TypeScript code will use the triple equal operator (`===`).
 
-let isEqual:boolean = (myValue===5);
+The result of the expression will have the type __boolean__.  That is, it will be either `true` or `false`.
 
-let isGreater:boolean = (myValue>5);
+```typescript
+let myValue: number = 5;
+let isEqual: boolean = (myValue === 5);
+// isEqual will be true
+let isGreater: boolean = (myValue > 5);
+// isGreater will be false
+let isLessEqual: boolean = (myValue <= 5);
+// isLessEqual will be true
 
-let isLessEqual:boolean = (myValue <== 5);
+let myString: string = "Hello"
+let isStrEqual: boolean = (myValue === "Hello");
+// isStrEqual will be true
+let isStrEqual2: boolean = (myString !== "Hello");
+// isStrEqual2 will be false
+```
 
-let myString:string="Hello"
-
-let isStrEqual:boolean=(myValue==="Hello");
-
-__Review Topic: Variables__
-
-A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
+## Summary
 
 Variables are a powerful way to create generic code that produces expected results on a variety of different inputs.
 
 The values that we assign to variables can come from many sources like data files, user input, databases, or online resources.  The code will work regardless of the values so long as they are of the correct type.
 
 Throughout the semester we will use variables to create reusable code.  We will later learn other data types, and even how to create our own types containing complex data.
-
 
 Next we'll review [Functions &raquo;](../1-introduction/functions.md)
