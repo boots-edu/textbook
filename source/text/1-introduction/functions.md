@@ -123,6 +123,38 @@ console.log("The sum of", 2, "and", 3, "is", 5);
 
 The output of this code will be `The sum of 2 and 3 is 5`.
 
+# Testing Functions
+
+```typescript
+function addTwoNumbers(a: number, b: number): number{
+    return a + b;
+}
+
+test("Test addTwoNumbers", () => {
+    expect(addTwoNumbers(2, 3)).toBe(5);
+    expect(addTwoNumbers(0, 0)).toBe(0);
+    expect(addTwoNumbers(-1, 1)).toBe(0);
+});
+```
+
+We can test our functions by calling them with different arguments and checking the return value. Usually, testing in TypeScript is done with a __testing framework__ like __Jest__. The tests will be placed in a separate file from the code being tested, and the testing framework will run the tests and report the results. These testing frameworks have built-in functions like `expect` and `toBe` that make it easy to write tests, and organize them into test suites using the `test` and `describe` functions. Much of these details are not important for now, but you should be aware that testing is an important part of software development.
+
+# Documenting Functions
+
+```typescript
+/**
+ * Compute the area of a circle
+ * @param radius The radius of the circle
+ * @returns The area of the circle
+ */
+function areaOfCircle(radius: number): number{
+    let pi: number = 3.1415927;
+    return pi * radius * radius;
+}
+```
+
+We can document our functions by adding a __comment__ above the function declaration. This comment should describe what the function does, what parameters it takes, and what it returns. This is called a __JSDoc__ comment. It is a special type of comment that is used to document functions, variables, and classes in TypeScript. It is important to document your code so that others can understand it, and so that you can remember what you were thinking when you wrote it. We'll talk more about __documentation__ later.
+
 # Summary
 
 Functions are blocks of code that perform a specific task. They can take parameters and return a value. We declare a function by specifying its name, parameters, return type, and body. We can call a function anywhere in our code to execute it.
