@@ -1,0 +1,73 @@
+<html>
+<head>
+  <style type="text/css" media="screen">
+    .ace_editor {
+        position: relative;
+        height:300px;
+        width: 100%;
+    }
+
+    .runnable-sub-area {
+      border: 1px solid lightgray;
+      width: 100%;
+      margin-bottom: 2px;
+      padding: 2px;
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        background-color: yellow;
+        opacity: 1;
+      }
+      100% {
+        background-color: inherit;
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        background-color: lightgray;
+        opacity: 1;
+      }
+      100% {
+        background-color: inherit;
+      }
+    }
+
+    .fadeIn {
+      -webkit-animation-name: fadeIn;
+      -webkit-animation-duration: 900ms;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-name: fadeIn;
+      -moz-animation-duration: 900ms;
+      -moz-animation-iteration-count: 1;
+      -moz-animation-timing-function: ease;
+      animation-name: fadeIn;
+      animation-duration: 900ms;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+    }
+  </style>
+  
+</head>
+<body>
+<div class="language-typescript highlighter-rouge"><pre>let num: number = 123;
+console.log(num);
+function App() {
+  return &lt;div&gt;Hello World!&lt;/div&gt;
+}</pre>
+</div>
+
+<div class="language-typescript highlighter-rouge"><pre></pre>
+let num: number = 123;
+console.log(num);
+function App() {
+    const [counter, setCounter] = useState<number>(0);
+      console.log(counter);
+    return &lt;button onClick={() =&gt; setCounter(counter+1)}&gt;{counter}&lt;/button&gt;;
+}</pre>
+</div>
+
+<script src="../dist/index.js"></script>
+</body>
+</html>
