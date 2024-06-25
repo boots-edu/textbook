@@ -23,7 +23,7 @@ The  __while__  loop allows us to repeat the following block of code (code in br
 
 <span style="color:#FF0000">Evaluates to a </span>  <span style="color:#FF0000">boolean</span>
 
-while (\<expression>){
+while (<expression>){
 
 //thing to repeat
 
@@ -258,7 +258,7 @@ Let's start with the simplest form.
 
 <span style="color:#FF0000">Declares and initializes a loop variable</span>
 
-for (\<initializer>;\<expression>;\<update>){
+for (<initializer>;<expression>;<update>){
 
 //thing to repeat
 
@@ -278,7 +278,7 @@ The initializer is simply a variable declaration and initialization like you mig
 
 <span style="color:#FF0000">Declares and initializes a loop variable</span>
 
-for ( __let i=0__ ;\<expression>;\<update>){
+for ( __let i=0__ ;<expression>;<update>){
 
 //thing to repeat
 
@@ -298,7 +298,7 @@ The expression is the same as the expression we used for our while loop.  The lo
 
 <span style="color:#FF0000">Declares and initializes a loop variable</span>
 
-for (let i=0; __i<10__ ;\<update>){
+for (let i=0; __i<10__ ;<update>){
 
 //thing to repeat
 

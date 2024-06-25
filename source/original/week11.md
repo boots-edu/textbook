@@ -17,13 +17,13 @@ Overall, this allows us to create reusable code that works on various types of d
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">event:EventSubject</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">();</span>
 
-<span style="color:#D4D4D4">    event2:EventSubject\<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<number>();</span>
+<span style="color:#D4D4D4">    event2:EventSubject<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><number>();</span>
 
-<span style="color:#D4D4D4">    event3:EventSubject\<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#D4D4D4">    event3:EventSubject<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">    event4:EventSubject<</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">>();</span>
 
-<span style="color:#D4D4D4">    event5:EventSubject\<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string\[\]>();</span>
+<span style="color:#D4D4D4">    event5:EventSubject<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string\[\]>();</span>
 
 __Aside: Generics in Typescript__
 
@@ -73,13 +73,13 @@ Now we can specify the type of data when we call it:
 
 As it turns out, Typescript can infer the type from the parameter, so we can also leave it out here:
 
-<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">\<T>(</span>  <span style="color:#D4D4D4">result:T</span>  <span style="color:#D4D4D4">){</span>
+<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4"><T>(</span>  <span style="color:#D4D4D4">result:T</span>  <span style="color:#D4D4D4">){</span>
 
 <span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> + result);</span>
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">\<number>(</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4"><number>(</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#D4D4D4">);</span>
 
@@ -93,7 +93,7 @@ We can also add multiple type parameters to our function if we need more than on
 
 This method returns an array with 2 elements, the first of type T and the second of type S.
 
-<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4">\<T,S>(</span>  <span style="color:#D4D4D4">x:T,y:S</span>  <span style="color:#D4D4D4">):\[T,S\]{</span>
+<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4"><T,S>(</span>  <span style="color:#D4D4D4">x:T,y:S</span>  <span style="color:#D4D4D4">):\[T,S\]{</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> \[</span>  <span style="color:#D4D4D4">x,y</span>  <span style="color:#D4D4D4">\];</span>
 
@@ -113,7 +113,7 @@ If we call it with the wrong arguments:
 
 We get a compiler error when we build
 
-<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4">\<T,S>(</span>  <span style="color:#D4D4D4">x:T,y:S</span>  <span style="color:#D4D4D4">):\[T,S\]{</span>
+<span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4"><T,S>(</span>  <span style="color:#D4D4D4">x:T,y:S</span>  <span style="color:#D4D4D4">):\[T,S\]{</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> \[</span>  <span style="color:#D4D4D4">x,y</span>  <span style="color:#D4D4D4">\];</span>
 
@@ -230,7 +230,7 @@ Now we have created a class that workson any data, instead of just on numbers.
 
 We can even add type parameters to themethods within our class to make themmore reusable.
 
-<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<T>{</span>
+<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><T>{</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">public</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">items:T</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 
@@ -244,15 +244,15 @@ We can even add type parameters to themethods within our class to make themmore 
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">list:ItemList</span>  <span style="color:#D4D4D4">\<number>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<number>();</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">list:ItemList</span>  <span style="color:#D4D4D4"><number>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><number>();</span>
 
 <span style="color:#D4D4D4">list.addItem</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list2:ItemList\<string>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list2:ItemList<string>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">list2.addItem(</span>  <span style="color:#CE9178">"hello"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list3:ItemList\<Shoe\[\]>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<Shoe\[\]>();</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list3:ItemList<Shoe\[\]>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><Shoe\[\]>();</span>
 
 __Aside: Generics in Typescript__
 
@@ -263,7 +263,7 @@ __Topic: Generics__  _Generics_  allow for creation of reusable code that where 
   * If no parameter is provided, then thetype must match the default if we usethe class (i.e. we must pass a number,anything else will cause a type errorat compile time).
 * So let's look at a real example
 
-<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<T=number>{</span>
+<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><T=number>{</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">public</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">items:T</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 
@@ -281,11 +281,11 @@ __Topic: Generics__  _Generics_  allow for creation of reusable code that where 
 
 <span style="color:#D4D4D4">list.addItem</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list2:ItemList\<string>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list2:ItemList<string>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">list2.addItem(</span>  <span style="color:#CE9178">"hello"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list3:ItemList\<Shoe\[\]>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<Shoe\[\]>();</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> list3:ItemList<Shoe\[\]>=</span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4"><Shoe\[\]>();</span>
 
 __Aside: Generics in Typescript__
 
@@ -299,7 +299,7 @@ __Topic: Generics__  _Generics_  allow for creation of reusable code that where 
   * With no type argument its data is void (nothing)
   * With a type parameter, the type it works withis the value specified for T.
 
-<span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<T = void> {</span>
+<span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><T = void> {</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">() {}</span>
 
@@ -441,13 +441,13 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">interface</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Iterable</span>  <span style="color:#D4D4D4">\<T>{</span>
+<span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">interface</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Iterable</span>  <span style="color:#D4D4D4"><T>{</span>
 
 <span style="color:#D4D4D4">    next():T;</span>
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">MyList</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">implements</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Serializable,Iterable</span>  <span style="color:#D4D4D4">\<number>{</span>
+<span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">MyList</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">implements</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Serializable,Iterable</span>  <span style="color:#D4D4D4"><number>{</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">values:number</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 

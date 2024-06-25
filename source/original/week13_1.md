@@ -317,7 +317,7 @@ __A recursive solution__
   * We stop when there are no elements in the list and return false
   * We stop when the middle element is the one we are looking for and return true
 * And what is our recursive step that makes the problem smaller.
-  * We will search again, only on either the first half (if value we want is \< middle) or the second half (if value we want is > middle)
+  * We will search again, only on either the first half (if value we want is < middle) or the second half (if value we want is > middle)
 * Each time, we are searching a smaller list, so eventually we will find what we want, or the list will be empty.
 
 __Topic: Recursion__
@@ -328,7 +328,7 @@ __A recursive solution__
   * We stop when there are no elements in the list and return false
   * We stop when the middle element is the one we are looking for and return true
 * And what is our recursive step that makes the problem smaller.
-  * We will search again, only on either the first half (if value we want is \< middle) or the second half (if value we want is > middle)
+  * We will search again, only on either the first half (if value we want is < middle) or the second half (if value we want is > middle)
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#CCCCCC">){</span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">;}</span>
 

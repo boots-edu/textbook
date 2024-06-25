@@ -189,7 +189,7 @@ __More on Boolean Expressions:  __
 A Boolean  __expression__  is an expression that evaluates to either  __true__  or  __false__
 
 * So far we have looked at comparison operators which can form Boolean expressions
-  * ===,!==,\<=,>=,\<,>
+  * ===,!==,<=,>=,<,>
     * For example,  _happiness>=7_  evaluates to true if the value of the variable happiness is 7 or more
     * luckiness>7 evaluates to true if the value of the variable luckiness is more than 7
   * We can use Boolean operators for and (&&), or (||) to combine many of these Boolean expressions into a single expression.

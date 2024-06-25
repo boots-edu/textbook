@@ -260,13 +260,13 @@ The fifth line creates an EventSubject that emits an array of strings.
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">event:EventSubject</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">();</span>
 
-<span style="color:#D4D4D4">    event2:EventSubject\<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<number>();</span>
+<span style="color:#D4D4D4">    event2:EventSubject<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><number>();</span>
 
-<span style="color:#D4D4D4">    event3:EventSubject\<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#D4D4D4">    event3:EventSubject<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">    event4:EventSubject<</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">>();</span>
 
-<span style="color:#D4D4D4">    event5:EventSubject\<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string\[\]>();</span>
+<span style="color:#D4D4D4">    event5:EventSubject<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string\[\]>();</span>
 
 __Aside: Generics in Typescript__
 
@@ -276,13 +276,13 @@ The type parameter specifies the type expected for the next method.  Using the w
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">event:EventSubject</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">();</span>
 
-<span style="color:#D4D4D4">    event2:EventSubject\<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<number>();</span>
+<span style="color:#D4D4D4">    event2:EventSubject<number> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><number>();</span>
 
-<span style="color:#D4D4D4">    event3:EventSubject\<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#D4D4D4">    event3:EventSubject<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">    event4:EventSubject<</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#D4D4D4">SomeClass</span>  <span style="color:#D4D4D4">>();</span>
 
-<span style="color:#D4D4D4">    event5:EventSubject\<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string\[\]>();</span>
+<span style="color:#D4D4D4">    event5:EventSubject<string\[\]> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string\[\]>();</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.event.next</span>  <span style="color:#D4D4D4">();</span>
 
@@ -391,7 +391,7 @@ The method now calls  _next_  with the new value.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">LineCommentComponent</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">extends</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzComponent</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">commentChange</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4">\<string>();</span>
+<span style="color:#D4D4D4">commentChange</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EventSubject</span>  <span style="color:#D4D4D4"><string>();</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">() {</span>
 
@@ -500,17 +500,17 @@ To show a popup we simply call the popup method of the EzDialog class.  This is 
 
 We can call this method to show a dialog box:
 
-Popup returns an EventSubject\<string> which emits the text of the button pressed.
+Popup returns an EventSubject<string> which emits the text of the button pressed.
 
 We can subscribe to the returned value to be notified when the popup closed.
 
-__EzDialog.popup__  __(__  __attachTo__  __: __  __EzComponent__  __, message: string, title?: string, __  __    buttons?: string\[\], __  __btnClass__  __?: string):__  __EventSubject__  __\<string>__
+__EzDialog.popup__  __(__  __attachTo__  __: __  __EzComponent__  __, message: string, title?: string, __  __    buttons?: string\[\], __  __btnClass__  __?: string):__  __EventSubject__  __<string>__
 
 <span style="color:#D4D4D4">EzDialog.popup</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"Hello</span>  <span style="color:#CE9178"> </span>  <span style="color:#CE9178">World"</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"I</span>  <span style="color:#CE9178"> am the title"</span>  <span style="color:#D4D4D4">,\[</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">Yes"</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"No</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">\],</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">btnClass</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">);</span>
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-__EzDialog.popup__  __(__  __attachTo__  __: __  __EzComponent__  __, message: string, title?: string, __  __    buttons?: string\[\], __  __btnClass__  __?: string):__  __EventSubject__  __\<string>__
+__EzDialog.popup__  __(__  __attachTo__  __: __  __EzComponent__  __, message: string, title?: string, __  __    buttons?: string\[\], __  __btnClass__  __?: string):__  __EventSubject__  __<string>__
 
 * Let's examine this in detail:
   * attachTo (required): is the component that you want to attach the element to.  Usually you will pass in  _this_  to specify the current component.

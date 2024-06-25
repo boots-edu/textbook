@@ -264,7 +264,7 @@ Shows the "call stack" in the console.
 
 <span style="color:#569CD6">    at test (/home/silber/school/cisc181/class7/work/</span>  <span style="color:#569CD6">dest</span>  <span style="color:#569CD6">/test.js:4:11)</span>
 
-<span style="color:#569CD6">    at Object.\<anonymous> (/home/silber/school/cisc181/class7/work/</span>  <span style="color:#569CD6">dest</span>  <span style="color:#569CD6">/test.js:7:1)</span>
+<span style="color:#569CD6">    at Object.<anonymous> (/home/silber/school/cisc181/class7/work/</span>  <span style="color:#569CD6">dest</span>  <span style="color:#569CD6">/test.js:7:1)</span>
 
 <span style="color:#569CD6">    at </span>  <span style="color:#569CD6">Module.\_compile</span>  <span style="color:#569CD6"> (</span>  <span style="color:#569CD6">node:internal</span>  <span style="color:#569CD6">/modules/</span>  <span style="color:#569CD6">cjs</span>  <span style="color:#569CD6">/loader:1376:14)</span>
 
@@ -391,11 +391,11 @@ It will be up to the code that is creating the color object to "handle" the exce
 
 <span style="color:#D4D4D4">    ) {</span>
 
-<span style="color:#D4D4D4">        if (red\<0 || red>255) throw new Error("Invalid red value");</span>
+<span style="color:#D4D4D4">        if (red<0 || red>255) throw new Error("Invalid red value");</span>
 
-<span style="color:#D4D4D4">        if (green\<0 || green>255) throw new Error("Invalid green value");</span>
+<span style="color:#D4D4D4">        if (green<0 || green>255) throw new Error("Invalid green value");</span>
 
-<span style="color:#D4D4D4">        if (blue\<0 || blue>255) throw new Error("Invalid blue value");</span>
+<span style="color:#D4D4D4">        if (blue<0 || blue>255) throw new Error("Invalid blue value");</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">}</span>
 
@@ -431,11 +431,11 @@ If the calling code does not "handle" the exception, then the program will termi
 
 <span style="color:#D4D4D4">    ) {</span>
 
-<span style="color:#D4D4D4">        if (red\<0 || red>255) throw new Error("Invalid red value");</span>
+<span style="color:#D4D4D4">        if (red<0 || red>255) throw new Error("Invalid red value");</span>
 
-<span style="color:#D4D4D4">        if (green\<0 || green>255) throw new Error("Invalid green value");</span>
+<span style="color:#D4D4D4">        if (green<0 || green>255) throw new Error("Invalid green value");</span>
 
-<span style="color:#D4D4D4">        if (blue\<0 || blue>255) throw new Error("Invalid blue value");</span>
+<span style="color:#D4D4D4">        if (blue<0 || blue>255) throw new Error("Invalid blue value");</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">}</span>
 

@@ -126,15 +126,15 @@ If we change the value of `r`, then we compute the area of a different circle.
 
 Later we will look at turning this code into a __function__ that can be called with different values of `r` and reused.
 
-If we assign a non-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
+If we assign a non-numeric value to `r` (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
-__Review Topic: Variables__
+TODO: Picture of this compiler error, or at least a danger box example
 
-A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
+## Boolean Expressions
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with a "===", "\<==",">==" or a simple "\<" or ">" and the result of the expression will have the type  _boolean_  _._
+In typescript, we do this with a "===", "<==",">==" or a simple "<" or ">" and the result of the expression will have the type  _boolean_  _._
 
 let myValue:number=5;
 

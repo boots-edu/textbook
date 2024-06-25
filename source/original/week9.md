@@ -15,37 +15,37 @@ __Topic: Basic Web Development__
 __Topic: Basic Web Development__
 
 * HTML is a simple tag based language where elements are defined with an opening and closing tag
-  * \<p>Something\</p>
-  * \<button>Click Me\</button>
-  * \<span>Something else\</span>
+  * <p>Something</p>
+  * <button>Click Me</button>
+  * <span>Something else</span>
   * <br/> (has no body, so no closing tag
 * These tags can be nested inside of each other
-  * \<span>Hello \<button>Click\</button></br>\<span>World\</span>
+  * <span>Hello <button>Click</button></br><span>World</span>
 * If a tag is inside another tag, it can be affected by the parent's size, position, and style.
 
 __Topic: Basic Web Development__
 
 * HTML is a simple tag based language where elements are defined with an opening and closing tag
-  * \<p>Something\</p>
-  * \<button>Click Me\</button>
-  * \<span>Something else\</span>
+  * <p>Something</p>
+  * <button>Click Me</button>
+  * <span>Something else</span>
   * <br/> (has no body, so no closing tag
 * These tags can be nested inside of each other
-  * \<span>Hello \<button>Click\</button></br>\<span>World\</span>
+  * <span>Hello <button>Click</button></br><span>World</span>
 * If a tag is inside another tag, it can be affected by the parent's size, position, and style.
 
 __Topic: Basic Web Development__  __HTML__
 
 * Common tags:
-  * __\<div>\</div>__  : Create a block which can be styled.
-  * __\<p>\</p>__  :  A paragraph
-  * __\<input type="text" />__  : An input box
-  * __\<input type="password" />__  : An input box with the letters obscured
-  * __\<input type="radio" /> __ : A radio button
-  * __\<input type="checkbox" /> __ : A checkbox
-  * __\<button>Button Text\</button>__
-  * __\<span>\</span>__  : An enclosing element that doesn't do much but can be styled.
-  * __\<select>\<option>1\</option>\<option>2\</option>\</select>__  : A drop down
+  * __<div></div>__  : Create a block which can be styled.
+  * __<p></p>__  :  A paragraph
+  * __<input type="text" />__  : An input box
+  * __<input type="password" />__  : An input box with the letters obscured
+  * __<input type="radio" /> __ : A radio button
+  * __<input type="checkbox" /> __ : A checkbox
+  * __<button>Button Text</button>__
+  * __<span></span>__  : An enclosing element that doesn't do much but can be styled.
+  * __<select><option>1</option><option>2</option></select>__  : A drop down
 
 __Topic: Basic Web Development__  __HTML__
 
@@ -69,7 +69,7 @@ __Topic: Basic Web Development__  __HTML__
 
 Tags in action:
 
-By removing the \<p>\</p> tags, and adding a <br/>I get line spacing instead of paragraph spacing.
+By removing the <p></p> tags, and adding a <br/>I get line spacing instead of paragraph spacing.
 
 ![](../../images/CISC181-Week%2091.png)
 
