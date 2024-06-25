@@ -102,7 +102,7 @@ Note that you do not write the dollar sign (`$`); that just indicates the start 
 
 In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0`.  
 If `v21.6.1` appears, you need to go back and install the **LTS version** ; some packages may only support the latest
-LTS version of Node, so it’s better to fix it now.
+LTS version of Node, so it's better to fix it now.
 
 If `node: command not found` appears, it means something went wrong with your installation. Check that the installer is
 properly finished. If it has, open the installer again and verify that the destination of your installation matches the
@@ -499,7 +499,7 @@ This will be the workflow for the rest of the semester, so get used to it!
 
 # Next Step
 
-It has been a couple of months since you completed your CS1 course\, so let’s review some concepts from last semester\.
+It has been a couple of months since you completed your CS1 course\, so let's review some concepts from last semester\.
 
 While Python and Typescript \(and many other languages\) are different\, the basic concepts we learned in CS1 are still valid\.
 

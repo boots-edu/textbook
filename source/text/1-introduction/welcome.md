@@ -52,7 +52,7 @@ In order to pass the class\, you must pass the last exam of the semester \(there
 
 In order to pass the class\, you must receive a passing grade on the final project\.
 
-Final course grades will be assigned at the discretion of the instructor\.  Automatically assigned grades can be changed at any time at the instructor’s discretion\.
+Final course grades will be assigned at the discretion of the instructor\.  Automatically assigned grades can be changed at any time at the instructor's discretion\.
 
 # Getting help
 
@@ -94,11 +94,11 @@ Procedures for late policy\, requesting extensions\, etc\. go here\.
 
 # Final Thoughts before we begin
 
-Computer Science is hard until it is not\.  Be patient with yourself and get help early if you need it\.  The TA’s and instructors are here to help you learn\, we do not expect you to know it already\.
+Computer Science is hard until it is not\.  Be patient with yourself and get help early if you need it\.  The TA's and instructors are here to help you learn\, we do not expect you to know it already\.
 
 We are not “scary” or a “last resort”\.  Visiting office hours is a normal part of the learning process\.
 
-We will have a discord channel for the course\.  TA’s will monitor the discord channel\, but communication with the instructor should be through email\.  Please be kind and respectful when communicating on Discord\.
+We will have a discord channel for the course\.  TA's will monitor the discord channel\, but communication with the instructor should be through email\.  Please be kind and respectful when communicating on Discord\.
 
 Office hours are blocked so we can be available\.  If you need help outside these times\, just ask the TA or instructor to schedule an appointment\.   __We are here to help\.__
 
