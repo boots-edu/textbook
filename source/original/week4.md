@@ -61,7 +61,7 @@ let x=this.start.x\-this.end.x;
 
 let y=this.start.y\-this.end.y;
 
-let len:number=Math.sqrt(x\*x\+y\*y);
+let len:number=Math.sqrt(x\*x+y\*y);
 
 return len;
 
@@ -89,7 +89,7 @@ let x:number=this.start.x\-this.end.x;
 
 let y:number=this.start.y\-this.end.y;
 
-let len:number=Math.sqrt(x\*x\+y\*y);
+let len:number=Math.sqrt(x\*x+y\*y);
 
 return len;
 

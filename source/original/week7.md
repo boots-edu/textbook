@@ -705,9 +705,9 @@ _An Exception _ is the process of responding to the occurrence of exceptions –
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#6A9955">// Check for duplicate points</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i < </span>  <span style="color:#D4D4D4">points.length</span>  <span style="color:#D4D4D4">; i\+\+) {</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i < </span>  <span style="color:#D4D4D4">points.length</span>  <span style="color:#D4D4D4">; i++) {</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> j = i \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">; j < </span>  <span style="color:#D4D4D4">points.length</span>  <span style="color:#D4D4D4">; </span>  <span style="color:#D4D4D4">j\+\+</span>  <span style="color:#D4D4D4">) {</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> j = i + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">; j < </span>  <span style="color:#D4D4D4">points.length</span>  <span style="color:#D4D4D4">; </span>  <span style="color:#D4D4D4">j++</span>  <span style="color:#D4D4D4">) {</span>
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (points\[i\].equals(points\[j\])) {</span>
 
@@ -735,7 +735,7 @@ Still need to check this.
 
 Brute force approach: For each element, check all the remaining elements for duplicates.
 
-Thought Question: Why does j start at i\+1 and not 0?
+Thought Question: Why does j start at i+1 and not 0?
 
 __Topic: Exception Handling__
 
@@ -1161,7 +1161,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4"> === </span>  <span style="color:#D4D4D4">other.bill</span>  <span style="color:#D4D4D4">) {</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">        } </span>  <span style="color:#569CD6">else</span>  <span style="color:#D4D4D4"> {</span>
 
@@ -1171,7 +1171,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">              </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>
 
-<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
+<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1181,7 +1181,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">              </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>
 
-<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) \+ </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1230,7 +1230,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4"> === </span>  <span style="color:#D4D4D4">other.exponent</span>  <span style="color:#D4D4D4">) {</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">        } </span>  <span style="color:#569CD6">else</span>  <span style="color:#D4D4D4"> {</span>
 
@@ -1240,7 +1240,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>
 
-<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
+<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1250,7 +1250,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>
 
-<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) \+ </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">,</span>
 

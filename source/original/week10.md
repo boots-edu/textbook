@@ -185,7 +185,7 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.addComponent</span>  <span style="color:#D4D4D4">(item, </span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">orderDetails</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4">\+\+;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4">++;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -325,7 +325,7 @@ __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between co
 
 <span style="color:#D4D4D4">            (value: number) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">                console.log(value \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">                console.log(value + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">            },</span>
 
@@ -459,7 +459,7 @@ Now at any point, commentTextin the parent contains the currentvalue of all the 
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.addComponent</span>  <span style="color:#D4D4D4">(comment, </span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">orderDetails</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> index = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.commentCount</span>  <span style="color:#D4D4D4">\+\+;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> index = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.commentCount</span>  <span style="color:#D4D4D4">++;</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#D4D4D4">comment.commentChange.subscribe</span>  <span style="color:#D4D4D4">((comment: string) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
@@ -541,7 +541,7 @@ We could have subscribed if I needed to know that the popup was closed.
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#D4D4D4">this.addComponent</span>  <span style="color:#D4D4D4">(comment, </span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">orderDetails</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        let index = </span>  <span style="color:#D4D4D4">this.commentCount</span>  <span style="color:#D4D4D4">\+\+;</span>
+<span style="color:#D4D4D4">        let index = </span>  <span style="color:#D4D4D4">this.commentCount</span>  <span style="color:#D4D4D4">++;</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#D4D4D4">comment.commentChange.subscribe</span>  <span style="color:#D4D4D4">((comment: string) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
@@ -589,7 +589,7 @@ We subscribe to the EventSubject returned by the popup method to see when the wi
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.addComponent</span>  <span style="color:#D4D4D4">(comment, </span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">orderDetails</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> index = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.commentCount</span>  <span style="color:#D4D4D4">\+\+;</span>
+<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> index = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.commentCount</span>  <span style="color:#D4D4D4">++;</span>
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#D4D4D4">comment.commentChange.subscribe</span>  <span style="color:#D4D4D4">((comment: string) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
@@ -768,7 +768,7 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 * To implement the behavior, we will use the @Timer decorator to decorate a function hat we want called periodically.
   * Passing 1000 to the timer methodcauses onTimer to be called once asecond while the page is displayed(forever: more on this later).
-  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count\+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
+  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
   * We will see something like …
 
 <span style="color:#D4D4D4">@Timer(</span>  <span style="color:#B5CEA8">1000</span>  <span style="color:#D4D4D4">)</span>
@@ -777,9 +777,9 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> === </span>  <span style="color:#B5CEA8">3</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.displayDots</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#CE9178">"."</span>  <span style="color:#D4D4D4">.repeat(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.displayDots</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#CE9178">"."</span>  <span style="color:#D4D4D4">.repeat(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -787,7 +787,7 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 * To implement the behavior, we will use the @Timer decorator to decorate a function hat we want called periodically.
   * Passing 1000 to the timer methodcauses onTimer to be called once asecond while the page is displayed(forever: more on this later).
-  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count\+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
+  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
   * We will see something like …
 
 <span style="color:#D4D4D4">@Timer(</span>  <span style="color:#B5CEA8">1000</span>  <span style="color:#D4D4D4">)</span>
@@ -796,9 +796,9 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> === </span>  <span style="color:#B5CEA8">3</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.displayDots</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#CE9178">"."</span>  <span style="color:#D4D4D4">.repeat(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.displayDots</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#CE9178">"."</span>  <span style="color:#D4D4D4">.repeat(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.count</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 

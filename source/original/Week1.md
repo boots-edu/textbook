@@ -29,7 +29,7 @@ There will be no extensions for weekly assignments.  To deal with special circum
 
 # Additional Policies
 
-Your overall course grade cannot be more than one letter grade higher than your average exam grade.  If your average exam grade is a C\+, you cannot receive a grade above B\+ for the course.
+Your overall course grade cannot be more than one letter grade higher than your average exam grade.  If your average exam grade is a C+, you cannot receive a grade above B+ for the course.
 
 In order to pass the class, you must pass the last exam of the semester (there will be 3 total).
 
@@ -102,10 +102,10 @@ __Review Topic: Variables__
 A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
 * Consider a simple math expression:
-  * 3\+4
+  * 3+4
   * This is useful in computing this specific value (7), but is only useful in that one particular case.
 * On the other hand:
-  * X\+4
+  * X+4
   * This would compute the same value if X=3, but would also compute a correct value for any other value of X.
 * This is the basic idea of why we use variables.  We can write a single expression that computes a correct answer for many possible values of X.
 
@@ -114,10 +114,10 @@ __Review Topic: Variables__
 A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
 * Consider a simple math expression:
-  * 3\+4
+  * 3+4
   * This is useful in computing this specific value (7), but is only useful in that one particular case.
 * On the other hand:
-  * X\+4
+  * X+4
   * This would compute the same value if X=3, but would also compute a correct value for any other value of X.
 * This is the basic idea of why we use variables.  We can write a single expression that computes a correct answer for many possible values of X.
 
@@ -129,9 +129,9 @@ Using variables we can represent concepts like the equation of a line.
 
 Here m is the slope of the line (change in y over change in x) and c is where the line intersects the Y access.
 
-The equation y=mx\+c represents every possible straight line.
+The equation y=mx+c represents every possible straight line.
 
-y=2x\+4 represents a specific line.  By assigning a value to the variable x we can compute the appropriate y for this line.
+y=2x+4 represents a specific line.  By assigning a value to the variable x we can compute the appropriate y for this line.
 
 ![](../../images/CISC181-Week%2011.png)
 
@@ -149,7 +149,7 @@ A  _variable_  is a named container for some unknown value.  We can use variable
 
 * But what happens if we do this:
   * x="hello"
-  * y=2x\+4
+  * y=2x+4
 * This doesn't make any sense.
 * To make sure that our code makes sense, we attach a type to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate.
 * We do this by declaring the variable and specifying what type of data it can contain.  Once declared, we will not be able to assign an inappropriate value type to that variable.
@@ -164,7 +164,7 @@ In this short typescript code snippet, we declare the variable myValue to hold a
 
 We declare the variable answer as a number, but do not give it a value.
 
-We then compute myValue\+3 and store it in answer.
+We then compute myValue+3 and store it in answer.
 
 <span style="color:#0060B1"> __Typescript:__ </span>
 
@@ -172,7 +172,7 @@ We then compute myValue\+3 and store it in answer.
 
 <span style="color:#0060B1">let answer:number;</span>
 
-<span style="color:#0060B1">answer=myValue\+3;</span>
+<span style="color:#0060B1">answer=myValue+3;</span>
 
 __Review Topic: Variables__
 
@@ -476,7 +476,7 @@ In TypeScript, the string is sequence of char values used to store text data
 * What if the string contains a number and we want to convert it to a number type?
   * let myNumStr:string="42";
   * let myNum:number=parseInt(myNumStr); //this function does the trick
-  * Let myNum2:number=\+myNumStr; //this also works, but is less explicit
+  * Let myNum2:number=+myNumStr; //this also works, but is less explicit
 * If myNumStr did not contain a valid number, the parseInt function would return NaN to specify "Not a number"
 * If we want to go the other way
   * Let myNum:number=42;

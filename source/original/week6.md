@@ -487,7 +487,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -503,7 +503,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -540,7 +540,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -556,7 +556,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -607,7 +607,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -623,7 +623,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getDescription</span>  <span style="color:#D4D4D4">(): string{</span>
 
-<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() \+ </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        return </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">.getDescription</span>  <span style="color:#D4D4D4">() + </span>  <span style="color:#CE9178">" of type "</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.subType</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -938,7 +938,7 @@ __Topic: __  __Classes\-Polymorphism__
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
 * A few more points before we move on:
-  * You now know most of the  _generic_  things about OOP.  In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C\+\+, C\#, etc.
+  * You now know most of the  _generic_  things about OOP.  In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C\#, etc.
   * We can construct complex classes by building them out of parts that they contain using  _composition._
   * We can construct complex classes by extending other classes and adding functionality to create more and more specific classes that take advantage of the features that already exist in the superclass.
   * We can use the idea of polymorphism to reference objects through their superclass, and have the correct implementation in the subclass execute for us through polymorphism.

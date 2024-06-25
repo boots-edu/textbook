@@ -234,7 +234,7 @@ Here's my solution
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">while</span>  <span style="color:#D4D4D4">(y > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">        product = product \+ x;</span>
+<span style="color:#D4D4D4">        product = product + x;</span>
 
 <span style="color:#D4D4D4">        y = y \- </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
@@ -314,13 +314,13 @@ A  __loop__  is a control flow structure in programming that allows us to repeat
 
 The update statement will usually modify the loop variable so that it approaches a value that will cause the loop to exit.
 
-Note: i\+\+ is just shorthand for i=i\+1 (and i\-\- is similarly shorthand for i=i\-1)
+Note: i++ is just shorthand for i=i+1 (and i\-\- is similarly shorthand for i=i\-1)
 
 <span style="color:#FF0000">Evaluates to a </span>  <span style="color:#FF0000">boolean</span>
 
 <span style="color:#FF0000">Declares and initializes a loop variable</span>
 
-for (let i=0 ; i<10 ; i\+\+){
+for (let i=0 ; i<10 ; i++){
 
 //thing to repeat
 
@@ -398,7 +398,7 @@ For reference, here is the while loop version from before
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">while</span>  <span style="color:#D4D4D4">(y > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">        product = product \+ x;</span>
+<span style="color:#D4D4D4">        product = product + x;</span>
 
 <span style="color:#D4D4D4">        y = y \- </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
@@ -418,9 +418,9 @@ Here's my solution
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">product:number</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i=</span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;i<</span>  <span style="color:#D4D4D4">y;i</span>  <span style="color:#D4D4D4">\+\+){</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i=</span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;i<</span>  <span style="color:#D4D4D4">y;i</span>  <span style="color:#D4D4D4">++){</span>
 
-<span style="color:#D4D4D4">        product=</span>  <span style="color:#D4D4D4">product\+x</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        product=</span>  <span style="color:#D4D4D4">product+x</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -444,7 +444,7 @@ An  __array __ is an ordered list of values of the same type where each element 
 
 * Arrays are an extremely important data structure because they allow us to store a collection of objects.
 * We can build arrays out of any built\-in or user\-defined type we want, including out of other arrays.
-* In Typescript, the size of the array does not need to be defined.  It will grow as necessary to hold the data placed into it ( __NOT TRUE IN C or C\+\+__ ).
+* In Typescript, the size of the array does not need to be defined.  It will grow as necessary to hold the data placed into it ( __NOT TRUE IN C or C++__ ).
 * Each element in the array has an index (starting at 0) which we can use to access the individual elements
   * i.e. if an array has 10 elements, the indexes would be 0\-9.
 
@@ -493,7 +493,7 @@ An  __array __ is an ordered list of values of the same type where each element 
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">names:string</span>  <span style="color:#D4D4D4">\[\]=\[</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">Lisa"</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"Kaitlin"</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"John</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">\];</span>
 
-<span style="color:#D4D4D4">names\[1\]=“Jan”;</span>
+<span style="color:#D4D4D4">names\[1\]="Jan";</span>
 
 <span style="color:#D4D4D4">console.log(names\[1\]);</span>
 
@@ -701,7 +701,7 @@ But there is another version of the for loop which is better for this type of th
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">size:number</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#D4D4D4">fruits.length</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i < size; i\+\+){</span>
+<span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i < size; i++){</span>
 
 <span style="color:#D4D4D4">    console.log(fruits\[i\]);</span>
 

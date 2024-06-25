@@ -477,7 +477,7 @@ If we are at the end, we disable the next button
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">onNext</span>  <span style="color:#D4D4D4">(){</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.fancyImg.image</span>  <span style="color:#D4D4D4">\+\+;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.fancyImg.image</span>  <span style="color:#D4D4D4">++;</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.prevDisabled</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">false</span>  <span style="color:#D4D4D4">;</span>
 

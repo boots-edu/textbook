@@ -21,13 +21,13 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">padString</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">padString2</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -45,11 +45,11 @@ We can apply this to other types as well.  Classes, interfaces, etc.
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#569CD6">typeof</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">"number"</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -61,7 +61,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -81,7 +81,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -109,7 +109,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -129,7 +129,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -380,7 +380,7 @@ Here is a product example:
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">vals</span>  <span style="color:#D4D4D4">: number\[\] = \[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">3</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">4</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">5</span>  <span style="color:#D4D4D4">\];</span>
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> product= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \* </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
 
@@ -398,13 +398,13 @@ We can exclude some values from our count, and also map somevalues first.
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> min= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.min</span>  <span style="color:#D4D4D4">(acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">), </span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> average = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">) / </span>  <span style="color:#D4D4D4">vals.length</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> average = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">) / </span>  <span style="color:#D4D4D4">vals.length</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stdev</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">Math.sqrt</span>  <span style="color:#D4D4D4">(</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> acc \+ (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- average) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> acc + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- average) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">) / </span>  <span style="color:#D4D4D4">vals.length</span>  <span style="color:#D4D4D4">);</span>
 
@@ -412,7 +412,7 @@ Notice that without the braces {} the value is returned automatically, but with 
 
 <span style="color:#D4D4D4">sumOdd</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">acc,val</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">{</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (val%</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">acc\+val</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (val%</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">acc+val</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">else</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> acc;</span>
 
@@ -450,9 +450,9 @@ This creates an array of the squares of the oddnumbers in the array.
 
 <span style="color:#D4D4D4">            min: </span>  <span style="color:#D4D4D4">Math.min</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">acc.min</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">),</span>
 
-<span style="color:#D4D4D4">            average: </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4"> \+ </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">            average: </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">,</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#D4D4D4">stdev</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">acc.stdev</span>  <span style="color:#D4D4D4"> \+ (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4">) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#D4D4D4">stdev</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">acc.stdev</span>  <span style="color:#D4D4D4"> + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4">) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">        };</span>
 
@@ -496,7 +496,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | :-: | :-: | :-: | :-: |
 
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 __Topic: Higher Order Array Methods__  __The __  _reduce_  __ method allows us to apply an operation to the elements of an arrays, to get a single answer.__
 
@@ -523,7 +523,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | Val | 1 |
 | Returns | 1 |
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 __Topic: Higher Order Array Methods__  __The __  _reduce_  __ method allows us to apply an operation to the elements of an arrays, to get a single answer.__
 
@@ -552,7 +552,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | Val | 1 |
 | Returns | 1 |
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 | Acc | 1 |
 | :-: | :-: |
@@ -586,7 +586,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | Val | 4 |
 | Returns | 5 |
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 | Acc | 5 |
 | :-: | :-: |
@@ -620,7 +620,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | Val | 11 |
 | Returns | 16 |
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 | Acc | 16 |
 | :-: | :-: |
@@ -654,7 +654,7 @@ Let's step through the operation of this to makesure we understand what is happe
 | Val | 7 |
 | Returns | 23 |
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduce((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 Return value of reduce
 
@@ -668,7 +668,7 @@ Consider a reduce method that returns the first even element in the array.
 
 The same function will return the last even element, if I go from right to left with reduceRight.
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduceRight((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \+ val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = vals.reduceRight((acc, val) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + val, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">firstEven</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">acc:number,val</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">{</span>
 

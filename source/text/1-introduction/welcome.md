@@ -46,7 +46,7 @@ There will be no extensions for weekly assignments.  To deal with special circum
 
 # Additional Policies
 
-Your overall course grade cannot be more than one letter grade higher than your average exam grade.  If your average exam grade is a C\+, you cannot receive a grade above B\+ for the course.
+Your overall course grade cannot be more than one letter grade higher than your average exam grade.  If your average exam grade is a C+, you cannot receive a grade above B+ for the course.
 
 In order to pass the class, you must pass the last exam of the semester (there will be 3 total).
 
@@ -96,7 +96,7 @@ Procedures for late policy, requesting extensions, etc. go here.
 
 Computer Science is hard until it is not.  Be patient with yourself and get help early if you need it.  The TA's and instructors are here to help you learn, we do not expect you to know it already.
 
-We are not “scary” or a “last resort”.  Visiting office hours is a normal part of the learning process.
+We are not "scary" or a "last resort".  Visiting office hours is a normal part of the learning process.
 
 We will have a discord channel for the course.  TA's will monitor the discord channel, but communication with the instructor should be through email.  Please be kind and respectful when communicating on Discord.
 

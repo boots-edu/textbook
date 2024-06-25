@@ -24,7 +24,7 @@ Normally, when we create a function or method, we define it with a name that we 
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">MyName</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">)</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -32,7 +32,7 @@ Normally, when we create a function or method, we define it with a name that we 
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">MyName</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">)</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -44,7 +44,7 @@ A function that is declared with no name is an  _anonymous function._
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">MyName</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">)</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -52,7 +52,7 @@ A function that is declared with no name is an  _anonymous function._
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">MyName</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">)</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">a</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">b</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 

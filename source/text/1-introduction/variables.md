@@ -77,13 +77,14 @@ It depends on the language we are using, but in general, we specify:
 * its type, and
 * potentially its initial value.
 
+
+{: .warning-title}
+
 Note, if we do not specify its initial value, then we cannot read its value until we do.
 
-In this short typescript code snippet, we declare the variable myValue to hold a number and assign it an initial value of 4.
-
-We declare the variable answer as a number, but do not give it a value.
-
-We then compute myValue\+3 and store it in answer.
+In this short Typescript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
+We declare the variable `answer` as a `number`, but do not give it a value.
+We then compute `myValue+3` and store it in answer.
 
 <span style="color:#0060B1"> __Typescript:__ </span>
 
@@ -91,21 +92,21 @@ We then compute myValue\+3 and store it in answer.
 
 <span style="color:#0060B1">let answer:number;</span>
 
-<span style="color:#0060B1">answer=myValue\+3;</span>
+<span style="color:#0060B1">answer=myValue+3;</span>
 
 __Review Topic: Variables__
 
 A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
-_Use a “:” symbol after the name_
+_Use a ":" symbol after the name_
 
 _= an initial value_
 
-_Use “let” to declare a variable._
+_Use "let" to declare a variable._
 
 let myValue : number = 4;
 
-_Line ends with a “;”_
+_Line ends with a ";"_
 
 _The name of the variable_
 
@@ -118,7 +119,7 @@ A  _variable_  is a named container for some unknown value.  We can use variable
 * __Types in Typescript__
 * Typescript has only three basic types.
   * number: Holds any numeric data (e.g. 42 or 3.14159)
-  * string: Holds a string of characters (e.g. “Hello World”)
+  * string: Holds a string of characters (e.g. "Hello World")
   * boolean: Holds the value true or false
 * There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
@@ -146,7 +147,7 @@ A  _variable_  is a named container for some unknown value.  We can use variable
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with a “===”, “\<==”,”>==” or a simple “\<” or “>” and the result of the expression will have the type  _boolean_  _._
+In typescript, we do this with a "===", "\<==",">==" or a simple "\<" or ">" and the result of the expression will have the type  _boolean_  _._
 
 let myValue:number=5;
 
@@ -156,9 +157,9 @@ let isGreater:boolean = (myValue>5);
 
 let isLessEqual:boolean = (myValue <== 5);
 
-let myString:string=”Hello”
+let myString:string="Hello"
 
-let isStrEqual:boolean=(myValue===”Hello”);
+let isStrEqual:boolean=(myValue==="Hello");
 
 __Review Topic: Variables__
 

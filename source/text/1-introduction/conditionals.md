@@ -158,7 +158,7 @@ In TypeScript, the string is sequence of char values used to store text data
 * What if the string contains a number and we want to convert it to a number type?
   * let myNumStr:string="42";
   * let myNum:number=parseInt(myNumStr); //this function does the trick
-  * Let myNum2:number=\+myNumStr; //this also works, but is less explicit
+  * Let myNum2:number=+myNumStr; //this also works, but is less explicit
 * If myNumStr did not contain a valid number, the parseInt function would return NaN to specify "Not a number"
 * If we want to go the other way
   * Let myNum:number=42;

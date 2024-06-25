@@ -37,13 +37,13 @@ What if we wanted to allow other types of data to be printed.  We could write an
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printNumberResult</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">result:number</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> \+ result);</span>
+<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> + result);</span>
 
 <span style="color:#D4D4D4">}</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printStringResult</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">result:</span>  <span style="color:#D4D4D4">string</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> \+ result);</span>
+<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> + result);</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -59,7 +59,7 @@ We can make this function a generic by adding a type parameter and using it as t
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printNumberResult</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">result:number</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> \+ result);</span>
+<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> + result);</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -75,7 +75,7 @@ As it turns out, Typescript can infer the type from the parameter, so we can als
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">\<T>(</span>  <span style="color:#D4D4D4">result:T</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> \+ result);</span>
+<span style="color:#D4D4D4">    console.log(</span>  <span style="color:#CE9178">'Result: '</span>  <span style="color:#D4D4D4"> + result);</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -119,7 +119,7 @@ We get a compiler error when we build
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> result=</span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#D4D4D4">number,string</span>  <span style="color:#D4D4D4">>(</span>  <span style="color:#CE9178">"hello“,1</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> result=</span>  <span style="color:#D4D4D4">makePair</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#D4D4D4">number,string</span>  <span style="color:#D4D4D4">>(</span>  <span style="color:#CE9178">"hello",1</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">(result);</span>
 
@@ -457,7 +457,7 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.pos</span>  <span style="color:#D4D4D4"><</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.values.length</span>  <span style="color:#D4D4D4">)</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.values</span>  <span style="color:#D4D4D4">\[</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.pos</span>  <span style="color:#D4D4D4">\+\+\];</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.values</span>  <span style="color:#D4D4D4">\[</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.pos</span>  <span style="color:#D4D4D4">++\];</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">else</span>
 
@@ -539,13 +539,13 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">padString</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">padString2</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -563,11 +563,11 @@ We can apply this to other types as well.  Classes, interfaces, etc.
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#569CD6">typeof</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">"number"</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Array</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">).</span>  <span style="color:#DCDCAA">join</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#CE9178">" "</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">+</span>  <span style="color:#9CDCFE">value</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">}</span>
 
@@ -579,7 +579,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -599,7 +599,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -627,7 +627,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is a tiger"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
@@ -647,7 +647,7 @@ __Topic: Union Types__  _Union types_  are a way of declaring a variable that ca
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDetails</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">string</span>  <span style="color:#CCCCCC">{</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">name</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" is "</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">this</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">height</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">+</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#CE9178">" feet tall"</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
