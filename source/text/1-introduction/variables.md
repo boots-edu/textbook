@@ -171,4 +171,6 @@ The values that we assign to variables can come from many sources like data file
 
 Throughout the semester we will use variables to create reusable code.  We will later learn other data types, and even how to create our own types containing complex data.
 
+# Next Step
+
 Next we'll review [Functions &raquo;](../1-introduction/functions.md)

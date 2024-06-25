@@ -104,4 +104,6 @@ Office hours are blocked so we can be available.  If you need help outside these
 
 ![](../../images/CISC181-Week%2010.jpg)
 
+# Next Step
+
 Let's get your environment setup: [Setup &raquo;](../1-introduction/setup.md)

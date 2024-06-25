@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Functions
-nav_order: 1.3
+nav_order: 1.4
 parent: Introduction
 ---
 
