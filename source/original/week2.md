@@ -115,12 +115,12 @@ If I compile and run this code\, I see the output on the right\.  Why?
 
 __A short aside\.__
 
-__What’s going on here\!\!\!__
+__What's going on here\!\!\!__
 
 * So once I wrote my program and saved it into a \.ts file\, how did I compile and run it?
   * Previously you could just run your programs\, but for typescript we must first compile \(transpile\) it into javascript so that we can run it\.
 
-The tsc command will take the \.ts file and convert it into native javascript\.  We don’t need to worry about the javascript\, just that it turns the \.ts file into a \.js file\.
+The tsc command will take the \.ts file and convert it into native javascript\.  We don't need to worry about the javascript\, just that it turns the \.ts file into a \.js file\.
 
 We can then use node to execute our js file\.
 
@@ -190,7 +190,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-* Let’s try this for ourselves
+* Let's try this for ourselves
   * Pair up with the person next to you to write a function sillyMultiply that takes two arguments and returns their product\.
   * The hard part is you are not allowed to use multiplication inside your function\, you must do it by repeatedly adding the first number to itself the correct number of times\.  Here is a template to get you started:
 
@@ -210,7 +210,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-How did you do?  Let’s try to write it together\.
+How did you do?  Let's try to write it together\.
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">sillyMultiply</span>  <span style="color:#D4D4D4">\(</span>  <span style="color:#D4D4D4">x:number\,y:number</span>  <span style="color:#D4D4D4">\):number\{</span>
 
@@ -226,7 +226,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-Here’s my solution
+Here's my solution
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">sillyMultiply</span>  <span style="color:#D4D4D4">\(</span>  <span style="color:#D4D4D4">x:number\,y:number</span>  <span style="color:#D4D4D4">\):number\{</span>
 
@@ -252,7 +252,7 @@ The other primary type of loop we will be discussing is the  __for__  loop\.
 
 While you have seen for loops in Python\, they are somewhat different in typescript\, and there are a couple of different versions\.
 
-Let’s start with the simplest form\.
+Let's start with the simplest form\.
 
 <span style="color:#FF0000">Evaluates to a </span>  <span style="color:#FF0000">boolean</span>
 
@@ -334,7 +334,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-Let’s rewrite our countdown function using a for loop instead of a while loop\.
+Let's rewrite our countdown function using a for loop instead of a while loop\.
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> countdown\(</span>  <span style="color:#D4D4D4">count:number</span>  <span style="color:#D4D4D4">\)\{</span>
 
@@ -352,7 +352,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-Let’s rewrite our countdown function using a for loop instead of a while loop\.
+Let's rewrite our countdown function using a for loop instead of a while loop\.
 
 Our initializer sets our loop variable \(i\) to count
 
@@ -376,7 +376,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-Now let’s redo our sillyMultiply function with a for loop instead of a while loop
+Now let's redo our sillyMultiply function with a for loop instead of a while loop
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">sillyMultiply</span>  <span style="color:#D4D4D4">\(</span>  <span style="color:#D4D4D4">x:number\,y:number</span>  <span style="color:#D4D4D4">\):number\{</span>
 
@@ -412,7 +412,7 @@ __Review Topic: __  __Loops__
 
 A  __loop__  is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met\.
 
-Here’s my solution
+Here's my solution
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">sillyMultiply</span>  <span style="color:#D4D4D4">\(</span>  <span style="color:#D4D4D4">x:number\,y:number</span>  <span style="color:#D4D4D4">\):number\{</span>
 
@@ -511,7 +511,7 @@ An  __array __ is an ordered list of values of the same type where each element 
 
 We can get the current number of elements in an array with the length method\.
 
-Note that length is NOT a function\, but rather it is a property of the array so we don’t use \(\)\.
+Note that length is NOT a function\, but rather it is a property of the array so we don't use \(\)\.
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> fruits: string\[\] = \[</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">apple"</span>  <span style="color:#D4D4D4">\,</span>  <span style="color:#CE9178">"banana"</span>  <span style="color:#D4D4D4">\,</span>  <span style="color:#CE9178">"orange</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">\];</span>
 
@@ -717,7 +717,7 @@ __Back to loops for a second__
 
 We can use this other version called a  _for\.\.of_  loop to automatically iterate through the array\.
 
-This is much cleaner\, doesn’t require getting the length of the array\, and accesses every element in order just like the previous version\.
+This is much cleaner\, doesn't require getting the length of the array\, and accesses every element in order just like the previous version\.
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> fruits: string\[\] = \[</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">apple"</span>  <span style="color:#D4D4D4">\,</span>  <span style="color:#CE9178">"banana"</span>  <span style="color:#D4D4D4">\,</span>  <span style="color:#CE9178">"orange</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4">\];</span>
 

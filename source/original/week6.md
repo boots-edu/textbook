@@ -51,9 +51,9 @@ __Topic: Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-Let’s assume that the Musical Instrument has a name\, a musical key \(ie\. C\#\, Bb\)\, and a year invented field as well as a method getName\(\)
+Let's assume that the Musical Instrument has a name\, a musical key \(ie\. C\#\, Bb\)\, and a year invented field as well as a method getName\(\)
 
-Then all the other classes ALSO have those fields\.  We don’t need to recreate them in our child since we  _inherit_  them from the parent class\.  This is one of the primary benefits of inheritance\.
+Then all the other classes ALSO have those fields\.  We don't need to recreate them in our child since we  _inherit_  them from the parent class\.  This is one of the primary benefits of inheritance\.
 
 Musical Instrument
 
@@ -96,9 +96,9 @@ __Topic: Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-Let’s briefly go back to our drawing example\.
+Let's briefly go back to our drawing example\.
 
-Note that our points are private\.  This is good in case we want to change how we store polygons without breaking the rest of the code base\, but it doesn’t allow us to build other objects from polygon\, like triangles\, rectangles\, etc\.
+Note that our points are private\.  This is good in case we want to change how we store polygons without breaking the rest of the code base\, but it doesn't allow us to build other objects from polygon\, like triangles\, rectangles\, etc\.
 
 To add that functionality…
 
@@ -220,7 +220,7 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
 
 Notice that now we are deriving from Polygon instead of Drawable\.
 
-Because a polygon can already represent a rectangle\, we don’t need any other properties \(we can delete the corners\)\.
+Because a polygon can already represent a rectangle\, we don't need any other properties \(we can delete the corners\)\.
 
 We call the superclasses constrctor with the array of points for the particular 4 sided polygon that this rectangle represents\.
 
@@ -339,7 +339,7 @@ When we subclass\, we get all of the properties of our parent class and can acce
 
 For methods \(i\.e member functions\)\, the same holds true\.  We get the functions in the superclass\.
 
-Sometimes\, we don’t want that\.
+Sometimes\, we don't want that\.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> Rectangle </span>  <span style="color:#569CD6">extends</span>  <span style="color:#D4D4D4"> Polygon\{</span>
 
@@ -381,7 +381,7 @@ __Topic: __  __Classes\-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass\.
 
-Let’s consider that we want to add a getArea method to all of our drawable classes\.  This doesn’t really make sense for Drawable and Line\, but does for the rest\.  The calculation is\, however\, very different\.
+Let's consider that we want to add a getArea method to all of our drawable classes\.  This doesn't really make sense for Drawable and Line\, but does for the rest\.  The calculation is\, however\, very different\.
 
 If we add a default getArea method to our Drawable with the same signature as it has elsewhere in the class hierarchy\, then objects that do not implement getArea\, will inherit the default behavior\, and objects that define the method will get the new behavior
 
@@ -507,8 +507,8 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    \}</span>
 
-* So that’s kinda cool\.  We can build in some default behaviors to our superclasses\, and  _override _ those behaviors in our subclasses if it makes sense\, or just use the superclass implementation if it is sufficient\.
-* Here is an example of an overridden method that calls the parent’s version of the method\, but then adds some functionality of its own\.
+* So that's kinda cool\.  We can build in some default behaviors to our superclasses\, and  _override _ those behaviors in our subclasses if it makes sense\, or just use the superclass implementation if it is sufficient\.
+* Here is an example of an overridden method that calls the parent's version of the method\, but then adds some functionality of its own\.
 * Notice the code  _super\.getDescription_  _\(\)_
 * While we user super\(\) to call the constructor of the superclass\, we can use super\.methodname\(\) to call any method on the superclass even if it is overridden\.
 
@@ -675,7 +675,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 ![](../../images/CISC181-Week%2065.png)
 
 * So with creative use of subclass polymorphism\, we can provide a generic interface to all objects that share a base class\, with a default behavior\.
-* Let’s take a look at what we did last time…
+* Let's take a look at what we did last time…
   * We added a draw method to the Drawable Class
   * We stored our array of shapes in an array of drawables\.
   * Since drawables has a draw method\, this is fine\.
@@ -705,7 +705,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 <span style="color:#D4D4D4">    draw\(</span>  <span style="color:#D4D4D4">page:Page</span>  <span style="color:#D4D4D4">\): void \{   </span>
 
-<span style="color:#D4D4D4">	//Do nothing\, I don’t know how</span>
+<span style="color:#D4D4D4">	//Do nothing\, I don't know how</span>
 
 <span style="color:#D4D4D4">    \}</span>
 
@@ -735,7 +735,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 <span style="color:#D4D4D4">\}</span>
 
-It is safe to call draw on a Drawable object\, it just doesn’t do anything\.
+It is safe to call draw on a Drawable object\, it just doesn't do anything\.
 
 If we call it on a Line object\, it draws the line\.
 
@@ -823,7 +823,7 @@ __Topic: __  __Classes\-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types\.
 
-But what happens when a developer using our class creates an actual Drawable object\.  We built it to act as a superclass for all of the drawable objects\, but it makes no sense to create one on its own\.  It isn’t really drawable since the draw function doesn’t do anything\.  It provides no functionality\, and serves no purpose other than to act as a superclass to our other elements\, hold their color\, and dispatch their draw requests\.
+But what happens when a developer using our class creates an actual Drawable object\.  We built it to act as a superclass for all of the drawable objects\, but it makes no sense to create one on its own\.  It isn't really drawable since the draw function doesn't do anything\.  It provides no functionality\, and serves no purpose other than to act as a superclass to our other elements\, hold their color\, and dispatch their draw requests\.
 
 It would be nice not to be able to prevent a user of our class from accidentally creating and using one of these\.
 
@@ -883,7 +883,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 <span style="color:#D4D4D4">\}</span>
 
-Since we can’t make one of these directly\, we cannot clone it\.  We rely on the implementation in the super class\.
+Since we can't make one of these directly\, we cannot clone it\.  We rely on the implementation in the super class\.
 
 If you derive from an abstract class\, then all abstract members MUST be implemented in the subclass since now there is no default implementation\.
 
@@ -1109,7 +1109,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 <span style="color:#D4D4D4">\}</span>
 
-In general\, you should return the most generic \(i\.e\. superclass\) type possible to make your method generic\.  There are ways to look and see what class we  _actually_  are\, but if we are calling overridden methods that exist in the superclass\, we don’t need to worry about that\.  We just use it\.
+In general\, you should return the most generic \(i\.e\. superclass\) type possible to make your method generic\.  There are ways to look and see what class we  _actually_  are\, but if we are calling overridden methods that exist in the superclass\, we don't need to worry about that\.  We just use it\.
 
 Brute Force Search
 

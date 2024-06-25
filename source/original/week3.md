@@ -56,7 +56,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-* So let’s get started\.  How do we build our first class for Color?
+* So let's get started\.  How do we build our first class for Color?
   * Our class should contain 3 numbers \(Red\, Green\, and Blue\)\.
   * We can define our class as described previously\, since this contains only the primitive type number\.
 
@@ -76,7 +76,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-* So let’s get started\.  How do we build our first class for Color?
+* So let's get started\.  How do we build our first class for Color?
   * Our class should contain 3 numbers \(Red\, Green\, and Blue\)\.
   * We can define our class as described previously\, since this contains only the primitive type number\.
 
@@ -96,7 +96,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-* So let’s get started\.  How do we build our first class for Color?
+* So let's get started\.  How do we build our first class for Color?
 
 //We can use our new class to create a color object:
 
@@ -191,7 +191,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-* But wait\, setting up and initializing the internal members of a class shouldn’t be this hard\.
+* But wait\, setting up and initializing the internal members of a class shouldn't be this hard\.
 
 //We can use our new class to create a
 
@@ -237,7 +237,7 @@ class Color\{
 
 constructor\( __public__  red:number\, __ public__  green:number\, __ public__  blue:number\)\{
 
-//Note we don’t need anything inside\.  This automatically does everything\.
+//Note we don't need anything inside\.  This automatically does everything\.
 
 \}
 
@@ -269,7 +269,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Let’s keep building our drawing program using constructors
+Let's keep building our drawing program using constructors
 
 class Color\{
 
@@ -343,9 +343,9 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-* Ok\, that’s pretty cool\, but what about polygons\.
+* Ok\, that's pretty cool\, but what about polygons\.
   * Generalized polygons have 3 or more points\.
-  * Since we don’t know how many points there are to start with\, we can represent the  _list_  of points using an array\.
+  * Since we don't know how many points there are to start with\, we can represent the  _list_  of points using an array\.
   * Arrays can be members of classes just like any other type\.  Here\, it makes sense to use an array as a collection of points that make up the polygon\.  We will assume that the polygon is closed between the last point and the first point\.
 
 __Review Topic: __  __Data Classes__
@@ -376,7 +376,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-So let’s say we want to represent a red and a blue triangle that touch at one point\.
+So let's say we want to represent a red and a blue triangle that touch at one point\.
 
 let red:Color=new Color\(255\,0\,0\);
 
@@ -440,7 +440,7 @@ Let point2:Point=point;
 | green=0 |
 | blue=0 |
 
-In other words\, we don’t get the object when we use new\, we get a reference to the object\.
+In other words\, we don't get the object when we use new\, we get a reference to the object\.
 
 What do you think would happen if we change point\.x\, and look at point2?
 
@@ -737,5 +737,5 @@ Next\, we will examine more complex objects by adding methods \(functions\) insi
 
 This is the basis of object\-oriented programming\, as a fully developed class becomes a self\-contained object with both data and behaviors\.
 
-Don’t forget the exam next week\.  Good luck to all of you\!\!\!
+Don't forget the exam next week\.  Good luck to all of you\!\!\!
 

@@ -35,7 +35,7 @@ In order to pass the class\, you must pass the last exam of the semester \(there
 
 In order to pass the class\, you must receive a passing grade on the final project\.
 
-Final course grades will be assigned at the discretion of the instructor\.  Automatically assigned grades can be changed at any time at the instructor’s discretion\.
+Final course grades will be assigned at the discretion of the instructor\.  Automatically assigned grades can be changed at any time at the instructor's discretion\.
 
 # Getting help
 
@@ -77,11 +77,11 @@ Procedures for late policy\, requesting extensions\, etc\. go here\.
 
 # Final Thoughts before we begin
 
-Computer Science is hard until it is not\.  Be patient with yourself and get help early if you need it\.  The TA’s and instructors are here to help you learn\, we do not expect you to know it already\.
+Computer Science is hard until it is not\.  Be patient with yourself and get help early if you need it\.  The TA's and instructors are here to help you learn\, we do not expect you to know it already\.
 
 We are not “scary” or a “last resort”\.  Visiting office hours is a normal part of the learning process\.
 
-We will have a discord channel for the course\.  TA’s will monitor the discord channel\, but communication with the instructor should be through email\.  Please be kind and respectful when communicating on Discord\.
+We will have a discord channel for the course\.  TA's will monitor the discord channel\, but communication with the instructor should be through email\.  Please be kind and respectful when communicating on Discord\.
 
 Office hours are blocked so we can be available\.  If you need help outside these times\, just ask the TA or instructor to schedule an appointment\.   __We are here to help\.__
 
@@ -89,7 +89,7 @@ Office hours are blocked so we can be available\.  If you need help outside thes
 
 # But first…
 
-It has been a couple of months since you completed your CS1 course\, so let’s review some concepts from last semester\.
+It has been a couple of months since you completed your CS1 course\, so let's review some concepts from last semester\.
 
 While Python and Typescript \(and many other languages\) are different\, the basic concepts we learned in CS1 are still valid\.
 
@@ -150,7 +150,7 @@ A  _variable_  is a named container for some unknown value\.  We can use variabl
 * But what happens if we do this:
   * x=”hello”
   * y=2x\+4
-* This doesn’t make any sense\.
+* This doesn't make any sense\.
 * To make sure that our code makes sense\, we attach a type to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate\.
 * We do this by declaring the variable and specifying what type of data it can contain\.  Once declared\, we will not be able to assign an inappropriate value type to that variable\.
 
@@ -531,7 +531,7 @@ A Boolean  __expression__  is an expression that evaluates to either  __true__  
   * Unlike the other operator\, this operator simply negates whatever comes next\.
     * \!A && B  // true when A is false and B is true
     * \!\(A && B\) // true when at least one of A and B are false
-    * \!A || \!B // true when at least one of A and B are false \(DeMorgan’s Law\)
+    * \!A || \!B // true when at least one of A and B are false \(DeMorgan's Law\)
     * \!\(A && B\) || C // true when at least one of A and B are false or any time C is true
 * By using a combination of comparison operators\, logical connectors\, and nots we can build complex logic to test state to use in conditionals and loops…
 

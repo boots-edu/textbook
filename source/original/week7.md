@@ -180,7 +180,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 <span style="color:#D4D4D4">\}</span>
 
-In general\, you should return the most generic \(i\.e\. superclass\) type possible to make your method generic\.  There are ways to look and see what class we  _actually_  are\, but if we are calling overridden methods that exist in the superclass\, we don’t need to worry about that\.  We just use it\.
+In general\, you should return the most generic \(i\.e\. superclass\) type possible to make your method generic\.  There are ways to look and see what class we  _actually_  are\, but if we are calling overridden methods that exist in the superclass\, we don't need to worry about that\.  We just use it\.
 
 Brute Force Search
 
@@ -282,7 +282,7 @@ __Topic: Exceptions__
 
 _An Exception _ is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time\.
 
-Interesting\, but what’s the point\.  Let’s consider the code for our drawing program again\.
+Interesting\, but what's the point\.  Let's consider the code for our drawing program again\.
 
 Valid color values in our program are numbers between 0 and 255\.  What happens if we try to create a color with different values?
 
@@ -328,7 +328,7 @@ __Topic: Exceptions__
 
 _An Exception _ is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time\.
 
-* Interesting\, but what’s the point\.  Let’s consider the code for our drawing program again\.
+* Interesting\, but what's the point\.  Let's consider the code for our drawing program again\.
 * Valid color values in our program are numbers between 0 and 255\.  What happens if we try to create a color with different values?
   * The code will allow these non\-sensical values to be stored in red\, green and blue\.
   * We would like to prevent this\.
@@ -411,7 +411,7 @@ It will be up to the code that is creating the color object to “handle” the 
 
 <span style="color:#D4D4D4">\}</span>
 
-Now we can’t create a color object with invalid values\.  If we try\, the Color class will raise an exception to notify the calling code that something bad happened\.
+Now we can't create a color object with invalid values\.  If we try\, the Color class will raise an exception to notify the calling code that something bad happened\.
 
 __Topic: Exceptions__
 
@@ -491,7 +491,7 @@ __Topic: Exceptions__
 
 _An Exception _ is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time\.
 
-Exceptions are useful during programming even if we don’t handle them\.
+Exceptions are useful during programming even if we don't handle them\.
 
 If you throw an exception every time the inputs to your method are wrong\, or some other kind of error occurs\, and you have good tests\, you will see those errors and be able to fix them\.
 
@@ -559,7 +559,7 @@ _An Exception _ is the process of responding to the occurrence of exceptions –
 
 Now\, if I try to create a polygon with less than 3 or more than 10 points\, an exception is thrown\.  If not\, then program execution continues normally\.
 
-If we don’t handle this exception\, the program will terminate \(letting us know to either handle the exception\, or fix thecalling code to prevent it\.
+If we don't handle this exception\, the program will terminate \(letting us know to either handle the exception\, or fix thecalling code to prevent it\.
 
 <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> MAX\_POINTS = </span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">;</span>
 
@@ -813,7 +813,7 @@ _An Exception _ is the process of responding to the occurrence of exceptions –
 
 A note about finally\.  In this code it is not necessary since the code continues after the try/catch either way\, so we can remove it and just let the program continue with creating the line\.
 
-There are many use cases where we don’t need a finally block\, but there are some where we do\.
+There are many use cases where we don't need a finally block\, but there are some where we do\.
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> color: Color;</span>
 
@@ -913,7 +913,7 @@ Producing well documented\, high quality\, efficient and readable code is always
 * Why comments?
   * Helps others \(and yourself\) use your code without having to read it\.  Informs user of everything they need to know to use your method or class\.
   * If in the correct format\, can automatically produce documentation\.
-  * If in the correct format\, can be read by IDE’s like vscode\.
+  * If in the correct format\, can be read by IDE's like vscode\.
 * Why naming matters?
   * If we do need to revisit our code \(and we will\)\, having well named variables and methods makes figuring out what the code is doing internally much easier\.
   * Our classes will be easier to use if our public interface uses names that make sense given the purpose of the thing we are referencing\.
@@ -994,11 +994,11 @@ __Topic: Comments__
 
 Producing well documented\, high quality\, efficient and readable code is always the goal in software development\.
 
-* Let’s comment the constructor
+* Let's comment the constructor
   * We see the parameters and their types and description\.
   * What exceptions to expect
-  * It’s side effects
-  * It’s parent class
+  * It's side effects
+  * It's parent class
   * It is a constructor
   * An example of how to call it\.
 
@@ -1041,8 +1041,8 @@ Producing well documented\, high quality\, efficient and readable code is always
 * And our polygon
   * We see the parameters and their types and description\.
   * The return values
-  * It’s side effects
-  * It’s parent class
+  * It's side effects
+  * It's parent class
   * It is a function
   * An example of how to call it\.
 
@@ -1127,7 +1127,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
   * Now it is clear what this class represents\.
   * It is clear what the meaning of the parameters are
   * It is clear why this class exists and when we would use it\.
-  * It’s not that hard to do it right\.
+  * It's not that hard to do it right\.
 
 <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> A \{</span>
 
@@ -1265,14 +1265,14 @@ Naming elements in a way that we can tell what type of thing/data the element is
 <span style="color:#D4D4D4">\}</span>
 
 * What about now?
-  * It’s clear what the class represents
-  * It’s clear what toString does
-  * It’s clear what add does
-  * It’s clear what this is for\.
+  * It's clear what the class represents
+  * It's clear what toString does
+  * It's clear what add does
+  * It's clear what this is for\.
 
 __Topic: General Code Quality__
 
-Programmers should always try to create efficient\, readable\, and maintainable code\.  It’s not that hard to do it right\.
+Programmers should always try to create efficient\, readable\, and maintainable code\.  It's not that hard to do it right\.
 
 ![](../../images/CISC181-Week%2074.jpg)
 
@@ -1280,7 +1280,7 @@ In addition to good comments and names\, it is important to write code that is e
 
 __Topic: General Code Quality__
 
-Programmers should always try to create efficient\, readable\, and maintainable code\.  It’s not that hard to do it right\.
+Programmers should always try to create efficient\, readable\, and maintainable code\.  It's not that hard to do it right\.
 
 Good formatting\, indenting\, and consistency of style are important to maintaining a large code base\.  Many organizations will dictate these types of things\.
 

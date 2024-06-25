@@ -8,7 +8,7 @@ Spring 2024
     * There is a lab assignment this week so you should attend lab as normal\.
     * Next week is the second midterm\, make sure you are signed up and ready\.
       * Your note sheet must be hand written \(not typed\)
-      * Please review the rules for the testing center to make sure you don’t have any problems\.
+      * Please review the rules for the testing center to make sure you don't have any problems\.
 * And now\, back to our show\!\!\!
 
 ![](../../images/CISC181-Week%2080.jpg)
@@ -38,12 +38,12 @@ __Topic: Testing__
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
 * Software bugs can be expensive\, but they can also be very dangerous\.  Here are a few examples of software bugs causing terrible outcomes:
-  * 1985: Canada’s Therac\-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients\.
+  * 1985: Canada's Therac\-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients\.
   * 1994: China Airlines Airbus A300 crashed due to a software bug killing 264 people\.
   * 1999: A software bug caused the failure of a $1\.2 billion military satellite launch\.
   * 2015: A software bug in an F\-35 resulted in it being unable to detect targets correctly\.
   * Starbucks was forced to close more than 60% of its outlet in the U\.S\. and Canada due to a software failure in its POS system\.
-  * Nissan cars were forced to recall 1 million cars from the market due to a software failure in the car’s airbag sensory detectors\.
+  * Nissan cars were forced to recall 1 million cars from the market due to a software failure in the car's airbag sensory detectors\.
 
 __Topic: Testing__
 
@@ -62,8 +62,8 @@ _Software Testing_  is the process of validating that software is bug free and m
 * Testing levels
   * Unit testing: Test small independent components for correct behavior\.  The purpose is to validate that each unit of the software performs as designed\.
   * Integration testing: Combining units and testing as a group\.  The purpose of this level of testing is to expose faults in the interaction between integrated units\.
-  * System testing: Tests of the completed system\. The purpose of this test is to evaluate the system’s compliance with the specified requirements\.
-  * Acceptance testing: Test to ensure compliance with the requirements specification\. The purpose of this test is to evaluate the system’s compliance with the business requirements and assess whether it is acceptable for delivery\.
+  * System testing: Tests of the completed system\. The purpose of this test is to evaluate the system's compliance with the specified requirements\.
+  * Acceptance testing: Test to ensure compliance with the requirements specification\. The purpose of this test is to evaluate the system's compliance with the business requirements and assess whether it is acceptable for delivery\.
 
 __Topic: Testing__
 
@@ -73,7 +73,7 @@ _Software Testing_  is the process of validating that software is bug free and m
   * Test continuously throughout the development process\.
   * Make tests small and include many to make finding issues easier
   * Use tools to evaluate things like code coverage to ensure thorough testing
-  * Don’t skip regression testing\.
+  * Don't skip regression testing\.
 
 __Topic: Testing__
 
@@ -122,7 +122,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-Let’s look at an example:  Consider the following code:
+Let's look at an example:  Consider the following code:
 
 <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">valueArray:number</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 
@@ -191,7 +191,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-Let’s look at another example:  Consider the following code:
+Let's look at another example:  Consider the following code:
 
 Can I construct one of these?
 
@@ -231,7 +231,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Let’s look at another example:  Consider the following code:
+* Let's look at another example:  Consider the following code:
 * Can I construct one of these?
   * Call the constructor and verify
 * Does it work normally?
@@ -271,7 +271,7 @@ __Topic: Using Jest__
 
 _Jest _ is a test runner and testing framework that works with javascript and Typescript
 
-* To create tests in a project that is already configured for jest\, we create files with the word ‘test’ in their filename \(i\.e\. myprogram\.test\.ts\)
+* To create tests in a project that is already configured for jest\, we create files with the word ‘test' in their filename \(i\.e\. myprogram\.test\.ts\)
   * Note: This can be changed\, but our projects will be pre\-configured to work this way\.
 * Running jest on the command line by itself within the project folder will run tests in all properly named files\.
 * Running jest on the command line with the name of the file \(without the test\.ts\) will run tests in only that file\.
@@ -292,7 +292,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-Back to our example\, let’s look at what we want to do for each of these:
+Back to our example\, let's look at what we want to do for each of these:
 
 We will start with a describe block forthe Elements class:
 
@@ -332,7 +332,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Back to our example\, let’s look at what we want to do for each of these:
+* Back to our example\, let's look at what we want to do for each of these:
 * Can I construct one of these?
   * We add a test block to call the constructor and verify
 
@@ -378,7 +378,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Back to our example\, let’s look at what we want to do for each of these:
+* Back to our example\, let's look at what we want to do for each of these:
 * Does it work normally?
   * Create a test block to populate with some items and try
 
@@ -434,7 +434,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Back to our example\, let’s look at what we want to do for each of these:
+* Back to our example\, let's look at what we want to do for each of these:
 * What happens if the array is empty?
   * Create a test to ensure array is empty and try
 
@@ -480,10 +480,10 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Back to our example\, let’s look at what we want to do for each of these:
+* Back to our example\, let's look at what we want to do for each of these:
 * What happens if the array is empty?
   * Create a test to ensure array is empty and try
-* This fails because we don’t throw an exception and neither does pop\.
+* This fails because we don't throw an exception and neither does pop\.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> Elements \{</span>
 
@@ -527,7 +527,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-Back to our example\, let’s look at what we want to do for each of these:
+Back to our example\, let's look at what we want to do for each of these:
 
 We can fix this\, by modifying our code\,or our test\, but either way we need todocument the behavior\.
 
@@ -579,7 +579,7 @@ __Topic: Testing__
 
 _Software Testing_  is the process of validating that software is bug free and meets requirements\.
 
-* Back to our example\, let’s look at what we want to do for each of these:
+* Back to our example\, let's look at what we want to do for each of these:
 * What happens if the array has only oneelement in it?
   * Populate with 1 item and try
 
@@ -726,7 +726,7 @@ __Topic: Using Jest__
 _Jest _ is a test runner and testing framework that works with javascript and Typescript
 
 * Coverage is important when writing tests
-  * While you should not specifically write tests to coverage\, since those tests will not cover all possible inputs\, you should make sure that your tests actually cover your code\.  Let’s look at our example again\, from a coverage standpoint
+  * While you should not specifically write tests to coverage\, since those tests will not cover all possible inputs\, you should make sure that your tests actually cover your code\.  Let's look at our example again\, from a coverage standpoint
 * Running: jest –coverage will produce a shortened coverage report like this:
 
 <span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
@@ -755,7 +755,7 @@ __Topic: Using Jest__
 
 _Jest _ is a test runner and testing framework that works with javascript and Typescript
 
-* If we add \-\-coverageDirectory=‘\./coverage’ to our jest command with –coverage\, we still get the same information\, but we also get a website with detailed info including source links\.
+* If we add \-\-coverageDirectory=‘\./coverage' to our jest command with –coverage\, we still get the same information\, but we also get a website with detailed info including source links\.
 * You can see an example here: [https://gsilber\.github\.io/WebEZ/cover/lcov\-report/](https://gsilber.github.io/WebEZ/cover/lcov-report/)
   * Note this example may go away in the future\, it is just temporary for today\.
 

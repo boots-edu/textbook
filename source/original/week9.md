@@ -8,9 +8,9 @@ __Topic: Basic Web Development__
 * First some stuff you might already know\, but is good to know:
   * The internet is the network over which many protocols can be transmitted \(like email\, IM\, www\, etc\)\.
   * DNS \(Domain Name Service\) is a distributed database that maps names to network addresses \(e\.g\. [udel\.edu](http://www.udel.edu/) => 128\.175\.13\.247\)
-  * One of the protocols the internet supports is Hyper Text Transport Protocol \(http\) or it’s secure cousin \(https\)\.
+  * One of the protocols the internet supports is Hyper Text Transport Protocol \(http\) or it's secure cousin \(https\)\.
   * Over this protocol\, we send regular text files\, that contain a specialized language called HyperText Markup Language \(html\) that tells a web browser reading the file how to render the page\.
-  * That’s right\, the web is basically just a bunch of text files \(and a lot of cat videos\)\.
+  * That's right\, the web is basically just a bunch of text files \(and a lot of cat videos\)\.
 
 __Topic: Basic Web Development__
 
@@ -21,7 +21,7 @@ __Topic: Basic Web Development__
   * <br/> \(has no body\, so no closing tag
 * These tags can be nested inside of each other
   * \<span>Hello \<button>Click\</button></br>\<span>World\</span>
-* If a tag is inside another tag\, it can be affected by the parent’s size\, position\, and style\.
+* If a tag is inside another tag\, it can be affected by the parent's size\, position\, and style\.
 
 __Topic: Basic Web Development__
 
@@ -32,7 +32,7 @@ __Topic: Basic Web Development__
   * <br/> \(has no body\, so no closing tag
 * These tags can be nested inside of each other
   * \<span>Hello \<button>Click\</button></br>\<span>World\</span>
-* If a tag is inside another tag\, it can be affected by the parent’s size\, position\, and style\.
+* If a tag is inside another tag\, it can be affected by the parent's size\, position\, and style\.
 
 __Topic: Basic Web Development__  __HTML__
 
@@ -44,7 +44,7 @@ __Topic: Basic Web Development__  __HTML__
   * __\<input type=“radio” /> __ : A radio button
   * __\<input type=“checkbox” /> __ : A checkbox
   * __\<button>Button Text\</button>__
-  * __\<span>\</span>__  : An enclosing element that doesn’t do much but can be styled\.
+  * __\<span>\</span>__  : An enclosing element that doesn't do much but can be styled\.
   * __\<select>\<option>1\</option>\<option>2\</option>\</select>__  : A drop down
 
 __Topic: Basic Web Development__  __HTML__
@@ -177,7 +177,7 @@ Makes things a lot easier\.
 
 __Topic: Basic Web Development__  __HTML__
 
-* So that’s pretty cool\, but websites are supposed to look good too\.
+* So that's pretty cool\, but websites are supposed to look good too\.
 * Styling our elements allows us to alter colors\, shapes\, behaviors\, appearance\, and placement\.
 * There are basically a few ways to style:
   * Style a tag:  Note: This styles all tags of that type\, so should not be used
@@ -212,7 +212,7 @@ __Topic: Basic Web Development__  __HTML__
 
 Here is our example\, with id and class tags added
 
-First let’s style the div\.  It has an id\, so we will style it by id\.
+First let's style the div\.  It has an id\, so we will style it by id\.
 
 To reference an id in a style\, we put a \# in front\.
 
@@ -292,7 +292,7 @@ __Topic: Basic Web Development__  __HTML – Box Positioning__
 
 * As part of styling\, we have a few very important styles we will use constantly\.
   * position: This sets how the element is positioned within its parent\.
-    * relative: The most common\.  It doesn’t affect the object it is applied to\, but it causes everything inside to be positioned relative to the object to which it is applied\.  By default\, everything is page relative \(ignores the parent\) unless this is set\.
+    * relative: The most common\.  It doesn't affect the object it is applied to\, but it causes everything inside to be positioned relative to the object to which it is applied\.  By default\, everything is page relative \(ignores the parent\) unless this is set\.
     * absolute: Positions the object outside the normal model\.  This object has no affect on other objects \(i\.e\. next object could be at the same position\)\.
     * fixed: Positioned relative to the window\.  It stays there\.
     * sticky: Positioned with a scrolling window\, stays in position relative to the scroll position\.
@@ -307,7 +307,7 @@ __Topic: Basic Web Development__  __HTML – Box Positioning__
 
 __Topic: Basic Web Development__  __WebEz__
 
-Once we have some html\, we would like it to do something\.  That’s where the typescript comes in\.
+Once we have some html\, we would like it to do something\.  That's where the typescript comes in\.
 
 You can create a web application without a framework\, but it can be difficult and requires a deeper knowledge of how a web browser works\.
 
@@ -327,7 +327,7 @@ The html is plain html\.
 
 The css is plain css\.
 
-The ts file uses decorators to attach methods and properties of the class to the html by the element’s id attribute \(I told you we would need it later\)\.
+The ts file uses decorators to attach methods and properties of the class to the html by the element's id attribute \(I told you we would need it later\)\.
 
 The finished product is compiled into a website that can be published on any web server\.
 
@@ -365,7 +365,7 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 Here you can see the structure created for us\.  This does not attach the component to anything\, it just creates the files for us\.
 
-To add the fancy\-image somewhere inside main\-component\, we edit main component’s files\.
+To add the fancy\-image somewhere inside main\-component\, we edit main component's files\.
 
 The div image\-holder is where we attach our component\.  We have also added two buttons which we can use to control our fancy image component\.
 
@@ -397,7 +397,7 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 Now we will add the html and css for the fancy\-image component\.  We will also put two images img1\.jpg and img2\.jpg into the assets folder\.
 
-And let’s bind the src attribute of the image to a variable in the \.ts file\.
+And let's bind the src attribute of the image to a variable in the \.ts file\.
 
 Here we just create aproperty\, give it a defaultvalue\, and use a  _bind_  _decorator_  to attach it to the html element that we have already defined\.  This will cause the src attribute of the img tag to contain the string \(and display a cat\)\.
 
@@ -450,7 +450,7 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-* So let’s look at how to do this back in MainComponent\.
+* So let's look at how to do this back in MainComponent\.
   * If we are at the first image\, disable the previous button\.
   * If we are at the second image\, disable the next button\.
   * If next is pushed increment the image number
@@ -493,7 +493,7 @@ If we are at the end\, we disable the next button
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-* So let’s look at how to do this back in MainComponent\.
+* So let's look at how to do this back in MainComponent\.
   * If we are at the first image\, disable the previous button\.
   * If we are at the second image\, disable the next button\.
   * If prev is pushed decrement the image number
@@ -550,7 +550,7 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 ![](../../images/CISC181-Week%20925.png)
 
-There really isn’t much more to it\.  Bind decorators connect properties to elements\.  If we change the property\, the element changes \(NOT THE OTHER WAY AROUND\)\.
+There really isn't much more to it\.  Bind decorators connect properties to elements\.  If we change the property\, the element changes \(NOT THE OTHER WAY AROUND\)\.
 
 Event Decorators capture events from the web page allowing us to react to those events\.  These are decorators like @Click\(…\)
 

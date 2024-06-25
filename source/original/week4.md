@@ -17,7 +17,7 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Let’s return to our drawing program and take a look at some of our classes again\.
+Let's return to our drawing program and take a look at some of our classes again\.
 
 class Color\{
 
@@ -73,7 +73,7 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Note that we don’t need to know how the line is represented to use this method\.  If we have a line and want it’s length\, we simply call the getLength method\.
+Note that we don't need to know how the line is represented to use this method\.  If we have a line and want it's length\, we simply call the getLength method\.
 
 let myLine:Line=new Line\(pt1\,pt2\,c1\);
 
@@ -115,7 +115,7 @@ __Asside__  __: Default Values__
 
 Any method or function can provide default values for its parameters in the function signature\.
 
-Let’s modify our color class so that it has defaults if we don’t want to specify the red\, green and blue values at construction\.
+Let's modify our color class so that it has defaults if we don't want to specify the red\, green and blue values at construction\.
 
 Now we can create a color object with these default values:
 
@@ -282,13 +282,13 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Now let’s return to our rectangle class:
+Now let's return to our rectangle class:
 
 We made all of the member variables \(properties\) public for simplicity\, but now we cannot change the internal representation\.
 
 Making members private  _hides_  them from everything outside the class making them inaccessible\.
 
-Let’s rewrite this class making our point members private\.
+Let's rewrite this class making our point members private\.
 
 class Rectangle\{
 
@@ -302,7 +302,7 @@ __Classes__  allow us to combine data and methods into a grouping or  _class_  a
 
 So now\, nothing changes except we cannot access corner1 and corner2 outside our class\, but our methods \(diagonal\, area\, perimeter\) that we wrote in our class exercise are fine because they are  _inside_  the class\.
 
-We can still create a rectangle and call our methods on it\, we just can’t get the corners any more\.
+We can still create a rectangle and call our methods on it\, we just can't get the corners any more\.
 
 If we really need them\, we can write methods to get them or change them\.
 
@@ -331,7 +331,7 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Let’s add properties to our class for the missing corners\, and set them in the constructor\.
+Let's add properties to our class for the missing corners\, and set them in the constructor\.
 
 Nothing is changed in how you create instances of this class\, but now we have all 4 points stored\.  Now we could add a rotate method if we choose\.
 
@@ -355,7 +355,7 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Let’s add properties to our class for the missing corners\, and set them in the constructor\.
+Let's add properties to our class for the missing corners\, and set them in the constructor\.
 
 We can also simplify all of our other methods to take advantage of the fact that these other points are now properties of our class\.
 
@@ -425,7 +425,7 @@ __Topic: __  __Classes\-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs\.
 
-Our Point class is more problematic\, since it contains a reference to a color object\, we can’t just copy it\.  Luckily\, our color class already has a clone method we can use\.
+Our Point class is more problematic\, since it contains a reference to a color object\, we can't just copy it\.  Luckily\, our color class already has a clone method we can use\.
 
 Note\, if we passed the color\, we would get a reference to the same color object\, but by calling its clone method\, we get a new one \(since we wrote it that way\)\.
 
@@ -509,7 +509,7 @@ let newPoints:Point\[\]=\[\];  //initialize a new empty array\.
 
 for \(let point of this\.points\)\{
 
-newPoints\.push\(this\.point\.clone\(\)\);  //don’t push the point\, push a clone of it\.
+newPoints\.push\(this\.point\.clone\(\)\);  //don't push the point\, push a clone of it\.
 
 \}
 

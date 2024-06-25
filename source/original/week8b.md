@@ -94,7 +94,7 @@ A function that is declared with no name is an  _anonymous function\._
 
 We have already seen this in our jest testsin both the describe method and the testmethod\.
 
-Let’s take a closer look at the secondparameter to the describe and testmethods\.
+Let's take a closer look at the secondparameter to the describe and testmethods\.
 
 __Topic: Anonymous Functions__
 
@@ -122,7 +122,7 @@ A function that is declared with no name is an  _anonymous function\._
 
 We have already seen this in our jest testsin both the describe method and the testmethod\.
 
-Let’s take a closer look at the secondparameter to the describe method\.
+Let's take a closer look at the secondparameter to the describe method\.
 
 This parameter is an  _anonymous function_
 
@@ -194,7 +194,7 @@ __Topic: Anonymous Functions__
 
 A function that is declared with no name is an  _anonymous function\._
 
-Let’s look at the overall structure of an anonymous function:
+Let's look at the overall structure of an anonymous function:
 
 \( <span style="color:#C00000">param1:type\,param2:type\,…\,</span>  <span style="color:#C00000">paramN:type</span> \):retType  <span style="color:#0000FF">=></span>   <span style="color:#00B0F0">\{//function body\}</span>
 
@@ -234,7 +234,7 @@ A function that is declared with no name is an  _anonymous function\._
 
 <span style="color:#CCCCCC">\}</span>
 
-* Let’s look at an example of removingnegative values from a list\.
+* Let's look at an example of removingnegative values from a list\.
   * We already know how to do thiswith a for loop\.
   * We can iterate through the list\,adding non\-negative numbers to anew list\, which we then return\.
 * There is another way to accomplish this using the typescript Array\.filter method
@@ -271,7 +271,7 @@ Now the anonymous function is:
 
 This gives a clean concise way to pass around simple methods without naming them\.
 
-But wait\, there’s more\.
+But wait\, there's more\.
 
 <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">\,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">\,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">\,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">\,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
 

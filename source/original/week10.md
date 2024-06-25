@@ -59,15 +59,15 @@ __Note: You can only use these on a class derived from __  __EzComponent__  __\.
 __Topic: Advanced __  __WebEz__  __Dynamic components__
 
 * So far\, we have looked at well defined html documents where we know the number and type of elements that our page will contain when we build the application\.
-* Sometimes\, we don’t\.
+* Sometimes\, we don't\.
   * A task list \(see WebEz\-Example in the WebEz Repository\)
   * Point of sale \(multiple items\)
-* We can dynamically add components to our page with addComponent\.  So far we have only done this in the constructor\, but that doesn’t mean we can’t do it elsewhere\.
-* Let’s look at a simple data input screen for a point of sale system to see how this type of functionality works\.
+* We can dynamically add components to our page with addComponent\.  So far we have only done this in the constructor\, but that doesn't mean we can't do it elsewhere\.
+* Let's look at a simple data input screen for a point of sale system to see how this type of functionality works\.
 
 __Topic: Advanced __  __WebEz__  __Dynamic components__
 
-* Let’s start with some simple html
+* Let's start with some simple html
   * Some inputs that always appear
   * Some buttons that always appear
   * A counter that is always on the page\.
@@ -169,7 +169,7 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
 * So what do we do inside the click handlers?  Assume we have created components for one line item or one line comment already using the cli\.
   * Create the correct type of child component \(info or comment\) and store it somewhere so we can reference it later\.
   * Add it to our orderDetails div so they show up in order created where we want them\.
-  * Increment the counter if it’s an item
+  * Increment the counter if it's an item
 
 <span style="color:#D4D4D4">    items: </span>  <span style="color:#D4D4D4">LineItemComponent</span>  <span style="color:#D4D4D4">\[\] = \[\];</span>
 
@@ -239,7 +239,7 @@ __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between co
 
 * We will talk about generics in detail later\, but we need a basic understanding in order to use EventSubject\.
 * EventSubject is a  _Generic Class_  in that we can change the internal type of the class by specifying what type of event object the EventSubject emits\.
-* First\, let’s look at the EventSubject class that we will be using:
+* First\, let's look at the EventSubject class that we will be using:
   * It has a method next\(data\) that fires the event \(usually called in the child component\)
   * It has a method subscribe\(\(data\)=>void\) that attaches a function to the event when it is called\.
 * What type of object is data?  Because EventSubject is  _Generic_  we get to choose\.
@@ -296,7 +296,7 @@ The type parameter specifies the type expected for the next method\.  Using the 
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Let’s look at these two methods
+Let's look at these two methods
 
 We call next to ask the EventSubject to emit our data \(call any subscribed methods\)\.
 
@@ -308,7 +308,7 @@ next\(data:T\):void
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Let’s look at these two methods
+Let's look at these two methods
 
 When the child calls next\, the method passed in the first parameter is called\.  When the error method of the EventSubject is called\, the function in the second parameter is called\.
 
@@ -319,7 +319,7 @@ __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between co
 * In the parent\, we can call subscribe to attach an  _anonymous function _ that will run each time the child calls next and optionally\, another to hand when the child calls error\.
 * event2\.next\(4\) called in the child would print 5 from the parent\.
 * Event2\.error\(new Error\(“Bad stuff”\)\) would print the error object as an error from the parent\.
-  * Note: This second parameter is optional if you don’t want error notifications\.
+  * Note: This second parameter is optional if you don't want error notifications\.
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">\.event2\.subscribe\(</span>
 
@@ -339,7 +339,7 @@ __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between co
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Let’s apply this to our LineCommentComponent\.  First we need to define it:
+Let's apply this to our LineCommentComponent\.  First we need to define it:
 
 Keeping it simple\, we are just gettingthe input event from the text input box and calling a method\.
 
@@ -379,9 +379,9 @@ Keeping it simple\, we are just gettingthe input event from the text input box a
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Now let’s add an EventSubject that emits a string:
+Now let's add an EventSubject that emits a string:
 
-And that’s it\, our child class snow emits to its subscriptions whenever the user types and this will happen for  _each_  line comment we create\.
+And that's it\, our child class snow emits to its subscriptions whenever the user types and this will happen for  _each_  line comment we create\.
 
 We would do something similar for each of the fields in a line item\.
 
@@ -411,7 +411,7 @@ The method now calls  _next_  with the new value\.
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Back in our parent class\, let’s subscribe to that event when we create the child so that we are notified about changes to each comment\.
+Back in our parent class\, let's subscribe to that event when we create the child so that we are notified about changes to each comment\.
 
 Since we never threw an error\, we did not bother with a method to handle the error\.  Now each time the user types in any of the input boxes for comments\, the value will be logged by the parent\.
 
@@ -437,7 +437,7 @@ Since we never threw an error\, we did not bother with a method to handle the er
 
 __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between components\.__
 
-Now that we have the value in the parent\, we can store it\.  Let’s create an array to hold comments and a counter to keep track of how many we have\.
+Now that we have the value in the parent\, we can store it\.  Let's create an array to hold comments and a counter to keep track of how many we have\.
 
 Now we can push a new empty string onto our new array when we create the comment and update it in our subscribe callback\.
 
@@ -481,7 +481,7 @@ As we type in the child component\, it catches the Input event and emits the cur
 
 Each time the EventSubject emits a value\, we update the appropriate element in our value array\.
 
-Now we don’t even need to think about what is going on in the child in order to get the values from them\.
+Now we don't even need to think about what is going on in the child in order to get the values from them\.
 
 We could do this by querying each child component for its value when we need it\, but this is a much nicer solution and gives us real time updates in the parent class\.
 
@@ -512,7 +512,7 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
 __EzDialog\.popup__  __\(__  __attachTo__  __: __  __EzComponent__  __\, message: string\, title?: string\, __  __    buttons?: string\[\]\, __  __btnClass__  __?: string\):__  __EventSubject__  __\<string>__
 
-* Let’s examine this in detail:
+* Let's examine this in detail:
   * attachTo \(required\): is the component that you want to attach the element to\.  Usually you will pass in  _this_  to specify the current component\.
   * Message \(required\): The text inside the popup
   * Title \(optional\): The title for your popup\, displayed at the top\.
@@ -634,7 +634,7 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 * First we need to create a variable to hold our dialog:
 * We can then hide it and add it to the component:
   * Note\, if you want it to display immediately\, then you can call show with true _this\.dialog\.show_  _\(true\);_
-* Whenever we want to show the dialog\, we just pass true to it’s show method
+* Whenever we want to show the dialog\, we just pass true to it's show method
 * If we want to get an event to subscribe to when the window is closed\, or something happens in the dialog\, we can implement our on EventSubjects and subscribe to them in the parent\.
 
 <span style="color:#D4D4D4">    dialog: </span>  <span style="color:#D4D4D4">MyDialog</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">MyDialog</span>  <span style="color:#D4D4D4">\(\);</span>

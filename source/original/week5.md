@@ -61,7 +61,7 @@ __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-Suppose I have a class Users that represents a system user on UD’s central IT system\.
+Suppose I have a class Users that represents a system user on UD's central IT system\.
 
 This class has private properties name and age\, and two functions to retrieve the values in these properties\.
 
@@ -131,7 +131,7 @@ __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-* Ok\, that’s cool\, but there are a lot of things that are unique to being a student\.
+* Ok\, that's cool\, but there are a lot of things that are unique to being a student\.
   * Students have a gradTerm and agpa\.  They are still users\, but they are a  _type of_  user\.
   * Teachers have a department\, an office\, and a list of classes they teach\.  Again\, they are still a  _type of_  user\.
 
@@ -217,7 +217,7 @@ __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-* We can call the superclass’ constructor within our constructor by calling the  _super\(\) _ method\.  This will take the same arguments as the constructor of the superclass\.
+* We can call the superclass' constructor within our constructor by calling the  _super\(\) _ method\.  This will take the same arguments as the constructor of the superclass\.
   * Here those arguments are name and age\.
   * This calls the constructor in Users which takes care of its part of the initialization\.
 
@@ -288,7 +288,7 @@ __Topic: __  __Classes\-Inheritance__
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
 * So hopefully this makes sense\.
-  * When a concept contains another concept \(a point has a color\)\, then we use  _composition_  and add the second concept’s class as a property of the first\.
+  * When a concept contains another concept \(a point has a color\)\, then we use  _composition_  and add the second concept's class as a property of the first\.
     * Color is a property of Point
   * When a concept is a type of some other concept\, or is that other concept \(a student is a type of user\, so is a teacher\)\, then we user __ __  _inheritance _ to  _extend_  the other concept\, adding additional properties and methods\.
     * A teacher extends the concept of User
@@ -315,20 +315,20 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
   * They both have ages \(although Teacher\.age > Student\.age
 * They also have some differences:
   * Students have a GPA and a gradTerm
-  * Teachers have a department\, office\, list of classes\, and don’t show up on photographic film\.
+  * Teachers have a department\, office\, list of classes\, and don't show up on photographic film\.
 * We encapsulate their commonality in the Users class\, then extend Users to make new classes that express the differences\.
 
 __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-So let’s get back to our drawing program\.  Is there something most of our objects have in common?
+So let's get back to our drawing program\.  Is there something most of our objects have in common?
 
 __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-* So let’s get back to our drawing program\.  Is there something most of our objects have in common?
+* So let's get back to our drawing program\.  Is there something most of our objects have in common?
   * All of the drawing objects \(Point\, Line\, Rectangle\, Polygon\) have a Color component\.
   * If we create a class with just a color component\, we could share that definition in all our drawing classes by extending it\.
 * What should we call our new class?
@@ -337,7 +337,7 @@ __Topic: __  __Classes\-Inheritance__
 
 Using  __Inheritance\,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type\.
 
-* So let’s get back to our drawing program\.  Is there something most of our objects have in common?
+* So let's get back to our drawing program\.  Is there something most of our objects have in common?
   * All of the drawing objects \(Point\, Line\, Rectangle\, Polygon\) have a Color component\.
   * If we create a class with just a color component\, we could share that definition in all our drawing classes by extending it\.
 * What should we call our new class?
@@ -378,7 +378,7 @@ Our point class inherits color from the Drawable class\.
 
 Our Point constructor calls the constructor for our Drawable class and passes it the color so it can do its initialization \(all drawables have a color\)\.
 
-Notice\, that the public interface is unchanged\, but we don’t have to worry about the color\, the drawable does\.
+Notice\, that the public interface is unchanged\, but we don't have to worry about the color\, the drawable does\.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> Point </span>  <span style="color:#569CD6">extends</span>  <span style="color:#D4D4D4"> Drawable \{</span>
 
@@ -549,7 +549,7 @@ The point of inheritance is to capture these types of relationships\.
 
 Be careful that the relationship you are capturing is a  _type of _ relationship as many inexperienced programmers overuse  _inheritance_ \, where the relationship really calls for  _composition\._
 
-_A point is not a type of color\, so we don’t derive point from color\._
+_A point is not a type of color\, so we don't derive point from color\._
 
 _An undergraduate is a type of student\._
 
@@ -561,7 +561,7 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
   * Divide into pairs so you can work together\.
   * Here is a link to the project so you can create your own repository:
     * [https://classroom\.github\.com/a/x0PXgY0z](https://classroom.github.com/a/x0PXgY0z)
-  * Let’s first take a minute and look at the code changes\.  These have been updated to line up with this week’s lectures and material \(and modified a bit to get ready for what comes next\)\.
+  * Let's first take a minute and look at the code changes\.  These have been updated to line up with this week's lectures and material \(and modified a bit to get ready for what comes next\)\.
 
 ![](../../images/CISC181-Week%2052.png)
 
@@ -573,7 +573,7 @@ Using  __Inheritance\,__  we can build complex hierarchies of objects in order t
   * Divide into pairs so you can work together\.
   * Here is a link to the project so you can create your own repository:
     * [https://classroom\.github\.com/a/x0PXgY0z](https://classroom.github.com/a/x0PXgY0z)
-  * Follow the instructions in the triangle\.ts file to create another class\.  Look at the other classes which have all been updated to match this week’s lecture slides\.
+  * Follow the instructions in the triangle\.ts file to create another class\.  Look at the other classes which have all been updated to match this week's lecture slides\.
 
 ![](../../images/CISC181-Week%2053.png)
 

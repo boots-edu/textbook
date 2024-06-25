@@ -21,7 +21,7 @@ __Topic: Recursion__
 
 __How to state a problem recursively__
 
-* Let’s look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
+* Let's look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
 * Restate the problem:
   * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
   * Now we have the same problem\, only there are fewer balls to lookat\.
@@ -34,7 +34,7 @@ __Topic: Recursion__
 
 __How to state a problem recursively__
 
-* Let’s look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
+* Let's look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
 * Restate the problem:
   * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
   * Now we have the same problem\, only there are fewer balls to lookat\.
@@ -46,7 +46,7 @@ __Topic: Recursion__
 
 __How to state a problem recursively__
 
-* Let’s look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
+* Let's look at a problem where we have a container of balls\, all colored either red or yellow and we want to ask if there is a yellow ball in the container\.
 * Restate the problem:
   * Checking one ball is easy\, so if we remove a ball we know if it isyellow or not\.  If it is\, we already know the answer that yes there isa yellow ball\.  So remove a ball and check it\.
   * Now we have the same problem\, only there are fewer balls to lookat\.
@@ -253,9 +253,9 @@ __Topic: Recursion__
 __But why?__
 
 * In the jar of marbles and factorial examples\, we could very easily solve these problems without recursion\.  A simple loop would be sufficient\.  While this is true of most/all problems\, there are problems that are considerably easier to deal with by using recursion\.
-* Let’s look at a simple example of  _binary search_ \.
+* Let's look at a simple example of  _binary search_ \.
   * In binary search\, we start with a sorted list\.  Instead of checking every element\, we check the middle element\.
-  * Since the list is sorted\, if the value is less than the middle element\, then we don’t have to search the second half of the list\.  If it is greater\, than we don’t have to search the first half\.
+  * Since the list is sorted\, if the value is less than the middle element\, then we don't have to search the second half of the list\.  If it is greater\, than we don't have to search the first half\.
   * Consider:
     * Find 4 in \[1\,2\,3\,4\,5\,6\,7\,8\,9\]
     * The middle element is 5\, and since 4 is less\, we can restrict further searches to \[1\,2\,3\,4\]
@@ -590,7 +590,7 @@ __A real example__
 
 * What are our stop conditions:
   * if \(target===undefined\)
-    * We didn’t find it
+    * We didn't find it
   * if \(target === tree\.value\)
     * We found it
 
@@ -600,7 +600,7 @@ __A real example__
 
 * What are our stop conditions:
   * if \(target===undefined\)
-    * We didn’t find it
+    * We didn't find it
   * if \(target === tree\.value\)
     * We found it
 
@@ -634,7 +634,7 @@ __Topic: Recursion__
 
 __A real example__
 
-* For the recursive step\, we want to search either the left or right subtree based on whether value is less than or greater than the node’s value \(we already checked === in our stop conditions\)
+* For the recursive step\, we want to search either the left or right subtree based on whether value is less than or greater than the node's value \(we already checked === in our stop conditions\)
 * When we look at a node\, there are only 4 possibilities\.
   * The node is empty \(undefined\)
   * It is the node we are looking for
@@ -679,13 +679,13 @@ __Topic: Recursion__
 
 __A real example__
 
-If the node is empty \(undefined\) then the node with the value we are looking for can’t exist\, so we return false \(did not find it\)\.
+If the node is empty \(undefined\) then the node with the value we are looking for can't exist\, so we return false \(did not find it\)\.
 
-If the node’s value is === the value we are looking for\, then we return true \(found it\)\.
+If the node's value is === the value we are looking for\, then we return true \(found it\)\.
 
-If the node’s value is < the value we are looking for\, then if the value is in the tree\, it must be in the right sub\-tree\, so we call treeSearch recursively to search that sub\-tree\.
+If the node's value is < the value we are looking for\, then if the value is in the tree\, it must be in the right sub\-tree\, so we call treeSearch recursively to search that sub\-tree\.
 
-If the node’s value is > the value we are looking for\, then if the value is in the tree\, it must be in the left sub\-tree\, so we call treeSearch recursively to search that sub\-tree
+If the node's value is > the value we are looking for\, then if the value is in the tree\, it must be in the left sub\-tree\, so we call treeSearch recursively to search that sub\-tree
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#D4D4D4">\{</span>
 
@@ -800,7 +800,7 @@ __Topic: Recursion__
 __Encapsuloation__
 
 * This is nice\, but it is NOT very object oriented\.
-  * A tree node should encapsulate the things we can do to a tree so we won’t need external methods\.
+  * A tree node should encapsulate the things we can do to a tree so we won't need external methods\.
   * For our implementation of insert\, it is pretty straight forward\.
   * We just remove the tree parameter\, and instead call the member method on the appropriate subtree \(which is not null since we already checked that\.
 

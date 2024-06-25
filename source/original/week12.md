@@ -6,7 +6,7 @@ Spring 2024
 __Topic: Union Types__  _Union types_  are a way of declaring a variable that can hold values of two or more different types\.
 
 * We know we can declare new types in typescript by creating classes and interfaces\, and we can use these types in our programs\.
-* But what if we don’t know the type\, but we know that it one of a finite number of types:
+* But what if we don't know the type\, but we know that it one of a finite number of types:
   * It could be a number or a string
   * It could be a class instance or null
 * We can combine types into a new either/or type by creating a union type\.
@@ -208,7 +208,7 @@ __This does not mutate the array in any way\.__
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> \(</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> value </span>  <span style="color:#569CD6">of</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">arr</span>  <span style="color:#D4D4D4">\) \{console\.log\(value\)\}</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">arr:string</span>  <span style="color:#D4D4D4">\[\] = \[</span>  <span style="color:#CE9178">'a'</span>  <span style="color:#D4D4D4">\, </span>  <span style="color:#CE9178">'b'</span>  <span style="color:#D4D4D4">\, </span>  <span style="color:#CE9178">'c’</span>  <span style="color:#D4D4D4">\];</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">arr:string</span>  <span style="color:#D4D4D4">\[\] = \[</span>  <span style="color:#CE9178">'a'</span>  <span style="color:#D4D4D4">\, </span>  <span style="color:#CE9178">'b'</span>  <span style="color:#D4D4D4">\, </span>  <span style="color:#CE9178">'c'</span>  <span style="color:#D4D4D4">\];</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#D4D4D4">arr\.forEach</span>  <span style="color:#D4D4D4">\(\(value\) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> \{console\.log\(value\)\}\)</span>
 
@@ -316,7 +316,7 @@ The map method executes a function \(Test method\) that returns a new array cons
 
 In the example\, the method is called oneach person object\, and returns the age of that person\.  The result is an array containing the ages ofeach person\.
 
-It is not critical that the method USE the element of the array\, suppose I wanted to create an array containing 0’s for each element in ourarray\.
+It is not critical that the method USE the element of the array\, suppose I wanted to create an array containing 0's for each element in ourarray\.
 
 Map is very useful for extracting datafrom an array of objects\.
 
@@ -336,7 +336,7 @@ The flatMap method executes a function \(Test method\) that returns a new array 
 
 In the example\, the method is called oneach person object\, but the functionreturns an array which is then combinedwith the other arrays returned into a singlearray\.
 
-Here map would return \[\[‘admin’\,’user’\]\,\[‘editor’\]\, but flatMapflattens it into \[‘admin’\,’user’\,’editor’\]
+Here map would return \[\[‘admin'\,'user'\]\,\[‘editor'\]\, but flatMapflattens it into \[‘admin'\,'user'\,'editor'\]
 
 <span style="color:#569CD6">interface</span>  <span style="color:#D4D4D4"> Person \{</span>
 
@@ -360,7 +360,7 @@ Here map would return \[\[‘admin’\,’user’\]\,\[‘editor’\]\, but flat
 
 <span style="color:#D4D4D4">console\.log\(groups\);</span>
 
-<span style="color:#D4D4D4">\[‘</span>  <span style="color:#D4D4D4">admin’\,’user’\,’editor</span>  <span style="color:#D4D4D4">’\]</span>
+<span style="color:#D4D4D4">\[‘</span>  <span style="color:#D4D4D4">admin'\,'user'\,'editor</span>  <span style="color:#D4D4D4">'\]</span>
 
 __These do not mutate the array in any way\.__
 
@@ -490,7 +490,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -512,7 +512,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -541,7 +541,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -575,7 +575,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -609,7 +609,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -643,7 +643,7 @@ The first parameter is our function which takes theaccumulator variable and a va
 
 The second parameter is the initial value of theaccumulator\.
 
-Let’s step through the operation of this to makesure we understand what is happening\.
+Let's step through the operation of this to makesure we understand what is happening\.
 
 | 1 | 4 | 11 | 7 |
 | :-: | :-: | :-: | :-: |
@@ -698,7 +698,7 @@ It should return 0 if the values are the same\.
 
 Since we pass a function\, we can sort arrays of complex objects or classes in any way we wish\.
 
-_NOTE: This method is destructive and overwrites the array\.  If you don’t want this to happen\, you have to clone _  _the array first\._
+_NOTE: This method is destructive and overwrites the array\.  If you don't want this to happen\, you have to clone _  _the array first\._
 
 <span style="color:#D4D4D4">Sorted=</span>  <span style="color:#D4D4D4">vals\.sort</span>  <span style="color:#D4D4D4">\(\);</span>
 

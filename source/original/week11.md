@@ -51,7 +51,7 @@ __Aside: Generics in Typescript__
 
 __Topic: Generics__  _Generics_  allow for creation of reusable code that where internal types can be specified externally\.
 
-While we could write a different function for each type we wish to support\, it would be better if we could right a single method for all of them\.  Let’s dig into this code a bit more:
+While we could write a different function for each type we wish to support\, it would be better if we could right a single method for all of them\.  Let's dig into this code a bit more:
 
 We know console\.log will print anything\, so the only issue here is that our method expects a number\.
 
@@ -67,7 +67,7 @@ __Aside: Generics in Typescript__
 
 __Topic: Generics__  _Generics_  allow for creation of reusable code that where internal types can be specified externally\.
 
-Here we have added a type parameter\, and use that type parameter to set the type of the function’s parameter\.
+Here we have added a type parameter\, and use that type parameter to set the type of the function's parameter\.
 
 Now we can specify the type of data when we call it:
 
@@ -195,7 +195,7 @@ __Aside: Generics in Typescript__
 
 __Topic: Generics__  _Generics_  allow for creation of reusable code that where internal types can be specified externally\.
 
-* Just like functions\, we can use generics for classes as well\.  Let’s consider a class for a list of numbers:
+* Just like functions\, we can use generics for classes as well\.  Let's consider a class for a list of numbers:
   * What if we wanted to extend this soit worked on a list of any type\, even alist of lists\.
   * We could use a generic definition to make ItemList work on any type\, andnot just on numbers
   * As always we can limit the acceptable types using the extend keyword\.
@@ -261,7 +261,7 @@ __Topic: Generics__  _Generics_  allow for creation of reusable code that where 
 * Finally\, we can provide a default value for our generic to describe how it behaves if no type parameter is provided:
   * If a parameter is provided\, the defaultis ignored\.
   * If no parameter is provided\, then thetype must match the default if we usethe class \(i\.e\. we must pass a number\,anything else will cause a type errorat compile time\)\.
-* So let’s look at a real example
+* So let's look at a real example
 
 <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">ItemList</span>  <span style="color:#D4D4D4">\<T=number>\{</span>
 
@@ -291,7 +291,7 @@ __Aside: Generics in Typescript__
 
 __Topic: Generics__  _Generics_  allow for creation of reusable code that where internal types can be specified externally\.
 
-* Let’s go back to the EventSubject and look at the source code for it\.
+* Let's go back to the EventSubject and look at the source code for it\.
   * T defaults to void if no parameter is provided
   * subscribe takes a function whose parameterhas type T\.
   * next takes a value of type T
@@ -347,7 +347,7 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 
 * A simple example:
   * Suppose we are building a drawing program and want to be able to pass around point structures \{x:number\,y:number\}\.
-  * We can declare this as an interface then use the interface name as a type\.  We can’t create one \(with new\) like a class\, but it will guarantee that the object contains the members of the interface and onlythe members of the interface\.
+  * We can declare this as an interface then use the interface name as a type\.  We can't create one \(with new\) like a class\, but it will guarantee that the object contains the members of the interface and onlythe members of the interface\.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">interface</span>  <span style="color:#D4D4D4"> Point\{</span>
 
@@ -369,7 +369,7 @@ We can say a class implements an interface if it contains all of the members of 
 
 Now I can refer to the DrawPoint object as a Pointand I know it contains an x and a y without havingto know anything else about DrawPoint\.
 
-We are guaranteed that DrawPoint contains an x anda y member\, because it implements point\.  If it doesn’t\, the code won’t compile\.
+We are guaranteed that DrawPoint contains an x anda y member\, because it implements point\.  If it doesn't\, the code won't compile\.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">interface</span>  <span style="color:#D4D4D4"> Point\{</span>
 
@@ -401,7 +401,7 @@ We are guaranteed that DrawPoint contains an x anda y member\, because it implem
 
 __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of data \(or a class\) without values or implementation\.
 
-Interfaces can contain methods as well\.  They don’t include the implementation\, they are just stating that the class must contain that method in order to compile\, so users of the class know it contains that method\.
+Interfaces can contain methods as well\.  They don't include the implementation\, they are just stating that the class must contain that method in order to compile\, so users of the class know it contains that method\.
 
 Here we can see that Triangle contains an array ofPoint objects\, and a draw method\, therefore it correctly implements the Drawable interface\.
 
@@ -524,7 +524,7 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 __Topic: Union Types__  _Union types_  are a way of declaring a variable that can hold values of two or more different types\.
 
 * We know we can declare new types in typescript by creating classes and interfaces\, and we can use these types in our programs\.
-* But what if we don’t know the type\, but we know that it one of a finite number of types:
+* But what if we don't know the type\, but we know that it one of a finite number of types:
   * It could be a number or a string
   * It could be a class instance or null
 * We can combine types into a new either/or type by creating a union type\.
