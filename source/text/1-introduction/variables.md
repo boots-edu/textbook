@@ -20,7 +20,7 @@ parent: Introduction
 
 # Key Idea
 
-A _variable_ is a named container for some unknown value. We can use variables to create generic code that works on different values.
+A variable is a named container for some unknown value. We can use variables to create generic code that works on different values.
 
 ## Simple Math Example
 
@@ -30,7 +30,7 @@ Consider a simple math expression:
 3+4
 ```
 
-This is useful in computing this specific value (`7`), but is only useful in that one particular case.
+This is useful in computing this specific __value__ (`7`), but is only useful in that one particular case.
 On the other hand:
 
 ```
@@ -38,7 +38,7 @@ X+4
 ```
 
 This would compute the same value if `X=3`, but would also compute a correct value for any other value of `X`.
-This is the basic idea of why we use variables. We can write a single expression that computes a correct answer for many possible values of `X`.
+This is the basic idea of why we use variables. We can write a single expression that computes a correct answer for many possible values of `X` (the __variable__).
 
 ## Another Math Example
 
@@ -58,26 +58,32 @@ Just like we can use variables in math to create an expression that represents a
 
 But what happens if we do this?
 
-```typescript
+```
 x = "hello"
 y = 2 * x + 4
 ```
 
-This doesn’t make any sense\.
-* To make sure that our code makes sense\, we attach a type to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate\.
-* We do this by declaring the variable and specifying what type of data it can contain\.  Once declared\, we will not be able to assign an inappropriate value type to that variable\.
+This doesn't make any sense.
 
-__Review Topic: Variables__
+To make sure that our code makes sense, we attach a __type__ to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate.
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+We do this by declaring the variable and specifying what type of data it can contain.  Once declared, we will not be able to assign an inappropriate value type to that variable.
 
-So how do we  _declare_  a variable\.  It depends on the language we are using\, but in general\, we specify its name\, its type and potentially its initial value\.  Note\, if we do not specify its initial value\, then we cannot read its value until we do\.
+## Declare Variables
 
-In this short typescript code snippet\, we declare the variable myValue to hold a number and assign it an initial value of 4\.
+So how do we  __declare__  a variable?
+It depends on the language we are using, but in general, we specify:
+* its name, 
+* its type, and
+* potentially its initial value.
 
-We declare the variable answer as a number\, but do not give it a value\.
+Note, if we do not specify its initial value, then we cannot read its value until we do.
 
-We then compute myValue\+3 and store it in answer\.
+In this short typescript code snippet, we declare the variable myValue to hold a number and assign it an initial value of 4.
+
+We declare the variable answer as a number, but do not give it a value.
+
+We then compute myValue\+3 and store it in answer.
 
 <span style="color:#0060B1"> __Typescript:__ </span>
 
@@ -89,13 +95,13 @@ We then compute myValue\+3 and store it in answer\.
 
 __Review Topic: Variables__
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
 _Use a “:” symbol after the name_
 
 _= an initial value_
 
-_Use “let” to declare a variable\._
+_Use “let” to declare a variable._
 
 let myValue : number = 4;
 
@@ -103,66 +109,66 @@ _Line ends with a “;”_
 
 _The name of the variable_
 
-_Specify a valid type\._
+_Specify a valid type._
 
 __Review Topic: Variables__
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
 * __Types in Typescript__
-* Typescript has only three basic types\.
-  * number: Holds any numeric data \(e\.g\. 42 or 3\.14159\)
-  * string: Holds a string of characters \(e\.g\. “Hello World”\)
+* Typescript has only three basic types.
+  * number: Holds any numeric data (e.g. 42 or 3.14159)
+  * string: Holds a string of characters (e.g. “Hello World”)
   * boolean: Holds the value true or false
-* There are other more complex types we will examine later \(like arrays\) and we can even create our own types to use in our programs\.
+* There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
 __Review Topic: Variables__
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
-__Code to compute the area of a circle with radius 2\.__
+__Code to compute the area of a circle with radius 2.__
 
-__let pi:number=3\.1415927;__
+__let pi:number=3.1415927;__
 
 __let r:number=2;__
 
 __let answer:number=pi\*r\*r;__
 
-If we change the value of r\, then we compute the area of a different circle\.
+If we change the value of r, then we compute the area of a different circle.
 
-Later we will look at turning this into a __ __  _function_  that can be called with different values of r and reused\.
+Later we will look at turning this into a __ __  _function_  that can be called with different values of r and reused.
 
-If we assign a non\-numeric value to r \(which makes no sense\) we would get a compiler error telling us where the problem is so we can fix it\.
+If we assign a non\-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
 __Review Topic: Variables__
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
-Since a variable can take on many values\, we might want to compare the value to something to see if it is the same\, or greater than or less than\.
+Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript\, we do this with a “===”\, “\<==”\,”>==” or a simple “\<” or “>” and the result of the expression will have the type  _boolean_  _\._
+In typescript, we do this with a “===”, “\<==”,”>==” or a simple “\<” or “>” and the result of the expression will have the type  _boolean_  _._
 
 let myValue:number=5;
 
-let isEqual:boolean = \(myValue===5\);
+let isEqual:boolean = (myValue===5);
 
-let isGreater:boolean = \(myValue>5\);
+let isGreater:boolean = (myValue>5);
 
-let isLessEqual:boolean = \(myValue <== 5\);
+let isLessEqual:boolean = (myValue <== 5);
 
 let myString:string=”Hello”
 
-let isStrEqual:boolean=\(myValue===”Hello”\);
+let isStrEqual:boolean=(myValue===”Hello”);
 
 __Review Topic: Variables__
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
-Variables are a powerful way to create generic code that produces expected results on a variety of different inputs\.
+Variables are a powerful way to create generic code that produces expected results on a variety of different inputs.
 
-The values that we assign to variables can come from many sources like data files\, user input\, databases\, or online resources\.  The code will work regardless of the values so long as they are of the correct type\.
+The values that we assign to variables can come from many sources like data files, user input, databases, or online resources.  The code will work regardless of the values so long as they are of the correct type.
 
-Throughout the semester we will use variables to create reusable code\.  We will later learn other data types\, and even how to create our own types containing complex data\.
+Throughout the semester we will use variables to create reusable code.  We will later learn other data types, and even how to create our own types containing complex data.
 
 
 Next we'll review [Functions &raquo;](../1-introduction/functions.md)
