@@ -22,7 +22,7 @@ parent: Introduction
 
 A variable is a named container for some unknown value. We can use variables to create generic code that works on different values.
 
-## Simple Math Example
+# Simple Math Example
 
 Consider a simple math expression:
 
@@ -40,7 +40,7 @@ X+4
 This would compute the same value if `X=3`, but would also compute a correct value for any other value of `X`.
 This is the basic idea of why we use variables. We can write a single expression that computes a correct answer for many possible values of `X` (the __variable__).
 
-## Another Math Example
+# Another Math Example
 
 ![Visualization of the mathematical equation of a line, representing the slope between two points P and Q offset by C](../../images/CISC181-Week%2011.png)
 
@@ -54,7 +54,7 @@ The equation `y = mx + c` represents every possible straight line.
 
 Just like we can use variables in math to create an expression that represents a line, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values.
 
-## Variables Have Types
+# Variables Have Types
 
 But what happens if we do this?
 
@@ -69,7 +69,7 @@ To make sure that our code makes sense, we attach a __type__ to our variables so
 
 We do this by declaring the variable and specifying what type of data it can contain.  Once declared, we will not be able to assign an inappropriate value type to that variable.
 
-## Declare Variables
+# Declare Variables
 
 So how do we  __declare__  a variable?
 It depends on the language we are using, but in general, we specify:
@@ -92,7 +92,7 @@ let answer: number;
 answer = myValue + 3;
 ```
 
-## Declaration Syntax
+# Declaration Syntax
 
 TODO: Convert this to an image with annotations, perhaps
 
@@ -103,7 +103,7 @@ Some key notes on the syntax of declaring a variable:
 * Use `=` followed by an expression to assign an initial value.
 * The line should end with a `;`
 
-## Types in TypeScript
+# Types in TypeScript
 
 Typescript has only three basic types.
 
@@ -113,7 +113,7 @@ Typescript has only three basic types.
 
 There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
-## Combining Variables
+# Combining Variables
 
 ```typescript
 // Code to compute the area of a circle with radius 2.
@@ -130,7 +130,7 @@ If we assign a non-numeric value to `r` (which makes no sense) we would get a co
 
 TODO: Picture of this compiler error, or at least a danger box example
 
-## Boolean Expressions
+# Boolean Expressions
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
@@ -163,7 +163,7 @@ let isStrEqual2: boolean = (myString !== "Hello");
 // isStrEqual2 will be false
 ```
 
-## Summary
+# Summary
 
 Variables are a powerful way to create generic code that produces expected results on a variety of different inputs.
 
