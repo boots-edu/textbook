@@ -18,61 +18,52 @@ parent: Introduction
 {:toc}
 </details>
 
+# Key Idea
 
-__Review Topic: Variables__
+A _variable_ is a named container for some unknown value. We can use variables to create generic code that works on different values.
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+## Simple Math Example
 
-* Consider a simple math expression:
-  * 3\+4
-  * This is useful in computing this specific value \(7\)\, but is only useful in that one particular case\.
-* On the other hand:
-  * X\+4
-  * This would compute the same value if X=3\, but would also compute a correct value for any other value of X\.
-* This is the basic idea of why we use variables\.  We can write a single expression that computes a correct answer for many possible values of X\.
+Consider a simple math expression:
 
-__Review Topic: Variables__
+```
+3+4
+```
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+This is useful in computing this specific value (`7`), but is only useful in that one particular case.
+On the other hand:
 
-* Consider a simple math expression:
-  * 3\+4
-  * This is useful in computing this specific value \(7\)\, but is only useful in that one particular case\.
-* On the other hand:
-  * X\+4
-  * This would compute the same value if X=3\, but would also compute a correct value for any other value of X\.
-* This is the basic idea of why we use variables\.  We can write a single expression that computes a correct answer for many possible values of X\.
+```
+X+4
+```
 
-__Review Topic: Variables__
+This would compute the same value if `X=3`, but would also compute a correct value for any other value of `X`.
+This is the basic idea of why we use variables. We can write a single expression that computes a correct answer for many possible values of `X`.
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+## Another Math Example
 
-Using variables we can represent concepts like the equation of a line\.
+![Visualization of the mathematical equation of a line, representing the slope between two points P and Q offset by C](../../images/CISC181-Week%2011.png)
 
-Here m is the slope of the line \(change in y over change in x\) and c is where the line intersects the Y access\.
+Using variables we can represent concepts like the equation of a line. In the visualization shown:
+* `m` is the slope of the line (change in `y` over change in `x`) and 
+* `c` is where the line intersects the `y` axis.
 
-The equation y=mx\+c represents every possible straight line\.
+The equation `y = mx + c` represents every possible straight line.
 
-y=2x\+4 represents a specific line\.  By assigning a value to the variable x we can compute the appropriate y for this line\.
+`y = 2x + 4` represents a specific line. By assigning a value to the variable `x` we can compute the appropriate `y` for this line.
 
-![](../../images/CISC181-Week%2011.png)
+Just like we can use variables in math to create an expression that represents a line, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values.
 
-__Review Topic: Variables__
+## Variables Have Types
 
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
+But what happens if we do this?
 
-![](../../images/CISC181-Week%2012.png)
+```typescript
+x = "hello"
+y = 2 * x + 4
+```
 
-Just like we can use variables in math to create an expression that represents a line\, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values\.
-
-__Review Topic: Variables__
-
-A  _variable_  is a named container for some unknown value\.  We can use variables to create generic code that works on different values\.
-
-* But what happens if we do this:
-  * x=”hello”
-  * y=2x\+4
-* This doesn’t make any sense\.
+This doesn’t make any sense\.
 * To make sure that our code makes sense\, we attach a type to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate\.
 * We do this by declaring the variable and specifying what type of data it can contain\.  Once declared\, we will not be able to assign an inappropriate value type to that variable\.
 
