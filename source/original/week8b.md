@@ -188,7 +188,7 @@ A function that is declared with no name is an  _anonymous function._
 
 We could do this the hard way, and createa named function and pass that as thesecond parameter, but we are only usingit once, and it is much easier to see whatis going on this way.
 
-Anonymous functions behave like anyother function.  We can declare them, callthem, and pass them around as parameters to functions.  Functions in typescript are what is referred to as “first class objects”.
+Anonymous functions behave like anyother function.  We can declare them, callthem, and pass them around as parameters to functions.  Functions in typescript are what is referred to as "first class objects".
 
 __Topic: Anonymous Functions__
 
@@ -205,7 +205,7 @@ __Topic: Anonymous Functions__
 A function that is declared with no name is an  _anonymous function._
 
 * So what can we do with this:
-  * We have already seen that we can pass it as a parameter to another method as in “describe” and “test”
+  * We have already seen that we can pass it as a parameter to another method as in "describe" and "test"
   * Many methods in typescript can take a function as a parameter including filter, map, find, reduce, etc.
   * We can use anonymous functions there as well.
   * Since functions are first class objects, we can also store them in variables (i.e. function as value)
@@ -287,7 +287,7 @@ __Topic: Anonymous Functions__
 
 A function that is declared with no name is an  _anonymous function._
 
-* Being “first class objects” functions canbe used in many places.
+* Being "first class objects" functions canbe used in many places.
   * As parameters to methods
   * As the value of a variable or classproperty.
   * As the return value of a function.

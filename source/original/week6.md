@@ -497,7 +497,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">protected</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">subType:string</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">“apple"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">"apple"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -550,7 +550,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">protected</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">subType:string</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">“apple"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">"apple"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -617,7 +617,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">protected</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">subType:string</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">“apple"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">"apple"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">    }</span>
 

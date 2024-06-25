@@ -21,7 +21,7 @@ __Topic: Recursion__
 
 __Towards code__
 
-public balls:string\[\] = \[“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”\];
+public balls:string\[\] = \["red", "red", "red", "red" ,"yellow", "red", "red"\];
 
 function findYellowBall(container:string\[\]):boolean{
 
@@ -31,7 +31,7 @@ return false;
 
 }
 
-else if (container\[0\]===(“yellow”)){ __  //Yellow ball found if the first ball in the array is yellow__
+else if (container\[0\]===("yellow")){ __  //Yellow ball found if the first ball in the array is yellow__
 
 return true;
 
@@ -49,7 +49,7 @@ __Topic: Recursion__
 
 __Towards code__
 
-public balls:string\[\] = \[“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”\];
+public balls:string\[\] = \["red", "red", "red", "red" ,"yellow", "red", "red"\];
 
 function findYellowBall(container:string\[\]):boolean{
 
@@ -59,7 +59,7 @@ return false;
 
 }
 
-else if (container\[0\]===(“yellow”)){ __  //Yellow ball found if the first ball in the array is yellow__
+else if (container\[0\]===("yellow")){ __  //Yellow ball found if the first ball in the array is yellow__
 
 return true;
 

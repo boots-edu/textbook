@@ -91,7 +91,7 @@ __Strings in Typescript:  __
 In TypeScript, the string is sequence of char values used to store text data
 
 * The string type is a primitive data type in Typescript.  We can declare a variable to be of type string directly:
-  * let username:string=“gauss”;
+  * let username:string="gauss";
 * There are several functions which we can use to operate on strings in Typescript.
 * We will look at some of the most common ones briefly
 
@@ -99,67 +99,67 @@ __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr:string=“Hello World”;
+* Assume the string let myStr:string="Hello World";
 * __charAt__  __(): __ This method will return character at the specified index.
   * myStr.charAt(2); //this will return an l (the third character at index 2)
 * __indexOf__  __():__  It will return the index. first occurrence of specified value else \-1 if not found.
-  * myStr.indexOf(“o”); //this will return a 4
+  * myStr.indexOf("o"); //this will return a 4
 * __lastIndexOf__  __():__  It will return index, last occurrence of specified value else \-1 if not found.
-  * myStr.lastIndexOf(“o”); //this will return 7
+  * myStr.lastIndexOf("o"); //this will return 7
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr1:string=“Hello”;
-* Assume the string let myStr2:string=“World”;
+* Assume the string let myStr1:string="Hello";
+* Assume the string let myStr2:string="World";
 * __concat__  __():__  This method will combine the two separate string and return that combined string.
-  * myStr1.concat(myStr2); //returns “HelloWorld”
-  * myStr1.concat(“ “,myStr2); //returns “Hello World”
-  * myStr2.concat(myStr1); //returns “WorldHello”
-  * myStr2.concat(“,”,myStr1); //returns “World,Hello”
+  * myStr1.concat(myStr2); //returns "HelloWorld"
+  * myStr1.concat(" ",myStr2); //returns "Hello World"
+  * myStr2.concat(myStr1); //returns "WorldHello"
+  * myStr2.concat(",",myStr1); //returns "World,Hello"
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr:string=“Hello World”;
+* Assume the string let myStr:string="Hello World";
 * __slice():__  Extract the specified string and return a new string (does not modify string).
-  * myStr.slice(2); //returns “llo World”
-  * myStr.slice(2,5); //returns “llo”
+  * myStr.slice(2); //returns "llo World"
+  * myStr.slice(2,5); //returns "llo"
   * _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr=“Hello World”;
+* Assume the string let myStr="Hello World";
 * __split():__  Splits the specified String object into an array of strings.
-  * myStr.split(“ “); //returns the array \[“Hello”,”World”\]
+  * myStr.split(" "); //returns the array \["Hello","World"\]
 * __substring():__  Returns character of string between two define indexes.
-  * myStr.substring(2); // returns “llo World”
-  * myStr.substring(2,5); // returns “llo”
+  * myStr.substring(2); // returns "llo World"
+  * myStr.substring(2,5); // returns "llo"
   * _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr=“Hello World”;
+* Assume the string let myStr="Hello World";
 * toLowerCase(): This method convert the string into lowercase.
-  * myStr.toLowerCase(); //returns “hello world”
+  * myStr.toLowerCase(); //returns "hello world"
 * toUpperCase(): This method convert the string into uppercase.
-  * myStr.toUpperCase(); //returns “HELLO WORLD”
+  * myStr.toUpperCase(); //returns "HELLO WORLD"
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
 * What if the string contains a number and we want to convert it to a number type?
-  * let myNumStr:string=“42”;
+  * let myNumStr:string="42";
   * let myNum:number=parseInt(myNumStr); //this function does the trick
   * Let myNum2:number=\+myNumStr; //this also works, but is less explicit
-* If myNumStr did not contain a valid number, the parseInt function would return NaN to specify “Not a number”
+* If myNumStr did not contain a valid number, the parseInt function would return NaN to specify "Not a number"
 * If we want to go the other way
   * Let myNum:number=42;
   * Let myNumStr:string=myNum.toString();

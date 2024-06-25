@@ -39,10 +39,10 @@ __Topic: Basic Web Development__  __HTML__
 * Common tags:
   * __\<div>\</div>__  : Create a block which can be styled.
   * __\<p>\</p>__  :  A paragraph
-  * __\<input type=“text” />__  : An input box
-  * __\<input type=“password” />__  : An input box with the letters obscured
-  * __\<input type=“radio” /> __ : A radio button
-  * __\<input type=“checkbox” /> __ : A checkbox
+  * __\<input type="text" />__  : An input box
+  * __\<input type="password" />__  : An input box with the letters obscured
+  * __\<input type="radio" /> __ : A radio button
+  * __\<input type="checkbox" /> __ : A checkbox
   * __\<button>Button Text\</button>__
   * __\<span>\</span>__  : An enclosing element that doesn't do much but can be styled.
   * __\<select>\<option>1\</option>\<option>2\</option>\</select>__  : A drop down
@@ -202,7 +202,7 @@ Still looks the same, but now we have things to style.
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">loginBtn</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">btn</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Login</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">></span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">registerBtn</span>  <span style="color:#CE9178">“ class="</span>  <span style="color:#9CDCFE">btn</span>  <span style="color:#F44747">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Register</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">registerBtn</span>  <span style="color:#CE9178">" class="</span>  <span style="color:#9CDCFE">btn</span>  <span style="color:#F44747">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Register</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">input</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">rememberMe</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">type</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"checkbox"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">rememberMe</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">/></span>  <span style="color:#D4D4D4"> Remember Me?</span>
 
@@ -228,7 +228,7 @@ The style for the outer div tag is \#loginForm
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">loginBtn</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">btn</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Login</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">></span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">registerBtn</span>  <span style="color:#CE9178">“ </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">btn</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Register</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">registerBtn</span>  <span style="color:#CE9178">" </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">btn</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Register</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">input</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">rememberMe</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">type</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"checkbox"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">rememberMe</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">/></span>  <span style="color:#D4D4D4"> Remember Me?</span>
 
@@ -242,7 +242,7 @@ We can combine rules.  This rule effects all input tags insideloginForm.
 
 Now we have a 5 pixel margin around our input elements.
 
-Now what can we do about the buttons.  Remember, theywere both defined with a class of btn.  For classes, we specify the style by preceding the class name with a “.”.  So btn is referenced as .btn.
+Now what can we do about the buttons.  Remember, theywere both defined with a class of btn.  For classes, we specify the style by preceding the class name with a ".".  So btn is referenced as .btn.
 
 ![](../../images/CISC181-Week%2099.png)
 

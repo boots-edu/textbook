@@ -30,8 +30,8 @@ _Software Testing_  is the process of validating that software is bug free and m
 ![](../../images/CISC181-Week%2081.jpg)
 
 * Verification and Validation
-  * __Verification__  refers to the set of tasks that ensure that the software correctly implements a specific function. It means “Are we building the  _product correctly_ ?”.
-  * __Validation __ refers to a different set of tasks that ensure that the software that has been built is traceable to customer requirements. It means “Are we building the  _correct product_ ?”.
+  * __Verification__  refers to the set of tasks that ensure that the software correctly implements a specific function. It means "Are we building the  _product correctly_ ?".
+  * __Validation __ refers to a different set of tasks that ensure that the software that has been built is traceable to customer requirements. It means "Are we building the  _correct product_ ?".
 
 __Topic: Testing__
 
@@ -103,7 +103,7 @@ Jest provides a format for writing tests in a simple and organized way.
 
 Jest can run tests on the entire system or on individual components.
 
-Jest can produce a coverage report to let you know which lines are not “covered” by the test (i.e. functions not called, branches not taken, etc.)
+Jest can produce a coverage report to let you know which lines are not "covered" by the test (i.e. functions not called, branches not taken, etc.)
 
 Testing can easily be built into the build cycle, so that tests are run as part of each build.
 
@@ -623,11 +623,11 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> value = </span>  <span style="color:#D4D4D4">elements.getLastElement</span>  <span style="color:#D4D4D4">();</span>
 
-<span style="color:#D4D4D4">        expect(value).</span>  <span style="color:#D4D4D4">toBe</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">“a"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">        expect(value).</span>  <span style="color:#D4D4D4">toBe</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">"a"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">        expect(</span>  <span style="color:#D4D4D4">elements.stringArray.length</span>  <span style="color:#D4D4D4">).</span>  <span style="color:#D4D4D4">toBe</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#D4D4D4">        expect(</span>  <span style="color:#D4D4D4">elements.stringArray</span>  <span style="color:#D4D4D4">).</span>  <span style="color:#D4D4D4">not.toContain</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">“a"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">        expect(</span>  <span style="color:#D4D4D4">elements.stringArray</span>  <span style="color:#D4D4D4">).</span>  <span style="color:#D4D4D4">not.toContain</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#CE9178">"a"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">    });</span>
 

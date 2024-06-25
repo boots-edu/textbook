@@ -79,7 +79,7 @@ Procedures for late policy, requesting extensions, etc. go here.
 
 Computer Science is hard until it is not.  Be patient with yourself and get help early if you need it.  The TA's and instructors are here to help you learn, we do not expect you to know it already.
 
-We are not “scary” or a “last resort”.  Visiting office hours is a normal part of the learning process.
+We are not "scary" or a "last resort".  Visiting office hours is a normal part of the learning process.
 
 We will have a discord channel for the course.  TA's will monitor the discord channel, but communication with the instructor should be through email.  Please be kind and respectful when communicating on Discord.
 
@@ -148,7 +148,7 @@ __Review Topic: Variables__
 A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
 * But what happens if we do this:
-  * x=”hello”
+  * x="hello"
   * y=2x\+4
 * This doesn't make any sense.
 * To make sure that our code makes sense, we attach a type to our variables so that we will get an error if we try to assign a value to the variable that is not appropriate.
@@ -178,15 +178,15 @@ __Review Topic: Variables__
 
 A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
 
-_Use a “:” symbol after the name_
+_Use a ":" symbol after the name_
 
 _= an initial value_
 
-_Use “let” to declare a variable._
+_Use "let" to declare a variable._
 
 let myValue : number = 4;
 
-_Line ends with a “;”_
+_Line ends with a ";"_
 
 _The name of the variable_
 
@@ -199,7 +199,7 @@ A  _variable_  is a named container for some unknown value.  We can use variable
 * __Types in Typescript__
 * Typescript has only three basic types.
   * number: Holds any numeric data (e.g. 42 or 3.14159)
-  * string: Holds a string of characters (e.g. “Hello World”)
+  * string: Holds a string of characters (e.g. "Hello World")
   * boolean: Holds the value true or false
 * There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
@@ -227,7 +227,7 @@ A  _variable_  is a named container for some unknown value.  We can use variable
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with a “===”, “\<==”,”>==” or a simple “\<” or “>” and the result of the expression will have the type  _boolean_  _._
+In typescript, we do this with a "===", "\<==",">==" or a simple "\<" or ">" and the result of the expression will have the type  _boolean_  _._
 
 let myValue:number=5;
 
@@ -237,9 +237,9 @@ let isGreater:boolean = (myValue>5);
 
 let isLessEqual:boolean = (myValue <== 5);
 
-let myString:string=”Hello”
+let myString:string="Hello"
 
-let isStrEqual:boolean=(myValue===”Hello”);
+let isStrEqual:boolean=(myValue==="Hello");
 
 __Review Topic: Variables__
 
@@ -409,7 +409,7 @@ __Strings in Typescript:  __
 In TypeScript, the string is sequence of char values used to store text data
 
 * The string type is a primitive data type in Typescript.  We can declare a variable to be of type string directly:
-  * let username:string=“gauss”;
+  * let username:string="gauss";
 * There are several functions which we can use to operate on strings in Typescript.
 * We will look at some of the most common ones briefly
 
@@ -417,67 +417,67 @@ __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr:string=“Hello World”;
+* Assume the string let myStr:string="Hello World";
 * __charAt__  __(): __ This method will return character at the specified index.
   * myStr.charAt(2); //this will return an l (the third character at index 2)
 * __indexOf__  __():__  It will return the index. first occurrence of specified value else \-1 if not found.
-  * myStr.indexOf(“o”); //this will return a 4
+  * myStr.indexOf("o"); //this will return a 4
 * __lastIndexOf__  __():__  It will return index, last occurrence of specified value else \-1 if not found.
-  * myStr.lastIndexOf(“o”); //this will return 7
+  * myStr.lastIndexOf("o"); //this will return 7
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr1:string=“Hello”;
-* Assume the string let myStr2:string=“World”;
+* Assume the string let myStr1:string="Hello";
+* Assume the string let myStr2:string="World";
 * __concat__  __():__  This method will combine the two separate string and return that combined string.
-  * myStr1.concat(myStr2); //returns “HelloWorld”
-  * myStr1.concat(“ “,myStr2); //returns “Hello World”
-  * myStr2.concat(myStr1); //returns “WorldHello”
-  * myStr2.concat(“,”,myStr1); //returns “World,Hello”
+  * myStr1.concat(myStr2); //returns "HelloWorld"
+  * myStr1.concat(" ",myStr2); //returns "Hello World"
+  * myStr2.concat(myStr1); //returns "WorldHello"
+  * myStr2.concat(",",myStr1); //returns "World,Hello"
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr:string=“Hello World”;
+* Assume the string let myStr:string="Hello World";
 * __slice():__  Extract the specified string and return a new string (does not modify string).
-  * myStr.slice(2); //returns “llo World”
-  * myStr.slice(2,5); //returns “llo”
+  * myStr.slice(2); //returns "llo World"
+  * myStr.slice(2,5); //returns "llo"
   * _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr=“Hello World”;
+* Assume the string let myStr="Hello World";
 * __split():__  Splits the specified String object into an array of strings.
-  * myStr.split(“ “); //returns the array \[“Hello”,”World”\]
+  * myStr.split(" "); //returns the array \["Hello","World"\]
 * __substring():__  Returns character of string between two define indexes.
-  * myStr.substring(2); // returns “llo World”
-  * myStr.substring(2,5); // returns “llo”
+  * myStr.substring(2); // returns "llo World"
+  * myStr.substring(2,5); // returns "llo"
   * _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
-* Assume the string let myStr=“Hello World”;
+* Assume the string let myStr="Hello World";
 * toLowerCase(): This method convert the string into lowercase.
-  * myStr.toLowerCase(); //returns “hello world”
+  * myStr.toLowerCase(); //returns "hello world"
 * toUpperCase(): This method convert the string into uppercase.
-  * myStr.toUpperCase(); //returns “HELLO WORLD”
+  * myStr.toUpperCase(); //returns "HELLO WORLD"
 
 __Strings in Typescript:  __
 
 In TypeScript, the string is sequence of char values used to store text data
 
 * What if the string contains a number and we want to convert it to a number type?
-  * let myNumStr:string=“42”;
+  * let myNumStr:string="42";
   * let myNum:number=parseInt(myNumStr); //this function does the trick
   * Let myNum2:number=\+myNumStr; //this also works, but is less explicit
-* If myNumStr did not contain a valid number, the parseInt function would return NaN to specify “Not a number”
+* If myNumStr did not contain a valid number, the parseInt function would return NaN to specify "Not a number"
 * If we want to go the other way
   * Let myNum:number=42;
   * Let myNumStr:string=myNum.toString();

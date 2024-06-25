@@ -64,13 +64,13 @@ __Recursion Terminology__
   * When the container is empty we are done
   * We can answer the question without further work (there is no yellow ball)
 * Recursive Step
-  * After we remove a ball and determine that it is not yellow, we “start over” trying to find a yellow ball amongst the now fewer balls.
+  * After we remove a ball and determine that it is not yellow, we "start over" trying to find a yellow ball amongst the now fewer balls.
 
 __Topic: Recursion__
 
 __Towards code__
 
-public balls:string\[\] = \[“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”\];
+public balls:string\[\] = \["red", "red", "red", "red" ,"yellow", "red", "red"\];
 
 function findYellowBall(container:string\[\]):boolean{
 
@@ -80,7 +80,7 @@ return false;
 
 }
 
-else if (container\[0\]===(“yellow”)){ __  //Yellow ball found if the first ball in the array is yellow__
+else if (container\[0\]===("yellow")){ __  //Yellow ball found if the first ball in the array is yellow__
 
 return true;
 
@@ -98,7 +98,7 @@ __Topic: Recursion__
 
 __Towards code__
 
-public balls:string\[\] = \[“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”\];
+public balls:string\[\] = \["red", "red", "red", "red" ,"yellow", "red", "red"\];
 
 function findYellowBall(container:string\[\]):boolean{
 
@@ -108,7 +108,7 @@ return false;
 
 }
 
-else if (container\[0\]===(“yellow”)){ __  //Yellow ball found if the first ball in the array is yellow__
+else if (container\[0\]===("yellow")){ __  //Yellow ball found if the first ball in the array is yellow__
 
 return true;
 

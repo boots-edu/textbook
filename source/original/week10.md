@@ -318,7 +318,7 @@ __Topic: Advanced __  __WebEz__  __EventSubject__  __: Passing events between co
 
 * In the parent, we can call subscribe to attach an  _anonymous function _ that will run each time the child calls next and optionally, another to hand when the child calls error.
 * event2.next(4) called in the child would print 5 from the parent.
-* Event2.error(new Error(“Bad stuff”)) would print the error object as an error from the parent.
+* Event2.error(new Error("Bad stuff")) would print the error object as an error from the parent.
   * Note: This second parameter is optional if you don't want error notifications.
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.event2.subscribe(</span>
@@ -523,7 +523,7 @@ __EzDialog.popup__  __(__  __attachTo__  __: __  __EzComponent__  __, message: s
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-Here we have added a popup with the default title “Alert” and the default buttons \[“Ok”\].
+Here we have added a popup with the default title "Alert" and the default buttons \["Ok"\].
 
 We have not subscribed since I do not need notification of when the window closes, and there is only one button the user could have clicked.
 
@@ -567,7 +567,7 @@ With this screen, the only thing I can do is click ok.
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-Here I have added a popup to ask the user if they are sure before adding the item, and then only adding it if they click the “Yes” button.
+Here I have added a popup to ask the user if they are sure before adding the item, and then only adding it if they click the "Yes" button.
 
 We subscribe to the EventSubject returned by the popup method to see when the window closes and which button was pressed.
 
@@ -611,9 +611,9 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
 You can see the two buttons displayed as we requested.
 
-Clicking No will emit “No” which will cause our method to ignore the click.
+Clicking No will emit "No" which will cause our method to ignore the click.
 
-Clicking Yes will emit “Yes” which will cause our method to add the component.
+Clicking Yes will emit "Yes" which will cause our method to add the component.
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
@@ -654,7 +654,7 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 * Example: A simple please wait dialog with no buttons.
   * To make this simple, I am just going to use text, but you could use an animated gif or do some css magic to add some movement to this dialog (we will do that in a few minutes with a timer).
   * First we will create a new dialog with the cli:
-  * For the body of our dialog, we will just center a string that says “Please Wait…”
+  * For the body of our dialog, we will just center a string that says "Please Wait…"
 
 <span style="color:#D4D4D4">webez</span>  <span style="color:#D4D4D4"> dialog </span>  <span style="color:#D4D4D4">PleaseWait</span>
 
@@ -738,7 +738,7 @@ And style it so that it has a fixed width and will appear inline after the words
 
 The plan is to change displayDots to contain 1, 2, or 3 dots and change it once a second.
 
-<span style="color:#D4D4D4">@BindValue(</span>  <span style="color:#CE9178">“displayDots"</span>  <span style="color:#D4D4D4">)</span>
+<span style="color:#D4D4D4">@BindValue(</span>  <span style="color:#CE9178">"displayDots"</span>  <span style="color:#D4D4D4">)</span>
 
 <span style="color:#D4D4D4">displayDots</span>  <span style="color:#D4D4D4">: string = </span>  <span style="color:#CE9178">""</span>  <span style="color:#D4D4D4">;</span>
 

@@ -470,7 +470,7 @@ Console.log(point2);
 
 What we would get is {x:100,y:0,color:{…}}
 
-In other words, we only have one point, but we have two references or “aliases” to that point.  Changing either one, changes the one and only object that the variables point and point2 refer to.
+In other words, we only have one point, but we have two references or "aliases" to that point.  Changing either one, changes the one and only object that the variables point and point2 refer to.
 
 Sometimes this is what we want, but sometimes IT IS NOT!!!
 
@@ -587,7 +587,7 @@ __Data Classes__  allow us to combine data into a grouping or  _class_  and use 
 
 Remember our color class?
 
-What if instead of passing in values for red, green, and blue, we wanted to pass in a string (either “red”,”green”, or “blue”) to initialize our color to one of these three colors.
+What if instead of passing in values for red, green, and blue, we wanted to pass in a string (either "red","green", or "blue") to initialize our color to one of these three colors.
 
 We can go back to our original syntax and define the members explicitly, and change our constructor to take a string that is not marked with the  _public_  or  _private_  keywords since we only need it to initialize the members.
 
@@ -639,15 +639,15 @@ public blue:number=0;
 
 constructor(colorStr:string){
 
-if (colorStr===“red”){
+if (colorStr==="red"){
 
 this.red=255;
 
-} else if (colorStr:string===“green”){
+} else if (colorStr:string==="green"){
 
 this.green=255;
 
-} else if (colorStr:string===“blue”){
+} else if (colorStr:string==="blue"){
 
 this.blue=255;
 
