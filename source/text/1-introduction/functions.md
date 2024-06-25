@@ -18,91 +18,115 @@ parent: Introduction
 {:toc}
 </details>
 
-
-__Review Topic: Functions__
-
-A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
-
-For now, we will discuss functions as named blocks of code.  Later we will learn how to create  _anonymous functions_  which do not have a name, but for this review, functions will have names.
-
-We  _declare_  a function in typescript by specifying its name, its parameters (these are just local variables that we can set the value of when we call the function), and its return type.  We also include the code that we want to execute.
-
-Once declared, we can use (call) that function anywhere in our code to execute it without worrying about the code inside.  As long as we know how to call it and the meaning of what it returns, we can use it.
-
-__Review Topic: Functions__
+# Key Idea
 
 A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
 
-__An example function in Typescript__
+# Functions Are Blocks of Code
 
-__function areaOfCircle(radius: number):number{__
+For now, we will discuss functions as named blocks of code. Later we will learn how to create  __anonymous functions__  which do not have a name. But for this review, functions will have names.
 
-__let pi:number=3.1415927;__
+We  __declare__ (or __define__)  a function in typescript by specifying its:
+* Name: The name of the function
+* __Parameters__: Local variables that are set to the value of the __arguments__ passed into the call
+* __Return type__: The expected type that this function will return
+* __Body__: The code that makes up the function and will be executed when the function is called.
 
-__return pi*radius*radius;__
+Once declared, we can __call__ (__use__) that function anywhere in our code to execute it without worrying about the code inside.  As long as we know how to call it and the meaning of what it returns, we can use it.
 
-__}__
+{: .warning-title}
 
-__Review Topic: Functions__
+Remember, you should only use the verb "call" when you are talking about invoking a function.  When you are talking about defining a function or variable, use the verb "declare" or "define". When you are talking about using a variable, use the verb "use", "access", or "get". You should never use the verb "call" when talking about accessing a variable (unless that variable is a function).
 
-A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
+# An Example Function
 
-__An example function in Typescript__
-
-_A comma separated list of parameters and their types_
-
-_This is the name of the function_
-
-_Stand alone functions start with the function keyword_
-
-__function areaOfCircle(radius: number):number{__
-
-__let pi:number=3.1415927;__
-
-__return pi*radius*radius;__
-
-__}__
-
-_The return value of the function_
-
-__Review Topic: Functions__
-
-A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
-
-__An example function in Typescript__
-
-_This is the name of the function_
-
-__function areaOfCircle(radius: number):number{__
-
-__let pi:number=3.1415927;__
-
-__return pi*radius*radius;__
-
-__}__
-
-_The code that makes up the function goes inside_
-
-_In typescript (and many other languages, we specify the start and end of blocks of code with braces_
-
-_We specify what the function returns with the return statement_
-
-__Review Topic: Functions__
-
-A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
-
-__We can call this function from anywhere in our code by using its name.__
-
-__let myArea:number=areaOfCircle(2);__
-
-This code will call our functionSubstituting 2 for the parameterradius, then return the calculationand store it in the variable myArea.
-
-function areaOfCircle(radius: number):number{
-
-let pi:number=3.1415927;
-
-return pi*radius*radius;
-
+```typescript
+function areaOfCircle(radius: number): number{
+    let pi: number = 3.1415927;
+    return pi * radius * radius;
 }
+```
+
+In this example, we have a function named `areaOfCircle`. It takes one parameter, `radius`, which is a `number`. The function returns a `number`.
+
+Notice that the parameter's type is specified after the parameter name, separated by a colon. The return type is specified after the parameter list, also separated by a colon.
+
+The body of the function is enclosed in curly braces `{}`. The code that makes up the function goes inside the curly braces, on separate lines separated by semicolons.
+
+The final line of the function is a __`return`__ statement. This statement returns the value of the expression to the right of the `return` keyword. The function will exit at this point, and the value will be returned to the call site.
+
+# Another Example Function
+
+```typescript
+function addTwoNumbers(a: number, b: number): number{
+    return a + b;
+}
+```
+
+In this example, we have two parameters, `a` and `b`, both of which are `number`s. The function returns a `number`. The parameters are separated by commas.
+
+# Example Function Calls
+
+```typescript
+function areaOfCircle(radius: number): number{
+    let pi: number = 3.1415927;
+    return pi * radius * radius;
+}
+
+let myArea: number = areaOfCircle(2);
+```
+
+We can call this function from anywhere in our code by using its name.
+
+This code will call our function `areaOfCircle` and substitute `2` for the parameter `radius`, then return the `calculation` and store the result `12.5663708` in the variable `myArea`.
+
+# Printing with `console.log`
+
+A very important built-in function in TypeScript is `console.log`. This function takes any number of arguments and prints them to the console.
+
+```typescript
+console.log("Hello, world!");
+```
+
+This code will print `Hello, world!` to the console.
+
+# Calling and Printing
+
+A common misconception is that functions print their return value. This is not true. Functions return a value, but they do not print it. If you want to see the value, you must print it.
+
+```typescript
+function addTwoNumbers(a: number, b: number): number{
+    return a + b;
+}
+
+let sum: number = addTwoNumbers(2, 3);
+console.log(sum);
+```
+
+You do not have to store the return value in a variable before printing it. You can print it directly.
+
+```typescript
+function addTwoNumbers(a: number, b: number): number{
+    return a + b;
+}
+
+console.log(addTwoNumbers(2, 3));
+```
+
+# Multiple Arguments to `console.log`
+
+You can pass multiple arguments to `console.log`. It will print each argument separated by a space.
+
+```typescript
+console.log("The sum of", 2, "and", 3, "is", 5);
+```
+
+The output of this code will be `The sum of 2 and 3 is 5`.
+
+# Summary
+
+Functions are blocks of code that perform a specific task. They can take parameters and return a value. We declare a function by specifying its name, parameters, return type, and body. We can call a function anywhere in our code to execute it.
+
+# Next Step
 
 Next we'll review [Conditionals &raquo;](../1-introduction/conditionals.md)
