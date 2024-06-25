@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 10
 Spring 2024
@@ -60,7 +60,7 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
 
 * So far, we have looked at well defined html documents where we know the number and type of elements that our page will contain when we build the application.
 * Sometimes, we don't.
-  * A task list (see WebEz\-Example in the WebEz Repository)
+  * A task list (see WebEz-Example in the WebEz Repository)
   * Point of sale (multiple items)
 * We can dynamically add components to our page with addComponent.  So far we have only done this in the constructor, but that doesn't mean we can't do it elsewhere.
 * Let's look at a simple data input screen for a point of sale system to see how this type of functionality works.
@@ -73,13 +73,13 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
   * A counter that is always on the page.
   * A place to put our line items as we create them.
 
-<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"form\-container"</span>  <span style="color:#808080">></span>
+<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"form-container"</span>  <span style="color:#808080">></span>
 
 <span style="color:#D4D4D4">    Customer Name: </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">input</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">type</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"text"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">customerName</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#808080">/><</span>  <span style="color:#569CD6">br</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#808080">/></span>
 
 <span style="color:#D4D4D4">    Order Number: </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">input</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">type</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"text"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">orderNumber</span>  <span style="color:#CE9178">"</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#808080">/></span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"detail\-header"</span>  <span style="color:#808080">></span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"detail-header"</span>  <span style="color:#808080">></span>
 
 <span style="color:#D4D4D4">        Order Details: </span>  <span style="color:#D4D4D4">        </span>  <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">addItemButton</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">New Item</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">></span>
 
@@ -93,15 +93,15 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
 
 <span style="color:#808080"></</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">></span>
 
-<span style="color:#D7BA7D">.detail\-header</span>  <span style="color:#D4D4D4"> {</span>
+<span style="color:#D7BA7D">.detail-header</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font\-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">20px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">20px</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">color</span>  <span style="color:#D4D4D4">: white;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">margin\-bottom</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">20px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">margin-bottom</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">20px</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">background\-color</span>  <span style="color:#D4D4D4">: black;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">background-color</span>  <span style="color:#D4D4D4">: black;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">10px</span>  <span style="color:#D4D4D4">;</span>
 
@@ -109,7 +109,7 @@ __Topic: Advanced __  __WebEz__  __Dynamic components__
 
 <span style="color:#D7BA7D">\#counter</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">display</span>  <span style="color:#D4D4D4">: inline\-block;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">display</span>  <span style="color:#D4D4D4">: inline-block;</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -361,15 +361,15 @@ Keeping it simple, we are just gettingthe input event from the text input box an
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#D7BA7D">.line\-comment</span>  <span style="color:#D4D4D4"> {</span>
+<span style="color:#D7BA7D">.line-comment</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">border\-bottom</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">1px</span>  <span style="color:#D4D4D4"> solid black;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">border-bottom</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">1px</span>  <span style="color:#D4D4D4"> solid black;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">10px</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"line\-comment"</span>  <span style="color:#808080">></span>
+<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">class</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"line-comment"</span>  <span style="color:#808080">></span>
 
 <span style="color:#808080">  </span>  <span style="color:#D4D4D4">Comment: </span>
 
@@ -490,7 +490,7 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 * Sometimes we want to create an overlay window that sits on top of our page, prevents us from clicking elsewhere on our page, and has its own content and behaviors.
 * WebEz provides two methods for doing this:
   * Popup: Creates a popup window with a title, some text, and buttons that returns the text on the button through an EventSubject
-  * Dialog: Creates a popup window whose content is determined by a component.  These can be created with the cli (webez dialog my\-dialog).
+  * Dialog: Creates a popup window whose content is determined by a component.  These can be created with the cli (webez dialog my-dialog).
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
@@ -617,7 +617,7 @@ Clicking Yes will emit "Yes" which will cause our method to add the component.
 
 __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
-Dialogs work similarly, except they do not have a pre\-defined structure.  You can create them as a component where you control the layout and any EventSubjects you want to implement.
+Dialogs work similarly, except they do not have a pre-defined structure.  You can create them as a component where you control the layout and any EventSubjects you want to implement.
 
 Creating a new dialog is as simple as:
 
@@ -672,11 +672,11 @@ __Topic: Advanced __  __WebEz__  __Dialogs and Popups__
 
 <span style="color:#D7BA7D">.body</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">text\-align</span>  <span style="color:#D4D4D4">: center;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">text-align</span>  <span style="color:#D4D4D4">: center;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font\-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">40px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">40px</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">line\-height</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">100px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">line-height</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">100px</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -758,9 +758,9 @@ The plan is to change displayDots to contain 1, 2, or 3 dots and change it once 
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">width</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">50px</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">display</span>  <span style="color:#D4D4D4">: inline\-block;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">display</span>  <span style="color:#D4D4D4">: inline-block;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">text\-align</span>  <span style="color:#D4D4D4">: left;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">text-align</span>  <span style="color:#D4D4D4">: left;</span>
 
 <span style="color:#D4D4D4">}</span>
 
@@ -768,7 +768,7 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 * To implement the behavior, we will use the @Timer decorator to decorate a function hat we want called periodically.
   * Passing 1000 to the timer methodcauses onTimer to be called once asecond while the page is displayed(forever: more on this later).
-  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
+  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0-2) by updating our displayDots property which is bound to the page.
   * We will see something like …
 
 <span style="color:#D4D4D4">@Timer(</span>  <span style="color:#B5CEA8">1000</span>  <span style="color:#D4D4D4">)</span>
@@ -787,7 +787,7 @@ __Topic: Advanced __  __WebEz__  __Timers__
 
 * To implement the behavior, we will use the @Timer decorator to decorate a function hat we want called periodically.
   * Passing 1000 to the timer methodcauses onTimer to be called once asecond while the page is displayed(forever: more on this later).
-  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0\-2) by updating our displayDots property which is bound to the page.
+  * Each time it is called, we check a counter that will keep track of how many dots aredisplayed.  When we get to 3, we set it back to 0.  Otherwise, we draw the correctnumber of dots (count+1 because count goes from 0-2) by updating our displayDots property which is bound to the page.
   * We will see something like …
 
 <span style="color:#D4D4D4">@Timer(</span>  <span style="color:#B5CEA8">1000</span>  <span style="color:#D4D4D4">)</span>

@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 13
 Spring 2024
@@ -15,7 +15,7 @@ __Topic: Recursion__
 
 To understand recursion, one must first understand recursion.
 
-\-Stephen Hawking
+-Stephen Hawking
 
 __Topic: Recursion__
 
@@ -141,9 +141,9 @@ __A recursive solution__
 * And what is our recursive step that makes the problem smaller.
   * We will search again, only on either the first half (if value we want is \< middle) or the second half (if value we want is > middle)
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#CCCCCC">){</span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">;}</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#CCCCCC">){</span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">;}</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">Math</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#DCDCAA">floor</span>  <span style="color:#CCCCCC">((</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">/</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">);</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">Math</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#DCDCAA">floor</span>  <span style="color:#CCCCCC">((</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">/</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">);</span>
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC">\] </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#CCCCCC">){</span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC">;}</span>
 
@@ -173,11 +173,11 @@ __A recursive solution__
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#CCCCCC">){</span>
 
-<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">;</span>
+<span style="color:#CCCCCC">        </span>  <span style="color:#C586C0">return</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">;</span>
 
 <span style="color:#CCCCCC">    }</span>
 
-<span style="color:#CCCCCC">    </span>  <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">Math</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#DCDCAA">floor</span>  <span style="color:#CCCCCC">((</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">/</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">);</span>
+<span style="color:#CCCCCC">    </span>  <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">Math</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#DCDCAA">floor</span>  <span style="color:#CCCCCC">((</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">.</span>  <span style="color:#9CDCFE">length</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">) </span>  <span style="color:#D4D4D4">/</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">);</span>
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#C586C0">if</span>  <span style="color:#CCCCCC"> (</span>  <span style="color:#9CDCFE">list</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#9CDCFE">mid</span>  <span style="color:#CCCCCC">\] </span>  <span style="color:#D4D4D4">===</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#CCCCCC">){</span>
 
@@ -216,10 +216,10 @@ __Topic: Recursion__
 __A real example__
 
 * Consider the garden example.  This is actually a tree of components.
-  * The main component has children garden and display\-case
+  * The main component has children garden and display-case
   * The garden component has plants
-  * The display\-case component has children of type display\-row
-  * The display\-row component has children of type plant
+  * The display-case component has children of type display-row
+  * The display-row component has children of type plant
 * This is an incredibly common type of relationship in Computer Science, and sometimes we want to use it ourselves to represent data.
 
 __Topic: Recursion__
@@ -230,7 +230,7 @@ Imagine a tree of numbers instead.  If we look at the children of any  _node_  I
 
 Even for the nodes without children we can think of them as trees with no nodes (empty trees).
 
-So in other words, we can treat each  _sub\-tree_  of a tree with a given  _root_  as if it were a tree.
+So in other words, we can treat each  _sub-tree_  of a tree with a given  _root_  as if it were a tree.
 
 This feels like a good candidate for recursion.
 
@@ -241,8 +241,8 @@ __A real example__
 * As it turns out, this is a special kind of tree called a  _binary search tree_ .
 * It has some specific properties:
   * A node will have 2 subtrees (possibly empty)
-  * Every number in the left sub\-tree must be less than the value stored in the node
-  * Every number in the right sub\-tree must be greater than the value stored in the node
+  * Every number in the left sub-tree must be less than the value stored in the node
+  * Every number in the right sub-tree must be greater than the value stored in the node
   * These must hold for the subtree rooted at every node in the tree.
 
 __Topic: Recursion__
@@ -267,7 +267,7 @@ Say we have a function
 
 And we want to find the number 100.
 
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
@@ -281,7 +281,7 @@ Say we have a function
 
 And we want to find the number 100.
 
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
@@ -295,27 +295,9 @@ Say we have a function
 
 And we want to find the number 100.
 
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
 
-So we can call treeSearch on the right sub\-tree since it is also a tree.
-
-<span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
-
-__Topic: Recursion__
-
-__A real example__
-
-We can search this structure by examining the root node then recursively searching the correct subtree based on the values.
-
-Say we have a function
-
-And we want to find the number 100.
-
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
-
-So we can call treeSearch on the right sub\-tree since it is also a tree.
-
-Now we compare to 85 and again call treeSearch on the right sub\-tree
+So we can call treeSearch on the right sub-tree since it is also a tree.
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
@@ -329,13 +311,11 @@ Say we have a function
 
 And we want to find the number 100.
 
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
 
-So we can call treeSearch on the right sub\-tree since it is also a tree.
+So we can call treeSearch on the right sub-tree since it is also a tree.
 
-Now we compare to 85 and again call treeSearch on the right sub\-tree
-
-This time, we see that the value is < 126, so we will call treeSearch on the left sub\-tree.
+Now we compare to 85 and again call treeSearch on the right sub-tree
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
@@ -349,17 +329,37 @@ Say we have a function
 
 And we want to find the number 100.
 
-Since 100 is greater than 44, we know the answer must be in the right sub\-tree if it is in the BST at all.
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
 
-So we can call treeSearch on the right sub\-tree since it is also a tree.
+So we can call treeSearch on the right sub-tree since it is also a tree.
 
-Now we compare to 85 and again call treeSearch on the right sub\-tree
+Now we compare to 85 and again call treeSearch on the right sub-tree
 
-This time, we see that the value is < 126, so we will call treeSearch on the left sub\-tree.
+This time, we see that the value is < 126, so we will call treeSearch on the left sub-tree.
+
+<span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
+
+__Topic: Recursion__
+
+__A real example__
+
+We can search this structure by examining the root node then recursively searching the correct subtree based on the values.
+
+Say we have a function
+
+And we want to find the number 100.
+
+Since 100 is greater than 44, we know the answer must be in the right sub-tree if it is in the BST at all.
+
+So we can call treeSearch on the right sub-tree since it is also a tree.
+
+Now we compare to 85 and again call treeSearch on the right sub-tree
+
+This time, we see that the value is < 126, so we will call treeSearch on the left sub-tree.
 
 When we finally compare our value to the node, we have found the node we are looking for.
 
-Note, if we had been looking for 99, we would try the left sub\-tree here, and stop because it is empty.
+Note, if we had been looking for 99, we would try the left sub-tree here, and stop because it is empty.
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">tree</span>  <span style="color:#DCDCAA">Search</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">tree</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#CCCCCC">, </span>  <span style="color:#9CDCFE">target</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">){</span>
 
@@ -494,9 +494,9 @@ If the node is empty (undefined) then the node with the value we are looking for
 
 If the node's value is === the value we are looking for, then we return true (found it).
 
-If the node's value is < the value we are looking for, then if the value is in the tree, it must be in the right sub\-tree, so we call treeSearch recursively to search that sub\-tree.
+If the node's value is < the value we are looking for, then if the value is in the tree, it must be in the right sub-tree, so we call treeSearch recursively to search that sub-tree.
 
-If the node's value is > the value we are looking for, then if the value is in the tree, it must be in the left sub\-tree, so we call treeSearch recursively to search that sub\-tree
+If the node's value is > the value we are looking for, then if the value is in the tree, it must be in the left sub-tree, so we call treeSearch recursively to search that sub-tree
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">TreeNode</span>  <span style="color:#D4D4D4">{</span>
 
@@ -540,7 +540,7 @@ We can also recursively insert a node into the tree.
 
 Search the tree until you find a node where the subtree you would search next is undefined and add a new node there.  This is our stop condition.
 
-If the sub\-tree we would insert into is not empty, then we just insert into that (smaller) sub\-tree.
+If the sub-tree we would insert into is not empty, then we just insert into that (smaller) sub-tree.
 
 _Trees_  are a common data structure in Computer Science and recursion is a much more natural way to deal with them.
 

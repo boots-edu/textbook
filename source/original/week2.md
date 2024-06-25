@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 2
 Spring 2024
@@ -43,7 +43,7 @@ Suppose I want to make a countdown.  I could do this with a while loop.
 
 <span style="color:#D4D4D4">        console.log(count);</span>
 
-<span style="color:#D4D4D4">        count\-\-;</span>
+<span style="color:#D4D4D4">        count--;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -63,7 +63,7 @@ And I could call the function passing in the number I want to count down from.
 
 <span style="color:#D4D4D4">        console.log(count);</span>
 
-<span style="color:#D4D4D4">        count\-\-;</span>
+<span style="color:#D4D4D4">        count--;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -85,7 +85,7 @@ If I compile and run this code, I see the output on the right.  Why?
 
 <span style="color:#D4D4D4">        console.log(count);</span>
 
-<span style="color:#D4D4D4">        count\-\-;</span>
+<span style="color:#D4D4D4">        count--;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -158,7 +158,7 @@ For now, this will be our primary way to display something from our program.
 
 <span style="color:#D4D4D4">        console.log(count);</span>
 
-<span style="color:#D4D4D4">        count\-\-;</span>
+<span style="color:#D4D4D4">        count--;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -236,7 +236,7 @@ Here's my solution
 
 <span style="color:#D4D4D4">        product = product + x;</span>
 
-<span style="color:#D4D4D4">        y = y \- </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        y = y - </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -314,7 +314,7 @@ A  __loop__  is a control flow structure in programming that allows us to repeat
 
 The update statement will usually modify the loop variable so that it approaches a value that will cause the loop to exit.
 
-Note: i++ is just shorthand for i=i+1 (and i\-\- is similarly shorthand for i=i\-1)
+Note: i++ is just shorthand for i=i+1 (and i-- is similarly shorthand for i=i-1)
 
 <span style="color:#FF0000">Evaluates to a </span>  <span style="color:#FF0000">boolean</span>
 
@@ -338,7 +338,7 @@ Let's rewrite our countdown function using a for loop instead of a while loop.
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> countdown(</span>  <span style="color:#D4D4D4">count:number</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = count; i > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i\-\-){</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = count; i > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i--){</span>
 
 <span style="color:#D4D4D4">        console.log(i);</span>
 
@@ -362,7 +362,7 @@ Our update statement decrements the value of I each time the loop runs
 
 <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> countdown(</span>  <span style="color:#D4D4D4">count:number</span>  <span style="color:#D4D4D4">){</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = count; i > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i\-\-){</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">for</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> i = count; i > </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">; i--){</span>
 
 <span style="color:#D4D4D4">        console.log(i);</span>
 
@@ -400,7 +400,7 @@ For reference, here is the while loop version from before
 
 <span style="color:#D4D4D4">        product = product + x;</span>
 
-<span style="color:#D4D4D4">        y = y \- </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        y = y - </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
@@ -443,10 +443,10 @@ __Review Topic: __  __Arrays__
 An  __array __ is an ordered list of values of the same type where each element in the array can be accessed using its index.
 
 * Arrays are an extremely important data structure because they allow us to store a collection of objects.
-* We can build arrays out of any built\-in or user\-defined type we want, including out of other arrays.
+* We can build arrays out of any built-in or user-defined type we want, including out of other arrays.
 * In Typescript, the size of the array does not need to be defined.  It will grow as necessary to hold the data placed into it ( __NOT TRUE IN C or C++__ ).
 * Each element in the array has an index (starting at 0) which we can use to access the individual elements
-  * i.e. if an array has 10 elements, the indexes would be 0\-9.
+  * i.e. if an array has 10 elements, the indexes would be 0-9.
 
 __Review Topic: __  __Arrays__
 

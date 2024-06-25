@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 1
 Spring 2024
@@ -7,11 +7,11 @@ Spring 2024
 
 * What is this course about?
   * In this course we will continue to study the field of Computer Science delving deeper into core concepts and introducing new concepts and paradigms for producing well engineered software solutions
-  * Specifically, we will study Objects and Object\-Oriented programming techniques as well as various structures and algorithms to promote good software design.
+  * Specifically, we will study Objects and Object-Oriented programming techniques as well as various structures and algorithms to promote good software design.
 
 # CISC181 Details
 
-This semester, the course will be taught in Typescript.  Typescript is a free and open\-source programming language that adds static typing and type annotations to Javascript.
+This semester, the course will be taught in Typescript.  Typescript is a free and open-source programming language that adds static typing and type annotations to Javascript.
 
 Typescript is used widely and has become the most common language for developing applications for the web.
 
@@ -213,13 +213,13 @@ __let pi:number=3.1415927;__
 
 __let r:number=2;__
 
-__let answer:number=pi\*r\*r;__
+__let answer:number=pi*r*r;__
 
 If we change the value of r, then we compute the area of a different circle.
 
 Later we will look at turning this into a __ __  _function_  that can be called with different values of r and reused.
 
-If we assign a non\-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
+If we assign a non-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
 __Review Topic: Variables__
 
@@ -271,7 +271,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -291,7 +291,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -309,7 +309,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -333,7 +333,7 @@ function areaOfCircle(radius: number):number{
 
 let pi:number=3.1415927;
 
-return pi\*radius\*radius;
+return pi*radius*radius;
 
 }
 
@@ -420,9 +420,9 @@ In TypeScript, the string is sequence of char values used to store text data
 * Assume the string let myStr:string="Hello World";
 * __charAt__  __(): __ This method will return character at the specified index.
   * myStr.charAt(2); //this will return an l (the third character at index 2)
-* __indexOf__  __():__  It will return the index. first occurrence of specified value else \-1 if not found.
+* __indexOf__  __():__  It will return the index. first occurrence of specified value else -1 if not found.
   * myStr.indexOf("o"); //this will return a 4
-* __lastIndexOf__  __():__  It will return index, last occurrence of specified value else \-1 if not found.
+* __lastIndexOf__  __():__  It will return index, last occurrence of specified value else -1 if not found.
   * myStr.lastIndexOf("o"); //this will return 7
 
 __Strings in Typescript:  __

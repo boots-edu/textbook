@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 3
 Spring 2024
@@ -352,7 +352,7 @@ __Review Topic: __  __Data Classes__
 
 __Data Classes__  allow us to combine data into a grouping or  _class_  and use that grouping as a data type in our programs.
 
-For polygons, we just store an array of points.  That way we can have an n\-sided polygon represented by a single class.
+For polygons, we just store an array of points.  That way we can have an n-sided polygon represented by a single class.
 
 class Color{
 
@@ -735,7 +735,7 @@ __Data Classes__  allow us to combine data into a grouping or  _class_  and use 
 
 Next, we will examine more complex objects by adding methods (functions) inside the class which can manipulate the object data for us or make calculations from that data.
 
-This is the basis of object\-oriented programming, as a fully developed class becomes a self\-contained object with both data and behaviors.
+This is the basis of object-oriented programming, as a fully developed class becomes a self-contained object with both data and behaviors.
 
 Don't forget the exam next week.  Good luck to all of you!!!
 

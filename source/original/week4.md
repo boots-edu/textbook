@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 4
 Spring 2024
@@ -11,7 +11,7 @@ Last week we introduced the notion of a class by describing classes that contain
 
 Classes can also contain member functions ( __methods__ ) that can access both  __public__  and  __private__  members of the class.
 
-A class with methods can be viewed as a self\-contained entity which  __encapsulates__  some concept, allowing us to use the class without knowing anything about its internal structure or implementation.
+A class with methods can be viewed as a self-contained entity which  __encapsulates__  some concept, allowing us to use the class without knowing anything about its internal structure or implementation.
 
 __Topic: __  __Classes__
 
@@ -57,11 +57,11 @@ constructor(public start:Point,end:Point,color:Color){}
 
 getLength():number{
 
-let x=this.start.x\-this.end.x;
+let x=this.start.x-this.end.x;
 
-let y=this.start.y\-this.end.y;
+let y=this.start.y-this.end.y;
 
-let len:number=Math.sqrt(x\*x+y\*y);
+let len:number=Math.sqrt(x*x+y*y);
 
 return len;
 
@@ -85,11 +85,11 @@ constructor(public start:Point,end:Point,color:Color){}
 
 getLength():number{
 
-let x:number=this.start.x\-this.end.x;
+let x:number=this.start.x-this.end.x;
 
-let y:number=this.start.y\-this.end.y;
+let y:number=this.start.y-this.end.y;
 
-let len:number=Math.sqrt(x\*x+y\*y);
+let len:number=Math.sqrt(x*x+y*y);
 
 return len;
 
@@ -135,7 +135,7 @@ __Topic: __  __Classes__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
-* Now we are going to work on an in\-class exercise.  You can get the exercise here:
+* Now we are going to work on an in-class exercise.  You can get the exercise here:
   * [https://classroom.github.com/a/xO5bwL0n](https://classroom.github.com/a/xO5bwL0n)
 * This is our drawing example, with the line lengthmethod we just added (and the default color).
 * The rectangle class has a number of  _empty_  methodsthat we want to create to query the rectangle objectsabout their characteristics.
@@ -155,7 +155,7 @@ constructor(public corner1:Point,corner2:Point,color:Color){}
 
 getArea():number{
 
-//we want to multiply width \* height, but we already have a way to get the width and the height
+//we want to multiply width * height, but we already have a way to get the width and the height
 
 //using our line class from before.
 
@@ -193,19 +193,19 @@ Another example:
 
 <span style="color:#6A9955">  …</span>
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* Return an array of line objects which represent the two diagonals of the rectangle.</span>
+<span style="color:#6A9955">     * Return an array of line objects which represent the two diagonals of the rectangle.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> </span>  <span style="color:#9CDCFE">none</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> </span>  <span style="color:#9CDCFE">none</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> An array of 2 points representing the diagonals.  The first point in the array should be top</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> An array of 2 points representing the diagonals.  The first point in the array should be top</span>
 
-<span style="color:#6A9955">     \* left to bottom right.  The second point should be top right to bottom left.</span>
+<span style="color:#6A9955">     * left to bottom right.  The second point should be top right to bottom left.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getDiagonals</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Line</span>  <span style="color:#CCCCCC">\[\] {</span>
 
@@ -223,17 +223,17 @@ Another example:
 
 <span style="color:#6A9955">  …</span>
 
-<span style="color:#CCCCCC"> </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#CCCCCC"> </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* Return the length of the diagonal of the rectangle.</span>
+<span style="color:#6A9955">     * Return the length of the diagonal of the rectangle.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> </span>  <span style="color:#9CDCFE">none</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> </span>  <span style="color:#9CDCFE">none</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> The length of the diagonal of the rectangle.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> The length of the diagonal of the rectangle.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#CCCCCC">    </span>  <span style="color:#DCDCAA">getPerimeter</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC"> {</span>
 
@@ -251,17 +251,17 @@ Another example:
 
 <span style="color:#6A9955">  …</span>
 
-<span style="color:#6A9955">  /\*\*</span>
+<span style="color:#6A9955">  /**</span>
 
-<span style="color:#6A9955">   \* Return the length of the diagonal of the rectangle.</span>
+<span style="color:#6A9955">   * Return the length of the diagonal of the rectangle.</span>
 
-<span style="color:#6A9955">   \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> none</span>
+<span style="color:#6A9955">   * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> none</span>
 
-<span style="color:#6A9955">   \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> The length of the diagonal of the rectangle.</span>
+<span style="color:#6A9955">   * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> The length of the diagonal of the rectangle.</span>
 
-<span style="color:#6A9955">   \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
+<span style="color:#6A9955">   * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> None</span>
 
-<span style="color:#6A9955">   \*/</span>
+<span style="color:#6A9955">   */</span>
 
 <span style="color:#6A9955">  </span>  <span style="color:#6A9955">getDiagonalLength</span>  <span style="color:#6A9955">():number{</span>
 
@@ -401,7 +401,7 @@ __Classes__  allow us to combine data and methods into a grouping or  _class_  a
     * We teach each class how to clone itself, and then use those methods if we have a class that contains another class.
     * We will work from the bottom up of our hierarchy of classes.  The simplest of which is our color class.
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -421,7 +421,7 @@ return new Color(this.red,this.green,this.blue);
 
 }
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -439,7 +439,7 @@ return new Point(this.x,this.y,this.color.clone());
 
 }
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -457,7 +457,7 @@ return new Line(this.start.clone(),this.end.clone(),this.color.clone());
 
 }
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -485,7 +485,7 @@ return new Rectangle(this.corner1.clone(),this.corner3.clone(),this.color.clone(
 
 }
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -493,7 +493,7 @@ __Classes__  allow us to combine data and methods into a grouping or  _class_  a
   * If we use the spread operator, we only get a shallow copy (i.e. a new array containing references to the old objects.  This is NOT what we want.
   * We will need to iterate through the array of points, cloning each, and creating a brand new array of clones which we can then pass to the constructor of our new polygon object.
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -521,7 +521,7 @@ return new Polygon(newPoints,this.color.clone());
 
 }
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -605,7 +605,7 @@ let line2:Line=line.clone();
 | y=100 |
 | color= |
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 
@@ -705,7 +705,7 @@ let line:Line=new Line(point1.clone(),point2.clone(),new Color(255,0,0));
 | green=0 |
 | blue=0 |
 
-__Topic: __  __Classes\-Deep Copy__
+__Topic: __  __Classes-Deep Copy__
 
 __Classes__  allow us to combine data and methods into a grouping or  _class_  and use that grouping as a data type in our programs.
 

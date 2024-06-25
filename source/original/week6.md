@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 6
 Spring 2024
@@ -29,7 +29,7 @@ More info at polleverywhere.com/support
 What is your favorite song?
 https://www.polleverywhere.com/free_text_polls/Ae3xWZ9pzsTviGHXutmk5
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -47,7 +47,7 @@ Bowed Instrument
 
 Note: Each lower subclass has a  _type of_  relationship with its superclass.
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -65,7 +65,7 @@ Bowed Instrument
 
 Note: Cellos have a name, key and year field and a getName() method automatically due to inheritance.
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -81,7 +81,7 @@ Bowed Instrument
 
 Note: Cellos have a name, key and year field and a getName() method automatically due to inheritance.
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -92,7 +92,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * public: Accessible from anywhere (inside or outside the class hierarchy).
 * By controlling access to properties and methods, we expose to the outside world a minimal set of public properties and methods are exposed.  Public items are more difficult to change because others might be using them.  Protected are slightly easier and only break classes inherited from us. Changes to private methods effect nothing outside of the class itself.
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -130,7 +130,7 @@ To add that functionality…
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: Classes\-Inheritance__
+__Topic: Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -166,7 +166,7 @@ The points array is still not available to the outside world, and changing it wo
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -214,7 +214,7 @@ We can do it like this…
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -252,7 +252,7 @@ We would need to rewrite the area, perimeter and diagonals methods to use our ne
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -287,7 +287,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -331,7 +331,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -377,7 +377,7 @@ Sometimes, we don't want that.
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Override__
+__Topic: __  __Classes-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass.
 
@@ -407,7 +407,7 @@ If we add a default getArea method to our Drawable with the same signature as it
 
 If a subclass implements getArea (like rectangle, circle, and triangle), then the version in the subclass is used, otherwise, the version in the base class is used.  This is alled  _overriding_  a method
 
-__Topic: __  __Classes\-Override__
+__Topic: __  __Classes-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass.
 
@@ -453,13 +453,13 @@ We can even call the superclass implementation from our overridden method.
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getArea</span>  <span style="color:#D4D4D4">(): number {</span>
 
-<span style="color:#569CD6">        return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.PI</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.radius</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.radius</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#569CD6">        return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.PI</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.radius</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.radius</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Override__
+__Topic: __  __Classes-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass.
 
@@ -512,7 +512,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 * Notice the code  _super.getDescription_  _()_
 * While we user super() to call the constructor of the superclass, we can use super.methodname() to call any method on the superclass even if it is overridden.
 
-__Topic: __  __Classes\-Override__
+__Topic: __  __Classes-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass.
 
@@ -579,7 +579,7 @@ We can  _override _ a method in our subclass by creating a method with the same 
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Override__
+__Topic: __  __Classes-Override__
 
 We can  _override _ a method in our subclass by creating a method with the same signature as a method in our superclass.
 
@@ -643,7 +643,7 @@ It turns out that this  _WORKS!_  For apples it will call the apple version of g
 
 If either were not present, then it would just call the superclass version.  This powerful behavior is a type of  _polymorphism_  and allows us to create very powerful class hierarchies, that are simple to access and use.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -651,11 +651,11 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 In other words, in our fruit example, we provided a public interface for all fruits that included the method getDescription().  Regardless of the type of fruit, the public interface does not change, and the language is able to  _dispatch_  the method call to the appropriate subclass for us automatically.
 
-This type of  _polymorphism_  is  _subclass or subtype polymorphism._   There are other types of polymorphism including ad\-hoc polymorphism and parametric polymorphism.  We will examine parametric polymorphism later.
+This type of  _polymorphism_  is  _subclass or subtype polymorphism._   There are other types of polymorphism including ad-hoc polymorphism and parametric polymorphism.  We will examine parametric polymorphism later.
 
 ![](../../images/CISC181-Week%2063.png)
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -668,7 +668,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 ![](../../images/CISC181-Week%2064.png)
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -683,7 +683,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
 
 ![](../../images/CISC181-Week%2066.png)
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -747,7 +747,7 @@ If we call it on a Line object stored in a Drawable variable (which is allowed s
 
 <span style="color:#D4D4D4">obj.draw</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.drawingSurface</span>  <span style="color:#D4D4D4">);</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -819,7 +819,7 @@ We can then call the draw method on these objects (since drawable support it) an
 
 <span style="color:#D4D4D4">        }</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -831,7 +831,7 @@ It would be nice not to be able to prevent a user of our class from accidentally
 
 <span style="color:#D4D4D4">weird.draw</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.drawingSurface</span>  <span style="color:#D4D4D4">);</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -861,7 +861,7 @@ We can modify our drawable class to prevent it from being instantiated directly 
 
 This breaks our clone method, how do we fix it.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -887,7 +887,7 @@ Since we can't make one of these directly, we cannot clone it.  We rely on the i
 
 If you derive from an abstract class, then all abstract members MUST be implemented in the subclass since now there is no default implementation.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -913,7 +913,7 @@ Now any class that derives from Drawable will not compile if it does not impleme
 
 However, since they are still defined in the superclass, we can still call it on any object derived from Drawable and it will still dispatch to the correct subclass method.  If we removed it altogether, it would not dispatch correctly when called.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -933,7 +933,7 @@ If we have methods that make no sense in the superclass, and must be implemented
 
 <span style="color:#569CD6">abstract</span>  <span style="color:#D4D4D4"> draw(page: any): void;</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -943,7 +943,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
   * We can construct complex classes by extending other classes and adding functionality to create more and more specific classes that take advantage of the features that already exist in the superclass.
   * We can use the idea of polymorphism to reference objects through their superclass, and have the correct implementation in the subclass execute for us through polymorphism.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -953,7 +953,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
   * We can force subclasses to create overridden methods for our superclass by declaring methods as  _abstract._  This does not prevent dispatch, but does remove the default behavior, making all subclasses implement the method themselves.
 * And with all of this, we have an elegant way to design programs that leverages the ability to share code, and view a problem in terms of objects.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -1013,7 +1013,7 @@ It also prescribes that all derived subclasses must implement a method  _getDeta
 
 The child class simply implements that method and takes all other functionality from Users
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -1069,7 +1069,7 @@ Brute Force Search
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 

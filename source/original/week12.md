@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 12
 Spring 2024
@@ -184,9 +184,9 @@ In this signature for the subscribe method, the parameter named callback is of t
 
 __Topic: Higher Order Array Methods__  __Higher order functions is a function that takes as an argument and/or returns a function.__
 
-This language feature of typescript (and many other languages where functions are  _first order objects_ ) allows for some useful and interesting ways to right code and typescript (javascript) provides some built\-in functions that take advantage of this.
+This language feature of typescript (and many other languages where functions are  _first order objects_ ) allows for some useful and interesting ways to right code and typescript (javascript) provides some built-in functions that take advantage of this.
 
-Use of these built\-in methods will make your code shorter, simpler and more readable.
+Use of these built-in methods will make your code shorter, simpler and more readable.
 
 There is nothing these can do that we could not write in some other way, but they simplify things considerably.
 
@@ -256,13 +256,13 @@ __Topic: Higher Order Array Methods__  __With __  _find and _  _findIndex_  __ w
 
 The find method execute a function (Test method) that returns a boolean on each element of the array and returns the first element where the function returns true.  findIndex returns the cardinal index instead.
 
-find \-Returns the first element where the test function returns true
+find -Returns the first element where the test function returns true
 
-find \-Returns undefined if no elements found
+find -Returns undefined if no elements found
 
-findIndex \-Returns the index of the first element where the test function returns true
+findIndex -Returns the index of the first element where the test function returns true
 
-findIndex \-Returns \-1 if no elements found
+findIndex -Returns -1 if no elements found
 
 __Note: There are Last versions of these methods that return the last element (__  __findLast__  __, __  __findLastIndex__  __)__
 
@@ -284,7 +284,7 @@ __Note: There are Last versions of these methods that return the last element (_
 
 <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> index = </span>  <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">people.findIndex</span>  <span style="color:#D4D4D4">((person) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> person.name === </span>  <span style="color:#CE9178">"John"</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (index !== \-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">) console.log(</span>  <span style="color:#D4D4D4">    </span>  <span style="color:#CE9178">\`found </span>  <span style="color:#569CD6">${</span>  <span style="color:#D4D4D4">people\[index\].name</span>  <span style="color:#569CD6">}</span>  <span style="color:#CE9178"> \`</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (index !== -</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">) console.log(</span>  <span style="color:#D4D4D4">    </span>  <span style="color:#CE9178">\`found </span>  <span style="color:#569CD6">${</span>  <span style="color:#D4D4D4">people\[index\].name</span>  <span style="color:#569CD6">}</span>  <span style="color:#CE9178"> \`</span>  <span style="color:#D4D4D4">);</span>
 
 __These do not mutate the array in any way.__
 
@@ -330,7 +330,7 @@ Map is very useful for extracting datafrom an array of objects.
 
 __These do not mutate the array in any way.__
 
-__Topic: Higher Order Array Methods__  _flatMap_  __ we can create a new array by manipulating the elements in an array and its sub\-arrays.__
+__Topic: Higher Order Array Methods__  _flatMap_  __ we can create a new array by manipulating the elements in an array and its sub-arrays.__
 
 The flatMap method executes a function (Test method) that returns a new array consisting of the return values of the function applied to each element in a nestedarray.
 
@@ -382,7 +382,7 @@ Here is a product example:
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> sum = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc + </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> product= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc \* </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> product= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> acc * </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">);</span>
 
 __These do not mutate the array in any way.__
 
@@ -394,7 +394,7 @@ Note that we can do anythinginside the function and any changes we make to the a
 
 We can exclude some values from our count, and also map somevalues first.
 
-<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> max= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.max</span>  <span style="color:#D4D4D4">(acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">), \-</span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> max= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.max</span>  <span style="color:#D4D4D4">(acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">), -</span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> min= </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">Math.min</span>  <span style="color:#D4D4D4">(acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">), </span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">);</span>
 
@@ -404,7 +404,7 @@ We can exclude some values from our count, and also map somevalues first.
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> acc + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- average) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> acc + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> - average) ** </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }, </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">) / </span>  <span style="color:#D4D4D4">vals.length</span>  <span style="color:#D4D4D4">);</span>
 
@@ -452,7 +452,7 @@ This creates an array of the squares of the oddnumbers in the array.
 
 <span style="color:#D4D4D4">            average: </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">,</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#D4D4D4">stdev</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">acc.stdev</span>  <span style="color:#D4D4D4"> + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \- </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4">) \*\* </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#D4D4D4">stdev</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#D4D4D4">acc.stdev</span>  <span style="color:#D4D4D4"> + (</span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> - </span>  <span style="color:#D4D4D4">acc.average</span>  <span style="color:#D4D4D4">) ** </span>  <span style="color:#B5CEA8">2</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">        };</span>
 
@@ -460,7 +460,7 @@ This creates an array of the squares of the oddnumbers in the array.
 
 <span style="color:#D4D4D4">    {</span>
 
-<span style="color:#D4D4D4">        max: \-</span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">        max: -</span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">        min: </span>  <span style="color:#569CD6">Infinity</span>  <span style="color:#D4D4D4">,</span>
 
@@ -474,7 +474,7 @@ This creates an array of the squares of the oddnumbers in the array.
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">OddSqrs</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">vals.reduce</span>  <span style="color:#D4D4D4">((acc: number\[\], </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">: number) </span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">    if (val%2) </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> \[...acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">\];</span>
+<span style="color:#D4D4D4">    if (val%2) </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> \[...acc, </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#D4D4D4">val</span>  <span style="color:#D4D4D4">\];</span>
 
 <span style="color:#D4D4D4">    else return \[…acc\];</span>
 
@@ -702,7 +702,7 @@ _NOTE: This method is destructive and overwrites the array.  If you don't want t
 
 <span style="color:#D4D4D4">Sorted=</span>  <span style="color:#D4D4D4">vals.sort</span>  <span style="color:#D4D4D4">();</span>
 
-<span style="color:#D4D4D4">ascending=</span>  <span style="color:#D4D4D4">vals.sort</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">a,b</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">a\-b);</span>
+<span style="color:#D4D4D4">ascending=</span>  <span style="color:#D4D4D4">vals.sort</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">a,b</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">a-b);</span>
 
-<span style="color:#D4D4D4">descending=</span>  <span style="color:#D4D4D4">vals.sort</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">a,b</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">b\-a);</span>
+<span style="color:#D4D4D4">descending=</span>  <span style="color:#D4D4D4">vals.sort</span>  <span style="color:#D4D4D4">((</span>  <span style="color:#D4D4D4">a,b</span>  <span style="color:#D4D4D4">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#D4D4D4">b-a);</span>
 

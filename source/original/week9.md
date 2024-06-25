@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 9
 Spring 2024
@@ -262,15 +262,15 @@ What a difference it makes when we add just a little bit of styling to our tags.
 
 <span style="color:#D7BA7D">.</span>  <span style="color:#D7BA7D">btn</span>  <span style="color:#D4D4D4">{</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">background\-color</span>  <span style="color:#D4D4D4">: blue;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">background-color</span>  <span style="color:#D4D4D4">: blue;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">color</span>  <span style="color:#D4D4D4">: white;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">padding</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">10px</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#B5CEA8">20px</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font\-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">16px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">font-size</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">16px</span>  <span style="color:#D4D4D4">;</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">border\-radius</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">10px</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">border-radius</span>  <span style="color:#D4D4D4">: </span>  <span style="color:#B5CEA8">10px</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#9CDCFE">margin</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#B5CEA8">15px</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#B5CEA8">0</span>  <span style="color:#D4D4D4">;</span>
 
@@ -303,7 +303,7 @@ __Topic: Basic Web Development__  __HTML – Box Positioning__
   * display:  (Too many to list, here are the ones you will probably use)
     * Inline: Next element will be right after it (or on the next line if no room).  Sizes to the content
     * Block: Element will be displayed by itself vertically and can be sized manually with width and height, or top, button, left, and right.
-    * Inline\-block: Best of both worlds.  Sizable but still can be next to each other.
+    * Inline-block: Best of both worlds.  Sizable but still can be next to each other.
 
 __Topic: Basic Web Development__  __WebEz__
 
@@ -321,7 +321,7 @@ The WebEz model uses standard html and css like we have been talking about insid
 
 Every project starts with 1 component called MainComponent.  It has an html file, a css file, and a ts file to get you started (and a file for your tests).
 
-Additional components can be created and inserted into the MainComponent to build an object\-oriented web application.
+Additional components can be created and inserted into the MainComponent to build an object-oriented web application.
 
 The html is plain html.
 
@@ -351,7 +351,7 @@ You are only interested in what is inside the src/app folder (src\\app on Window
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-WebEz is a component\-based system.  Individual elements should be broken up into components and attached to the web document in the constructor.
+WebEz is a component-based system.  Individual elements should be broken up into components and attached to the web document in the constructor.
 
 If we navigate to the src/app folder at a command prompt, we can add more components using the CLI interface.
 
@@ -365,11 +365,11 @@ __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
 Here you can see the structure created for us.  This does not attach the component to anything, it just creates the files for us.
 
-To add the fancy\-image somewhere inside main\-component, we edit main component's files.
+To add the fancy-image somewhere inside main-component, we edit main component's files.
 
-The div image\-holder is where we attach our component.  We have also added two buttons which we can use to control our fancy image component.
+The div image-holder is where we attach our component.  We have also added two buttons which we can use to control our fancy image component.
 
-We can run this to make sure it worked with npm run start.  We should see the default text for fancy\-image and 2 buttons on the screen.
+We can run this to make sure it worked with npm run start.  We should see the default text for fancy-image and 2 buttons on the screen.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">MainComponent</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">extends</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzComponent</span>  <span style="color:#D4D4D4"> {</span>
 
@@ -379,13 +379,13 @@ We can run this to make sure it worked with npm run start.  We should see the de
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">super</span>  <span style="color:#D4D4D4">(html, </span>  <span style="color:#D4D4D4">css</span>  <span style="color:#D4D4D4">);</span>
 
-<span style="color:#569CD6">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.addComponent</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.</span>  <span style="color:#D4D4D4">fancyImg</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"image\-holder"</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#569CD6">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.addComponent</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.</span>  <span style="color:#D4D4D4">fancyImg</span>  <span style="color:#D4D4D4">,</span>  <span style="color:#CE9178">"image-holder"</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">    }</span>
 
 <span style="color:#D4D4D4">}</span>
 
-<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"image\-holder"</span>  <span style="color:#808080">></</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
+<span style="color:#808080"><</span>  <span style="color:#569CD6">div</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"image-holder"</span>  <span style="color:#808080">></</span>  <span style="color:#569CD6">div</span>  <span style="color:#808080">><</span>  <span style="color:#569CD6">br</span>  <span style="color:#808080">/></span>
 
 <span style="color:#808080"><</span>  <span style="color:#569CD6">button</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#9CDCFE">id</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CE9178">"</span>  <span style="color:#CE9178">prev</span>  <span style="color:#CE9178">"</span>  <span style="color:#808080">></span>  <span style="color:#D4D4D4">Previous</span>  <span style="color:#808080"></</span>  <span style="color:#569CD6">button</span>  <span style="color:#808080">></span>
 
@@ -395,7 +395,7 @@ We can run this to make sure it worked with npm run start.  We should see the de
 
 __Topic: Basic Web Development__  __WebEz__  __: Getting Started__
 
-Now we will add the html and css for the fancy\-image component.  We will also put two images img1.jpg and img2.jpg into the assets folder.
+Now we will add the html and css for the fancy-image component.  We will also put two images img1.jpg and img2.jpg into the assets folder.
 
 And let's bind the src attribute of the image to a variable in the .ts file.
 
@@ -520,7 +520,7 @@ If we are at the beginning, we disable the previous button
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">onPrev</span>  <span style="color:#D4D4D4">(){</span>
 
-<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.fancyImg.image</span>  <span style="color:#D4D4D4">\-\-;</span>
+<span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.fancyImg.image</span>  <span style="color:#D4D4D4">--;</span>
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.nextDisabled</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#569CD6">false</span>  <span style="color:#D4D4D4">;</span>
 
@@ -588,10 +588,10 @@ __Note: You can only use these on a class derived from __  __EzComponent__  __. 
 __Topic: Basic Web Development__  __WebEz__  __: Cheat Sheet__
 
 * HTML References
-  * Intro:  https://developer.mozilla.org/en\-US/docs/Learn/Getting\_started\_with\_the\_web/HTML\_basics
+  * Intro:  https://developer.mozilla.org/en-US/docs/Learn/Getting\_started\_with\_the\_web/HTML\_basics
   * Reference: [https://www.w3schools.com/tags/default.asp](https://www.w3schools.com/tags/default.asp)
 * CSS References
-  * Intro: [https://developer.mozilla.org/en\-US/docs/Learn/CSS/First\_steps/Getting\_started](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
+  * Intro: [https://developer.mozilla.org/en-US/docs/Learn/CSS/First\_steps/Getting\_started](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
   * Reference: [https://www.w3schools.com/cssref/index.php](https://www.w3schools.com/cssref/index.php)
 * Playgrounds
   * [https://playcode.io/html](https://playcode.io/html)

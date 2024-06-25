@@ -86,60 +86,47 @@ In this short Typescript code snippet, we declare the variable `myValue` to hold
 We declare the variable `answer` as a `number`, but do not give it a value.
 We then compute `myValue+3` and store it in answer.
 
-<span style="color:#0060B1"> __Typescript:__ </span>
+```typescript
+let myValue: number = 4;
+let answer: number;
+answer = myValue + 3;
+```
 
-<span style="color:#0060B1">let myValue:number=4;</span>
+## Declaration Syntax
 
-<span style="color:#0060B1">let answer:number;</span>
+TODO: Convert this to an image with annotations, perhaps
 
-<span style="color:#0060B1">answer=myValue+3;</span>
+Some key notes on the syntax of declaring a variable:
 
-__Review Topic: Variables__
+* Use `let` to __declare__ a variable.
+* Use `:` symbol after the name, followed by the type.
+* Use `=` followed by an expression to assign an initial value.
+* The line should end with a `;`
 
-A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
+## Types in TypeScript
 
-_Use a ":" symbol after the name_
+Typescript has only three basic types.
 
-_= an initial value_
+* `number`: Holds any numeric data (e.g. `42` or `3.14159`)
+* `string`: Holds a string of characters (e.g. `"Hello World"`)
+* `boolean`: Holds the value `true` or `false`
 
-_Use "let" to declare a variable._
+There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
-let myValue : number = 4;
+## Combining Variables
 
-_Line ends with a ";"_
+```typescript
+// Code to compute the area of a circle with radius 2.
+let pi: number = 3.1415927;
+let r: number = 2;
+let answer: number = pi * r * r;
+```
 
-_The name of the variable_
+If we change the value of `r`, then we compute the area of a different circle.
 
-_Specify a valid type._
+Later we will look at turning this code into a __function__ that can be called with different values of `r` and reused.
 
-__Review Topic: Variables__
-
-A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
-
-* __Types in Typescript__
-* Typescript has only three basic types.
-  * number: Holds any numeric data (e.g. 42 or 3.14159)
-  * string: Holds a string of characters (e.g. "Hello World")
-  * boolean: Holds the value true or false
-* There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
-
-__Review Topic: Variables__
-
-A  _variable_  is a named container for some unknown value.  We can use variables to create generic code that works on different values.
-
-__Code to compute the area of a circle with radius 2.__
-
-__let pi:number=3.1415927;__
-
-__let r:number=2;__
-
-__let answer:number=pi\*r\*r;__
-
-If we change the value of r, then we compute the area of a different circle.
-
-Later we will look at turning this into a __ __  _function_  that can be called with different values of r and reused.
-
-If we assign a non\-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
+If we assign a non-numeric value to r (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
 __Review Topic: Variables__
 

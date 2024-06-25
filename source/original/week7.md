@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 7
 Spring 2024
@@ -24,7 +24,7 @@ _Polymorphism_  in OOP is the provision of a single interface to entities of dif
   * We can force subclasses to create overridden methods for our superclass by declaring methods as  _abstract._  This does not prevent dispatch, but does remove the default behavior, making all subclasses implement the method themselves.
 * And with all of this, we have an elegant way to design programs that leverages the ability to share code, and view a problem in terms of objects.
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -84,7 +84,7 @@ It also prescribes that all derived subclasses must implement a method  _getDeta
 
 The child class simply implements that method and takes all other functionality from Users
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -140,7 +140,7 @@ Brute Force Search
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Polymorphism__
+__Topic: __  __Classes-Polymorphism__
 
 _Polymorphism_  in OOP is the provision of a single interface to entities of different types.
 
@@ -330,7 +330,7 @@ _An Exception _ is the process of responding to the occurrence of exceptions –
 
 * Interesting, but what's the point.  Let's consider the code for our drawing program again.
 * Valid color values in our program are numbers between 0 and 255.  What happens if we try to create a color with different values?
-  * The code will allow these non\-sensical values to be stored in red, green and blue.
+  * The code will allow these non-sensical values to be stored in red, green and blue.
   * We would like to prevent this.
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> Color {</span>
@@ -843,7 +843,7 @@ __Topic: Exception Handling__
 
 _An Exception _ is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time.
 
-<span style="color:#569CD6">import</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">\*</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">as</span>  <span style="color:#D4D4D4"> fs </span>  <span style="color:#569CD6">from</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#CE9178">"fs"</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#569CD6">import</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">*</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">as</span>  <span style="color:#D4D4D4"> fs </span>  <span style="color:#569CD6">from</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#CE9178">"fs"</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#569CD6">let</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">fileDescriptor</span>  <span style="color:#D4D4D4">: number;</span>
 
@@ -901,7 +901,7 @@ _An Exception _ is the process of responding to the occurrence of exceptions –
 
 * Common pitfalls and mistakes with exception handling
   * Throwing a string instead of an Error: Allowed but bad form
-  * Using exceptions to communicate non\-exceptional situations.  These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
+  * Using exceptions to communicate non-exceptional situations.  These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
   * If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
     * throw e
     * throw new Error("This is my error")
@@ -966,25 +966,25 @@ Producing well documented, high quality, efficient and readable code is always t
   * Note it tells us everything we need to know about the class to use it.
   * It also describes the exceptions that it may throw.
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955"> \* A class that represents a polygon.</span>
+<span style="color:#6A9955"> * A class that represents a polygon.</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@class</span>  <span style="color:#6A9955"> Polygon</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@class</span>  <span style="color:#6A9955"> Polygon</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@extends</span>  <span style="color:#6A9955"> Drawable</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@extends</span>  <span style="color:#6A9955"> Drawable</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> A class that represents a polygon.</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> A class that represents a polygon.</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@method</span>  <span style="color:#6A9955"> clone A method that returns a new polygon object that is a clone of the current polygon object.</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@method</span>  <span style="color:#6A9955"> clone A method that returns a new polygon object that is a clone of the current polygon object.</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@method</span>  <span style="color:#6A9955"> draw A method that draws the polygon on the drawing surface.</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@method</span>  <span style="color:#6A9955"> draw A method that draws the polygon on the drawing surface.</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if the number of points is less than 3 or greater than 10.</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if the number of points is less than 3 or greater than 10.</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if there are duplicate points.</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if there are duplicate points.</span>
 
-<span style="color:#6A9955"> \*/</span>
+<span style="color:#6A9955"> */</span>
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">class</span>  <span style="color:#D4D4D4"> Polygon </span>  <span style="color:#569CD6">extends</span>  <span style="color:#D4D4D4"> Drawable {</span>
 
@@ -1002,35 +1002,35 @@ Producing well documented, high quality, efficient and readable code is always t
   * It is a constructor
   * An example of how to call it.
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* Create a new polygon object.</span>
+<span style="color:#6A9955">     * Create a new polygon object.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> {Point\[\]} points Array of vertices of the polygon.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> {Point\[\]} points Array of vertices of the polygon.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> {Color} color The color of the polygon.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> {Color} color The color of the polygon.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if the number of points is invalid</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if the number of points is invalid</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if there are duplicate points.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> An error if there are duplicate points.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> Allocates a new polygon object.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> Allocates a new polygon object.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@memberof</span>  <span style="color:#6A9955"> Polygon</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@memberof</span>  <span style="color:#6A9955"> Polygon</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@constructor</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@constructor</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@example</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@example</span>
 
-<span style="color:#6A9955">     \* let p1 = new Point(0, 0);</span>
+<span style="color:#6A9955">     * let p1 = new Point(0, 0);</span>
 
-<span style="color:#6A9955">     \* let p2 = new Point(0, 1);</span>
+<span style="color:#6A9955">     * let p2 = new Point(0, 1);</span>
 
-<span style="color:#6A9955">     \* let p3 = new Point(1, 1);</span>
+<span style="color:#6A9955">     * let p3 = new Point(1, 1);</span>
 
-<span style="color:#6A9955">     \* let polygon = new Polygon(\[p1, p2, p3\], new Color());</span>
+<span style="color:#6A9955">     * let polygon = new Polygon(\[p1, p2, p3\], new Color());</span>
 
-<span style="color:#6A9955">\*/</span>
+<span style="color:#6A9955">*/</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">constructor</span>  <span style="color:#D4D4D4">(points: Point\[\], color: Color) {</span>
 
@@ -1046,37 +1046,37 @@ Producing well documented, high quality, efficient and readable code is always t
   * It is a function
   * An example of how to call it.
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* Return a deep copy of our polygon object in a new one.</span>
+<span style="color:#6A9955">     * Return a deep copy of our polygon object in a new one.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Clones a polygon object</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Clones a polygon object</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> none</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> none</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> A new polygon object that is a clone of the current polygon object.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> A new polygon object that is a clone of the current polygon object.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@override</span>  <span style="color:#6A9955"> The clone method of the Drawable class.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@override</span>  <span style="color:#6A9955"> The clone method of the Drawable class.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@memberof</span>  <span style="color:#6A9955"> Polygon</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@memberof</span>  <span style="color:#6A9955"> Polygon</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@function</span>  <span style="color:#6A9955"> clone</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@function</span>  <span style="color:#6A9955"> clone</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> Allocates a new polygon object.</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> Allocates a new polygon object.</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@example</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@example</span>
 
-<span style="color:#6A9955">     \* let p1 = new Point(0, 0);</span>
+<span style="color:#6A9955">     * let p1 = new Point(0, 0);</span>
 
-<span style="color:#6A9955">     \* let p2 = new Point(0, 1);</span>
+<span style="color:#6A9955">     * let p2 = new Point(0, 1);</span>
 
-<span style="color:#6A9955">     \* let p3 = new Point(1, 1);</span>
+<span style="color:#6A9955">     * let p3 = new Point(1, 1);</span>
 
-<span style="color:#6A9955">     \* let </span>  <span style="color:#6A9955">polygon:Polygon</span>  <span style="color:#6A9955"> = new Polygon(\[p1, p2, p3\], new Color());</span>
+<span style="color:#6A9955">     * let </span>  <span style="color:#6A9955">polygon:Polygon</span>  <span style="color:#6A9955"> = new Polygon(\[p1, p2, p3\], new Color());</span>
 
-<span style="color:#6A9955">     \* let polygon2:Polygon = </span>  <span style="color:#6A9955">polygon.clone</span>  <span style="color:#6A9955">();</span>
+<span style="color:#6A9955">     * let polygon2:Polygon = </span>  <span style="color:#6A9955">polygon.clone</span>  <span style="color:#6A9955">();</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    clone(): Polygon {</span>
 
@@ -1165,13 +1165,13 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">        } </span>  <span style="color:#569CD6">else</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">Math.abs</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4"> \- </span>  <span style="color:#D4D4D4">other.bill</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">Math.abs</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4"> - </span>  <span style="color:#D4D4D4">other.bill</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4"> > </span>  <span style="color:#D4D4D4">other.bill</span>  <span style="color:#D4D4D4">) {</span>
 
 <span style="color:#D4D4D4">              </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>
 
-<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
+<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1181,7 +1181,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">              </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> Jane(</span>
 
-<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.lisa</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.lisa</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.bill</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1234,13 +1234,13 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">        } </span>  <span style="color:#569CD6">else</span>  <span style="color:#D4D4D4"> {</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">Math.abs</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4"> \- </span>  <span style="color:#D4D4D4">other.exponent</span>  <span style="color:#D4D4D4">);</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4"> = </span>  <span style="color:#D4D4D4">Math.abs</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4"> - </span>  <span style="color:#D4D4D4">other.exponent</span>  <span style="color:#D4D4D4">);</span>
 
 <span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">if</span>  <span style="color:#D4D4D4"> (</span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4"> > </span>  <span style="color:#D4D4D4">other.exponent</span>  <span style="color:#D4D4D4">) {</span>
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>
 
-<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
+<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">),</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">,</span>
 
@@ -1250,7 +1250,7 @@ Naming elements in a way that we can tell what type of thing/data the element is
 
 <span style="color:#D4D4D4">                </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">new</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">RealNumber</span>  <span style="color:#D4D4D4">(</span>
 
-<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> \* </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">,</span>
+<span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.integer</span>  <span style="color:#D4D4D4"> * </span>  <span style="color:#D4D4D4">Math.pow</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#B5CEA8">10</span>  <span style="color:#D4D4D4">, </span>  <span style="color:#D4D4D4">expDiff</span>  <span style="color:#D4D4D4">) + </span>  <span style="color:#D4D4D4">other.integer</span>  <span style="color:#D4D4D4">,</span>
 
 <span style="color:#D4D4D4">                    </span>  <span style="color:#569CD6">this</span>  <span style="color:#D4D4D4">.exponent</span>  <span style="color:#D4D4D4">,</span>
 

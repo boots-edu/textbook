@@ -24,11 +24,11 @@ Welcome to our textbook!
 
 * What is this course about?
   * In this course we will continue to study the field of Computer Science delving deeper into core concepts and introducing new concepts and paradigms for producing well engineered software solutions
-  * Specifically, we will study Objects and Object\-Oriented programming techniques as well as various structures and algorithms to promote good software design.
+  * Specifically, we will study Objects and Object-Oriented programming techniques as well as various structures and algorithms to promote good software design.
 
 # CISC181 Details
 
-This semester, the course will be taught in Typescript.  Typescript is a free and open\-source programming language that adds static typing and type annotations to Javascript.
+This semester, the course will be taught in Typescript.  Typescript is a free and open-source programming language that adds static typing and type annotations to Javascript.
 
 Typescript is used widely and has become the most common language for developing applications for the web.
 

@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 8
 Spring 2024
@@ -214,7 +214,7 @@ __Topic: Anonymous Functions__
 
 A function that is declared with no name is an  _anonymous function._
 
-<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
+<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">removeNegativesFor</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]{</span>
 
@@ -236,14 +236,14 @@ A function that is declared with no name is an  _anonymous function._
 
 * Let's look at an example of removingnegative values from a list.
   * We already know how to do thiswith a for loop.
-  * We can iterate through the list,adding non\-negative numbers to anew list, which we then return.
+  * We can iterate through the list,adding non-negative numbers to anew list, which we then return.
 * There is another way to accomplish this using the typescript Array.filter method
 
 __Topic: Anonymous Functions__
 
 A function that is declared with no name is an  _anonymous function._
 
-<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
+<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">removeNegatives</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]{</span>
 
@@ -273,7 +273,7 @@ This gives a clean concise way to pass around simple methods without naming them
 
 But wait, there's more.
 
-<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
+<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">removeNegatives</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]{</span>
 
@@ -292,7 +292,7 @@ A function that is declared with no name is an  _anonymous function._
   * As the value of a variable or classproperty.
   * As the return value of a function.
 
-<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
+<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">arr</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">\[</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">2</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">3</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">,</span>  <span style="color:#B5CEA8">5</span>  <span style="color:#CCCCCC">\];</span>
 
 <span style="color:#569CD6">function</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#DCDCAA">removeNegatives</span>  <span style="color:#CCCCCC">()</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">\[\]{</span>
 
@@ -330,7 +330,7 @@ We can even declare a type to use forour functions.
 
 <span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">b</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#DCDCAA">f</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">);</span>
 
-<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">c</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#DCDCAA">f</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#D4D4D4">\-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">)</span>
+<span style="color:#569CD6">let</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#9CDCFE">c</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#DCDCAA">f</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#D4D4D4">-</span>  <span style="color:#B5CEA8">4</span>  <span style="color:#CCCCCC">)</span>
 
 <span style="color:#569CD6">declare</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#569CD6">type</span>  <span style="color:#CCCCCC"> </span>  <span style="color:#4EC9B0">Chk</span>  <span style="color:#4EC9B0">Function</span>  <span style="color:#D4D4D4">=</span>  <span style="color:#CCCCCC">(</span>  <span style="color:#9CDCFE">x</span>  <span style="color:#D4D4D4">:</span>  <span style="color:#4EC9B0">number</span>  <span style="color:#CCCCCC">)</span>  <span style="color:#569CD6">=></span>  <span style="color:#4EC9B0">boolean</span>  <span style="color:#CCCCCC">;</span>
 

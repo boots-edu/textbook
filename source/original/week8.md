@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 8
 Spring 2024
@@ -38,10 +38,10 @@ __Topic: Testing__
 _Software Testing_  is the process of validating that software is bug free and meets requirements.
 
 * Software bugs can be expensive, but they can also be very dangerous.  Here are a few examples of software bugs causing terrible outcomes:
-  * 1985: Canada's Therac\-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients.
+  * 1985: Canada's Therac-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients.
   * 1994: China Airlines Airbus A300 crashed due to a software bug killing 264 people.
   * 1999: A software bug caused the failure of a $1.2 billion military satellite launch.
-  * 2015: A software bug in an F\-35 resulted in it being unable to detect targets correctly.
+  * 2015: A software bug in an F-35 resulted in it being unable to detect targets correctly.
   * Starbucks was forced to close more than 60% of its outlet in the U.S. and Canada due to a software failure in its POS system.
   * Nissan cars were forced to recall 1 million cars from the market due to a software failure in the car's airbag sensory detectors.
 
@@ -52,7 +52,7 @@ _Software Testing_  is the process of validating that software is bug free and m
 * We have to get it right!!!
 * Types of testing:
   * Functional: Does it do what it is supposed to do?  Does it meet requirements?  Does it work correctly on all possible inputs?
-  * Non\-Functional: How does it perform on various inputs? Does it scale? How usable is it?  How does it behave under heavy use/load?
+  * Non-Functional: How does it perform on various inputs? Does it scale? How usable is it?  How does it behave under heavy use/load?
   * Regression Testing: After the software is modified, verify that the modifications did not damage previously working components of the system.
 
 __Topic: Testing__
@@ -126,17 +126,17 @@ Let's look at an example:  Consider the following code:
 
 <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">valueArray:number</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Takes a number and adds its square root to the array </span>  <span style="color:#6A9955">valueArray</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Takes a number and adds its square root to the array </span>  <span style="color:#6A9955">valueArray</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> value {number} \- The number to be squared</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> value {number} - The number to be squared</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {number} \- The square root of the number</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {number} - The square root of the number</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Adds the square root of the number to the </span>  <span style="color:#6A9955">valueArray</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Adds the square root of the number to the </span>  <span style="color:#6A9955">valueArray</span>
 
-<span style="color:#6A9955"> \*/</span>
+<span style="color:#6A9955"> */</span>
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">buildRootArray</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">value:number</span>  <span style="color:#D4D4D4">):number{</span>
 
@@ -162,17 +162,17 @@ Some questions we might ask about this code:
 
 <span style="color:#569CD6">const</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">valueArray:number</span>  <span style="color:#D4D4D4">\[\]=\[\];</span>
 
-<span style="color:#6A9955">/\*\*</span>
+<span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Takes a number and adds its square root to the array </span>  <span style="color:#6A9955">valueArray</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> Takes a number and adds its square root to the array </span>  <span style="color:#6A9955">valueArray</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> value {number} \- The number to be squared</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@param</span>  <span style="color:#6A9955"> value {number} - The number to be squared</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {number} \- The square root of the number</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {number} - The square root of the number</span>
 
-<span style="color:#6A9955"> \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Adds the square root of the number to the </span>  <span style="color:#6A9955">valueArray</span>
+<span style="color:#6A9955"> * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Adds the square root of the number to the </span>  <span style="color:#6A9955">valueArray</span>
 
-<span style="color:#6A9955"> \*/</span>
+<span style="color:#6A9955"> */</span>
 
 <span style="color:#569CD6">export</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#569CD6">function</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">buildRootArray</span>  <span style="color:#D4D4D4">(</span>  <span style="color:#D4D4D4">value:number</span>  <span style="color:#D4D4D4">):number{</span>
 
@@ -205,19 +205,19 @@ What happens if the array has only oneelement in it?
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -245,19 +245,19 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -272,7 +272,7 @@ __Topic: Using Jest__
 _Jest _ is a test runner and testing framework that works with javascript and Typescript
 
 * To create tests in a project that is already configured for jest, we create files with the word ‘test' in their filename (i.e. myprogram.test.ts)
-  * Note: This can be changed, but our projects will be pre\-configured to work this way.
+  * Note: This can be changed, but our projects will be pre-configured to work this way.
 * Running jest on the command line by itself within the project folder will run tests in all properly named files.
 * Running jest on the command line with the name of the file (without the test.ts) will run tests in only that file.
 * Running jest on the command line with –coverage will produce a coverage report.
@@ -300,19 +300,19 @@ We will start with a describe block forthe Elements class:
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -340,19 +340,19 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -386,19 +386,19 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -442,19 +442,19 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -489,19 +489,19 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -537,21 +537,21 @@ Now it works as expected
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> {Error} \- If the array is empty</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> {Error} - If the array is empty</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -587,21 +587,21 @@ _Software Testing_  is the process of validating that software is bug free and m
 
 <span style="color:#D4D4D4">    </span>  <span style="color:#569CD6">private</span>  <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">stringArray</span>  <span style="color:#D4D4D4">: string\[\] = \[\];</span>
 
-<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/\*\*</span>
+<span style="color:#D4D4D4">    </span>  <span style="color:#6A9955">/**</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     \* removes the last element</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@description</span>  <span style="color:#6A9955"> This function returns and</span>  <span style="color:#6A9955">     * removes the last element</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} \- The last element of the</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@returns</span>  <span style="color:#6A9955"> {string} - The last element of the</span>
 
-<span style="color:#6A9955">     \*</span>  <span style="color:#6A9955"> array</span>
+<span style="color:#6A9955">     *</span>  <span style="color:#6A9955"> array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> \- Removes the last element of </span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@sideEffects</span>  <span style="color:#6A9955"> - Removes the last element of </span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#6A9955">the array</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#6A9955">the array</span>
 
-<span style="color:#6A9955">     \* </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> {Error} \- If the array is empty</span>
+<span style="color:#6A9955">     * </span>  <span style="color:#569CD6">@throws</span>  <span style="color:#6A9955"> {Error} - If the array is empty</span>
 
-<span style="color:#6A9955">     \*/</span>
+<span style="color:#6A9955">     */</span>
 
 <span style="color:#D4D4D4">     </span>  <span style="color:#D4D4D4">getLastElement</span>  <span style="color:#D4D4D4">(): string {</span>
 
@@ -729,19 +729,19 @@ _Jest _ is a test runner and testing framework that works with javascript and Ty
   * While you should not specifically write tests to coverage, since those tests will not cover all possible inputs, you should make sure that your tests actually cover your code.  Let's look at our example again, from a coverage standpoint
 * Running: jest –coverage will produce a shortened coverage report like this:
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 
 <span style="color:#D4D4D4">File                 | % </span>  <span style="color:#D4D4D4">Stmts</span>  <span style="color:#D4D4D4"> | % Branch | % </span>  <span style="color:#D4D4D4">Funcs</span>  <span style="color:#D4D4D4"> | % Lines | Uncovered Line \#s </span>
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 
 <span style="color:#D4D4D4">All files            |   97.61 |    92.66 |   94.84 |   97.78 |                   </span>
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzComponent.ts</span>  <span style="color:#D4D4D4">      |     100 |      100 |     100 |     100 |                   </span>
 
-<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzDialog.ts</span>  <span style="color:#D4D4D4">         |    93.1 |       75 |   83.33 |   94.44 | 135\-140           </span>
+<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzDialog.ts</span>  <span style="color:#D4D4D4">         |    93.1 |       75 |   83.33 |   94.44 | 135-140           </span>
 
-<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bind.decorators.ts</span>  <span style="color:#D4D4D4">  |   97.38 |    93.65 |   91.66 |   97.27 | 601\-602,621\-622   </span>
+<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bind.decorators.ts</span>  <span style="color:#D4D4D4">  |   97.38 |    93.65 |   91.66 |   97.27 | 601-602,621-622   </span>
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bootstrap.ts</span>  <span style="color:#D4D4D4">        |     100 |      100 |     100 |     100 |                   </span>
 
@@ -749,29 +749,29 @@ _Jest _ is a test runner and testing framework that works with javascript and Ty
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">eventsubject.ts</span>  <span style="color:#D4D4D4">     |     100 |      100 |     100 |     100 |                   </span>
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 
 __Topic: Using Jest__
 
 _Jest _ is a test runner and testing framework that works with javascript and Typescript
 
-* If we add \-\-coverageDirectory=‘./coverage' to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
-* You can see an example here: [https://gsilber.github.io/WebEZ/cover/lcov\-report/](https://gsilber.github.io/WebEZ/cover/lcov-report/)
+* If we add --coverageDirectory=‘./coverage' to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
+* You can see an example here: [https://gsilber.github.io/WebEZ/cover/lcov-report/](https://gsilber.github.io/WebEZ/cover/lcov-report/)
   * Note this example may go away in the future, it is just temporary for today.
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 
 <span style="color:#D4D4D4">File                 | % </span>  <span style="color:#D4D4D4">Stmts</span>  <span style="color:#D4D4D4"> | % Branch | % </span>  <span style="color:#D4D4D4">Funcs</span>  <span style="color:#D4D4D4"> | % Lines | Uncovered Line \#s </span>
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 
 <span style="color:#D4D4D4">All files            |   97.61 |    92.66 |   94.84 |   97.78 |                   </span>
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzComponent.ts</span>  <span style="color:#D4D4D4">      |     100 |      100 |     100 |     100 |                   </span>
 
-<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzDialog.ts</span>  <span style="color:#D4D4D4">         |    93.1 |       75 |   83.33 |   94.44 | 135\-140           </span>
+<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">EzDialog.ts</span>  <span style="color:#D4D4D4">         |    93.1 |       75 |   83.33 |   94.44 | 135-140           </span>
 
-<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bind.decorators.ts</span>  <span style="color:#D4D4D4">  |   97.38 |    93.65 |   91.66 |   97.27 | 601\-602,621\-622   </span>
+<span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bind.decorators.ts</span>  <span style="color:#D4D4D4">  |   97.38 |    93.65 |   91.66 |   97.27 | 601-602,621-622   </span>
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">bootstrap.ts</span>  <span style="color:#D4D4D4">        |     100 |      100 |     100 |     100 |                   </span>
 
@@ -779,5 +779,5 @@ _Jest _ is a test runner and testing framework that works with javascript and Ty
 
 <span style="color:#D4D4D4"> </span>  <span style="color:#D4D4D4">eventsubject.ts</span>  <span style="color:#D4D4D4">     |     100 |      100 |     100 |     100 |                   </span>
 
-<span style="color:#D4D4D4">\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-</span>
+<span style="color:#D4D4D4">---------------------|---------|----------|---------|---------|-------------------</span>
 

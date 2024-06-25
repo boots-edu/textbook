@@ -39,7 +39,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -59,7 +59,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -77,7 +77,7 @@ __function areaOfCircle(radius: number):number{__
 
 __let pi:number=3.1415927;__
 
-__return pi\*radius\*radius;__
+__return pi*radius*radius;__
 
 __}__
 
@@ -101,7 +101,7 @@ function areaOfCircle(radius: number):number{
 
 let pi:number=3.1415927;
 
-return pi\*radius\*radius;
+return pi*radius*radius;
 
 }
 

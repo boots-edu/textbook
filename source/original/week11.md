@@ -1,4 +1,4 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 11
 Spring 2024
@@ -123,7 +123,7 @@ We get a compiler error when we build
 
 <span style="color:#D4D4D4">printResult</span>  <span style="color:#D4D4D4">(result);</span>
 
-<span style="color:#569CD6">test.ts:17:38 \- error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.</span>
+<span style="color:#569CD6">test.ts:17:38 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.</span>
 
 <span style="color:#569CD6">17 const result=</span>  <span style="color:#569CD6">makePair</span>  <span style="color:#569CD6"><</span>  <span style="color:#569CD6">number,string</span>  <span style="color:#569CD6">>("hello",1);</span>
 
@@ -461,7 +461,7 @@ __Topic: Interfaces__ An  _interface_  is a contract that describes the shape of
 
 <span style="color:#D4D4D4">        </span>  <span style="color:#569CD6">else</span>
 
-<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> \-</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
+<span style="color:#D4D4D4">            </span>  <span style="color:#569CD6">return</span>  <span style="color:#D4D4D4"> -</span>  <span style="color:#B5CEA8">1</span>  <span style="color:#D4D4D4">;</span>
 
 <span style="color:#D4D4D4">    }</span>
 

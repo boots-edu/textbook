@@ -102,9 +102,9 @@ In TypeScript, the string is sequence of char values used to store text data
 * Assume the string let myStr:string="Hello World";
 * __charAt__  __(): __ This method will return character at the specified index.
   * myStr.charAt(2); //this will return an l (the third character at index 2)
-* __indexOf__  __():__  It will return the index. first occurrence of specified value else \-1 if not found.
+* __indexOf__  __():__  It will return the index. first occurrence of specified value else -1 if not found.
   * myStr.indexOf("o"); //this will return a 4
-* __lastIndexOf__  __():__  It will return index, last occurrence of specified value else \-1 if not found.
+* __lastIndexOf__  __():__  It will return index, last occurrence of specified value else -1 if not found.
   * myStr.lastIndexOf("o"); //this will return 7
 
 __Strings in Typescript:  __

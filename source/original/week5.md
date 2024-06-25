@@ -1,9 +1,9 @@
-CISC 181\-INTRODUCTION TO COMPUTER SCIENCE II
+CISC 181-INTRODUCTION TO COMPUTER SCIENCE II
 
 # Week 5
 Spring 2024
 
-__Topic: __  __Classes\-Composition__
+__Topic: __  __Classes-Composition__
 
 Using  __composition,__  we can build complex objects in order to define new types that has a  __contains a__  relationship with some existing type.
 
@@ -13,7 +13,7 @@ Using  __composition,__  we can build complex objects in order to define new typ
 * This method of combining classes to produce other classes is known as  _composition_  because we are adding classes as members of our new class.
 * This is a powerful tool for building classes, as it allows us to compartmentalize concepts (like color, or point) then use them to build more complex concepts.
 
-__Topic: Classes\-Composition__
+__Topic: Classes-Composition__
 
 Using  __composition,__  we can build complex objects in order to define new types that has a  __contains a__  relationship with some existing type.
 
@@ -57,7 +57,7 @@ More info at polleverywhere.com/support
 Enter a word you have learned in Computer Science
 https://www.polleverywhere.com/free_text_polls/njBVFNPI0Jjo74Fviw53e
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -91,7 +91,7 @@ In other words, users of the class CANNOT change the name or age, but they can r
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -101,7 +101,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * A student is a user, that makes sense.
 * So how do we deal with this type of relationship between classes?
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -127,7 +127,7 @@ We can now define objects of  type Student and Teacher, and instantiate them wit
 
 <span style="color:#D4D4D4">console.log(</span>  <span style="color:#D4D4D4">teacher.getName</span>  <span style="color:#D4D4D4">(), </span>  <span style="color:#D4D4D4">teacher.getAge</span>  <span style="color:#D4D4D4">());</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -153,7 +153,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -183,7 +183,7 @@ We  _inherit_  everything about the superclass, but still are a distinct type.
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -213,7 +213,7 @@ It is easy to initialize gradTerm and gpa, but how do we initialize the members 
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -243,7 +243,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -283,7 +283,7 @@ Here is a completed Student class.
 
 We fully initialize all 4 fields (those in User and those in Student) and we can access all 4 through the methods getGradTerm(), getGPA(), getName(), and getAge().
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -294,7 +294,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
     * A teacher extends the concept of User
     * A student extends the concept of User
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -306,7 +306,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
     * The class that we are extending is called the  _superclass _ or sometimes the base class or parent class
     * The class that we are creating by extending is called a  _subclass_  or child class.
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -318,13 +318,13 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * Teachers have a department, office, list of classes, and don't show up on photographic film.
 * We encapsulate their commonality in the Users class, then extend Users to make new classes that express the differences.
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
 So let's get back to our drawing program.  Is there something most of our objects have in common?
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -333,7 +333,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * If we create a class with just a color component, we could share that definition in all our drawing classes by extending it.
 * What should we call our new class?
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -344,7 +344,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * We want something descriptive that supports the  _is a _ relationship with all the other classes.
   * For this example, I will choose to create a class Drawable.
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -370,7 +370,7 @@ It just holds our color object, so we will extend this to make all of our other 
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -406,7 +406,7 @@ Notice, that the public interface is unchanged, but we don't have to worry about
 
 <span style="color:#D4D4D4">}</span>
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -442,7 +442,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * Drawable is the  _superclass_
   * Line is the  _subclass_
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -492,7 +492,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * Drawable is the  _superclass_
   * Rectangle is the  _subclass_
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -530,7 +530,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
   * Drawable is the  _superclass_
   * Polygon is the  _subclass_
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -541,7 +541,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
       * A Freshman is a type of Undergrad
         * Etc.
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -553,7 +553,7 @@ _A point is not a type of color, so we don't derive point from color._
 
 _An undergraduate is a type of student._
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
@@ -565,7 +565,7 @@ Using  __Inheritance,__  we can build complex hierarchies of objects in order to
 
 ![](../../images/CISC181-Week%2052.png)
 
-__Topic: __  __Classes\-Inheritance__
+__Topic: __  __Classes-Inheritance__
 
 Using  __Inheritance,__  we can build complex hierarchies of objects in order to define new types that are a  __type of__  some existing type.
 
