@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css" media="screen">
     .ace_editor {
         position: relative;
@@ -59,13 +60,22 @@ function App() {
 </div>
 
 <div class="language-typescript highlighter-rouge"><pre></pre>
-let num: number = 123;
-console.log(num);
-function App() {
-    const [counter, setCounter] = useState<number>(0);
-      console.log(counter);
-    return &lt;button onClick={() =&gt; setCounter(counter+1)}&gt;{counter}&lt;/button&gt;;
-}</pre>
+let a = 0;
+console.log(a);
+class Dog {
+    public name: string;
+    private fuzzy: boolean;
+    public age: number;
+}
+export function alpha(beta: string): number {
+    return 7;
+}
+const ada = new Dog();
+ada.name = "Ada Bart";
+console.log(ada.age);
+
+console.log(alpha("beta"));
+</pre>
 </div>
 
 <script src="../dist/index.js"></script>

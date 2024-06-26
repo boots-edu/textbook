@@ -26,6 +26,7 @@ export function decode(string: string) {
 	for (let i = 0; i < string.length; i += 1) {
 		let integer = char_to_integer[string[i]];
 
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		if (integer === undefined) {
 			throw new Error('Invalid character (' + string[i] + ')');
 		}
@@ -55,20 +56,6 @@ export function decode(string: string) {
 	return result;
 }
 
-/** @param {number | number[]} value */
-export function encode(value: number | number[]) {
-	if (typeof value === 'number') {
-		return encode_integer(value);
-	}
-
-	let result = '';
-	for (let i = 0; i < value.length; i += 1) {
-		result += encode_integer(value[i]);
-	}
-
-	return result;
-}
-
 /** @param {number} num */
 function encode_integer(num: number) {
 	let result = '';
@@ -92,3 +79,18 @@ function encode_integer(num: number) {
 
 	return result;
 }
+
+/** @param {number | number[]} value */
+export function encode(value: number | number[]) {
+	if (typeof value === 'number') {
+		return encode_integer(value);
+	}
+
+	let result = '';
+	for (let i = 0; i < value.length; i += 1) {
+		result += encode_integer(value[i]);
+	}
+
+	return result;
+}
+
