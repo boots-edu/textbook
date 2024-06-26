@@ -59,6 +59,7 @@ addEventListener('message', (message) => {
     console.log("Web Worker internally heard", message)
 });
 
+var describe, test, expect;
 (function() {
 const isDeepEqual = (object1, object2) => {
     return JSON.stringify(object1) === JSON.stringify(object2);
@@ -71,7 +72,7 @@ let _results = {[DEFAULT_SUITE]: { status: "success", tests: {} }};
 const instructor_log = (...text) => {
     parentPost("instructor.log", text, true);
 };
-const describe = (name, tests) => {
+describe = (name, tests) => {
     currentSuite = name;
     if (name in _results) {
         throw new Error("Test suite name already exists: "+name);
@@ -84,7 +85,7 @@ const describe = (name, tests) => {
     }
     currentSuite = DEFAULT_SUITE;
 }
-const test = (name, assertions) => {
+test = (name, assertions) => {
     currentTest = name;
     _results[currentSuite].tests[name] = { status: "success", expects: [] };
     silenceConsole = true;
@@ -106,7 +107,7 @@ const getExpects = () => {
     }
     return _results[currentSuite].tests[currentTest].expects;
 }
-const expect = (actual) => {
+expect = (actual) => {
     return {
         toBe: (expected) => {
             const expects = getExpects();
@@ -180,6 +181,8 @@ export function makeExecutionRequest(studentCode: string): FeedbackExecutionRequ
     const signedKey = crypto.randomUUID();
     assemblage.push(EXECUTION_FOOTER);
     const assembled = assemblage.join("\n");
+
+    console.log(assembled);
 
     return {
         assembled,

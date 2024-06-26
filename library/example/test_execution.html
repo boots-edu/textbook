@@ -52,11 +52,33 @@
   
 </head>
 <body>
-<div class="language-typescript highlighter-rouge"><pre>let num: number = 123;
-console.log(num);
-function App() {
-  return &lt;div&gt;Hello World!&lt;/div&gt;
-}</pre>
+<div class="language-typescript highlighter-rouge"><pre>
+  /**
+  * Bring an umbrella if it is not raining
+  * @param raining True if it is raining
+  * @param temperature The temperature in degrees Fahrenheit
+  * @returns A message to the user
+  */
+ function bringUmbrella(raining: boolean, temperature: number): string {
+     if (!raining && temperature < 70) {
+         return "Bring an umbrella";
+     } else if (raining && temperature < 70) {
+         return "Bring an umbrella and a jacket";
+     } else if (!raining && temperature >= 70) {
+         return "No need for an umbrella";
+     } else {
+         return "No need for an umbrella, but bring a jacket";
+     }
+ }
+ 
+ test("Test bringUmbrella", () => {
+     expect(bringUmbrella(false, 60)).toBe("Bring an umbrella");
+     expect(bringUmbrella(true, 60)).toBe("Bring an umbrella and a jacket");
+     expect(bringUmbrella(false, 80)).toBe("No need for an umbrella");
+     expect(bringUmbrella(true, 80)).toBe("No need for an umbrella, but bring a jacket");
+ });
+ 
+</pre>
 </div>
 
 <div class="language-typescript highlighter-rouge"><pre></pre>
