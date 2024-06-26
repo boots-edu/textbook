@@ -21,11 +21,14 @@ export function setupRunners() {
                 editButton.style.position = "relative";
                 editButton.style.zIndex = "100";
                 editButton.onclick = () => {
+                    const engineArea = document.createElement("div");
                     window['runners'].push(new ExecutionEngine(
-                        area as HTMLTextAreaElement,
+                        engineArea as HTMLElement,
                         area.textContent || "// No Text Found",
                         false,
                     ))
+                    area.after(engineArea);
+                    (area as HTMLElement).style.display = "none";
                     editButton.remove();
                 };
                 area.parentNode?.insertBefore(editButton, area);
