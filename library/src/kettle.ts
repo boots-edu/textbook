@@ -4,6 +4,7 @@ import { KettleEngineSystemError, handleKettleSystemError, processTypeScriptDiag
 import { CONSOLE_API_COMMAND_LIST, ConsoleAPICommand } from "./ts_console";
 import { FeedbackExecutionRequest, ProgramExecutionRequest, makeExecutionRequest } from "./ts_assembler";
 import { ExecutionUI } from "./execution_ui";
+import { v4 as uuidv4 } from "uuid";
 
 
 export interface ParentPost {
@@ -30,6 +31,7 @@ export class ExecutionEngine {
     private executionTimer: Timer;
     private isExecuting: boolean = false;
     private latestListener: ((e: MessageEvent) => void) | null = null
+    private engineId: string = uuidv4();
 
     constructor(
         root: HTMLElement,
@@ -80,6 +82,11 @@ export class ExecutionEngine {
         event: MessageEvent,
         feedbackRequest: FeedbackExecutionRequest,
     ) {
+        // Only process events for our engine
+        if (event.data.engineId !== this.engineId) {
+            return false;
+        }
+        // Handle any console events
         const handled = CONSOLE_API_COMMAND_LIST.find(
             (type: ConsoleAPICommand) => {
                 if (event.data.type === `console.${type}`) {
@@ -90,11 +97,12 @@ export class ExecutionEngine {
                 return false;
             },
         );
-        if (event.data.type === "execution.begun") {
+        if (handled) {
+            // Nothing to do here!
+        } else if (event.data.type === "execution.begun") {
             // eslint-disable-next-line @typescript-eslint/ban-types
             clearTimeout(this.executionConfirmation);
-        }
-        if (event.data.type === "execution.error") {
+        } else if (event.data.type === "execution.error") {
             const data = event.data.contents as KettleEngineSystemError;
             this.ui.updateStatus(`${data.category} ${data.place} Error`, false);
             const message = handleKettleSystemError(data, feedbackRequest);
@@ -119,7 +127,7 @@ export class ExecutionEngine {
             }
         } else if (event.data.type === "instructor.log") {
             this.ui.console.log(...event.data.contents);
-        } else if (!handled) {
+        } else {
             if (event.data.source === "react-devtools-content-script") {
                 return false;
             }
@@ -238,6 +246,7 @@ export class ExecutionEngine {
                 {
                     type: "debug",
                     contents: this.isDebugMode,
+                    engineId: this.engineId
                 },
                 "*",
             );
@@ -245,6 +254,7 @@ export class ExecutionEngine {
                 {
                     type: "execute",
                     code: request.assembled,
+                    engineId: this.engineId
                 },
                 "*",
             );
@@ -262,7 +272,7 @@ export class ExecutionEngine {
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
-        const request = makeExecutionRequest(this.ui.getCode());
+        const request = makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
             this.ui.updateStatus("Starting execution", true);
             this.executeRequest(request);
@@ -282,6 +292,7 @@ export class ExecutionEngine {
             this.iframe.contentWindow.postMessage(
                 {
                     type: "terminate",
+                    engineId: this.engineId
                 },
                 "*",
             );

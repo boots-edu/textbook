@@ -4,18 +4,19 @@ const iframeContent = `<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>Execution iFrame</title>
     <script>
+        var knownEngineId = undefined;
         var debugMode = true;
         function debugLog(...message) {
             if (debugMode) {
                 console.log(...message);
             }
         }
-        function debugError(where, error) {
+        function debugError(where, error, engineId) {
             console.error(where, error);
-            parent.postMessage({type: 'error', message: error.message}, '*');
+            parent.postMessage({type: 'error', message: error.message, engineId}, '*');
         }
-        function executeCode(code) {
-            parent.postMessage({type: 'execution.begun', message: "Executing code"}, '*');
+        function executeCode(code, engineId) {
+            parent.postMessage({type: 'execution.begun', message: "Executing code", engineId}, '*');
             const blob = new Blob([code], {type: 'application/javascript'});
             const worker = new Worker(URL.createObjectURL(blob));
             // Proxy messages back to parent
@@ -24,16 +25,21 @@ const iframeContent = `<!DOCTYPE html>
                 try {
                     e = JSON.parse(JSON.stringify(e.data));
                 } catch (e) {
-                    debugError("Iframe Web Worker Error during clone:", e);
+                    debugError("Iframe Web Worker Error during clone:", e, engineId);
+                }
+                try {
+                    e = {...e, engineId};
+                } catch (e) {
+                    debugError("Iframe Web Worker Error while attaching engineId:", e, engineId);
                 }
                 try {
                     parent.postMessage(e, '*');
                 } catch (e) {
-                    debugError("Iframe Web Worker Error during postMessage:", e);
+                    debugError("Iframe Web Worker Error during postMessage:", e, engineId);
                 }
             });
             worker.onerror = ((event) => {
-                debugError("Iframe Web Worker Error during Execution:", event);
+                debugError("Iframe Web Worker Error during Execution:", event, engineId);
             });
         }
 
@@ -41,12 +47,13 @@ const iframeContent = `<!DOCTYPE html>
         addEventListener("message", (event) => {
             debugLog("Iframe heard:", event);
             const data = event.data;
+            knownEngineId = event.engineId; // Try to keep track of the engineId
             // {type: 'execute', code: string}
             if (data.type === 'execute') {
                 if (latestWebWorker !== null) {
                     latestWebWorker.terminate();
                 }
-                executeCode(data.code);
+                executeCode(data.code, data.engineId);
                 // {type: 'terminate'}
             } else if (data.type === 'terminate') {
                 if (latestWebWorker !== null) {
@@ -56,11 +63,11 @@ const iframeContent = `<!DOCTYPE html>
             } else if (data.type === 'debug') {
                 debugMode = data.value != null ? data.value : !debugMode;
             } else {
-                debugError("Iframe General Error: Unknown message type:", data.type);
+                debugError("Iframe General Error: Unknown message type:", data.type, engineId);
             }
         });
         addEventListener("error", (event) => {
-            debugError("Iframe Uncaught Error:", event);
+            debugError("Iframe Uncaught Error:", event, knownEngineId);
         });
     </script>
 </head>

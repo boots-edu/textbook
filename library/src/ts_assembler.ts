@@ -20,6 +20,7 @@ export interface FeedbackExecutionRequest {
     assembled: string;
     noErrors: boolean;
     signedKey: string;
+    engineId: string;
 }
 
 export const EXECUTION_HEADER = `// Execution Header
@@ -170,7 +171,7 @@ try {
     };
 };
 
-export function makeExecutionRequest(studentCode: string): FeedbackExecutionRequest {
+export function makeExecutionRequest(studentCode: string, engineId: string): FeedbackExecutionRequest {
     // TODO: Handle strings with blank lines inside?
     studentCode = studentCode.replace("\n\n", "\n//\n");
     const studentResults: CompilationResult = compile(studentCode);
@@ -194,6 +195,7 @@ export function makeExecutionRequest(studentCode: string): FeedbackExecutionRequ
             sourceCodeMapping: extractSourceCodeMap(studentResults.code || "")
         },
         signedKey,
+        engineId,
         noErrors: studentResults.diagnostics.length === 0,
     };
 }
