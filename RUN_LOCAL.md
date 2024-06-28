@@ -25,6 +25,12 @@ npm i
 npm run build
 ```
 > Note the build script now copies the library over to the source folder, but it is excluded from git, so you have to do this step after any new checkout.
+## Modify config.yml
+Add:
+```
+theme: just-the-docs
+```
+> Remove it again before publishing
 ## Running locally
 To run locally go to the source directory and type: ```./runLocal.sh```
 Press ```ctrl-c``` to exit
