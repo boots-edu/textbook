@@ -28,6 +28,7 @@ There are two basic types of loops that we will look at the while loop and the f
 
 ## While Loops
 The while loop allows us to repeat the following block of code (code in braces {}) while the expression is true.
+
 ![](../../assets/images/while.jpg)
 
 ## A simple while loop example
@@ -73,6 +74,7 @@ console.log(sillyMultiply(5,4));
 The other primary type of loop we will be discussing is the for loop.
 While you have seen for loops in other languages, they are somewhat different in typescript, and there are a couple of different versions.
 Let’s start with the simplest form.
+
 ![](../../assets/images/forloop.jpg)
 * The initializer is simply a variable declaration and initialization like you might use elsewhere in the program.
 * The expression is the same as the expression we used for our while loop.  The loop will continue to execute so long as the expression is true.
