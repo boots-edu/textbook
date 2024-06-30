@@ -9,4 +9,6 @@ has_children: true
 
 [&laquo; Return to the Table of Contents](../index.md)
 
-Data classes are cool!!!
+Let's learn about Data Classes.  
+
+Data classes allow the programmer to group data that belongs together into a single object that can be referenced through a single variable.  

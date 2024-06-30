@@ -19,6 +19,7 @@ Let's learn how to write object-oriented TypeScript code!
    1. [Loops](text/2-loops/loops.md)
    2. [Arrays](text/2-loops/arrays.md)
 3. [Data Classes](text/3-dataclass/index.md)
+    1. [Introduction](text/3-dataclass/intro.md)
 
 
 ```typescript
