@@ -32,6 +32,8 @@ ga_tracking:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  parse_block_html: true
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
