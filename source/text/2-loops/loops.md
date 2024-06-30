@@ -54,7 +54,7 @@ function sillyMultiply(x:number,y:number):number{
 }
 console.log(sillyMultiply(5,4));
 ```
-
+Click Details for a sample solution.
 <details>
 ```typescript
 function sillyMultiply(x:number,y:number):number{
@@ -104,7 +104,7 @@ function sillyMultiply(x:number,y:number):number{
 }
 console.log(sillyMultiply(5,4));
 ```
-
+Click Details for a sample solution.
 <details>
 ```typescript
 function sillyMultiply(x:number,y:number):number{
