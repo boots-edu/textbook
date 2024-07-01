@@ -1,7 +1,9 @@
 _site
 .sass-cache
 .jekyll-metadata
-
+boots-library.js
+Gemfile
+Gemfile.lock
 
 # Logs
 logs

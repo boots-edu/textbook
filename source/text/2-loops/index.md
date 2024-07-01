@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Loops and Arrays
-nav_order: 1
+nav_order: 2
 has_children: true
 ---
 
@@ -9,4 +9,4 @@ has_children: true
 
 [&laquo; Return to the Table of Contents](../index.md)
 
-Time to learn how to loop through arrays and objects in TypeScript!
+Loops and iteration are key concepts in programming.  Time to learn how loops work and how to loop through arrays and objects in TypeScript!
