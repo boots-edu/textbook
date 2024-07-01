@@ -22,6 +22,9 @@ Let's learn how to write object-oriented TypeScript code!
     1. [Introduction](text/3-dataclass/intro.md)
     2. [Basic Data Classes](text/3-dataclass/basic.md)
     3. [Data Class Constructors](text/3-dataclass/constructors.md)
+    4. [Instances and References](text/3-dataclass/references.md)
+    5. [This keyword](text/3-dataclass/this.md)
+4. [Classes](text/4-classes/index.md)
 
 ```typescript
 class Greeter {
