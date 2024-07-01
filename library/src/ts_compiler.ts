@@ -130,7 +130,6 @@ function getClassDefinitions(
         return details;
     }
 
-    console.log(locals);
     locals.forEach((value, key) => {
         if ("exportSymbol" in value && value["exportSymbol"] !== undefined) {
             value = value["exportSymbol"] as ts.Symbol;
@@ -175,7 +174,7 @@ function createCompilerHost(
             }
             return ts.createSourceFile(fileName, text, languageVersion);
         },
-        getDefaultLibFileName: () => "lib.d.ts",
+        getDefaultLibFileName: () => "lib.es2016.full.d.ts",
         writeFile: (fileName, data) => {
             io.writeFile(fileName, data);
         },
@@ -223,6 +222,7 @@ export function compile(code: string): CompilationResult {
                 return fileName === dummyFilePath || fileName in otherFakeFiles;
             },
             readFile: (fileName) => {
+                console.log("readFile", fileName, fileName === dummyFilePath || fileName in otherFakeFiles);
                 if (fileName === dummyFilePath) {
                     //console.log("readFile", fileName, "Main");
                     return code;
