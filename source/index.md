@@ -25,7 +25,10 @@ Let's learn how to write object-oriented TypeScript code!
     4. [Instances and References](text/3-dataclass/references.md)
     5. [This keyword](text/3-dataclass/this.md)
 4. [Classes](text/4-classes/index.md)
-
+    1. [Class Methods](text/4-classes/methods.md)
+    2. [Data Hiding](text/4-classes/private.md)
+    3. [Object Cloning](text/4-classes/clone.md)
+5. [Composition and Inheritence](text/5-composition-inheritence/index.md)
 ```typescript
 class Greeter {
   greeting: string;
