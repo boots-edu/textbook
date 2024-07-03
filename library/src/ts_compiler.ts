@@ -72,7 +72,7 @@ interface DocEntry {
     modifiers?: string[];
 }
 
-function getClassDefinitions(
+export function getClassDefinitions(
     program: ts.Program,
     locals: Map<string, ts.Symbol>,
 ): Record<string, DocEntry[]> {
@@ -273,10 +273,10 @@ export function compile(code: string): CompilationResult {
         code: removeEmptyExports(outputCode),
         diagnostics: emitResult.diagnostics.concat(diagnostics),
         locals: locals,
-        typeInformation: getClassDefinitions(
+        typeInformation: {} /*getClassDefinitions(
             program,
             locals,
-        ),
+        ),*/
     };
 }
 
