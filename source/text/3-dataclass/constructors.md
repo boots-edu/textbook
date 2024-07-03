@@ -138,7 +138,7 @@ With this code, drawing represents a drawing with two triangles (red and blue). 
 
 
 # Summary
-
+To simplify the creation and initialization of a data class, we can provide a constructor method that takes parameters and can be used to set initial values for the member properties.  If the parameters are preceeded by the words public or private, they automatically become member variables and get initialized to the values passed to the constructor.  The constructor is called by using the ***new*** keyword to create an new instance of the class.
 # Next Step
 
-Next we'll learn about creating basic data classes: [Basic Data Classes &raquo;](basic.md)
+Next we'll learn about instances and references: [Instances and References &raquo;](references.md)
