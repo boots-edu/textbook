@@ -31,7 +31,10 @@ Let's learn how to write object-oriented TypeScript code!
 5. [Composition and Inheritance](text/5-composition-inheritance/index.md)
     1. [Composition](text/5-composition-inheritance/composition.md)
     2. [Inheritance](text/5-composition-inheritance/inheritance.md)
-    
+    3. [Putting it all Together](text/5-composition-inheritance/summation.md)
+6. [Overrides and Polymorphism](text/6-polymorphism/index.md)
+
+
 ```typescript
 class Greeter {
   greeting: string;

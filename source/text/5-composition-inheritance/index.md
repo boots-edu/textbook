@@ -5,7 +5,7 @@ nav_order: 5
 has_children: true
 ---
 
-# Chapter 4 - Classes
+# Chapter 5 - Composition and Inheritance
 
 [&laquo; Return to the Table of Contents](../index.md)
 
