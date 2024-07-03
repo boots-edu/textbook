@@ -35,7 +35,12 @@ The important thing here is the relationship with composition:
 ![](../../assets/images/composition_1.jpg)
 > Note that the instance of Color is inside Point.  This makes sense since the point has a Color.
 
-Let's look at a simple example:
+Recognizing the relationship between concepts that are to be represented as Classes is critical to Object Oriented Programming.  Here are some simple examples:
+* A Car *has a* tire.  If we have a tire class, we can represent a car by ***composition***.  We would add 4 (or 5) tire instances to our car class.
+* A course *has a* final exam.  If we had an exam class, we can represent a course by ***composition***. We would add an instance of our exam class to course.
+* A classroom *has* desks.  If we had a desk class, we can represnet a classroom by ***composition***.  We would add 1 or more instances of our desk class to our classroom.
+* A fruit basket *has* fruit.  The following example shows how we use ***composition*** to represent a basket of fruit by adding an array of fruit to our basket class.
+
 ```typescript
 class Fruit{
   constructor(public type:string,public color:string,public price:number){};
@@ -57,11 +62,11 @@ let basket:FruitBasket=new FruitBasket(
 console.log(basket.getPrice());
 
 ```
-Sometimes we have a different relationship,and we need a different mechanism to express it
+***Composition*** allows us to reuse our fruit class for various types of fruit and combine them into a basket.  Our basket can then expose public methods (like getPrice() which have access to the member fruits) to sum up the price of all the fruits, add it to the price of the basket, and return a total price which is dependent on the fruits inside.
+
+
 # Summary
-
-# Chapter Summary
-
+***Composition*** gives the programmer the ability to represent a ***has a*** or a ***contains*** relationship.  The relationship is the key to understanding when to use ***composition*** over other methods.  
 # Next Step
 
-Next we'll learn about Inheritence: [Inheritence &raquo;](../5-composition-inheritance/inheritance.md)
+Next we'll learn about Inheritance: [Inheritance &raquo;](../5-composition-inheritance/inheritance.md)
