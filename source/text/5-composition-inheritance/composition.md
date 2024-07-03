@@ -32,8 +32,10 @@ This is a powerful tool for building classes, as it allows us to compartmentaliz
 The important thing here is the relationship with composition:
 * In general, if a concept that a class (Class1) represents is a part of another class (Class2), then we add Class1 to Class2 as a member variable (property).
 * We could also say that if Class2 contains Class1, 
+
 ![](../../assets/images/composition_1.jpg)
-> Note that the instance of Color is inside Point.  This makes sense since the point has a Color.
+
+> Note that the instance of Color is inside Point.  This makes sense since the point has a Color.
 
 Recognizing the relationship between concepts that are to be represented as Classes is critical to Object Oriented Programming.  Here are some simple examples:
 * A Car *has a* tire.  If we have a tire class, we can represent a car by ***composition***.  We would add 4 (or 5) tire instances to our car class.
