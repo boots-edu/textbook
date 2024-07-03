@@ -28,7 +28,10 @@ Let's learn how to write object-oriented TypeScript code!
     1. [Class Methods](text/4-classes/methods.md)
     2. [Data Hiding](text/4-classes/private.md)
     3. [Object Cloning](text/4-classes/clone.md)
-5. [Composition and Inheritence](text/5-composition-inheritence/index.md)
+5. [Composition and Inheritance](text/5-composition-inheritance/index.md)
+    1. [Composition](text/5-composition-inheritance/composition.md)
+    2. [Inheritance](text/5-composition-inheritance/inheritance.md)
+    
 ```typescript
 class Greeter {
   greeting: string;

@@ -45,7 +45,7 @@ class Rectangle{
 Specifically, if we look at our Line class which contains two points with x and y coordinates, we might want an easy way to get a line's length.  We can expand our definition of a line to contain a method to accomplish this.  The `getLength()` method can be added inside the class definition.
 ```
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 
 	getLength():number{
 		let x=this.start.x-this.end.x;
@@ -58,6 +58,7 @@ class Line{
 > Note that we don’t need to know how the line is represented to use this method.  If we have a line and want it’s length, we simply call the getLength method. This is *important* because in the future we might change the internal representation of a line, but this method would still work if we rewrote it.  The calling program would not need to change.
 
 Let's try it:
+
 ```typescript
 class Color{
 	constructor(public red:number, public green:number,public blue:number){ }
@@ -69,15 +70,15 @@ class Rectangle{
 	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 }
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
-	getLength():number{
+	constructor(public start:Point,public end:Point,public color:Color){}
+	public getLength():number{
 		let x=this.start.x-this.end.x;
 		let y=this.start.y-this.end.y;
 		let len:number=Math.sqrt(x*x+y*y);
 		return len;
 	}
 }
-let myLine:Line=new Line(pt1,pt2,new Color(255,0,0));
+let myLine:Line=new Line(new Point(0,0,new Color(0,0,0)),new Point(100,100,new Color(0,0,0)),new Color(255,0,0));
 let lineLen:number=myLine.getLength();
 console.log(lineLen);
 ```
@@ -125,7 +126,7 @@ class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 }
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
 		let x=this.start.x-this.end.x;
 		let y=this.start.y-this.end.y;
@@ -134,7 +135,7 @@ class Line{
 	}
 }
 class Rectangle{
-	constructor(public corner1:Point,corner2:Point,color:Color){}
+	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 
 	getArea():number{
 		let corner3:Point=new Point(this.corner2.x,this.corner1.y,new Color());
@@ -153,13 +154,13 @@ console.log(rect.getArea());
 Fill in the method `getDiagonals()`, `getPerimeter()`, and `getDiagonalLength()` methods as specified in the comments.
 ```typescript
 class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
+	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 }
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 }
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
 		let x=this.start.x-this.end.x;
 		let y=this.start.y-this.end.y;
@@ -168,7 +169,7 @@ class Line{
 	}
 }
 class Rectangle{
-	constructor(public corner1:Point,corner2:Point,color:Color){}
+	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 
 	getArea():number{
 		let corner3:Point=new Point(this.corner2.x,this.corner1.y,new Color());
@@ -213,13 +214,13 @@ console.log(rect.getDiagonalLength())
 <summary> Show Solution </summary>
 ```typescript
 class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
+	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 }
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 }
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
 		let x=this.start.x-this.end.x;
 		let y=this.start.y-this.end.y;
@@ -228,7 +229,7 @@ class Line{
 	}
 }
 class Rectangle{
-	constructor(public corner1:Point,corner2:Point,color:Color){}
+	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 
 	getArea():number{
 		let corner3:Point=new Point(this.corner2.x,this.corner1.y,new Color());
@@ -250,7 +251,7 @@ class Rectangle{
 		let corner4:Point=new Point(this.corner1.x,this.corner2.y,new Color());
 		let result=[
 			new Line(this.corner1,this.corner2,new Color()),
-			new Line(this.corner4,this.corner3,new Color()),
+			new Line(corner4,corner3,new Color()),
 		];
 		return result;
 	}
