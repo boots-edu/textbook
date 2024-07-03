@@ -33,7 +33,7 @@ How do we do this in a structured way?
 Consider the Color class we have been working with.  Cloning that is eash as a ***shallow copy*** is sufficient.  The classes data items are all primitive types (numbers).
 ```
 class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
+	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 	clone():Color{
 		return new Color(this.red,this.green,this.blue);
 	}
@@ -54,7 +54,7 @@ class Point{
 Likewise, we can add a clone method to our Line class as well.  Again, since this class contains references to objects, we must ***deep copy*** the line class.  Luckily each of the object types (color and line) already has a clone method we can use.
 ```
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 	clone():Line{
 		return new Line(this.start.clone(),this.end.clone(),this.color.clone());
 	}
@@ -120,4 +120,4 @@ In addition to storing data (Data Classes), classes can also contain methods.  T
 
 # Next Step
 
-Next we'll learn about Composition and Inheritence: [Composition and Inheritence &raquo;](../5-composition-inheritence/index.md)
+Next we'll learn about Composition and Inheritence: [Composition and Inheritance &raquo;](../5-composition-inheritance/index.md)

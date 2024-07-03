@@ -59,13 +59,13 @@ Because we relabled our corners, and added the new corners, we should rewrite al
 Here is a complete working example:
 ```typescript
 class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
+	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 }
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 }
 class Line{
-	constructor(public start:Point,end:Point,color:Color){}
+	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
 		let x=this.start.x-this.end.x;
 		let y=this.start.y-this.end.y;
@@ -81,8 +81,8 @@ class Rectangle{
 		this.corner4=new Point(corner1.x,corner3.y,color);
 	}
 	getArea():number{
-		let horizLine:Line=new Line(this.corner1,corner2,new Color());
-		let vertLine:Line=new Line(this.corner1,corner4,new Color());
+		let horizLine:Line=new Line(this.corner1,this.corner2,new Color());
+		let vertLine:Line=new Line(this.corner1,this.corner4,new Color());
 		let area:number=horizLine.getLength()*vertLine.getLength();
 		return area;
 	}
@@ -92,7 +92,7 @@ class Rectangle{
 	     * @returns An array of 2 points representing the diagonals.  The first point in the array should be top
 	     * left to bottom right.  The second point should be top right to bottom left.
 	     * @sideEffects None
-	*/ 
+	*/
 	getDiagonals():Line[]{
 		let result=[
 			new Line(this.corner1,this.corner3,new Color()),
@@ -107,8 +107,8 @@ class Rectangle{
 	     * @sideEffects None
 	*/
 	getPerimeter(): number {
-		let horizLine:Line=new Line(this.corner1,corner2,new Color());
-		let vertLine:Line=new Line(this.corner3,corner4,new Color());
+		let horizLine:Line=new Line(this.corner1,this.corner2,new Color());
+		let vertLine:Line=new Line(this.corner3,this.corner4,new Color());
 		return horizLine.getLength()*2+vertLine.getLength()*2;
 	}
 	/**
