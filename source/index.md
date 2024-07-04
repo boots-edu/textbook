@@ -33,6 +33,11 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Inheritance](text/5-composition-inheritance/inheritance.md)
     3. [Putting it all Together](text/5-composition-inheritance/summation.md)
 6. [Overrides and Polymorphism](text/6-polymorphism/index.md)
+    1. [Member Access](text/6-polymorphism/member_access.md)
+    2. [Overrides](text/6-polymorphism/overrides.md)
+    3. [Polymorphism](text/6-polymorphism/polymorphism.md)
+    4. [Abstract Classes](text/6-polymorphism/abstract.md)
+    5. [Polymorphism Notes](text/6-polymorphism/notes.md)
 
 
 ```typescript

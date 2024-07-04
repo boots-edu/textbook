@@ -109,40 +109,6 @@ class Polygon extends Drawable{
 Our polygon class can also inherit from our Drawable class.  Again it calls super to initialize the Drawable portion of the object.
 Note also that the constructor clones the array of points by cloning each point and pushing them onto a new array before setting the member variable points.
 
-At this point we have the tools to simplify our rectangle class since a rectangle is just a special ***type of*** polygon with exactly 4 sides and right angles between the points.  Our new implementation would be superior because it would allow for rotated rectangles which our current implementation does not allow.
-```
-class Rectangle extends Polygon{
-	constructor(corner1:Point,corner3:point,color:Color=new Color()){
-		super([corner1,new Point(corner3.x,corner1.y),corner3,new Point(corner1.x,corner3.y)])
-	}
-	public getArea():number{
-		let horizLine:Line=new Line(this.points[0],this.points[1],new Color());
-		let vertLine:Line=new Line(this.points[0],this.points[2],new Color());
-		let area:number=horizLine.getLength()*vertLine.getLength();
-		return area;
-	}
-	public getDiagonals():Line[]{
-		let corner3:Point=new Point(this.corner2.x,this.corner1.y,new Color());
-		let corner4:Point=new Point(this.corner1.x,this.corner2.y,new Color());
-		let result=[
-			new Line(this.points[0],this.points[2],new Color()),
-			new Line(this.points[3],this.points[1],new Color()),
-		];
-		return result;
-	}
-	public getPerimeter(): number {
-		let horizLine:Line=new Line(this.points[0],this.points[1],new Color());
-		let vertLine:Line=new Line(this.points[0],this.points[2],new Color());
-		return horizLine.getLength()*2+vertLine.getLength()*2;
-	}
-	public getDiagonalLength():number{
-		let diags:Line[]=this.getDiagonals();
-		return diags[0].getLength();
-	}
-}
-```
-Using the functionality of a Polygon to implement our rectangle greatly simplifies the implementation of the rectangle.  If we were to implement area and perimeter for a generalized polygon, then we could just call those methods using ```super.getArea```.
-
 ## Deeper hierarchies
 We can create deeper hierarchies to express these types of relations.
 * Everyone is a User
