@@ -43,6 +43,7 @@ Remember our Users/Student/Faculty classes.
 Here is a simplified and updated version for us to look at.
 The base class Users implements name, age, and two methods to access them.
 It is abstract and cannot be created.
+In addition, suppose we want to build a database of users, the Database class implements that.
 ```typescript
 abstract class Users{
   constructor(protected name: string, protected age: number){}
@@ -66,13 +67,36 @@ class Faculty extends Users{
     return `N ${this.name}, A: ${this.age}, D: ${this.department}`;
   }
 }
-let users:Users[]=[
-  new Students("Lisa",19,4.0),
-  new Faculty("Linda",45,"Computer Science")
-];
-for (let user of users)
+class Database{
+  private users: Users[] = [];
+  addUser(user: Users):void{
+    this.users.push(user);
+  }
+  getUsers():Users[]{
+    return this.users;
+  }
+  getUser(name:string):Users[]{
+    let result:Users[] = [];
+    for(let user of this.users){
+      if(user.getName() === name){
+        result.push(user);
+      }
+    }
+    return result;
+  }
+}
+let db:Database=new Database();
+db.addUser(new Students("Lisa",19,4.0));
+db.addUser(new Faculty("Linda",45,"Computer Science"));
+let users=db.getUsers();
+for(let user of users){
   console.log(user.getDetails());
+}
 ```
+Even though the database contains a mix of Students and Teachers, we return an array of Users to make the method more generic.  
+We can loop through the returned values getting details on each object regardless of type.
+
+In general, you should return the most generic (i.e. superclass) type possible to make your method generic.  There are ways to look and see what class we actually are, but if we are calling overridden methods that exist in the superclass, we don’t need to worry about that.  We just use it.
 
 # Summary
 * You now know most of the generic things about OOP.  In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C#, etc.
@@ -87,4 +111,4 @@ And with all of this, we have an elegant way to design programs that leverages t
 
 # Next Step
 
-Next we'll summarize what we have learned about polymorphism: [Polymorphism Notes &raquo;](../6-polymorphism/overrides.md)
+Next we'll learn about exceptions: [Exceptions &raquo;](../7-exceptions/index.md)

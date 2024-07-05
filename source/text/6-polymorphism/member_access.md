@@ -110,6 +110,7 @@ We would need to rewrite the area, perimeter and diagonals methods to use our ne
 Because we are passing the points to the Polygon constructor, and that constructor clones the points when it builds the member variable points, we do not need to do it here.  It would work if we did, but we would have short lived, unnecessary copies of the points in memory.
 Knowing how the parent works informs how we write the subclass.
 
+> If no ***access specifier*** (public,private,protected) is given, the compiler will default to public.
 
 ## Important points on experience
 Some important points on inheritance.

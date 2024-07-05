@@ -38,7 +38,7 @@ Let's learn how to write object-oriented TypeScript code!
     3. [Polymorphism](text/6-polymorphism/polymorphism.md)
     4. [Abstract Classes](text/6-polymorphism/abstract.md)
     5. [Polymorphism Notes](text/6-polymorphism/notes.md)
-
+7. [Exceptions](text/7-exceptions/index.md)
 
 ```typescript
 class Greeter {
