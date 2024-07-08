@@ -43,6 +43,11 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Comments](text/7-exceptions_code_qual/comments.md)
     3. [Naming](text/7-exceptions_code_qual/naming.md)
     4. [General Code Quality](text/7-exceptions_code_qual/general.md)
+8. [Software Testing](text/8-testing/index.md)
+    1. [Testing](text/8-testing/testing.md)
+    2. [Testing in Jest](text/8-testing/jest.md)
+    3. [Annoymous Functions](text/8-testing/anonymous.md)
+9. [Webz Introduction](text/9-webz-intro/index.md)
 
 ```typescript
 class Greeter {
