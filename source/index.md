@@ -40,7 +40,9 @@ Let's learn how to write object-oriented TypeScript code!
     5. [Polymorphism Notes](text/6-polymorphism/notes.md)
 7. [Exceptions and Code Quality](text/7-exceptions_code_qual/index.md)
     1. [Exceptions](text/7-exceptions_code_qual/excedptions.md)
-    2. [Comments and Code Quality](text/7-exceptions_code_qual/code_quality.md)
+    2. [Comments](text/7-exceptions_code_qual/comments.md)
+    3. [Naming](text/7-exceptions_code_qual/naming.md)
+    4. [General Code Quality](text/7-exceptions_code_qual/general.md)
 
 ```typescript
 class Greeter {

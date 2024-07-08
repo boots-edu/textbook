@@ -349,4 +349,4 @@ We can catch a thrown exception with the try/catch or try/catch/finally construc
 
 # Next Step
 
-Next we'll learn about comments and Code Quality: [Comments and Code Quality &raquo;](../7-exceptions_code_qual/code_quality.md)
+Next we'll learn about comments: [Comments &raquo;](../7-exceptions_code_qual/comments.md)
