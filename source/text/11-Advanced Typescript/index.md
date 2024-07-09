@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Advanced WebZ
-nav_order: 10
+title: Advanced Typescript
+nav_order: 11
 has_children: true
 ---
 
-# Chapter 10 - Advanced Webz Concepts
+# Chapter 11 - Advanced Typescript
 
 [&laquo; Return to the Table of Contents](../index.md)
 
-Advanced WebZ
+Advanced Typescript
