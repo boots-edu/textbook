@@ -17,7 +17,7 @@ parent: Exceptions and Code Quality
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 Naming elements in a way that we can tell what type of thing/data the element is/contains makes code more readable.
 ## What's in a name?
 Consider the following class:
@@ -117,7 +117,7 @@ class RealNumber {
 * It’s clear what this is for.
 
 
-# Summary
+## Summary
 When writing code, choosing good names that represent the objects or purpose of classes, variables, or functions makes it possible to figure out what the code does and makes it easier to maintain and use.
 
 # Next Step

@@ -17,9 +17,9 @@ parent: Data Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
-# Instances and references
+## Understanding Instances and References
 When we define a class using the ***class*** keyword, we are creating a ***type***.  This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class.  When we use the ***new*** keyword, we create an **instance** of the class in memory and return a **reference** to the in memory object.  If we call new again, we get a second instance of the class and a second **reference** to the new memory location.
 ```
 let red:Color=new Color(255,0,0);
@@ -102,7 +102,7 @@ console.log(point2);
 
 This is probably what we wanted.  This is called a ***deep copy***. While there are some ways to do this automatically in Typescript, they do not work in all cases, and can be problematic.  We can do this manually as in this example, but we will look at better ways later.
 
-# Summary
+## Summary
 Understanding references and instances is critical in nearly all programming languages.  In typescript, every variable whose type is not a primitive type (string, boolean, number) stores a reference to the object.  From our examples:
 * point2=point; //makes a copy of the reference to the one and only object
 * A ***shallow copy*** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object.
@@ -110,4 +110,4 @@ Understanding references and instances is critical in nearly all programming lan
 
 # Next Step
 
-Next we'll learn about the ***this*** keyword: [This keyword &raquo;](this.md)
+Next we'll learn about the ***this*** keyword: [this keyword &raquo;](this.md)

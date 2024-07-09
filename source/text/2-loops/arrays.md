@@ -18,11 +18,11 @@ parent: Loops and Arrays
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 
 An array is an ordered list of values of the same type where each element in the array can be accessed using its index.
 
-# Arrays in Typescript
+## Overview
 Arrays are an extremely important data structure because they allow us to store a collection of objects.  We can build arrays out of any built-in or user-defined type we want, including out of other arrays.
 
 In Typescript, the size of the array does not need to be defined.  It will grow as necessary to hold the data placed into it (NOT TRUE IN C or C++).
@@ -187,9 +187,9 @@ for (let fruit of fruits){
 This is much cleaner, doesn’t require getting the length of the array, and accesses every element in order just like the previous version.
 > It is common to use the ***for..of loop*** syntax when iterating through the elements of an array.
 
-# Summary
+## Summary
 Arrays provide a simple data structure to store collections of objects.  These objects can be simple types (string, boolean, number), or complex types including other arrays.  We can access elements in the array by their index which is 0 based (i.e. 0 is first element).  There are also a number of functions to mutate the array by adding and removing elements to the back, front, or middle of an array.  Array elements can be extracted from an array using the spread (...) operator.  A special version of the for loop (for..of) can be used to automatically iterate through the elements of an array.
 
 # Next Step
 
-Next we'll learn about Data Classes: [DataClasses &raquo;](../3-dataclass/index.md)
+Next we'll learn about Data Classes: [Data Classes &raquo;](../3-dataclass/index.md)

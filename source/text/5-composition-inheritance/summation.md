@@ -17,10 +17,9 @@ parent: Composition and Inheritance
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 Using ***Inheritance***, we can build complex hierarchies of objects in order to define new types that are a ***type of*** some existing type.
 
-# Composition and Inheritance
 ## Termiology review
 **Composition:**
 * Add a class or array of class as a property to your class.
@@ -123,7 +122,7 @@ The point of inheritance is to capture these types of relationships.  Be careful
 * A point is not a type of color, so we don’t derive point from color.
 * An undergraduate is a type of student, so we derive Undergraudate from Student
 
-# Summary
+## Summary
 ***Inheritance*** allows us to capture an ***is a*** relationship between two classes.  When a class inherits from a ***superclass***, it gets access to everything in the superclass as well as anything defined within the ***subclass***.  We can use this to build complex deep hierarchies where we can represent complex objects by extending existing classes.
 
 # Chapter Summary

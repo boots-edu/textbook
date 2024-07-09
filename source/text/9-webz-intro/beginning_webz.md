@@ -233,8 +233,11 @@ Playgrounds
 * https://www.w3schools.com/tryit/
 * https://jsfiddle.net/
 
-# Summary
+## Summary
 In this section we learned about the Webz framework and how we can build a simple interactive application.  The CLI can be used to generate new projects, and add components to an existing project.  We can then attach code and variables to our html using the various decorators outlined in this chapter.
+
+# Chapter Summary
+In this chapter we have learned the basics of web development including html and css.  We have introduced ***WebZ*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applciations.
 # Next Step
 
 Next we'll learn more advanced features of Webz and how to use them [Advanced WebZ &raquo;](../10-webz-advanced/index.md)

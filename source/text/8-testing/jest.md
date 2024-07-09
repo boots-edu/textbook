@@ -17,7 +17,7 @@ parent: Testing
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Jest*** is a test runner and testing framework that works with javascript and Typescript
 
 ## Jest Syntax
@@ -208,7 +208,7 @@ All files            |   97.61 |    92.66 |   94.84 |   97.78 |
 
 > If we add ```--coverageDirectory=‘./coverage’``` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
 
-# Summary
+## Summary
 ***Jest*** is a powerful platform for designing suites of tests that cover all types and levels of code testing.  Tests will run automatically when jest is run providing regression testing accross the application.
 # Next Step
 

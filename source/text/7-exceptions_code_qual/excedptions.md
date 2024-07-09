@@ -17,10 +17,10 @@ parent: Exceptions and Code Quality
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 An ***Exception*** is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time.
 
-# Exceptions in Typescript
+## Exceptions in Typescript
 What is an exception?
 * An exception is a way to break the “normal” flow of a program in the event that an abnormal condition exists.
 * This can be due to invalid inputs or data provided at runtime or any other condition that is not the “common case” behavior of a method or function.
@@ -58,7 +58,7 @@ Error: This is an error
 
 > Note: The call stack shows us all the places where we could have caught the error as well as all the internal code that is part of the Typescript system.  In this example, the first 2 lines show where we could have caught the exception.
 
-## Using exceptions
+### Using exceptions
 We can use exceptions to improve our software design and make it react in a structured way to ***exceptional conditions***.
 
 Let’s consider the code for our drawing program again.
@@ -119,7 +119,7 @@ const color:Color=new Color(400, 400, 400);
 
 Throws (raises) an exception with the message “Invalid red value”.  Again, if this is not handled somewhere in the code that calls this, the program will exit.
 
-## Custom Errors
+### Custom Errors
 If we want to pass more information with our Error, we can create our own class that extends error, and throw that.
 
 ```
@@ -255,13 +255,13 @@ class Polygon extends Drawable {
 
 > Thought Question: Why does j start at i+1 and not 0?  
 
-## Defensive Programming
+### Defensive Programming
 So now we can prevent our code from being exposed to “exceptional” or invalid operation, by simply throwing an exception when those cases arise.
 If we write good test cases, we will find errors in our code, but right now, our program will just exit with an error message.  
 Making sure that our code will not accept invalid values and thus have undocumented, or undefined behaviors is good ***defensive programming***.
 It would be better if we were able to catch the exception somewhere in the call stack and handle it elgently instead of just having our program crash with an error message just because of some invalid input.  At a minimum it would be nice to exit cleanly and report the problem to the user in a more “user friendly” way.
 
-## Exception Handling
+### Exception Handling
 We can use the try/catch/finally approach to handle errors thrown by methods that we call.
 
 ```
@@ -334,13 +334,13 @@ If I have an open file, and encounter an error while reading it, we want to reth
 This code opens the file, tries to read it, and regardless of success or not, closes the file.
 On success it prints the contents, and on error it throws an exception
 
-## Common Pitfalls and Mistakes
+### Common Pitfalls and Mistakes
 * Throwing a string instead of an Error: Allowed but bad form
 * Using exceptions to communicate non-exceptional situations.  These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
 * If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
   ```throw e``` or ```throw new Error(“This is my error”)```
 
-# Summary
+## Summary
 In summary, when writing our code we should program defensively.
 When a method or code block accepts input, throw an exception if the input is not valid.
 We can override (extend) the Error class to create our own more detailed Error classes for our exceptions.

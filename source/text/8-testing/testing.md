@@ -17,7 +17,7 @@ parent: Testing
 {:toc}
 </details>
 
-# Key Idea
+@# Key Idea
 ***Software Testing*** is the process of validating that software is bug free and meets requirements.
 ## General
 What we are concerned with in software testing:
@@ -150,7 +150,7 @@ To create tests in a project that is already configured for jest, we create file
 * Running jest on the command line with the name of the file (without the test.ts) will run tests in only that file.
 * Running jest on the command line with –coverage will produce a coverage report.
 
-# Summary
+## Summary
 Designing good tests and testing methodologies will help create software that can be validated and verified.  Different levels of testing allow for testing individual functions, classes, or sets of code as well as the full system.  Before writing tests, ask what types of thing should be tested.  Make sure you test edge cases and exceptional situations to make sure you have covered all possible inputs.
 
 # Next Step

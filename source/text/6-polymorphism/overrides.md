@@ -17,10 +17,10 @@ parent: Overrides and Polymorphism
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 We can ***override*** a method in our subclass by creating a method with the same signature as a method in our superclass.
 
-# Altering functionality
+## Altering functionality
 In the previous sections, we learned that when we ***inherit*** or ***subclass*** a class, we get all of its methods (i.e. functions).  Sometimes this is not what we want.
 
 Let’s consider that we want to add a getArea method to all of our drawable classes.  This doesn’t really make sense for Drawable and Line, but does for the rest.  The calculation is, however, very different.  
@@ -62,7 +62,7 @@ We can even call the superclass implementation from our overridden method.
 
 We can build in some default behaviors to our superclasses, and override those behaviors in our subclasses if it makes sense, or just use the superclass implementation if it is sufficient.
 
-## An Example
+### An Example
 Here is an example of an overridden method that calls the parent’s version of the method, but then adds some functionality of its own.
 
 > Notice the code super.getDescription()
@@ -104,7 +104,7 @@ for (let orange of oranges){
 
 With our current knowledge we need to make an array of Orange objects, and an array of Apple objects, then iterate through them independently.  In the next section we will learn a better way to accomplish this.
 
-# Summary
+## Summary
 When we subclass a class, we get all of its members, both properties and methods.  If the members are public or protected, we can access them within the subclass.  If we wish to change or augment the behavior of a given method of the child class, we can ***override*** that method and replace it with our own functionality.  Within the overridden method, we can call the superclass' method if we choose.
 
 # Next Step

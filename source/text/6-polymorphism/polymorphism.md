@@ -17,10 +17,10 @@ parent: Overrides and Polymorphism
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Polymorphism*** in Object Oriented Programming is the provision of a single interface to entities of different types.  
 
-# Motivation for Polymorphism
+## Motivation for Polymorphism
 From the fruit example in the previous section, it would be preferable if we could just store an array of fruits and call getDescription on each fruit.  It would be great if the correct getDescription got called based on the type of fruit that was created, not the type of the array.
 
 It turns out that this WORKS! For apples it will call the apple version of getDescription, and for oranges it will call the orange version.
@@ -104,7 +104,7 @@ If we call it on a Line object, it draws the line.
 If we call it on a Line object stored in a Drawable variable (which is allowed since it is a Drawable), it calls the method in the Line class.
 
 
-# Summary
+## Summary
 ***Polymprhism*** in general denotes the idea of several different types of objects having the same public interface.  Specifically, in this section we examined ***subtype*** or ***subclass*** polymorphism which is when we ***override*** methods in a superclass allowing us to call the methods on a variable of the superclass type which contains an object of the subclass type.  This causes the system to ***dispatch*** the call to the correct subclass.
 
 # Next Step

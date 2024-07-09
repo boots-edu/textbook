@@ -17,9 +17,9 @@ parent: Data Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
-# This keyword
+## Overview
 There is a special keyword ***this*** that can be used from inside the constructor (or any method inside the class) that will allow us access to the member variables of the object.
 ## Abstracting the constructor
 Consider our color class
@@ -58,7 +58,7 @@ class Color{
 ```
 Here we can initialize our members indirectly by using the value of the parameter colorStr.  The ***this*** keyword allows us access to our own members from within the instance.  If the string is not recognized (i.e. not red, green, or blue) then the default values of (0,0,0) remain which is our intention.  We would want to make a comment on our constructor that this is the behavior to help users of our class to know how to use it.
 
-# Summary
+## Summary
 Typescript allows the use of the ***this*** keyword in order to access the members of the current instance of the class.  From within the class, using the ***this*** keyword allows us access to all of the member properties (public or private) within the class instance.
 
 # Chapter Summary

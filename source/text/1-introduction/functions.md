@@ -18,11 +18,11 @@ parent: Introduction
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 
 A  __function__  is a collection of code which performs a specific task.  It can take parameters and return a value.
 
-# Functions Are Blocks of Code
+## Functions Are Blocks of Code
 
 For now, we will discuss functions as named blocks of code. Later we will learn how to create  __anonymous functions__  which do not have a name. But for this review, functions will have names.
 
@@ -38,7 +38,7 @@ Once declared, we can __call__ (__use__) that function anywhere in our code to e
 
 Remember, you should only use the verb "call" when you are talking about invoking a function.  When you are talking about defining a function or variable, use the verb "declare" or "define". When you are talking about using a variable, use the verb "use", "access", or "get". You should never use the verb "call" when talking about accessing a variable (unless that variable is a function).
 
-# An Example Function
+## An Example Function
 
 ```typescript
 function areaOfCircle(radius: number): number{
@@ -55,7 +55,7 @@ The body of the function is enclosed in curly braces `{}`. The code that makes u
 
 The final line of the function is a __`return`__ statement. This statement returns the value of the expression to the right of the `return` keyword. The function will exit at this point, and the value will be returned to the call site.
 
-# Another Example Function
+## Another Example Function
 
 ```typescript
 function addTwoNumbers(a: number, b: number): number{
@@ -65,7 +65,7 @@ function addTwoNumbers(a: number, b: number): number{
 
 In this example, we have two parameters, `a` and `b`, both of which are `number`s. The function returns a `number`. The parameters are separated by commas.
 
-# Example Function Calls
+## Example Function Calls
 
 ```typescript
 function areaOfCircle(radius: number): number{
@@ -80,7 +80,7 @@ We can call this function from anywhere in our code by using its name.
 
 This code will call our function `areaOfCircle` and substitute `2` for the parameter `radius`, then return the `calculation` and store the result `12.5663708` in the variable `myArea`.
 
-# Printing with `console.log`
+## Printing with `console.log`
 
 A very important built-in function in TypeScript is `console.log`. This function takes any number of arguments and prints them to the console.
 
@@ -90,7 +90,7 @@ console.log("Hello, world!");
 
 This code will print `Hello, world!` to the console.
 
-# Calling and Printing
+### Calling and Printing
 
 A common misconception is that functions print their return value. This is not true. Functions return a value, but they do not print it. If you want to see the value, you must print it.
 
@@ -113,7 +113,7 @@ function addTwoNumbers(a: number, b: number): number{
 console.log(addTwoNumbers(2, 3));
 ```
 
-# Multiple Arguments to `console.log`
+### Multiple Arguments to `console.log`
 
 You can pass multiple arguments to `console.log`. It will print each argument separated by a space.
 
@@ -123,7 +123,7 @@ console.log("The sum of", 2, "and", 3, "is", 5);
 
 The output of this code will be `The sum of 2 and 3 is 5`.
 
-# Testing Functions
+## Testing Functions
 
 ```typescript
 function addTwoNumbers(a: number, b: number): number{
@@ -139,7 +139,7 @@ test("Test addTwoNumbers", () => {
 
 We can test our functions by calling them with different arguments and checking the return value. Usually, testing in TypeScript is done with a __testing framework__ like __Jest__. The tests will be placed in a separate file from the code being tested, and the testing framework will run the tests and report the results. These testing frameworks have built-in functions like `expect` and `toBe` that make it easy to write tests, and organize them into test suites using the `test` and `describe` functions. Much of these details are not important for now, but you should be aware that testing is an important part of software development.
 
-# Documenting Functions
+## Documenting Functions
 
 ```typescript
 /**
@@ -155,7 +155,7 @@ function areaOfCircle(radius: number): number{
 
 We can document our functions by adding a __comment__ above the function declaration. This comment should describe what the function does, what parameters it takes, and what it returns. This is called a __JSDoc__ comment. It is a special type of comment that is used to document functions, variables, and classes in TypeScript. It is important to document your code so that others can understand it, and so that you can remember what you were thinking when you wrote it. We'll talk more about __documentation__ later.
 
-# Summary
+## Summary
 
 Functions are blocks of code that perform a specific task. They can take parameters and return a value. We declare a function by specifying its name, parameters, return type, and body. We can call a function anywhere in our code to execute it.
 

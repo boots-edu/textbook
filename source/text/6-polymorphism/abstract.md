@@ -17,10 +17,10 @@ parent: Overrides and Polymorphism
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 An ***abstract*** class is a class that cannot be instantiated, but which can be used as a superclass for other classes.
 
-# Abstract Classes
+## Abstract Classes
 With the version of our drawing program from the last section, what happens when a developer using our class creates an actual Drawable object.  We built it to act as a superclass for all of the drawable objects, but it makes no sense to create one on its own.  It isn’t really drawable since the draw function doesn’t do anything.  It provides no functionality, and serves no purpose other than to act as a superclass to our other elements, hold their color, and dispatch their draw requests.
 
 ```
@@ -89,7 +89,7 @@ abstract class Drawable {
 Now any class that derives from Drawable will not compile if it does not implement clone and draw itself.
 However, since they are still defined in the superclass, we can still call it on any object derived from Drawable and it will still dispatch to the correct subclass method.  If we removed it altogether, it would not dispatch correctly when called.
 
-# Summary
+## Summary
 A base class that wants to express a public interface for its subclasses, but does not provide an implementation for that interface is called an ***abstract class***.  Any methods within the class that do not have implementations are called ***abstract methods***.  We denote both a class or a method being abstract by using the ```abstract``` keyword.
 
 # Next Step

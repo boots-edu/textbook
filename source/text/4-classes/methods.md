@@ -17,7 +17,7 @@ parent: Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Classes*** allow us to combine data and methods into a grouping or class and use that grouping as a data type in our programs. 
 
 In addition to properties and constructors which we saw in our discussion of ***Data Classes***, generalized classes in typescript can also contain functions (called methods) that can access both *public* and *private* members of the class.
@@ -286,6 +286,7 @@ console.log(rect.getDiagonalLength())
 ```
 </details>
 
+
 One thing to notice is that we had to compute the missing corners in every function.  It would make more sense to compute them when the object is created and store them as member variables.  We can do this without changing the ***public interface*** of the class and simplify all of our member methods.  We will do this in the next section.
 
 So now we can add methods to our classes to create robust objects that encapsulate not just some heterogeneous data, but also methods that can work on that data.  
@@ -297,7 +298,7 @@ color1.red=255;
 ```
 > NOTE: color2 is unchanged.  It is a distinct instance of our class Color.
 
-# Summary
+## Summary
 Classes in typescript can contain only data (Data Classes) or they can contain a combination of data and methods that operate on that data.  The methods can access the properties of the class instance by using the ***this*** keyword.  In this way, we can create classes that not only combine data that goes together, but also encapsulate it with the methods that act upon that data.  
 
 # Next Step

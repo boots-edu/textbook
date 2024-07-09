@@ -17,7 +17,7 @@ parent: Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Classes*** allow us to combine data and methods into a grouping or class and use that grouping as a data type in our programs. 
 ## Types of copies
 Recall from the previous chapter the discussion of copying.
@@ -112,7 +112,7 @@ let line:Line=new Line(point1.clone(),point2.clone(),new Color(255,0,0));
 
 > By using our clone methods in all of our classes, this code now has each element of each class as a distinct instance.  
 
-# Summary
+## Summary
 The simplest way to ensure deep cloning is to *teach* each class how to deep copy itself.  If we do this then classes that contain the class in question can just call its clone method to deep copy it.
 
 # Chapter Summary

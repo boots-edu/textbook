@@ -17,7 +17,7 @@ parent: Data Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
 
 ## Drawing Program Classes
@@ -81,7 +81,8 @@ console.log(myPoint);
 We can build up complex objects by including other objects inside of them.  Now every point will have a position (x,y) and a color contained inside the point itself.
 
 
-# Summary
+## Summary
+Complex objects can be built from simpler ones by creating a ***class*** to represent a new type.
 
 # Next Step
 

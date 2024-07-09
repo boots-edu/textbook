@@ -17,7 +17,7 @@ parent: Exceptions and Code Quality
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 Producing well documented, high quality, efficient and readable code is always the goal in software development.
 
 ## Code Quality in General
@@ -137,7 +137,7 @@ Quality, well formatted comments make your code more usable, manageable, and mai
 
 There are other things we can do to improve code quality as well.
 
-# Summary
+## Summary
 Clear, straight forward comments on our code make our code more useful.  We can specify details about how to use the code, what its limitations are, if it throws exceptions, and what it expects and returns.  If formatted using jsdoc, then we can also get help in IDEs like Visual Studio Code and generate a detailed documentation website using typedoc.  
 
 

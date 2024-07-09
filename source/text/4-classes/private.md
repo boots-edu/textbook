@@ -17,9 +17,10 @@ parent: Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Classes*** allow us to combine data and methods into a grouping or class and use that grouping as a data type in our programs. 
 
+## Data Hiding
 Consider our rectangle class again:
 ```
 class Rectangle{
@@ -128,7 +129,7 @@ console.log(rect.getPerimeter());
 console.log(rect.getDiagonalLength())
 ```
 
-# Summary
+## Summary
 ***Data hiding*** is an important tool for object oriented programming.  It allows us, as the programmer, to decide what functionality, methods, and data we expose to the users of our class without worrying about things we have hidden inside.
 If we provide a ***public interface*** to our class that is consistent, then we should try not to change it, but anything that is private can be changed so long as we make sure that the ***public interface*** still works as expected without breaking anything that uses our class.
 

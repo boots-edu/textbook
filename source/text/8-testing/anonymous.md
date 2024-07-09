@@ -17,7 +17,7 @@ parent: Testing
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 A function that is declared with no name is an ***anonymous function***.
 
 ## Normal functions
@@ -147,7 +147,7 @@ declare type ChkFunction=(x:number)=>boolean;
 let f:ChkFunction=(x:number)=>x>=0;
 ```
 
-# Summary
+## Summary
 ***Annonymous functions*** are a useful shortcut for passing functionality around a program, either as a variable, a parameter, or a return value.  They are typed by the types of their parameters and return value.
 
 # Next Step

@@ -17,10 +17,10 @@ parent: Overrides and Polymorphism
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 We can control ***access*** to the members of a superclass with the ***private, public, and protected*** keywords.  
 
-# Understanding Inheritance
+## Understanding Inheritance
 In the previous chapter we introduced the notion of inheritance to support relationships between concepts that represent an ***is a*** or ***type of*** relationship.  
 This is different from composition which supports relationships between concepts that represent a ***has a*** or ***contains a*** relationship.
 
@@ -36,7 +36,7 @@ Then all the other classes ALSO have those fields.  We don’t need to recreate 
 
 If you can map out the relationships between concepts, then by using a combination of inheritance and composition, we can build complex hierarchies out of simple objects.
 
-## Controlling Access
+### Controlling Access
 When we create a class, we have options about how that class can be used and inherited.
 Fields and methods can be:
 * private: Only accessible within the class
@@ -112,7 +112,7 @@ Knowing how the parent works informs how we write the subclass.
 
 > If no ***access specifier*** (public,private,protected) is given, the compiler will default to public.
 
-## Important points on experience
+### Important points on experience
 Some important points on inheritance.
 * You do not need to reimplement the properties of the parent class as you are inheriting them.
 * super(…) calls the constructor of the parent class and takes whatever arguments the parent constructor takes.
@@ -121,7 +121,7 @@ Some important points on inheritance.
 When we subclass, we get all of the properties of our parent class and can access them if they are public or protected.
 For methods (i.e member functions), the same holds true based on if they are public, protected, or private.  We get the functions in the superclass.
 
-# Summary
+## Summary
 
 We can control access to the members of a class (both properties and methods) by using the ***public, private, and protected*** keywords.  ***Public*** members are accessible to all, ***private*** members are only accessible within the class, and ***protected*** members are accessible in the class and in any subclass of the class.
 

@@ -17,10 +17,10 @@ parent: Data Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
 
-# Complex Types
+## Complex Types
 If we wish to combine data into a more complex type that represents the combination of various related data items, then there are two methods available to us in Typescript
 * **The interface**
 	* Interfaces describe the data that goes into an object and its types, but do not provide default values, or any additional logic.
@@ -54,7 +54,8 @@ As an example, consider a simple drawing program we might want to build.
 * Polygons can be defined by an arbitrary list of points (The vertices)
 * Each of these objects may have a color associated with it. (Color itself might contain components for Red, Green, Blue as numbers.
 
-# Summary
+## Summary
+Sometimes it makes sense to group data together.  In these cases Typescript provides multiple mechanisms with which to do that.  In the section we have introduced the idea of creating a ***class*** that represents a set of heterogeneous data. (i.e. strings, numbers, booleans, arrays, and other classes).
 
 # Next Step
 

@@ -18,6 +18,7 @@ parent: Introduction
 {:toc}
 </details>
 
+## Overview
 This assignment helps you figure out how to setup your environment, install everything, and make your first submission
 to GradeScope.
 If everything goes well, this will only take you about 20 minutes. But it is very normal to encounter issues if you are
@@ -30,9 +31,9 @@ Do not skip steps.
 
 Read error messages, and ask questions. Talk to humans as needed to get help, and use google intelligently.
 
-# Get Software
+## Get Software
 
-## Get VSCode
+### Get VSCode
 
 **Download [Visual Studio Code](https://code.visualstudio.com/download)**
 
@@ -54,7 +55,7 @@ Then, search for `Prettier` and click install:
 
 Make sure you have installed the extensions that are in the images above. These are the correct versions!
 
-## Get Node
+### Get Node
 
 **Next, Download and Install [Node](https://nodejs.org/en/download/)**
 
@@ -121,7 +122,7 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 
 {: .warning-title}
 
-## Get Git
+### Get Git
 
 **Next, Download and Install [Git](https://git-scm.com/downloads)**
 
@@ -135,13 +136,13 @@ $ brew install git
 
 Once you have verified that everything has been installed correctly, you are ready to move on!
 
-# Create GitHub Account
+### Create GitHub Account
 
 **Next, [Create a GitHub Account](https://github.com/signup)** (if you don't already have one).
 
 This account is an important part of your professional identity. You will use it to store your code, collaborate with others, and show off your work to potential employers. Choose a username that is professional and easy to remember. You are likely to use this account for a long time, so choose wisely!
 
-# Clone Assignment
+## Clone Assignment
 
 Now that you have a programming environment, it is time to complete the first coding assignment.
 
@@ -179,7 +180,7 @@ You will need to run the "Git: Clone" command in VS Code:
 * A folder select window will pop up and ask "Choose a folder to clone <url> into". We recommend that you create a `CISC-181` folder in your User directory, and store all your assignments in there. If you select that `CISC-181` folder, then a new folder will be created there for this assignment.
 * When completed, it will ask if you would like to "open the cloned repository". Click "Open" to open the repository in the current window.
 
-# Inspecting the Project
+## Inspecting the Project
 
 If everything went well in the previous step, you now have the repository downloaded locally and open in VS Code.
 
@@ -229,7 +230,7 @@ In this case, the system is letting us know that we never installed the necessar
 This is one of the first steps when starting a project - to install the necessary dependencies onto your system.
 We'll need to do this every time we clone a new assignment repository.
 
-# Install Modules
+## Install Modules
 
 The next step is to open a Terminal that we can run instructions in.
 
@@ -264,7 +265,7 @@ large bank or trusted government entity, then it would be very important to addr
 However, you are a student learning to code. Let's not get caught up in the security ramifications of our `addition`
 function. At least, not yet. We will ignore these vulnerabilities and move back to the code.
 
-# Running the Tests
+## Running the Tests
 
 The `basic.test.ts` file we were looking at before no longer has red squiggles! The code is much easier to read now.
 
@@ -320,7 +321,7 @@ assertions that went wrong.
 According to the output, the `Positive Numbers` test called the `addition` function with the arguments `1, 2, 3` and
 expected the result to be `6`. However, instead the result was `-4`. There seems to be an error in our code.
 
-# Fix the Code
+## Fix the Code
 
 Let us return to our source code file, `basic.ts`, where the addition function was defined.
 
@@ -353,7 +354,7 @@ You may notice a black dot next to the name of the `basic.ts` file in the tab. T
 saved. Save the file now (either using the appropriate keyboard shortcut or the File menu). If you do not fix AND save
 the file, then the next step will not work.
 
-# Run the Tests Again
+## Run the Tests Again
 
 Now that you've fixed the code and saved the file, you can return to the terminal to run the tests again:
 
@@ -367,7 +368,7 @@ And the resulting output this time should look a lot happier.
 
 With the code fixed, we are now ready to save our work back to our remote repository.
 
-# Stage/Commit/Push to GitHub
+## Stage/Commit/Push to GitHub
 
 Periodically, as you complete portions of assignments, you should **stage** and **commit** your work in your local Git
 repository. This makes a backup of your work locally and also will give us a clear indication of your work timeline.
@@ -454,7 +455,7 @@ If everything went well, you should be able to see your new commit on the GitHub
 
 We're almost done. The time has come to submit!
 
-# Submitting on GradeScope
+## Submitting on GradeScope
 
 At the bottom of this page, you will see a box with GradeScope embedded inside (just like BlockPy!). GradeScope is a
 platform for running student code through instructor unit tests, which will give you automatic feedback and score you.
@@ -479,7 +480,7 @@ You can submit multiple times before the deadline. Your last submission will det
 we will give you additional feedback beyond what the autograder will give you, so do not assume that your grade will
 remain as it is. However, if the autograder reports any issues, you should definitely handle them now!
 
-# Summary
+## Summary
 
 Let us review all the steps we took in this assignment:
 

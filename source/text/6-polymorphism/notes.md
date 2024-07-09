@@ -17,10 +17,10 @@ parent: Overrides and Polymorphism
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Polymorphism*** in *Object Oriented Programming* is the provision of a single interface to entities of different types.  
 
-# Things to know
+## Things to know
 It is ok to store an object of a subclassed type in a variable typed to the superclass.
 ```
 let dObj:Drawable=new Line(new Point(1,2),new Point(3,4),new Color(1,2,3));
@@ -38,7 +38,7 @@ If we have methods that make no sense in the superclass, and must be implemented
 abstract draw(page: any): void;
 ```
 
-## An Example
+### An Example
 Remember our Users/Student/Faculty classes.
 Here is a simplified and updated version for us to look at.
 The base class Users implements name, age, and two methods to access them.
@@ -98,7 +98,7 @@ We can loop through the returned values getting details on each object regardles
 
 In general, you should return the most generic (i.e. superclass) type possible to make your method generic.  There are ways to look and see what class we actually are, but if we are calling overridden methods that exist in the superclass, we don’t need to worry about that.  We just use it.
 
-# Summary
+## Summary
 * You now know most of the generic things about OOP.  In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C#, etc.
 * We can construct complex classes by building them out of parts that they contain using composition.
 * We can construct complex classes by extending other classes and adding functionality to create more and more specific classes that take advantage of the features that already exist in the superclass.

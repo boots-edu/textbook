@@ -18,11 +18,11 @@ parent: Introduction
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 
 A string is sequence of character values used to store text data.
 
-# Strings in Typescript
+## Overview
 
 The `string` type is a primitive data type in Typescript. 
 We can declare a variable to be of type string directly:
@@ -34,14 +34,14 @@ let password: string = 'captain';
 
 Notice how we can use either single or double quotes to define a string.
 
-# String Methods
+## String Methods and operations
 
 There are several functions which we can use to operate on strings in Typescript.
 We will look at some of the most common ones briefly, but there are actually many more!
 
 ![](../../images/CISC181-Week%2013.jpg)
 
-# `charAt`, `indexOf`, and `lastIndexOf`
+### `charAt`, `indexOf`, and `lastIndexOf`
 
 You can use the `charAt`, `indexOf`, and `lastIndexOf` methods to get information about the characters in a string.
 
@@ -62,7 +62,7 @@ console.log(myStr.lastIndexOf("o")); // 7
 console.log(myStr.lastIndexOf("z")); // -1
 ```
 
-# Square Bracket Access of Strings
+### Square Bracket Access of Strings
 
 Besides using the `charAt` method, you can also access individual characters in a string using square brackets.
 
@@ -74,7 +74,7 @@ console.log(myStr[4]); // "o"
 console.log(myStr[10]); // "d"
 ```
 
-## No Negative Indices with Brackets
+#### No Negative Indices with Brackets
 
 Unlike Python, you cannot access characters in a string using negative indexes in TypeScript. The result will be the special value `undefined`.
 
@@ -87,7 +87,7 @@ console.log(myStr[-2]); // undefined
 
 With the `charAt` method, the result would be an empty string instead.
 
-# Taking Parts of Strings with `slice`
+### Taking Parts of Strings with `slice`
 
 You can use the `slice` method to extract parts of a string.
 * The first parameter is the starting slice position.
@@ -109,7 +109,7 @@ console.log(myStr.slice(5, 3)); // ""
 console.log(myStr.slice(4, 5)); // "o"
 ```
 
-# Indexes and Slices in Strings
+### Indexes and Slices in Strings
 
 ![](../../images/intro_strings_tip.png)
 
@@ -130,7 +130,7 @@ console.log(message.slice(5, 3)); // ""
 console.log(message.slice(4, 5)); // " "
 ```
 
-# Combining Strings with `concat`
+### Combining Strings with `concat`
 
 The `concat` method will combine two separate strings and return that combined string.
 
@@ -144,7 +144,7 @@ console.log(myStr2.concat(myStr1)); // "WorldHello"
 console.log(myStr2.concat(",", myStr1)); // "World,Hello"
 ```
 
-# Combining Strings with `+`
+### Combining Strings with `+`
 
 Note that you can also use the `+` operator to concatenate strings:
 
@@ -160,7 +160,7 @@ The advantages of `concat` are that:
 * You can combine more than two strings at once with a single operation
 * You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
-# The `substring` method
+### The `substring` method
 
 * Assume the string let myStr="Hello World";
 * __split():__  Splits the specified String object into an array of strings.
@@ -174,7 +174,7 @@ The `substring` and `slice` methods are very similar, with two differences:
 * The main difference is that if the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
 * The `substring` method does not support negative indexes.
 
-# The `toLowerCase` and `toUpperCase` methods
+### The `toLowerCase` and `toUpperCase` methods
 
 The `toLowerCase` and `toUpperCase` methods will create a new string with all characters in either lowercase or uppercase, respectively.
 
@@ -187,7 +187,7 @@ console.log(myStr.toUpperCase()); // "HELLO WORLD"
 
 Notice how the methods take no arguments; the parentheses are still required to call the method, even with nothing in between them. These are __nullary__ methods because they take no arguments.
 
-# Number to String Conversion with `parseInt` and `+`
+### Number to String Conversion with `parseInt` and `+`
 
 
 What if the string contains a number and we want to convert it to a number type? We can use two approaches:
@@ -210,7 +210,7 @@ let myNum: number = parseInt(myNumStr); // NaN
 let myNum2: number = +myNumStr; // NaN
 ```
 
-# String to Number Conversion with `toString`
+### String to Number Conversion with `toString`
 
 If we want to go the other way, and convert a number to a string, we can use the `toString` method to explicitly convert a non-string value to a string.
 
@@ -222,7 +222,7 @@ let myNumStr: string = myNum.toString();
 
 The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, booleans, and other more complex types (although that is not always useful, as we will see).
 
-# Implicit String Conversion with `+`
+### Implicit String Conversion with `+`
 
 If you use the binary `+` operator to combine a string and a number, the number will be converted to a string automatically.
 
@@ -239,7 +239,7 @@ let myStr: string = "The answer is " + myNum + 1;
 console.log(myStr); // "The answer is 421"
 ```
 
-# Strings Are Immutable
+### Strings Are Immutable
 
 The `slice` method does NOT modify the string. In fact, no methods or functions can modify a string in TypeScript. Instead, they return a new string.
 
@@ -250,7 +250,7 @@ myStr.slice(1, 3); // "el"
 console.log(myStr); // "Hello World"
 ```
 
-# Other String Methods
+### Other String Methods
 
 There are MANY other methods available to the string type, but these are some of the more useful and common.  Some other useful ones we will not cover in detail here are:
 
@@ -263,7 +263,7 @@ There are MANY other methods available to the string type, but these are some of
 * `trim`/`trimStart`/`trimEnd`: Remove whitespace from the start, end, or both ends of a string
 * `split(separator)`: Split a string into an array of strings based on a separator
 
-# Summary
+## Summary
 
 * Strings are a fundamental data type in TypeScript, used to store text data. 
 * There are many methods available to manipulate strings, and we have only covered a few of the most common ones here:

@@ -17,17 +17,17 @@ parent: Webz Introduction
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 Learning to develop web applications is a critical skill for software developers.  
 
-# Review of Web Basics
+## Review of Web Basics
 The internet is the network over which many protocols can be transmitted (like email, IM, www, etc).  
 DNS (Domain Name Service) is a distributed database that maps names to network addresses (e.g. udel.edu => 128.175.13.247)
 One of the protocols the internet supports is Hyper Text Transport Protocol (http) or it’s secure cousin (https).
 Over this protocol, we send regular text files, that contain a specialized language called HyperText Markup Language (html) that tells a web browser reading the file how to render the page.
 That’s right, the web is basically just a bunch of text files (and a lot of cat videos).
 
-## HTML Basics
+### HTML Basics
 HTML is a simple tag based language where elements are defined with an opening and closing tag 
 ```
 <p>Something</p>
@@ -39,7 +39,7 @@ These tags can be nested inside of each other
 ```
 If a tag is inside another tag, it can be affected by the parent’s size, position, and style.
 
-## Common HTML Tags
+### Common HTML Tags
 Common tags:
 * ```<div></div>``` : Create a block which can be styled.
 * ```<p></p>``` :  A paragraph 
@@ -51,7 +51,7 @@ Common tags:
 * ```<span></span>``` : An enclosing element that doesn’t do much but can be styled.
 * ```<select><option>1</option><option>2</option></select>``` : A drop down
 
-## HTML Tags in action
+### HTML Tags in action
 ```html
 <div>
   <p>Here is the first paragraph of text</p>
@@ -119,14 +119,14 @@ Here is a dropdown box:
 ```
 ![](../../assets/images/html_5.jpg)
 
-## Web Development in VS-Code
+### Web Development in VS-Code
 ![](../../assets/images/vscode_1.jpg)
 
 Clicking this button, will bring up a preview panel on the right which will change automatically as you edit the file.
 
 ![](../../assets/images/vscode_2.jpg)
 
-## Styling and CSS
+### Styling and CSS
 Styling our elements allows us to alter colors, shapes, behaviors, appearance, and placement.
 There are basically a few ways to style:
 * Style a tag:  Note: This styles all tags of that type, so should not be used
@@ -185,7 +185,7 @@ We are setting the background and foreground colors.  The padding inside, the si
 
 **What a difference it makes when we add just a little bit of styling to our tags.**
 
-### Box Positioning
+#### Box Positioning
 As part of styling, we have a few very important styles we will use constantly.
 
 ***position:*** This sets how the element is positioned within its parent.
@@ -204,7 +204,7 @@ There are many html tags, and styles.  I am not sure anybody knows them all.  Th
 We will provide you with resources to look up what you need and vs code has excellent IntelliSense with html and styles.
 This is an incredibly useful skill that is worth learning for your futures.
 
-# Summary
+## Summary
 Learning HTML is an important skill as web applications are pervasive both for internet and local applications.  While the number of tags and styles that are available is large, with a few tags and styles we can build beautiful web application displays.  We will learn much more about this as we begin to build applicaitons instead of static web pages.
 
 # Next Step

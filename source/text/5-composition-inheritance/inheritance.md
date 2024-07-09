@@ -17,10 +17,9 @@ parent: Composition and Inheritance
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 Using ***Inheritance***, we can build complex hierarchies of objects in order to define new types that are a ***type of*** some existing type.
 
-# Inheritance in Typescript
 ## Understanding the relationship
 In the previous section we discussed ***composition*** which allowed us to represent a *contains* or *has a* relationship between two classes.  Recall that a course has a final and a fruit basked contains fruit.  While useful in many situations, we often wnat to represent a ***type of*** relationship.  In typescript, the ```extend``` keyword allows us to represent a class in terms of another class that it is a *type of*.
 
@@ -200,7 +199,7 @@ We encapsulate their commonality in the Users class, then extend Users to make n
 
 
 
-# Summary
+## Summary
 ***Inheritance*** allows the programmer to represent an ***is a*** or ***type of*** relationship.  Using inheritence through the ```extends``` keyword, we can express both the similarities and differents between objects in these types of relationships.  We can call the constructor (we must actually) of our superclass in the constructor of our subclass by calling the ```super``` method and passing it the same list of parameters we would pass to the ***superclasses*** constructor.
 
 # Next Step

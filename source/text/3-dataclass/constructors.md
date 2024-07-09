@@ -17,9 +17,9 @@ parent: Data Classes
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
-# Class constructors
+## Class constructors
 So far, to create a class we:
 * Create an instance of a class with the __new__ keyword and store it in a variable
 * Use the variable to modify the properties of the class individually
@@ -137,7 +137,7 @@ With this code, drawing represents a drawing with two triangles (red and blue). 
 ![](../../assets/images/drawing_1.jpg)
 
 
-# Summary
+## Summary
 To simplify the creation and initialization of a data class, we can provide a constructor method that takes parameters and can be used to set initial values for the member properties.  If the parameters are preceeded by the words public or private, they automatically become member variables and get initialized to the values passed to the constructor.  The constructor is called by using the ***new*** keyword to create an new instance of the class.
 # Next Step
 

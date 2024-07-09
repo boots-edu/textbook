@@ -51,6 +51,10 @@ Let's learn how to write object-oriented TypeScript code!
     1. [Web Bascis](text/9-webz-intro/webbasics.md)
     2. [Beginning WebZ](text/9-webz-intro/beginning_webz.md)
 10. [Advanced WebZ](text/10-webz-advanced/index.md)
+    1. [Dynamic Components](text/10-webz-advanced/dynamic.md)
+    2. [WebZ Events](text/10-webz-advanced/events.md)
+    3. [WebZ Dialogs](text/10-webz-advanced/dialogs.md)
+    4. [WebZ Timers](text/10-webz-advanced/timers.md)
 
 ```typescript
 class Greeter {
