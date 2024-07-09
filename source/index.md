@@ -48,6 +48,9 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Testing in Jest](text/8-testing/jest.md)
     3. [Annoymous Functions](text/8-testing/anonymous.md)
 9. [Webz Introduction](text/9-webz-intro/index.md)
+    1. [Web Bascis](text/9-webz-intro/webbasics.md)
+    2. [Beginning WebZ](text/9-webz-intro/beginning_webz.md)
+10. [Advanced WebZ](text/10-webz-advanced/index.md)
 
 ```typescript
 class Greeter {
