@@ -56,6 +56,10 @@ Let's learn how to write object-oriented TypeScript code!
     3. [WebZ Dialogs](text/10-webz-advanced/dialogs.md)
     4. [WebZ Timers](text/10-webz-advanced/timers.md)
 11. [Advanced Typescript](text/11-Advanced%20Typescript/index.md)
+    1. [Typescript Generics](text/11-Advanced%20Typescript/generics.md)
+    2. [Typescript Interfaces](text/11-Advanced%20Typescript/interfaces.md)
+    3. [Union Types](text/11-Advanced%20Typescript/unions.md)
+12. [Higher Order Methods](text/12-high-order-methods/index.md)
 
 ```typescript
 class Greeter {

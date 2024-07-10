@@ -125,7 +125,7 @@ So what does our final test suite for this code look like?
 ``` typescript
 // Currently does not work due to incomplete Jest implementation.
 class Elements {
-	private stringArray: string[] = [];
+	public stringArray: string[] = [];
 	/**
 	 * @description This function returns and     * removes the last element
 	 * @returns {string} - The last element of the
