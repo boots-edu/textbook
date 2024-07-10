@@ -143,6 +143,7 @@ class Triangle implements Drawable{ . . . }
 class Elephant implements Serializable{ . . . }
 class Tomato implements Serializable{ . . . }
 ```
+
 ## Notes on Interfaces
 * Interfaces allow us to further type our data by specifying what methods and properties an object must contain.
 * Unlike extending classes (inheritance), we can implement multiple interfaces in a single class.
