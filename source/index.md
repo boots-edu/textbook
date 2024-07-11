@@ -62,6 +62,8 @@ Let's learn how to write object-oriented TypeScript code!
 12. [Higher Order Methods](text/12-high-order-methods/index.md)
     1. [Higher Order Array Methods](text/12-high-order-methods/arrays.md)
 13. [Recursion](text/13-Recursion/index.md)
+    1. [Description and Definition of Recursion](text/13-Recursion/recursion.md)
+    2. [Trees](text/13-Recursion/trees.md)
 
 ```typescript
 class Greeter {
