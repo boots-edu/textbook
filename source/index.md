@@ -60,6 +60,8 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Typescript Interfaces](text/11-Advanced%20Typescript/interfaces.md)
     3. [Union Types](text/11-Advanced%20Typescript/unions.md)
 12. [Higher Order Methods](text/12-high-order-methods/index.md)
+    1. [Higher Order Array Methods](text/12-high-order-methods/arrays.md)
+13. [Recursion](text/13-Recursion/index.md)
 
 ```typescript
 class Greeter {
