@@ -11,9 +11,10 @@ export function setupRunners() {
     window.addEventListener("load", function () {
         document
             .querySelectorAll(
-                ".language-typescript.highlighter-rouge,.language-tsx.highlighter-rouge",
+                ".language-typescript.highlighter-rouge:not(.no-run),.language-tsx.highlighter-rouge:not(.no-run)",
             )
             .forEach((area) => {
+                console.log(area.className)
                 const editButton = document.createElement("button");
                 editButton.classList.add("btn", "btn-primary");
                 editButton.appendChild(document.createTextNode("✏️"));
