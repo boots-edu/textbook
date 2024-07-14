@@ -22,7 +22,8 @@ parent: Introduction To Typescript
 
 A variable is a named container for some unknown value. We can use variables to create generic code that works on different values.
 
-## Simple Math Example
+## Motivation
+### Simple Math Example
 
 Consider a simple math expression:
 
@@ -40,7 +41,7 @@ X+4
 This would compute the same value if `X=3`, but would also compute a correct value for any other value of `X`.
 This is the basic idea of why we use variables. We can write a single expression that computes a correct answer for many possible values of `X` (the __variable__).
 
-## Another Math Example
+### Another Math Example
 
 ![Visualization of the mathematical equation of a line, representing the slope between two points P and Q offset by C](../../images/CISC181-Week%2011.png)
 
@@ -90,6 +91,7 @@ We then compute `myValue+3` and store it in answer.
 let myValue: number = 4;
 let answer: number;
 answer = myValue + 3;
+console.log(answer);
 ```
 
 ## Declaration Syntax
@@ -120,6 +122,7 @@ There are other more complex types we will examine later (like arrays) and we ca
 let pi: number = 3.1415927;
 let r: number = 2;
 let answer: number = pi * r * r;
+console.log(answer);
 ```
 
 If we change the value of `r`, then we compute the area of a different circle.
@@ -128,7 +131,12 @@ Later we will look at turning this code into a __function__ that can be called w
 
 If we assign a non-numeric value to `r` (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
-TODO: Picture of this compiler error, or at least a danger box example
+```typescript
+let pi: number = 3.1415927;
+let r: number = "Hello";
+let answer: number = pi * r * r;
+console.log(answer);
+```
 
 ## Boolean Expressions
 
@@ -155,12 +163,14 @@ let isGreater: boolean = (myValue > 5);
 // isGreater will be false
 let isLessEqual: boolean = (myValue <= 5);
 // isLessEqual will be true
-
+console.log(isEqual);
+console.log(isLessEqual);
 let myString: string = "Hello"
-let isStrEqual: boolean = (myValue === "Hello");
+let isStrEqual: boolean = (myString === "Hello");
 // isStrEqual will be true
 let isStrEqual2: boolean = (myString !== "Hello");
 // isStrEqual2 will be false
+console.log(isStrEqual);
 ```
 
 ## Summary
@@ -169,7 +179,7 @@ Variables are a powerful way to create generic code that produces expected resul
 
 The values that we assign to variables can come from many sources like data files, user input, databases, or online resources.  The code will work regardless of the values so long as they are of the correct type.
 
-Throughout the semester we will use variables to create reusable code.  We will later learn other data types, and even how to create our own types containing complex data.
+Throughout this text we will use variables to create reusable code.  We will later learn other data types, and even how to create our own types containing complex data.
 
 # Next Step
 

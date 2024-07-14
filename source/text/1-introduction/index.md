@@ -9,5 +9,5 @@ has_children: true
 
 [&laquo; Return to the Table of Contents](../index.md)
 
-We're going to explain the basics of TypeScript.
+In this chapter, we are going to explain the basics of TypeScript.
 This will include variables, values, types, and functions.
