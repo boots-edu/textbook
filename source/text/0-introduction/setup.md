@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Environment Setup
-nav_order: 1.2
+nav_order: 0.2
 parent: Introduction
 ---
 
@@ -19,10 +19,10 @@ parent: Introduction
 </details>
 
 ## Overview
-This assignment helps you figure out how to setup your environment, install everything, and make your first submission
-to GradeScope.
+This section helps you figure out how to setup your environment, install everything, and make sure your environment is correct.
+
 If everything goes well, this will only take you about 20 minutes. But it is very normal to encounter issues if you are
-not used to this workflow. Don't worry, you will be an expert by the end of the semester!
+not used to this workflow. Don't worry, you will be an expert soon!
 
 Making web applications is super complicated, so we are going to be really pushy about your environment's setup and the eventual structure of our web application. If this seems limiting, that's the idea. 
 Please try to stay within the bounds we give you, as you experiment and try things out!
@@ -37,7 +37,7 @@ Read error messages, and ask questions. Talk to humans as needed to get help, an
 
 **Download [Visual Studio Code](https://code.visualstudio.com/download)**
 
-VS Code is an IDE (Integrated Development Environment) that you will program in. Previously, you were using Thonny.
+VS Code is an IDE (Integrated Development Environment) that you will program in. 
 
 When you have VS Code downloaded, open the application. You will need to install two extensions.
 
@@ -101,8 +101,8 @@ $ node --version
 
 Note that you do not write the dollar sign (`$`); that just indicates the start of a new command. Sometimes folks will write an angle bracket (`>`) or some other symbol.
 
-In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0`.  
-If `v21.6.1` appears, you need to go back and install the **LTS version** ; some packages may only support the latest
+In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer.  
+If an older version appears, you need to go back and install the **LTS version** ; some packages may only support the latest
 LTS version of Node, so it's better to fix it now.
 
 If `node: command not found` appears, it means something went wrong with your installation. Check that the installer is
@@ -115,7 +115,7 @@ Once you have verified that Node was installed, enter the command (without the d
 $ npm --version
 ```
 
-You should see `10.2.4` appear if everything is installed correctly.
+You should see `10.2.4` or later appear if everything is installed correctly.
 
 **Note:** If Node and/or Git appear to not be working correctly or do not seem installed, completely quit and re-open
 VS Code before troubleshooting. Sometimes VS Code will not recognize the install immediately.
@@ -144,15 +144,11 @@ This account is an important part of your professional identity. You will use it
 
 ## Clone Assignment
 
-Now that you have a programming environment, it is time to complete the first coding assignment.
+Now that you have a programming environment, it is time to complete the first coding exercise to test everything.
 
 Click this link to get your own copy of the starter assignment on Github Classroom:
-<https://classroom.github.com/a/wCPnaVyW>
+***Insert new link here***
 
-**Note** : if you are unable to access the link with your GitHub account, you might need to be added to the classroom
-roster. Contact your professor ASAP.
-
-{: .warning-title}
 
 You may need to reload the page manually. The process should not take long. When the repository is ready, you should see
 a new link:

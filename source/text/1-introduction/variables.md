@@ -2,7 +2,7 @@
 layout: default
 title: Variables
 nav_order: 1.3
-parent: Introduction
+parent: Introduction To Typescript
 ---
 
 # Variables

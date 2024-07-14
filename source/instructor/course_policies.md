@@ -1,39 +1,3 @@
----
-layout: default
-title: Welcome
-nav_order: 1.1
-parent: Introduction
----
-
-# Welcome!
-
-[&laquo; Return to the Chapter Index](index.md)
-
-<details open markdown="block">
-  <summary>
-    Table of contents
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
-</details>
-
-Welcome to our textbook!
-
-## Overview
-
-* What is this course about?
-  * In this course we will continue to study the field of Computer Science delving deeper into core concepts and introducing new concepts and paradigms for producing well engineered software solutions
-  * Specifically, we will study Objects and Object-Oriented programming techniques as well as various structures and algorithms to promote good software design.
-
-## Details
-
-This semester, the course will be taught in Typescript.  Typescript is a free and open-source programming language that adds static typing and type annotations to Javascript.
-
-Typescript is used widely and has become the most common language for developing applications for the web.
-
-Through labs, activities, and programming assignments you will become familiar with the Typescript language and developing well engineered software solutions.
-
 ## Policies and Procedures
 
 The course will have lectures (2 or 3 per week depending on your section) as well as weekly lab periods.  Attendance at lectures is required.
@@ -101,9 +65,3 @@ We are not "scary" or a "last resort".  Visiting office hours is a normal part o
 We will have a discord channel for the course.  TA's will monitor the discord channel, but communication with the instructor should be through email.  Please be kind and respectful when communicating on Discord.
 
 Office hours are blocked so we can be available.  If you need help outside these times, just ask the TA or instructor to schedule an appointment.   __We are here to help.__
-
-![](../../images/CISC181-Week%2010.jpg)
-
-# Next Step
-
-Let's get your environment setup: [Setup &raquo;](../1-introduction/setup.md)

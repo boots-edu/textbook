@@ -2,7 +2,7 @@
 layout: default
 title: Conditionals
 nav_order: 1.5
-parent: Introduction
+parent: Introduction To Typescript
 ---
 
 # Conditionals

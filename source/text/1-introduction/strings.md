@@ -2,7 +2,7 @@
 layout: default
 title: Strings
 nav_order: 1.6
-parent: Introduction
+parent: Introduction To Typescript
 ---
 
 # Strings
