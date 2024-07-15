@@ -151,7 +151,7 @@ export class ExecutionUI {
         }
         this.testResults.style.display = "block";
         const assertionList = assertions.join("\n<br>\n");
-        const message = `Tests: ${totalPassed}/${totalTests}\n${assertionList}`;
+        const message = `Tests: ${totalPassed}/${totalTests}\n<br/>\n${assertionList}`;
         this.testResults.innerHTML = message;
     }
 

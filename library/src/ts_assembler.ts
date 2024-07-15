@@ -117,6 +117,14 @@ expect = (actual) => {
         toEqual: (expected) => {
             const expects = getExpects();
             expects.push(isDeepEqual(actual, expected) ? "passed" : "failed");
+        },
+        toContain: (expected) => {
+            const expects=getExpects();
+            expects.push(actual.find(m=>m===expected) ? "passed" : "failed");
+        },
+        toBeInstanceOf: (expected) => {
+            const expects=getExpects();
+            expects.push(actual instanceof expected ? "passed" : "failed");
         }
     }
 };
