@@ -83,7 +83,7 @@ describe("Elements", () => {
 	  const elements = new Elements();
 	  elements.stringArray = [];
 	  expect(elements.stringArray.length).toBe(0);
-	  expect(elements.getLastElement())         .toThrowError("Array is empty");
+	  expect(elements.getLastElement()).toThrowError("Array is empty");
 	});
 });
 ```
@@ -93,7 +93,8 @@ describe("Elements", () => {
 class Elements {
 	private stringArray: string[] = [];
 	/**
-	 * @description This function returns and     * removes the last element
+	 * @description This function returns and
+	 * removes the last element
 	 * @returns {string} - The last element of the
 	 * array
 	 * @sideEffects - Removes the last element of 
@@ -127,7 +128,8 @@ So what does our final test suite for this code look like?
 class Elements {
 	public stringArray: string[] = [];
 	/**
-	 * @description This function returns and     * removes the last element
+	 * @description This function returns and
+	 * removes the last element
 	 * @returns {string} - The last element of the
 	 * array
 	 * @sideEffects - Removes the last element of 
