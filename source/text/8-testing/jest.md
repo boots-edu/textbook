@@ -137,7 +137,7 @@ class Elements {
 	 * @throws {Error} - If the array is empty
 	 */
 	getLastElement(): string {
-		if (this.stringArray.length === 0) throw new Error("Array is empty");
+		if (this.stringArray.length === 0) throw("Array is empty");
 		return this.stringArray.pop();
 	}
 }
@@ -156,13 +156,13 @@ describe("Elements", () => {
 		expect(elements.stringArray.length).toBe(2);
 		expect(elements.stringArray).toContain("a");
 		expect(elements.stringArray).toContain("b");
-		//expect(elements.stringArray).not.toContain("c");
+		expect(elements.stringArray).not.toContain("c");
 	});
 	test("Array is empty", () => {
 		const elements = new Elements();
 		elements.stringArray = [];
 		expect(elements.stringArray.length).toBe(0);
-		//expect(elements.getLastElement()).toThrowError("Array is empty");
+		expect(()=>elements.getLastElement()).toThrowError("Array is empty");
 	});
 	test("Array populated 1 item", () => {
 		const elements = new Elements();
@@ -171,7 +171,7 @@ describe("Elements", () => {
 		const value = elements.getLastElement();
 		expect(value).toBe("a");
 		expect(elements.stringArray.length).toBe(0);
-		//expect(elements.stringArray).not.toContain("a");
+		expect(elements.stringArray).not.toContain("a");
 	});
 });
 ```

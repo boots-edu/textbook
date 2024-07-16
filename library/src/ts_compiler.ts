@@ -7,6 +7,7 @@ const KETTLE_JEST_D_TS = `
         toEqual: (expected: any) => void;
         toContain: (expected: any) => void;
         toBeInstanceOf: (expected: any) => void;
+        toThrowError: (expected: any) =>void;
         not: Assertion;
     }
     declare function instructor_log(...args: any[]): void;

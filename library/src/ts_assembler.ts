@@ -126,6 +126,14 @@ expect = (actual) => {
             const expects=getExpects();
             expects.push(actual instanceof expected ? "passed" : "failed");
         },
+        toThrowError: (expected) => {
+            const expects=getExpects();
+            try{
+                actual();
+            } catch (e){
+                expects.push(e === expected?"passed":"failed");
+            }
+        },
         not: {
             toBe: (expected) => {
                 const expects = getExpects();
@@ -142,6 +150,14 @@ expect = (actual) => {
             toBeInstanceOf: (expected) => {
                 const expects=getExpects();
                 expects.push(actual instanceof expected ? "failed" : "passed");
+            },
+            toThrowError: (expected) => {
+                const expects=getExpects();
+                try{
+                    actual();
+                } catch (e){
+                    expects.push(e === expected?"passed":"failed");
+                }
             }
         },
     }
