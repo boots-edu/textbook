@@ -125,7 +125,25 @@ expect = (actual) => {
         toBeInstanceOf: (expected) => {
             const expects=getExpects();
             expects.push(actual instanceof expected ? "passed" : "failed");
-        }
+        },
+        not: {
+            toBe: (expected) => {
+                const expects = getExpects();
+                expects.push(actual === expected ? "failed" : "passed");
+            },
+            toEqual: (expected) => {
+                const expects = getExpects();
+                expects.push(isDeepEqual(actual, expected) ? "failed" : "passed");
+            },
+            toContain: (expected) => {
+                const expects=getExpects();
+                expects.push(actual.find(m=>m===expected) ? "failed" : "passed");
+            },
+            toBeInstanceOf: (expected) => {
+                const expects=getExpects();
+                expects.push(actual instanceof expected ? "failed" : "passed");
+            }
+        },
     }
 };
 `;
