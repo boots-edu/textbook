@@ -50,9 +50,9 @@ class Apple extends Fruit{
   }
 }
 let fruits:Fruit[] = [new Apple("red"), new Apple("green"), 
-    new Orange("blood"), new Orange("navel")];
+  new Orange("blood"), new Orange("navel")];
 for (let fruit of fruits){
-    console.log(fruit.getDescription());
+  console.log(fruit.getDescription());
 }
 ```
 
@@ -66,7 +66,7 @@ So with creative use of subclass polymorphism, we can provide a generic interfac
 ## Back to the *drawing* board
 Returning to the drawing example, if we added a draw method to the drawable class that does nothing, then implemented the draw method in each of our subclasses, then we could store a drawing as an array of drawables, iterate through the array, and call the draw method.  This is acceptable because Drawable has a draw method, but the correct draw method (depending on the type of object) will be called for us automatically.  This is ***polymorphism***
 
-```
+```typescript
 class Drawable {
   public color: Color;
   constructor(color: Color) {
@@ -75,13 +75,13 @@ class Drawable {
   clone(): Drawable {
     return new Drawable(this.color);
   }
-  draw(page:Page): void {   
+  draw(page:Page): void {
     //Do nothing, I don’t know how
   }
 }
 
 class Line extends Drawable {
-   …
+   ...
   draw(page: Page): void {
     page.drawLine(
       this.start.getX(),
@@ -96,8 +96,10 @@ let obj:Drawable=new Line(new Point(0,0),new Point(1,1),
   new Color());
 obj.draw(this.drawingSurface);
 ```
+{: .no-run}
 
-> Note: You can install the drawing library using in this example with the page object using npm.  ```npm i --save @boots-edu/web-draw``` 
+> Note: You can install the drawing library using in this example with the page object using npm.  
+```npm i --save @boots-edu/web-draw``` 
 
 It is safe to call draw on a Drawable object, it just doesn’t do anything.
 If we call it on a Line object, it draws the line.

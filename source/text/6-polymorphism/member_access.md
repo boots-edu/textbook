@@ -47,26 +47,28 @@ By controlling access to properties and methods, we expose to the outside world 
 
 Let’s briefly go back to our drawing example.
 Note that our points are private.  This is good in case we want to change how we store polygons without breaking the rest of the code base, but it doesn’t allow us to build other objects from polygon, like triangles, rectangles, etc.
-```
+
+```typescript
 export class Polygon extends Drawable{
-    private points: Point[],
-    constructor(points: Point[], color: Color ) {
-        super(color);
-        let newPoints=[];
-        for (let point of points) {
-            newPoints.push(point.clone());
-        }
-        this.points=newPoints;
-    }
-    clone(): Polygon {
-        return new Polygon(this.points, this.color);
-    }
+  private points: Point[],
+	constructor(points: Point[], color: Color ) {
+		super(color);
+		let newPoints=[];
+		for (let point of points) {
+			newPoints.push(point.clone());
+		}
+		this.points=newPoints;
+	}
+	clone(): Polygon {
+		return new Polygon(this.points, this.color);
+	}
 }
 ```
+{: .no-run}
 
 We can still prevent outsiders from accessing our array of points, while giving access to the array to any subclass of our class by using the ***protected*** keyword.
 
-```
+```typescript
 export class Polygon extends Drawable{
   protected points: Point[],
   constructor(points: Point[], color: Color ) {
@@ -82,12 +84,13 @@ export class Polygon extends Drawable{
   }
 }
 ```
+{: .no-run}
 
 The points array is still not available to the outside world, and changing it would only affect the subclasses we create from Polygon (like rectangle and triangle), but users of our classes will not see a change.  They still will not be able to access the points array just like before.
 
 Now we can simplify the rectangle class by recognizing that a rectangle is a type of polygon.  Because all of the members are private (i.e. not being used by anyone outside our class), we can change those members without fear of breaking other code.
 
-```
+```typescript
 class Rectangle extends Polygon{
   constructor(corner1: Point, corner3: Point, color: Color) {
     super([
@@ -102,8 +105,10 @@ class Rectangle extends Polygon{
   }
 }
 ```
+{: .no-run}
 
 Notice that now we are deriving from Polygon instead of Drawable.  Because a polygon can already represent a rectangle, we don’t need any other properties (we can delete the corners).  
+
 We call the superclasses constrctor with the array of points for the particular 4 sided polygon that this rectangle represents.
 We would need to rewrite the area, perimeter and diagonals methods to use our new implementation, but users of our class will see no change in how they use it.
 
