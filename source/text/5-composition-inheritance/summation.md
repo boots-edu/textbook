@@ -24,6 +24,7 @@ Using ***Inheritance***, we can build complex hierarchies of objects in order to
 **Composition:**
 * Add a class or array of class as a property to your class.
 * Represents a has a relationship
+
 **Inheritance:**
 * Extend an existing class by adding functionality, but keeping the functionality of the original class.
 * Represents a is a relationship
@@ -39,7 +40,8 @@ All of the drawing objects (Point, Line, Rectangle, Polygon) have a Color compon
 What should we call our new class?
 
 We want something descriptive that supports the ***is a*** relationship with all the other classes.  For this example, I will choose to create a class *Drawable*.
-```
+
+```typescript
 class Drawable {
 	public color: Color;
 	constructor(color: Color) {
@@ -50,31 +52,36 @@ class Drawable {
 	}
 }
 ```
+{: .no-run}
 Here is a simple drawable class.  It contains a color (***composition***), a clone method, and automatically makes a deep copy of the color object in the constructor.
 It just holds our color object, so we will extend this to make all of our other drawables.
-```
+
+```typescript
 export class Point extends Drawable {
 	constructor(
 		public x: number = 0,
 		public y: number = 0,
 		color: Color = new Color(),
-    ) {
+	) {
 		super(color);
-    }
+	}
 	clone(): Point {
 		return new Point(this.x, this.y,this.color);
 	}
 }
 ```
+{: .no-run}
+
 Our point class inherits color from the Drawable class.  Our Point constructor calls the constructor for our Drawable class and passes it the color so it can do its initialization (all drawables have a color).  It does this by passing color to ```super```
+
 > Notice, that the public interface is unchanged, but we don’t have to worry about the color, the drawable does.
 
-```
+```typescript
 class Line extends Drawable{
 	public start: Point;
 	public end: Point;
 	constructor(start: Point,end: Point,color: Color=new Color()) {
-		super(color);  //Must be first thing in constructor always
+		super(color); //Must be first thing in constructor always
 		this.start = start.clone();
 		this.end = end.clone();
 	}
@@ -83,13 +90,15 @@ class Line extends Drawable{
 	}
 }
 ```
+{: .no-run}
+
 Our Line class can also inherit from our Drawable class.  Again it calls super to initialize the Drawable portion of the object.
 Note also that the constructor clones the corner points.
 Reminder:
 * Drawable is the ***superclass, base class, parent class***
 * Line is the ***subclass, child class***
 
-```
+```typescript
 class Polygon extends Drawable{
 	public points: Point[],
 	constructor(points: Point[], color: Color ) {
@@ -105,6 +114,8 @@ class Polygon extends Drawable{
 	}
 }
 ```
+{: .no-run}
+
 Our polygon class can also inherit from our Drawable class.  Again it calls super to initialize the Drawable portion of the object.
 Note also that the constructor clones the array of points by cloning each point and pushing them onto a new array before setting the member variable points.
 
