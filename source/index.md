@@ -9,7 +9,7 @@ nav_order: 0
 Let's learn how to write object-oriented TypeScript code!
 - [Introduction](text/0-introduction/index.md)
    - [Welcome](text/0-introduction/welcome.md)
-   - [Setup](text/9-introduction/setup.md) 
+   - [Setup](text/0-introduction/setup.md) 
 
 1. [Introduction To Typescript](text/1-introduction/index.md)
    1. [Variables](text/1-introduction/variables.md)
