@@ -3,9 +3,4 @@ layout: all-pages
 title: All Pages
 permalink: /all-pages/
 ---
-{% for page in site.pages %}
-  {% unless page.url == "/all-pages/" %}
-    <h2>{{ page.title }}</h2>
-    {{ page.content }}
-  {% endunless %}
-{% endfor %}
+{% include_relative index.md %}
