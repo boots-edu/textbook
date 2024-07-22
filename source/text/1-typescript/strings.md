@@ -31,6 +31,7 @@ We can declare a variable to be of type string directly:
 let username: string = "gauss";
 let password: string = 'captain';
 ```
+{: .no-run}
 
 Notice how we can use either single or double quotes to define a string.
 
@@ -41,7 +42,7 @@ We will look at some of the most common ones briefly, but there are actually man
 
 ![](../../images/CISC181-Week%2013.jpg)
 
-### `charAt`, `indexOf`, and `lastIndexOf`
+### *charAt*, *indexOf*, and *lastIndexOf*
 
 You can use the `charAt`, `indexOf`, and `lastIndexOf` methods to get information about the characters in a string.
 
@@ -162,13 +163,13 @@ The advantages of `concat` are that:
 
 ### The `substring` method
 
-* Assume the string let myStr="Hello World";
+* Assume the string ```let myStr="Hello World";```
 * __split():__  Splits the specified String object into an array of strings.
   * myStr.split(" "); //returns the array \["Hello","World"\]
 * __substring():__  Returns character of string between two define indexes.
   * myStr.substring(2); // returns "llo World"
   * myStr.substring(2,5); // returns "llo"
-  * _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
+  > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
   
 The `substring` and `slice` methods are very similar, with two differences:
 * The main difference is that if the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
@@ -199,6 +200,8 @@ let myNumStr: string = "42";
 
 let myNum: number = parseInt(myNumStr); // this function does the trick
 let myNum2: number = +myNumStr; // this also works, but is less explicit
+console.log(myNum);
+console.log(myNum2);
 ```
 
 If `myNumStr` did not contain a valid number, the `parseInt` function would return the special value `NaN` to specify "Not a number".
@@ -208,9 +211,11 @@ let myNumStr: string = "Hello";
 
 let myNum: number = parseInt(myNumStr); // NaN
 let myNum2: number = +myNumStr; // NaN
+console.log(myNum);
+console.log(myNum2);
 ```
 
-### String to Number Conversion with `toString`
+### Number to String Conversion with `toString`
 
 If we want to go the other way, and convert a number to a string, we can use the `toString` method to explicitly convert a non-string value to a string.
 
@@ -218,6 +223,7 @@ If we want to go the other way, and convert a number to a string, we can use the
 let myNum: number = 42;
 
 let myNumStr: string = myNum.toString();
+console.log(myNumStr);
 ```
 
 The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, booleans, and other more complex types (although that is not always useful, as we will see).
@@ -229,6 +235,7 @@ If you use the binary `+` operator to combine a string and a number, the number 
 ```typescript
 let myNum: number = 42;
 let myStr: string = "The answer is " + myNum;
+console.log(myStr);
 ```
 
 This can be a useful shorthand, but it can also lead to unexpected results if you are not careful. For example, if you add a number to a string, the number will be converted to a string and concatenated to the other string.

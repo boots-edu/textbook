@@ -151,6 +151,8 @@ let happyLucky: boolean = (happiness >= 7 && luckiness > 7);
 
 let happyOrLucky: boolean = (happiness >= 7 || luckiness > 7);
 // Sets happyOrLucky to true when at least one of the conditions is true
+console.log("Happy and Lucky: "+happyLucky);
+console.log("Happy or Lucky: "+happyOrLucky);
 ```
 
 Just think of this in words:
