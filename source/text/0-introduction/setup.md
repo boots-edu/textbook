@@ -502,4 +502,4 @@ Concepts such as variables, operators, functions, conditionals and looping might
 
 If you understand the basic concepts, picking up a new language like Typescript is easier.  This is a critical skill as new languages and paradigms come into fashion all the time.  Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
 
-Let's start with variables: [Variables &raquo;](../1-introduction/variables.md)
+Let's start with variables: [Variables &raquo;](../1-typescript/variables.md)

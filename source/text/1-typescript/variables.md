@@ -183,4 +183,4 @@ Throughout this text we will use variables to create reusable code.  We will lat
 
 # Next Step
 
-Next we'll review [Functions &raquo;](../1-introduction/functions.md)
+Next we'll review [Functions &raquo;](../1-typescript/functions.md)

@@ -207,4 +207,4 @@ test("Test bringUmbrella", () => {
 
 # Next Up
 
-Now onto the next chapter: [Strings &raquo;](../1-introduction/strings.md)
+Now onto the next chapter: [Strings &raquo;](../1-typescript/strings.md)

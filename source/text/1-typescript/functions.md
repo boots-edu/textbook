@@ -168,4 +168,4 @@ Functions are blocks of code that perform a specific task. They can take paramet
 
 # Next Step
 
-Next we'll review [Conditionals &raquo;](../1-introduction/conditionals.md)
+Next we'll review [Conditionals &raquo;](../1-typescript/conditionals.md)
