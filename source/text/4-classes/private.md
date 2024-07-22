@@ -22,19 +22,25 @@ parent: Classes
 
 ## Data Hiding
 Consider our rectangle class again:
-```
+
+```typescript
 class Rectangle{
 	constructor(public corner1:Point, public corner2:Point,public color:Color){ }
 }
 ```
+{: .no-run}
+
 We made all of the member variables (properties) public for simplicity, but now we cannot change the internal representation.
 Making members private hides them from everything outside the class making them inaccessible.  
 We can rewrite this class making our point members private.  
-```
+
+```typescript
 class Rectangle{
 	constructor(private corner1:Point, private corner2:Point,public color:Color){}
 }
 ```
+{: .no-run}
+
 Nothing changes except we cannot access corner1 and corner2 outside our class, but our methods (diagonal, area, perimeter) that we wrote in the exercise in the previous chapter are fine because they are inside the class.
 We can still create a rectangle and call our methods on it, we just can’t get the corners any more. If we really need them, we can write methods to get them or change them.
 
@@ -43,7 +49,7 @@ Our implementation DOES NOT ALLOW THIS!!!.
 Also, many of the methods we wrote required us to compute the missing corners.  If we stored all 4 corners, then we could do all of these things without breaking the 100,000 lines of external code.
 
 We can make the change easily without breaking anything outside our code.  We will renumber the corners from the upper left clockwise for simplicity.  Note that we do not change the ***signature*** of the constructor, only the hidden data.
-```
+```typescript
 class Rectangle{
 	private corner2:Point;
 	private corner4:Point;
@@ -53,6 +59,8 @@ class Rectangle{
 	}
 }
 ```
+{: .no-run}
+
 > Nothing is changed in how you create instances of this class, but now we have all 4 points stored.  Now we could add a rotate method if we choose.
 
 Because we relabled our corners, and added the new corners, we should rewrite all of the internal methods (but we won't change the signature of the method).

@@ -21,7 +21,7 @@ parent: Classes
 ***Classes*** allow us to combine data and methods into a grouping or class and use that grouping as a data type in our programs. 
 ## Types of copies
 Recall from the previous chapter the discussion of copying.
-* point2=point; //makes a copy of the ***reference*** to the one and only object
+* `point2=point;` //makes a copy of the ***reference*** to the one and only object
 * A ***shallow copy*** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object.  For arrays, we can use the spread operator (…) to do this.
 * A ***deep copy*** of the object makes copies of all of the objects, nested objects and primitive types.  Gives you a true clone of the object that is independent of the original.  Later, we will learn how to clone the object, but for now, we have to create an independent object with the same values.
 
@@ -31,7 +31,8 @@ How do we do this in a structured way?
 * We will work from the bottom up of our hierarchy of classes.  The simplest of which is our color class.
 
 Consider the Color class we have been working with.  Cloning that is eash as a ***shallow copy*** is sufficient.  The classes data items are all primitive types (numbers).
-```
+
+```typescript
 class Color{
 	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 	clone():Color{
@@ -39,20 +40,25 @@ class Color{
 	}
 }
 ```
+{: .no-run}
+
 > We can create a new color object from an existing one by calling the existing one's clone method.
 
 Our point method is more difficult in that it contains a Color object.  Here a ***deep copy*** is required to not only copy the point object into a new instance, but also create a new instance of the color object.  Luckily the color object already has a clone method.
-```
+```typescript
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 	clone(): Point{
 	return new Point(this.x,this.y,this.color.clone());
 }
 ```
+{: .no-run}
+
 > Note, if we passed the color, we would get a reference to the same color object, but by calling its clone method, we get a new one (since we wrote it that way).
 
 Likewise, we can add a clone method to our Line class as well.  Again, since this class contains references to objects, we must ***deep copy*** the line class.  Luckily each of the object types (color and line) already has a clone method we can use.
-```
+
+```typescript
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	clone():Line{
@@ -60,10 +66,11 @@ class Line{
 	}
 }
 ```
+{: .no-run}
 
 We can easily do the same for our Rectangle and Polygon classes.  For the rectangle class
 
-```
+```typescript
 class Rectangle{
    private corner2:Point;
    private corner4:Point;
@@ -76,8 +83,11 @@ class Rectangle{
    }
 }
 ```
+{: .no-run}
+
 For the polygon class, things are a little trickier.  The class contains an array of references to Point.  If we use the spread operator to create a new array, we will only get a ***shallow copy*** and the individual points will reference the same Point objects as the original Polygon.  We will need to iterate through the array and clone the objects indivisually to create a new ***deep copy*** of the array to use in our cloned object.
-```
+
+```typescript
 class Polygon{
 	constructor(public points:Point[],public color:Color){}
 	clone():Polygon{
@@ -89,24 +99,29 @@ class Polygon{
 	 return new Polygon(newPoints,this.color.clone());
 }
 ```
+{: .no-run}
 
 ## Understanding memory layouts
 Let's consider how using clone affects the layout of our objects in memory.  This can be a good way to understand what is going on in your program.
-```
+
+```typescript
 let point1:Point=new Point(0,0,new Color(255,0,0));
 let point2:Point=new Point(100,100,new Color(255,0,0));
 let line:Line=new Line(point1,point2,new Color(255,0,0));
 let line2:Line=line.clone();
 ```
+{: .no-run}
 
 ![](../../assets/images/clonemem1.jpg)
 
 Notice point1 and point2 are still the same references as we have in line.  We can clone the points making them distinct.
-```
+
+```typescript
 let point1:Point=new Point(0,0,new Color(255,0,0));
 let point2:Point=new Point(100,100,new Color(255,0,0));
 let line:Line=new Line(point1.clone(),point2.clone(),new Color(255,0,0));
 ```
+{: .no-run}
 
 ![](../../assets/images/clonemem2.jpg)
 

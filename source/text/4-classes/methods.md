@@ -23,12 +23,13 @@ parent: Classes
 In addition to properties and constructors which we saw in our discussion of ***Data Classes***, generalized classes in typescript can also contain functions (called methods) that can access both *public* and *private* members of the class.
 
 A class with methods can be viewed as a self-contained entity which ***encapsulates*** some concept, allowing us to use the class without knowing anything about its internal structure or implementation.
+
 > ***Encapsulation*** is a key concept of this course.  The idea of creating reusable, self contained types which contain both data, and functions ot operate on that data is central to *Object-Oriented Programming*
 
 ## Adding functionality to a class
 
 Let's consider our drawing example from the previous chapter
-```
+```typescript
 class Color{
 	constructor(public red:number, public green:number,public blue:number){ }
 }
@@ -42,8 +43,11 @@ class Rectangle{
 	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 }
 ```
+{: .no-run}
+
 Specifically, if we look at our Line class which contains two points with x and y coordinates, we might want an easy way to get a line's length.  We can expand our definition of a line to contain a method to accomplish this.  The `getLength()` method can be added inside the class definition.
-```
+
+```typescript
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 
@@ -55,6 +59,8 @@ class Line{
 	}
 }
 ```
+{: .no-run}
+
 > Note that we don’t need to know how the line is represented to use this method.  If we have a line and want it’s length, we simply call the getLength method. This is *important* because in the future we might change the internal representation of a line, but this method would still work if we rewrote it.  The calling program would not need to change.
 
 Let's try it:
@@ -101,7 +107,7 @@ console.log(defaultColor);
 ```
 ## Another example
 Let's try to add a `getArea()` method to our rectangle class.  This should be straight forward since we have the corners.
-```
+```typescript
 class Rectangle{
 	constructor(public corner1:Point,corner2:Point,color:Color){}
 
@@ -114,13 +120,15 @@ class Rectangle{
 	}
 }
 ```
+{: .no-run}
+
 The area is the length of the line from (corner1.x,corner1.y) to (corner2.x,corner1.y) times the length of th eline from (corner1.x,corner1.y) to (corner1.x,corner2.y)
 
 ![](../../assets/images/rectangle_area.jpg)
 
 ```typescript
 class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
+	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 }
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
@@ -291,11 +299,13 @@ One thing to notice is that we had to compute the missing corners in every funct
 
 So now we can add methods to our classes to create robust objects that encapsulate not just some heterogeneous data, but also methods that can work on that data.  
 We can use the classes to create instances with the new operator which store their own data, and have methods that work on the data inside the instance.
-```
+```typescript
 let color1=new Color(0,0,0);
 let color2=new Color(255,255,255);
 color1.red=255;
 ```
+{: .no-run}
+
 > NOTE: color2 is unchanged.  It is a distinct instance of our class Color.
 
 ## Summary
