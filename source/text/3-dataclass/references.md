@@ -19,9 +19,11 @@ parent: Data Classes
 
 ## Key Idea
 ***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+
 ## Understanding Instances and References
 When we define a class using the ***class*** keyword, we are creating a ***type***.  This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class.  When we use the ***new*** keyword, we create an **instance** of the class in memory and return a **reference** to the in memory object.  If we call new again, we get a second instance of the class and a second **reference** to the new memory location.
-```
+
+```typescript
 let red:Color=new Color(255,0,0);
 let points1:Point[]=[
 	new Point(0,0,red),
@@ -31,19 +33,27 @@ let points1:Point[]=[
 let redTriangle:Polygon=
 	new Polygon(points1,red);
 ```
+{: .no-run}
+
 Examining this code in more detail, we see that each time new is called, we are creating an **instance** of the class. That means that each time we call ***new***, we are allocating a new chunk of memory to hold the values of that instance.  What is returned, is not the value of the class, but a **reference** to the created object.
 
 Consider the following code:
-```
+
+```typescript
 let red:Color=new Color(255,0,0);
 let point:Point=new Point(0,0,red);
 let point2:Point=point;
 ```
+{: .no-run}
+
 Graphically, this looks like:
+
 ![](../../assets/images/ref1.jpg)
 
 What would happen if we update point.x.  In this case we would also update the instance pointed to by point2, because they are the same instance.  When we set ```point2=point;``` we are setting the variable point2 to contain the reference stored in point, and thus they reference the same chunk of memory allocated by the one and only call to ```new Point(...).
+
 Let's see that in action.
+
 ```typescript
 class Color{
 	constructor(public red:number, public green:number,public blue:number){ }
@@ -77,12 +87,14 @@ point.x=100;
 console.log(point);
 console.log(point2);
 ```
+
 ![](../../assets/images/ref3.jpg)
 
 This is a ***shallow copy*** of an object as we are only copying the top level.
 This will make a new object, but only copy the top level or primitive types (number, boolean, string).  Any deeper objects or arrays still remain as references.
 
 What if we want a ***deep copy***.  In other words, each point will, in addition to having a unique memory location for its primitive values, will also have a reference to a different Color object.
+
 ```typescript
 class Color{
 	constructor(public red:number, public green:number,public blue:number){ }
@@ -98,6 +110,7 @@ point.x=100;
 console.log(point);
 console.log(point2);
 ```
+
 ![](../../assets/images/ref4.jpg)
 
 This is probably what we wanted.  This is called a ***deep copy***. While there are some ways to do this automatically in Typescript, they do not work in all cases, and can be problematic.  We can do this manually as in this example, but we will look at better ways later.

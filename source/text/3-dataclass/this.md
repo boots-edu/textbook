@@ -23,13 +23,17 @@ parent: Data Classes
 There is a special keyword ***this*** that can be used from inside the constructor (or any method inside the class) that will allow us access to the member variables of the object.
 ## Abstracting the constructor
 Consider our color class
-```
+
+```typescript
 class Color{
    constructor(public red:number, public green:number,public blue:number){ }
 }
 ```
+{: .no-run}
+
 What if instead of passing in values for red, green, and blue, we wanted to pass in a string (either “red”,”green”, or “blue”) to initialize our color to one of these three colors.  We can go back to our original syntax and define the members explicitly, and change our constructor to take a string that is not marked with the public or private keywords since we only need it to initialize the members.
-```
+
+```typescript
 class Color{
 	public red:number=0;
 	public green:number=0;
@@ -39,23 +43,30 @@ class Color{
 	}
 }
 ```
+{: .no-run}
+
 The idea is that we can use the string to determine how to set the members.  We can use the ***this*** keyword to access the member variables of the current instance.
-```
+
+```typescript
 class Color{
 	public red:number=0;
 	public green:number=0;
 	public blue:number=0;
 	constructor(colorStr:string){ 
-		if (colorStr===“red”){
+		if (colorStr==="red"){
 			this.red=255;
-		} else if (colorStr:string===“green”){
+		} else if (colorStr==="green"){
 			this.green=255;
-		} else if (colorStr:string===“blue”){
+		} else if (colorStr==="blue"){
 			this.blue=255;
 		}
 	}
 }
+console.log(new Color("red"));
+console.log(new Color("green"));
+console.log(new Color("blue"));
 ```
+
 Here we can initialize our members indirectly by using the value of the parameter colorStr.  The ***this*** keyword allows us access to our own members from within the instance.  If the string is not recognized (i.e. not red, green, or blue) then the default values of (0,0,0) remain which is our intention.  We would want to make a comment on our constructor that this is the behavior to help users of our class to know how to use it.
 
 ## Summary

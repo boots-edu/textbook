@@ -25,20 +25,25 @@ parent: Data Classes
 If we examine the objects we have proposed for our drawing program (points, lines, rectangles, polygons, color) we can see that just about everything has a color.  The definition for a type that represents color would be useful as then we could group the things that make up a color.  For our example we want to store a color as three numbers between 0 and 255 representing the red, green, and blue intensities.  
 
 Our class should contain 3 numbers (Red, Green, and Blue).  We can define our class as described previously, since this contains only the primitive type number.
-```
+
+```typescript
 class Color{
 	public red:number=0;
 	public green:number=0;
 	public blue:number=0;
 }
 ```
-> Note the public keyword before each member variable (sometimes called a property) of the class.  This denotes that the property is accessible by methods and code outside the class.  We could also mark it as private or protected.
+{: .no-run}
+
+> Note the ***public*** keyword before each member variable (sometimes called a property) of the class.  This denotes that the property is accessible by methods and code outside the class.  We could also mark it as ***private*** or ***protected***.
 
 As you can see, our class definition is quite simple.  We simply group the three components together and give it a name.  We can then create objects of this type with the new keyword.
 
-```
+```typescript
 let myColor:Color=new Color();
 ```
+{: .no-run}
+
 And for a full example:
 ```typescript
 class Color{

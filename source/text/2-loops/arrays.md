@@ -32,7 +32,8 @@ Each element in the array has an index (starting at 0) which we can use to acces
 
 ## Defining Arrays
 In typescript we define an array just like any other variable
-```
+
+```typescript
 //define a single string containing the value Lisa
 let name:string="Lisa";
 
@@ -40,6 +41,8 @@ let name:string="Lisa";
 //Lisa, Kaitlin and John
 let names:string[]=["Lisa","Kaitlin","John"];
 ```
+{: .no-run}
+
 > Note that we type the variable as an array of strings by using the type string[] where [] specifies that we are creating an array of that type.
 
 ## Using Arrays
@@ -117,9 +120,11 @@ console.log(first);     // Output: orange
 
 ### The splice method
 The ***splice*** method gives us a mechanism for editing the middle of an array.  With the ***splice*** method, we can remove, replace, or insert elements in the middle of an array.
-```
+
+```typescript
 array.splice(index,[howMany],[element1],[..., elementN]);
 ```
+{: .no-run}
 
 * index: The array index at which to start changing the array
 * howMany: The number of array elements to remove starting at index, defaults to all of them if no value is passed.

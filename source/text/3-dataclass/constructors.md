@@ -24,8 +24,10 @@ So far, to create a class we:
 * Create an instance of a class with the __new__ keyword and store it in a variable
 * Use the variable to modify the properties of the class individually
 	* For our Color example, this means setting red, green, and blue independently.
-It would be much easier to have a function that takes the parameters we want to set and updates the object as it is being created.  In 
-```
+
+It would be much easier to have a function that takes the parameters we want to set and updates the object as it is being created. 
+
+```typescript
 class Color{
    public red:number=0;
    public green:number=0;
@@ -37,16 +39,22 @@ class Color{
    }
 }
 ```
+{: .no-run}
+
 By giving our class a constructor, we can create an instance of the class and initialize its values in one line:
-```
+
+```typescript
 let veryRed:Color=new Color(255,0,0);
 let veryBlue:Color=new Color(0,0,255);
 let anotherColor:Color=new Color(27,115,98);
 ```
+{: .no-run}
+
 > Note that now we are creating and initializing our objects in one line.
 
 While much better, the definition of Color still seems repetative.  While 100% correct, Typescript gives us a shorthand.
-```
+
+```typescript
 class Color{
    constructor(public red:number, public green:number, public blue:number){
 	//Note we don’t need anything inside.  This automatically does everything.
@@ -55,6 +63,8 @@ class Color{
 //this behaves equivalently in every way to our previous example.
 let veryRed:Color= new Color(255,0,0);
 ```
+{: .no-run}
+
 > If we declare the parameters of the constructor with the private or public keywords, it both declares them as members, and initializes their values from the values passed into the constructor.
 
 >Note that without the public or private keywords, the parameter is just local to the constructor function, but when included, the parameter becomes a member variable (property) and gets initialized to the value passed in.
@@ -80,7 +90,7 @@ console.log(myOtherPoint);
 What other classes do we need:
 
 The Line class simply needs two points (start and end) and a color.  We define the class to have those three components and initialize them with a constructor
-```
+```typescript
 class Color{
 	constructor(public red:number, public green:number,public blue:number){ }
 }
@@ -94,16 +104,21 @@ class Rectangle{
 	constructor(public corner1:Point,public corner2:Point,public color:Color){}
 }
 ```
+{: .no-run}
+
 ## Polygons
 Now we can represent basic shapes in a coordinate system and each shape has a color, but what about polygons.  First, let's list what we know about them:
 * Generalized polygons have 3 or more points which are connected.
 * Polygons have a color
+
 Since we don't know how many points there are to start with, we can represent the list of points using an array.
-```
+```typescript
 class Polygon{
 	constructor(public points:Point[],public color:Color){}
 }
 ```
+{: .no-run}
+
 The polygon class is initialized by and contains a public member whose type is an array of Point classes.  It also has an instance of a Color class.
 
 ## Trying it out

@@ -93,7 +93,7 @@ test("Test registerForClasses", () => {
 ```
 ### The else if construct
 Consider the code
-```
+```typescript
 if (x>4){
     //do something
 } else {
@@ -104,11 +104,13 @@ if (x>4){
     }
 }
 ```
+{: .no-run}
+
 We can see that this will behave as expected.
 If x is > 4, the first block will execute, otherwise the second block will execute.  Within the second block if x >2 the //do something else will execute, otherwise the do a third thing will happen. This is exactly like the else if behavior we want, just a little ugly.
 
 We can rewrite this as
-```
+```typescript
 if (x>4){
     //do something
 } else if (x>2){
@@ -117,6 +119,8 @@ if (x>4){
     //do a third thing
 }
 ```
+{: .no-run}
+
 It turns out that if the block inside an if or else is only one statement long, we are allowed to drop the {}.  The compiler will then assume only the next statement is inside the block. Even though the if is multiple lines, it is a single if statement with body, so this still works.
 We end up with something that does the same thing, but looks a lot better.
 We have simply dropped the {} around the first else block, since the (if x>2){...} statement is the only thing inside of it.
