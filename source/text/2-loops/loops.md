@@ -42,6 +42,7 @@ function countdown(count:number){
 }
 countdown(10);
 ```
+
 Notice that we are calling the function countdown passing in the number we want to count down from.  The number is then used in the condition of the while loop so that the function can count down from any valid non-negative integer.
 > Note that we use ```console.log``` to display information to the user.  For now, this will be our primary way to display something from our programs.
 
@@ -90,7 +91,9 @@ function countdown(count:number){
 }
 countdown(10);
 ```
+
 > Note: i-- is just shorthand for i=i-1 (and i++ is similarly shorthand for i=i+1)
+
 * Our initializer sets our loop variable (i) to count
 * Our expression continues the loop so long as count remains >0
 * Our update statement decrements the value of i each time the loop runs
