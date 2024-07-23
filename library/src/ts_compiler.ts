@@ -1,4 +1,6 @@
 import * as ts from "typescript";
+
+
 import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
 
 const KETTLE_JEST_D_TS = `
@@ -27,6 +29,8 @@ const KETTLE_JEST_D_TS = `
     }
     declare var typeInformation: Record<string, DocEntry[]>;
 `;
+
+const ASSET_PATH="/textbook/assets/imports/";
 
 //
 // Result of compiling TypeScript code.
@@ -165,10 +169,14 @@ interface MockIO {
 const otherFakeFiles: Record<string, string> = RAW_D_TS_FILES;
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
+
+
+
 function createCompilerHost(
     options: ts.CompilerOptions,
     io: MockIO
 ): ts.CompilerHost {
+    
     return {
         getSourceFile: (fileName, languageVersion) => {
             const text = io.readFile(fileName);
@@ -192,10 +200,27 @@ function createCompilerHost(
     };
 }
 
+export function getFileFromWeb(filename:string):Promise<string>{
+    return new Promise((resolve,reject)=>{
+        let path=ASSET_PATH+"test.ts";
+        const req = new XMLHttpRequest();
+        req.addEventListener("error",(ev:ProgressEvent)=>{
+            reject(new Error("Error getting import"));
+        })
+        req.addEventListener("load", (ev:ProgressEvent)=>{
+            resolve(req.responseText);
+        });
+        req.open("GET", path);
+        req.send();
+    })
+}
 //
 // Check and compile in-memory TypeScript code for errors.
 //
-export function compile(code: string): CompilationResult {
+export async function compile(code: string): Promise<CompilationResult> {
+    const result=await getFileFromWeb("test.ts");
+    code=result+code;
+   
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;
     options.inlineSources = true;
