@@ -202,7 +202,7 @@ function createCompilerHost(
 
 export function getFileFromWeb(filename:string):Promise<string>{
     return new Promise((resolve,reject)=>{
-        let path=ASSET_PATH+"test.ts";
+        let path=ASSET_PATH+filename;
         const req = new XMLHttpRequest();
         req.addEventListener("error",(ev:ProgressEvent)=>{
             reject(new Error("Error getting import"));
@@ -217,10 +217,12 @@ export function getFileFromWeb(filename:string):Promise<string>{
 //
 // Check and compile in-memory TypeScript code for errors.
 //
-export async function compile(code: string): Promise<CompilationResult> {
-    const result=await getFileFromWeb("test.ts");
+export async function compile(code: string,imports:string[]=[]): Promise<CompilationResult> {
+    let result="";
+    for (let fn of imports){
+        result+=(await getFileFromWeb(fn)+"\n");
+    }    
     code=result+code;
-   
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;
     options.inlineSources = true;

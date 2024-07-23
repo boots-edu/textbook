@@ -81,4 +81,7 @@ class Greeter {
 }
 
 console.log(new Greeter("world").greet());
+let c:MyClass=new MyClass();
+console.log(c.x);
 ```
+{: .test-ts.test2-ts}
