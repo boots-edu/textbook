@@ -68,6 +68,8 @@ Let's learn how to write object-oriented TypeScript code!
 {:start="0"}
 
 ```typescript
+import {MyClass} from 'test';
+
 class Greeter {
   greeting: string;
 
@@ -84,4 +86,4 @@ console.log(new Greeter("world").greet());
 let c:MyClass=new MyClass();
 console.log(c.x);
 ```
-{: .test-ts.test2-ts}
+

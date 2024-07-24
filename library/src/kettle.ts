@@ -37,7 +37,6 @@ export class ExecutionEngine {
         root: HTMLElement,
         initialCode: string,
         private isDebugMode: boolean,
-        private imports:string[]=[]
     ) {
         this.root = root;
         this.iframe = makeIFrame();
@@ -273,7 +272,7 @@ export class ExecutionEngine {
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
-        const request = await makeExecutionRequest(this.ui.getCode(), this.engineId,this.imports);
+        const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
             this.ui.updateStatus("Starting execution", true);
             this.executeRequest(request);

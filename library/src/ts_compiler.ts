@@ -200,6 +200,11 @@ function createCompilerHost(
     };
 }
 
+/** 
+ * @description Reads a file from the assets folder (specified in ASSET_PATH)
+ * @param filename: The filename to read
+ * @returns the contents of the file
+ */
 export function getFileFromWeb(filename:string):Promise<string>{
     return new Promise((resolve,reject)=>{
         let path=ASSET_PATH+filename;
@@ -214,15 +219,40 @@ export function getFileFromWeb(filename:string):Promise<string>{
         req.send();
     })
 }
+/**
+ * @description Replaces import statements with code from assets/imports folder
+ * @param code: The original source code as displayed
+ * @returns The original code with the imports injected into the string
+ * @async
+ */
+async function processImports(code:string):Promise<string>{
+    const lines=code.split("\n");
+    let result="";
+    for (let line of lines){
+        if (line.startsWith("import ")){
+            let regex=/^import\s.*\sfrom\s.*['|"](.*)['|"]'?;\s*$/;
+            let found=regex.exec(line);
+            if (found && found.length>1){
+                let filename=found[1];
+                if (!filename.endsWith(".ts"))
+                    filename+=".ts";
+                let impCode=await getFileFromWeb(filename);
+                console.log(impCode);
+                result+=(impCode+"\n");
+            }
+        }else{
+            result+=(line+"\n");
+        }
+    }
+    return result;
+}
 //
 // Check and compile in-memory TypeScript code for errors.
 //
-export async function compile(code: string,imports:string[]=[]): Promise<CompilationResult> {
+export async function compile(code: string): Promise<CompilationResult> {
     let result="";
-    for (let fn of imports){
-        result+=(await getFileFromWeb(fn)+"\n");
-    }    
-    code=result+code;
+    //parse and remover imports
+    code = await processImports(code);
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;
     options.inlineSources = true;

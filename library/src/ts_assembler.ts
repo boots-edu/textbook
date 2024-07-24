@@ -213,10 +213,10 @@ try {
     };
 };
 
-export async function makeExecutionRequest(studentCode: string, engineId: string,imports:string[]=[]): Promise<FeedbackExecutionRequest> {
+export async function makeExecutionRequest(studentCode: string, engineId: string): Promise<FeedbackExecutionRequest> {
     // TODO: Handle strings with blank lines inside?
     studentCode = studentCode.replace("\n\n", "\n//\n");
-    const studentResults: CompilationResult = await compile(studentCode,imports);
+    const studentResults: CompilationResult = await compile(studentCode);
     const studentLocals = studentResults.locals;
     const headerOffset = EXECUTION_HEADER.split("\n").length;
     const wrappedStudent = wrapStudentCode(studentResults.code || "", headerOffset, studentLocals);
