@@ -47,6 +47,7 @@ By giving our class a constructor, we can create an instance of the class and in
 let veryRed:Color=new Color(255,0,0);
 let veryBlue:Color=new Color(0,0,255);
 let anotherColor:Color=new Color(27,115,98);
+console.log(veryRed,veryBlue,anotherColor);
 ```
 {: .no-run}
 
@@ -62,8 +63,9 @@ class Color{
 }
 //this behaves equivalently in every way to our previous example.
 let veryRed:Color= new Color(255,0,0);
+console.log(veryRed);
 ```
-{: .no-run}
+
 
 > If we declare the parameters of the constructor with the private or public keywords, it both declares them as members, and initializes their values from the values passed into the constructor.
 
@@ -147,6 +149,7 @@ let blueTriangle:Polygon=new Polygon(points2,blue);
 let drawing:Polygon[]=[redTriangle,blueTriangle];
 console.log(drawing);
 ```
+
 With this code, drawing represents a drawing with two triangles (red and blue).  If we wrote a program to render these objects, we would have all of the information that is needed.
 
 ![](../../assets/images/drawing_1.jpg)

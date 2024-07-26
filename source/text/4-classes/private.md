@@ -67,12 +67,8 @@ Because we relabled our corners, and added the new corners, we should rewrite al
 
 Here is a complete working example:
 ```typescript
-class Color{
-	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch5/drawing1';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{

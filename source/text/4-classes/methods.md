@@ -66,15 +66,8 @@ class Line{
 Let's try it:
 
 ```typescript
-class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
-class Rectangle{
-	constructor(public corner1:Point,public corner2:Point,public color:Color){}
-}
+import {Color,Point} from 'ch4/drawing1';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	public getLength():number{
@@ -127,12 +120,8 @@ The area is the length of the line from (corner1.x,corner1.y) to (corner2.x,corn
 ![](../../assets/images/rectangle_area.jpg)
 
 ```typescript
-class Color{
-	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch4/drawing1';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
@@ -161,12 +150,8 @@ console.log(rect.getArea());
 
 Fill in the method `getDiagonals()`, `getPerimeter()`, and `getDiagonalLength()` methods as specified in the comments.
 ```typescript
-class Color{
-	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch4/drawing1';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{
@@ -221,12 +206,8 @@ console.log(rect.getDiagonalLength())
 <details markdown="block">
 <summary> Show Solution </summary>
 ```typescript
-class Color{
-	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch4/drawing1';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	getLength():number{

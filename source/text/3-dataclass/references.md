@@ -24,6 +24,8 @@ parent: Data Classes
 When we define a class using the ***class*** keyword, we are creating a ***type***.  This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class.  When we use the ***new*** keyword, we create an **instance** of the class in memory and return a **reference** to the in memory object.  If we call new again, we get a second instance of the class and a second **reference** to the new memory location.
 
 ```typescript
+import {Color,Point,Polygon} from 'ch2/drawing1';
+
 let red:Color=new Color(255,0,0);
 let points1:Point[]=[
 	new Point(0,0,red),
@@ -32,8 +34,8 @@ let points1:Point[]=[
 ];
 let redTriangle:Polygon=
 	new Polygon(points1,red);
+console.log(redTriangle);
 ```
-{: .no-run}
 
 Examining this code in more detail, we see that each time new is called, we are creating an **instance** of the class. That means that each time we call ***new***, we are allocating a new chunk of memory to hold the values of that instance.  What is returned, is not the value of the class, but a **reference** to the created object.
 
@@ -55,12 +57,8 @@ What would happen if we update point.x.  In this case we would also update the i
 Let's see that in action.
 
 ```typescript
-class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch2/drawing1';
+
 let red:Color=new Color(255,0,0);
 let point:Point=new Point(0,0,red);
 let point2:Point=point;
@@ -74,12 +72,8 @@ As you can see, updating point updates the memory location referenced by point w
 
 Later, we will look at other methods to create new objects based on existing objects, but for now, we would have to call ***new*** again and set point2 to that new object, then update its properties with the properties of point.
 ```typescript
-class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch2/drawing1';
+
 let red:Color=new Color(255,0,0);
 let point:Point=new Point(0,0,red);
 let point2:Point=new Point(point.x,point.y,point.color);
@@ -96,12 +90,8 @@ This will make a new object, but only copy the top level or primitive types (num
 What if we want a ***deep copy***.  In other words, each point will, in addition to having a unique memory location for its primitive values, will also have a reference to a different Color object.
 
 ```typescript
-class Color{
-	constructor(public red:number, public green:number,public blue:number){ }
-}
-class Point{
-	constructor(public x:number,public y:number,public color:Color){}
-}
+import {Color,Point} from 'ch2/drawing1';
+
 let red:Color=new Color(255,0,0);
 let red2:Color=new Color(255,0,0);
 let point:Point=new Point(0,0,red);

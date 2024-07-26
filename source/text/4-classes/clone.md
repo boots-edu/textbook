@@ -39,38 +39,63 @@ class Color{
 		return new Color(this.red,this.green,this.blue);
 	}
 }
+let red=new Color(255,0,0);
+let blue=red.clone();
+blue.red=0;
+blue.blue=255;
+console.log(red,blue);
 ```
-{: .no-run}
 
 > We can create a new color object from an existing one by calling the existing one's clone method.
 
 Our point method is more difficult in that it contains a Color object.  Here a ***deep copy*** is required to not only copy the point object into a new instance, but also create a new instance of the color object.  Luckily the color object already has a clone method.
 ```typescript
+import {Color} from 'ch5/drawing2';
+
 class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 	clone(): Point{
-	return new Point(this.x,this.y,this.color.clone());
+		return new Point(this.x,this.y,this.color.clone());
+	}
 }
+let p=new Point(5,5,new Color());
+let q=p.clone();
+q.color=new Color(255,255,255);
+q.x=0;
+console.log(p,q);
 ```
-{: .no-run}
+
 
 > Note, if we passed the color, we would get a reference to the same color object, but by calling its clone method, we get a new one (since we wrote it that way).
 
 Likewise, we can add a clone method to our Line class as well.  Again, since this class contains references to objects, we must ***deep copy*** the line class.  Luckily each of the object types (color and line) already has a clone method we can use.
 
 ```typescript
+import {Color} from 'ch5/drawing3';
+
 class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	clone():Line{
 		return new Line(this.start.clone(),this.end.clone(),this.color.clone());
 	}
 }
+let line=new Line(
+	new Point(0,0,new Color()),
+	new Point(100,100,new Color()),
+	new Color()
+);
+let line2=line.clone();
+line2.color.red=255;
+line2.start.x=5;
+console.log(line,line2);
+
 ```
-{: .no-run}
 
 We can easily do the same for our Rectangle and Polygon classes.  For the rectangle class
 
 ```typescript
+import {Color,Point} from 'ch5/drawing3';
+
 class Rectangle{
    private corner2:Point;
    private corner4:Point;
@@ -82,24 +107,44 @@ class Rectangle{
 	  return new Rectangle(this.corner1.clone(),this.corner3.clone(),this.color.clone());
    }
 }
+let rect=new Rectangle(
+	new Point(0,0,new Color()),
+	new Point(100,100,new Color()),
+	new Color()
+);
+let rect2=rect.clone();
+rect2.color.red=255;
+console.log(rect,rect2);
 ```
-{: .no-run}
 
 For the polygon class, things are a little trickier.  The class contains an array of references to Point.  If we use the spread operator to create a new array, we will only get a ***shallow copy*** and the individual points will reference the same Point objects as the original Polygon.  We will need to iterate through the array and clone the objects indivisually to create a new ***deep copy*** of the array to use in our cloned object.
 
 ```typescript
+import {Color,Point} from 'ch5/drawing3';
+
 class Polygon{
 	constructor(public points:Point[],public color:Color){}
 	clone():Polygon{
 		let newPoints:Point[]=[];				//initialize a new empty array.
 		for (let point of this.points){
-			newPoints.push(this.point.clone());	//don’t push the point, push a clone of it.
+			newPoints.push(point.clone());		//don’t push the point, push a clone of it.
 		}
 		// so newPoints is a new array containing clones of all the points in this polygon.  We can pass it directly since it is completely new.
-	 return new Polygon(newPoints,this.color.clone());
+	 	return new Polygon(newPoints,this.color.clone());
+	}
 }
+let pts=[
+	new Point(0,0,new Color()),
+	new Point(100,0,new Color()),
+	new Point(100,100,new Color()),
+	new Point(100,0,new Color())
+];
+let poly=new Polygon(pts,new Color());
+let poly2=poly.clone();
+poly2.color.red=255;
+console.log(poly,poly2);
 ```
-{: .no-run}
+
 
 ## Understanding memory layouts
 Let's consider how using clone affects the layout of our objects in memory.  This can be a good way to understand what is going on in your program.
