@@ -11,9 +11,20 @@ import through from "through2";
 import cheerio from "cheerio";
 import path from "path";
 
+const PAGE_BREAK = '\n\n<div style="page-break-before: always;"></div>\n\n'
+const TITLE_PAGE = `
+# BOOTS: Beginner Object-Oriented TypeScript
+
+By Greg Silber, Austin Cory Bart, and James Clause
+
+Generated on ${new Date().toDateString()}
+
+${PAGE_BREAK}
+`;
+
 const sourceDir = "../source/";
 const indexFile = sourceDir + "index.md";
-const outputPdf = "./dist/full_textbook.pdf";
+const outputPdf = "./dist/boots_textbook.pdf";
 const markdownOptions: Record<string, any> = {
     "paperFormat": "Letter",
     "cssPath": "https://boots-edu.github.io/textbook/assets/css/just-the-docs-default.css"
@@ -58,8 +69,7 @@ lines.forEach((line) => {
     }
 });
 
-const PAGE_BREAK = '\n\n<div style="page-break-before: always;"></div>\n\n'
-
+// Clean up the markdown files
 const absolutePath = process.cwd().replace(/ /g, '%20').replace(/\\/g, '/').slice(0, -3)+"source/";
 function cleanMarkdown(chapter: ChapterLine, content: string): string {
     let lines = content.split("\n");
@@ -80,7 +90,7 @@ function cleanMarkdown(chapter: ChapterLine, content: string): string {
     return full;
 }
 
-
+// Actually clean up the files
 let preparedFiles: string[] = foundFiles.map((chapter) => {
     let content = fs.readFileSync(chapter.path, "utf8");
     if (chapter.chapter === "0") {
@@ -90,25 +100,22 @@ let preparedFiles: string[] = foundFiles.map((chapter) => {
     }
 });
 
+// Add the table of contents
 preparedFiles.unshift("# Table of Contents\n\n"+
     foundFiles.map((chapter) => {
         const enumeration = chapter.chapter === "0" ? chapter.unit : chapter.chapter;
         return `${chapter.indent}- ${enumeration}. ${chapter.title}`;
     }).join("\n") + `\n\n` + PAGE_BREAK
 );
-preparedFiles.unshift(`
-# BOOTS: Beginner Object-Oriented TypeScript
 
-By Greg Silber, Austin Cory Bart, and James Clause
+// Add the title page
+preparedFiles.unshift(TITLE_PAGE)
 
-Generated on ${new Date().toDateString()}
-
-${PAGE_BREAK}
-`)
-
+// Set up code highlighting
 const hljsOptions = {
 };
 
+// Set up markdown options for remarkable
 markdownOptions["remarkable"] = {
     html: true,
     breaks: true,
@@ -128,6 +135,7 @@ markdownOptions["remarkable"] = {
     }
 };
 
+// Adjust image paths to have file:// prefix
 var preProcessHtml = function() {
     return function() {
         return through(function(chunk, encoding, callback) {
@@ -148,4 +156,4 @@ markdownOptions["preProcessHtml"] = preProcessHtml();
 // Final output
 markdownpdf(markdownOptions).concat.from.strings(preparedFiles, {}).to(outputPdf, function () {
     console.log("Created", outputPdf)
-  });
+});

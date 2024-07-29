@@ -45,6 +45,15 @@ jobs:
         with:
           source: ./source/
           destination: ./_site
+      - name: Build PDF version
+        run: |
+          cd pdf
+          npm install
+          npm run build
+          cd ../
+      - name: Copy PDF to site
+        run: |
+          cp pdf/dist/boots_textbook.pdf _site/assets/boots_textbook.pdf
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
