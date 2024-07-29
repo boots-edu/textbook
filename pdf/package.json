@@ -1,0 +1,39 @@
+{
+  "name": "pdf",
+  "version": "1.0.0",
+  "description": "Generates the full pdf version of the book",
+  "main": "index.js",
+  "scripts": {
+    "build": "ts-node src/build_textbook.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
+    "@types/markdown-pdf": "^9.0.5",
+    "@types/through2": "^2.0.41",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "cheerio": "^1.0.0-rc.12",
+    "codemirror": "^6.0.1",
+    "contodo": "^0.4.7",
+    "esbuild": "0.21.5",
+    "eslint": "^8.46.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "markdown-pdf": "^11.0.0",
+    "phantomjs-prebuilt": "^2.1.16",
+    "prettier": "^3.2.4",
+    "through2": "^4.0.2",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "xhr-mock": "^2.5.1"
+  },
+  "dependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.5.2",
+    "uuid": "^10.0.0"
+  }
+}
