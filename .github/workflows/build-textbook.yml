@@ -54,7 +54,7 @@ jobs:
       - name: Build slides
         run: |
           cd slides/
-          pip install -r slides/requirements.txt
+          pip install -r requirements.txt
           # Iterate over all of the markdown files in ../source/text/ directories
           for file in ../source/text/**/*.md; do
             # Extract the base name of the file (e.g., "conditionals.md")
