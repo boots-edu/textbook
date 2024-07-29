@@ -3,6 +3,11 @@
  * It first parses the index file and collects all the relevant markdown files.
  * Then it concatenates all the markdown files into a single string.
  * Finally, it converts the markdown string into a PDF file.
+ * 
+ * Explore these plugins:
+ * - https://www.npmjs.com/package/remarkable-header-ids
+ * - https://www.npmjs.com/package/remarkable-auto-heading-links
+ * 
  */
 import markdownpdf from "markdown-pdf";
 import fs from "fs";
