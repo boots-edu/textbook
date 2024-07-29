@@ -1,0 +1,15 @@
+python-pptx
+pygments
+mutagen
+lxml
+python-polly
+boto3
+marko
+bottle
+pydub
+python-frontmatter
+ruamel.yaml
+pywin32
+spacy
+ffmpeg-python
+thefuzz
