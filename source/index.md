@@ -40,26 +40,26 @@ Let's learn how to write object-oriented TypeScript code!
     4. [Abstract Classes](text/6-polymorphism/abstract.md)
     5. [Polymorphism Notes](text/6-polymorphism/notes.md)
 7. [Exceptions and Code Quality](text/7-exceptions_code_qual/index.md)
-    1. [Exceptions](text/7-exceptions_code_qual/excedptions.md)
+    1. [Exceptions](text/7-exceptions_code_qual/exceptions.md)
     2. [Comments](text/7-exceptions_code_qual/comments.md)
     3. [Naming](text/7-exceptions_code_qual/naming.md)
     4. [General Code Quality](text/7-exceptions_code_qual/general.md)
 8. [Software Testing](text/8-testing/index.md)
     1. [Testing](text/8-testing/testing.md)
     2. [Testing in Jest](text/8-testing/jest.md)
-    3. [Annoymous Functions](text/8-testing/anonymous.md)
+    3. [Anonymous Functions](text/8-testing/anonymous.md)
 9. [Webz Introduction](text/9-webz-intro/index.md)
-    1. [Web Bascis](text/9-webz-intro/webbasics.md)
+    1. [Web Basics](text/9-webz-intro/webbasics.md)
     2. [Beginning WebZ](text/9-webz-intro/beginning_webz.md)
 10. [Advanced WebZ](text/10-webz-advanced/index.md)
     1. [Dynamic Components](text/10-webz-advanced/dynamic.md)
     2. [WebZ Events](text/10-webz-advanced/events.md)
     3. [WebZ Dialogs](text/10-webz-advanced/dialogs.md)
     4. [WebZ Timers](text/10-webz-advanced/timers.md)
-11. [Advanced Typescript](text/11-Advanced%20Typescript/index.md)
-    1. [Typescript Generics](text/11-Advanced%20Typescript/generics.md)
-    2. [Typescript Interfaces](text/11-Advanced%20Typescript/interfaces.md)
-    3. [Union Types](text/11-Advanced%20Typescript/unions.md)
+11. [Advanced Typescript](text/11-typescript-advanced/index.md)
+    1. [Typescript Generics](text/11-typescript-advanced/generics.md)
+    2. [Typescript Interfaces](text/11-typescript-advanced/interfaces.md)
+    3. [Union Types](text/11-typescript-advanced/unions.md)
 12. [Higher Order Methods](text/12-high-order-methods/index.md)
     1. [Higher Order Array Methods](text/12-high-order-methods/arrays.md)
 13. [Recursion](text/13-Recursion/index.md)
@@ -67,23 +67,4 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Trees](text/13-Recursion/trees.md)
 {:start="0"}
 
-```typescript
-import {MyClass} from 'test';
-
-class Greeter {
-  greeting: string;
-
-  constructor(message: string) {
-    this.greeting = message;
-  }
-
-  greet() {
-    return "Hello, " + this.greeting;
-  }
-}
-
-console.log(new Greeter("world").greet());
-let c:MyClass=new MyClass();
-console.log(c.x);
-```
 

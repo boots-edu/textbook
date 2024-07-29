@@ -33,10 +33,12 @@ Good formatting, indenting, and consistency of style are important to maintainin
 
 ## Summary
 When coding, remember you are not the only one who will look at your code.  Others will be responsible for maintaining, updating, or using the code you produce.  Writing well comments, well named, clear and consistent code is critical to success as a software developer.  
-# Chapter Summary
+
+## Chapter Summary
 In order to write better programs, we must handle exceptional cases.  The exception handling process (try/catch/finally) gives us a mechanism to easily handle these cases.  
 
 Code should be readable, maintainable, and understandable.  Good comments are critical. Naming of functions, classes, and variables so that their names represent the information they will hold or action they will take is also important.
+
 # Next Step
 
 Next we'll examine testing: [Testing &raquo;](../8-testing/index.md)

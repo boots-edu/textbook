@@ -212,6 +212,7 @@ All files            |   97.61 |    92.66 |   94.84 |   97.78 |
 
 ## Summary
 ***Jest*** is a powerful platform for designing suites of tests that cover all types and levels of code testing.  Tests will run automatically when jest is run providing regression testing accross the application.
+
 # Next Step
 
 Next we'll learn how to write tests is Jest [Testing in Jest &raquo;](../8-testing/jest.md)

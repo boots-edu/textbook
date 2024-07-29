@@ -110,44 +110,57 @@ function removeNegatives():number[]{
 }
 console.log(removeNegatives());
 ```
+
 But wait, there’s more.
 ## First Class Objects
 Being ***first class objects*** functions can be used in many places.
+
 * As a paramter to methods
-```
+
+```typescript
 function removeNegatives():number[]{
 	return arr.filter((x:number)=>x>=0);
 }
 ```
+
 * As the value of a variable or class property
-```
+
+```typescript
 let f:(z:number)=>boolean=(x:number)=>x>=0;
 ```
+
 * As the return value of a function
-```
+```typescript
 function getGTFunction(num:number):(x:number)=>boolean{
 	return (x:number)=>x>num;
 }
 ```
+
 ## Functions have types
 A function type is defined by its parameters and return type
 We can define variables to be of that type, then store functions in that variable.
-```
+
+```typescript
 let f:(x:number)=>Boolean
 f=(x:number)=>x>=0;
 ```
+
 We can them call those functions just like we would if they were defined with a name.
-```
+
+```typescript
 let f:(x:number)=>boolean=(x:number)=>x>=0;
 let b=f(4);
 let c=f(-4)
 ```
 We can even declare a type to use for our functions.
+
+```typescript
 declare type ChkFunction=(x:number)=>boolean;
 let f:ChkFunction=(x:number)=>x>=0;
 ```
 
 ## Summary
+
 ***Annonymous functions*** are a useful shortcut for passing functionality around a program, either as a variable, a parameter, or a return value.  They are typed by the types of their parameters and return value.
 
 # Next Step

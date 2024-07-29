@@ -72,7 +72,7 @@ Here we can initialize our members indirectly by using the value of the paramete
 ## Summary
 Typescript allows the use of the ***this*** keyword in order to access the members of the current instance of the class.  From within the class, using the ***this*** keyword allows us access to all of the member properties (public or private) within the class instance.
 
-# Chapter Summary
+## Chapter Summary
 Now we have the ability to create complex data types of our own using the class keyword. These data types can contain any other type of object including another class, a primitive type, or an array.  There is no limitation on what the array or embedded class contain (other class objects, arrays of primitives, arrays of other class objects, etc.)  We have a special method in our objects called a constructor.  The constructor can be used to initialize our object, or by using the public and private keywords, it can define members of our object.  Parameters without these keywords behave just like parameters to any other function, but with these keywords, that parameter also becomes a member of the object.  We can access the members of our class instance using the ***this*** keyword.
 
 

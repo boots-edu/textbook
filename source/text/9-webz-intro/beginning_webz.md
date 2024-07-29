@@ -17,10 +17,10 @@ parent: Webz Introduction
 {:toc}
 </details>
 
-# Key Idea
+## Key Idea
 ***WebZ*** is a lightweight web framework designed for this book.  It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on Typescript development
 
-# Overview
+## Overview
 Once we have some html, we would like it to do something.  That’s where the typescript comes in.
 You can create a web application without a framework, but it can be difficult and requires a deeper knowledge of how a web browser works.
 Many frameworks exist, but because they are for commercial purposes, they are large and have steep learning curves (angular, vuejs, react, etc.)
@@ -236,8 +236,8 @@ Playgrounds
 ## Summary
 In this section we learned about the Webz framework and how we can build a simple interactive application.  The CLI can be used to generate new projects, and add components to an existing project.  We can then attach code and variables to our html using the various decorators outlined in this chapter.
 
-# Chapter Summary
-In this chapter we have learned the basics of web development including html and css.  We have introduced ***WebZ*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applciations.
+## Chapter Summary
+In this chapter we have learned the basics of web development including html and css.  We have introduced ***WebZ*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applications.
 # Next Step
 
 Next we'll learn more advanced features of Webz and how to use them [Advanced WebZ &raquo;](../10-webz-advanced/index.md)
