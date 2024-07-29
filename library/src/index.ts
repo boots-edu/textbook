@@ -1,4 +1,5 @@
 import { compile } from "./ts_compiler";
+import { setupRunners } from "./setup_runners";
 
 console.log("Hello world!");
 
@@ -14,10 +15,10 @@ class Dog {
 }
 export function alpha(beta: string): number {
   return 7;
-}`);
-console.log(results);
-// eslint-disable-next-line @typescript-eslint/no-base-to-string
-console.log(results.diagnostics.map(d => d.messageText.toString()).join("\n"));
+}`).then(results => {
+  console.log(results);
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  console.log(results.diagnostics.map(d => d.messageText.toString()).join("\n"));
 
-import { setupRunners } from "./setup_runners";
-setupRunners();
+  setupRunners();
+});
