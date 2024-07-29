@@ -22,9 +22,6 @@ from pathlib import Path
 import io
 from urllib.parse import unquote
 
-# Progress bar
-from tqdm import tqdm
-
 # Markdown parsing stuff
 import marko
 from marko.ext.gfm.renderer import GFMRendererMixin
