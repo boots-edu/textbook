@@ -68,12 +68,12 @@ export class ExecutionEngine {
         this.executionTimer.reset();
         this.ui.updateButtons(true, false);
         this.ui.updateStatus("Ready", false);
-        this.ui.runControls.runButton.onclick = () => {
+        this.ui.runControls.runButton.onclick = async () => {
             if (this.isExecuting) {
                 this.terminateExecution();
                 this.handleExecutionStopped("Terminated by user");
             } else {
-                this.executeCode();
+                await this.executeCode();
             }
         };
     }
@@ -267,12 +267,12 @@ export class ExecutionEngine {
         this.ui.updateVariables(request.student.locals);
     }
 
-    executeCode() {
+    async executeCode():Promise<void> {
         this.ui.console.clear(false);
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
-        const request = makeExecutionRequest(this.ui.getCode(), this.engineId);
+        const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
             this.ui.updateStatus("Starting execution", true);
             this.executeRequest(request);
