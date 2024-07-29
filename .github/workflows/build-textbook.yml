@@ -54,6 +54,7 @@ jobs:
       - name: Build slides
         run: |
           cd slides/
+          mkdir -p dist
           pip install -r requirements.txt
           # Iterate over all of the markdown files in ../source/text/ directories
           for file in ../source/text/**/*.md; do
