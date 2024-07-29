@@ -64,7 +64,7 @@ jobs:
             # Construct the output filename (e.g., "1-typescript-conditionals.pptx")
             output_name="${dir_name}-${base_name%.md}.pptx"
             # Convert the markdown file to a powerpoint file
-            python build_slides.py "$file" -o "./dist/$output_name" || {
+            python build_slides.py "$file" --output "./dist/$output_name" --quiet || {
               echo "Failed to convert $file" >&2
               continue
             }
