@@ -47,6 +47,33 @@ jobs:
       - name: Copy PDF
         run: |
           cp pdf/dist/boots_textbook.pdf source/assets/boots_textbook.pdf
+      - name: Install Python and dependencies
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Build slides
+        run: |
+          cd slides/
+          pip install -r slides/requirements.txt
+          # Iterate over all of the markdown files in ../source/text/ directories
+          for file in ../source/text/**/*.md; do
+            # Extract the base name of the file (e.g., "conditionals.md")
+            base_name=$(basename "$file")
+            # Extract the directory name of the file (e.g., "1-typescript")
+            dir_name=$(dirname "$file" | xargs -I {} basename {})
+            # Construct the output filename (e.g., "1-typescript-conditionals.pptx")
+            output_name="${dir_name}-${base_name%.md}.pptx"
+            # Convert the markdown file to a powerpoint file
+            python build_slides.py "$file" -o "./dist/$output_name" || {
+              echo "Failed to convert $file" >&2
+              continue
+            }
+          done
+          cd ../
+      - name: Copy slides
+        run: |
+          mkdir -p source/assets/slides
+          cp slides/dist/*.pptx source/assets/slides
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Jekyll
