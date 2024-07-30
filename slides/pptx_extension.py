@@ -57,6 +57,19 @@ from pptx_utils import replace_with_image
 from code_formatting import PowerPointCodeFormatter, format_code_as_image, get_lexer
 
 
+MODES = {
+    "start": 0,
+    "title": 1,
+    "preamble": 2,
+    "key idea": 3,
+    "content": 4,
+    "next step": 5
+}
+
+LEFT_SIDE = 1
+RIGHT_SIDE = 2
+
+
 class PowerPointRenderer(GFMRendererMixin):
     options = {}
     # TODO: Fix these to be instance locals instead of class locals!
@@ -76,63 +89,148 @@ class PowerPointRenderer(GFMRendererMixin):
 
     def __init__(self, **options):
         super().__init__(**options)
-        self.current = None
-        self._current_text = None
-        self._current_slide = None
-        self.is_blank_slide = True
         self.presentation = Presentation(self.BASE_PRESENTATION)
+        #: Estimated slide content so far, in short form
+        self._slide_content = []
+        
+        self._current_slide = None
+        self._current_text = None
+        self._current_paragraph = None
+        self._paragraph_index = 0
+        self._current_title = None
+        self._current_side = LEFT_SIDE
+        
         self._list = []
-        self._notes = []
-        self._durations = []
-        self._transcript = []
-        self._seen_summary = False
+        self.mode = "start"
+        
+        self.key_idea = None
 
     @property
     def current_slide(self):
+        """
+        Guaranteed access to a slide, even if it must be created first.
+        """
         if self._current_slide is None:
             self._current_slide = self.add_slide("blank")
             self._current_text = None
+            self._current_paragraph = None
+            self._paragraph_index = 0
+            self._current_side = LEFT_SIDE
         return self._current_slide
+    
+    @current_slide.setter
+    def current_slide(self, value):
+        self._current_slide = value
 
     @property
     def current_text(self):
+        """
+        Guaranteed access to a textbox, even if it must be created first.
+        """
         if self._current_text is None:
             new_textbox = self.current_slide.shapes.add_textbox()
             self._current_text = new_textbox.text_frame
+            self._current_paragraph = self._current_text.paragraphs[0]
+            self._paragraph_index = 0
+            self._current_side = LEFT_SIDE
         return self._current_text
-
-    def finish_previous_slides(self):
-        if self._notes:
-            notes = "\n".join(n for n in self._notes if n)
-            self._transcript.append(notes)
-            self._notes = []
+    
+    @current_text.setter
+    def current_text(self, value):
+        self._current_text = value
+        self._current_paragraph = value.paragraphs[0]
+        
+    @property
+    def current_paragraph(self):
+        """
+        Guaranteed access to a paragraph, even if it must be created first.
+        """
+        return self._current_paragraph
+    
+    def flip_side(self):
+        self._current_side = RIGHT_SIDE if self._current_side == LEFT_SIDE else LEFT_SIDE
+        print(list(self.current_slide.shapes))
+        if self._current_side == RIGHT_SIDE:
+            if self._slide_content and self._slide_content[0] == "image":
+                self.current_text = self.current_slide.shapes[LEFT_SIDE].text_frame
+            else:
+                self.current_text = self.current_slide.shapes[RIGHT_SIDE].text_frame
+            self._current_paragraph = self._current_text.paragraphs[0]
+            self._paragraph_index = 0
+    
+    def add_paragraph(self):
+        if self._paragraph_index == 0:
+            self._paragraph_index += 1
+            return self.current_text.paragraphs[0]
+        self._current_paragraph = self.current_text.add_paragraph()
+        self._paragraph_index += 1
+        return self.current_paragraph
 
     def add_slide(self, type="title"):
-        slide_layout_index = self.SLIDE_LAYOUT_TYPES.get(type, 6)
+        if type not in self.SLIDE_LAYOUT_TYPES:
+            raise Exception(f"Invalid slide type: {type}")
+        slide_layout_index = self.SLIDE_LAYOUT_TYPES[type]
         slide_layout = self.presentation.slide_layouts[slide_layout_index]
-        self._current_slide = self.presentation.slides.add_slide(slide_layout)
-        if type == "two_content":
-            self._current_text = self.current_slide.shapes[2].text_frame
-        self.is_blank_slide = True
+        self.current_slide = self.presentation.slides.add_slide(slide_layout)
+        if type in ("title_content", "two_content"):
+            # Set the left textbox to the current_text
+            self.current_text = self.current_slide.shapes[LEFT_SIDE].text_frame
+            self._current_side = LEFT_SIDE
+        # Remove any existing content
+        self._slide_content.clear()
         return self._current_slide
+    
+
+    def finish_previous_slides(self):
+        # TODO: Check if we should resize anything, if we have extra space
+        # If we only filled up one side, then we should resize the left side to be large
+        slide_content = tuple(self._slide_content)
+        if slide_content == ("text",):
+            # TODO: Figure out width of the two content areas
+            #self.current_slide.placeholders[LEFT_SIDE].width += self.current_slide.placeholders[RIGHT_SIDE].width
+            #self.current_slide.placeholders[RIGHT_SIDE].width = 0
+            pass
+    
+    def make_new_slide_if_needed(self):
+        print(self._slide_content)
+        slide_content = tuple(self._slide_content)
+        if len(slide_content) >= 2:
+            next_slide_title = self.current_slide.shapes.title.text
+            self.finish_previous_slides()
+            self.add_slide("two_content")
+            self.current_slide.shapes.title.text = next_slide_title
+        elif len(slide_content) == 1:
+            self.flip_side()
+    
+    #######################
+    ### Rendering Content
+    #######################
 
     def render_strong_emphasis(self, element: "inline.StrongEmphasis") -> str:
-        return f"{self.render_children(element)}"
+        content = self.render_children(element)
+        run = self.current_paragraph.add_run()
+        run.bold = True
+        run.text = content
+        return ""
 
     def render_emphasis(self, element: "inline.Emphasis") -> str:
-        return self.render_children(element)
+        content = self.render_children(element)
+        run = self.current_paragraph.add_run()
+        run.italic = True
+        run.text = content
+        return ""
 
     def render_code_span(self, element: "inline.CodeSpan") -> str:
         text = element.children
-        if text and text[0] == "`" or text[-1] == "`":
-            return f"{text}"
-        return str(text)
-        # return f"{element.children}"
+        run = self.current_paragraph.add_run()
+        run.text = text
+        run.font.name = "Courier New"
+        return ""
 
     def render_fenced_code(self, element):
+        self.make_new_slide_if_needed()
         code = element.children[0].children
         options = PowerPointRenderer.options.copy()
-        # options.update(_parse_extras(getattr(element, "extra", None)))
         lexer = get_lexer(element.lang, code)
 
         # TODO: Make this way smarter
@@ -142,104 +240,123 @@ class PowerPointRenderer(GFMRendererMixin):
         else:
             result = format_code_as_image(self.presentation,
                                           self.current_slide,
+                                          self._current_side,
                                           code,
                                           lexer, **options)
-        return result
+        
+        self._slide_content.append("code")
+        return ""
 
-    def add_transcript(self, text):
-        self._notes.append(text)
-
-    def is_summary(self, element):
+    def check_title(self, element, *options):
         return (
             element.children
             and element.children[0].children
-            and element.children[0].children == "Summary"
+            and isinstance(element.children[0].children[0], str)
+            and element.children[0].children[0].strip().lower() in options
         )
 
     def render_heading(self, element: "block.Heading") -> str:
         self.finish_previous_slides()
         child_content = self.render_children(element)
-        if self.is_summary(element):
-            self._seen_summary = True
-            if self._seen_summary:
-                return child_content
+        
+        # FSA to determine what we are currently processing
+        if self.mode == "start":
+            self.mode = "title"
+        elif self.mode == "title":
+            self.mode = "preamble"
+        elif self.mode == "preamble":
+            if self.check_title(element, "key idea", "key ideas"):
+                self.mode = "key idea"
+            else:
+                self.mode = "content"
+        elif self.mode == "key idea":
+            self.mode = "content"
+        elif self.mode == "content":
+            if self.check_title(element, "next step", "next steps"):
+                self.mode = "next step"
+        
+        # Stop if we're not supposed to grab this title        
+        if self.mode in ("start", "title", "preamble", "next step", "key idea"):
+            return ""
+
+        # Create a new slide, either a title or a two_content
         if element.level == 1:
             new_slide = self.add_slide("title")
-            self.add_transcript(child_content)
-        # TODO: Make this smarter based on size of content, to decide which one to use.
         else:
             new_slide = self.add_slide("two_content")
+        
+        # Set the slide's title
         if new_slide.shapes.title is None:
             raise Exception("Invalid PowerPoint template - the slide has no title shape in its template")
         new_slide.shapes.title.text = child_content
+        
+        # Set the subheading for the title slide
         if element.level == 1:
+            # TODO: Extract this to a setting!
             new_slide.placeholders[1].text = "BOOTS: Beginner Object-Oriented TypeScript"
-        return "<h{level}>{children}</h{level}>\n".format(
-            level=element.level, children=child_content
-        )
+        
+        return ""
+    
+    IGNORED_CONTENT_MODES = ("start", "title", "preamble", "next step")
 
     def render_paragraph(self, element: "block.Paragraph") -> str:
         children = self.render_children(element)
-        if self._list or self._seen_summary:
+        # Abort if we're not supposed to be rendering this
+        if self.mode in self.IGNORED_CONTENT_MODES:
+            return ""
+        # Key idea gets saved
+        if self.mode == "key idea":
+            self.key_idea = children
+            return ""
+        # TODO: Stop if we're rendering a list
+        if self._list:
             return children
+        # TODO: Stop if we're rendering a class attribute
         if children.startswith("{:") and children.endswith("}"):
             return ""
-        if self.current_slide.has_notes_slide:
-            self.current_slide.notes_slide.notes_text_frame.text += "\n"
-            self.current_slide.shapes[1].text_frame.text += "\n"
-        self.current_slide.notes_slide.notes_text_frame.text += children
-        self.current_slide.shapes[1].text_frame.text += children
-        self.add_transcript(children)
-        self.is_blank_slide = False
-        if element._tight:  # type: ignore
-            return children
-        else:
-            return f"<p>{children}</p>\n"
+        
+        # Actually render the content
+        self.make_new_slide_if_needed()
+        paragraph = self.add_paragraph()
+        # TODO: Need to be accessing children
+        run = paragraph.add_run()
+        run.text = children
+        
+        if not self._slide_content or self._slide_content[-1] != "text":
+            self._slide_content.append("text")
+        
+        return ""
 
     def render_list(self, element: "block.List") -> str:
-        if self._seen_summary:
+        if self.mode in self.IGNORED_CONTENT_MODES:
             return ""
+        self.make_new_slide_if_needed()
         self._list.append(element)
         children = self.render_children(element)
         # PowerPoint output
         self.current_text.text += children
-        # Regular markdown output
-        if element.ordered:
-            tag = "ol"
-            extra = f' start="{element.start}"' if element.start != 1 else ""
-        else:
-            tag = "ul"
-            extra = ""
         self._list.pop()
+        self._slide_content.append("list")
         return ""
-        # return "<{tag}{extra}>\n{children}</{tag}>\n".format(
-        #    tag=tag, extra=extra, children=children
-        # )
 
     def render_list_item(self, element: "block.ListItem") -> str:
-        children = self.render_children(element)
-        if len(element.children) == 1 and getattr(element.children[0], "_tight", False):  # type: ignore
-            sep = ""
-        else:
-            sep = "\n"
-        return f"{sep}{children}\n"
-        # return f"<li>{sep}{children}</li>\n"
+        self.render_children(element)
+        return ""
 
     def render_image(self, element: "inline.Image") -> str:
-        # Need to remove the ../../ at the start of the element.dest
+        self.make_new_slide_if_needed()
         image_path = Path(element.dest).parts[2:]
         image_path = os.path.join(*image_path)
         url = unquote(self.escape_url(os.path.join(self.GRAPHICS_FOLDER, image_path)))
-        # for shape in self.current_slide.placeholders:
-        #    print('%d %s %s' % (shape.placeholder_format.idx, shape.name, shape.placeholder_format.type), dir(shape))
         # TODO: Make this choose its side more dynamically
-        placeholder = self.current_slide.placeholders[2]
+        placeholder = self.current_slide.placeholders[self._current_side]
         replace_with_image(url, placeholder, self.current_slide)
-        render_func = self.render
-        self.render = self.render_plain_text  # type: ignore
+        # Swap out the regular rendering function for a second
+        render_func, self.render = self.render, self.render_plain_text
         body = self.render_children(element)
+        # Swap back!
         self.render = render_func  # type: ignore
-        # return template.format(url, body, title)
+        self._slide_content.append("image")
         return ""
 
     def finish(self):

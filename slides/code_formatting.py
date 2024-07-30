@@ -77,7 +77,7 @@ class PowerPointCodeFormatter(Formatter):
             print("Throwing away codeblock!")
 
 
-def format_code_as_image(presentation, current_slide, code, lexer, **options):
+def format_code_as_image(presentation, current_slide, current_side, code, lexer, **options):
     formatter = ImageFormatter(
                 line_numbers=False,
                 style=CodeStyle,  # get_style_by_name('sas'),
@@ -91,7 +91,7 @@ def format_code_as_image(presentation, current_slide, code, lexer, **options):
         temporary_image.write(image_information)
         temporary_image.seek(0)
         # TODO: Also make this dynamically placed
-        placeholder = current_slide.placeholders[2]
+        placeholder = current_slide.placeholders[current_side]
         replace_with_image(
             temporary_image,
             placeholder,
@@ -99,10 +99,6 @@ def format_code_as_image(presentation, current_slide, code, lexer, **options):
             True,
             presentation,
         )
-    # For no real reason, also generate HTML
-    formatter = HtmlFormatter(**options)
-    result = highlight(code, lexer, formatter)
-    return result
 
 def get_lexer(lang, code):
     if lang:
