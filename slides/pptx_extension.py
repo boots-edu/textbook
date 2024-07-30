@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import io
 from urllib.parse import unquote
+from dataclasses import dataclass
 
 # Markdown parsing stuff
 import marko
@@ -47,125 +48,13 @@ from pptx.enum.dml import MSO_THEME_COLOR
 from pptx.enum.text import MSO_AUTO_SIZE, MSO_ANCHOR
 from pptx.util import Pt
 
-from pptx.opc.package import PartFactory
-from pptx.parts.media import MediaPart
-
-#for aud_type in ["audio/mp3", "audio/mp4", "audio/mid", "audio/x-wav", "audio/mpeg"]:
-#    PartFactory.part_type_for.update({aud_type: MediaPart})
-
 # XML Handling stuff
 from lxml import etree
 
 # Monkey Patches
 import python_pptx_patches
-
-
-def replace_with_image(img, shape, slide, max_size=False, presentation=None):
-    pic = slide.shapes.add_picture(img, shape.left, shape.top)
-
-    # calculate max width/height for target size
-    ratio = min(shape.width / float(pic.width), shape.height / float(pic.height))
-
-    if max_size:
-        start_of_content_area = slide.shapes.title.top + slide.shapes.title.height
-        height_of_content_area = presentation.slide_height - start_of_content_area
-        height_of_content_area -= Inches(0.5)
-        pic.width = int(height_of_content_area * pic.width / pic.height)
-        pic.height = int(height_of_content_area)
-        pic.top = start_of_content_area
-        pic.left = shape.left
-    else:
-        pic.height = int(pic.height * ratio)
-        pic.width = int(pic.width * ratio)
-        pic.top = shape.top + ((shape.height - pic.height) // 2)
-        pic.left = shape.left + ((shape.width - pic.width) // 2)
-
-    placeholder = shape.element
-    placeholder.getparent().remove(placeholder)
-    return
-
-
-def no_bullet(paragraph):
-    paragraph._pPr.insert(
-        0,
-        etree.Element("{http://schemas.openxmlformats.org/drawingml/2006/main}buNone"),
-    )
-
-
-def _parse_extras(line):
-    if not line:
-        return {}
-    return {k: json.loads(v) for part in line.split(",") for k, v in [part.split("=")]}
-
-
-class CodeStyle(Style):
-    default_style = ""
-    styles = {
-        token.Whitespace: "#bbbbbb",
-        token.Comment: "#008800",
-        token.String: "#800080",
-        token.Number: "#2c8553",
-        token.Other: "bg:#ffffe0",
-        token.Keyword: "#2c2cff",
-        token.Keyword.Reserved: "#353580",
-        token.Keyword.Constant: "",
-        token.Name.Builtin: "#2c2cff",
-        token.Name.Variable: "#2c2cff",
-        token.Generic: "#2c2cff",
-        token.Generic.Emph: "#008800",
-        token.Generic.Error: "#d30202",
-        token.Error: "bg:#e3d2d2 #a61717",
-    }
-
-
-def format_run(ttype, run):
-    run.font.color.rgb = RGBColor(0x00, 0x00, 0x00)
-    color, bold, italic, underline, _, border, roman, sans, mono = SasStyle._styles[
-        ttype
-    ]
-
-    if color:
-        if len(color) == 3:
-            color = color[0] * 2, color[1] * 2, color[2] * 2
-        else:
-            color = color[:2], color[2:4], color[4:]
-        color = [int(c, 16) for c in color]
-        run.font.color.rgb = RGBColor(*color)
-
-
-class PowerPointCodeFormatter(Formatter):
-    MAX_REASONABLE_LINE = 14
-
-    def __init__(self, text_frame, code, **options):
-        self.options = options
-        self.text_frame = text_frame
-        self.code = code
-        self.line_count = code.count("\n")
-        # 9 fits comfortably
-
-    def fix_height(self):
-        paragraph = self.text_frame.paragraphs[0]
-        # if self.line_count > 9:
-        #    spacing = (self.MAX_REASONABLE_LINE-(self.line_count-9))/self.MAX_REASONABLE_LINE/2
-        #    paragraph.line_spacing = spacing
-        paragraph.line_spacing = 0.5
-
-    def format(self, tokensource, outfile):
-        if self.text_frame:
-            self.text_frame.clear()
-            self.text_frame.word_wrap = False
-            self.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-            paragraph = self.text_frame.paragraphs[0]
-            no_bullet(paragraph)
-            paragraph.font.name = "Courier New"
-            paragraph.font.size = Pt(10)
-            for ttype, value in tokensource:
-                run = paragraph.add_run()
-                run.text = value
-                format_run(ttype, run)
-            self.fix_height()
-        else:
-            print("Throwing away codeblock!")
+from pptx_utils import replace_with_image
+from code_formatting import PowerPointCodeFormatter, format_code_as_image, get_lexer
 
 
 class PowerPointRenderer(GFMRendererMixin):
@@ -215,7 +104,6 @@ class PowerPointRenderer(GFMRendererMixin):
     def finish_previous_slides(self):
         if self._notes:
             notes = "\n".join(n for n in self._notes if n)
-            self.add_narration(self._current_slide, notes)
             self._transcript.append(notes)
             self._notes = []
 
@@ -227,59 +115,6 @@ class PowerPointRenderer(GFMRendererMixin):
             self._current_text = self.current_slide.shapes[2].text_frame
         self.is_blank_slide = True
         return self._current_slide
-
-    @staticmethod
-    def autoplay_media(media):
-        el_id = xpath(media.element, ".//p:cNvPr")[0].attrib["id"]
-        el_cnt = xpath(
-            media.element.getparent().getparent().getparent(),
-            './/p:timing//p:video//p:spTgt[@spid="%s"]' % el_id,
-        )[0]
-        cond = xpath(el_cnt.getparent().getparent(), ".//p:cond")[0]
-        cond.set("delay", "1000")
-
-    def add_slide_transition(self, slide, duration):
-        xpath(slide.element, ".//p:cSld")[0].addnext(
-            etree.fromstring(
-                f"""
-            <mc:AlternateContent
-                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"
-                xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main"
-                xmlns:p159="http://schemas.microsoft.com/office/powerpoint/2015/09/main">
-                <mc:Choice Requires="p159">
-                    <p:transition spd="fast" p14:dur="1000" advTm="{duration}">
-                        <p159:morph option="byObject" />
-                    </p:transition>
-                </mc:Choice>
-                <mc:Fallback>
-                    <p:transition spd="fast" advTm="{duration}">
-                        <p:fade />
-                    </p:transition>
-                </mc:Fallback>
-            </mc:AlternateContent>"""
-            )
-        )
-
-    def add_audio_overlay(self, slide, audio_file) -> int:
-        # print(audio_file)
-        seconds = math.ceil(MP3(audio_file).info.length + 2)
-        duration = seconds * 1000
-        self.add_slide_transition(slide, duration)
-        # audio_file = os.path.abspath(audio_file)
-        audio_object = slide.shapes.add_movie(
-            audio_file, left=Inches(0), top=Inches(0), width=Inches(0), height=Inches(0)
-        )  # , poster_frame_image = None)
-        self.autoplay_media(audio_object)
-        self.is_blank_slide = False
-        return seconds
-
-    def add_narration(self, slide, text):
-        """audio_file = polly.speech(
-            text, self.voice, self.narrate, label=self._input_path
-        )
-        duration = self.add_audio_overlay(slide, audio_file)
-        self._durations.append(duration)"""
 
     def render_strong_emphasis(self, element: "inline.StrongEmphasis") -> str:
         return f"{self.render_children(element)}"
@@ -298,45 +133,17 @@ class PowerPointRenderer(GFMRendererMixin):
         code = element.children[0].children
         options = PowerPointRenderer.options.copy()
         # options.update(_parse_extras(getattr(element, "extra", None)))
-        if element.lang:
-            try:
-                lexer = get_lexer_by_name(element.lang, stripall=True)
-            except ClassNotFound:
-                lexer = guess_lexer(code)
-        else:
-            lexer = guess_lexer(code)
+        lexer = get_lexer(element.lang, code)
 
+        # TODO: Make this way smarter
         if code.count("\n") < PowerPointCodeFormatter.MAX_REASONABLE_LINE:
             formatter = PowerPointCodeFormatter(self.current_text, code, **options)
             result = highlight(code, lexer, formatter)
         else:
-            formatter = ImageFormatter(
-                line_numbers=False,
-                style=CodeStyle,  # get_style_by_name('sas'),
-                font_size=12,
-                image_pad=0,
-                line_pad=8,
-                **options,
-            )
-            image_information = highlight(code, lexer, formatter)
-            with io.BytesIO() as temporary_image:
-                temporary_image.write(image_information)
-                temporary_image.seek(0)
-                # TODO: Also make this dynamically placed
-                placeholder = self.current_slide.placeholders[2]
-                replace_with_image(
-                    temporary_image,
-                    placeholder,
-                    self.current_slide,
-                    True,
-                    self.presentation,
-                )
-            # For no real reason, also generate HTML
-            formatter = HtmlFormatter(**options)
-            result = highlight(code, lexer, formatter)
-
-        # self.current_text.auto_size = MSO_AUTO_SIZE.TEXT_TO_FIT_SHAPE
-        # self.current_text.fit_text("Courier New")
+            result = format_code_as_image(self.presentation,
+                                          self.current_slide,
+                                          code,
+                                          lexer, **options)
         return result
 
     def add_transcript(self, text):
