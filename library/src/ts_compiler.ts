@@ -250,8 +250,9 @@ async function processImports(code:string):Promise<string>{
 // Check and compile in-memory TypeScript code for errors.
 //
 export async function compile(code: string): Promise<CompilationResult> {
-    //parse and remover imports
+    //parse and remove imports
     code = await processImports(code);
+    // Setup the fake compiler's options
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;
     options.inlineSources = true;
@@ -264,37 +265,28 @@ export async function compile(code: string): Promise<CompilationResult> {
     options.noLib = false;
     options.experimentalDecorators = false;
 
+    // Create the output "file" in memory
     const [dummyFilePath, dummyFileOut] = ["in-memory-file.ts", "in-memory-file.js"];
-    // const dummySourceFile = ts.createSourceFile(
-    //     dummyFilePath,
-    //     code,
-    //     ts.ScriptTarget.Latest,
-    //     true,
-    // );
     let outputCode: string | undefined = undefined;
 
+    // Create the fake compiler host
     const host: ts.CompilerHost = createCompilerHost(
         options,
         {
             fileExists: (fileName) => {
-                // console.log("fileExists", fileName, fileName === dummyFilePath || fileName in otherFakeFiles);
                 return fileName === dummyFilePath || fileName in otherFakeFiles;
             },
             readFile: (fileName) => {
                 console.log("readFile", fileName, fileName === dummyFilePath || fileName in otherFakeFiles);
                 if (fileName === dummyFilePath) {
-                    //console.log("readFile", fileName, "Main");
                     return code;
                 }
                 if (fileName in otherFakeFiles) {
-                    //console.log("readFile", fileName, "Additional");
                     return otherFakeFiles[fileName];
                 }
-                //console.log("readFile", fileName, "Missing");
                 return undefined;
             },
             writeFile: (fileName, data) => {
-                //console.log("writeFile", fileName);
                 if (fileName === dummyFileOut) {
                     outputCode = data;
                 }
@@ -302,12 +294,15 @@ export async function compile(code: string): Promise<CompilationResult> {
         }
     );
 
-    const rootNames = [KETTLE_D_TS_FILENAME]; // Object.keys(otherFakeFiles); //libs.map(lib => require.resolve(`typescript/lib/lib.${lib}.d.ts`));
+    // Create the TypeScript program
+    const rootNames = [KETTLE_D_TS_FILENAME];
     const program = ts.createProgram(
         rootNames.concat([dummyFilePath]),
         options,
         host,
     );
+
+    // Run the type checker, removing exports first
     //console.log(checker.getSymbolsInScope(dummySourceFile, ts.SymbolFlags.Module));
     const emitResult = program.emit(
         undefined,
@@ -318,16 +313,22 @@ export async function compile(code: string): Promise<CompilationResult> {
             before: [removeExports],
         },
     );
+
+    // Collect diagnostics
     const diagnostics = ts.getPreEmitDiagnostics(program);
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (outputCode === undefined) {
         throw new Error("No output code generated");
     }
 
+    // Get the source file to extract local symbols
     const resultSourcefile = program.getSourceFile(dummyFilePath);
     
+    // Retrieve all the locals
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const locals: Map<string, ts.Symbol> = (resultSourcefile as any).locals || new Map<string, ts.Symbol>();
+
+    // Return everything
     return {
         code: removeEmptyExports(outputCode),
         diagnostics: emitResult.diagnostics.concat(diagnostics),
@@ -337,68 +338,4 @@ export async function compile(code: string): Promise<CompilationResult> {
             locals,
         ),*/
     };
-}
-
-export function delint(sourceFile: ts.SourceFile) {
-    function report(node: ts.Node, message: string) {
-        const { line, character } = sourceFile.getLineAndCharacterOfPosition(
-            node.getStart(),
-        );
-        console.log(
-            `${sourceFile.fileName} (${line + 1},${character + 1}): ${message}`,
-        );
-    }
-    function delintNode(node: ts.Node) {
-        let ifStatement, op;
-        switch (node.kind) {
-            case ts.SyntaxKind.ForStatement:
-            case ts.SyntaxKind.ForInStatement:
-            case ts.SyntaxKind.WhileStatement:
-            case ts.SyntaxKind.DoStatement:
-                if (
-                    (node as ts.IterationStatement).statement.kind !==
-                    ts.SyntaxKind.Block
-                ) {
-                    report(
-                        node,
-                        "A looping statement's contents should be wrapped in a block body.",
-                    );
-                }
-                break;
-
-            case ts.SyntaxKind.IfStatement:
-                ifStatement = node as ts.IfStatement;
-                if (ifStatement.thenStatement.kind !== ts.SyntaxKind.Block) {
-                    report(
-                        ifStatement.thenStatement,
-                        "An if statement's contents should be wrapped in a block body.",
-                    );
-                }
-                if (
-                    ifStatement.elseStatement &&
-                    ifStatement.elseStatement.kind !== ts.SyntaxKind.Block &&
-                    ifStatement.elseStatement.kind !== ts.SyntaxKind.IfStatement
-                ) {
-                    report(
-                        ifStatement.elseStatement,
-                        "An else statement's contents should be wrapped in a block body.",
-                    );
-                }
-                break;
-
-            case ts.SyntaxKind.BinaryExpression:
-                op = (node as ts.BinaryExpression).operatorToken.kind;
-                if (
-                    op === ts.SyntaxKind.EqualsEqualsToken ||
-                    op === ts.SyntaxKind.ExclamationEqualsToken
-                ) {
-                    report(node, "Use '===' and '!=='.");
-                }
-                break;
-        }
-
-        ts.forEachChild(node, delintNode);
-    }
-
-    delintNode(sourceFile);
 }
