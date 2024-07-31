@@ -368,6 +368,20 @@ export async function compile(code: string): Promise<CompilationResult> {
     // Retrieve all the locals
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const locals: Map<string, ts.Symbol> = (resultSourcefile as any).locals || new Map<string, ts.Symbol>();
+    // Remove any locals that have flags equal to 0,
+    // or if they have the ts.SymbolFlags.Interface flag
+    locals.forEach((value, key) => {
+        if (value.flags === 0 ||
+            value.flags & ts.SymbolFlags.Interface ||
+            value.flags & ts.SymbolFlags.TypeAlias ||
+            value.flags & ts.SymbolFlags.ConstEnum ||
+            value.flags & ts.SymbolFlags.NamespaceModule ||
+            (value.declarations && value.declarations.every(
+                (declaration) => declaration.flags & ts.SymbolFlags.Transient
+            ))) {
+            locals.delete(key);
+        }
+    });
 
     // Return everything
     return {
