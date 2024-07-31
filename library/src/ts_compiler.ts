@@ -280,7 +280,6 @@ async function processImports(code:string):Promise<string>{
                 if (!filename.endsWith(".ts"))
                     filename+=".ts";
                 let impCode=await getFileFromWeb(filename);
-                console.log(impCode);
                 result+=(impCode+"\n");
             }
         }else{
@@ -320,7 +319,6 @@ export async function compile(code: string): Promise<CompilationResult> {
                 return fileName === dummyFilePath || fileName in otherFakeFiles;
             },
             readFile: (fileName) => {
-                console.log("readFile", fileName, fileName === dummyFilePath || fileName in otherFakeFiles);
                 if (fileName === dummyFilePath) {
                     return code;
                 }
