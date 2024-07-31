@@ -6,7 +6,7 @@
     "scripts": {
         "deploy-cover": "npm run coverage && mkdir -p ../docs/cover && cp -r ./coverage/* ../docs/cover",
         "build": "rm -rf ./dist && esbuild src/index.ts --bundle --outfile=dist/index.js --sourcemap && rm -rf ./dist/tests && cp ./package.json dist && cp ./dist/index.js ../source/assets/js/boots-library.js",
-        "test": "npm run clean gd && jest --silent",
+        "test": "jest",
         "watch": "npm run clean && jest --watchAll=true",
         "dev": "esbuild src/index.ts --bundle --outfile=dist/index.js --sourcemap --watch",
         "coverage": "npm run clean && jest --coverage --watchAll=false --coverageDirectory='./coverage'",

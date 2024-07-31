@@ -7,6 +7,7 @@ module.exports = {
     resetMocks: true,
     collectCoverageFrom: [
         "src/**/*.{js,jsx,ts,tsx}",
+        "test/**/*.{js,jsx,ts,tsx}",
         "!<rootDir>/node_modules/",
         "!src/serviceWorker.js",
         "!src/setupTests.js",
