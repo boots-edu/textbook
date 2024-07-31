@@ -43,4 +43,13 @@ describe('ts_compiler', () => {
         expect(Array.from(result.locals.keys())).not.toContain('Eta');
         expect(Array.from(result.locals.keys())).not.toContain('Theta');
     });
+
+    it('should be able to handle imports', async ()=> {
+        const code = `
+        /*noskip*/ import * as webz from "@boots-edu/webz";
+        console.log(webz);
+        `;
+        const result = await compile(code);
+        expect(result.diagnostics).toEqual([]);
+    });
 });

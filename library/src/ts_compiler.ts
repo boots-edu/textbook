@@ -316,7 +316,9 @@ export async function compile(code: string): Promise<CompilationResult> {
         options,
         {
             fileExists: (fileName) => {
-                return fileName === dummyFilePath || fileName in otherFakeFiles;
+                const result = fileName === dummyFilePath || fileName in otherFakeFiles;
+                if (!result) console.log("EXISTS", fileName);
+                return result;
             },
             readFile: (fileName) => {
                 if (fileName === dummyFilePath) {
