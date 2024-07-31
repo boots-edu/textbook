@@ -70,6 +70,10 @@ LEFT_SIDE = 1
 RIGHT_SIDE = 2
 
 
+def flatten_text(element):
+    pass
+
+
 class PowerPointRenderer(GFMRendererMixin):
     options = {}
     # TODO: Fix these to be instance locals instead of class locals!
@@ -300,6 +304,7 @@ class PowerPointRenderer(GFMRendererMixin):
     IGNORED_CONTENT_MODES = ("start", "title", "preamble", "next step")
 
     def render_paragraph(self, element: "block.Paragraph") -> str:
+        print(element.children)
         children = self.render_children(element)
         # Abort if we're not supposed to be rendering this
         if self.mode in self.IGNORED_CONTENT_MODES:

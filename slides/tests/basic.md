@@ -284,6 +284,8 @@ There are MANY other methods available to the string type, but these are some of
   * `slice` to extract parts of a string
 * Strings are immutable in TypeScript, so any method that modifies a string will return a new string instead of modifying the original.
 
+This is a *test of the **excellent** mechanism*.
+
 # Next Step
 
 Now onto the next chapter: [Loops and Arrays &raquo;](../2-loops/index.md)
