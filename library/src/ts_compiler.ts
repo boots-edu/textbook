@@ -209,10 +209,10 @@ export function getFileFromWeb(filename:string):Promise<string>{
     return new Promise((resolve,reject)=>{
         let path=ASSET_PATH+filename;
         const req = new XMLHttpRequest();
-        req.addEventListener("error",(ev:ProgressEvent)=>{
+        req.addEventListener("error",()=>{
             reject(new Error("Error getting import"));
         })
-        req.addEventListener("load", (ev:ProgressEvent)=>{
+        req.addEventListener("load", ()=>{
             resolve(req.responseText);
         });
         req.open("GET", path);
@@ -250,7 +250,6 @@ async function processImports(code:string):Promise<string>{
 // Check and compile in-memory TypeScript code for errors.
 //
 export async function compile(code: string): Promise<CompilationResult> {
-    let result="";
     //parse and remover imports
     code = await processImports(code);
     const options = ts.getDefaultCompilerOptions();
