@@ -1,8 +1,10 @@
 import * as ts from "typescript";
-
-
 import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
 
+/**
+ * TypeScript type definitions for the instructor runtime library and the pseudo Jest library that
+ * we support.
+ */
 const KETTLE_JEST_D_TS = `
     interface Assertion {
         toBe: (expected: any) => void;
@@ -32,9 +34,13 @@ const KETTLE_JEST_D_TS = `
 
 const ASSET_PATH="/textbook/assets/imports/";
 
-//
-// Result of compiling TypeScript code.
-//
+/**
+ * The result of a compilation operation. This includes the compiled code,
+ * any diagnostics that were generated, a list of the locals,
+ * and the type information for the code.
+ * 
+ * The type information is a map from class names to their members.
+ */
 export interface CompilationResult {
     code?: string;
     diagnostics: ts.Diagnostic[];
@@ -42,6 +48,13 @@ export interface CompilationResult {
     typeInformation: Record<string, DocEntry[]>;
 }
 
+/**
+ * A TypeScript transformer that removes export statements from the code.
+ * This is used to prevent the TypeScript compiler from exporting the code,
+ * which is not compatible with the way the Kettle compiler works.
+ * It literally just visits all the Export and Async keywords and returns undefined,
+ * which removes them from the AST tree.
+ */
 const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
     return (sourceFile) => {
         const visitChildren = (child: ts.Node): ts.Node | undefined => {
@@ -68,6 +81,10 @@ const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
     };
 }) as ts.TransformerFactory<ts.SourceFile>;
 
+/**
+ * A documentation entry for a TypeScript symbol.
+ * These are modeled after similar data types in the TypeScript compiler.
+ */
 interface DocEntry {
     name?: string;
     fileName?: string;
@@ -79,6 +96,14 @@ interface DocEntry {
     modifiers?: string[];
 }
 
+/**
+ * Traverses the AST looking for class definitions and their members, in order to get
+ * the type information for the classes. This includes information about the privacy
+ * modifiers of the class members.
+ * @param program 
+ * @param locals 
+ * @returns 
+ */
 export function getClassDefinitions(
     program: ts.Program,
     locals: Map<string, ts.Symbol>,
@@ -155,23 +180,41 @@ export function getClassDefinitions(
     return classMap;
 }
 
+/**
+ * Removes empty export statements from the code.
+ * @param code The code to remove empty exports from.
+ * @returns The code with empty exports removed.
+ */
 export function removeEmptyExports(code: string): string {
     // https://github.com/microsoft/TypeScript/issues/41513
     return code.replace(/export\s*{\s*}/g, "");
 }
 
+/**
+ * A specification of the read/write operations that the TypeScript compiler
+ * will perform. This is used to mock the file system for the TypeScript
+ * compiler.
+ */
 interface MockIO {
     fileExists(fileName: string): boolean;
     readFile(fileName: string): string | undefined;
     writeFile(fileName: string, data: string): void;
 }
 
+// The actual TypeScript type definitions
 const otherFakeFiles: Record<string, string> = RAW_D_TS_FILES;
+// A TypeScript type definition for the kettle compiler.
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
 
 
-
+/**
+ * Create a compiler host for the TypeScript compiler, which binds to the given
+ * IO object.
+ * @param options Compiler host options
+ * @param io A mock IO object, with fileExists, readFile, and writeFile methods
+ * @returns 
+ */
 function createCompilerHost(
     options: ts.CompilerOptions,
     io: MockIO
