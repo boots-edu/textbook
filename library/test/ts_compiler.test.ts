@@ -15,17 +15,32 @@ describe('ts_compiler', () => {
 
     it('interfaces should not be returned as locals', async () => {
         const code = `
-        export class Dog {}
-        let ada: Dog = {};
-        function bark(dog: Dog) {}
-        export interface Ghost {
-            foo: string;
-        }
-        export type Phantom = Ghost;
+        // No
+        namespace Alpha {}
+        const enum Beta {}
+        interface Gamma {}
+        declare const Delta = 0;
+        declare function Epsilon(): any;
+        declare class Eta {}
+        type Theta = Eta;
+
+        // Yes
+        abstract class first {}
+        class second {}
+        function third() {}
+        let fourth = 0;
+        const fifth = 0;
+        var sixth = 0;
+        enum seventh {}
         `;
         const result = await compile(code);
-        expect(Array.from(result.locals.keys())).toEqual(expect.arrayContaining(['Dog', 'ada', 'bark']));
-        expect(Array.from(result.locals.keys())).not.toContain('Ghost');
-        expect(Array.from(result.locals.keys())).not.toContain('Phantom');
+        expect(Array.from(result.locals.keys())).toEqual(expect.arrayContaining(['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh']));
+        expect(Array.from(result.locals.keys())).not.toContain('Alpha');
+        expect(Array.from(result.locals.keys())).not.toContain('Beta');
+        expect(Array.from(result.locals.keys())).not.toContain('Gamma');
+        expect(Array.from(result.locals.keys())).not.toContain('Delta');
+        expect(Array.from(result.locals.keys())).not.toContain('Epsilon');
+        expect(Array.from(result.locals.keys())).not.toContain('Eta');
+        expect(Array.from(result.locals.keys())).not.toContain('Theta');
     });
 });
