@@ -58,15 +58,45 @@ export interface CompilationResult {
 const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
     return (sourceFile) => {
         const visitChildren = (child: ts.Node): ts.Node | undefined => {
-            if (child.kind == ts.SyntaxKind.ExportKeyword) return undefined;
-            if (child.kind == ts.SyntaxKind.AsyncKeyword) return undefined;
-            if (child.kind === ts.SyntaxKind.ExportDeclaration) {
+            console.log(child.kind);
+            if (child.kind === ts.SyntaxKind.ExportKeyword || 
+                child.kind === ts.SyntaxKind.AsyncKeyword || 
+                child.kind === ts.SyntaxKind.ExportDeclaration) {
                 return undefined;
             }
-
             return ts.visitEachChild(child, visitChildren, context);
         };
         const convertNode = (node: ts.Node) => {
+            if (node.kind === ts.SyntaxKind.ImportDeclaration) {
+                // return ts.createVariableDeclarationList([], ts.NodeFlags.Const);
+                const importChild = node as ts.ImportDeclaration;
+                let identifier: string | ts.BindingName;
+                if (importChild.importClause?.namedBindings?.kind === ts.SyntaxKind.NamedImports) {
+                    const namedBindings = importChild.importClause.namedBindings as ts.NamedImports;
+                    identifier = ts.factory.createObjectBindingPattern(namedBindings.elements.map(
+                        (node) => ts.factory.createBindingElement(undefined, undefined, ts.factory.createIdentifier(node.getText()), undefined)
+                    ));
+                } else {
+                    identifier = importChild.importClause?.getText() || "";
+                }
+                const moduleName = importChild.moduleSpecifier.getText().replaceAll('"', "");
+                return ts.factory.createVariableStatement(
+                    undefined,
+                    ts.factory.createVariableDeclarationList(
+                        [ts.factory.createVariableDeclaration(
+                            identifier,
+                            undefined,
+                            undefined,
+                            ts.factory.createCallExpression(
+                                ts.factory.createIdentifier("$importModule"),
+                                undefined,
+                                [ts.factory.createStringLiteral(moduleName)],
+                            )
+                        )],
+                        ts.NodeFlags.Const
+                    )
+                );
+            }
             return ts.visitEachChild(node, visitChildren, context);
         };
         const visit = (node: ts.Node): ts.Node => {
@@ -206,6 +236,7 @@ const otherFakeFiles: Record<string, string> = RAW_D_TS_FILES;
 // A TypeScript type definition for the kettle compiler.
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
+otherFakeFiles["fake.ts"] = "export const someValue = 0;";
 
 
 /**
@@ -317,7 +348,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         {
             fileExists: (fileName) => {
                 const result = fileName === dummyFilePath || fileName in otherFakeFiles;
-                if (!result) console.log("EXISTS", fileName);
+                // console.log("EXISTS", result, fileName);
                 return result;
             },
             readFile: (fileName) => {
