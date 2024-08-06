@@ -52,6 +52,61 @@
   
 </head>
 <body>
+
+  <div class="language-typescript highlighter-rouge"><pre>
+    import { bootstrap } from &quot;@boots-edu/webz&quot;;
+    import {
+        BindValue,
+        BindStyleToNumberAppendPx,
+        Click,
+        WebzComponent,
+        WebzDialog,
+        Timer,
+    } from &quot;@boots-edu/webz&quot;;
+
+    const html = `
+    &lt;div&gt;
+        &lt;span&gt;Hello &lt;span id=&quot;name&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;button id=&quot;button&quot;&gt;Click me!&lt;/button&gt;
+        &lt;div&gt;
+            &lt;span&gt;Count: &lt;span id=&quot;count&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    `;
+    const css = `
+    button {
+        background-color: blue;
+        color: white;
+    }
+    `;
+
+    class MainComponent extends WebzComponent {
+        @BindValue(&quot;name&quot;)
+        name: string = &quot;World&quot;;
+
+        @BindValue(&quot;count&quot;)
+        count: number = 0;
+
+        @Click(&quot;button&quot;)
+        onClick() {
+            this.count++;
+        }
+
+        @Click(&quot;button&quot;)
+        onButton() {
+            WebzDialog.alert(&quot;Hello, &quot; + this.name + &quot;!&quot;);
+        }
+        
+        constructor() {
+            super(html, css);
+        }
+    }
+
+    bootstrap&lt;MainComponent&gt;(MainComponent);
+  </pre>
+  </div>
+  <div id="main-target"></div>
+
 <div class="language-typescript highlighter-rouge"><pre>
   /**
   * Bring an umbrella if it is not raining

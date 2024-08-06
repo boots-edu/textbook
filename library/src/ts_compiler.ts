@@ -368,7 +368,7 @@ async function processImports(code:string):Promise<string>{
 //
 export async function compile(code: string): Promise<CompilationResult> {
     //parse and remove imports
-    code = await processImports(code);
+    // code = await processImports(code);
     // Setup the fake compiler's options
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;

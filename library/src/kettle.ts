@@ -5,6 +5,7 @@ import { CONSOLE_API_COMMAND_LIST, ConsoleAPICommand } from "./ts_console";
 import { FeedbackExecutionRequest, ProgramExecutionRequest, makeExecutionRequest } from "./ts_assembler";
 import { ExecutionUI } from "./execution_ui";
 import { v4 as uuidv4 } from "uuid";
+import { executeCode } from "./ts_execution";
 
 
 export interface ParentPost {
@@ -272,6 +273,10 @@ export class ExecutionEngine {
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
+
+        executeCode(this.ui.getCode());
+
+        /*
         const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
             this.ui.updateStatus("Starting execution", true);
@@ -285,6 +290,7 @@ export class ExecutionEngine {
             }
             this.handleExecutionStopped("Typescript Error");
         }
+        */
     }
 
     terminateExecution() {
