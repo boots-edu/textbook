@@ -193,9 +193,9 @@ export const wrapStudentCode = (
 student = {};
 studentNamespace = {};
 try {
-    const __studentFunction = Function("studentCode", \`${code}\`).bind(studentNamespace);
+    const __studentFunction = Function("$importModule", \`${code}\`).bind(studentNamespace);
     try {
-        student = __studentFunction();
+        student = __studentFunction($importModule);
     } catch (e) {
         _kettleSystemError('student', "runtime", e);
     }

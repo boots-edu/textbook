@@ -62,7 +62,6 @@ export type Importer = (file: string) => void;
 const removeExports: (importFile:Importer)=>ts.TransformerFactory<ts.SourceFile> = (importFile: Importer) => ((context) => {
     return (sourceFile) => {
         const visitChildren = (child: ts.Node): ts.Node | undefined => {
-            console.log(child.kind);
             if (child.kind === ts.SyntaxKind.ExportKeyword || 
                 child.kind === ts.SyntaxKind.AsyncKeyword || 
                 child.kind === ts.SyntaxKind.ExportDeclaration) {
@@ -243,7 +242,6 @@ const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
 otherFakeFiles["fake.ts"] = "export const someValue = 0;";
 
-
 /**
  * Create a compiler host for the TypeScript compiler, which binds to the given
  * IO object.
@@ -255,9 +253,42 @@ function createCompilerHost(
     options: ts.CompilerOptions,
     io: MockIO
 ): ts.CompilerHost {
+
+    /**
+     * Resolve module names for the TypeScript compiler.
+     * Need a custom implementation because otherwise the extensions get mangled;
+     * specifically, things like "bind.decorators.d.ts" becomes "bind.d.decorators.ts".
+     * 
+     * @see https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#customizing-module-resolution
+     * @param moduleNames 
+     * @param containingFile 
+     * @returns 
+     */
+    function resolveModuleNames(
+        moduleNames: string[],
+        containingFile: string
+      ): ts.ResolvedModule[] {
+        const resolvedModules: ts.ResolvedModule[] = [];
+        for (const moduleName of moduleNames) {
+          // try to use standard resolution
+          let result = ts.resolveModuleName(moduleName, containingFile, options, {
+            fileExists: io.fileExists,
+            readFile: io.readFile
+          });
+          if (result.resolvedModule) {
+            resolvedModules.push(result.resolvedModule);
+          } else {
+            // check fallback locations, for simplicity assume that module at location
+            // should be represented by '.d.ts' file
+          }
+        }
+        return resolvedModules;
+    }
+    
     
     return {
         getSourceFile: (fileName, languageVersion) => {
+            //console.log("getSourceFile", fileName, languageVersion);
             const text = io.readFile(fileName);
             if (text === undefined) {
                 return undefined;
@@ -270,12 +301,15 @@ function createCompilerHost(
         },
         getCurrentDirectory: () => "",
         getDirectories: () => [],
-        getCanonicalFileName: (fileName) =>
-            fileName.toLowerCase(),
+        getCanonicalFileName: (fileName) => {
+            //console.log("getCanonicalFileName", fileName);
+            return fileName.toLowerCase()
+        },
         getNewLine: () => "\n",
         useCaseSensitiveFileNames: () => false,
         fileExists: io.fileExists.bind(io),
-        readFile: io.readFile.bind(io)
+        readFile: io.readFile.bind(io),
+        resolveModuleNames
     };
 }
 
@@ -353,7 +387,7 @@ export async function compile(code: string): Promise<CompilationResult> {
 
     // Create file system importer
     const importFile = async (file: string) => {
-        console.log("Need to compile and import", file);
+        //console.log("Need to compile and import", file);
         files[file] = `export const someValue = "Hello world!"`;
     };
 
@@ -363,7 +397,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         {
             fileExists: (fileName) => {
                 const result = fileName === dummyFilePath || fileName in otherFakeFiles;
-                console.log("EXISTS", result, fileName);
+                //console.log("EXISTS", result, fileName);
                 return result;
             },
             readFile: (fileName) => {

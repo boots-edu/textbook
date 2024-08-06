@@ -69,6 +69,10 @@ const iframeContent = `<!DOCTYPE html>
         addEventListener("error", (event) => {
             debugError("Iframe Uncaught Error:", event, knownEngineId);
         });
+
+        function $importModule(moduleName) {
+            console.log("LOADING", moduleName);
+        }
     </script>
 </head>
 <body>
