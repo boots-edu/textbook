@@ -1,5 +1,6 @@
 import * as ts from "typescript";
-import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
+import importableFiles from "./externals/importable_files.json";
+// import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
 
 /**
  * TypeScript type definitions for the instructor runtime library and the pseudo Jest library that
@@ -43,10 +44,13 @@ const ASSET_PATH="/textbook/assets/imports/";
  */
 export interface CompilationResult {
     code?: string;
+    files: Record<string, string>;
     diagnostics: ts.Diagnostic[];
     locals: Map<string, ts.Symbol>;
     typeInformation: Record<string, DocEntry[]>;
 }
+
+export type Importer = (file: string) => void;
 
 /**
  * A TypeScript transformer that removes export statements from the code.
@@ -55,7 +59,7 @@ export interface CompilationResult {
  * It literally just visits all the Export and Async keywords and returns undefined,
  * which removes them from the AST tree.
  */
-const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
+const removeExports: (importFile:Importer)=>ts.TransformerFactory<ts.SourceFile> = (importFile: Importer) => ((context) => {
     return (sourceFile) => {
         const visitChildren = (child: ts.Node): ts.Node | undefined => {
             console.log(child.kind);
@@ -80,6 +84,7 @@ const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
                     identifier = importChild.importClause?.getText() || "";
                 }
                 const moduleName = importChild.moduleSpecifier.getText().replaceAll('"', "");
+                importFile(moduleName);
                 return ts.factory.createVariableStatement(
                     undefined,
                     ts.factory.createVariableDeclarationList(
@@ -232,7 +237,7 @@ interface MockIO {
 }
 
 // The actual TypeScript type definitions
-const otherFakeFiles: Record<string, string> = RAW_D_TS_FILES;
+const otherFakeFiles: Record<string, string> = importableFiles as Record<string, string>;
 // A TypeScript type definition for the kettle compiler.
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
@@ -293,6 +298,8 @@ export function getFileFromWeb(filename:string):Promise<string>{
         req.send();
     })
 }
+
+
 /**
  * @description Replaces import statements with code from assets/imports folder
  * @param code: The original source code as displayed
@@ -332,7 +339,8 @@ export async function compile(code: string): Promise<CompilationResult> {
     options.inlineSourceMap = true;
     options.target = ts.ScriptTarget.ES2016;
     options.removeComments = false;
-    options.module = ts.ModuleKind.ES2015; // ESNEXT?
+    // options.module = ts.ModuleKind.ES2015; // ESNEXT?
+    options.module = ts.ModuleKind.ESNext;
     options.useCaseSensitiveFileNames = false;
     options.allowJs = true;
     options.noLib = false;
@@ -341,6 +349,13 @@ export async function compile(code: string): Promise<CompilationResult> {
     // Create the output "file" in memory
     const [dummyFilePath, dummyFileOut] = ["in-memory-file.ts", "in-memory-file.js"];
     let outputCode: string | undefined = undefined;
+    let files: Record<string, string> = {};
+
+    // Create file system importer
+    const importFile = async (file: string) => {
+        console.log("Need to compile and import", file);
+        files[file] = `export const someValue = "Hello world!"`;
+    };
 
     // Create the fake compiler host
     const host: ts.CompilerHost = createCompilerHost(
@@ -348,7 +363,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         {
             fileExists: (fileName) => {
                 const result = fileName === dummyFilePath || fileName in otherFakeFiles;
-                // console.log("EXISTS", result, fileName);
+                console.log("EXISTS", result, fileName);
                 return result;
             },
             readFile: (fileName) => {
@@ -384,7 +399,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         undefined,
         undefined,
         {
-            before: [removeExports],
+            before: [removeExports(importFile)],
         },
     );
 
@@ -419,6 +434,7 @@ export async function compile(code: string): Promise<CompilationResult> {
     // Return everything
     return {
         code: removeEmptyExports(outputCode),
+        files: files,
         diagnostics: emitResult.diagnostics.concat(diagnostics),
         locals: locals,
         typeInformation: {} /*getClassDefinitions(
