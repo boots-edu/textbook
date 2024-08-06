@@ -45,6 +45,7 @@ const ASSET_PATH="/textbook/assets/imports/";
 export interface CompilationResult {
     code?: string;
     files: Record<string, string>;
+    imports: Record<string, string>;
     diagnostics: ts.Diagnostic[];
     locals: Map<string, ts.Symbol>;
     typeInformation: Record<string, DocEntry[]>;
@@ -233,6 +234,7 @@ interface MockIO {
     fileExists(fileName: string): boolean;
     readFile(fileName: string): string | undefined;
     writeFile(fileName: string, data: string): void;
+    rememberImport(moduleName: string, fileName: string): void;
 }
 
 // The actual TypeScript type definitions
@@ -277,6 +279,7 @@ function createCompilerHost(
           });
           if (result.resolvedModule) {
             resolvedModules.push(result.resolvedModule);
+            io.rememberImport(moduleName, result.resolvedModule.resolvedFileName);
           } else {
             // check fallback locations, for simplicity assume that module at location
             // should be represented by '.d.ts' file
@@ -384,37 +387,51 @@ export async function compile(code: string): Promise<CompilationResult> {
     const [dummyFilePath, dummyFileOut] = ["in-memory-file.ts", "in-memory-file.js"];
     let outputCode: string | undefined = undefined;
     let files: Record<string, string> = {};
+    let imports: Record<string, string> = {};
+
+    const io: MockIO = {
+        fileExists: (fileName) => {
+            const result = fileName === dummyFilePath || fileName in otherFakeFiles;
+            //console.log("EXISTS", result, fileName);
+            return result;
+        },
+        readFile: (fileName) => {
+            if (fileName === dummyFilePath) {
+                return code;
+            }
+            if (fileName in otherFakeFiles) {
+                return otherFakeFiles[fileName];
+            }
+            return undefined;
+        },
+        writeFile: (fileName, data) => {
+            if (fileName === dummyFileOut) {
+                outputCode = data;
+            }
+        },
+        rememberImport: (moduleName, fileName) => {
+            console.log("REMEMBER", moduleName, "->", fileName);
+            // Change d.ts extension to .js
+            if (fileName.endsWith(".d.ts")) {
+                fileName = fileName.slice(0, -5) + ".js";
+            }
+            if (fileName in otherFakeFiles) {
+                imports[moduleName] = otherFakeFiles[fileName];
+            } else {
+                console.error("Unknown import", moduleName, fileName);
+            }
+        }
+    };
 
     // Create file system importer
     const importFile = async (file: string) => {
-        //console.log("Need to compile and import", file);
         files[file] = `export const someValue = "Hello world!"`;
     };
 
     // Create the fake compiler host
     const host: ts.CompilerHost = createCompilerHost(
         options,
-        {
-            fileExists: (fileName) => {
-                const result = fileName === dummyFilePath || fileName in otherFakeFiles;
-                //console.log("EXISTS", result, fileName);
-                return result;
-            },
-            readFile: (fileName) => {
-                if (fileName === dummyFilePath) {
-                    return code;
-                }
-                if (fileName in otherFakeFiles) {
-                    return otherFakeFiles[fileName];
-                }
-                return undefined;
-            },
-            writeFile: (fileName, data) => {
-                if (fileName === dummyFileOut) {
-                    outputCode = data;
-                }
-            }
-        }
+        io
     );
 
     // Create the TypeScript program
@@ -469,6 +486,7 @@ export async function compile(code: string): Promise<CompilationResult> {
     return {
         code: removeEmptyExports(outputCode),
         files: files,
+        imports: imports,
         diagnostics: emitResult.diagnostics.concat(diagnostics),
         locals: locals,
         typeInformation: {} /*getClassDefinitions(
