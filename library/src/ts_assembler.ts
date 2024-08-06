@@ -12,6 +12,7 @@ export interface ProgramExecutionRequest {
     errors: ts.Diagnostic[];
     original: string;
     sourceCodeMapping: SourceCodeMapping;
+    imports: Record<string, string>;
 }
 
 export interface FeedbackExecutionRequest {
@@ -26,13 +27,13 @@ export interface FeedbackExecutionRequest {
 export const EXECUTION_HEADER = `// Execution Header
 let silenceConsole = false;
 let _signedKey = null;
-const parentPost = (type, contents, override=false) => {
+let parentPost = (type, contents, override=false) => {
     //contents = JSON.parse(JSON.stringify(contents));
     if (!silenceConsole || override) {
-        postMessage({type: type, contents: contents});
+        postMessageAlt({type: type, contents: contents});
     }
 };
-const console = {
+let console = {
     log: (...text) => parentPost("console.log", text),
     error: (...text) => parentPost("console.error", text),
     info: (...text) => parentPost("console.info", text),
@@ -40,10 +41,10 @@ const console = {
     table: (...text) => parentPost("console.table", text),
     clear: () => parentPost("console.clear", [])
 };
-const _updateStatus = (message) => {
+let _updateStatus = (message) => {
     parentPost("execution.update", [message]);
 };
-const _kettleSystemError = (place, category, error) => {
+let _kettleSystemError = (place, category, error) => {
     parentPost("execution.error", {
         place,
         category,
@@ -168,7 +169,7 @@ export const EXECUTION_FOOTER = `// Execution Footer
 parentPost("instructor.tests", _results);
 })();
 parentPost("execution.finished", []);
-close();
+//close();
 `;
 
 export interface WrappedCode {
@@ -232,6 +233,7 @@ export async function makeExecutionRequest(studentCode: string, engineId: string
         header: EXECUTION_HEADER,
         student: {
             ...wrappedStudent,
+            imports: studentResults.imports,
             errors: studentResults.diagnostics,
             original: studentCode,
             sourceCodeMapping: extractSourceCodeMap(studentResults.code || "")

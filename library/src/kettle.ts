@@ -2,7 +2,7 @@ import { makeIFrame } from "./safe_iframe";
 import { Timer } from "./timer";
 import { KettleEngineSystemError, handleKettleSystemError, processTypeScriptDiagnostic } from "./ts_traceback";
 import { CONSOLE_API_COMMAND_LIST, ConsoleAPICommand } from "./ts_console";
-import { FeedbackExecutionRequest, ProgramExecutionRequest, makeExecutionRequest } from "./ts_assembler";
+import { FeedbackExecutionRequest, ProgramExecutionRequest } from "./ts_assembler";
 import { ExecutionUI } from "./execution_ui";
 import { v4 as uuidv4 } from "uuid";
 import { executeCode } from "./ts_execution";
@@ -274,14 +274,13 @@ export class ExecutionEngine {
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
 
-        executeCode(this.ui.getCode());
+        const request = await executeCode(this.ui.getCode(), this.engineId,    
+            this.ui.updateStatus.bind(this.ui),
+            this
+        );
 
-        /*
-        const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
-            this.ui.updateStatus("Starting execution", true);
-            this.executeRequest(request);
-            this.ui.updateStatus("Running", false)
+            this.handleExecutionStopped("Execution finished");
         } else {
             console.error("Compilation Errors", request);
             if (request.student.errors.length > 0) {
@@ -290,7 +289,6 @@ export class ExecutionEngine {
             }
             this.handleExecutionStopped("Typescript Error");
         }
-        */
     }
 
     terminateExecution() {

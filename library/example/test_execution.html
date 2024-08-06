@@ -54,15 +54,15 @@
 <body>
 
   <div class="language-typescript highlighter-rouge"><pre>
-    import { bootstrap } from &quot;@boots-edu/webz&quot;;
     import {
         BindValue,
         BindStyleToNumberAppendPx,
         Click,
         WebzComponent,
-        WebzDialog,
         Timer,
     } from &quot;@boots-edu/webz&quot;;
+
+    console.log("Webz loaded!");
 
     const html = `
     &lt;div&gt;
@@ -85,16 +85,11 @@
         name: string = &quot;World&quot;;
 
         @BindValue(&quot;count&quot;)
-        count: number = 0;
+        count: string = "0";
 
         @Click(&quot;button&quot;)
         onClick() {
-            this.count++;
-        }
-
-        @Click(&quot;button&quot;)
-        onButton() {
-            WebzDialog.alert(&quot;Hello, &quot; + this.name + &quot;!&quot;);
+            this.count = (parseInt(this.count, 10) + 1).toString();
         }
         
         constructor() {
@@ -102,10 +97,11 @@
         }
     }
 
-    bootstrap&lt;MainComponent&gt;(MainComponent);
+    let mainInstance = Object.assign(new MainComponent());
+    let mainElement = window.document.getElementById(&quot;webz-0&quot;);
+    mainInstance.appendToDomElement(mainElement);
   </pre>
   </div>
-  <div id="main-target"></div>
 
 <div class="language-typescript highlighter-rouge"><pre>
   /**

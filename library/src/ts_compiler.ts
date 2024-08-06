@@ -337,32 +337,6 @@ export function getFileFromWeb(filename:string):Promise<string>{
 }
 
 
-/**
- * @description Replaces import statements with code from assets/imports folder
- * @param code: The original source code as displayed
- * @returns The original code with the imports injected into the string
- * @async
- */
-async function processImports(code:string):Promise<string>{
-    const lines=code.split("\n");
-    let result="";
-    for (let line of lines){
-        if (line.startsWith("import ")){
-            let regex=/^import\s.*\sfrom\s.*['|"](.*)['|"]'?;\s*$/;
-            let found=regex.exec(line);
-            if (found && found.length>1){
-                let filename=found[1];
-                if (!filename.endsWith(".ts"))
-                    filename+=".ts";
-                let impCode=await getFileFromWeb(filename);
-                result+=(impCode+"\n");
-            }
-        }else{
-            result+=(line+"\n");
-        }
-    }
-    return result;
-}
 //
 // Check and compile in-memory TypeScript code for errors.
 //

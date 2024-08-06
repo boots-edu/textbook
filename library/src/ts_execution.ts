@@ -1,15 +1,36 @@
-import { wrapStudentCode } from "./ts_assembler";
-import { CompilationResult, compile } from "./ts_compiler";
+import { ExecutionEngine } from "./kettle";
+import { FeedbackExecutionRequest, makeExecutionRequest } from "./ts_assembler";
 
-export async function executeCode(code: string) {
+
+export async function executeCode(code: string, engineId: string,
+    updateStatus: (message: any, spinner: any) => void,
+    kettle: ExecutionEngine
+): Promise<FeedbackExecutionRequest> {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     var student, studentNamespace;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const _updateStatus = (message: any) => { console.log("Status:", message); };
+    // const _updateStatus = (message: any) => { console.log("Status:", message); };
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const _kettleSystemError = (place: string, category: string, error: any) => { console.error("Error:", place, category, error); };
+    // const _kettleSystemError = (place: string, category: string, error: any) => { console.error("Error:", place, category, error); };
 
-    const result: CompilationResult = await compile(code);
+    const request = await makeExecutionRequest(code, engineId);
+    const result = request.student;
+
+    if (!request.noErrors) {
+        return request;
+    }
+    updateStatus("Starting execution", true);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let postMessageAlt = (message: any) => { 
+        kettle.handleExecutionEvents(new MessageEvent(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            "message", {data: {
+                ...message,
+                engineId: engineId
+            }}
+        ), request)
+     };
 
     // https://stackoverflow.com/a/19625245/1718155
     // Rudimentary version of require() that can load modules from the result.imports object
@@ -25,8 +46,9 @@ export async function executeCode(code: string) {
             throw new Error(`Module ${moduleName} not found, could not $importModule it.`);
         }
 
-        console.log("LOADING", moduleName, moduleName in result.imports);
+        // console.log("LOADING", moduleName, moduleName in result.imports);
         const module = {id: moduleName, exports};
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const importedCode = result.imports[moduleName];
         const importAsFunction = new Function("require", "exports", "module", importedCode);
         try {
@@ -35,23 +57,15 @@ export async function executeCode(code: string) {
             console.error("Error loading module", moduleName, e);
             throw e;
         }
-        console.log("Loaded", moduleName, exports);
+        // console.log("Loaded", moduleName, exports);
         return exports;
     }
     require = $importModule;
+    
+    // console.log(Object.keys(result.imports));
+    // console.log(wrapped.code);
+    // console.log("-------- Executing --------");
+    eval(request.assembled);
 
-    // console.log(result.code);
-    console.log("Errors:", result.diagnostics.length);
-    if (result.diagnostics.length) {
-        result.diagnostics.forEach(d => 
-            // eslint-disable-next-line @typescript-eslint/no-base-to-string
-            { console.log(`[${d.category}] ${d.messageText} at ${d.start}`); }
-        );
-    }
-
-    const wrapped = wrapStudentCode(result.code || "undefined", 0, result.locals);
-    console.log(Object.keys(result.imports));
-    console.log(wrapped.code);
-    console.log("-------- Executing --------");
-    eval(wrapped.code);
+    return request;
 }
