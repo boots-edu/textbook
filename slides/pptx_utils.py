@@ -21,9 +21,9 @@ def replace_with_image(img, shape, slide, max_size=False, presentation=None):
     ratio = min(shape.width / float(pic.width), shape.height / float(pic.height))
 
     if max_size:
-        start_of_content_area = slide.shapes.title.top + slide.shapes.title.height
+        start_of_content_area = slide.shapes.title.top + slide.shapes.title.height + Inches(0.5)
         height_of_content_area = presentation.slide_height - start_of_content_area
-        height_of_content_area -= Inches(0.5)
+        height_of_content_area -= Inches(1.0)
         pic.width = int(height_of_content_area * pic.width / pic.height)
         pic.height = int(height_of_content_area)
         pic.top = start_of_content_area
