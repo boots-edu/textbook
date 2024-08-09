@@ -62,8 +62,9 @@ jobs:
           echo "# Slides" > "$output_file"
 
           # Construct the base URL dynamically
-          repo_url="https://${GITHUB_REPOSITORY#*/}.github.io"
-          base_url="$repo_url/${GITHUB_REPOSITORY##*/}/assets/slides"
+          org_name="${GITHUB_REPOSITORY%/*}"
+          repo_name="${GITHUB_REPOSITORY##*/}"
+          base_url="https://$org_name.github.io/$repo_name/assets/slides"
 
           # Iterate over all of the markdown files in ../source/text/ directories
           for file in ../source/text/**/*.md; do
