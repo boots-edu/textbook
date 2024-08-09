@@ -97,9 +97,11 @@
         }
     }
 
-    let mainInstance = Object.assign(new MainComponent());
-    let mainElement = window.document.getElementById(&quot;webz-0&quot;);
-    mainInstance.appendToDomElement(mainElement);
+_setIframeVisible(true);
+let mainInstance = new MainComponent();
+let mainElement = window.document.body;
+mainElement.innerHTML = "";
+mainInstance.appendToDomElement(mainElement);
   </pre>
   </div>
 

@@ -34,7 +34,7 @@ export class ExecutionUI {
     constructor(
         root: HTMLElement,
         initialCode: string,
-        iframe: HTMLIFrameElement,
+        private iframe: HTMLIFrameElement,
     ) {
         this.root = root;
         this.codeEditor = this.createCodeEditor(initialCode);
@@ -126,7 +126,16 @@ export class ExecutionUI {
         webzBox.appendChild(iframe);
         // Webz is initially hidden
         // webzBox.style.display = "none";
+        console.log(">", iframe);
         return webzBox;
+    }
+
+    setIframeVisible(visible: boolean) {
+        if (visible) {
+            this.iframe.style.display = "block";
+        } else {
+            this.iframe.style.display = "none";
+        }
     }
 
     destroy() {

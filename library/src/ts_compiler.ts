@@ -19,6 +19,7 @@ const KETTLE_JEST_D_TS = `
     declare function describe(name: string, tests: any): void;
     declare function test(name: string, assertions: any): void;
     declare function expect(actual: any): Assertion;
+    declare function _setIframeVisible(visible: boolean): void;
     declare var student: Record<string, any>;
     interface DocEntry {
         name?: string,
@@ -384,7 +385,7 @@ export async function compile(code: string): Promise<CompilationResult> {
             }
         },
         rememberImport: (moduleName, fileName) => {
-            console.log("REMEMBER", moduleName, "->", fileName);
+            // console.log("REMEMBER", moduleName, "->", fileName);
             // Change d.ts extension to .js
             if (fileName.endsWith(".d.ts")) {
                 fileName = fileName.slice(0, -5) + ".js";

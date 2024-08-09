@@ -1,6 +1,7 @@
 import ts from "typescript";
 import { SourceCodeMapping, extractSourceCodeMap } from "./ts_source";
 import { CompilationResult, compile } from "./ts_compiler";
+import { linkObjects } from "./ts_linker";
 
 export interface ProgramExecutionRequest {
     code: string;
@@ -15,6 +16,12 @@ export interface ProgramExecutionRequest {
     imports: Record<string, string>;
 }
 
+export interface ProgramLinking {
+    importCache: Record<string, any[]>;
+    require: (moduleName: string) => any[];
+    $importModule: (moduleName: string) => any[];
+}
+
 export interface FeedbackExecutionRequest {
     header: string;
     student: ProgramExecutionRequest;
@@ -22,17 +29,32 @@ export interface FeedbackExecutionRequest {
     noErrors: boolean;
     signedKey: string;
     engineId: string;
+    linking: ProgramLinking;
 }
 
-export const EXECUTION_HEADER = `// Execution Header
+export const FUNCTIONS_AVAILABLE_TO_STUDENTS = [
+    "console",
+    "$importModule",
+    "describe",
+    "test",
+    "expect",
+    "_setIframeVisible",
+]
+
+export const EXECUTION_HEADER = /*javascript*/`// Execution Header
 let silenceConsole = false;
 let _signedKey = null;
 let parentPost = (type, contents, override=false) => {
-    //contents = JSON.parse(JSON.stringify(contents));
+    // contents = JSON.parse(JSON.stringify(contents));
     if (!silenceConsole || override) {
-        postMessageAlt({type: type, contents: contents});
+        postMessage({
+            type: type, 
+            contents: contents,
+            isForParent: true,
+        });
     }
 };
+let originalConsole = window.console;
 let console = {
     log: (...text) => parentPost("console.log", text),
     error: (...text) => parentPost("console.error", text),
@@ -56,10 +78,13 @@ let _kettleSystemError = (place, category, error) => {
         }
     });
 }
+var _setIframeVisible = (visible) => {
+    parentPost("iframe.visibility", visible);
+};
 // Listen for cool stuff
-addEventListener('message', (message) => {
+/*addEventListener('message', (message) => {
     console.log("Web Worker internally heard", message)
-});
+});*/
 
 var describe, test, expect;
 (function() {
@@ -165,7 +190,7 @@ expect = (actual) => {
 };
 `;
 
-export const EXECUTION_FOOTER = `// Execution Footer
+export const EXECUTION_FOOTER = /*javascript*/`// Execution Footer
 parentPost("instructor.tests", _results);
 })();
 parentPost("execution.finished", []);
@@ -188,15 +213,17 @@ export const wrapStudentCode = (
     offset: number = 0,
     locals: Map<string, ts.Symbol>,
 ): WrappedCode => {
+    const functionParameters = FUNCTIONS_AVAILABLE_TO_STUDENTS.map((f) => JSON.stringify(f)).join(", ");
+    const functionArguments = FUNCTIONS_AVAILABLE_TO_STUDENTS.join(", ");
     code = code.replace(/[\\`$]/g, "\\$&");
     code += "\nreturn {" + Array.from(locals.keys()).join(", ") + "};";
-    const wrapped = `_updateStatus("Executing Student Code"); // $Student Code
+    const wrapped = /*javascript*/`_updateStatus("Executing Student Code"); // $Student Code
 student = {};
 studentNamespace = {};
 try {
-    const __studentFunction = Function("$importModule", \`${code}\`).bind(studentNamespace);
+    const __studentFunction = Function(${functionParameters}, \`"use strict";\n${code}\`).bind(studentNamespace);
     try {
-        student = __studentFunction($importModule);
+        student = __studentFunction(${functionArguments});
     } catch (e) {
         _kettleSystemError('student', "runtime", e);
     }
@@ -226,20 +253,27 @@ export async function makeExecutionRequest(studentCode: string, engineId: string
     assemblage.push(EXECUTION_FOOTER);
     const assembled = assemblage.join("\n");
 
-    console.log(assembled);
+    // Build the student object
+    const student: ProgramExecutionRequest = {
+        ...wrappedStudent,
+        imports: studentResults.imports,
+        errors: studentResults.diagnostics,
+        original: studentCode,
+        sourceCodeMapping: extractSourceCodeMap(studentResults.code || "")
+    };
+    // Link in imports, if any
+    const linking = linkObjects(student);
 
-    return {
+    // Generate actual final request
+    const request: FeedbackExecutionRequest = {
         assembled,
+        linking,
         header: EXECUTION_HEADER,
-        student: {
-            ...wrappedStudent,
-            imports: studentResults.imports,
-            errors: studentResults.diagnostics,
-            original: studentCode,
-            sourceCodeMapping: extractSourceCodeMap(studentResults.code || "")
-        },
+        student,
         signedKey,
         engineId,
         noErrors: studentResults.diagnostics.length === 0,
     };
+    console.debug(request);
+    return request;
 }
