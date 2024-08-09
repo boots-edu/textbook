@@ -1,5 +1,6 @@
 import * as ts from "typescript";
-import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
+import importableFiles from "./externals/importable_files.json";
+// import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
 
 /**
  * TypeScript type definitions for the instructor runtime library and the pseudo Jest library that
@@ -18,6 +19,7 @@ const KETTLE_JEST_D_TS = `
     declare function describe(name: string, tests: any): void;
     declare function test(name: string, assertions: any): void;
     declare function expect(actual: any): Assertion;
+    declare function _setIframeVisible(visible: boolean): void;
     declare var student: Record<string, any>;
     interface DocEntry {
         name?: string,
@@ -43,10 +45,14 @@ const ASSET_PATH="/textbook/assets/imports/";
  */
 export interface CompilationResult {
     code?: string;
+    files: Record<string, string>;
+    imports: Record<string, string>;
     diagnostics: ts.Diagnostic[];
     locals: Map<string, ts.Symbol>;
     typeInformation: Record<string, DocEntry[]>;
 }
+
+export type Importer = (file: string) => void;
 
 /**
  * A TypeScript transformer that removes export statements from the code.
@@ -55,18 +61,48 @@ export interface CompilationResult {
  * It literally just visits all the Export and Async keywords and returns undefined,
  * which removes them from the AST tree.
  */
-const removeExports: ts.TransformerFactory<ts.SourceFile> = ((context) => {
+const removeExports: (importFile:Importer)=>ts.TransformerFactory<ts.SourceFile> = (importFile: Importer) => ((context) => {
     return (sourceFile) => {
         const visitChildren = (child: ts.Node): ts.Node | undefined => {
-            if (child.kind == ts.SyntaxKind.ExportKeyword) return undefined;
-            if (child.kind == ts.SyntaxKind.AsyncKeyword) return undefined;
-            if (child.kind === ts.SyntaxKind.ExportDeclaration) {
+            if (child.kind === ts.SyntaxKind.ExportKeyword || 
+                child.kind === ts.SyntaxKind.AsyncKeyword || 
+                child.kind === ts.SyntaxKind.ExportDeclaration) {
                 return undefined;
             }
-
             return ts.visitEachChild(child, visitChildren, context);
         };
         const convertNode = (node: ts.Node) => {
+            if (node.kind === ts.SyntaxKind.ImportDeclaration) {
+                // return ts.createVariableDeclarationList([], ts.NodeFlags.Const);
+                const importChild = node as ts.ImportDeclaration;
+                let identifier: string | ts.BindingName;
+                if (importChild.importClause?.namedBindings?.kind === ts.SyntaxKind.NamedImports) {
+                    const namedBindings = importChild.importClause.namedBindings as ts.NamedImports;
+                    identifier = ts.factory.createObjectBindingPattern(namedBindings.elements.map(
+                        (node) => ts.factory.createBindingElement(undefined, undefined, ts.factory.createIdentifier(node.getText()), undefined)
+                    ));
+                } else {
+                    identifier = importChild.importClause?.getText() || "";
+                }
+                const moduleName = importChild.moduleSpecifier.getText().replaceAll('"', "");
+                importFile(moduleName);
+                return ts.factory.createVariableStatement(
+                    undefined,
+                    ts.factory.createVariableDeclarationList(
+                        [ts.factory.createVariableDeclaration(
+                            identifier,
+                            undefined,
+                            undefined,
+                            ts.factory.createCallExpression(
+                                ts.factory.createIdentifier("$importModule"),
+                                undefined,
+                                [ts.factory.createStringLiteral(moduleName)],
+                            )
+                        )],
+                        ts.NodeFlags.Const
+                    )
+                );
+            }
             return ts.visitEachChild(node, visitChildren, context);
         };
         const visit = (node: ts.Node): ts.Node => {
@@ -199,14 +235,15 @@ interface MockIO {
     fileExists(fileName: string): boolean;
     readFile(fileName: string): string | undefined;
     writeFile(fileName: string, data: string): void;
+    rememberImport(moduleName: string, fileName: string): void;
 }
 
 // The actual TypeScript type definitions
-const otherFakeFiles: Record<string, string> = RAW_D_TS_FILES;
+const otherFakeFiles: Record<string, string> = importableFiles as Record<string, string>;
 // A TypeScript type definition for the kettle compiler.
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
 otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
-
+otherFakeFiles["fake.ts"] = "export const someValue = 0;";
 
 /**
  * Create a compiler host for the TypeScript compiler, which binds to the given
@@ -219,9 +256,43 @@ function createCompilerHost(
     options: ts.CompilerOptions,
     io: MockIO
 ): ts.CompilerHost {
+
+    /**
+     * Resolve module names for the TypeScript compiler.
+     * Need a custom implementation because otherwise the extensions get mangled;
+     * specifically, things like "bind.decorators.d.ts" becomes "bind.d.decorators.ts".
+     * 
+     * @see https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#customizing-module-resolution
+     * @param moduleNames 
+     * @param containingFile 
+     * @returns 
+     */
+    function resolveModuleNames(
+        moduleNames: string[],
+        containingFile: string
+      ): ts.ResolvedModule[] {
+        const resolvedModules: ts.ResolvedModule[] = [];
+        for (const moduleName of moduleNames) {
+          // try to use standard resolution
+          let result = ts.resolveModuleName(moduleName, containingFile, options, {
+            fileExists: io.fileExists,
+            readFile: io.readFile
+          });
+          if (result.resolvedModule) {
+            resolvedModules.push(result.resolvedModule);
+            io.rememberImport(moduleName, result.resolvedModule.resolvedFileName);
+          } else {
+            // check fallback locations, for simplicity assume that module at location
+            // should be represented by '.d.ts' file
+          }
+        }
+        return resolvedModules;
+    }
+    
     
     return {
         getSourceFile: (fileName, languageVersion) => {
+            //console.log("getSourceFile", fileName, languageVersion);
             const text = io.readFile(fileName);
             if (text === undefined) {
                 return undefined;
@@ -234,12 +305,15 @@ function createCompilerHost(
         },
         getCurrentDirectory: () => "",
         getDirectories: () => [],
-        getCanonicalFileName: (fileName) =>
-            fileName.toLowerCase(),
+        getCanonicalFileName: (fileName) => {
+            //console.log("getCanonicalFileName", fileName);
+            return fileName.toLowerCase()
+        },
         getNewLine: () => "\n",
         useCaseSensitiveFileNames: () => false,
         fileExists: io.fileExists.bind(io),
-        readFile: io.readFile.bind(io)
+        readFile: io.readFile.bind(io),
+        resolveModuleNames
     };
 }
 
@@ -262,38 +336,14 @@ export function getFileFromWeb(filename:string):Promise<string>{
         req.send();
     })
 }
-/**
- * @description Replaces import statements with code from assets/imports folder
- * @param code: The original source code as displayed
- * @returns The original code with the imports injected into the string
- * @async
- */
-async function processImports(code:string):Promise<string>{
-    const lines=code.split("\n");
-    let result="";
-    for (let line of lines){
-        if (line.startsWith("import ")){
-            let regex=/^import\s.*\sfrom\s.*['|"](.*)['|"]'?;\s*$/;
-            let found=regex.exec(line);
-            if (found && found.length>1){
-                let filename=found[1];
-                if (!filename.endsWith(".ts"))
-                    filename+=".ts";
-                let impCode=await getFileFromWeb(filename);
-                result+=(impCode+"\n");
-            }
-        }else{
-            result+=(line+"\n");
-        }
-    }
-    return result;
-}
+
+
 //
 // Check and compile in-memory TypeScript code for errors.
 //
 export async function compile(code: string): Promise<CompilationResult> {
     //parse and remove imports
-    code = await processImports(code);
+    // code = await processImports(code);
     // Setup the fake compiler's options
     const options = ts.getDefaultCompilerOptions();
     options.noImplicitAny = true;
@@ -301,7 +351,8 @@ export async function compile(code: string): Promise<CompilationResult> {
     options.inlineSourceMap = true;
     options.target = ts.ScriptTarget.ES2016;
     options.removeComments = false;
-    options.module = ts.ModuleKind.ES2015; // ESNEXT?
+    // options.module = ts.ModuleKind.ES2015; // ESNEXT?
+    options.module = ts.ModuleKind.ESNext;
     options.useCaseSensitiveFileNames = false;
     options.allowJs = true;
     options.noLib = false;
@@ -310,29 +361,52 @@ export async function compile(code: string): Promise<CompilationResult> {
     // Create the output "file" in memory
     const [dummyFilePath, dummyFileOut] = ["in-memory-file.ts", "in-memory-file.js"];
     let outputCode: string | undefined = undefined;
+    let files: Record<string, string> = {};
+    let imports: Record<string, string> = {};
+
+    const io: MockIO = {
+        fileExists: (fileName) => {
+            const result = fileName === dummyFilePath || fileName in otherFakeFiles;
+            //console.log("EXISTS", result, fileName);
+            return result;
+        },
+        readFile: (fileName) => {
+            if (fileName === dummyFilePath) {
+                return code;
+            }
+            if (fileName in otherFakeFiles) {
+                return otherFakeFiles[fileName];
+            }
+            return undefined;
+        },
+        writeFile: (fileName, data) => {
+            if (fileName === dummyFileOut) {
+                outputCode = data;
+            }
+        },
+        rememberImport: (moduleName, fileName) => {
+            // console.log("REMEMBER", moduleName, "->", fileName);
+            // Change d.ts extension to .js
+            if (fileName.endsWith(".d.ts")) {
+                fileName = fileName.slice(0, -5) + ".js";
+            }
+            if (fileName in otherFakeFiles) {
+                imports[moduleName] = otherFakeFiles[fileName];
+            } else {
+                console.error("Unknown import", moduleName, fileName);
+            }
+        }
+    };
+
+    // Create file system importer
+    const importFile = async (file: string) => {
+        files[file] = `export const someValue = "Hello world!"`;
+    };
 
     // Create the fake compiler host
     const host: ts.CompilerHost = createCompilerHost(
         options,
-        {
-            fileExists: (fileName) => {
-                return fileName === dummyFilePath || fileName in otherFakeFiles;
-            },
-            readFile: (fileName) => {
-                if (fileName === dummyFilePath) {
-                    return code;
-                }
-                if (fileName in otherFakeFiles) {
-                    return otherFakeFiles[fileName];
-                }
-                return undefined;
-            },
-            writeFile: (fileName, data) => {
-                if (fileName === dummyFileOut) {
-                    outputCode = data;
-                }
-            }
-        }
+        io
     );
 
     // Create the TypeScript program
@@ -351,7 +425,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         undefined,
         undefined,
         {
-            before: [removeExports],
+            before: [removeExports(importFile)],
         },
     );
 
@@ -386,6 +460,8 @@ export async function compile(code: string): Promise<CompilationResult> {
     // Return everything
     return {
         code: removeEmptyExports(outputCode),
+        files: files,
+        imports: imports,
         diagnostics: emitResult.diagnostics.concat(diagnostics),
         locals: locals,
         typeInformation: {} /*getClassDefinitions(

@@ -24,7 +24,8 @@ from pptx_utils import no_bullet, format_run, replace_with_image
 
 class CodeStyle(Style):
     default_style = ""
-    styles = {
+    """
+    light_mode_styles = {
         token.Whitespace: "#bbbbbb",
         token.Comment: "#008800",
         token.String: "#800080",
@@ -40,10 +41,27 @@ class CodeStyle(Style):
         token.Generic.Error: "#d30202",
         token.Error: "bg:#e3d2d2 #a61717",
     }
+    """
+    # Dark mode
+    styles = {
+        token.Whitespace: "#000000",
+        token.Comment: "#008800",
+        token.String: "#800080",
+        token.Number: "#2c8553",
+        token.Other: "bg:#ffffe0",
+        token.Keyword: "#2c2cff",
+        token.Keyword.Reserved: "#353580",
+        token.Keyword.Constant: "",
+        token.Name.Builtin: "#2c2cff",
+        token.Name.Variable: "#2c2cff",
+        token.Generic: "#b0b0b0",
+        token.Generic.Emph: "#c0c0c0",
+        token.Generic.Error: "#d30202",
+        token.Error: "bg:#e3d2d2 #a61717",
+    }
     
 
 class PowerPointCodeFormatter(Formatter):
-    MAX_REASONABLE_LINE = 14
 
     def __init__(self, text_frame, code, **options):
         self.options = options
@@ -77,7 +95,7 @@ class PowerPointCodeFormatter(Formatter):
             print("Throwing away codeblock!")
 
 
-def format_code_as_image(presentation, current_slide, current_side, code, lexer, **options):
+def format_code_as_image(presentation, current_slide, placeholder, code, lexer, **options):
     formatter = ImageFormatter(
                 line_numbers=False,
                 style=CodeStyle,  # get_style_by_name('sas'),
@@ -90,8 +108,6 @@ def format_code_as_image(presentation, current_slide, current_side, code, lexer,
     with io.BytesIO() as temporary_image:
         temporary_image.write(image_information)
         temporary_image.seek(0)
-        # TODO: Also make this dynamically placed
-        placeholder = current_slide.placeholders[current_side]
         replace_with_image(
             temporary_image,
             placeholder,

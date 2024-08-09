@@ -20,6 +20,58 @@ parent: Webz Introduction
 ## Key Idea
 ***WebZ*** is a lightweight web framework designed for this book.  It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on Typescript development
 
+# Working Example of Webz
+
+```typescript
+import {
+	BindValue,
+	BindStyleToNumberAppendPx,
+	Click,
+	WebzComponent,
+	Timer,
+} from "@boots-edu/webz";
+
+const html = `
+    <div>
+        <span>Hello <span id="name"></span></span>
+        <button id="button">Click me!</button>
+        <div>
+            <span>Count: <span id="count"></span></span>
+        </div>
+    </div>
+`;
+const css = `
+button {
+	background-color: blue;
+	color: white;
+}
+`;
+
+class MainComponent extends WebzComponent {
+	@BindValue("name")
+	name: string = "World";
+
+	@BindValue("count")
+	count: string = "0";
+
+	@Click("button")
+	onClick() {
+		this.count = (parseInt(this.count, 10) + 1).toString();
+	}
+	
+	constructor() {
+		super(html, css);
+	}
+}
+
+_setIframeVisible(true);
+let mainInstance = new MainComponent();
+let mainElement = window.document.body;
+mainElement.innerHTML = "";
+mainInstance.appendToDomElement(mainElement);
+console.log(mainInstance.name);
+```
+
 ## Overview
 Once we have some html, we would like it to do something.  That’s where the typescript comes in.
 You can create a web application without a framework, but it can be difficult and requires a deeper knowledge of how a web browser works.
@@ -238,6 +290,8 @@ In this section we learned about the Webz framework and how we can build a simpl
 
 ## Chapter Summary
 In this chapter we have learned the basics of web development including html and css.  We have introduced ***WebZ*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applications.
+
+
 # Next Step
 
 Next we'll learn more advanced features of Webz and how to use them [Advanced WebZ &raquo;](../10-webz-advanced/index.md)

@@ -24,6 +24,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@boots-edu/webz": "^0.9.12",
         "@codemirror/lang-javascript": "github:codemirror/lang-javascript",
         "@jest/globals": "^29.7.0",
         "@types/jest": "^29.5.12",

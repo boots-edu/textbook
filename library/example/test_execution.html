@@ -52,6 +52,59 @@
   
 </head>
 <body>
+
+  <div class="language-typescript highlighter-rouge"><pre>
+    import {
+        BindValue,
+        BindStyleToNumberAppendPx,
+        Click,
+        WebzComponent,
+        Timer,
+    } from &quot;@boots-edu/webz&quot;;
+
+    console.log("Webz loaded!");
+
+    const html = `
+    &lt;div&gt;
+        &lt;span&gt;Hello &lt;span id=&quot;name&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;button id=&quot;button&quot;&gt;Click me!&lt;/button&gt;
+        &lt;div&gt;
+            &lt;span&gt;Count: &lt;span id=&quot;count&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    `;
+    const css = `
+    button {
+        background-color: blue;
+        color: white;
+    }
+    `;
+
+    class MainComponent extends WebzComponent {
+        @BindValue(&quot;name&quot;)
+        name: string = &quot;World&quot;;
+
+        @BindValue(&quot;count&quot;)
+        count: string = "0";
+
+        @Click(&quot;button&quot;)
+        onClick() {
+            this.count = (parseInt(this.count, 10) + 1).toString();
+        }
+        
+        constructor() {
+            super(html, css);
+        }
+    }
+
+_setIframeVisible(true);
+let mainInstance = new MainComponent();
+let mainElement = window.document.body;
+mainElement.innerHTML = "";
+mainInstance.appendToDomElement(mainElement);
+  </pre>
+  </div>
+
 <div class="language-typescript highlighter-rouge"><pre>
   /**
   * Bring an umbrella if it is not raining

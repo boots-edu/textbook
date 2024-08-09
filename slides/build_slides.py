@@ -23,7 +23,7 @@ import io
 from urllib.parse import unquote
 
 import marko
-from pptx_extension import PowerPointRenderer, PPTXRenderExtension
+from pptx_extension import PowerPointRenderer, PPTXRenderExtension, SlideConverter
 from markdown_tools import extract_front_matter
 
 # Main Function
@@ -38,6 +38,7 @@ def build_slides(
     PowerPointRenderer.GRAPHICS_FOLDER = graphics_path
     PowerPointRenderer._input_path = input_path
     converter = marko.Markdown(extensions=[PPTXRenderExtension])
+    pptx_converter = SlideConverter({})
     #converter.use(PPTXRenderExtension)
     # Read input file
     if not quiet:
@@ -57,14 +58,15 @@ def build_slides(
         input_text
     )
     if not quiet:
-        yield "Converting markdown to HTML"
+        yield "Converting markdown to Internal Format"
     rendered = converter.convert(input_content)
-    if not quiet:
-        yield "Rendering markdown to PowerPoint"
     rendered += converter.renderer.finish()
     if not quiet:
+        yield "Rendering internal to PowerPoint"
+    pptx = pptx_converter.convert(converter.renderer.slides)
+    if not quiet:
         yield "Saving PowerPoint"
-    presentation = converter.renderer.presentation
+    presentation = pptx_converter.presentation
     presentation.save(output_path)
     if not quiet:
         yield "Finished powerpoint"

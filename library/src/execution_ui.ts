@@ -21,6 +21,8 @@ export interface RunControls {
 
 
 export class ExecutionUI {
+    private static uniqueIDCounter = 0;
+    public uniqueID: number = ExecutionUI.uniqueIDCounter++;
     public root: HTMLElement;
     public codeEditor: EditorView;
     public runControls: RunControls;
@@ -32,7 +34,7 @@ export class ExecutionUI {
     constructor(
         root: HTMLElement,
         initialCode: string,
-        iframe: HTMLIFrameElement,
+        private iframe: HTMLIFrameElement,
     ) {
         this.root = root;
         this.codeEditor = this.createCodeEditor(initialCode);
@@ -115,6 +117,7 @@ export class ExecutionUI {
     }
     createWebz(iframe: HTMLIFrameElement) {
         const webzBox = document.createElement("div");
+        webzBox.id = `webz-${this.uniqueID}`;
         this.root.appendChild(webzBox);
         // Create header for box
         const header = document.createElement("strong");
@@ -122,8 +125,17 @@ export class ExecutionUI {
         webzBox.appendChild(header);
         webzBox.appendChild(iframe);
         // Webz is initially hidden
-        webzBox.style.display = "none";
+        // webzBox.style.display = "none";
+        console.log(">", iframe);
         return webzBox;
+    }
+
+    setIframeVisible(visible: boolean) {
+        if (visible) {
+            this.iframe.style.display = "block";
+        } else {
+            this.iframe.style.display = "none";
+        }
     }
 
     destroy() {

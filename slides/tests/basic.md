@@ -20,7 +20,7 @@ parent: Introduction To Typescript
 
 ## Key Idea
 
-A string is sequence of character values used to store text data.
+A string is sequence of **character values** used to store text data.
 
 ## Overview
 
@@ -259,7 +259,8 @@ console.log(myStr); // "Hello World"
 
 ### Other String Methods
 
-There are MANY other methods available to the string type, but these are some of the more useful and common.  Some other useful ones we will not cover in detail here are:
+There are MANY other methods available to the string type, but these are some of the more useful and common. 
+Some other useful ones we will not cover in detail here are:
 
 * `startsWith(pattern)`/`endsWith(pattern)`: Check if a string starts or ends with a certain value
 * `includes(pattern)`: Check if a string contains a certain value anywhere inside

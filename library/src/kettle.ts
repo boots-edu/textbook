@@ -1,8 +1,8 @@
-import { makeIFrame } from "./safe_iframe";
+import { executeCodeInIFrame, makeIFrame, sendDataToIframe, terminateIFrame, toggleIFrameDebug } from "./safe_iframe";
 import { Timer } from "./timer";
 import { KettleEngineSystemError, handleKettleSystemError, processTypeScriptDiagnostic } from "./ts_traceback";
 import { CONSOLE_API_COMMAND_LIST, ConsoleAPICommand } from "./ts_console";
-import { FeedbackExecutionRequest, ProgramExecutionRequest, makeExecutionRequest } from "./ts_assembler";
+import { FeedbackExecutionRequest, makeExecutionRequest, ProgramExecutionRequest } from "./ts_assembler";
 import { ExecutionUI } from "./execution_ui";
 import { v4 as uuidv4 } from "uuid";
 
@@ -127,6 +127,8 @@ export class ExecutionEngine {
             }
         } else if (event.data.type === "instructor.log") {
             this.ui.console.log(...event.data.contents);
+        } else if (event.data.type === "iframe.visibility") {
+            this.ui.setIframeVisible(event.data.contents);
         } else {
             if (event.data.source === "react-devtools-content-script") {
                 return false;
@@ -242,24 +244,17 @@ export class ExecutionEngine {
         window.addEventListener("message", this.latestListener);
         // Setup iframe listeners
         if (this.iframe.contentWindow) {
-            this.iframe.contentWindow.postMessage(
-                {
-                    type: "debug",
-                    contents: this.isDebugMode,
-                    engineId: this.engineId
-                },
-                "*",
-            );
-            this.iframe.contentWindow.postMessage(
-                {
-                    type: "execute",
-                    code: request.assembled,
-                    engineId: this.engineId
-                },
-                "*",
-            );
+            try {
+                toggleIFrameDebug(this.iframe, this.engineId, this.isDebugMode);
+                sendDataToIframe(this.iframe, "require", request.linking.require);
+                sendDataToIframe(this.iframe, "$importModule", request.linking.$importModule);
+                executeCodeInIFrame(this.iframe, request.assembled, this.engineId);
+            } catch (e) {
+                console.error("Error executing code in iframe", e);
+                this.ui.console.error("Error executing code in iframe", e);
+            }
         } else {
-            console.error("Iframe not ready for execution.");
+            this.ui.console.error("Iframe not ready for execution.");
         }
         // Change the button to a stop button
         this.ui.updateButtons(true, true);
@@ -272,11 +267,10 @@ export class ExecutionEngine {
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
+
         const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
         if (request.noErrors) {
-            this.ui.updateStatus("Starting execution", true);
             this.executeRequest(request);
-            this.ui.updateStatus("Running", false)
         } else {
             console.error("Compilation Errors", request);
             if (request.student.errors.length > 0) {
@@ -289,13 +283,7 @@ export class ExecutionEngine {
 
     terminateExecution() {
         if (this.iframe.contentWindow) {
-            this.iframe.contentWindow.postMessage(
-                {
-                    type: "terminate",
-                    engineId: this.engineId
-                },
-                "*",
-            );
+            terminateIFrame(this.iframe, this.engineId);
         } else {
             console.error("Iframe not ready for execution.");
         }
