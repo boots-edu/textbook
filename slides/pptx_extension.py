@@ -125,7 +125,8 @@ class SlideConverter:
                     continue
                 
                 # Fill in the key idea, if available
-                self.add_content(current_slide, current_slide.shapes.placeholders[13], slide.key_idea)
+                if slide.key_idea:
+                    self.add_content(current_slide, current_slide.shapes.placeholders[13], slide.key_idea)
                 
                 # Fill up the content, two at a time
                 if len(content) == 1:
