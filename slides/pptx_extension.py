@@ -368,9 +368,9 @@ class PowerPointRenderer(GFMRendererMixin):
 
     def finish(self):
         # Pretty print self.slides (list of dataclasses)
-        content = "#".join(slide.to_preview() for slide in self.slides)
-        with open("dist/var_slides.txt", "w") as f:
-            print(content, file=f)
+        # content = "#".join(slide.to_preview() for slide in self.slides)
+        # with open("dist/var_slides.txt", "w") as f:
+        #     print(content, file=f)
         return ""
 
     @staticmethod
