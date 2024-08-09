@@ -67,7 +67,8 @@ jobs:
           base_url="https://$org_name.github.io/$repo_name/assets/slides"
 
           # Iterate over all of the markdown files in ../source/text/ directories
-          for file in ../source/text/**/*.md; do
+          # for file in ../source/text/**/*.md; do
+          find ../source/text/ -type f -name "*.md" | sort -V | while read -r file; do
             # Extract the base name of the file (e.g., "conditionals.md")
             base_name=$(basename "$file")
             # Extract the directory name of the file (e.g., "1-typescript")
