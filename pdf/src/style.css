@@ -1,0 +1,148 @@
+/* General Document Styling */
+@page {
+    size: letter;
+    margin: 1in;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+h1, h2, h3, h4, h5, h6 {
+    color: #2C3E50;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    font-family: 'Georgia', serif;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 16pt;
+}
+
+h5 {
+    font-size: 14pt;
+}
+
+h6 {
+    font-size: 12pt;
+}
+
+/* Paragraph and Text Styling */
+p {
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+    text-align: justify;
+}
+
+blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #2C3E50;
+    background-color: #f9f9f9;
+}
+
+/* List Styles */
+ul, ol {
+    margin: 12pt 0;
+    padding-left: 20pt;
+}
+
+ul li, ol li {
+    margin-bottom: 6pt;
+}
+
+/* Code Styling */
+pre, code {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background-color: #f4f4f4;
+    padding: 2pt 4pt;
+    border-radius: 4px;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 12pt;
+    border: 1px solid #ddd;
+}
+
+code {
+    color: #2C3E50;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12pt;
+}
+
+th, td {
+    padding: 8pt;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 12pt 0;
+}
+
+/* Footer and Header */
+@page {
+    @top-center {
+        content: 'Document Title';
+        font-family: 'Georgia', serif;
+        font-size: 10pt;
+        color: #888;
+    }
+
+    @bottom-right {
+        content: counter(page);
+        font-family: 'Georgia', serif;
+        font-size: 10pt;
+        color: #888;
+    }
+}
+
+
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:#444a}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
