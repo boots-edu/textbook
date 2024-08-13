@@ -146,9 +146,7 @@ This account is an important part of your professional identity. You will use it
 
 Now that you have a programming environment, it is time to complete the first coding exercise to test everything.
 
-Click this link to get your own copy of the starter assignment on Github Classroom:
-***Insert new link here***
-
+On the original Canvas Assignment page that took you to this page, there should be a link to the GitHub Classroom assignment. Click on that link to go to the starter assignment on Github Classroom.
 
 You may need to reload the page manually. The process should not take long. When the repository is ready, you should see
 a new link:
