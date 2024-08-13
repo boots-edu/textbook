@@ -32,7 +32,7 @@ const indexFile = sourceDir + "index.md";
 const outputPdf = "./dist/boots_textbook.pdf";
 const markdownOptions: Record<string, any> = {
     "paperFormat": "Letter",
-    "cssPath": "./src/style.css" // "https://boots-edu.github.io/textbook/assets/css/just-the-docs-default.css"
+    "cssPath": "https://boots-edu.github.io/textbook/assets/css/just-the-docs-default.css" // "./src/style.css"
 };
 
 export interface ChapterLine {
