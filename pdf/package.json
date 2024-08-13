@@ -15,7 +15,7 @@
     "@types/through2": "^2.0.41",
     "@typescript-eslint/eslint-plugin": "^6.2.0",
     "@typescript-eslint/parser": "^6.2.0",
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "^1.0.0",
     "codemirror": "^6.0.1",
     "contodo": "^0.4.7",
     "esbuild": "0.21.5",

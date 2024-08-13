@@ -13,7 +13,7 @@ import markdownpdf from "markdown-pdf";
 import fs from "fs";
 import hljs from "highlight.js";
 import through from "through2";
-import cheerio from "cheerio";
+import * as cheerio from "cheerio";
 import path from "path";
 
 const PAGE_BREAK = '\n\n<div style="page-break-before: always;"></div>\n\n'
@@ -32,7 +32,7 @@ const indexFile = sourceDir + "index.md";
 const outputPdf = "./dist/boots_textbook.pdf";
 const markdownOptions: Record<string, any> = {
     "paperFormat": "Letter",
-    "cssPath": "https://boots-edu.github.io/textbook/assets/css/just-the-docs-default.css" // "./src/style.css"
+    "cssPath": "./src/style.css" // "https://boots-edu.github.io/textbook/assets/css/just-the-docs-default.css"
 };
 
 export interface ChapterLine {
