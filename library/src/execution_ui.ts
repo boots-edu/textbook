@@ -12,10 +12,10 @@ import { javascript } from "@codemirror/lang-javascript";
 import { KettleConsole } from "./ts_console";
 import ts from "typescript";
 
-import 'jquery.fancytree/dist/skin-lion/ui.fancytree.less';  // CSS or LESS
+/*import 'jquery.fancytree/dist/skin-lion/ui.fancytree.less';  // CSS or LESS
 import {createTree} from 'jquery.fancytree';
 import 'jquery.fancytree/dist/modules/jquery.fancytree.edit';
-import 'jquery.fancytree/dist/modules/jquery.fancytree.filter';
+import 'jquery.fancytree/dist/modules/jquery.fancytree.filter';*/
 
 
 export interface RunControls {
