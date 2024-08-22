@@ -18,7 +18,7 @@ parent: Data Classes
 </details>
 
 ## Key Idea
-***Data Classes*** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+***Data Classes*** allow us to combine data into a grouping and use that grouping as a data type in our programs.
 
 ## Drawing Program Classes
 ### Color class
