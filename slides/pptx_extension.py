@@ -105,8 +105,8 @@ class SlideConverter:
             # Chunk up content into pairs
             content = [c for c in slide.content if not c.is_empty()]
             while content:
-                print("Content:", [type(c).__name__ + ':' + c.to_short_preview() for c in content])
-                print("  sizes:", [c.count_lines() for c in content])
+                # print("Content:", [type(c).__name__ + ':' + c.to_short_preview() for c in content])
+                # print("  sizes:", [c.count_lines() for c in content])
                 # Make an appropriate slide with the right type
                 if slide.type == "title":
                     current_slide = self.add_slide(slide.type)
