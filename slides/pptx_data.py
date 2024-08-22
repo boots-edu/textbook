@@ -1,4 +1,5 @@
 from typing import Union
+import textwrap
 from dataclasses import dataclass, field
 from pptx.dml.color import ColorFormat
 from pptx.dml.fill import FillFormat
@@ -49,6 +50,9 @@ class TextFormatting:
             new_font.name = "Courier New"
         return new_font
     
+    def to_short_preview(self):
+        return self.to_preview()
+    
     def to_preview(self):
         if not any((self.bold, self.italic, self.underline, self.strikethrough, self.code, self.is_dark)):
             return ""
@@ -62,6 +66,12 @@ class Run:
     text: str
     font: TextFormatting
     hyperlink: str = None
+    
+    def is_empty(self):
+        return not self.text.strip()
+    
+    def count_lines(self):
+        return textwrap.wrap(self.text, 30).count("\n") + 1
     
     def add_to_paragraph(self, paragraph):
         if self.text == "\n":
@@ -80,6 +90,9 @@ class Run:
             return self.text
         return f"[{formatting}]{self.text}[/{formatting}]"
     
+    def to_short_preview(self):
+        return self.text[:10] + "..." if len(self.text) > 10 else self.text
+    
 @dataclass
 class Paragraph:
     runs: list[Run]
@@ -88,6 +101,12 @@ class Paragraph:
     line_spacing: float = None
     space_after: Length = None
     space_before: Length = None
+    
+    def is_empty(self):
+        return not any(run.text.strip() for run in self.runs)
+    
+    def count_lines(self):
+        return sum(run.count_lines() for run in self.runs) + 1
     
     def add_to_text_frame(self, text_frame, is_first_paragraph=True):
         if is_first_paragraph:
@@ -111,6 +130,13 @@ class Paragraph:
     def to_preview(self):
         return "    "*(self.level-1) + "|".join(run.to_preview() for run in self.runs)
     
+    def to_short_preview(self):
+        if not self.runs:
+            return ""
+        if len(self.runs) > 1:
+            return self.runs[0].to_short_preview() + "\\n..."
+        return self.runs[0].to_short_preview()
+    
 @dataclass
 class TextFrame(SlideContent):
     paragraphs: list[Paragraph] = field(default_factory=list)
@@ -122,6 +148,12 @@ class TextFrame(SlideContent):
     vertical_anchor: MSO_VERTICAL_ANCHOR = None
     word_wrap: bool = True
     is_list: bool = False
+    
+    def is_empty(self):
+        return not any(paragraph.runs for paragraph in self.paragraphs)
+    
+    def count_lines(self):
+        return sum(paragraph.count_lines() for paragraph in self.paragraphs)
     
     def add_run(self, text, formatting):
         if isinstance(text, str):
@@ -143,7 +175,7 @@ class TextFrame(SlideContent):
         self.modify_text_frame(text_box.text_frame)
         return text_box
     
-    def add_to_powerpoint(self, placeholder, slide, presentation):
+    def add_to_powerpoint(self, placeholder, slide, presentation, indent=False):
         text_frame = placeholder.text_frame
         if self.auto_size is not None:
             text_frame.auto_size = self.auto_size
@@ -164,7 +196,9 @@ class TextFrame(SlideContent):
         for index, paragraph in enumerate(self.paragraphs):
             if not paragraph.runs:
                 continue
-            paragraph.add_to_text_frame(text_frame, index==0)
+            if indent:
+                paragraph.level += 1
+            paragraph.add_to_text_frame(text_frame, not indent and index==0)
         return text_frame
     
     def to_preview(self):
@@ -172,6 +206,11 @@ class TextFrame(SlideContent):
         return (f"[{symbol}]" +
                 "\n".join(paragraph.to_preview() for paragraph in self.paragraphs) +
                 f"[/{symbol}]")
+        
+    def to_short_preview(self):
+        if not self.paragraphs:
+            return ""
+        return self.paragraphs[0].to_short_preview()
     
     
 @dataclass
@@ -182,11 +221,20 @@ class Picture(SlideContent):
     width: int = None
     height: int = None
     
+    def is_empty(self):
+        return not self.image.strip()
+    
     def to_preview(self):
         return f"[image]{self.image}"
     
+    def count_lines(self):
+        return 1
+    
     def add_to_powerpoint(self, placeholder, slide, presentation):
         replace_with_image(self.image, placeholder, slide)
+        
+    def to_short_preview(self):
+        return self.image[:100] + "..." if len(self.image) > 100 else self.image
     
     
 @dataclass
@@ -197,7 +245,13 @@ class CodeBlock(SlideContent):
     
     MAX_REASONABLE_LINE = 20
     
-    def add_to_powerpoint(self, placeholder, slide, presentation):
+    def is_empty(self):
+        return not self.code.strip()
+    
+    def count_lines(self):
+        return self.code.strip().count("\n") + 1
+    
+    def add_to_powerpoint(self, placeholder, slide, presentation, indent=False):
         text_frame = placeholder.text_frame
         code = self.code
         # TODO: Explore possible options
@@ -205,15 +259,18 @@ class CodeBlock(SlideContent):
         lexer = get_lexer(self.language, code)
 
         # TODO: Make this way smarter
-        if code.count("\n") < self.MAX_REASONABLE_LINE:
-            formatter = PowerPointCodeFormatter(text_frame, code, **options)
-            result = highlight(code, lexer, formatter)
-        else:
-            result = format_code_as_image(presentation, slide, placeholder, code, lexer, **options)
+        # if code.count("\n") < self.MAX_REASONABLE_LINE:
+        formatter = PowerPointCodeFormatter(text_frame, code, overwrite=False, **options)
+        result = highlight(code, lexer, formatter)
+        #else:
+        #    result = format_code_as_image(presentation, slide, placeholder, code, lexer, **options)
         
     def to_preview(self):
         symbol = "code" if self.runnable else "code_no_run"
         return f"[{symbol}]{self.language!r}\n{self.code}[/{symbol}]"
+    
+    def to_short_preview(self):
+        return self.code[:30] + "..." if len(self.code) > 30 else self.code
     
 
 @dataclass

@@ -63,34 +63,39 @@ class CodeStyle(Style):
 
 class PowerPointCodeFormatter(Formatter):
 
-    def __init__(self, text_frame, code, **options):
+    def __init__(self, text_frame, code, overwrite=True, **options):
         self.options = options
         self.text_frame = text_frame
         self.code = code
         self.line_count = code.count("\n")
+        self.overwrite = overwrite
         # 9 fits comfortably
 
-    def fix_height(self):
-        paragraph = self.text_frame.paragraphs[0]
-        # if self.line_count > 9:
-        #    spacing = (self.MAX_REASONABLE_LINE-(self.line_count-9))/self.MAX_REASONABLE_LINE/2
-        #    paragraph.line_spacing = spacing
-        paragraph.line_spacing = 0.5
+    # def fix_height(self):
+    #     paragraph = self.text_frame.paragraphs[0]
+    #     # if self.line_count > 9:
+    #     #    spacing = (self.MAX_REASONABLE_LINE-(self.line_count-9))/self.MAX_REASONABLE_LINE/2
+    #     #    paragraph.line_spacing = spacing
+    #     paragraph.line_spacing = 0.5
 
     def format(self, tokensource, outfile):
         if self.text_frame:
-            self.text_frame.clear()
-            self.text_frame.word_wrap = False
-            self.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
-            paragraph = self.text_frame.paragraphs[0]
+            # self.text_frame.word_wrap = False
+            # self.text_frame.vertical_anchor = MSO_ANCHOR.MIDDLE
+            if self.overwrite:
+                self.text_frame.clear()
+                paragraph = self.text_frame.paragraphs[0]
+            else:
+                #self.text_frame.add_paragraph()
+                paragraph = self.text_frame.add_paragraph()
             no_bullet(paragraph)
             paragraph.font.name = "Courier New"
-            paragraph.font.size = Pt(10)
+            paragraph.font.size = Pt(14)
+            paragraph.line_spacing = .5
             for ttype, value in tokensource:
                 run = paragraph.add_run()
                 run.text = value
                 format_run(ttype, run)
-            self.fix_height()
         else:
             print("Throwing away codeblock!")
 

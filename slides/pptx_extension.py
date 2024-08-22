@@ -103,12 +103,14 @@ class SlideConverter:
     def convert(self, raw_slides):
         for slide in raw_slides:
             # Chunk up content into pairs
-            content = list(slide.content)
+            content = [c for c in slide.content if not c.is_empty()]
             while content:
+                print("Content:", [type(c).__name__ + ':' + c.to_short_preview() for c in content])
+                print("  sizes:", [c.count_lines() for c in content])
                 # Make an appropriate slide with the right type
                 if slide.type == "title":
                     current_slide = self.add_slide(slide.type)
-                elif len(content) == 1:
+                elif self.is_combinable(content) or self.needs_solo(content) or self.is_tripleable(content):
                     current_slide = self.add_slide("captioned_content")
                 else:
                     current_slide = self.add_slide("two_content")
@@ -129,11 +131,38 @@ class SlideConverter:
                     self.add_content(current_slide, current_slide.shapes.placeholders[13], slide.key_idea)
                 
                 # Fill up the content, two at a time
-                if len(content) == 1:
+                if self.needs_solo(content):
                     self.add_content(current_slide, current_slide.shapes.placeholders[1], content.pop(0))
                 else:
-                    self.add_content(current_slide, current_slide.shapes.placeholders[1], content.pop(0))
-                    self.add_content(current_slide, current_slide.shapes.placeholders[2], content.pop(0))
+                    if self.is_tripleable(content):
+                        for i in range(3):
+                            item = content.pop(0)
+                            self.add_content(current_slide, current_slide.shapes.placeholders[1], item)
+                    elif self.is_combinable(content):
+                        left, right = content.pop(0), content.pop(0)
+                        # TODO: Add right to the left
+                        left.add_to_powerpoint(current_slide.shapes.placeholders[1], current_slide, self.presentation)
+                        right.add_to_powerpoint(current_slide.shapes.placeholders[1], current_slide, self.presentation, indent=True)
+                        # self.add_content(current_slide, current_slide.shapes.placeholders[1], left)
+                    else:
+                        self.add_content(current_slide, current_slide.shapes.placeholders[1], content.pop(0))
+                        self.add_content(current_slide, current_slide.shapes.placeholders[2], content.pop(0))
+                        
+    def is_combinable(self, content):
+        return (len(content) >= 2 and 
+                (isinstance(content[0], (TextFrame, CodeBlock)) and isinstance(content[1], (TextFrame, CodeBlock)) 
+                 and ((content[0].count_lines() + content[1].count_lines()) < 20))
+                or (all(isinstance(c, TextFrame) for c in content) and sum(c.count_lines() for c in content) < 50)
+                )
+    
+    def is_tripleable(self, content):
+        if len(content) == 3:
+            if all(isinstance(c, (CodeBlock, TextFrame)) for c in content):
+                return sum(c.count_lines() for c in content) < 20
+        return False
+    
+    def needs_solo(self, content):
+        return len(content) == 1 or (isinstance(content[0], TextFrame) and content[0].count_lines() > 20)
                     
     def add_content(self, slide, where, content):
         content.add_to_powerpoint(where, slide, self.presentation)
