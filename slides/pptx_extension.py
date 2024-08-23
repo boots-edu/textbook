@@ -3,6 +3,7 @@ import json
 import math
 import time
 import os
+import re
 from pathlib import Path
 import io
 from urllib.parse import unquote
@@ -108,7 +109,7 @@ class SlideConverter:
                 # print("Content:", [type(c).__name__ + ':' + c.to_short_preview() for c in content])
                 # print("  sizes:", [c.count_lines() for c in content])
                 # Make an appropriate slide with the right type
-                if slide.type == "title":
+                if slide.type in ("title", "section"):
                     current_slide = self.add_slide(slide.type)
                 elif self.is_combinable(content) or self.needs_solo(content) or self.is_tripleable(content):
                     current_slide = self.add_slide("captioned_content")
@@ -122,7 +123,7 @@ class SlideConverter:
                 #    print('%d %s' % (shape.placeholder_format.idx, shape.name))
                 
                 # Title slides only have their body
-                if slide.type == "title":
+                if slide.type in ("title", "section"):
                     self.add_content(current_slide, current_slide.shapes.placeholders[1], content.pop(0))
                     continue
                 
@@ -306,7 +307,12 @@ class PowerPointRenderer(GFMRendererMixin):
         self._header = None
         
         # FSA to determine what we are currently processing
-        if self.mode == "start":
+        potential_new_section = re.match(r"\!BEGIN NEW SECTION \((.+)\)\!", title_text)
+        if potential_new_section is not None:
+            self.mode = "title"
+            title_text = potential_new_section.group(1)
+            header.set_run(title_text, self.formatting.current)
+        elif self.mode == "start":
             self.mode = "title"
         elif self.mode == "title":
             if title_text.strip().lower() in ("key idea", "key ideas"):
@@ -325,11 +331,14 @@ class PowerPointRenderer(GFMRendererMixin):
         
         # Create a new slide, either a title or a two_content
         if element.level == 1:
-            new_slide = self.add_slide(header, "title")
+            temp_header = TextFrame()
+            temp_header.add_run("", self.formatting.current)
+            new_slide = self.add_slide(temp_header, "section")
             # TODO: Extract this to a setting!
             content = TextFrame()
             self.add_content(content)
-            content.add_run("BOOTS: Beginner Object-Oriented TypeScript", self.formatting.current)
+            with self.formatting(larger=True):
+                content.add_run(title_text, self.formatting.current)
         else:
             new_slide = self.add_slide(header, "two_content")
         

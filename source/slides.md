@@ -1,0 +1,16 @@
+# Slides
+
+* [0. Introduction](assets/slides/Introduction.pptx)
+* [1. Introduction to TypeScript ](assets/slides/Introduction to TypeScript.pptx)
+* [2. Loops and Arrays](assets/slides/Loops and Arrays.pptx)
+* [3. Data Classes](assets/slides/Data Classes.pptx)
+* [4. Classes](assets/slides/Classes.pptx)
+* [5. Composition and Inheritance](assets/slides/Composition and Inheritance.pptx)
+* [6. Overrides and Polymorphism](assets/slides/Overrides and Polymorphism.pptx)
+* [7. Exceptions and Code Quality](assets/slides/Exceptions and Code Quality.pptx)
+* [8. Software Testing](assets/slides/Software Testing.pptx)
+* [9. Webz Introduction](assets/slides/Webz Introduction.pptx)
+* [10. Advanced WebZ](assets/slides/Advanced WebZ.pptx)
+* [11. Advanced TypeScript](assets/slides/Advanced TypeScript.pptx)
+* [12. Higher Order Methods](assets/slides/Higher Order Methods.pptx)
+* [13. Recursion](assets/slides/Recursion.pptx)

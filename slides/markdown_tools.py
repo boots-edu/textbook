@@ -59,3 +59,8 @@ def inject_yaml(markdown, yaml_data):
     stream = StringIO()
     yaml.dump(yaml_data, stream)
     return "---\n{}---\n{}".format(stream.getvalue(), markdown)
+
+
+def eat_first_chapter(content):
+    second_header = content.find("#", content.find(content) + 1)
+    return content[second_header:]

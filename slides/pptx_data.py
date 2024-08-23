@@ -25,6 +25,7 @@ class TextFormatting:
     strikethrough: bool = False
     code: bool = False
     is_dark: bool = True
+    larger: bool = False
     
     def copy_with_changes(self, **changes):
         return TextFormatting(
@@ -34,6 +35,7 @@ class TextFormatting:
             strikethrough=changes.get('strikethrough', self.strikethrough),
             code=changes.get('code', self.code),
             is_dark=changes.get('is_dark', self.is_dark),
+            larger=changes.get('larger', self.larger)
         )
         
     def update(self, new_font):
@@ -45,7 +47,10 @@ class TextFormatting:
             new_font.color.theme_color = MSO_THEME_COLOR.DARK_1
         else:
             new_font.color.theme_color = MSO_THEME_COLOR.LIGHT_1
-        new_font.size = Pt(16)
+        if self.larger:
+            new_font.size = Pt(40)
+        else:
+            new_font.size = Pt(16)
         if self.code:
             new_font.name = "Courier New"
         return new_font
@@ -58,7 +63,8 @@ class TextFormatting:
             return ""
         return (f"{'B' if self.bold else ''}{'I' if self.italic else ''}"
                 f"{'U' if self.underline else ''}{'S' if self.strikethrough else ''}"
-                f"{'C' if self.code else ''}{'D' if self.is_dark else ''}")
+                f"{'C' if self.code else ''}{'D' if self.is_dark else ''}"
+                f"{'L' if self.larger else ''}")
 
 
 @dataclass
@@ -164,6 +170,15 @@ class TextFrame(SlideContent):
             self.start_paragraph(0)
         self.paragraphs[-1].runs.append(run)
         return run
+    
+    def set_run(self, text, formatting):
+        if isinstance(text, str):
+            run = Run(text, formatting)
+        else:
+            run = text
+        if not self.paragraphs:
+            self.start_paragraph(0)
+        self.paragraphs[-1].runs = [run]
     
     def start_paragraph(self, level):
         self.paragraphs.append(Paragraph([], level))
@@ -288,3 +303,8 @@ class RawSlide:
                 f"Key Idea: {self.key_idea.to_preview()}\n" + 
                 "\n----\n".join(content.to_preview() for content in self.content) + 
                 "\n\n")
+    
+    def to_short_preview(self):
+        if not self.content:
+            return (f"[{self.title.to_short_preview()}: {self.type}]")
+        return (f"[{self.title.to_short_preview()}: {self.content[0].to_short_preview()}]")
