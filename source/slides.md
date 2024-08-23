@@ -1,7 +1,7 @@
 # Slides
 
 * [0. Introduction](assets/slides/0_Introduction.pptx)
-* [1. Introduction to TypeScript ](assets/slides/1_Introduction to TypeScript.pptx)
+* [1. Introduction to TypeScript ](assets/slides/1_Introduction To Typescript.pptx)
 * [2. Loops and Arrays](assets/slides/2_Loops and Arrays.pptx)
 * [3. Data Classes](assets/slides/3_Data Classes.pptx)
 * [4. Classes](assets/slides/4_Classes.pptx)
