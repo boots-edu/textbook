@@ -2,7 +2,8 @@
   <p class="text-small text-grey-dk-100 mb-0">{{ site.footer_content }}</p>
 {%- endif -%}
 
-{% if page.usetocbot %} 
+{% unless page.skiptocbot %} 
+    <!-- Based off https://github.com/makeabilitylab/physcomp/blob/master/_includes/footer_custom.html -->
     <!-- tocbot is an awesome table of contents generator, see: https://tscanlin.github.io/tocbot/ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
 
