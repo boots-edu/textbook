@@ -59,9 +59,15 @@ callouts:
   new:
     title: New
     color: green
+  tip:
+    title: Tip
+    color: green
   note:
     title: Note
     color: purple
+  information:
+    title: Information
+    color: yellow
   warning:
     title: Warning
     color: red
