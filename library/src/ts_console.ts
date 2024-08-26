@@ -36,12 +36,13 @@ export class KettleConsole implements ConsoleAPI {
             showTimestamp: false,
             // TODO: Stop this from using the real console too, please
         });
+        this.contodo.api.clear = (info: boolean) => { this.contodo?.clear(info); };
         this.contodo.createDocumentNode();
         this.history = [];
     }
 
     destroy() {
-        this.contodo?.api.clear();
+        this.contodo?.api.clear(false);
         this.contodo = null;
     }
 

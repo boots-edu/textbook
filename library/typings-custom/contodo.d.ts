@@ -7,6 +7,7 @@ declare module 'contodo' {
         });
         createDocumentNode(): void;
         api: ConsoleAPI;
+        clear(info: boolean): void;
     }
 
     export type ConsoleAPICommand = "log" | "error" | "info" | "warning" | "table" | "clear";
