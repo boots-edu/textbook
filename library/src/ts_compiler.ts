@@ -2,6 +2,8 @@ import * as ts from "typescript";
 import importableFiles from "./externals/importable_files.json";
 // import {RAW_D_TS_FILES} from "./raw_kettle_compiler_dts";
 
+export const STUDENT_MAIN = {TS: "student_main.ts", JS: "student_main.js"};
+
 /**
  * TypeScript type definitions for the instructor runtime library and the pseudo Jest library that
  * we support.
@@ -35,6 +37,17 @@ const KETTLE_JEST_D_TS = `
 `;
 
 const ASSET_PATH="/textbook/assets/imports/";
+
+function makeDiagnostic(message:string):ts.Diagnostic{
+    return {
+        category: ts.DiagnosticCategory.Error,
+        code: 0,
+        file: undefined,
+        start: 0,
+        length: 0,
+        messageText: message,
+    }
+}
 
 /**
  * The result of a compilation operation. This includes the compiled code,
@@ -84,7 +97,7 @@ const removeExports: (importFile:Importer)=>ts.TransformerFactory<ts.SourceFile>
                 } else {
                     identifier = importChild.importClause?.getText() || "";
                 }
-                const moduleName = importChild.moduleSpecifier.getText().replaceAll('"', "");
+                const moduleName = importChild.moduleSpecifier.getText().replaceAll('"', "").replaceAll("'", "");
                 importFile(moduleName);
                 return ts.factory.createVariableStatement(
                     undefined,
@@ -236,6 +249,7 @@ interface MockIO {
     readFile(fileName: string): string | undefined;
     writeFile(fileName: string, data: string): void;
     rememberImport(moduleName: string, fileName: string): void;
+    error(message: string): void;
 }
 
 // The actual TypeScript type definitions
@@ -282,6 +296,9 @@ function createCompilerHost(
             resolvedModules.push(result.resolvedModule);
             io.rememberImport(moduleName, result.resolvedModule.resolvedFileName);
           } else {
+            console.error("The module is missing", moduleName, containingFile);
+            io.error(`Could not resolve module '${moduleName}' from '${containingFile}'`);
+            throw new Error(`Could not resolve module '${moduleName}' from '${containingFile}'`);
             // check fallback locations, for simplicity assume that module at location
             // should be represented by '.d.ts' file
           }
@@ -358,16 +375,21 @@ export async function compile(code: string): Promise<CompilationResult> {
     options.noLib = false;
     options.experimentalDecorators = false;
 
+    // Define the host (initalized further down)
+    let host: ts.CompilerHost;
+
     // Create the output "file" in memory
-    const [dummyFilePath, dummyFileOut] = ["in-memory-file.ts", "in-memory-file.js"];
+    const [dummyFilePath, dummyFileOut] = [STUDENT_MAIN.TS, STUDENT_MAIN.JS];
     let outputCode: string | undefined = undefined;
     let files: Record<string, string> = {};
     let imports: Record<string, string> = {};
+    let extraErrors: string[] = [];
+    let importedDiagnostic: ts.Diagnostic[] = [];
+    const rootNames = [KETTLE_D_TS_FILENAME];
 
     const io: MockIO = {
         fileExists: (fileName) => {
             const result = fileName === dummyFilePath || fileName in otherFakeFiles;
-            //console.log("EXISTS", result, fileName);
             return result;
         },
         readFile: (fileName) => {
@@ -383,13 +405,42 @@ export async function compile(code: string): Promise<CompilationResult> {
             if (fileName === dummyFileOut) {
                 outputCode = data;
             }
+            otherFakeFiles[fileName] = data;
+        },
+        error: (message) => {
+            extraErrors.push(message);
         },
         rememberImport: (moduleName, fileName) => {
             // console.log("REMEMBER", moduleName, "->", fileName);
             // Change d.ts extension to .js
             if (fileName.endsWith(".d.ts")) {
                 fileName = fileName.slice(0, -5) + ".js";
+            } else if (fileName.endsWith(".ts")) {
+                // Check if the javascript version exists
+                const jsFileName = fileName.slice(0, -3) + ".js";
+                if (!(jsFileName in otherFakeFiles)) {
+                    // Try compiling it ourselves!
+                    let program;
+                    try {
+                        program = ts.createProgram(
+                            rootNames.concat([fileName]),
+                            {...options, module: ts.ModuleKind.CommonJS},
+                            host,
+                        );
+                    } catch (e) {
+                        console.error("Error compiling additional file", jsFileName, e);
+                        io.error(`Error compiling additional file ${jsFileName}: ${e}`);
+                        return;
+                    }
+                    // Run the type checker, removing exports first
+                    const emitResults = program.emit();
+                    importedDiagnostic = importedDiagnostic.concat(ts.getPreEmitDiagnostics(program)).concat(emitResults.diagnostics);
+                    // console.log(otherFakeFiles[jsFileName]);
+                    otherFakeFiles[jsFileName] = removeEmptyExports(otherFakeFiles[jsFileName]);
+                    fileName = jsFileName;
+                }
             }
+            // console.log("REMEMBER", moduleName, "->", fileName, fileName in otherFakeFiles);
             if (fileName in otherFakeFiles) {
                 imports[moduleName] = otherFakeFiles[fileName];
             } else {
@@ -404,18 +455,30 @@ export async function compile(code: string): Promise<CompilationResult> {
     };
 
     // Create the fake compiler host
-    const host: ts.CompilerHost = createCompilerHost(
+    host = createCompilerHost(
         options,
         io
     );
 
     // Create the TypeScript program
-    const rootNames = [KETTLE_D_TS_FILENAME];
-    const program = ts.createProgram(
-        rootNames.concat([dummyFilePath]),
-        options,
-        host,
-    );
+    let program;
+    try {
+        program = ts.createProgram(
+            rootNames.concat([dummyFilePath]),
+            options,
+            host,
+        );
+    } catch (e) {
+        console.error("Error creating program", e);
+        return {
+            files: files,
+            imports: imports,
+            diagnostics: [makeDiagnostic((e as Error).toString())]
+                .concat(extraErrors.map((message) => (makeDiagnostic(message)))),
+            locals: new Map<string, ts.Symbol>(),
+            typeInformation: {},
+        }
+    }
 
     // Run the type checker, removing exports first
     //console.log(checker.getSymbolsInScope(dummySourceFile, ts.SymbolFlags.Module));
@@ -462,7 +525,7 @@ export async function compile(code: string): Promise<CompilationResult> {
         code: removeEmptyExports(outputCode),
         files: files,
         imports: imports,
-        diagnostics: emitResult.diagnostics.concat(diagnostics),
+        diagnostics: emitResult.diagnostics.concat(diagnostics).concat(extraErrors.map((message) => (makeDiagnostic(message)))).concat(importedDiagnostic),
         locals: locals,
         typeInformation: {} /*getClassDefinitions(
             program,

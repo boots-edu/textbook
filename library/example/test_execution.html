@@ -54,6 +54,26 @@
 <body>
 
   <div class="language-typescript highlighter-rouge"><pre>
+import {Color,Point,Polygon} from 'ch2/drawing1';
+
+let red:Color=new Color(255,0,0);
+let points1:Point[]=[
+	new Point(0,0,red),
+	new Point(100,0,red),
+	new Point(50,100,red)
+];
+let redTriangle:Polygon= new Polygon(points1,red);
+console.log(redTriangle);
+  </pre>
+  </div>
+
+  <div class="language-typescript highlighter-rouge"><pre>
+    import {anything} from 'bad_import';
+    console.log("Won't work :)", anything);
+      </pre>
+      </div>
+
+  <div class="language-typescript highlighter-rouge"><pre>
     import {
         BindValue,
         BindStyleToNumberAppendPx,

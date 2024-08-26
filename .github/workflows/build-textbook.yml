@@ -27,12 +27,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Install Python and dependencies
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
       - name: Setup NPM
         uses: actions/setup-node@v3
       - name: Setup Library
         run: |
           cd library
+          # Install the library dependencies
           npm install
+          # First dip into the src/externals/ directory to run make_typescript_defs.py
+          cd src/externals/
+          python make_typescript_defs.py
+          cd ../../
+          # And finish building
           npm run build
           cd ../
       - name: Copy Library
@@ -47,10 +57,6 @@ jobs:
       - name: Copy PDF
         run: |
           cp pdf/dist/boots_textbook.pdf source/assets/boots_textbook.pdf
-      - name: Install Python and dependencies
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
       - name: Build slides
         run: |
           cd slides/

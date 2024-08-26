@@ -2,6 +2,7 @@ import ts from "typescript";
 import { FeedbackExecutionRequest } from "./ts_assembler";
 import { SourceCodeMapping } from "./ts_source";
 import { titleCase } from "./utilities";
+import { STUDENT_MAIN } from "./ts_compiler";
 
 /**
  * This is a modified version of the stack-utils parser, which is licensed under the MIT license.
@@ -158,7 +159,12 @@ export function processTypeScriptDiagnostic(
             diagnostic.messageText,
             "\n",
         );
-        return `${where}(Line ${line + 1}, Position ${character + 1}): ${message}`;
+        console.log(diagnostic);
+        if (diagnostic.file.fileName === STUDENT_MAIN.TS || diagnostic.file.fileName === STUDENT_MAIN.JS) {
+            return `${where}(Line ${line + 1}, Position ${character + 1}): ${message}`;
+        } else {
+            return `${where}(File ${diagnostic.file.fileName}, Line ${line + 1}, Position ${character + 1}): ${message}`;
+        }
     } else {
         return (
             where +
