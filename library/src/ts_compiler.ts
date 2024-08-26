@@ -253,11 +253,11 @@ interface MockIO {
 }
 
 // The actual TypeScript type definitions
-const otherFakeFiles: Record<string, string> = importableFiles as Record<string, string>;
+const ORIGINAL_FILES: Record<string, string> = importableFiles as Record<string, string>;
 // A TypeScript type definition for the kettle compiler.
 const KETTLE_D_TS_FILENAME = "kettle.d.ts";
-otherFakeFiles[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
-otherFakeFiles["fake.ts"] = "export const someValue = 0;";
+ORIGINAL_FILES[KETTLE_D_TS_FILENAME] = KETTLE_JEST_D_TS;
+ORIGINAL_FILES["fake.ts"] = "export const someValue = 0;";
 
 /**
  * Create a compiler host for the TypeScript compiler, which binds to the given
@@ -359,6 +359,7 @@ export function getFileFromWeb(filename:string):Promise<string>{
 // Check and compile in-memory TypeScript code for errors.
 //
 export async function compile(code: string): Promise<CompilationResult> {
+    const otherFiles = {...ORIGINAL_FILES};
     //parse and remove imports
     // code = await processImports(code);
     // Setup the fake compiler's options
@@ -389,15 +390,15 @@ export async function compile(code: string): Promise<CompilationResult> {
 
     const io: MockIO = {
         fileExists: (fileName) => {
-            const result = fileName === dummyFilePath || fileName in otherFakeFiles;
+            const result = fileName === dummyFilePath || fileName in otherFiles;
             return result;
         },
         readFile: (fileName) => {
             if (fileName === dummyFilePath) {
                 return code;
             }
-            if (fileName in otherFakeFiles) {
-                return otherFakeFiles[fileName];
+            if (fileName in otherFiles) {
+                return otherFiles[fileName];
             }
             return undefined;
         },
@@ -405,7 +406,7 @@ export async function compile(code: string): Promise<CompilationResult> {
             if (fileName === dummyFileOut) {
                 outputCode = data;
             }
-            otherFakeFiles[fileName] = data;
+            otherFiles[fileName] = data;
         },
         error: (message) => {
             extraErrors.push(message);
@@ -418,7 +419,7 @@ export async function compile(code: string): Promise<CompilationResult> {
             } else if (fileName.endsWith(".ts")) {
                 // Check if the javascript version exists
                 const jsFileName = fileName.slice(0, -3) + ".js";
-                if (!(jsFileName in otherFakeFiles)) {
+                if (!(jsFileName in otherFiles)) {
                     // Try compiling it ourselves!
                     let program;
                     try {
@@ -435,14 +436,14 @@ export async function compile(code: string): Promise<CompilationResult> {
                     // Run the type checker, removing exports first
                     const emitResults = program.emit();
                     importedDiagnostic = importedDiagnostic.concat(ts.getPreEmitDiagnostics(program)).concat(emitResults.diagnostics);
-                    // console.log(otherFakeFiles[jsFileName]);
-                    otherFakeFiles[jsFileName] = removeEmptyExports(otherFakeFiles[jsFileName]);
+                    // console.log(otherFiles[jsFileName]);
+                    otherFiles[jsFileName] = removeEmptyExports(otherFiles[jsFileName]);
                     fileName = jsFileName;
                 }
             }
-            // console.log("REMEMBER", moduleName, "->", fileName, fileName in otherFakeFiles);
-            if (fileName in otherFakeFiles) {
-                imports[moduleName] = otherFakeFiles[fileName];
+            // console.log("REMEMBER", moduleName, "->", fileName, fileName in otherFiles);
+            if (fileName in otherFiles) {
+                imports[moduleName] = otherFiles[fileName];
             } else {
                 console.error("Unknown import", moduleName, fileName);
             }
