@@ -1,22 +1,22 @@
-class Color{
+export class Color{
 	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
 	clone():Color{
 		return new Color(this.red,this.green,this.blue);
 	}
 }
-class Point{
+export class Point{
 	constructor(public x:number,public y:number,public color:Color){}
 	clone(): Point{
 		return new Point(this.x,this.y,this.color.clone());
 	}
 }
-class Line{
+export class Line{
 	constructor(public start:Point,public end:Point,public color:Color){}
 	clone():Line{
 		return new Line(this.start.clone(),this.end.clone(),this.color.clone());
 	}
 }
-class Rectangle{
+export class Rectangle{
 	private corner2:Point;
 	private corner4:Point;
 	constructor(private corner1:Point, private corner3:Point,public color:Color){ 
@@ -27,7 +27,7 @@ class Rectangle{
 	   return new Rectangle(this.corner1.clone(),this.corner3.clone(),this.color.clone());
 	}
  }
- class Polygon{
+ export class Polygon{
 	constructor(public points:Point[],public color:Color){}
 	clone():Polygon{
 		let newPoints:Point[]=[];				//initialize a new empty array.
