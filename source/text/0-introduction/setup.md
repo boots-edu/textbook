@@ -126,15 +126,25 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 
 **Next, Download and Install [Git](https://git-scm.com/downloads)**
 
-  * For Windows: You can download and use the installer.
-  * For Mac: There are a few options you can choose from on the download page. 
-    * I recommend installing [Homebrew](https://brew.sh/). Once you do this, run the command 
-  
+For Windows: You can download and use the installer. It should be straightforward, and you can move onto the next section once it finishes.
+
+For Mac: There are a few options you can choose from on the download page.
+We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign!) and hit enter:
+
+```bash
+$ /bin/bash -c "$(curl-fsSLhttps://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+When it asks for password, type yours in. It'll output a lot of text, and then beneath a large list of tags, you see a purple arrow with `"Next Steps"`.
+
+Then type `brew help` and hit enter, to confirm that Homebrew was correctly installed. Wait a second for it to spew words and then, when able, type:
+
+```bash
 $ brew install git
 ```
 
-Once you have verified that everything has been installed correctly, you are ready to move on!
+After that you should be done. Once you have verified that everything has been installed correctly, you are ready to move on!
+
 
 ### Create GitHub Account
 
