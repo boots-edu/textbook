@@ -422,6 +422,14 @@ Once you have typed your message, click the Commit button to **commit** your sta
 
 ![image.png](../../images/setup/setup_actual_commit.png)
 
+{: .info-warning}
+> You may encounter an issue where you need to configure your GitHub user email and name. You can do this by running the following commands in your terminal:
+> ```
+> git config --global user.email "email@example.com"
+> git config --global user.name "yourusername"
+> ```
+> Replace the text in the quotes with your actual email and username.
+
 After committing, the button will change to "Sync Changes", allowing you to **push** your commits to GitHub.
 
 ![image.png](../../images/setup/setup_pull_push.png)
