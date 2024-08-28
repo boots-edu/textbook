@@ -1,4 +1,13 @@
-## Policies and Procedures
+---
+layout: default
+title: Policies and Procedures (old)
+nav_order: 0
+has_children: true
+---
+
+This page is the original policies and procedures for the course. We are leaving it here for now, but do not assume this is the actual policy for your course this semester! Please check the course canvas syllabus for the most up-to-date information.
+
+## Policies and Procedures (old)
 
 The course will have lectures (2 or 3 per week depending on your section) as well as weekly lab periods.  Attendance at lectures is required.
 
