@@ -28,7 +28,7 @@ back_to_top: true
 back_to_top_text: "Back to top"
 
 logo: "/images/logo.png"
-ga_tracking: 
+ga_tracking: G-DVFQRE0Z0N
 
 # Build settings
 markdown: kramdown
