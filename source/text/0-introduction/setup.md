@@ -422,14 +422,6 @@ Once you have typed your message, click the Commit button to **commit** your sta
 
 ![image.png](../../images/setup/setup_actual_commit.png)
 
-{: .info-warning}
-> You may encounter an issue where you need to configure your GitHub user email and name. You can do this by running the following commands in your terminal:
-> ```
-> git config --global user.email "email@example.com"
-> git config --global user.name "yourusername"
-> ```
-> Replace the text in the quotes with your actual email and username.
-
 After committing, the button will change to "Sync Changes", allowing you to **push** your commits to GitHub.
 
 ![image.png](../../images/setup/setup_pull_push.png)
@@ -441,15 +433,13 @@ Click "OK", because that is exactly what we want to do.
 
 The Source Control panel will now be partially greyed out since you have nothing left to commit.
 
-If you encounter an error like "need to configure git" before you can push, then you can run the following commands in
-the Terminal, substituting your email address and name.
-
-```
-git config --global user.email "YOUREMAIL@udel.edu"  
-git config --global user.name "YOUR NAME"
-```
-
-Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., "Austin Bart").
+> If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the Terminal, substituting your email address and name.
+> ```
+> git config --global user.email "YOUREMAIL@udel.edu"  
+> git config --global user.name "YOUR NAME"
+> ```
+> Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., "Austin Bart").
+{: .info-warning}
 
 If everything went well, you should be able to see your new commit on the GitHub repository website.
 
