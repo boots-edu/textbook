@@ -459,7 +459,7 @@ We're almost done. The time has come to submit!
 
 ## Submitting on GradeScope
 
-At the bottom of this page, you will see a box with GradeScope embedded inside (just like BlockPy!). GradeScope is a
+At the bottom of the assignment page on Canvas, you will see a box with GradeScope embedded inside (just like BlockPy!). GradeScope is a
 platform for running student code through instructor unit tests, which will give you automatic feedback and score you.
 
 For this assignment, GradeScope will run the same tests that we gave you. But in future assignments, we may have hidden
