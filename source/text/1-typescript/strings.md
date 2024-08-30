@@ -100,14 +100,14 @@ You can use the `slice` method to extract parts of a string.
 ```typescript
 let myStr: string = "Hello World";
 
-console.log(myStr.slice(2)); // "llo World"
-console.log(myStr.slice(2, 5)); // "llo"
-console.log(myStr.slice(-1)); // "d"
-console.log(myStr.slice(-3)); // "ld"
+console.log(myStr.slice(2));     // "llo World"
+console.log(myStr.slice(2, 5));  // "llo"
+console.log(myStr.slice(-1));    // "d"
+console.log(myStr.slice(-3));    // "rld"
 console.log(myStr.slice(0, -1)); // "Hello Worl"
 console.log(myStr.slice(5, -3)); // " World"
-console.log(myStr.slice(5, 3)); // ""
-console.log(myStr.slice(4, 5)); // "o"
+console.log(myStr.slice(5, 3));  // ""
+console.log(myStr.slice(4, 5));  // "o"
 ```
 
 ### Indexes and Slices in Strings
@@ -139,9 +139,9 @@ The `concat` method will combine two separate strings and return that combined s
 let myStr1: string = "Hello";
 let myStr2: string = "World";
 
-console.log(myStr1.concat(myStr2)); // "HelloWorld"
+console.log(myStr1.concat(myStr2));      // "HelloWorld"
 console.log(myStr1.concat(" ", myStr2)); // "Hello World"
-console.log(myStr2.concat(myStr1)); // "WorldHello"
+console.log(myStr2.concat(myStr1));      // "WorldHello"
 console.log(myStr2.concat(",", myStr1)); // "World,Hello"
 ```
 
