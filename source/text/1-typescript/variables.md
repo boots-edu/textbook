@@ -103,7 +103,7 @@ Some key notes on the syntax of declaring a variable:
 * Use `let` to __declare__ a variable.
 * Use `:` symbol after the name, followed by the type.
 * Use `=` followed by an expression to assign an initial value.
-* The line should end with a `;`
+* The statement should end with a `;`
 
 ## Types in TypeScript
 
