@@ -294,4 +294,4 @@ In this chapter we have learned the basics of web development including html and
 
 # Next Step
 
-Next we'll learn more advanced features of Webz and how to use them [Advanced Webz &raquo;](../10-webz-advanced/index.md)
+Next we'll walkthrough building a Webz application, step by step, with the [Webz Basics Walkthrough &raquo;](./walkthrough.md)
