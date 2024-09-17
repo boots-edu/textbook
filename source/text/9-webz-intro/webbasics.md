@@ -209,4 +209,4 @@ Learning HTML is an important skill as web applications are pervasive both for i
 
 # Next Step
 
-Next we'll introduce WebZ, a lightweight web framework for application development [Beginning WebZ &raquo;](../9-webz-intro/beginning_webz.md)
+Next we'll introduce Webz, a lightweight web framework for application development [Beginning Webz &raquo;](../9-webz-intro/beginning_webz.md)
