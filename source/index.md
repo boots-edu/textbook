@@ -51,6 +51,7 @@ Let's learn how to write object-oriented TypeScript code!
 9. [Webz Introduction](text/9-webz-intro/index.md)
     1. [Web Basics](text/9-webz-intro/webbasics.md)
     2. [Beginning Webz](text/9-webz-intro/beginning_webz.md)
+    3. [Webz basics Walkthrough](text/9-webz-intro/walkthrough.md)
 10. [Advanced Webz](text/10-webz-advanced/index.md)
     1. [Dynamic Components](text/10-webz-advanced/dynamic.md)
     2. [Webz Events](text/10-webz-advanced/events.md)
