@@ -66,6 +66,8 @@ Let's learn how to write object-oriented TypeScript code!
 13. [Recursion](text/13-Recursion/index.md)
     1. [Description and Definition of Recursion](text/13-Recursion/recursion.md)
     2. [Trees](text/13-Recursion/trees.md)
+14. [Appendix](text/14-appendix/index.md)
+    1. [Pulling from Upstream](text/14-appendix/upstream.md)
 {:start="0"}
 
 
