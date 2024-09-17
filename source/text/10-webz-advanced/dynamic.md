@@ -2,7 +2,7 @@
 layout: default
 title: Dynamic Components
 nav_order: 10.1
-parent: Advanced WebZ
+parent: Advanced Webz
 ---
 
 # Dynamic Components
@@ -116,4 +116,4 @@ We can create dynamic components by adding them to an existing component using t
 
 # Next Step
 
-Next we'll learn about component communication  [WebZ Events &raquo;](../10-webz-advanced/events.md)
+Next we'll learn about component communication  [Webz Events &raquo;](../10-webz-advanced/events.md)

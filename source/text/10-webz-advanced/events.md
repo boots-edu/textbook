@@ -1,8 +1,8 @@
 ---
 layout: default
-title: WebZ Events
+title: Webz Events
 nav_order: 10.2
-parent: Advanced WebZ
+parent: Advanced Webz
 ---
 
 # Webz Events
@@ -29,7 +29,7 @@ Talking to our children is easy.  We created them, so we probably have (or at le
 ## Talking to our parents
 Unlike communicating with children, a child likely does not have a reference to the parent object.  This means we need a mechanism for a child to send inforamtion to its parent that some event has occurred.  
 
-### The WebZ Notifier
+### The Webz Notifier
 We can create a public Notifier member on the child class and subscribe to that event in the parent class.  That event can then be triggered in the child to notify the parent that something has changed.  The contents of the Notifier can be anything we want from a value to a class to an array of either.
 
 We will talk about generics in detail later, but we need a basic understanding in order to use Notifier.
@@ -189,8 +189,8 @@ We could do this by querying each child component for its value when we need it,
 
 
 ## Summary
-Passing information between components is critical to developing web applications.  Passing information is simple from parent to child because the parent created the child and thus has a reference to it.  Passing information from child to parent can be accomplished in WebZ using the ***notifier*** class.  A child calls the ```notify(...)``` method, and the parent can subscribe to that Notifier.
+Passing information between components is critical to developing web applications.  Passing information is simple from parent to child because the parent created the child and thus has a reference to it.  Passing information from child to parent can be accomplished in Webz using the ***notifier*** class.  A child calls the ```notify(...)``` method, and the parent can subscribe to that Notifier.
 
 # Next Step
 
-Next we'll learn about dialogs and popups  [WebZ Dialogs &raquo;](../10-webz-advanced/dialogs.md)
+Next we'll learn about dialogs and popups  [Webz Dialogs &raquo;](../10-webz-advanced/dialogs.md)

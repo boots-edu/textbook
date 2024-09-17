@@ -10,7 +10,7 @@
 * [7. Exceptions and Code Quality](assets/slides/7_Exceptions and Code Quality.pptx)
 * [8. Software Testing](assets/slides/8_Software Testing.pptx)
 * [9. Webz Introduction](assets/slides/9_Webz Introduction.pptx)
-* [10. Advanced WebZ](assets/slides/10_Advanced WebZ.pptx)
+* [10. Advanced Webz](assets/slides/10_Advanced Webz.pptx)
 * [11. Advanced TypeScript](assets/slides/11_Advanced TypeScript.pptx)
 * [12. Higher Order Methods](assets/slides/12_Higher Order Methods.pptx)
 * [13. Recursion](assets/slides/13_Recursion.pptx)

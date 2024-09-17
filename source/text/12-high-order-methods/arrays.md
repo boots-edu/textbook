@@ -33,7 +33,7 @@ describe("MainComponent", () => {
 });
 ```
 
-We also saw this in the WebZ library with the Notifier class' subscribe method:
+We also saw this in the Webz library with the Notifier class' subscribe method:
 
 ```
 child.elementAdded.subscribe(

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: WebZ Dialogs
+title: Webz Dialogs
 nav_order: 10.3
-parent: Advanced WebZ
+parent: Advanced Webz
 ---
 
 # Webz Dialogs
@@ -18,11 +18,11 @@ parent: Advanced WebZ
 </details>
 
 ## Key Idea
-Popup windows and dialog boxes can be challenging in web development.  WebZ provides an easy mechanism for creating them.
+Popup windows and dialog boxes can be challenging in web development.  Webz provides an easy mechanism for creating them.
 
 ## Overview
 Sometimes we want to create an overlay window that sits on top of our page, prevents us from clicking elsewhere on our page, and has its own content and behaviors.
-WebEz provides two methods for doing this:
+Webz provides two methods for doing this:
 * Popup: Creates a popup window with a title, some text, and buttons that returns the text on the button through a Notifier.
 * Dialog: Creates a popup window whose content is determined by a component.  These can be created with the cli (webz dialog my-dialog).
 
@@ -175,8 +175,8 @@ Here you can see the output after a call to plsWait.show(true).
 Just like the popup, the rest of the website is grayed out and cannot be interacted with.
 
 ## Summary
-Creating a good user interface is critical to having your software accepted by users.  Dialogs and popups are an excellent mechanism for communicating and querying simple information from the user.  WebZ provides a simple ***popup*** method for simple interactions, and a ***dialog*** class to derive from for creating custom layouts.
+Creating a good user interface is critical to having your software accepted by users.  Dialogs and popups are an excellent mechanism for communicating and querying simple information from the user.  Webz provides a simple ***popup*** method for simple interactions, and a ***dialog*** class to derive from for creating custom layouts.
 
 # Next Step
 
-Next we'll learn about timers  [WebZ Timers &raquo;](../10-webz-advanced/timers.md)
+Next we'll learn about timers  [Webz Timers &raquo;](../10-webz-advanced/timers.md)

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: WebZ Timers
+title: Webz Timers
 nav_order: 10.4
-parent: Advanced WebZ
+parent: Advanced Webz
 ---
 
 # Webz Timers
@@ -77,4 +77,4 @@ We can use a timer to cause a function to be called periodically.  The @Timer di
 
 # Next Step
 
-Next we'll learn about timers  [WebZ Timers &raquo;](../11-Advanced%20Typescript/index.md)
+Next we'll learn about timers  [Webz Timers &raquo;](../11-Advanced%20Typescript/index.md)

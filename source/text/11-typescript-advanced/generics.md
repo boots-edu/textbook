@@ -21,7 +21,7 @@ parent: Advanced Typescript
 ***Generics*** allow for creation of reusable code that where internal types can be specified externally.
 
 ## Generics in Typescript
-In the last chapter we discussed the WebZ *Notifier* class.  This class was a ***generic*** class that we could pass ***type parameters*** to during creation.
+In the last chapter we discussed the Webz *Notifier* class.  This class was a ***generic*** class that we could pass ***type parameters*** to during creation.
 ```
 	event:Notifier = new Notifier();
 	event2:Notifier<number> = new Notifier<number>();
@@ -193,8 +193,8 @@ console.log(list,list2,list3);
 If a parameter is provided, the default is ignored.
 If no parameter is provided, then thetype must match the default if we use the class (i.e. we must pass a number, anything else will cause a type error at compile time).
 
-## Inside the WebZ Notifier class
-Let's return to the WebZ *Notifier* class and loot at the source code for it.
+## Inside the Webz Notifier class
+Let's return to the Webz *Notifier* class and loot at the source code for it.
 ```
 export class Notifier<T = void> {
 	constructor() {}

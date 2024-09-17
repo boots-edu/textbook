@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Beginning WebZ
+title: Beginning Webz
 nav_order: 9.2
 parent: Webz Introduction
 ---
 
-# Beginning WebZ
+# Beginning Webz
 [&laquo; Return to the Chapter Index](index.md)
 
 <details open markdown="block">
@@ -18,7 +18,7 @@ parent: Webz Introduction
 </details>
 
 ## Key Idea
-***WebZ*** is a lightweight web framework designed for this book.  It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on Typescript development
+***Webz*** is a lightweight web framework designed for this book.  It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on Typescript development
 
 # Working Example of Webz
 
@@ -76,10 +76,10 @@ console.log(mainInstance.name);
 Once we have some html, we would like it to do something.  That’s where the typescript comes in.
 You can create a web application without a framework, but it can be difficult and requires a deeper knowledge of how a web browser works.
 Many frameworks exist, but because they are for commercial purposes, they are large and have steep learning curves (angular, vuejs, react, etc.)
-We created WebZ to be a lighter weight, easier to learn framework that will prepare you for more complex frameworks that may come later and allow you to create impressive applications without a steep learning curve (still a curve, just not as steep).
+We created Webz to be a lighter weight, easier to learn framework that will prepare you for more complex frameworks that may come later and allow you to create impressive applications without a steep learning curve (still a curve, just not as steep).
 
-## The WebZ Model
-The WebZ model uses standard html and css like we talked about in the last section inside the basic unit of a component.
+## The Webz Model
+The Webz model uses standard html and css like we talked about in the last section inside the basic unit of a component.
 Every project starts with 1 component called MainComponent.  It has an html file, a css file, and a ts file to get you started (and a file for your tests).
 Additional components can be created and inserted into the MainComponent to build an object-oriented web application.
 Some Key design points:
@@ -88,8 +88,8 @@ Some Key design points:
 * The ts file uses decorators to attach methods and properties of the class to the html by the element’s id attribute (I told you we would need it later).
 The finished product is compiled into a website that can be published on any web server.
 
-## Getting Started with WebZ
-To get started, we need to install the WebZ command line tool from NPM.
+## Getting Started with Webz
+To get started, we need to install the Webz command line tool from NPM.
 ```bash
 npm i -g @boots-edu/webz-cli
 ```
@@ -100,10 +100,10 @@ webz new first-example
 ```
 This creates a fully working website with one component in it (MainComponent)
 
-This installs a basic WebZ project with a single component in it that you can edit, and a lot of support files that you can ignore.
+This installs a basic Webz project with a single component in it that you can edit, and a lot of support files that you can ignore.
 You are only interested in what is inside the src/app folder (src\app on Windows)
 
-WebZ is a component-based system.  Individual elements should be broken up into components and attached to the web document in the constructor.
+Webz is a component-based system.  Individual elements should be broken up into components and attached to the web document in the constructor.
 If we navigate to the src/app folder at a command prompt, we can add more components using the CLI interface.
 ```bash
 webz component fancy-image
@@ -173,7 +173,7 @@ export class FancyImageComponent extends EzComponent {
 > If you run this code with ```npm run start``` you will see the image displayed.
 
 ## Decorator transforms
-While this is nice, I would rather use a numeric value (1 or 2) to select my image.  I can do that in WebZ by using a custom transform.
+While this is nice, I would rather use a numeric value (1 or 2) to select my image.  I can do that in Webz by using a custom transform.
 ```
 @BindAttribute("image", "src", (imgNum: number): string => {
 	    return `assets/img${imgNum}.jpg`;
@@ -190,7 +190,7 @@ Remember the buttons we added to MainComponent.  What do we want them to do:
 * If next is pushed increment the image number
 * If previous is pushed decrement the image number
 
-So first we need variables to bind to the disabled attribute of the buttons so we can disable them.  There is a special decorator in WebZ, ```@BindDisabledToBoolean``` that greatly simplifies this process for us.
+So first we need variables to bind to the disabled attribute of the buttons so we can disable them.  There is a special decorator in Webz, ```@BindDisabledToBoolean``` that greatly simplifies this process for us.
 
 ```
 export class MainComponent extends EzComponent {
@@ -241,7 +241,7 @@ Clicking hte next enables the previous button, disables the next button and disp
 There really isn’t much more to it.  Bind decorators connect properties to elements.  If we change the property, the element changes (NOT THE OTHER WAY AROUND).
 Event Decorators capture events from the web page allowing us to react to those events.  These are decorators like @Click(…)
 We will cover some more advanced features in the next chapter, but these are the basics.
-## Decorators in WebZ
+## Decorators in Webz
 ### Bind Decorators
 General:
 * @BindAttribute(id,attr,?trans)
@@ -289,9 +289,9 @@ Playgrounds
 In this section we learned about the Webz framework and how we can build a simple interactive application.  The CLI can be used to generate new projects, and add components to an existing project.  We can then attach code and variables to our html using the various decorators outlined in this chapter.
 
 ## Chapter Summary
-In this chapter we have learned the basics of web development including html and css.  We have introduced ***WebZ*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applications.
+In this chapter we have learned the basics of web development including html and css.  We have introduced ***Webz*** which is a framework developed for this book.  By binding variables to element attributes and functions to element events, we can build complex web applications.
 
 
 # Next Step
 
-Next we'll learn more advanced features of Webz and how to use them [Advanced WebZ &raquo;](../10-webz-advanced/index.md)
+Next we'll learn more advanced features of Webz and how to use them [Advanced Webz &raquo;](../10-webz-advanced/index.md)

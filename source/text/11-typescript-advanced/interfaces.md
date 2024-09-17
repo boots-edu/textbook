@@ -157,4 +157,4 @@ class Tomato implements Serializable{ . . . }
 
 # Next Step
 
-Next we'll learn about Union Types  [WebZ Timers &raquo;](../11-Advanced%20Typescript/unions.md)
+Next we'll learn about Union Types  [Webz Timers &raquo;](../11-Advanced%20Typescript/unions.md)
