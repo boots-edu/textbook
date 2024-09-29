@@ -179,7 +179,7 @@ const smileyFace: number[][] = [
 ];
 ```
 
-<details>
+<details markdown="block">
 <summary>Which is much more compact than the <code>Color[][]</code> representation would be.</summary>
 
 ```typescript
