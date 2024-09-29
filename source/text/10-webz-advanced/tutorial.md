@@ -219,6 +219,290 @@ export const PALETTE: number[][] = [
 > 
 > Notice that both the `PALETTE` and the `smileyFace` arrays are 2D arrays (an array of arrays). However, they are different types of arrays. The `PALETTE` array is an array of `number[]` triples, while the `smileyFace` array is an array of `number[]` arrays (with the outer array representing rows and the inner arrays representing individual columns within a row). This is because the `smileyFace` array represents a 2D grid of palette indices, while the `PALETTE` array represents a list of colors. Don't get these confused as you work with them!
 
+If everything has been done correctly so far, you should be able to run the `Color` tests and see them pass. You can run the tests by running the following command in the terminal:
+
+```bash
+npm run test color
+```
+
+If the tests fail, then you can run them in interactive mode. This will make the tests run whenever you save a file, and you can see the output in the terminal. To run the tests in interactive mode, run the following command:
+
+```bash
+npm run watch color
+```
+
+## 2) Pixels
+
+Now that we have a way to represent colors, we can create a `PixelComponent` class that represents a single pixel in an image. A pixel is a color at a specific location in an image. We will create a Pixel class that has a `color` property (a `Color` object), size (a `number`), and read-only `x` and `y` properties (numbers that represent the location of the pixel in the image).
+
+These pixels are going to appear in multiple places in our editor. We'll make their size adjustable so that they can be used in different contexts (the preview area, the color picker, and the image editor itself). Since they're going to be used in multiple places, we'll make them a `WebzComponent` so that we can reuse them easily.
+
+1. Run the following command in the `src/app/` directory to create a new component called `pixel`:
+
+```bash
+webz component pixel
+```
+
+A new directory called `pixel` will be created in the `src/app/` directory. This directory will contain the TypeScript, HTML, and CSS files for the Pixel component: `pixel.component.ts`, `pixel.component.test.ts`, `pixel.component.html`, and `pixel.component.css`.
+
+This class is going to be used by many other classes, but we don't actually place it in on the screen until we have a Grid or Toolbar to place it in. However, during development, you may find it easier to add a `PixelComponent` Component to the `Main` component so that you can see it in the browser. You can do this by adding the following code to the `Main` component:
+
+```typescript
+import { PixelComponent } from "./pixel/pixel.component";
+
+// ...
+
+export class MainComponent extends WebzComponent {
+    constructor() {
+        super(html, css);
+
+        // Create a test pixel
+        const testPixel = new PixelComponent(0, 0);
+        testPixel.setColor(new Color(255, 0, 0)); // Red
+        testPixel.setSize(50); // 50px by 50px
+        this.addComponent(testPixel);
+        // Delete this before you are finished!
+    }
+}
+```
+
+1. To further test your `PixelComponent`, we created some tests that are specifically for the `PixelComponent`. Since you just created the `PixelComponent`, these tests are not yet in the `pixel.component.test.ts` file. You'll need to add them yourself. Copy all of the following code and paste it into the `pixel.component.test.ts` file, making sure to replace any existing code in that file.
+
+```typescript
+import { describe, expect, test, beforeAll } from "@jest/globals";
+import { PixelComponent } from "./pixel.component";
+import { bootstrap } from "@boots-edu/webz";
+import { Color } from "../color";
+
+describe("PixelComponent", () => {
+    let component: PixelComponent | undefined = undefined;
+    beforeAll(() => {
+        const html: string = `<div>Testing Environment</div><div id='main-target'></div>`;
+        component = bootstrap<PixelComponent>(PixelComponent, html);
+    });
+    describe("Constructor", () => {
+        test("Create Instance", () => {
+            expect(component).toBeInstanceOf(PixelComponent);
+        });
+    });
+
+    // New tests!
+    describe("Methods", () => {
+        test("(1pts) Pixels can change color", () => {
+            expect(component).toBeDefined();
+            if (component === undefined) {
+                return;
+            }
+            // Try changing it to be red
+            const red = new Color(255, 0, 0);
+            component.setColor(red);
+            expect(component.getColor()).toEqual(red);
+            expect(component["shadow"].getElementById("pixel").style.backgroundColor).toBe("rgb(255, 0, 0)");
+
+            // Try changing it to be cyan
+            const cyan = new Color(0, 255, 255);
+            component.setColor(cyan);
+            expect(component.getColor()).toEqual(cyan);
+            expect(component["shadow"].getElementById("pixel").style.backgroundColor).toBe("rgb(0, 255, 255)");
+        });
+
+        test("(1 pts) Pixels can change size", () => {
+            expect(component).toBeDefined();
+            if (component === undefined) {
+                return;
+            }
+            // Try changing it to be 20x20
+            component.setSize(20);
+            expect(component["shadow"].getElementById("pixel").style.width,).toBe("20px");
+            expect(component["shadow"].getElementById("pixel").style.height).toBe("20px");
+
+            // Try changing it to be 10x10
+            component.setSize(10);
+            expect(component["shadow"].getElementById("pixel").style.width).toBe("10px");
+            expect(component["shadow"].getElementById("pixel").style.height).toBe("10px");
+        });
+    });
+});
+```
+
+If you read over the tests above, you will see that we have two tests. The first test checks if the pixel can change color, and the second test checks if the pixel can change size. You can run these tests by running the following command in the terminal:
+
+```bash
+npm run watch pixel
+```
+
+The tests will fail until we implement the `PixelComponent`.
+
+3. In the `pixel.component.html` file, create a `div` element with the id `pixel`. This element will represent the pixel on the screen.
+
+4. In the `pixel.component.ts` file, add four private fields to the class:
+
+- `color` (a `Color` object that represents the color of the pixel): Choose an appropriate default value (e.g., white, black, purple).
+- `size` (a `number` that represents the size of the pixel in actual screen pixels): Choose an appropriate default value (e.g., `10`, `20`, `50`).
+- `x` (a `number` that represents the x-coordinate of the pixel in the image): Initialize this member variable through a constructor parameter.
+- `y` (a `number` that represents the y-coordinate of the pixel in the image): Initialize this member variable through a constructor parameter.
+
+5. Define the methods `getX`, `getY`, and `getColor` that consume nothing and return the `x`, `y`, and `color` properties of the pixel. Do not overthink these methods; they should be simple one-liners that return the appropriate property.
+
+6. Define the methods `setColor` (which consumes a `Color` and returns nothing but updates the `color` property of the pixel) and `setSize` (which consumes a `number` and returns nothing but updates the `size` property of the pixel). Again, do not overthink these methods; they should be simple one-liners that update the appropriate property. These are public methods for other parts of the application to safely change the color and size of the pixel. Notice that we do NOT have a `setX` or `setY` method; the location of the pixel should be immutable once it is created.
+
+7. We need the `color` of the `PixelComponent` class to update the background color of the `div` element in the HTML. To do this, we need to use the `BindStyle` decorator on the `color` member variable. This decorator will bind the `color` property to the `background-color` style of the `div` element in the HTML. Add the following code to the `pixel.component.ts` file:
+
+```typescript
+import { BindStyle } from "@boots-edu/webz";
+
+export class PixelComponent extends WebzComponent {
+    // ...
+    @BindStyle("pixel", "backgroundColor", (color: Color) => color.toString())
+    color: Color = new Color(255, 255, 255);
+    // ...
+}
+```
+
+The first parameter to the `BindStyle` decorator is the id of the `div` element in the HTML. The second parameter is the style property that we want to bind to (in this case, `backgroundColor`). The third parameter is an anonymous function that takes the `color` property of the `PixelComponent` class and returns a string. This function should convert the `Color` object to a string that represents the color in the format `rgb(red, green, blue)`.
+
+8. We also need to update the size of the `div` element in the HTML to match the size of the pixel. To do this, we need to use the `BindStyleToNumberAppendPx` decorator on the `size` member variable. This decorator will bind the `size` property to the `width` and `height` styles of the `div` element in the HTML. This decorator automatically converts the number to a string and appends `px` to the end. You will need to attach the decorator to the `size` member variable TWICE, once for the `width` style and once for the `height` style. Both times, you will be binding to the `pixel` id in the HTML.
+
+The tests should now pass. If they do not, you may need to debug your code to find the issue. If you are having trouble, don't hesitate to ask for help! Don't be afraid to experiment with your `testPixel` in the `Main` component to see how it behaves (but remember to remove it before you finish).
+
+## 3) Toolbar
+
+With our `PixelComponent` ready, we can now create a `Toolbar` component that will contain a set of `PixelComponent` representing the colors in the palette. The `Toolbar` component will allow the user to select a color from the palette to use in the image editor, changing a currently active color (also represented on the screen by a `PixelComponent`).
+
+1. Run the following command in the `src/app/` directory to create a new component called `toolbar`:
+
+```bash
+webz component toolbar
+```
+
+A new directory called `toolbar` will be created in the `src/app/` directory. This directory will contain the TypeScript, HTML, and CSS files for the `Toolbar` component: `toolbar.component.ts`, `toolbar.component.test.ts`, `toolbar.component.html`, and `toolbar.component.css`.
+
+2. In the `toolbar.component.html` file, you can use the following HTML to create a `div` element with the id `swatches` (styled to be in a row). This element will contain the Pixel components representing the colors in the palette. You can also create a `div` element with the id `active` to display the currently active color. We put a horizontal rule (`<hr>`) at the bottom of the toolbar to separate it from the rest of the page, but you can remove that if you like. We could also have styled the `swatches` in the `css` file instead of the `html` file, or left the swatches in a vertical column.
+
+```html
+<div>
+    <span>Choose a color:</span>
+    <div id="swatches" style="display: flex; flex: row"></div>
+    <span>Currently active color:</span>
+    <div id="active"></div>
+</div>
+<hr>
+```
+
+3. In the `main.component.html` file, create a new `div` element with the id `toolbar`. This element will represent the palette toolbar on the screen. Then, in the `main.component.ts` file, create an instance of a `ToolbarComponent` and add it to the `MainComponent` using the `addComponent` method, with the target id `"toolbar"`. You will need to import the `ToolbarComponent` class at the top of the file. At this point, the toolbar should appear on the screen, but it will not contain any colors.
+
+4. In the `toolbar.component.ts` file, add a public constant field named `DEFAULT_COLOR` (a `Color`) that represents the default color of the active pixel. You can choose any color you like for the default color, but we recommend black (`0, 0, 0`) and not white (`255, 255, 255`) so that it is visible on the screen.
+
+5. In the `toolbar.component.ts` file, add a private field to the class called `active` (a `PixelComponent` object that represents the currently active color). Initialize this field to a new `PixelComponent` object with the `x` and `y` properties set to `0` (the top-left corner of the image). In the `ToolbarComponent` constructor, use the `addComponent` method to add the `active` pixel to the component. You will need to use the `setSize` method to set the size of the `active` pixel to `30` (or another appropriate size), and the `setColor` method to set the color of the `active` pixel to the `DEFAULT_COLOR`. At this point, the active color should appear on the screen!
+
+6. Since the `active` field is private, other classes will not be able to ask the `ToolbarComponent` for the active color. To allow other classes to access the active color, define a public method in the `ToolbarComponent` class named `getActiveColor` that consumes nothing and returns a `Color`. This method should return the color of the `active` pixel.
+
+7. The `ToolbarComponent` class will contain a set of `PixelComponent` objects representing the colors in the palette. We'll need to create one pixel for each color in the palette, set them to the appropriate size and color, and then add them to the `ToolbarComponent`. To do this, we will need to use the `PALETTE` array that we created earlier. In the `ToolbarComponent` constructor, iterate over the `PALETTE` array and create a new `PixelComponent` object for each color in the palette (you can use the `makeColor` function too, if you want). Set the size of each pixel to an appropriate value (e.g., `20`), set the color of each pixel to the color from the `PALETTE` array, and add each pixel to the `ToolbarComponent` using the `addComponent` method. You will also need to create a private `swatches` field in the `ToolbarComponent` class to store these newly created `PixelComponent` objects. make sure you adding the component to the screen (`addComponent`) AND to the `swatches` array (`push`).
+
+### Clickable Pixels
+
+The `Toolbar` component contains a set of `PixelComponent` objects representing the colors in the palette. These pixels should be clickable, allowing the user to select a color from the palette to use in the image editor. When a pixel is clicked, the `active` pixel should change to the color of the clicked pixel. We're going to need to use the `Click` decorator to make this happen.
+
+However, the active pixel should not be clickable (what would it even do?). Since we want to have a version of Pixels that can be clicked and a version that cannot (but is otherwise the same), a simple way to do this is to create a new class that extends `PixelComponent` and adds the `Click` decorator. We'll call this class `ClickablePixelComponent`.
+
+8. Do NOT run the `webz component` command to create the `ClickablePixelComponent`. Instead, create a new file in the `src/app/pixel/` directory called `clickable-pixel.component.ts`. In this file, create a new class called `ClickablePixelComponent` that extends `PixelComponent`. This class should extend the `PixelComponent` class:
+
+```typescript
+import { PixelComponent } from "./pixel.component";
+
+export class ClickablePixelComponent extends PixelComponent {
+    constructor(x: number, y: number) {
+        super(x, y);
+    }
+}
+```
+
+Our new `ClickablePixelComponent` class is now a subclass of the `PixelComponent` class. This means that it has all the properties and methods of the `PixelComponent` class, but it can also have additional properties and methods that are unique to the `ClickablePixelComponent` class. The main difference between the `PixelComponent` and the `ClickablePixelComponent` is that the `ClickablePixelComponent` will have the `Click` decorator on it so that it supports clicking.
+
+9. In the `clickable-pixel.component.ts` file, define a new function named `onClick` that consumes nothing and returns nothing. This function should be empty for now. Next, attach the `Click` decorator with the id `pixel` to the `onClick` function. This will make the `onClick` function run whenever the `div` element with the id `pixel` is clicked.
+
+```typescript
+import { Click } from "@boots-edu/webz";
+
+export class ClickablePixelComponent extends PixelComponent {
+    constructor(x: number, y: number) {
+        super(x, y);
+    }
+
+    @Click("pixel")
+    onClick() {
+        // Do nothing for now
+    }
+}
+```
+
+But what on earth should go into the `onClick` function? We want the `active` pixel in the `ToolbarComponent` to change to the color of the clicked pixel. However, the `ClickablePixelComponent` class does not have access to the `active` pixel in the `ToolbarComponent`. When using Composition (which is the type of relationship between the `ToolbarComponent` and the `ClickablePixelComponent`), the `ClickablePixelComponent` should not have direct access to the `active` pixel in the `ToolbarComponent`. Toolbars can know about their pixels, but pixels should not know whether they are in a toolbar (since they could be in other places too).
+
+To solve this problem, we will use a `Notifier`. As previously described in the [Events](./events.md) chapter, the `Notifier` class is a special class that can be composed in a class to notify other classes of changes. In this case, we will create a `Notifier` in the `ClickablePixelComponent` class that will notify the `ToolbarComponent` when the pixel is clicked. The `ToolbarComponent` will then update the `active` pixel to the color of the clicked pixel.
+
+A `Notifier` has two halves:
+
+- An inner class will have a `Notifier` instance and will call its `notify` method when something happens.
+- An outer class will have a reference to the inner class, and can `subscribe` a function to the `Notifier` instance to be called when `notify` is called.
+
+10. In this case, we'll have our `ClickablePixelComponent` be the inner class and the `ToolbarComponent` be the outer class. The `ClickablePixelComponent` will call `notify` when it is clicked, and the `ToolbarComponent` will subscribe to the `ClickablePixelComponent` to update the active color when `notify` is called. The `Notifier` itself will be stored in a field named `clickEvent` in the `ClickablePixelComponent` class. Here is the new definition of the `ClickablePixelComponent` class:
+
+```typescript
+import { Click, Notifier } from "@boots-edu/webz";
+import { PixelComponent } from "./pixel.component";
+
+export class ClickablePixelComponent extends PixelComponent {
+    clickEvent: Notifier<ClickablePixelComponent> = new Notifier();
+
+    constructor(x: number, y: number) {
+        super(x, y);
+    }
+
+    @Click("pixel")
+    onClick() {
+        this.clickEvent.notify(this);
+    }
+}
+```
+
+11. All that is left is to update the `ToolbarComponent` to subscribe to the `ClickablePixelComponent` when it is created. In the `ToolbarComponent` constructor, where you originally created the `PixelComponent` inside of a `for` loop, you should now instead create a `ClickablePixelComponent` and subscribe to its `clickEvent`. When the `clickEvent` is called, the `ToolbarComponent` should update the `active` pixel to the color of the clicked pixel. You will need to import the `ClickablePixelComponent` class at the top of the file. Here is an example of how you might do this:
+
+```typescript
+import { ClickablePixelComponent } from "../pixel/clickable-pixel.component";
+
+export class ToolbarComponent extends WebzComponent {
+    // ...
+    swatches: PixelComponent[] = [];
+
+    // ...
+    constructor() {
+        super(html, css);
+
+        // Create the swatches
+        for (let i = 0; i < PALETTE.length; i++) {
+            const swatch = new ClickablePixelComponent(0, i);
+            // ...
+            swatch.clickEvent.subscribe((swatch: ClickablePixelComponent) => {
+                this.active.setColor(swatch.getColor());
+            });
+            // ...
+        }
+    }
+}
+```
+
+We have to subscribe to the `clickEvent` right after we create the `ClickablePixelComponent`, since that is when we have the reference to the `ClickablePixelComponent` that we need to subscribe. The `subscribe` method takes a function that consumes a `ClickablePixelComponent` and returns nothing. This function should update the `active` pixel to the color of the clicked pixel. The `subscribe` method will be called whenever the `clickEvent.notify` method is called in the `ClickablePixelComponent`.
+
+If you are having trouble with the syntax of anonymous functions, you should consider reviewing the [Anonymous Functions](../8-testing/anonymous.md) chapter. We will use anonymous functions with `Notifier` a lot when building interactive web applications.
+
+{: .note-title }
+
+> Inheritance != Notifiers
+> 
+> We used inheritance here to create a new class that is almost the same as the `PixelComponent` class, but with the added ability to be clicked. This is a common use of inheritance. However, inheritance is not required to create a `Notifier`. Inheritance is used to create new classes that are similar to existing classes, while a `Notifier` is a special class that can be composed in a class to notify other classes of changes. We could have put all the code into one `PixelComponent` class and just let the inner class do nothing. Make sure you understand that we do not have to create a subclass just to use Notifiers!
+
+You should now be able to click on the pixels in the toolbar to change the active color. If you are having trouble, don't hesitate to ask for help! Make sure you are passing all the tests for the Palette, and that you understand how `Notifier` works, before you move on.
+
 ## 5) Deploy Your Site
 
 For now, this is a good place to stop. You have learned how to create components, bind values to elements, handle events, and style elements with Webz. You have also learned how to use TypeScript and CSS to create dynamic and interactive web pages. You can now build on this knowledge to create more complex and interesting web applications. But before we finish, let's deploy your site!
