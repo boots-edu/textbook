@@ -95,11 +95,13 @@ webpack 5.91.0 compiled successfully in 4226 ms
 
 Our goal is to eventually create a simple image editor, but that all begins with a representation of colors. We will create a `Color` class that represents a color as an RGB value. This will not be a `WebzComponent`, but a simple TypeScript class. We'll eventually create other components that use this class.
 
-1. Create a new file in the `src/app` directory called `color.ts`. Create a class called `Color` with three private properties: `red`, `green`, and `blue`. These properties should be numbers that represent the red, green, and blue values of the color. The constructor should take three parameters, one for each property, in this order.
+1. Create a new file in the `src/app` directory called `color.ts`. Create and export a class called `Color` with three private properties: `red`, `green`, and `blue`. These properties should be numbers that represent the red, green, and blue values of the color. The constructor should take three parameters, one for each property, in this order.
 
 2. Define a method in the class named `toString()` that consumes nothing and returns a string. This method should return a string that represents the color in the format `rgb(red, green, blue)`. For example, if the color has `red=255`, `green=0`, and `blue=0`, the `toString()` method should return the string `rgb(255, 0, 0)`.
 
 3. Define a method in the class named `asNumbers()` that consumes nothing and returns an array of three numbers. This method should return a newly created array with the red, green, and blue values of the color in that order.
+
+### Palettes
 
 Colors are usually described as a combination of red, green, and blue values. Each value can range from 0 to 255, where 0 means no color and 255 means the maximum amount of color. For example, `rgb(255, 0, 0)` is a bright red color, while `rgb(0, 255, 0)` is a bright green color.
 
@@ -114,8 +116,8 @@ However, writing out three numbers every time we want to represent a color can b
             <th>Preview</th>
         </tr>
     </thead>
-    <tr><td>0</td><td><code>[255, 255, 255]</code></td><td>White</td><td><div style="width: 20px; height: 20px; background-color: rgb(255, 255, 255);"></div></td></tr>
-    <tr><td>1</td><td><code>[0, 0, 0]</code></td><td>Black</td><td><div style="width: 20px; height: 20px; background-color: rgb(0, 0, 0);"></div></td></tr>
+    <tr><td>0</td><td><code>[0, 0, 0]</code></td><td>Black</td><td><div style="width: 20px; height: 20px; background-color: rgb(0, 0, 0);"></div></td></tr>
+    <tr><td>1</td><td><code>[255, 255, 255]</code></td><td>White</td><td><div style="width: 20px; height: 20px; background-color: rgb(255, 255, 255); border: 1px solid black"></div></td></tr>
     <tr><td>2</td><td><code>[255, 0, 0]</code></td><td>Red</td><td><div style="width: 20px; height: 20px; background-color: rgb(255, 0, 0);"></div></td></tr>
     <tr><td>3</td><td><code>[0, 255, 0]</code></td><td>Green</td><td><div style="width: 20px; height: 20px; background-color: rgb(0, 255, 0);"></div></td></tr>
     <tr><td>4</td><td><code>[0, 0, 255]</code></td><td>Blue</td><td><div style="width: 20px; height: 20px; background-color: rgb(0, 0, 255);"></div></td></tr>
@@ -125,7 +127,7 @@ However, writing out three numbers every time we want to represent a color can b
     <tr><td>8</td><td><code>[128, 128, 128]</code></td><td>Gray</td><td><div style="width: 20px; height: 20px; background-color: rgb(128, 128, 128);"></div></td></tr>
 </table>
 
-This way, an image can be written as a 2D array of palette indices, where each index represents a color in the palette. For example, the following 2D array represents a 5x5 image of a smiley face, with the palette representation on the left and the RGB representation on the right:
+This way, an image can be written as a 2D array of palette indices, where each index represents a color in the palette. For example, the following 2D grid represents a 5x5 image of a smiley face (remember that `0` is black and `5` is yellow):
 
 <table>
     <tr>
@@ -164,6 +166,58 @@ This way, an image can be written as a 2D array of palette indices, where each i
         <td style="background-color: rgb(255, 255, 0);">5</td>
     </tr>
 </table>
+
+This would translate to the following 2D number array in TypeScript:
+
+```typescript
+const smileyFace: number[][] = [
+    [5, 5, 5, 5, 5],
+    [5, 0, 5, 0, 5],
+    [5, 5, 5, 5, 5],
+    [5, 0, 5, 0, 5],
+    [5, 0, 0, 0, 5]
+];
+```
+
+<details>
+<summary>Which is much more compact than the <code>Color[][]</code> representation would be.</summary>
+
+```typescript
+const smileyFace: Color[][] = [
+    [new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0)],
+    [new Color(255, 255, 0), new Color(0, 0, 0), new Color(255, 255, 0), new Color(0, 0, 0), new Color(255, 255, 0)],
+    [new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0)],
+    [new Color(255, 255, 0), new Color(0, 0, 0), new Color(255, 255, 0), new Color(0, 0, 0), new Color(255, 255, 0)],
+    [new Color(255, 255, 0), new Color(0, 0, 0), new Color(0, 0, 0), new Color(0, 0, 0), new Color(255, 255, 0)]
+];
+```
+</details>
+
+4. To make it possible to support palettes, we will need a `PALETTE` array that holds the colors of the palette. This array should be a constant array of `number[]` triples (arrays of length 3), where each index corresponds to the index of the color in the palette. For example, `PALETTE[0]` should be black (`[0, 0, 0]`), `PALETTE[1]` should be white (`[255, 255, 255]`), and so on. You will need to export the `PALETTE` array so that the test can access it.
+
+```typescript
+export const PALETTE: number[][] = [
+    [0, 0, 0], // Black
+    [255, 255, 255], // White
+    [255, 0, 0], // Red
+    [0, 255, 0], // Green
+    [0, 0, 255], // Blue
+    [255, 255, 0], // Yellow
+    [255, 0, 255], // Magenta
+    [0, 255, 255], // Cyan
+    [128, 128, 128] // Gray
+];
+```
+
+5. Create and export a function named `makeColor` that consumes a `number` and returns a `Color`. This function should take a number `index` and return a new `Color` object with the red, green, and blue values from the `PALETTE` array at the given index. For example, `makeColor(0)` should return a new `Color` object with the red, green, and blue values from `PALETTE[0]`. Additionally, if the index is out of bounds, the function should throw an error with an appropriate message (e.g., `"Invalid color index"`).
+
+6. Finally, create and export a function named `convertPalette` that consumes a 2D number array (representing a palette-indexed image) and returns a 2D `Color` array. This function convert each of the palette-indexed numbers to a `Color` object using the `makeColor` function. For example, `convertPalette(smileyFace)` should return a 2D array of `Color` objects that represent the smiley face image.
+
+{: .note-title }
+
+> 2D Arrays
+> 
+> Notice that both the `PALETTE` and the `smileyFace` arrays are 2D arrays (an array of arrays). However, they are different types of arrays. The `PALETTE` array is an array of `number[]` triples, while the `smileyFace` array is an array of `number[]` arrays (with the outer array representing rows and the inner arrays representing individual columns within a row). This is because the `smileyFace` array represents a 2D grid of palette indices, while the `PALETTE` array represents a list of colors. Don't get these confused as you work with them!
 
 ## 5) Deploy Your Site
 
