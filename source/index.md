@@ -57,6 +57,7 @@ Let's learn how to write object-oriented TypeScript code!
     2. [Webz Events](text/10-webz-advanced/events.md)
     3. [Webz Dialogs](text/10-webz-advanced/dialogs.md)
     4. [Webz Timers](text/10-webz-advanced/timers.md)
+    5. [Webz Tutorial](text/10-webz-advanced/tutorial.md)
 11. [Advanced Typescript](text/11-typescript-advanced/index.md)
     1. [Typescript Generics](text/11-typescript-advanced/generics.md)
     2. [Typescript Interfaces](text/11-typescript-advanced/interfaces.md)

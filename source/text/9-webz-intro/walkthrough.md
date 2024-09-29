@@ -975,6 +975,8 @@ Assuming nothing goes wrong during deployment, the final step can be expanded to
 
 ![Live Site](../../assets/images/webz_walkthrough/final_link.png)
 
+If that URL is not visible, then you can also find the URL by going back to the "Settings" tab and scrolling down to the "Github Pages" section. The URL should be displayed there.
+
 ## 6) Submission
 
 Once you have completed the tutorial and deployed your site, you can submit on GradeScope. If you have any questions or issues, please don't hesitate to ask for help!
