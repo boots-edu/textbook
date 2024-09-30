@@ -5,8 +5,8 @@ nav_order: 12.2
 parent: Higher Order Methods
 ---
 
-
 # Example Implementation of HO Methods
+
 [&laquo; Return to the Chapter Index](index.md)
 
 <details open markdown="block">
@@ -19,23 +19,24 @@ parent: Higher Order Methods
 </details>
 
 ## Key Idea
-A ***higher order function*** is a function that takes as an argument and/or returns a function.
 
+A **_higher order function_** is a function that takes as an argument and/or returns a function.
 
 # Overview
 
-This page provides an example implementation of ***higher order methods*** in TypeScript. We will re-implement all of the higher-order array methods in our own custom `List` class.
+This page provides an example implementation of **_higher order methods_** in TypeScript. We will re-implement all of the higher-order array methods in our own custom `List` class.
 
-Note that you do not have to implement these methods yourself - they are built into the JavaScript array class. This is just an explanation of *how* they work. Examples of using them are at the bottom of the page.
+Note that you do not have to implement these methods yourself - they are built into the JavaScript array class. This is just an explanation of _how_ they work. Examples of using them are at the bottom of the page.
 
 For more information about the built-in array methods, see the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
+{.no-run}
 ```typescript
 /**
  * Implementation of a "List", which will just be a wrapper around an array.
  * This is redundant to the built-in array; it is just a pedagogical example.
- * 
- * The type variable `T` is a generic type, which means that it can be any type, but it 
+ *
+ * The type variable `T` is a generic type, which means that it can be any type, but it
  * will be the same type for all the items in the List and the same type for the parameter
  * of the callback functions.
  */
@@ -51,10 +52,11 @@ class List<T> {
 
 # `forEach` Method
 
+{.no-run}
 ```typescript
     /**
      * This method will call the callback function for each item in the List.
-     * 
+     *
      * @param callback The function to call for each item. It will be passed the current item, the index, and the array.
      *               The index is optional, and the array is the data inside of the List itself.
      */
@@ -67,10 +69,11 @@ class List<T> {
 
 # `filter` Method
 
+{.no-run}
 ```typescript
     /**
      * This method will create a new List with only the items that pass the test in the callback function.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item should be included in the new List.
      * @returns A new List with only the items that pass the test.
      */
@@ -87,11 +90,12 @@ class List<T> {
 
 # `some` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return if ANY of them return true.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns True if any of the items pass the test, false otherwise.
      */
@@ -107,11 +111,12 @@ class List<T> {
 
 # `every` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return if ALL of them return true.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns True if all of the items pass the test, false otherwise.
      */
@@ -127,13 +132,14 @@ class List<T> {
 
 # `map` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and returns a new List with the
      * transformed values. This can be used to change the type of the items in the List, or to modify each one.
      * Note that it returns a NEW list, it does not modify the original.
-     * 
+     *
      * @param callback The function to call for each item. It should return the new value for that item.
      * @returns A new List with the transformed values.
      */
@@ -148,6 +154,7 @@ class List<T> {
 
 # `reduce` Method
 
+{.no-run}
 ```typescript
 
     /**
@@ -155,7 +162,7 @@ class List<T> {
      * and return the final value of the accumulator. This can be used to sum all the items, or to concatenate
      * them together, or to do any other kind of reduction. Note that the function ALSO takes an initial value
      * for the accumulator.
-     * 
+     *
      * @param callback The function to call for each item. It should return the new value for the accumulator.
      * @param initialValue The initial value for the accumulator.
      * @returns The final value of the accumulator.
@@ -179,6 +186,7 @@ class List<T> {
 
 # `rightReduce` Method
 
+{.no-run}
 ```typescript
 
     /**
@@ -186,7 +194,7 @@ class List<T> {
      * and return the final value of the accumulator. Unlike `reduce`, it will start from the right side of the
      * array and go to the left (aka backwards). This can be used to do the same things as `reduce`, but in reverse.
      * Note that the function ALSO takes an initial value for the accumulator.
-     * 
+     *
      * @param callback The function to call for each item. It should return the new value for the accumulator.
      * @param initialValue The initial value for the accumulator.
      * @returns The final value of the accumulator.
@@ -210,12 +218,13 @@ class List<T> {
 
 # `find` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return the first item that
      * passes the test. If no item passes the test, it will return `undefined`.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns The first item that passes the test, or `undefined` if none do.
      */
@@ -231,12 +240,13 @@ class List<T> {
 
 # `findIndex` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return the index of the first item that
      * passes the test. If no item passes the test, it will return `-1`.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns The index of the first item that passes the test, or `-1` if none do.
      */
@@ -254,13 +264,14 @@ class List<T> {
 
 # `findLast` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return the last item that
      * passes the test. If no item passes the test, it will return `undefined`. This is the same as `find`,
      * but it starts from the end of the array and goes to the beginning.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns The last item that passes the test, or `undefined` if none do.
      */
@@ -278,13 +289,14 @@ class List<T> {
 
 # `findLastIndex` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will call the apply the callback function to each element, and return the index of the last item that
      * passes the test. If no item passes the test, it will return `-1`. This is the same as `findIndex`,
      * but it starts from the end of the array and goes to the beginning.
-     * 
+     *
      * @param callback The function to call for each item. It should return true if the item passes the test.
      * @returns The index of the last item that passes the test, or `-1` if none do.
      */
@@ -302,15 +314,16 @@ class List<T> {
 
 # `sort` Method
 
+{.no-run}
 ```typescript
 
     /**
      * This method will sort the items in the List using the given callback function to compare them.
      * The callback function should return a negative number if `a` should come before `b`, a positive number
      * if `a` should come after `b`, and 0 if they are equal.
-     * 
+     *
      * Unlike the built-in `sort` method, this will modify the original List.
-     * 
+     *
      * @param callback The function to compare two items. It should return a negative number if `a` should come before `b`, a positive number if `a` should come after `b`, and 0 if they are equal.
      * @sideEffect This method will modify the original List.
      */
@@ -384,7 +397,6 @@ list.sort((a, b) => b - a);
 console.log(list);
 list.sort((a, b) => a - b);
 console.log(list);
-
 ```
 
 ## More Examples
@@ -395,41 +407,77 @@ const myGrades = new List([90, 86, 97, 9]);
 const myFruit = new List(["apple", "orange", "lychee", "banana"]);
 class Pet {
     constructor(public name: string, public kind: string) {}
-    clone(): Pet { return new Pet(this.name, this.kind); }
+    clone(): Pet {
+        return new Pet(this.name, this.kind);
+    }
 }
-const myPets = new List([new Pet("Ada", "dog"), new Pet("Babbage", "dog"),
-                new Pet("Captain", "cat"), new Pet("Domino", "cat")]);
+const myPets = new List([
+    new Pet("Ada", "dog"),
+    new Pet("Babbage", "dog"),
+    new Pet("Captain", "cat"),
+    new Pet("Domino", "cat"),
+]);
 
 function printPetName(pet: Pet) {
     console.log(pet.name);
 }
 
 // For Each
-myGrades.forEach( grade => console.log(grade) );
-myFruit.forEach(fruit => console.log(fruit));
+myGrades.forEach((grade) => console.log(grade));
+myFruit.forEach((fruit) => console.log(fruit));
 myPets.forEach(printPetName);
 
 // Filter
-console.log("Filter Grades:", myGrades.filter( grade => grade >= 90));
-console.log("Filter Fruit", myFruit.filter(fruit => fruit[0] === "l"));
-console.log("Filter Pets", myPets.filter(pet => pet.kind === "cat"));
+console.log(
+    "Filter Grades:",
+    myGrades.filter((grade) => grade >= 90)
+);
+console.log(
+    "Filter Fruit",
+    myFruit.filter((fruit) => fruit[0] === "l")
+);
+console.log(
+    "Filter Pets",
+    myPets.filter((pet) => pet.kind === "cat")
+);
 
 // Map
-console.log("Map Grades", myGrades.map(grade => {
-    return grade+10
-}));
-console.log("Eat Fruits", myFruit.map(fruit => "I ate a " + fruit));
-console.log("Pet Names", myPets.map(pet => pet.name));
-console.log("Fruit Pets", myFruit.map(fruit => new Pet(fruit, "fruit")));
-console.log("Evil Clones", myPets.map(pet => pet.clone()));
+console.log(
+    "Map Grades",
+    myGrades.map((grade) => {
+        return grade + 10;
+    })
+);
+console.log(
+    "Eat Fruits",
+    myFruit.map((fruit) => "I ate a " + fruit)
+);
+console.log(
+    "Pet Names",
+    myPets.map((pet) => pet.name)
+);
+console.log(
+    "Fruit Pets",
+    myFruit.map((fruit) => new Pet(fruit, "fruit"))
+);
+console.log(
+    "Evil Clones",
+    myPets.map((pet) => pet.clone())
+);
 
 // Reduce
-console.log(myGrades.reduce( (currentTotal: number, grade: number) => 
-                                currentTotal + grade, 
-                            0) / myGrades.length());
-console.log(myFruit.reduce( (resultSoFar: string, fruit: string) => 
-                               resultSoFar + ", " + fruit,
-                            ""));
+console.log(
+    myGrades.reduce(
+        (currentTotal: number, grade: number) => currentTotal + grade,
+        0
+    ) / myGrades.length()
+);
+console.log(
+    myFruit.reduce(
+        (resultSoFar: string, fruit: string) => resultSoFar + ", " + fruit,
+        ""
+    )
+);
 
 // Reduce can be used to copy an array!
 const copy = myFruit.reduce((arraySoFar: string[], fruit) => {
@@ -440,8 +488,9 @@ console.log(copy);
 ```
 
 ## Summary
+
 There is nothing special about these built-in methods, except that they are conveniently provided for us. We can re-implement them with the existing control structures we already learned.
 
 # Next Step
 
-Next we'll learn about Recursion  [Recursion &raquo;](../13-Recursion/index.md)
+Next we'll learn about Recursion [Recursion &raquo;](../13-Recursion/index.md)
