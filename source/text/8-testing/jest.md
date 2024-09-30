@@ -116,9 +116,9 @@ What happens if the array has only one element in it?
 		elements.stringArray=["a"];
 		expect(elements.stringArray.length).toBe(1);
 		const value = elements.getLastElement();
-		expect(value).toBe(“a");
+		expect(value).toBe("a");
 		expect(elements.stringArray.length).toBe(0);
-		expect(elements.stringArray).not.toContain(“a");
+		expect(elements.stringArray).not.toContain("a");
 	});
 ```
 

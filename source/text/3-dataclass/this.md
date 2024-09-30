@@ -31,7 +31,7 @@ class Color{
 ```
 {: .no-run}
 
-What if instead of passing in values for red, green, and blue, we wanted to pass in a string (either “red”,”green”, or “blue”) to initialize our color to one of these three colors.  We can go back to our original syntax and define the members explicitly, and change our constructor to take a string that is not marked with the public or private keywords since we only need it to initialize the members.
+What if instead of passing in values for red, green, and blue, we wanted to pass in a string (either "red","green", or "blue") to initialize our color to one of these three colors.  We can go back to our original syntax and define the members explicitly, and change our constructor to take a string that is not marked with the public or private keywords since we only need it to initialize the members.
 
 ```typescript
 class Color{

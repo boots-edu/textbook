@@ -102,7 +102,7 @@ this.event2.subscribe(
 ```
 
 * event2.next(4) called in the child would print 5 from the parent.
-* Event2.error(new Error(“Bad stuff”)) would print the error object as an error from the parent.  
+* Event2.error(new Error("Bad stuff")) would print the error object as an error from the parent.  
 
 > Note: This second parameter is optional if you don't want error notifications.
 

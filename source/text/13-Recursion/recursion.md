@@ -48,12 +48,12 @@ When we find a yellow ball we are done.  The answer is "yes" there is a yellow b
 
 So how do we get there?  We need to make sure that whatever we do when the stop conditions are not met *approaches* the stop condition.  If we keep removing balls one at a time, either we find the yellow ball or we reduce the number of balls by one.  Clearly in all cases, this approaches the stop conditions of finding a yellow ball or emptying the container.  The step that handles non-stop conditions and approaches the stop conditions is referred to as the ***recursive step***.
 
-<pre><code>public balls:string[] = [“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”];
+<pre><code>public balls:string[] = ["red", "red", "red", "red" ,"yellow", "red", "red"];
 function findYellowBall(container:string[]):boolean{
 	<div style="background:yellow;display:inline-block">	if (container.length==0){  //Yellow ball not found if balls array is empty
 		return false;
 	}
-	else if (container[0]===(“yellow”)){  //Yellow ball found
+	else if (container[0]===("yellow")){  //Yellow ball found
 		return true;
 	}
 	</div>	else  {  //Yellow ball might still be in the container, but not in the first element
@@ -64,12 +64,12 @@ function findYellowBall(container:string[]):boolean{
 
 The highlighted section above is the ***stop condition***.  We first check if the array is empty, then we check if the first ball in the array is yellow.  If either is true we are done and we know the answer (false/true respectively).
 
-<pre><code>public balls:string[] = [“red”, “red”, “red”, “red” ,”yellow”, “red”, “red”];
+<pre><code>public balls:string[] = ["red", "red", "red", "red" ,"yellow", "red", "red"];
 function findYellowBall(container:string[]):boolean{
 	if (container.length==0){  //Yellow ball not found if balls array is empty
 		return false;
 	}
-	else if (container[0]===(“yellow”)){  //Yellow ball found
+	else if (container[0]===("yellow")){  //Yellow ball found
 		return true;
 	}
 <div style="background:yellow;display:inline-block">	else  {  //Yellow ball might still be in the container, but not in the first element

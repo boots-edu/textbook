@@ -88,7 +88,7 @@ The important point here is that the type checking occurs at compile time (not a
 function makePair<T,S>(x:T,y:S):[T,S]{
 	return [x,y];
 }
-const result=makePair<number,string>("hello“,1);
+const result=makePair<number,string>("hello",1);
 console.log(result);
 ```
 ... you will get compiler errors.  Try it and you will see the errors in the console.

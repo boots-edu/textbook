@@ -66,7 +66,7 @@ Let's look at the overall structure of an anonymous function:
 ![](../../assets/images/anon_1.jpg)
 
 So what can we do with this:
-* We have already seen that we can pass it as a parameter to another method as in “describe” and “test”
+* We have already seen that we can pass it as a parameter to another method as in "describe" and "test"
 * Many methods in typescript can take a function as a parameter including filter, map, find, reduce, etc.  We can use anonymous functions there as well.
 * Since functions are first class objects, we can also store them in variables (i.e. function as value)
 

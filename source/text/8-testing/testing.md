@@ -27,8 +27,8 @@ What we are concerned with in software testing:
 * Validate the software behaves as expected on exceptional cases
 
 ## Verification and Validation
-* ***Verification*** refers to the set of tasks that ensure that the software correctly implements a specific function. It means “Are we building the product correctly?”.
-* ***Validation*** refers to a different set of tasks that ensure that the software that has been built is traceable to customer requirements. It means “Are we building the correct product?”.
+* ***Verification*** refers to the set of tasks that ensure that the software correctly implements a specific function. It means "Are we building the product correctly?".
+* ***Validation*** refers to a different set of tasks that ensure that the software that has been built is traceable to customer requirements. It means "Are we building the correct product?".
 
 ## Motivation
 A little history to motivate the discussion.
@@ -82,7 +82,7 @@ Once you have unit tests, start testing higher level operations (i.e. instantiat
 We will be using jest to write tests in Typescript.  You have already seen this in lab, but now we are going to write our own tests.
 Jest provides a format for writing tests in a simple and organized way.
 Jest can run tests on the entire system or on individual components.
-Jest can produce a coverage report to let you know which lines are not “covered” by the test (i.e. functions not called, branches not taken, etc.)
+Jest can produce a coverage report to let you know which lines are not "covered" by the test (i.e. functions not called, branches not taken, etc.)
 Testing can easily be built into the build cycle, so that tests are run as part of each build.
 
 Here is some simple code that adds the root of the passed value to an array.

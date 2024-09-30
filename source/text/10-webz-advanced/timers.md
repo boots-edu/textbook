@@ -37,7 +37,7 @@ This can be useful to provide more interactivity to your site.
 Returning to our PleaseWait dialog, we can use a timer to make it more interesting.
 First, we will bind a variable to the text we are displaying:
 ```
-@BindValue(“displayDots")
+@BindValue("displayDots")
 displayDots: string = "";
 ```
 We will modify the html and add a div with the id displayDots.

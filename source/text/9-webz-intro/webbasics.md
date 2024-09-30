@@ -43,10 +43,10 @@ If a tag is inside another tag, it can be affected by the parent's size, positio
 Common tags:
 * ```<div></div>``` : Create a block which can be styled.
 * ```<p></p>``` :  A paragraph 
-* ```<input type=“text” />``` : An input box
-* ```<input type=“password” />``` : An input box with the letters obscured
-* ```<input type=“radio” />``` : A radio button
-* ```<input type=“checkbox” />``` : A checkbox
+* ```<input type="text" />``` : An input box
+* ```<input type="password" />``` : An input box with the letters obscured
+* ```<input type="radio" />``` : A radio button
+* ```<input type="checkbox" />``` : A checkbox
 * ```<button>Button Text</button>```
 * ```<span></span>``` : An enclosing element that doesn't do much but can be styled.
 * ```<select><option>1</option><option>2</option></select>``` : A drop down
@@ -141,7 +141,7 @@ Returning to our login screen example, we have added *id* and *class* attributes
 	<input type="text" id="username" placeholder="User Name"/><br/>
 	<input type="password" id="password" placeholder="Password"/><br/>
 	<button id="loginBtn" class="btn">Login</button>
-	<button id="registerBtn“ class="btn">Register</button><br/>
+	<button id="registerBtn" class="btn">Register</button><br/>
 	<input id="rememberMe" type="checkbox" id="rememberMe"/> Remember Me?
 </div>
 ```
