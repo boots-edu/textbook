@@ -73,7 +73,7 @@ console.log(mainInstance.name);
 ```
 
 ## Overview
-Once we have some html, we would like it to do something.  That’s where the typescript comes in.
+Once we have some html, we would like it to do something.  That's where the typescript comes in.
 You can create a web application without a framework, but it can be difficult and requires a deeper knowledge of how a web browser works.
 Many frameworks exist, but because they are for commercial purposes, they are large and have steep learning curves (angular, vuejs, react, etc.)
 We created Webz to be a lighter weight, easier to learn framework that will prepare you for more complex frameworks that may come later and allow you to create impressive applications without a steep learning curve (still a curve, just not as steep).
@@ -85,7 +85,7 @@ Additional components can be created and inserted into the MainComponent to buil
 Some Key design points:
 * The html is plain html.
 * The css is plain css.
-* The ts file uses decorators to attach methods and properties of the class to the html by the element’s id attribute (I told you we would need it later).
+* The ts file uses decorators to attach methods and properties of the class to the html by the element's id attribute (I told you we would need it later).
 The finished product is compiled into a website that can be published on any web server.
 
 ## Getting Started with Webz
@@ -234,15 +234,18 @@ If we run this with ```npm run start``` we will initially see imag1.jpg displaye
 
 ![](../../assets/images/webz_2.jpg)
 
-Clicking hte next enables the previous button, disables the next button and displays img2.jpg.
+Clicking the next enables the previous button, disables the next button and displays img2.jpg.
 
 ![](../../assets/images/webz_3.jpg)
 
-There really isn’t much more to it.  Bind decorators connect properties to elements.  If we change the property, the element changes (NOT THE OTHER WAY AROUND).
+There really isn't much more to it.  Bind decorators connect properties to elements.  If we change the property, the element changes (NOT THE OTHER WAY AROUND).
 Event Decorators capture events from the web page allowing us to react to those events.  These are decorators like @Click(…)
 We will cover some more advanced features in the next chapter, but these are the basics.
+
 ## Decorators in Webz
+
 ### Bind Decorators
+
 General:
 * @BindAttribute(id,attr,?trans)
 * @BindCSSClass(id,class,?trans)

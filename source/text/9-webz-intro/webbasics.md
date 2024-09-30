@@ -23,9 +23,9 @@ Learning to develop web applications is a critical skill for software developers
 ## Review of Web Basics
 The internet is the network over which many protocols can be transmitted (like email, IM, www, etc).  
 DNS (Domain Name Service) is a distributed database that maps names to network addresses (e.g. udel.edu => 128.175.13.247)
-One of the protocols the internet supports is Hyper Text Transport Protocol (http) or it’s secure cousin (https).
+One of the protocols the internet supports is Hyper Text Transport Protocol (http) or it's secure cousin (https).
 Over this protocol, we send regular text files, that contain a specialized language called HyperText Markup Language (html) that tells a web browser reading the file how to render the page.
-That’s right, the web is basically just a bunch of text files (and a lot of cat videos).
+That's right, the web is basically just a bunch of text files (and a lot of cat videos).
 
 ### HTML Basics
 HTML is a simple tag based language where elements are defined with an opening and closing tag 
@@ -37,7 +37,7 @@ HTML is a simple tag based language where elements are defined with an opening a
 These tags can be nested inside of each other
 <span>Hello <button>Click</button></br><span>World</span>
 ```
-If a tag is inside another tag, it can be affected by the parent’s size, position, and style.
+If a tag is inside another tag, it can be affected by the parent's size, position, and style.
 
 ### Common HTML Tags
 Common tags:
@@ -48,7 +48,7 @@ Common tags:
 * ```<input type=“radio” />``` : A radio button
 * ```<input type=“checkbox” />``` : A checkbox
 * ```<button>Button Text</button>```
-* ```<span></span>``` : An enclosing element that doesn’t do much but can be styled.
+* ```<span></span>``` : An enclosing element that doesn't do much but can be styled.
 * ```<select><option>1</option><option>2</option></select>``` : A drop down
 
 ### HTML Tags in action
@@ -147,7 +147,7 @@ Returning to our login screen example, we have added *id* and *class* attributes
 ```
 > Note: This does not change the appearance, but we can use the id and class properties as references in our style sheet.
 
-First let’s style the div.  It has an id, so we will style it by id.  To reference an id in a style, we put a # in front.
+First let's style the div.  It has an id, so we will style it by id.  To reference an id in a style, we put a # in front.
 The style for the outer div tag is ```#loginForm```
 
 ```css
@@ -189,7 +189,7 @@ We are setting the background and foreground colors.  The padding inside, the si
 As part of styling, we have a few very important styles we will use constantly.
 
 ***position:*** This sets how the element is positioned within its parent.
-* relative: The most common.  It doesn’t affect the object it is applied to, but it causes everything inside to be positioned relative to the object to which it is * applied.  By default, everything is page relative (ignores the parent) unless this is set.
+* relative: The most common.  It doesn't affect the object it is applied to, but it causes everything inside to be positioned relative to the object to which it is * applied.  By default, everything is page relative (ignores the parent) unless this is set.
 * absolute: Positions the object outside the normal model.  This object has no affect on other objects (i.e. next object could be at the same position).
 * fixed: Positioned relative to the window.  It stays there.
 * sticky: Positioned with a scrolling window, stays in position relative to the scroll position.

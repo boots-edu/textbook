@@ -130,7 +130,7 @@ console.log(getShowSize(new Boot(10,14)));
 > Note: We could do this without a generic if we made the parameter type *Shoe* as it would accept the derived classes.  In this case either method is ok, but there are places where a generic is a better solution.
 
 ## Generic Classes
-Just like functions, we can use generics for classes as well.  Let’s consider a class for a list of numbers:
+Just like functions, we can use generics for classes as well.  Let's consider a class for a list of numbers:
 ```typescript
 class ItemList{
 	public items:number[]=[];

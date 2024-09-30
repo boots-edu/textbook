@@ -18,15 +18,18 @@ parent: Advanced Webz
 </details>
 
 ## Key Idea
-We can create and attach components dynamically in order to create complex applicaitons. 
+
+We can create and attach components dynamically in order to create complex applications. 
 
 ## Building dynamic applications
+
 Say we wanted to make a simple point of sale system.  
-* Getting the customer name and order number is easy. We just create some input boxes and bind the @Input event to a function that updates an internal variable.
-* We can easily bind the @Click event of buttons to add new items to our order.
+* Getting the customer name and order number is easy. We just create some input boxes and bind the `@Input` event to a function that updates an internal variable.
+* We can easily bind the `@Click` event of buttons to add new items to our order.
 * How do we deal with a variable number of line items in the order?
 
-Let's start by creating a simple page in html/css for the things we know how to do, and a div to hold our line items once we create them.
+Let's start by creating a simple page in html/css for the things we know how to do, and a `div` to hold our line items once we create them.
+
 ```html
 <div class="form-container">
 	Customer Name: <input type="text" id="customerName" /><br />
@@ -39,6 +42,7 @@ Let's start by creating a simple page in html/css for the things we know how to 
 	<div id="orderDetails"></div>
 </div>
 ```
+
 ```css
 .detail-header {
 	font-size: 20px;
@@ -51,9 +55,11 @@ Let's start by creating a simple page in html/css for the things we know how to 
 	display: inline-block;
 }
 ```
+
 Now in the typescript file, we need to create variables to hold our order number and customer name.  These will be updated, but not bound directly (they could be).
 We also need functions that are bound to the @Input event of these text boxes.  Finally we need functions bound to our add buttons.
-```
+
+```typescript
 	orderNumber: string = "";
 	customerName: string = "";
 	@BindValueToNumber("counter", " items in cart")
@@ -75,12 +81,13 @@ We also need functions that are bound to the @Input event of these text boxes.  
 		//Add the comment here
 	}
 ```
-> Note we have not implemented onNewItemClick or onNewCommentClick, but we have the methods hooked up to the buttons so we just have to write the contents.
+
+Note we have not implemented `onNewItemClick` or `onNewCommentClick`, but we have the methods hooked up to the buttons so we just have to write the contents.
 
 So what do we do inside the click handlers?  Assume we have created components for one line item or one line comment already using the cli.  Then we:
 * Create the correct type of child component (info or comment) and store it somewhere so we can reference it later.
-* Add it to our orderDetails div so they show up in order created where we want them.
-* Increment the counter if it’s an item
+* Add it to our orderDetails `div` so they show up in order created where we want them.
+* Increment the counter (`count`) if its an item
 
 > Note: Since count is already bound to the counter div, all we have to do is update the variable to update the counter on the screen.
 

@@ -76,7 +76,7 @@ class Drawable {
     return new Drawable(this.color);
   }
   draw(page:Page): void {
-    //Do nothing, I don’t know how
+    //Do nothing, I don't know how
   }
 }
 
@@ -101,7 +101,7 @@ obj.draw(this.drawingSurface);
 > Note: You can install the drawing library using in this example with the page object using npm.  
 ```npm i --save @boots-edu/web-draw``` 
 
-It is safe to call draw on a Drawable object, it just doesn’t do anything.
+It is safe to call draw on a Drawable object, it just doesn't do anything.
 If we call it on a Line object, it draws the line.
 If we call it on a Line object stored in a Drawable variable (which is allowed since it is a Drawable), it calls the method in the Line class.
 

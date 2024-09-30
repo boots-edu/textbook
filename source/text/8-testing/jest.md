@@ -28,7 +28,7 @@ A few simple commands we need:
 Example: expect(value).toBeInstanceOf(MyClass)
 >There are many others, but we can get by with these three for now.
 
-Back to the example from the previous section, let’s look at what we want to do for each of these:
+Back to the example from the previous section, let's look at what we want to do for each of these:
 ```
 class Elements {
 	private stringArray: string[] = [];
@@ -191,7 +191,7 @@ Once written this test will run every time I run tests, handling regression test
 
 ## Code Coverage
 Coverage is important when writing tests
-While you should not specifically write tests to coverage, since those tests will not cover all possible inputs, you should make sure that your tests actually cover your code.  Let’s look at our example again, from a coverage standpoint
+While you should not specifically write tests to coverage, since those tests will not cover all possible inputs, you should make sure that your tests actually cover your code.  Let's look at our example again, from a coverage standpoint
 Running: jest –coverage will produce a shortened coverage report like this:
 
 ```
@@ -208,7 +208,7 @@ All files            |   97.61 |    92.66 |   94.84 |   97.78 |
 ---------------------|---------|----------|---------|---------|-------------------
 ```
 
-> If we add ```--coverageDirectory=‘./coverage’``` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
+> If we add ```--coverageDirectory=‘./coverage'``` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
 
 ## Summary
 ***Jest*** is a powerful platform for designing suites of tests that cover all types and levels of code testing.  Tests will run automatically when jest is run providing regression testing accross the application.

@@ -136,10 +136,10 @@ This process leads to the answer being computed during each return from the base
 ## But why?
 In the jar of marbles and factorial examples, we could very easily solve these problems without recursion.  A simple loop would be sufficient.  While this is true of most/all problems, there are problems that are considerably easier to deal with by using recursion.
 
-Let’s look at a simple example of binary search.
+Let's look at a simple example of binary search.
 
 * In binary search, we start with a sorted list.  Instead of checking every element, we check the middle element.
-* Since the list is sorted, if the value is less than the middle element, then we don’t have to search the second half of the list.  If it is greater, than we don’t have to search the first half.
+* Since the list is sorted, if the value is less than the middle element, then we don't have to search the second half of the list.  If it is greater, than we don't have to search the first half.
 
 Consider:
 

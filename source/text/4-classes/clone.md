@@ -127,7 +127,7 @@ class Polygon{
 	clone():Polygon{
 		let newPoints:Point[]=[];				//initialize a new empty array.
 		for (let point of this.points){
-			newPoints.push(point.clone());		//don’t push the point, push a clone of it.
+			newPoints.push(point.clone());		//don't push the point, push a clone of it.
 		}
 		// so newPoints is a new array containing clones of all the points in this polygon.  We can pass it directly since it is completely new.
 	 	return new Polygon(newPoints,this.color.clone());

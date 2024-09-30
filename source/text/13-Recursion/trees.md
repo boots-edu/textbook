@@ -103,20 +103,20 @@ if (tree === undefined) {  			//tree is emtpy
 }
 ```
 
-For the ***recursive step***, we want to search either the left or right subtree based on whether value is less than or greater than the node’s value (we already checked === in our stop conditions)
+For the ***recursive step***, we want to search either the left or right subtree based on whether value is less than or greater than the node's value (we already checked === in our stop conditions)
 When we look at a node, there are only 4 possibilities.
 * The node is empty (undefined)
 * It is the node we are looking for
 * It is > than the node we are looking for
 * It is < than the node we are looking for.
 
-If the node is empty (undefined) then the node with the value we are looking for can’t exist, so we return false (did not find it).
+If the node is empty (undefined) then the node with the value we are looking for can't exist, so we return false (did not find it).
 
-If the node’s value is === the value we are looking for, then we return true (found it).
+If the node's value is === the value we are looking for, then we return true (found it).
 
-If the node’s value is < the value we are looking for, then if the value is in the tree, it must be in the right sub-tree, so we call treeSearch recursively to search that sub-tree.
+If the node's value is < the value we are looking for, then if the value is in the tree, it must be in the right sub-tree, so we call treeSearch recursively to search that sub-tree.
 
- If the node’s value is > the value we are looking for, then if the value is in the tree, it must be in the left sub-tree, so we call treeSearch recursively to search that sub-tree 
+ If the node's value is > the value we are looking for, then if the value is in the tree, it must be in the left sub-tree, so we call treeSearch recursively to search that sub-tree 
 
 ```
 function treeSearch(tree: TreeNode | undefined, value: number): boolean {
@@ -221,7 +221,7 @@ Thought question: What happens if I insert them in sorted order?
 ## An Object Oriented Tree
 This is nice, but it is NOT very object oriented.  
 
-A tree node should encapsulate the things we can do to a tree so we won’t need external methods.
+A tree node should encapsulate the things we can do to a tree so we won't need external methods.
 For our implementation of insert, it is pretty straight forward.
 We just remove the tree parameter, and instead call the member method on the appropriate subtree which is not null since we already checked that.
 

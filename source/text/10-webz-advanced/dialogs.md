@@ -38,7 +38,7 @@ WebzDialog.popup(this,"Hello World","I am the title",["Yes","No"],"btnClass");
 Popup returns a Notifier<string> which emits the text of the button pressed.
 We can subscribe to the returned value to be notified when the popup closed.
 
-Let’s examine this in detail:
+Let's examine this in detail:
 * attachTo (required): is the component that you want to attach the element to.  Usually you will pass in this to specify the current component.
 * Message (required): The text inside the popup
 * Title (optional): The title for your popup, displayed at the top.
@@ -129,7 +129,7 @@ We can then add it to the component:
 
 > Note, if you want it to display immediately, then you can call show with true ```this.dialog.show(true);```
 
-Whenever we want to show the dialog, we just pass true to it’s show method.  To hide it we pass false.
+Whenever we want to show the dialog, we just pass true to it's show method.  To hide it we pass false.
 
 If we want to get an event to subscribe to when the window is closed, or something happens in the dialog, we can implement our own Notifiers and subscribe to them in the parent.
 

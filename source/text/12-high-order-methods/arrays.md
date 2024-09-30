@@ -180,7 +180,7 @@ console.log(ages);  //outputs an array of ages.
 
 In the example, the method is called on each person object, and returns the age of that person.  The result is an array containing the ages of each person in the same order as the people in the original array.
 
-It is not critical that the method USE the element of the array, suppose I wanted to create an array containing 0’s for each element in our array.
+It is not critical that the method USE the element of the array, suppose I wanted to create an array containing 0's for each element in our array.
 
 ```typescript
 const zeros:number[]=people.map((person) => 0);
@@ -209,7 +209,7 @@ console.log(groups);
 ```
 
 In the example, the method is called on each person object, but the function returns an array which is then combined with the other arrays returned into a single array (merge).
-Here map would return ```[[‘admin’,’user’],[‘editor’]```, but flatMap flattens it into ```[‘admin’,’user’,’editor’]```
+Here map would return ```[[‘admin','user'],[‘editor']```, but flatMap flattens it into ```[‘admin','user','editor']```
 
 > This does not mutate the array in any way.
 
@@ -312,7 +312,7 @@ let sum = vals.reduce((acc, val) => acc + val, 0);
 
 The first parameter is our function which takes the accumulator variable and a variable to receive each element of our array. The second parameter is the initial value of the accumulator.
 
-Let’s step through the operation of this to make sure we understand what is happening.
+Let's step through the operation of this to make sure we understand what is happening.
 
 On the first call (element with value 1) to our function, the values of the parameters and return value are:
 
@@ -401,7 +401,7 @@ descending=vals.sort((a,b)=>b-a);
 
 Since we pass a function, we can sort arrays of complex objects or classes in any way we wish.
 
-> NOTE: This method is destructive and overwrites the array.  If you don’t want this to happen, you have to clone the array first.
+> NOTE: This method is destructive and overwrites the array.  If you don't want this to happen, you have to clone the array first.
 
 ## Summary
 ***High order methods*** are methods where we pass a function as an argument, or return a function.  Specifically, we examined a number of ***high order methods*** for working with arrays of objects.  These methods provide convenient, concise, and clear ways to handle various tasks which we might wish to accomplish on arrays.

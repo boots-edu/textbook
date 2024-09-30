@@ -30,7 +30,7 @@ This is different from composition which supports relationships between concepts
 
 Assume that the Musical Instrument has a ```name```, a ```musical key``` (ie. C#, Bb), and a ```year invented``` field as well as a method ```getName()``` which returns the name of the instrument.
 
-Then all the other classes ALSO have those fields.  We don’t need to recreate them in our child since we ***inherit*** them from the parent class.  This is one of the primary benefits of inheritance.
+Then all the other classes ALSO have those fields.  We don't need to recreate them in our child since we ***inherit*** them from the parent class.  This is one of the primary benefits of inheritance.
 
 > Note: Cellos have a name, key and year field and a getName() method automatically due to inheritance.
 
@@ -45,8 +45,8 @@ Fields and methods can be:
 
 By controlling access to properties and methods, we expose to the outside world a minimal set of public properties and methods are exposed.  Public items are more difficult to change because others might be using them.  Protected are slightly easier and only break classes inherited from us. Changes to private methods effect nothing outside of the class itself.
 
-Let’s briefly go back to our drawing example.
-Note that our points are private.  This is good in case we want to change how we store polygons without breaking the rest of the code base, but it doesn’t allow us to build other objects from polygon, like triangles, rectangles, etc.
+Let's briefly go back to our drawing example.
+Note that our points are private.  This is good in case we want to change how we store polygons without breaking the rest of the code base, but it doesn't allow us to build other objects from polygon, like triangles, rectangles, etc.
 
 ```typescript
 export class Polygon extends Drawable{
@@ -107,7 +107,7 @@ class Rectangle extends Polygon{
 ```
 {: .no-run}
 
-Notice that now we are deriving from Polygon instead of Drawable.  Because a polygon can already represent a rectangle, we don’t need any other properties (we can delete the corners).  
+Notice that now we are deriving from Polygon instead of Drawable.  Because a polygon can already represent a rectangle, we don't need any other properties (we can delete the corners).  
 
 We call the superclasses constrctor with the array of points for the particular 4 sided polygon that this rectangle represents.
 We would need to rewrite the area, perimeter and diagonals methods to use our new implementation, but users of our class will see no change in how they use it.

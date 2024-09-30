@@ -24,7 +24,7 @@ Producing well documented, high quality, efficient and readable code is always t
 **Why comments?**
 Helps others (and yourself) use your code without having to read it.  Informs user of everything they need to know to use your method or class.
 If in the correct format, they can automatically produce documentation.
-If in the correct format, they can be read by IDE’s like vscode.
+If in the correct format, they can be read by IDE's like vscode.
 
 **Why naming matters?**
 If we do need to revisit our code (and we will), having well named variables and methods makes figuring out what the code is doing internally much easier.
@@ -93,8 +93,8 @@ We should also comment the methods inside our class.  This is what a comment for
 
 * We see the parameters and their types and description.
 * What exceptions to expect
-* It’s side effects
-* It’s parent class
+* It's side effects
+* It's parent class
 * It is a constructor
 * An example of how to use it.
 
@@ -121,8 +121,8 @@ The clone method as well:
 
 * We see the parameters and their types and description.
 * The return values
-* It’s side effects
-* It’s parent class
+* It's side effects
+* It's parent class
 * It is a function
 * An example of how to use it.
 

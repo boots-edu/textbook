@@ -23,7 +23,7 @@ We can ***override*** a method in our subclass by creating a method with the sam
 ## Altering functionality
 In the previous sections, we learned that when we ***inherit*** or ***subclass*** a class, we get all of its methods (i.e. functions).  Sometimes this is not what we want.
 
-Let’s consider that we want to add a getArea method to all of our drawable classes.  This doesn’t really make sense for Drawable and Line, but does for the rest.  The calculation is, however, very different.  
+Let's consider that we want to add a getArea method to all of our drawable classes.  This doesn't really make sense for Drawable and Line, but does for the rest.  The calculation is, however, very different.  
 If we add a default getArea method to our Drawable with the same signature as it has elsewhere in the class hierarchy, then objects that do not implement getArea, will inherit the default behavior, and objects that define the method will get the new behavior
 
 ```typescript
@@ -66,7 +66,7 @@ We can even call the superclass implementation from our overridden method.
 We can build in some default behaviors to our superclasses, and override those behaviors in our subclasses if it makes sense, or just use the superclass implementation if it is sufficient.
 
 ### An Example
-Here is an example of an overridden method that calls the parent’s version of the method, but then adds some functionality of its own.
+Here is an example of an overridden method that calls the parent's version of the method, but then adds some functionality of its own.
 
 > Notice the code super.getDescription()
 While we user super() to call the constructor of the superclass, we can use super.methodname() to call any method on the superclass even if it is overridden.

@@ -42,7 +42,7 @@ class Rectangle{
 {: .no-run}
 
 Nothing changes except we cannot access corner1 and corner2 outside our class, but our methods (diagonal, area, perimeter) that we wrote in the exercise in the previous chapter are fine because they are inside the class.
-We can still create a rectangle and call our methods on it, we just can’t get the corners any more. If we really need them, we can write methods to get them or change them.
+We can still create a rectangle and call our methods on it, we just can't get the corners any more. If we really need them, we can write methods to get them or change them.
 
 > But Why? Imagine we wrote this for a client, and suddenly after we have written a 100,000 line drawing program they want us to add the ability to rotate a rectangle.
 Our implementation DOES NOT ALLOW THIS!!!.

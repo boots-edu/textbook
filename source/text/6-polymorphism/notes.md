@@ -106,7 +106,7 @@ for(let user of users){
 Even though the database contains a mix of Students and Teachers, we return an array of Users to make the method more generic.  
 We can loop through the returned values getting details on each object regardless of type.
 
-In general, you should return the most generic (i.e. superclass) type possible to make your method generic.  There are ways to look and see what class we actually are, but if we are calling overridden methods that exist in the superclass, we don’t need to worry about that.  We just use it.
+In general, you should return the most generic (i.e. superclass) type possible to make your method generic.  There are ways to look and see what class we actually are, but if we are calling overridden methods that exist in the superclass, we don't need to worry about that.  We just use it.
 
 ## Summary
 * You now know most of the generic things about OOP.  In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C#, etc.

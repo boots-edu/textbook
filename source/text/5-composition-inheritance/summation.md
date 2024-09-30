@@ -74,7 +74,7 @@ export class Point extends Drawable {
 
 Our point class inherits color from the Drawable class.  Our Point constructor calls the constructor for our Drawable class and passes it the color so it can do its initialization (all drawables have a color).  It does this by passing color to ```super```
 
-> Notice, that the public interface is unchanged, but we don’t have to worry about the color, the drawable does.
+> Notice, that the public interface is unchanged, but we don't have to worry about the color, the drawable does.
 
 ```typescript
 class Line extends Drawable{
@@ -130,7 +130,7 @@ Etc.
 ![](../../assets/images/inheritance_1.jpg)
 
 The point of inheritance is to capture these types of relationships.  Be careful that the relationship you are capturing is a ***type of*** relationship as many inexperienced programmers overuse ***inheritance***, where the relationship really calls for ***composition***.
-* A point is not a type of color, so we don’t derive point from color.
+* A point is not a type of color, so we don't derive point from color.
 * An undergraduate is a type of student, so we derive Undergraudate from Student
 
 ## Summary

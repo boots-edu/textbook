@@ -34,12 +34,12 @@ What we are concerned with in software testing:
 A little history to motivate the discussion.
 
 Software bugs can be expensive, but they can also be very dangerous.  Here are a few examples of software bugs causing terrible outcomes:
-* 1985: Canada’s Therac-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients.
+* 1985: Canada's Therac-25 radiation therapy malfunctioned due to a software bug and resulted in lethal radiation doses to patients.
 * 1994: China Airlines Airbus A300 crashed due to a software bug killing 264 people.
 * 1999: A software bug caused the failure of a $1.2 billion military satellite launch.
 * 2015: A software bug in an F-35 resulted in it being unable to detect targets correctly.
 * Starbucks was forced to close more than 60% of its outlet in the U.S. and Canada due to a software failure in its POS system.
-* Nissan cars were forced to recall 1 million cars from the market due to a software failure in the car’s airbag sensory detectors.
+* Nissan cars were forced to recall 1 million cars from the market due to a software failure in the car's airbag sensory detectors.
 
 ***We have to get it right!!!***
 
@@ -51,14 +51,14 @@ Software bugs can be expensive, but they can also be very dangerous.  Here are a
 ## Testing levels
 * ***Unit testing***: Test small independent components for correct behavior.  The purpose is to validate that each unit of the software performs as designed. 
 * ***Integration testing***: Combining units and testing as a group.  The purpose of this level of testing is to expose faults in the interaction between integrated units. 
-* ***System testing***: Tests of the completed system. The purpose of this test is to evaluate the system’s compliance with the specified requirements. 
-* ***Acceptance testing***: Test to ensure compliance with the requirements specification. The purpose of this test is to evaluate the system’s compliance with the business requirements and assess whether it is acceptable for delivery. 
+* ***System testing***: Tests of the completed system. The purpose of this test is to evaluate the system's compliance with the specified requirements. 
+* ***Acceptance testing***: Test to ensure compliance with the requirements specification. The purpose of this test is to evaluate the system's compliance with the business requirements and assess whether it is acceptable for delivery. 
 
 ## Best Practices
 * Test continuously throughout the development process.
 * Make tests small and include many to make finding issues easier
 * Use tools to evaluate things like code coverage to ensure thorough testing
-* Don’t skip regression testing.
+* Don't skip regression testing.
 
 ![](../../assets/images/testing_1.jpg)
 
@@ -142,7 +142,7 @@ What questions might we ask here?
 * What happens if the array has only one element in it?
 	*Populate with 1 item and try
 
-To create tests in a project that is already configured for jest, we create files with the word ‘test’ in their filename (i.e. myprogram.test.ts)
+To create tests in a project that is already configured for jest, we create files with the word ‘test' in their filename (i.e. myprogram.test.ts)
 
 > This can be changed, but our projects will be pre-configured to work this way.
 

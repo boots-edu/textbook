@@ -58,7 +58,7 @@ While much better, the definition of Color still seems repetative.  While 100% c
 ```typescript
 class Color{
    constructor(public red:number, public green:number, public blue:number){
-	//Note we don’t need anything inside.  This automatically does everything.
+	//Note we don't need anything inside.  This automatically does everything.
    }
 }
 //this behaves equivalently in every way to our previous example.

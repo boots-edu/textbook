@@ -41,7 +41,7 @@ class Person {
 * Now it is clear what this class represents.
 * It is clear what the meaning of the parameters are
 * It is clear why this class exists and when we would use it.
-* It’s not that hard to do it right.
+* It's not that hard to do it right.
 
 A more complex example
 ```
@@ -111,10 +111,10 @@ class RealNumber {
 	}
 }
 ```
-* It’s clear what the class represents
-* It’s clear what toString does
-* It’s clear what add does
-* It’s clear what this is for.
+* It's clear what the class represents
+* It's clear what toString does
+* It's clear what add does
+* It's clear what this is for.
 
 
 ## Summary

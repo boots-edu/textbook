@@ -61,7 +61,7 @@ Error: This is an error
 ### Using exceptions
 We can use exceptions to improve our software design and make it react in a structured way to ***exceptional conditions***.
 
-Let’s consider the code for our drawing program again.
+Let's consider the code for our drawing program again.
 ```
 class Color {
   constructor(
@@ -110,7 +110,7 @@ export class Color {
 
 We can check the values in the constructor, and throw an exception if they are invalid.  It will be up to the code that is creating the color object to “handle” the exception, otherwise the program will exit with an error like the one we saw previously.
 
-> Note: Now we can’t create a color objects with invalid values.  If we try, the Color class will raise an exception to notify the calling code that something bad happened.
+> Note: Now we can't create a color objects with invalid values.  If we try, the Color class will raise an exception to notify the calling code that something bad happened.
 
 If the calling code does not “handle” the exception, then the program will terminate with an error message (the one you threw) and the call stack to help you figure out where the exception occurred in the execution of your program.
 ```
@@ -139,7 +139,7 @@ class ColorError extends Error {
 Here ```this.name``` is part of the Error class which we are extending (inheritance).  The message is as well which we are updating by calling ```super(message);``` then we are adding properties red, green, and blue so that they are reported to the calling method with the exception.  This can be very useful when we get to exception handling.  
 If a block of code throws different kinds of exceptions, this can be a good way to notify the calling method as to the type of exception and can help in writing the handler.
 
-Exceptions are useful during programming even if we don’t handle them.
+Exceptions are useful during programming even if we don't handle them.
 If you throw an exception every time the inputs to your method are wrong, or some other kind of error occurs, and you have good tests, you will see those errors and be able to fix them.
 
 If we accidentally try to create an invalid color object, the program will terminate and tell us why.  The call stack will tell us where the method was called.
@@ -169,7 +169,7 @@ class Polygon extends Drawable {
 ```
 
 Now, if I try to create a polygon with less than 3 or more than 10 points, an exception is thrown.  If not, then program execution continues normally.
-If we don’t handle this exception, the program will terminate (letting us know to either handle the exception, or fix the calling code to prevent it.
+If we don't handle this exception, the program will terminate (letting us know to either handle the exception, or fix the calling code to prevent it.
 
 Where else might exception handling help us find issues with our drawing program?
 
@@ -307,7 +307,7 @@ try {
 line = new Line(start, end, color);
 ```
 
-A note about finally.  In this code it is not necessary since the code continues after the try/catch either way, so we can remove it and just let the program continue with creating the line.  There are many use cases where we don’t need a finally block, but there are some where we do.
+A note about finally.  In this code it is not necessary since the code continues after the try/catch either way, so we can remove it and just let the program continue with creating the line.  There are many use cases where we don't need a finally block, but there are some where we do.
 
 Here is a case where ***finally*** is useful:
 ```

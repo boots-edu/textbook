@@ -104,7 +104,7 @@ this.event2.subscribe(
 * event2.next(4) called in the child would print 5 from the parent.
 * Event2.error(new Error(“Bad stuff”)) would print the error object as an error from the parent.  
 
-> Note: This second parameter is optional if you don’t want error notifications.
+> Note: This second parameter is optional if you don't want error notifications.
 
 Let's apply this to our LineCommentComponent from the previous section.  First we need to define it:
 
@@ -157,7 +157,7 @@ export class LineCommentComponent extends WebzComponent {
 * The public property commentChange is of type Notify and emits a string.
 * The method now calls next with the new value.
 
-And that’s it, our child class now emits to its subscriptions whenever the user types and this will happen for each line comment we create.
+And that's it, our child class now emits to its subscriptions whenever the user types and this will happen for each line comment we create.
 We would do something similar for each of the fields in a line item.
 
 Now we have to subscribe to the event in the parent.  We can do this when we create the child so that we will be notified about changes to each comment.
@@ -202,7 +202,7 @@ We could do something similar for our line items and store them in an array item
 If we added a save button in the parent, we would have the commentText and itemList which we could save in any way we want.
 As we type in the child component, it catches the Input event and emits the current value through the Notifier of each line item.
 Each time the Notifier emits a value, we update the appropriate element in our value array.
-Now we don’t even need to think about what is going on in the child in order to get the values from them.
+Now we don't even need to think about what is going on in the child in order to get the values from them.
 We could do this by querying each child component for its value when we need it, but this is a much nicer solution and gives us real time updates in the parent class.
 
 ### How Does Notifier Work?

@@ -22,7 +22,7 @@ parent: Advanced Typescript
 
 ## Combining types in Typescript
 We know we can declare new types in typescript by creating classes and interfaces, and we can use these types in our programs.
-What if we don’t know the type, but we know that it one of a finite number of types:
+What if we don't know the type, but we know that it one of a finite number of types:
 * It could be a number or a string
 * It could be a class instance or null
 

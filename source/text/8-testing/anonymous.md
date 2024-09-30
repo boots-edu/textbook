@@ -42,7 +42,7 @@ Sometimes, however, we just need a function right where we want to use it, and i
 
 ## Anonymous functions
 We have already seen this in our jest tests in both the describe method and the test method.  
-Let’s take a closer look at the second parameter to the describe and test methods.
+Let's take a closer look at the second parameter to the describe and test methods.
 ```
 describe('Test Name',()=>{
 	test('Test MyName',()=>{
@@ -62,7 +62,7 @@ We could do this the hard way, and create a named function and pass that as the 
 Anonymous functions behave like any other function.  We can declare them, call them, and pass them around as parameters to functions.  Functions in typescript are what is referred to as ***first class objects***.
 
 ### Syntax
-Let’s look at the overall structure of an anonymous function: 
+Let's look at the overall structure of an anonymous function: 
 ![](../../assets/images/anon_1.jpg)
 
 So what can we do with this:
@@ -71,7 +71,7 @@ So what can we do with this:
 * Since functions are first class objects, we can also store them in variables (i.e. function as value)
 
 ### Example
-Let’s look at an example of removing negative values from a list.  
+Let's look at an example of removing negative values from a list.  
 We already know how to do this with a for loop.
 We can iterate through the list, adding non-negative numbers to a new list, which we then return.  
 ```
@@ -111,7 +111,7 @@ function removeNegatives():number[]{
 console.log(removeNegatives());
 ```
 
-But wait, there’s more.
+But wait, there's more.
 ## First Class Objects
 Being ***first class objects*** functions can be used in many places.
 

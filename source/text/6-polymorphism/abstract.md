@@ -21,7 +21,7 @@ parent: Overrides and Polymorphism
 An ***abstract*** class is a class that cannot be instantiated, but which can be used as a superclass for other classes.
 
 ## Abstract Classes
-With the version of our drawing program from the last section, what happens when a developer using our class creates an actual Drawable object.  We built it to act as a superclass for all of the drawable objects, but it makes no sense to create one on its own.  It isn’t really drawable since the draw function doesn’t do anything.  It provides no functionality, and serves no purpose other than to act as a superclass to our other elements, hold their color, and dispatch their draw requests.
+With the version of our drawing program from the last section, what happens when a developer using our class creates an actual Drawable object.  We built it to act as a superclass for all of the drawable objects, but it makes no sense to create one on its own.  It isn't really drawable since the draw function doesn't do anything.  It provides no functionality, and serves no purpose other than to act as a superclass to our other elements, hold their color, and dispatch their draw requests.
 
 ```typescript
 let weird:Drawable=new Drawable(new Color());
@@ -80,7 +80,7 @@ abstract class Drawable {
 ```
 {: .no-run}
 
-Since we can’t make one of these directly, we cannot clone it.  We rely on the implementation in the super class.  
+Since we can't make one of these directly, we cannot clone it.  We rely on the implementation in the super class.  
 If you derive from an abstract class, then all abstract members MUST be implemented in the subclass since now there is no default implementation.
 
 We can take a this a step further and remove the do nothing method draw by making it an abstract method as well.

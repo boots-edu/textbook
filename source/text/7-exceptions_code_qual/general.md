@@ -18,7 +18,7 @@ parent: Exceptions and Code Quality
 </details>
 
 ## Key Idea
-Programmers should always try to create efficient, readable, and maintainable code.  It’s not that hard to do it right.
+Programmers should always try to create efficient, readable, and maintainable code.  It's not that hard to do it right.
 
 ## Best Practices
 ![](../../assets/images/general_code_1.jpg)

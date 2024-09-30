@@ -61,7 +61,7 @@ class Line{
 ```
 {: .no-run}
 
-> Note that we don’t need to know how the line is represented to use this method.  If we have a line and want it’s length, we simply call the getLength method. This is *important* because in the future we might change the internal representation of a line, but this method would still work if we rewrote it.  The calling program would not need to change.
+> Note that we don't need to know how the line is represented to use this method.  If we have a line and want it's length, we simply call the getLength method. This is *important* because in the future we might change the internal representation of a line, but this method would still work if we rewrote it.  The calling program would not need to change.
 
 Let's try it:
 

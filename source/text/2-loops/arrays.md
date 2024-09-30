@@ -81,7 +81,7 @@ let size: number=fruits.length;
 console.log(size); // 
 ```
 
-> Note that length is NOT a function, but rather it is a property of the array so we don’t use ().  
+> Note that length is NOT a function, but rather it is a property of the array so we don't use ().  
 
 ### The push method
 Using ***push*** we can add elements to the end of an array:
@@ -219,7 +219,7 @@ for (let fruit of fruits){
 }
 ```
 
-This is much cleaner, doesn’t require getting the length of the array, and accesses every element in order just like the previous version.
+This is much cleaner, doesn't require getting the length of the array, and accesses every element in order just like the previous version.
 
 > It is common to use the ***for..of loop*** syntax when iterating through the elements of an array.
 

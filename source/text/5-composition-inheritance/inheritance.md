@@ -125,7 +125,7 @@ class Student extends Users {
 ```
 {: .no-run}
 
-We can call the superclass’ constructor within our constructor by calling the super() method.  This will take the same arguments as the constructor of the superclass.
+We can call the superclass' constructor within our constructor by calling the super() method.  This will take the same arguments as the constructor of the superclass.
 Here those arguments are name and age.  This calls the constructor in Users which takes care of its part of the initialization.
 
 ```typescript
@@ -203,7 +203,7 @@ Another way to think about this is that Teachers and Students share some things 
 
 They also have some differences:
 * Students have a GPA and a gradTerm
-* Faculty have a department, an office, a list of classes, and don’t show up on photographic film.
+* Faculty have a department, an office, a list of classes, and don't show up on photographic film.
 
 We encapsulate their commonality in the Users class, then extend Users to make new classes that express the differences.
 

@@ -46,7 +46,7 @@ let point3:Point={x:3};  //this is an error
 
 > Note this will give an error because point2 and point3 don't conform to the interface.
 
-We can’t create a point (with new) like a class, but the compiler will guarantee that the object contains the members of the interface and only the members of the interface.
+We can't create a point (with new) like a class, but the compiler will guarantee that the object contains the members of the interface and only the members of the interface.
 
 We say that a class ***implements*** an interface if it contains all of the members of the interface (not necessarily only those members).  Using the ***implements*** keyword guarantees this.
 
@@ -67,10 +67,10 @@ const point:Point=new DrawPoint(4,5,"red");
 ```
 Now I can refer to the DrawPoint object as a Point and I know it contains an x and a y without having to know anything else about DrawPoint.
 
-We are guaranteed that DrawPoint contains an x and a y member, because it implements point.  If it doesn’t, the code won’t compile.
+We are guaranteed that DrawPoint contains an x and a y member, because it implements point.  If it doesn't, the code won't compile.
 
 ## Interface methods
-Interfaces can contain methods as well.  They don’t include the implementation, they are just stating that the class must contain that method in order to compile, so users of the class know it contains that method.
+Interfaces can contain methods as well.  They don't include the implementation, they are just stating that the class must contain that method in order to compile, so users of the class know it contains that method.
 ```
 interface Drawable{
 	points: Point[];
