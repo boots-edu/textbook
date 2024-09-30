@@ -389,7 +389,7 @@ A new directory called `toolbar` will be created in the `src/app/` directory. Th
 <hr>
 ```
 
-3. In the `main.component.html` file, create a new `div` element with the id `toolbar`. This element will represent the palette toolbar on the screen. Then, in the `main.component.ts` file, create an instance of a `ToolbarComponent` and add it to the `MainComponent` using the `addComponent` method, with the target id `"toolbar"`. You will need to import the `ToolbarComponent` class at the top of the file. At this point, the toolbar should appear on the screen, but it will not contain any colors.
+3. In the `main.component.html` file, create a new `div` element with the id `toolbar`. This element will represent the palette toolbar on the screen. Then, in the `main.component.ts` file, create an instance of a `ToolbarComponent` and add it to the `MainComponent` using the `addComponent` method, with the target id `"toolbar"`. You will need to import the `ToolbarComponent` class at the top of the file. At this point, the toolbar should appear on the screen, but it will not contain any colors. Assign the instance of the `ToolbarComponent` to a field in the `MainComponent` class named `toolbar` so that you can access it later.
 
 4. In the `toolbar.component.ts` file, add a public constant field named `DEFAULT_COLOR` (a `Color`) that represents the default color of the active pixel. You can choose any color you like for the default color, but we recommend black (`0, 0, 0`) and not white (`255, 255, 255`) so that it is visible on the screen.
 
@@ -503,9 +503,207 @@ If you are having trouble with the syntax of anonymous functions, you should con
 
 You should now be able to click on the pixels in the toolbar to change the active color. If you are having trouble, don't hesitate to ask for help! Make sure you are passing all the tests for the Palette, and that you understand how `Notifier` works, before you move on.
 
-## 5) Deploy Your Site
+## 4) Preview
 
-For now, this is a good place to stop. You have learned how to create components, bind values to elements, handle events, and style elements with Webz. You have also learned how to use TypeScript and CSS to create dynamic and interactive web pages. You can now build on this knowledge to create more complex and interesting web applications. But before we finish, let's deploy your site!
+The preview will display the image that the user is currently editing. The preview will contain a 2D grid of `PixelComponent` objects representing the pixels in the image. The user will eventually be able to click on the pixels in the editor to change the pixels in a preview area. For now, we'll just make the preview component display a grid of pixels. This will share functionality with the editor component, so we'll have a general `GridComponent` that can be used in both places.
+
+1. Run the following command in the `src/app/` directory to create a new component called `grid`:
+
+```bash
+webz component grid
+```
+
+2. In the `grid.component.html` file, you can use the following HTML with CSS styling:
+
+```html
+<div
+    id="pixels"
+    style="
+        border: 1px solid black;
+        background-color: rgb(255, 0, 255);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+    ">
+</div>
+```
+
+This HTML creates a `div` element with the id `pixels` that will contain the `PixelComponent` objects representing the pixels in the image. The `div` element is styled to display the pixels in a grid with a border and a background color. The `flex-wrap: wrap` property allows the pixels to wrap to the next line when they reach the edge of the container. The `justify-content: space-between` and `align-content: space-between` properties space the pixels evenly in the container. As long as we make the grid the right size, the pixels should be evenly spaced and fill the container, with an optional (purple) gap in between. You are free to change the `background-color` and the `border` to suit your design.
+
+3. In the `main.component.html` file, create a new `div` element with the id `preview`. This element will represent the preview area on the screen. Then, in the `main.component.ts` file, create an instance of a `GridComponent` and add it to the `MainComponent` using the `addComponent` method, with the target id `"preview"`. You will need to import the `GridComponent` class at the top of the file. At this point, the preview area should appear on the screen, but it will not contain any pixels. Assign the instance of the `GridComponent` to a field in the `MainComponent` class named `preview` so that you can access it later.
+
+4. In the `grid.component.ts` file, add the following field:
+
+- `gap` (`number`): Represents the size of the gap between the pixels in the grid in pixels. This should be assigned via the first parameter of the constructor.
+- `zoom` (`number`): Represents the zoom level of the grid (how big the pixels are). This should be assigned via the second parameter of the constructor.
+- `size` (`number`): Represents the total size of the grid in pixels, initially zero. This will be recalculated and updated whenever the `pixels` field is updated.
+
+You'll need to update the constructor call in the `MainComponent` to pass in the `gap` and `zoom` values when creating the `GridComponent` (we recommend `0` and `20` for the preview, but you might start off with `1` and `32` so you can make sure you've got the gap size correct).
+
+1. Use the `BindStyleToNumberAppendPx` to bind the `size` field to the `pixels` div element's `width` and `height` styles. This will ensure that the grid is the correct size on the screen. You will need to attach the decorator to the `size` member variable TWICE, once for the `width` style and once for the `height` style. Both times, you will be binding to the `pixels` id in the HTML.
+
+2. Now we need to create the `PixelComponent` objects that will represent the pixels in the image. In the `GridComponent` class, define a private field named `pixels` (a 2D array of `PixelComponent` objects) that represents the pixels in the image. Initialize this field to an empty 2D array. We're going to need A) a way to load an entire initial image into the grid, and B) a way to update individual pixels in the grid. We'll start with A.
+
+3. In order to setup the grid's pixels, we're going to need to create a pixel. Because there are so many steps involved in creating a pixel, let's create a helper function to do this. In the `grid.component.ts` file, define a private method named `addPixel` that does all of the following:
+
+- Consumes a `number` `x` and a `number` `y` (the location of the pixel in the grid), and a `color` (the `Color` of the pixel).
+- Constructs a new `PixelComponent` object with the `x` and `y` properties set to the given `x` and `y` values.
+- Sets the size of the pixel to the `zoom` property of the `GridComponent`.
+- Sets the color of the pixel to the given `color`.
+- Adds the pixel to the `pixels` field at the appropriate location in the 2D array.
+- Adds the pixel to the `pixels` div element in the HTML using the `addComponent` method.
+- Returns the newly created `PixelComponent` object.
+
+{: .note-title }
+
+> Row-Column Format of 2D Arrays
+> 
+> A 2D Array is an array of arrays. The outer array represents the rows of the grid, and the inner arrays represent the columns within a row. When you add a pixel to the `pixels` field, you will need to add it to the appropriate row and column in the 2D array. The `x` and `y` values represent the column and row of the pixel in the grid, respectively. A tricky part is that when iterating through the `pixels` array, you are first iterating through the `y` values (the rows) and then the `x` values (the columns). Then, when you are indexing into the `pixels` array, you will need to index into the `y` value *first* and then the `x` value. It is tempting to write expressions like `this.pixels[x][y]`, but this will be transposed from what you expect. Make sure you are indexing into the `pixels` array correctly!
+
+1. Now you can add a public method to the `GridComponent` named `loadImage` that consumes a 2D array of `Color` objects and returns nothing. This method should iterate through the 2D array of `Color` objects and call the `addPixel` method for each color in the array. This will create a `PixelComponent` object for each color in the image and add it to the `pixels` field of the `GridComponent`. During the iteration, you must also create a new array for each row of the grid, push this array to the appropriate row of the `pixels` 2D array, and add the `PixelComponent` objects to that row array. Finally, after the iteration, you should update the `size` field of the `GridComponent` to be the size of the grid in pixels, using the following formula (replacing the terms with the appropriate expressions or variables):
+
+```
+size = number_of_rows * (zoom + gap) - gap
+```
+
+<details markdown="block">
+<summary>Having trouble with `loadImage`?</summary>
+
+Keep in mind all of the following when you are tackling the `loadImage` method:
+- You will need to iterate through the 2D array of `Color` objects using a nested `for` loop.
+- You need to make sure you are iterating in the correct order: first through the rows (`y`) and then through the columns (`x`).
+- For each color in the 2D array, you will need to call the `addPixel` method with the appropriate `x` and `y` values and the color.
+- You will need to create a new array for each row of the grid and push this array to the `pixels` 2D array.
+- You will need to calculate the `size` of the grid using the formula provided.
+</details>
+
+9. In your `MainComponent` class, define a new public constant member variable named `DEFAULT_IMAGE` that is a 2D array of `Color` objects. This array should represent a simple image (e.g., a smiley face) that you can use to test the `GridComponent`. The image must be square and at least 5 pixels wide and tall. You can use the `convertPalette` function to convert a 2D array of palette indices to a 2D array of `Color` objects. For example, the smiley face would look like:
+
+```typescript
+DEFAULT_IMAGE = convertPalette([
+    [5, 5, 5, 5, 5],
+    [5, 0, 5, 0, 5],
+    [5, 5, 5, 5, 5],
+    [5, 0, 5, 0, 5],
+    [5, 0, 0, 0, 5],
+])
+```
+
+10. Call the new `loadImage` method inside of the `MainComponent` constructor, passing in your `DEFAULT_IMAGE` constant, on your Preview's `GridComponent` instance. This will load the default image into the grid when the page is loaded.
+
+If you run your tests (`npm run watch preview`) at this point, you will fail one labeled `The loadImage method correctly clears old pixels`. You can see why if you try calling `loadImage` more than once. Instead of clearing out the old image, the new image is just added below of the old one. You will need to add a new method to the `GridComponent` class to clear out the old image before loading a new one. This method is named `clearPixels`, takes no arguments, and should be called just before you start adding new pixels to the grid in `loadImage`. The `clearPixels` function is partially implemented for you below:
+
+```typescript
+clearPixels() {
+    for (let y = 0; y < this.pixels.length; y++) {
+        for (let x = 0; x < this.pixels[y].length; x++) {
+            // TODO: Remove the component in this.pixels[y][x] from the screen
+        }
+    }
+    // TODO: Clear out all elements in the this.pixels array
+}
+```
+
+You will need to replace the `TODO` comments with the appropriate code to remove the `PixelComponent` objects from the screen and clear out the `pixels` array.
+
+11. While we are here, let's also provide a method named `getImage` that consumes nothing and returns a 2D array of `Color` objects. This method should iterate through the `pixels` field of the `GridComponent` and create a new 2D array of `Color` objects that represents the image in the grid. You can use the `getColor` method of the `PixelComponent` class to get the color of each pixel in the grid. This will be helpful for testing purposes (and would be essential if we were going to add functionality for saving the image).
+
+12. We've only got one more method for the `GridComponent` to implement. We need a way to update individual pixels in the grid. Add a public method to the `GridComponent` named `setColorAt` that consumes a `number` `x`, a `number` `y`, and a `Color` `color`, and returns nothing. This method should update the color of the pixel at the given `x` and `y` location in the grid to the given `color`. You will need to use the `setColor` method of the `PixelComponent` class to update the color of the pixel.
+
+We can now see the image, although we cannot yet interact with it. You should be able to pass all the tests when you run `npm run watch preview`.
+
+## 5) The Editor
+
+We're getting closer to the final product, but we are still missing our actual editor. Like the preview area, the editor will also have a `GridComponent`. But unlike the preview area, the editor will need to support clicking on the pixels to change their color. We could follow the same pattern that we did for pixels and extend the `GridComponent` class to create a `ClickableGridComponent` class. However, this time we'll add the new functionality directly into the `GridComponent` class.
+
+{: .note-title }
+
+> When to Extend
+> 
+> Knowing when it is worth it to extend a class is challenging. In this case, we are adding a new feature to the `GridComponent` class that is not present in the `Preview` area. This new feature is specific to the `Editor` area, so it would make sense to extend the class to avoid having unnecessary functionality in the `Preview` area. If we thought that we might later need clickable preview areas, we would be better off adding the functionality to the `GridComponent` class directly. In this case, we're not extending the class because we want to make it clear that **Notifier** is not tied to inheritance. But making these kinds of decisions is a big part of software design!
+
+1. In the `grid.component.ts` file, define a new field named `onPixelClick` that is a `Notifier<ClickablePixelComponent>`. This `Notifier` will be used to forward the click events from the pixel objects in the grid to the `EditorComponent`. 
+   
+2. Modify the `addPixel` method to create an instance of a `ClickablePixelComponent` instead of a `PixelComponent`. Then, in the same method, subscribe to the `clickEvent` of the newly-constructed `ClickablePixelComponent` with an anonymous function that calls the `notify` method of the `onPixelClick` `Notifier` with the `ClickablePixelComponent` object as an argument. Now, whenever someone clicks on a pixel, that will trigger the this subscription, which will in turn notify any subscribers of the `onPixelClick` `Notifier`.
+
+{: .note-title }
+
+> Polymorphic Pixels
+> 
+> Although you needed to change the type of pixel you were creating to be a `ClickablePixelComponent`, you did not need to change the type of the `pixels` field itself. Because `ClickablePixelComponent` is a subclass of `PixelComponent`, you can store `ClickablePixelComponent` objects in a `PixelComponent` array. This is an example of polymorphism, where a subclass can be used in place of a superclass. This works in this situation because we are not relying on any additional functionality of the `ClickablePixelComponent` class, outside of the `addPixel` method (where the compiler still knows that the pixel is a `ClickablePixelComponent`).
+
+3. Return to the `main.component.ts` file and add a new field named `editor` to the `MainComponent` class. This field should be a `GridComponent` object that represents the editor area. Add the `editor` to the `MainComponent` using the `addComponent` method, with the target id `"editor"`. You will need to import the `GridComponent` class at the top of the file. When constructing the `GridComponent`, we recommend using a gap of `1` and a size of `32` for the editor.
+
+4. Duplicate the `loadImage` call you previously used for the preview area, but this time call it on the `editor` field of the `MainComponent` class. This will load the default image into the editor when the page is loaded. Both the preview and the editor should now display the same image.
+
+5. Finally, we need to "wire" up the editor and preview area to handle their click events. Basically, when a pixel in the editor is clicked, we want to change the color of that pixel AND the corresponding pixel in the preview area, using the current active color from the toolbar. This requires information from three different components spread across the application, which means we must rely on the Notifier. Observe the class composition diagram below that shows the composition relationships between the components (note that we have not included the `WebzComponent` class, which is a parent class of all the components except `Color`, and we have also not shown the inheritance relationship between `ClickablePixelComponent` and `PixelComponent`):
+
+```mermaid
+classDiagram
+
+    MainComponent *-- ToolbarComponent
+    ToolbarComponent o-- ClickablePixelComponent
+    ToolbarComponent *-- PixelComponent
+    MainComponent *-- GridComponent
+    GridComponent o-- ClickablePixelComponent
+
+    class MainComponent {
+        toolbar: ToolbarComponent
+        preview: GridComponent
+        editor: GridComponent
+    }
+
+    class ToolbarComponent {
+        active: PixelComponent
+        swatches: PixelComponent[]
+        getActiveColor() Color
+    }
+
+    class GridComponent {
+        pixels: PixelComponent[][]
+        onPixelClick: Notifier~ClickablePixelComponent~
+        // size, gap, zoom
+        loadImage(Color[][]) void
+        clearPixels() void
+        getImage() Color[][]
+        setColorAt(number, number, Color) void
+    }
+
+    class ClickablePixelComponent {
+        clickEvent: Notifier~ClickablePixelComponent~
+        onClick() void
+    }
+
+    class PixelComponent {
+        // x, y, color, size
+        setColor(Color) void
+        setSize(number) void
+        getColor() Color
+        getX() number
+        getY() number
+    }
+```
+
+The only place where we can have the two grids and toolbar all talk to each other is their earliest common ancestor, which is the `MainComponent`. The `MainComponent` will need to subscribe to the `onPixelClick` `Notifier` of the `editor` `GridComponent`. When the `onPixelClick` `Notifier` is called, the `MainComponent` should update the color of the clicked pixel in the editor and the corresponding pixel in the preview area using their `setColorAt` methods. The `MainComponent` will need to get the `x` and `y` position of the clicked pixel (which is available as the parameter of the subscription function) and the active color from the `toolbar` `ToolbarComponent`. This is really only four lines of code (although Prettier may split it up into more lines):
+
+
+<details markdown="block">
+<summary>Try to write the code yourself before looking at the solution!</summary>
+
+```typescript
+this.editor.onPixelClick.subscribe((pixel: ClickablePixelComponent) => {
+    this.editor.setColorAt(pixel.getX(), pixel.getY(), this.toolbar.getActiveColor());
+    this.preview.setColorAt(pixel.getX(), pixel.getY(), this.toolbar.getActiveColor());
+});
+```
+</details>
+
+Once you have the data flowing between these components, you should be able to pass all the tests when you run `npm run watch editor`. Congratulations! You have created a working image editor!
+
+## 6) Deploy Your Site
+
+Before we finish, let's deploy your site!
 
 1. In order to let you build your site locally (despite the tests originally failing), we modified one of the build files a little bit. To deploy your site, you need to revert this change. Open the `tsconfig.json` file in the top-level of your project folder, and change line 13 to become:
 
@@ -516,7 +714,7 @@ For now, this is a good place to stop. You have learned how to create components
 {: .note-title }
 > Editing Build Files
 >
-> We won't normally ask you to edit your build files; this is a special case just to make it easier to get started on the assignment.
+> Once again, we won't normally ask you to edit your build files; this is a special case just to make it easier to get started on the assignment.
 
 1. Make sure you save all the files, commit your changes, and push them to Github.
 
@@ -563,4 +761,4 @@ In addition to passing our tests, you will also be graded on the successful depl
 
 # Next Step
 
-Next we'll learn more advanced features of Webz and how to use them [Advanced Webz &raquo;](../10-webz-advanced/index.md)
+Next we'll learn more features of TypeScript and how to use them in [Advanced TypeScript &raquo;](../10-webz-advanced/index.md)

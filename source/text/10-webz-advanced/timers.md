@@ -77,4 +77,4 @@ We can use a timer to cause a function to be called periodically.  The @Timer di
 
 # Next Step
 
-Next we'll learn about timers  [Webz Timers &raquo;](../11-Advanced%20Typescript/index.md)
+Next we'll build an image editor in Webz by following the [Advanced Webz tutorial &raquo;](./tutorial.md)
