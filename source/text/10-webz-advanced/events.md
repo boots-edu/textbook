@@ -20,7 +20,7 @@ parent: Advanced Webz
 ## Key Idea
 We can pass events between components so that our components can communicate.
 
-## Component Heirarchy
+## Component Hierarchy
 
 We can view the component hierarchy as a tree where MainComponent is the root.  Each time MainComponent creates a new component, it is a *child* of MainComponent.  Those children can themselves create and attach new components.  What we are left with is a heirarchy of components related to each other as *parent* and *child*
 
