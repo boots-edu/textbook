@@ -24,14 +24,15 @@ A string is sequence of **character values** used to store text data.
 
 ## Overview
 
-The `string` type is a primitive data type in Typescript. 
-We can declare a *variable* to be of type string directly:
+The `string` type is a primitive data type in Typescript.
+We can declare a _variable_ to be of type string directly:
+
+{: .no-run}
 
 ```typescript
 let username: string = "gauss";
-let password: string = 'captain';
+let password: string = "captain";
 ```
-{: .no-run}
 
 Notice how we can use either **single** or double quotes to define a string.
 
@@ -42,13 +43,13 @@ We will look at some of the most common ones briefly, but there are actually man
 
 ![](../../images/CISC181-Week%2013.jpg)
 
-### *charAt*, *indexOf*, and *lastIndexOf*
+### _charAt_, _indexOf_, and _lastIndexOf_
 
 You can use the `charAt`, `indexOf`, and `lastIndexOf` methods to get information about the characters in a string.
 
-* `charAt(index)`: This method will return character at the specified index, or an empty string if the index is out of range.
-* `indexOf(value)`: This method will return the index of the first occurrence of the specified value, or -1 if not found.
-* `lastIndexOf(value)`: This method will return the index of the last occurrence of the specified value, or -1 if not found.
+-   `charAt(index)`: This method will return character at the specified index, or an empty string if the index is out of range.
+-   `indexOf(value)`: This method will return the index of the first occurrence of the specified value, or -1 if not found.
+-   `lastIndexOf(value)`: This method will return the index of the last occurrence of the specified value, or -1 if not found.
 
 As a more concrete example:
 
@@ -91,11 +92,12 @@ With the `charAt` method, the result would be an empty string instead.
 ### Taking Parts of Strings with `slice`
 
 You can use the `slice` method to extract parts of a string.
-* The first parameter is the starting slice position.
-* The second parameter is the ending slice position (not included in the result).
-* If the second parameter is omitted, the slice will go to the end of the string.
-* If the first parameter is negative, it will be treated as an offset from the end of the string.
-* If the second parameter is negative, it will be treated as an offset from the end of the string.
+
+-   The first parameter is the starting slice position.
+-   The second parameter is the ending slice position (not included in the result).
+-   If the second parameter is omitted, the slice will go to the end of the string.
+-   If the first parameter is negative, it will be treated as an offset from the end of the string.
+-   If the second parameter is negative, it will be treated as an offset from the end of the string.
 
 ```typescript
 let myStr: string = "Hello World";
@@ -115,8 +117,9 @@ console.log(myStr.slice(4, 5)); // "o"
 ![](../../images/intro_strings_tip.png)
 
 It can be difficult to remember how string slicing works, compared to regular indexes. The image above should help you remember how to slice strings:
-* When indexing, put numbers directly below the characters
-* When slicing, put the numbers *between* the characters.
+
+-   When indexing, put numbers directly below the characters
+-   When slicing, put the numbers _between_ the characters.
 
 ```typescript
 let message: string = "What time is it?";
@@ -158,22 +161,24 @@ console.log(combined); // "Hello World"
 ```
 
 The advantages of `concat` are that:
-* You can combine more than two strings at once with a single operation
-* You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
+
+-   You can combine more than two strings at once with a single operation
+-   You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
 ### The `substring` method
 
-* Assume the string ```let myStr="Hello World";```
-* __split():__  Splits the specified String object into an array of strings.
-  * myStr.split(" "); //returns the array \["Hello","World"\]
-* __substring():__  Returns character of string between two define indexes.
-  * myStr.substring(2); // returns "llo World"
-  * myStr.substring(2,5); // returns "llo"
-  > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
-  
+-   Assume the string `let myStr="Hello World";`
+-   **split():** Splits the specified String object into an array of strings.
+    -   myStr.split(" "); //returns the array \["Hello","World"\]
+-   **substring():** Returns character of string between two define indexes.
+    -   myStr.substring(2); // returns "llo World"
+    -   myStr.substring(2,5); // returns "llo"
+        > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
+
 The `substring` and `slice` methods are very similar, with two differences:
-* The main difference is that if the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
-* The `substring` method does not support negative indexes.
+
+-   The main difference is that if the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
+-   The `substring` method does not support negative indexes.
 
 ### The `toLowerCase` and `toUpperCase` methods
 
@@ -186,14 +191,14 @@ console.log(myStr.toLowerCase()); // "hello world"
 console.log(myStr.toUpperCase()); // "HELLO WORLD"
 ```
 
-Notice how the methods take no arguments; the parentheses are still required to call the method, even with nothing in between them. These are __nullary__ methods because they take no arguments.
+Notice how the methods take no arguments; the parentheses are still required to call the method, even with nothing in between them. These are **nullary** methods because they take no arguments.
 
 ### Number to String Conversion with `parseInt` and `+`
 
-
 What if the string contains a number and we want to convert it to a number type? We can use two approaches:
-* `parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return `NaN`.
-* `+`: The unary addition operator can be placed before a value to convert the value to a number. This is different than the binary addition operator, which will add two numbers or strings together. The unary addition operator is less explicit than `parseInt`, but it is a common shorthand.
+
+-   `parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return `NaN`.
+-   `+`: The unary addition operator can be placed before a value to convert the value to a number. This is different than the binary addition operator, which will add two numbers or strings together. The unary addition operator is less explicit than `parseInt`, but it is a common shorthand.
 
 ```typescript
 let myNumStr: string = "42";
@@ -259,33 +264,33 @@ console.log(myStr); // "Hello World"
 
 ### Other String Methods
 
-There are MANY other methods available to the string type, but these are some of the more useful and common. 
+There are MANY other methods available to the string type, but these are some of the more useful and common.
 Some other useful ones we will not cover in detail here are:
 
-* `startsWith(pattern)`/`endsWith(pattern)`: Check if a string starts or ends with a certain value
-* `includes(pattern)`: Check if a string contains a certain value anywhere inside
-* `padStart(length, padString)`/`padEnd(length, padString)`: Add characters to the start or end of a string.
-* `replace(pattern, replacement)`: Replace a pattern with a new string
-* `replaceAll(pattern, replacement)`: Replace all occurrences of a pattern with a new string
-* `search(pattern)`: Find the index of a pattern in a string
-* `trim`/`trimStart`/`trimEnd`: Remove whitespace from the start, end, or both ends of a string
-* `split(separator)`: Split a string into an array of strings based on a separator
+-   `startsWith(pattern)`/`endsWith(pattern)`: Check if a string starts or ends with a certain value
+-   `includes(pattern)`: Check if a string contains a certain value anywhere inside
+-   `padStart(length, padString)`/`padEnd(length, padString)`: Add characters to the start or end of a string.
+-   `replace(pattern, replacement)`: Replace a pattern with a new string
+-   `replaceAll(pattern, replacement)`: Replace all occurrences of a pattern with a new string
+-   `search(pattern)`: Find the index of a pattern in a string
+-   `trim`/`trimStart`/`trimEnd`: Remove whitespace from the start, end, or both ends of a string
+-   `split(separator)`: Split a string into an array of strings based on a separator
 
 ## Summary
 
-* Strings are a fundamental data type in TypeScript, used to store text data. 
-* There are many methods available to manipulate strings, and we have only covered a few of the most common ones here:
-  * `charAt`, `indexOf`, and `lastIndexOf` to get information about characters in a string
-  * `slice` to extract parts of a string
-  * `concat` and `+` to combine strings
-  * `substring` to get a substring of a string
-  * `toLowerCase` and `toUpperCase` to change the case of a string
-  * `parseInt` and `+` to convert a string to a number
-  * `toString` to convert a number to a string
-  * `slice` to extract parts of a string
-* Strings are immutable in TypeScript, so any method that modifies a string will return a new string instead of modifying the original.
+-   Strings are a fundamental data type in TypeScript, used to store text data.
+-   There are many methods available to manipulate strings, and we have only covered a few of the most common ones here:
+    -   `charAt`, `indexOf`, and `lastIndexOf` to get information about characters in a string
+    -   `slice` to extract parts of a string
+    -   `concat` and `+` to combine strings
+    -   `substring` to get a substring of a string
+    -   `toLowerCase` and `toUpperCase` to change the case of a string
+    -   `parseInt` and `+` to convert a string to a number
+    -   `toString` to convert a number to a string
+    -   `slice` to extract parts of a string
+-   Strings are immutable in TypeScript, so any method that modifies a string will return a new string instead of modifying the original.
 
-This is a *test of the **excellent** mechanism*.
+This is a _test of the **excellent** mechanism_.
 
 # Next Step
 

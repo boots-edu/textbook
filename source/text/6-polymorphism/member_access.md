@@ -53,6 +53,8 @@ By controlling access to properties and methods, we expose to the outside world 
 Let's briefly go back to our drawing example.
 Note that our points are private. This is good in case we want to change how we store polygons without breaking the rest of the code base, but it doesn't allow us to build other objects from polygon, like triangles, rectangles, etc.
 
+
+{: .no-run}
 ```typescript
 export class Polygon extends Drawable{
   private points: Point[],
@@ -70,10 +72,9 @@ export class Polygon extends Drawable{
 }
 ```
 
-{: .no-run}
-
 We can still prevent outsiders from accessing our array of `points`, while giving access to the array to any subclass of our class by using the **_protected_** keyword.
 
+{: .no-run}
 ```typescript
 export class Polygon extends Drawable{
   protected points: Point[],
@@ -91,12 +92,12 @@ export class Polygon extends Drawable{
 }
 ```
 
-{: .no-run}
-
 The points array is still not available to the outside world, and changing it would only affect the subclasses we create from `Polygon` (like rectangle and triangle), but users of our classes will not see a change. They still will not be able to access the points array just like before.
 
 Now we can simplify the rectangle class by recognizing that a rectangle is a type of polygon. Because all of the members are private (i.e. not being used by anyone outside our class), we can change those members without fear of breaking other code.
 
+
+{: .no-run}
 ```typescript
 class Rectangle extends Polygon{
   constructor(corner1: Point, corner3: Point, color: Color) {
@@ -112,8 +113,6 @@ class Rectangle extends Polygon{
   }
 }
 ```
-
-{: .no-run}
 
 Notice that now we are deriving from Polygon instead of Drawable. Because a polygon can already represent a rectangle, we don't need any other properties (we can delete the corners).
 
