@@ -74,6 +74,7 @@ class Polygon extends Drawable {
    . . .
 }
 ```
+
 { .no-run }
 
 Here is a well formatted comment for the polygon class.
@@ -129,6 +130,7 @@ The clone method as well:
 	 */
 	clone(): Polygon {
 ```
+{: .no-run}
 
 -   We see the parameters and their types and description.
 -   The return values
@@ -138,12 +140,16 @@ The clone method as well:
 -   An example of how to use it.
 
 Why bother with all this formatting?  
+
 ![](../../assets/images/comments_1.jpg)
+
 Look what happens when I hover over the polygon class in vscode now. I now get help on using this class constructor.
 We can also generated detailed technical documentation automatically by using the typedoc command.
+
 ![](../../assets/images/comments_2.jpg)
 
 Quality, well formatted comments make your code more usable, manageable, and maintainable.
+
 ![](../../assets/images/comments_3.jpg)
 
 There are other things we can do to improve code quality as well.
