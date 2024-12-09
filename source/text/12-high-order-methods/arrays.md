@@ -229,7 +229,7 @@ console.log(groups);
 ```
 
 In the example, the method is called on each person object, but the function returns an array which is then combined with the other arrays returned into a single array (merge).
-Here map would return `[[‘admin','user'],[‘editor']`, but flatMap flattens it into `[‘admin','user','editor']`
+Here map would return `[['admin','user'],['editor']`, but flatMap flattens it into `['admin','user','editor']`
 
 > This does not mutate the array in any way.
 

@@ -91,7 +91,7 @@ Start at the unit level (function) and validate that the function behaves as exp
 -   Make sure your comments document the behavior in exceptional/invalid instances. (ie. Does it replace the value, throw an exception)
     Once you have unit tests, start testing higher level operations (i.e. instantiate classes that use your unit tested code. Simulate the overall behavior of the system. Again, use the same methodology.
 
-## Understanding what to test.
+## Understanding what to test
 
 We will be using jest to write tests in Typescript. You have already seen this in lab, but now we are going to write our own tests.
 Jest provides a format for writing tests in a simple and organized way.
@@ -138,11 +138,9 @@ Here is another example.
 export class Elements {
     private stringArray: string[] = [];
     /**
-     * @description This function returns and     * removes the last element
-     * @returns {string} - The last element of the
-     * array
-     * @sideEffects - Removes the last element of
-     * the array
+     * @description This function returns and removes the last element
+     * @returns {string} - The last element of the array
+     * @sideEffects - Removes the last element of the array
      */
     getLastElement(): string {
         return this.stringArray.pop();
@@ -159,13 +157,13 @@ What questions might we ask here?
 -   What happens if the array is empty?
     -   Ensure array is empty and try
 -   What happens if the array has only one element in it?
-    \*Populate with 1 item and try
+    -   Populate with 1 item and try
 
-To create tests in a project that is already configured for jest, we create files with the word ‘test' in their filename (i.e. myprogram.test.ts)
+To create tests in a project that is already configured for jest, we create files with the word `test` in their filename (i.e. `myprogram.test.ts`)
 This can be changed, but our projects will be pre-configured to work this way.
 
 -   Running jest on the command line by itself within the project folder will run tests in all properly named files.
--   Running jest on the command line with the name of the file (without the test.ts) will run tests in only that file.
+-   Running jest on the command line with the name of the file (without the `test.ts`) will run tests in only that file.
 -   Running jest on the command line with –coverage will produce a coverage report.
 
 ## Summary

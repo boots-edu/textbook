@@ -229,7 +229,7 @@ All files            |   97.61 |    92.66 |   94.84 |   97.78 |
 ---------------------|---------|----------|---------|---------|-------------------
 ```
 
-If we add `--coverageDirectory=‘./coverage'` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
+If we add `--coverageDirectory='./coverage'` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
 
 ## Summary
 
