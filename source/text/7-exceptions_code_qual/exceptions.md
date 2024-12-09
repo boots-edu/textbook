@@ -94,7 +94,7 @@ class Color {
 
 Valid color values in our program are numbers between 0 and 255. What happens if we try to create a color with different values?
 
--   The code will allow these non-sensical values to be stored in red, green and blue.
+-   The code will allow these nonsensical values to be stored in red, green and blue.
 
 We can use exceptions to prevent this.
 
@@ -128,7 +128,7 @@ If the calling code does not "handle" the exception, then the program will termi
 const color: Color = new Color(400, 400, 400);
 ```
 
-Throws (raises) an exception with the message "Invalid red value". Again, if this is not handled somewhere in the code that calls this, the program will exit.
+Throws (or "raises") an exception with the message `"Invalid red value"`. Again, if this is not handled somewhere in the code that calls this, the program will exit.
 
 ### Custom Errors
 
@@ -179,6 +179,7 @@ class Polygon extends Drawable {
   . . .
 }
 ```
+{: .no-run}
 
 Now, if I try to create a polygon with less than 3 or more than 10 points, an exception is thrown. If not, then program execution continues normally.
 If we don't handle this exception, the program will terminate (letting us know to either handle the exception, or fix the calling code to prevent it.
@@ -202,6 +203,7 @@ class Circle extends Drawable {
     . . .
 }
 ```
+{: .no-run}
 
 A line where the two points are the same
 
@@ -227,6 +229,7 @@ class Point {
   . . .
 }
 ```
+{: .no-run}
 
 > Remember if a and b are Point objects, then a===b asks if they are the same object reference in memory, but a.equals(b) checks if they have the same coordinates, whether or not they are the same physical object reference.
 
@@ -264,17 +267,18 @@ class Polygon extends Drawable {
   . . .
 }
 ```
+{: .no-run}
 
-> Note the **_Brute force_** approach to searching for duplicates. For each element, check all the remaining elements for duplicates. Also note that we still need to make sure there are at least 3 and not more than MAX_POINTS points in the polygon. Now we are also making them unique.
+> Note the **_Brute force_** approach to searching for duplicates. For each element, check all the remaining elements for duplicates. Also note that we still need to make sure there are at least 3 and not more than `MAX_POINTS` points in the polygon. Now we are also making them unique.
 
-> Thought Question: Why does j start at i+1 and not 0?
+> Thought Question: Why does `j` start at `i+1` and not `0`?
 
 ### Defensive Programming
 
 So now we can prevent our code from being exposed to "exceptional" or invalid operation, by simply throwing an exception when those cases arise.
 If we write good test cases, we will find errors in our code, but right now, our program will just exit with an error message.  
 Making sure that our code will not accept invalid values and thus have undocumented, or undefined behaviors is good **_defensive programming_**.
-It would be better if we were able to catch the exception somewhere in the call stack and handle it elgently instead of just having our program crash with an error message just because of some invalid input. At a minimum it would be nice to exit cleanly and report the problem to the user in a more "user friendly" way.
+It would be better if we were able to catch the exception somewhere in the call stack and handle it elegantly instead of just having our program crash with an error message just because of some invalid input. At a minimum it would be nice to exit cleanly and report the problem to the user in a more "user friendly" way.
 
 ### Exception Handling
 
@@ -289,9 +293,10 @@ try {
     //do something after regardless of the try/catch result
 }
 ```
+{: .no-run}
 
-If we do one or more operations which might throw an error within a try block, if an exception occurs within that code or any code that is called within the block, that code exits immediately, and the catch block is called, where e is the Error derived object that was passed to throw within the code.
-This will prevent the program from exiting and consume the exception and the program will continue normally after the try/catch/finally block. You can rethrow the error in the catch block, which will continue to "bubble up" the exception so our caller can handle the error after we recognize it (maybe we log, then rethrow).
+If we do one or more operations which might throw an error within a `try` block, if an exception occurs within that code or any code that is called within the block, that code exits immediately, and the `catch` block is called, where `e` is the `Error` derived object that was passed to `throw` within the code.
+This will prevent the program from exiting and consume the exception and the program will continue normally after the `try`/`catch`/`finally` block. You can rethrow the error in the catch block, which will continue to "bubble up" the exception so our caller can handle the error after we recognize it (maybe we log, then rethrow).
 
 ```typescript
 let color: Color;
@@ -325,9 +330,9 @@ try {
 line = new Line(start, end, color);
 ```
 
-A note about finally. In this code it is not necessary since the code continues after the try/catch either way, so we can remove it and just let the program continue with creating the line. There are many use cases where we don't need a finally block, but there are some where we do.
+A note about finally. In this code it is not necessary since the code continues after the `try`/`catch` either way, so we can remove it and just let the program continue with creating the line. There are many use cases where we don't need a `finally` block, but there are some where we do.
 
-Here is a case where **_finally_** is useful:
+Here is a case where `finally` is useful:
 
 ```typescript
 import * as fs from "fs";
@@ -355,14 +360,26 @@ On success it prints the contents, and on error it throws an exception
 
 ### Common Pitfalls and Mistakes
 
--   Throwing a string instead of an Error: Allowed but bad form
--   Using exceptions to communicate non-exceptional situations. These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
--   If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
-    `throw e` or `throw new Error("This is my error")`
+- Throwing a `string` instead of an `Error`; this is allowed, but it is not recommended. It is better to throw an `Error` object, or an object that extends `Error`.
+- Using exceptions to communicate non-exceptional situations. These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
+- If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
+
+Here is what we mean by rethrowing an exception:
+
+```typescript
+try {
+    //do something which might throw an exception
+} catch (e) {
+    // handle the exception in some way
+    // And then rethrow it
+    throw e;
+}
+```
 
 ## Summary
 
 In summary, when writing our code we should program defensively.
+
 - When a method or code block accepts input, throw an exception if the input is not valid.
 - We can override (extend) the Error class to create our own more detailed Error classes for our exceptions.
 - The thrown exception will "bubble up" through the code that called the code that threw the exception, all the way to the top of the call stack. If nothing handles it, then the program terminates and displays the exception and the full call stack.
