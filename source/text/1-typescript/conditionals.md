@@ -173,7 +173,7 @@ Unlike the other operator, this operator simply negates whatever comes next.
 * `!A || !B`: `true` when at least one of `A` and `B` are `false` (DeMorgan's Law)
 * `!(A && B) || C`: `true` when at least one of `A` and `B` are `false` or any time `C` is `true`
 
-By using a combination of comparison operators, logical connectors, and nots we can build complex logic to test state to use in conditionals and loops…
+By using a combination of comparison operators, logical connectors, and nots we can build complex logic to test state to use in conditionals and loops...
 
 ## A Complex Example
 

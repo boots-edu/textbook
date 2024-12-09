@@ -26,17 +26,17 @@ parent: Classes
 
 Recall from the previous chapter the discussion of copying.
 
--   `point2=point;` //makes a copy of the **_reference_** to the one and only object
--   A **_shallow copy_** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object. For arrays, we can use the spread operator (…) to do this.
+-   `point2= point;` makes a copy of the **_reference_** to the one and only object.
+-   A **_shallow copy_** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object. For arrays, we can use the spread operator (`...`) to do this.
 -   A **_deep copy_** of the object makes copies of all of the objects, nested objects and primitive types. Gives you a true clone of the object that is independent of the original. Later, we will learn how to clone the object, but for now, we have to create an independent object with the same values.
 
 A **_deep copy_** of the object makes copies of all of the objects, nested objects and primitive types. Gives you a true clone of the object that is independent of the original. Later, we will learn how to clone the object, but for now, we have to create an independent object with the same values.
 How do we do this in a structured way?
 
--   We teach each class how to clone itself, and then use those methods if we have a class that contains another class.
--   We will work from the bottom up of our hierarchy of classes. The simplest of which is our color class.
+-   We teach each class how to `clone` itself, and then use those methods if we have a class that contains another class.
+-   We will work from the bottom up of our hierarchy of classes. The simplest of which is our `Color` class.
 
-Consider the Color class we have been working with. Cloning that is eash as a **_shallow copy_** is sufficient. The classes data items are all primitive types (numbers).
+Consider the `Color` class we have been working with. Cloning that is easy as a **_shallow copy_** is sufficient. The classes data items are all primitive types (numbers).
 
 ```typescript
 class Color {
@@ -56,9 +56,9 @@ blue.blue = 255;
 console.log(red, blue);
 ```
 
-> We can create a new color object from an existing one by calling the existing one's `clone` method.
+> We can create a new `Color` object from an existing one by calling the existing one's `clone` method.
 
-Our point method is more difficult in that it contains a Color object. Here a **_deep copy_** is required to not only copy the point object into a new instance, but also create a new instance of the color object. Luckily the color object already has a `clone` method.
+Our `Point` class is more difficult in that it contains a `Color` object. Here a **_deep copy_** is required to not only copy the `Point` object into a new instance, but also create a new instance of the `Color` object. Luckily the `Color` object already has a `clone` method.
 
 ```typescript
 import { Color } from "ch5/drawing2";
@@ -78,7 +78,7 @@ console.log(p, q);
 
 > Note, if we passed the color, we would get a reference to the same color object, but by calling its `clone` method, we get a new one (since we wrote it that way).
 
-Likewise, we can add a `clone` method to our Line class as well. Again, since this class contains references to objects, we must **_deep copy_** the line class. Luckily each of the object types (color and line) already has a `clone` method we can use.
+Likewise, we can add a `clone` method to our Line class as well. Again, since this class contains references to objects, we must **_deep copy_** the line class. Luckily each of the object types (`Color` and `Line`) already has a `clone` method we can use.
 
 ```typescript
 import { Color } from "ch5/drawing3";
@@ -104,7 +104,7 @@ line2.start.x = 5;
 console.log(line, line2);
 ```
 
-We can easily do the same for our Rectangle and Polygon classes. For the rectangle class
+We can easily do the same for our `Rectangle` and `Polygon` classes. For the `Rectangle` class:
 
 ```typescript
 import { Color, Point } from "ch5/drawing3";
@@ -138,7 +138,7 @@ rect2.color.red = 255;
 console.log(rect, rect2);
 ```
 
-For the polygon class, things are a little trickier. The class contains an array of references to Point. If we use the spread operator to create a new array, we will only get a **_shallow copy_** and the individual points will reference the same Point objects as the original Polygon. We will need to iterate through the array and clone the objects individually to create a new **_deep copy_** of the array to use in our cloned object.
+For the `Polygon` class, things are a little trickier. The class contains an array of references to `Point`. If we use the spread operator to create a new array, we will only get a **_shallow copy_** and the individual points will reference the same `Point` objects as the original `Polygon`. We will need to iterate through the array and clone the objects individually to create a new **_deep copy_** of the array to use in our cloned object.
 
 ```typescript
 import { Color, Point } from "ch5/drawing3";
@@ -152,8 +152,8 @@ class Polygon {
             // don't push the point, push a clone of it.
             newPoints.push(point.clone());
         }
-        // so newPoints is a new array containing clones of all the points in this polygon.  
-		// We can pass it directly since it is completely new.
+        // so newPoints is a new array containing clones of all the points in this polygon.
+        // We can pass it directly since it is completely new.
         return new Polygon(newPoints, this.color.clone());
     }
 }
@@ -171,7 +171,7 @@ console.log(poly, poly2);
 
 ## Understanding memory layouts
 
-Let's consider how using clone affects the layout of our objects in memory. This can be a good way to understand what is going on in your program.
+Let's consider how using `clone` affects the layout of our objects in memory. This can be a good way to understand what is going on in your program.
 
 ```typescript
 let point1: Point = new Point(0, 0, new Color(255, 0, 0));
@@ -184,7 +184,7 @@ let line2: Line = line.clone();
 
 ![](../../assets/images/clonemem_1_v2.png)
 
-Notice point1 and point2 are still the same references as we have in line. We can clone the points making them distinct.
+Notice `point1` and `point2` are still the same references as we have in line. We can clone the points making them distinct.
 
 ```typescript
 let point1: Point = new Point(0, 0, new Color(255, 0, 0));
@@ -200,7 +200,7 @@ By using our clone methods in all of our classes, this code now has each element
 
 ## Summary
 
-The simplest way to ensure deep cloning is to _teach_ each class how to deep copy itself. If we do this then classes that contain the class in question can just call its clone method to deep copy it.
+The simplest way to ensure deep cloning is to _teach_ each class how to deep copy itself. If we do this then classes that contain the class in question can just call its `clone` method to deep copy it.
 
 # Chapter Summary
 

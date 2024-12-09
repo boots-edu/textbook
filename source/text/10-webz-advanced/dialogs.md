@@ -165,7 +165,7 @@ A simple please wait dialog with no buttons.
 To make this simple, I am just going to use text, but you could use an animated gif or do some css magic to add some movement to this dialog (we will do that in a few minutes with a timer).
 First we will create a new dialog with the cli: `webz dialog Pleasewait`
 
-For the body of our dialog, we will just center a string that says "Please Wait…"
+For the body of our dialog, we will just center a string that says "Please Wait..."
 
 ```html
 <div class="content">

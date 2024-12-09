@@ -314,7 +314,7 @@ We can even use it to combine map and filter in a single step.
 let vals=[1,2,3,4,5];
 let OddSqrs = vals.reduce((acc: number[], val: number) => {
 	if (val%2) return [...acc, val * val];
-	else return […acc];
+	else return [...acc];
 }, []);
 ```
 

@@ -273,7 +273,7 @@ Clicking the next enables the previous button, disables the next button and disp
 ![](../../assets/images/webz_3.jpg)
 
 There really isn't much more to it. Bind decorators connect properties to elements. If we change the property, the element changes (NOT THE OTHER WAY AROUND).
-Event Decorators capture events from the web page allowing us to react to those events. These are decorators like `@Click(…)`.
+Event Decorators capture events from the web page allowing us to react to those events. These are decorators like `@Click(...)`.
 We will cover some more advanced features in the next chapter, but these are the basics.
 
 ## Decorators in Webz

@@ -129,7 +129,7 @@ Knowing how the parent works informs how we write the subclass.
 Some important points on inheritance.
 
 -   You do not need to reimplement the properties of the parent class as you are inheriting them.
--   `super(…)` calls the constructor of the parent class and takes whatever arguments the parent constructor takes.
+-   `super(...)` calls the constructor of the parent class and takes whatever arguments the parent constructor takes.
 -   If a member is public or protected, you can access it in the subclass, if it is private, you cannot, but it is still there.
 
 When we subclass, we get all of the properties of our parent class and can access them if they are public or protected.

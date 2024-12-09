@@ -139,7 +139,7 @@ array.splice(index,[howMany],[element1],[..., elementN]);
 
 -   index: The array index at which to start changing the array
 -   howMany: The number of array elements to remove starting at index, defaults to all of them if no value is passed.
--   element1…elementN: 0 or more elements to add to the array at the index.
+-   element1...elementN: 0 or more elements to add to the array at the index.
 
 If we only use the first parameter which is required, splice will remove that element and all elements after it from the array. It also returns what was removed.
 
