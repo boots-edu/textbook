@@ -84,22 +84,22 @@ It also describes the exceptions that it may throw.
 We should also comment the methods inside our class. This is what a comment for the constructor might look like:
 
 ```typescript
-/**
-	 * Create a new polygon object.
-	 * @param {Point[]} points Array of vertices of the polygon.
-	 * @param {Color} color The color of the polygon.
-	 * @throws An error if the number of points is invalid
-	 * @throws An error if there are duplicate points.
-	 * @sideEffects Allocates a new polygon object.
-	 * @memberof Polygon
-	 * @constructor
-	 * @example
-	 * let p1 = new Point(0, 0);
-	 * let p2 = new Point(0, 1);
-	 * let p3 = new Point(1, 1);
-	 * let polygon = new Polygon([p1, p2, p3], new Color());
-*/
-	constructor(points: Point[], color: Color) {
+    /**
+     * Create a new polygon object.
+     * @param {Point[]} points Array of vertices of the polygon.
+     * @param {Color} color The color of the polygon.
+     * @throws An error if the number of points is invalid
+     * @throws An error if there are duplicate points.
+     * @sideEffects Allocates a new polygon object.
+     * @memberof Polygon
+     * @constructor
+     * @example
+     * let p1 = new Point(0, 0);
+     * let p2 = new Point(0, 1);
+     * let p3 = new Point(1, 1);
+     * let polygon = new Polygon([p1, p2, p3], new Color());
+    */
+    constructor(points: Point[], color: Color) {
 ```
 
 -   We see the parameters and their types and description.
@@ -112,24 +112,25 @@ We should also comment the methods inside our class. This is what a comment for 
 The clone method as well:
 
 ```typescript
-/**
-	 * Return a deep copy of our polygon object in a new one.
-	 * @description Clones a polygon object
-	 * @param none
-	 * @returns A new polygon object that is a clone of the current polygon object.
-	 * @override The clone method of the Drawable class.
-	 * @memberof Polygon
-	 * @function clone
-	 * @sideEffects Allocates a new polygon object.
-	 * @example
-	 * let p1 = new Point(0, 0);
-	 * let p2 = new Point(0, 1);
-	 * let p3 = new Point(1, 1);
-	 * let polygon:Polygon = new Polygon([p1, p2, p3], new Color());
-	 * let polygon2:Polygon = polygon.clone();
-	 */
-	clone(): Polygon {
+    /**
+     * Return a deep copy of our polygon object in a new one.
+     * @description Clones a polygon object
+     * @param none
+     * @returns A new polygon object that is a clone of the current polygon object.
+     * @override The clone method of the Drawable class.
+     * @memberof Polygon
+     * @function clone
+     * @sideEffects Allocates a new polygon object.
+     * @example
+     * let p1 = new Point(0, 0);
+     * let p2 = new Point(0, 1);
+     * let p3 = new Point(1, 1);
+     * let polygon:Polygon = new Polygon([p1, p2, p3], new Color());
+     * let polygon2:Polygon = polygon.clone();
+     */
+    clone(): Polygon {
 ```
+
 {: .no-run}
 
 -   We see the parameters and their types and description.
@@ -139,7 +140,7 @@ The clone method as well:
 -   It is a function
 -   An example of how to use it.
 
-Why bother with all this formatting?  
+Why bother with all this formatting?
 
 ![](../../assets/images/comments_1.jpg)
 

@@ -24,9 +24,9 @@ parent: Overrides and Polymorphism
 
 ## Motivation for Polymorphism
 
-From the fruit example in the previous section, it would be preferable if we could just store an array of fruits and call getDescription on each fruit. It would be great if the correct getDescription got called based on the type of fruit that was created, not the type of the array.
+From the fruit example in the previous section, it would be preferable if we could just store an array of fruits and call `getDescription` on each fruit. It would be great if the correct `getDescription` got called based on the type of fruit that was created, not the type of the array.
 
-It turns out that this WORKS! For apples it will call the apple version of getDescription, and for oranges it will call the orange version.
+It turns out that this WORKS! For apples it will call the apple version of `getDescription`, and for oranges it will call the orange version.
 
 ```typescript
 class Fruit {
@@ -72,7 +72,7 @@ So with creative use of subclass polymorphism, we can provide a generic interfac
 
 ## Back to the _drawing_ board
 
-Returning to the drawing example, if we added a draw method to the drawable class that does nothing, then implemented the draw method in each of our subclasses, then we could store a drawing as an array of drawables, iterate through the array, and call the draw method. This is acceptable because Drawable has a draw method, but the correct draw method (depending on the type of object) will be called for us automatically. This is **_polymorphism_**
+Returning to the drawing example, if we added a `draw` method to the drawable class that does nothing, then implemented the `draw` method in each of our subclasses, then we could store a drawing as an array of `Drawable`s, iterate through the array, and call the `draw` method. This is acceptable because `Drawable` has a `draw` method, but the correct `draw` method (depending on the type of object) will be called for us automatically. This is **_polymorphism_**:
 
 ```typescript
 class Drawable {
@@ -84,7 +84,7 @@ class Drawable {
     return new Drawable(this.color);
   }
   draw(page:Page): void {
-    //Do nothing, I don't know how
+    // Do nothing, I don't know how
   }
 }
 
@@ -110,9 +110,9 @@ obj.draw(this.drawingSurface);
 > Note: You can install the drawing library using in this example with the page object using npm.  
 > `npm i --save @boots-edu/web-draw`
 
-It is safe to call draw on a Drawable object, it just doesn't do anything.
-If we call it on a Line object, it draws the line.
-If we call it on a Line object stored in a Drawable variable (which is allowed since it is a Drawable), it calls the method in the Line class.
+It is safe to call `draw` on a `Drawable` object, it just doesn't do anything.
+If we call it on a `Line` object, it draws the line.
+If we call it on a `Line` object stored in a `Drawable` variable (which is allowed since it is a `Drawable`), it calls the method in the `Line` class.
 
 ## Summary
 

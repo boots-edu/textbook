@@ -179,6 +179,7 @@ class Polygon extends Drawable {
   . . .
 }
 ```
+
 {: .no-run}
 
 Now, if I try to create a polygon with less than 3 or more than 10 points, an exception is thrown. If not, then program execution continues normally.
@@ -203,6 +204,7 @@ class Circle extends Drawable {
     . . .
 }
 ```
+
 {: .no-run}
 
 A line where the two points are the same
@@ -229,6 +231,7 @@ class Point {
   . . .
 }
 ```
+
 {: .no-run}
 
 > Remember if a and b are Point objects, then a===b asks if they are the same object reference in memory, but a.equals(b) checks if they have the same coordinates, whether or not they are the same physical object reference.
@@ -267,6 +270,7 @@ class Polygon extends Drawable {
   . . .
 }
 ```
+
 {: .no-run}
 
 > Note the **_Brute force_** approach to searching for duplicates. For each element, check all the remaining elements for duplicates. Also note that we still need to make sure there are at least 3 and not more than `MAX_POINTS` points in the polygon. Now we are also making them unique.
@@ -293,6 +297,7 @@ try {
     //do something after regardless of the try/catch result
 }
 ```
+
 {: .no-run}
 
 If we do one or more operations which might throw an error within a `try` block, if an exception occurs within that code or any code that is called within the block, that code exits immediately, and the `catch` block is called, where `e` is the `Error` derived object that was passed to `throw` within the code.
@@ -360,9 +365,9 @@ On success it prints the contents, and on error it throws an exception
 
 ### Common Pitfalls and Mistakes
 
-- Throwing a `string` instead of an `Error`; this is allowed, but it is not recommended. It is better to throw an `Error` object, or an object that extends `Error`.
-- Using exceptions to communicate non-exceptional situations. These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
-- If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
+-   Throwing a `string` instead of an `Error`; this is allowed, but it is not recommended. It is better to throw an `Error` object, or an object that extends `Error`.
+-   Using exceptions to communicate non-exceptional situations. These are designed for expressing error conditions, and should not be used as a way to return data in normal execution.
+-   If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
 
 Here is what we mean by rethrowing an exception:
 
@@ -380,10 +385,10 @@ try {
 
 In summary, when writing our code we should program defensively.
 
-- When a method or code block accepts input, throw an exception if the input is not valid.
-- We can override (extend) the Error class to create our own more detailed Error classes for our exceptions.
-- The thrown exception will "bubble up" through the code that called the code that threw the exception, all the way to the top of the call stack. If nothing handles it, then the program terminates and displays the exception and the full call stack.
-- We can catch a thrown exception with the `try`/`catch` or `try`/`catch`/`finally` constructs. These consume the exception (stop bubbling).
+-   When a method or code block accepts input, throw an exception if the input is not valid.
+-   We can override (extend) the Error class to create our own more detailed Error classes for our exceptions.
+-   The thrown exception will "bubble up" through the code that called the code that threw the exception, all the way to the top of the call stack. If nothing handles it, then the program terminates and displays the exception and the full call stack.
+-   We can catch a thrown exception with the `try`/`catch` or `try`/`catch`/`finally` constructs. These consume the exception (stop bubbling).
 
 # Next Step
 
