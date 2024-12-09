@@ -115,11 +115,11 @@ function removeNegatives(): number[] {
 ```
 
 The filter method takes a function that returns true if we want the value included in the returned list, and false if we want it removed from the list.
-Here the anonymous function is: `(x:number)=>{return x>=0}`.
+Here the anonymous function is: `(x:number) => { return x>=0 }`.
 Now we can use filter to filter any list by providing such a method to specify what we want in the list.
 
 If an anonymous function only contains a single statement that returns a value, then we can shorten this syntax by removing the braces and the return.
-Now the anonymous function is: `(x:number)=>x>=0`
+Now the anonymous function is: `(x:number) => x >= 0`
 This gives a clean concise way to pass around simple methods without naming them.
 
 ```typescript
@@ -185,7 +185,7 @@ let f: ChkFunction = (x: number) => x >= 0;
 
 ## Summary
 
-**_Annonymous functions_** are a useful shortcut for passing functionality around a program, either as a variable, a parameter, or a return value. They are typed by the types of their parameters and return value.
+**_Anonymous functions_** are a useful shortcut for passing functionality around a program, either as a variable, a parameter, or a return value. They are typed by the types of their parameters and return value.
 
 # Next Step
 

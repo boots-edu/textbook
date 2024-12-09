@@ -18,7 +18,8 @@ parent: Testing
 {:toc}
 </details>
 
-@# Key Idea
+##  Key Idea
+
 **_Software Testing_** is the process of validating that software is bug free and meets requirements.
 
 ## General
@@ -122,9 +123,9 @@ Let's start by asking what we might want to know about how this code behaves, an
     -   Pass it one and verify contents of the array
 -   How does it behave on a positive real number?
     -   Pass it a positive real number and verify contents of the array
--   How does it behave when passed a 0.
+-   How does it behave when passed a 0?
     -   Pass it a 0 and verify the contents of the array
--   How does it behave on a negative integer.
+-   How does it behave on a negative integer?
     -   Pass it a negative integer and verify the contents of the array
 -   How does it behave on a negative real number?
     -   Pass it a negative real and verify the contents of the array
