@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Polymorhism Notes
+title: Polymorphism Notes
 nav_order: 6.5
 parent: Overrides and Polymorphism
 ---
@@ -129,12 +129,12 @@ In general, you should return the most generic (i.e. superclass) type possible t
 
 ## Summary
 
-- You now know most of the generic things about OOP. In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C#, etc.
-- We can construct complex classes by building them out of parts that they contain using **_composition_**.
-- We can construct complex classes by extending other classes and adding functionality to create more and more specific classes that take advantage of the features that already exist in the superclass, thanks to **_inheritance_**.
-- We can use the idea of **_polymorphism_** to reference objects through their superclass, and have the correct implementation in the subclass execute for us.
-- We can prevent the creation of a class being used exclusively as a superclass by marking it as **_abstract_**.
-- We can force subclasses to create overridden methods for our superclass by declaring methods as **_abstract_**. This does not prevent dispatch, but does remove the default behavior, making all subclasses implement the method themselves.
+-   You now know most of the generic things about OOP. In other words, while the syntax may differ slightly, all of the concepts hold true in most OO languages like Java, C++, C#, etc.
+-   We can construct complex classes by building them out of parts that they contain using **_composition_**.
+-   We can construct complex classes by extending other classes and adding functionality to create more and more specific classes that take advantage of the features that already exist in the superclass, thanks to **_inheritance_**.
+-   We can use the idea of **_polymorphism_** to reference objects through their superclass, and have the correct implementation in the subclass execute for us.
+-   We can prevent the creation of a class being used exclusively as a superclass by marking it as **_abstract_**.
+-   We can force subclasses to create overridden methods for our superclass by declaring methods as **_abstract_**. This does not prevent dispatch, but does remove the default behavior, making all subclasses implement the method themselves.
 
 And with all of this, we have an elegant way to design programs that leverages the ability to share code, and view a problem in terms of objects.
 
