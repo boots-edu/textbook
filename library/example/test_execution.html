@@ -1,59 +1,123 @@
 <html>
-<head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style type="text/css" media="screen">
-    .ace_editor {
-        position: relative;
-        height:300px;
-        width: 100%;
-    }
+    <head>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <style type="text/css" media="screen">
+            .ace_editor {
+                position: relative;
+                height: 300px;
+                width: 100%;
+            }
 
-    .runnable-sub-area {
-      border: 1px solid lightgray;
-      width: 100%;
-      margin-bottom: 2px;
-      padding: 2px;
-    }
+            .runnable-sub-area {
+                border: 1px solid lightgray;
+                width: 100%;
+                margin-bottom: 2px;
+                padding: 2px;
+            }
 
-    @-webkit-keyframes fadeIn {
-      0% {
-        background-color: yellow;
-        opacity: 1;
-      }
-      100% {
-        background-color: inherit;
-      }
-    }
-    @keyframes fadeIn {
-      0% {
-        background-color: lightgray;
-        opacity: 1;
-      }
-      100% {
-        background-color: inherit;
-      }
-    }
+            @-webkit-keyframes fadeIn {
+                0% {
+                    background-color: yellow;
+                    opacity: 1;
+                }
+                100% {
+                    background-color: inherit;
+                }
+            }
+            @keyframes fadeIn {
+                0% {
+                    background-color: lightgray;
+                    opacity: 1;
+                }
+                100% {
+                    background-color: inherit;
+                }
+            }
 
-    .fadeIn {
-      -webkit-animation-name: fadeIn;
-      -webkit-animation-duration: 900ms;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-timing-function: ease;
-      -moz-animation-name: fadeIn;
-      -moz-animation-duration: 900ms;
-      -moz-animation-iteration-count: 1;
-      -moz-animation-timing-function: ease;
-      animation-name: fadeIn;
-      animation-duration: 900ms;
-      animation-iteration-count: 1;
-      animation-timing-function: ease;
-    }
-  </style>
-  
-</head>
-<body>
+            .fadeIn {
+                -webkit-animation-name: fadeIn;
+                -webkit-animation-duration: 900ms;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-timing-function: ease;
+                -moz-animation-name: fadeIn;
+                -moz-animation-duration: 900ms;
+                -moz-animation-iteration-count: 1;
+                -moz-animation-timing-function: ease;
+                animation-name: fadeIn;
+                animation-duration: 900ms;
+                animation-iteration-count: 1;
+                animation-timing-function: ease;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="language-typescript highlighter-rouge">
+            <pre>
+import {
+    BindValue,
+    BindStyleToNumberAppendPx,
+    Click,
+    WebzComponent,
+    Timer,
+} from &quot;@boots-edu/webz&quot;;
 
-  <div class="language-typescript highlighter-rouge"><pre>
+console.log("Webz loaded!");
+
+const html = `
+&lt;div&gt;
+    &lt;span&gt;Hello &lt;span id=&quot;name&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;button id=&quot;button&quot;&gt;Click me!&lt;/button&gt;
+    &lt;div&gt;
+        &lt;span&gt;Count: &lt;span id=&quot;count&quot;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+`;
+const css = `
+button {
+    background-color: blue;
+    color: white;
+}
+`;
+
+class MainComponent extends WebzComponent {
+    @BindValue(&quot;name&quot;)
+    name: string = &quot;World&quot;;
+
+    @BindValue(&quot;count&quot;)
+    count: string = "0";
+
+    @Click(&quot;button&quot;)
+    onClick() {
+        this.count = (parseInt(this.count, 10) + 1).toString();
+    }
+    
+    constructor() {
+        super(html, css);
+    }
+}
+
+_setIframeVisible(true);
+let mainInstance = new MainComponent();
+let mainElement = window.document.body;
+mainElement.innerHTML = "";
+mainInstance.appendToDomElement(mainElement);
+  </pre
+            >
+        </div>
+
+        <div class="language-typescript highlighter-rouge">
+            <pre>
+import {anything} from 'bad_import';
+console.log("Won't work :)", anything);
+      </pre
+            >
+        </div>
+
+        <div class="language-typescript highlighter-rouge">
+            <pre>
 import {Color,Point,Polygon} from 'ch2/drawing1';
 
 let red:Color=new Color(255,0,0);
@@ -64,68 +128,12 @@ let points1:Point[]=[
 ];
 let redTriangle:Polygon= new Polygon(points1,red);
 console.log(redTriangle);
-  </pre>
-  </div>
+  </pre
+            >
+        </div>
 
-  <div class="language-typescript highlighter-rouge"><pre>
-    import {anything} from 'bad_import';
-    console.log("Won't work :)", anything);
-      </pre>
-      </div>
-
-  <div class="language-typescript highlighter-rouge"><pre>
-    import {
-        BindValue,
-        BindStyleToNumberAppendPx,
-        Click,
-        WebzComponent,
-        Timer,
-    } from &quot;@boots-edu/webz&quot;;
-
-    console.log("Webz loaded!");
-
-    const html = `
-    &lt;div&gt;
-        &lt;span&gt;Hello &lt;span id=&quot;name&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-        &lt;button id=&quot;button&quot;&gt;Click me!&lt;/button&gt;
-        &lt;div&gt;
-            &lt;span&gt;Count: &lt;span id=&quot;count&quot;&gt;&lt;/span&gt;&lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    `;
-    const css = `
-    button {
-        background-color: blue;
-        color: white;
-    }
-    `;
-
-    class MainComponent extends WebzComponent {
-        @BindValue(&quot;name&quot;)
-        name: string = &quot;World&quot;;
-
-        @BindValue(&quot;count&quot;)
-        count: string = "0";
-
-        @Click(&quot;button&quot;)
-        onClick() {
-            this.count = (parseInt(this.count, 10) + 1).toString();
-        }
-        
-        constructor() {
-            super(html, css);
-        }
-    }
-
-_setIframeVisible(true);
-let mainInstance = new MainComponent();
-let mainElement = window.document.body;
-mainElement.innerHTML = "";
-mainInstance.appendToDomElement(mainElement);
-  </pre>
-  </div>
-
-<div class="language-typescript highlighter-rouge"><pre>
+        <div class="language-typescript highlighter-rouge">
+            <pre>
   /**
   * Bring an umbrella if it is not raining
   * @param raining True if it is raining
@@ -151,10 +159,12 @@ mainInstance.appendToDomElement(mainElement);
      expect(bringUmbrella(true, 80)).toBe("No need for an umbrella, but bring a jacket");
  });
  
-</pre>
-</div>
+</pre
+            >
+        </div>
 
-<div class="language-typescript highlighter-rouge"><pre>
+        <div class="language-typescript highlighter-rouge">
+            <pre>
 let fruits: string[] = ["apple","banana","orange"];
 for (let fruit of fruits){
   console.log(fruit);
@@ -174,9 +184,10 @@ ada.name = "Ada Bart";
 console.log(ada.age);
 
 console.log(alpha("beta"));
-</pre>
-</div>
+</pre
+            >
+        </div>
 
-<script src="../dist/index.js"></script>
-</body>
+        <script src="../dist/index.js"></script>
+    </body>
 </html>
