@@ -213,7 +213,7 @@ Once written this test will run every time I run tests, handling regression test
 
 Coverage is important when writing tests
 While you should not specifically write tests to coverage, since those tests will not cover all possible inputs, you should make sure that your tests actually cover your code. Let's look at our example again, from a coverage standpoint
-Running: jest –coverage will produce a shortened coverage report like this:
+Running: `jest –coverage` will produce a shortened coverage report like this:
 
 ```
 ---------------------|---------|----------|---------|---------|-------------------
@@ -229,7 +229,7 @@ All files            |   97.61 |    92.66 |   94.84 |   97.78 |
 ---------------------|---------|----------|---------|---------|-------------------
 ```
 
-If we add `--coverageDirectory='./coverage'` to our jest command with –coverage, we still get the same information, but we also get a website with detailed info including source links.
+If we add `--coverageDirectory='./coverage'` to our jest command with `–coverage`, we still get the same information, but we also get a website with detailed info including source links.
 
 ## Summary
 

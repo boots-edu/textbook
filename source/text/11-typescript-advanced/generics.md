@@ -221,27 +221,27 @@ Let's return to the Webz `Notifier` class and loot at the source code for it.
 
 ```typescript
 export class Notifier<T = void> {
-	constructor() {}
-	subscribe(callback: (value: T) => void, error?: (value: Error) => void) {
-		//something goes here
-	}
-	unsubscribe(id: number) {
-		//something goes here
-	}
-	notify(value: T) {
-		//something goes here
-	}
-	error(value: Error) {
-		//something goes here
-	}
+    constructor() {}
+    subscribe(callback: (value: T) => void, error?: (value: Error) => void) {
+        //something goes here
+    }
+    unsubscribe(id: number) {
+        //something goes here
+    }
+    notify(value: T) {
+        //something goes here
+    }
+    error(value: Error) {
+        //something goes here
+    }
 }
 ```
 
 {: .no-run}
 
-* `T` defaults to `void` if no parameter is provided.
-* `subscribe` takes a function whose parameter has type `T`.
-* `notify` takes a value of type `T`
+-   `T` defaults to `void` if no parameter is provided.
+-   `subscribe` takes a function whose parameter has type `T`.
+-   `notify` takes a value of type `T`
 
 This is as expected when you consider how we used `Notifier` previously.
 

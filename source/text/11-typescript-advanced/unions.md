@@ -96,7 +96,7 @@ console.log(whatisit.name);
 console.log(whatisit.getDetails());
 ```
 
-We can union these classes together and through the variable _whatisit_, we can access any members that both _Tree_ and _Tiger_ share in common.
+We can union these classes together and through the variable `whatisit`, we can access any members that both `Tree` and `Tiger` share in common.
 
 > We cannot access members that are not shared in common through the variable because its type only supports members that are in both.
 
@@ -127,7 +127,7 @@ whatisit = new Tree();
 console.log(whatisit.name);
 ```
 
-The declared type **_ThingsThatStartWithT_** can be used like any other type, but it represents the **_union type_** of combining _Tiger_ and _Tree_.
+The declared type `ThingsThatStartWithT` can be used like any other type, but it represents the **_union type_** of combining `Tiger` and `Tree`.
 
 ## Summary
 
