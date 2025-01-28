@@ -4,6 +4,7 @@ _site
 boots-library.js
 Gemfile
 Gemfile.lock
+_Gemfile.lock
 
 # Logs
 logs
