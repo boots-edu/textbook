@@ -48,15 +48,15 @@ jobs:
             - name: Copy Library
               run: |
                   cp library/dist/index.js source/assets/js/boots-library.js
-            - name: Build PDF version
-              run: |
-                  cd pdf
-                  npm install
-                  npm run build
-                  cd ../
-            - name: Copy PDF
-              run: |
-                  cp pdf/dist/boots_textbook.pdf source/assets/boots_textbook.pdf
+            # - name: Build PDF version
+            #   run: |
+            #       cd pdf
+            #       npm install
+            #       npm run build
+            #       cd ../
+            # - name: Copy PDF
+            #   run: |
+            #       cp pdf/dist/boots_textbook.pdf source/assets/boots_textbook.pdf
             - name: Build slides
               run: |
                   cd slides/
