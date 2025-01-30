@@ -24,16 +24,12 @@ parent: Webz Introduction
 
 # Working Example of Webz
 
+Below you can see a fully working example of Webz in action. Try running the code to see what it looks like in action! Notice that there are three files for the component: `main.component.ts`, `main.component.html`, and `main.component.css`. The html file contains the structure of the component, the css file contains the styling, and the ts file contains the logic. The ts file uses decorators to attach methods and properties of the class to the html by the element's id attribute. We'll explain all of this in more detail throughout this chapter.
+
 {:data-filename="main.component.ts"}
 
 ```typescript
-import {
-    BindValue,
-    BindStyleToNumberAppendPx,
-    Click,
-    WebzComponent,
-    Timer,
-} from "@boots-edu/webz";
+import { BindValue, Click, WebzComponent } from "@boots-edu/webz";
 import html from "./main.component.html";
 import css from "./main.component.css";
 
