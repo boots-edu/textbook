@@ -73,8 +73,20 @@ export function setupRunners() {
         const areaGroups = groupAdjacentElements(LANGUAGE_CLASSES);
         areaGroups.forEach((areaGroup) => {
             const fileSet: VirtualFileSet = {};
+            const filenameElements: HTMLElement[] = [];
             areaGroup.forEach((area) => {
                 const filename = getFilenameFromElement(area as Element);
+                if (area.hasAttribute("data-filename")) {
+                    const filenameElement = document.createElement("span");
+                    filenameElement.textContent = filename;
+                    filenameElement.style.fontFamily = "monospace";
+                    filenameElement.style.fontSize = "14px";
+                    filenameElement.style.color = "#777";
+                    filenameElement.style.border = "1px solid #777";
+                    filenameElement.style.padding = "0 10px";
+                    area.parentNode?.insertBefore(filenameElement, area);
+                    filenameElements.push(filenameElement);
+                }
                 const lang =
                     filename ?
                         (filename.split(".").pop() as VirtualFileTypeExtension)
@@ -111,6 +123,9 @@ export function setupRunners() {
                     (area) => ((area as HTMLElement).style.display = "none"),
                 );
                 editButton.remove();
+                filenameElements.forEach((filenameElement) => {
+                    filenameElement.remove();
+                });
             };
             areaGroup[0].parentNode?.insertBefore(editButton, areaGroup[0]);
         });
