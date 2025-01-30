@@ -24,6 +24,8 @@ parent: Webz Introduction
 
 # Working Example of Webz
 
+{:data-filename="main.component.ts"}
+
 ```typescript
 import {
     BindValue,
@@ -32,22 +34,8 @@ import {
     WebzComponent,
     Timer,
 } from "@boots-edu/webz";
-
-const html = `
-    <div>
-        <span>Hello <span id="name"></span></span>
-        <button id="button">Click me!</button>
-        <div>
-            <span>Count: <span id="count"></span></span>
-        </div>
-    </div>
-`;
-const css = `
-button {
-	background-color: blue;
-	color: white;
-}
-`;
+import html from "./main.component.html";
+import css from "./main.component.css";
 
 class MainComponent extends WebzComponent {
     @BindValue("name")
@@ -65,13 +53,27 @@ class MainComponent extends WebzComponent {
         super(html, css);
     }
 }
+```
 
-_setIframeVisible(true);
-let mainInstance = new MainComponent();
-let mainElement = window.document.body;
-mainElement.innerHTML = "";
-mainInstance.appendToDomElement(mainElement);
-console.log(mainInstance.name);
+{:data-filename="main.component.html"}
+
+```html
+<div>
+    <span>Hello there, <span id="name"></span></span>
+    <button id="button">Click me!</button>
+    <div>
+        <span>Count: <span id="count"></span></span>
+    </div>
+</div>
+```
+
+{:data-filename="main.component.css"}
+
+```css
+button {
+    background-color: blue;
+    color: white;
+}
 ```
 
 ## Overview

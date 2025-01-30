@@ -2,6 +2,7 @@ import ts from "typescript";
 import { SourceCodeMapping, extractSourceCodeMap } from "./ts_source";
 import { CompilationResult, compile } from "./ts_compiler";
 import { linkObjects } from "./ts_linker";
+import { VirtualFileSet } from "./virtual_files";
 
 export interface ProgramExecutionRequest {
     code: string;
@@ -39,9 +40,9 @@ export const FUNCTIONS_AVAILABLE_TO_STUDENTS = [
     "test",
     "expect",
     "_setIframeVisible",
-]
+];
 
-export const EXECUTION_HEADER = /*javascript*/`// Execution Header
+export const EXECUTION_HEADER = /*javascript*/ `// Execution Header
 let silenceConsole = false;
 let _signedKey = null;
 let parentPost = (type, contents, override=false) => {
@@ -190,7 +191,7 @@ expect = (actual) => {
 };
 `;
 
-export const EXECUTION_FOOTER = /*javascript*/`// Execution Footer
+export const EXECUTION_FOOTER = /*javascript*/ `// Execution Footer
 parentPost("instructor.tests", _results);
 })();
 parentPost("execution.finished", []);
@@ -213,11 +214,14 @@ export const wrapStudentCode = (
     offset: number = 0,
     locals: Map<string, ts.Symbol>,
 ): WrappedCode => {
-    const functionParameters = FUNCTIONS_AVAILABLE_TO_STUDENTS.map((f) => JSON.stringify(f)).join(", ");
+    const functionParameters = FUNCTIONS_AVAILABLE_TO_STUDENTS.map((f) =>
+        JSON.stringify(f),
+    ).join(", ");
     const functionArguments = FUNCTIONS_AVAILABLE_TO_STUDENTS.join(", ");
     code = code.replace(/[\\`$]/g, "\\$&");
     code += "\nreturn {" + Array.from(locals.keys()).join(", ") + "};";
-    const wrapped = /*javascript*/`_updateStatus("Executing Student Code"); // $Student Code
+    const wrapped =
+        /*javascript*/ `_updateStatus("Executing Student Code"); // $Student Code
 student = {};
 studentNamespace = {};
 try {
@@ -237,17 +241,36 @@ try {
             runtime: 6 + offset,
         },
         lineCount: wrapped.split("\n").length + offset,
-        locals
+        locals,
     };
 };
 
-export async function makeExecutionRequest(studentCode: string, engineId: string): Promise<FeedbackExecutionRequest> {
+function preserveEmptyLines(files: VirtualFileSet) {
+    const keys = Object.keys(files);
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        files[key].contents = files[key].contents.replace(/\n\n/g, "\n//\n");
+    }
+}
+
+export async function makeExecutionRequest(
+    mainFilename: string,
+    studentCode: VirtualFileSet,
+    engineId: string,
+): Promise<FeedbackExecutionRequest> {
     // TODO: Handle strings with blank lines inside?
-    studentCode = studentCode.replace("\n\n", "\n//\n");
-    const studentResults: CompilationResult = await compile(studentCode);
+    preserveEmptyLines(studentCode);
+    const studentResults: CompilationResult = await compile(
+        mainFilename,
+        studentCode,
+    );
     const studentLocals = studentResults.locals;
     const headerOffset = EXECUTION_HEADER.split("\n").length;
-    const wrappedStudent = wrapStudentCode(studentResults.code || "", headerOffset, studentLocals);
+    const wrappedStudent = wrapStudentCode(
+        studentResults.code || "",
+        headerOffset,
+        studentLocals,
+    );
     const assemblage = [EXECUTION_HEADER, wrappedStudent.code];
     const signedKey = crypto.randomUUID();
     assemblage.push(EXECUTION_FOOTER);
@@ -258,8 +281,8 @@ export async function makeExecutionRequest(studentCode: string, engineId: string
         ...wrappedStudent,
         imports: studentResults.imports,
         errors: studentResults.diagnostics,
-        original: studentCode,
-        sourceCodeMapping: extractSourceCodeMap(studentResults.code || "")
+        original: studentCode[mainFilename].contents,
+        sourceCodeMapping: extractSourceCodeMap(studentResults.code || ""),
     };
     // Link in imports, if any
     const linking = linkObjects(student);

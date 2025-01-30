@@ -1,11 +1,25 @@
-import { executeCodeInIFrame, makeIFrame, sendDataToIframe, terminateIFrame, toggleIFrameDebug } from "./safe_iframe";
+import {
+    executeCodeInIFrame,
+    makeIFrame,
+    sendDataToIframe,
+    terminateIFrame,
+    toggleIFrameDebug,
+} from "./safe_iframe";
 import { Timer } from "./timer";
-import { KettleEngineSystemError, handleKettleSystemError, processTypeScriptDiagnostic } from "./ts_traceback";
+import {
+    KettleEngineSystemError,
+    handleKettleSystemError,
+    processTypeScriptDiagnostic,
+} from "./ts_traceback";
 import { CONSOLE_API_COMMAND_LIST, ConsoleAPICommand } from "./ts_console";
-import { FeedbackExecutionRequest, makeExecutionRequest, ProgramExecutionRequest } from "./ts_assembler";
+import {
+    FeedbackExecutionRequest,
+    makeExecutionRequest,
+    ProgramExecutionRequest,
+} from "./ts_assembler";
 import { ExecutionUI } from "./execution_ui";
 import { v4 as uuidv4 } from "uuid";
-
+import { VirtualFileSet } from "./virtual_files";
 
 export interface ParentPost {
     type: string;
@@ -30,19 +44,25 @@ export class ExecutionEngine {
     private latestErrors: string[] = [];
     private executionTimer: Timer;
     private isExecuting: boolean = false;
-    private latestListener: ((e: MessageEvent) => void) | null = null
+    private latestListener: ((e: MessageEvent) => void) | null = null;
     private engineId: string = uuidv4();
 
     constructor(
         root: HTMLElement,
-        initialCode: string,
+        mainPath: string,
+        initialFiles: VirtualFileSet,
         private isDebugMode: boolean,
     ) {
         this.root = root;
         this.iframe = makeIFrame();
-        this.ui = new ExecutionUI(this.root, initialCode, this.iframe);
+        this.ui = new ExecutionUI(
+            this.root,
+            mainPath,
+            initialFiles,
+            this.iframe,
+        );
         this.timeClock = undefined;
-        this.executionConfirmation = window.setTimeout(()=>{}, 0);
+        this.executionConfirmation = window.setTimeout(() => {}, 0);
         this.executionTimer = new Timer(this.ui.runControls.timing);
         this.startEditor();
     }
@@ -68,14 +88,19 @@ export class ExecutionEngine {
         this.executionTimer.reset();
         this.ui.updateButtons(true, false);
         this.ui.updateStatus("Ready", false);
-        this.ui.runControls.runButton.onclick = async () => {
-            if (this.isExecuting) {
-                this.terminateExecution();
-                this.handleExecutionStopped("Terminated by user");
-            } else {
-                await this.executeCode();
-            }
-        };
+        [
+            { button: this.ui.runControls.runButton, useMain: true },
+            { button: this.ui.runControls.runThisFileButton, useMain: false },
+        ].forEach(({ button, useMain }) => {
+            button.onclick = async () => {
+                if (this.isExecuting) {
+                    this.terminateExecution();
+                    this.handleExecutionStopped("Terminated by user");
+                } else {
+                    await this.executeCode(useMain);
+                }
+            };
+        });
     }
 
     handleExecutionEvents(
@@ -108,7 +133,8 @@ export class ExecutionEngine {
             const message = handleKettleSystemError(data, feedbackRequest);
             this.ui.console.error(message);
             this.latestErrors.push(message);
-            this.ui.updateFeedback(`There were ${data.category} errors in the ${data.place} code.
+            this.ui
+                .updateFeedback(`There were ${data.category} errors in the ${data.place} code.
             Please see the console more information.`);
         } else if (event.data.type === "execution.update") {
             this.ui.updateStatus(event.data.contents[0], false);
@@ -141,9 +167,7 @@ export class ExecutionEngine {
         }
     }
 
-    handleTestResults(
-        event: MessageEvent<any>,
-    ) {
+    handleTestResults(event: MessageEvent<any>) {
         const assertions: string[] = [];
         let allPassed = true;
         let totalPassed = 0,
@@ -246,9 +270,21 @@ export class ExecutionEngine {
         if (this.iframe.contentWindow) {
             try {
                 toggleIFrameDebug(this.iframe, this.engineId, this.isDebugMode);
-                sendDataToIframe(this.iframe, "require", request.linking.require);
-                sendDataToIframe(this.iframe, "$importModule", request.linking.$importModule);
-                executeCodeInIFrame(this.iframe, request.assembled, this.engineId);
+                sendDataToIframe(
+                    this.iframe,
+                    "require",
+                    request.linking.require,
+                );
+                sendDataToIframe(
+                    this.iframe,
+                    "$importModule",
+                    request.linking.$importModule,
+                );
+                executeCodeInIFrame(
+                    this.iframe,
+                    request.assembled,
+                    this.engineId,
+                );
             } catch (e) {
                 console.error("Error executing code in iframe", e);
                 this.ui.console.error("Error executing code in iframe", e);
@@ -262,19 +298,25 @@ export class ExecutionEngine {
         this.ui.updateVariables(request.student.locals);
     }
 
-    async executeCode():Promise<void> {
+    async executeCode(useMain: boolean): Promise<void> {
         this.ui.console.clear(false);
         this.ui.console.info("Running and evaluating your code");
         this.handleExecutionStarted();
         this.ui.updateStatus("Compiling", true);
 
-        const request = await makeExecutionRequest(this.ui.getCode(), this.engineId);
+        const request = await makeExecutionRequest(
+            this.ui.getMainFilename(useMain),
+            this.ui.getFiles(),
+            this.engineId,
+        );
         if (request.noErrors) {
             this.executeRequest(request);
         } else {
             console.error("Compilation Errors", request);
             if (request.student.errors.length > 0) {
-                this.ui.updateFeedback("There were TypeScript error(s) in your code. The program could not be executed. See the console for more information.");
+                this.ui.updateFeedback(
+                    "There were TypeScript error(s) in your code. The program could not be executed. See the console for more information.",
+                );
                 this.logTypeScriptErrors(request.student);
             }
             this.handleExecutionStopped("Typescript Error");

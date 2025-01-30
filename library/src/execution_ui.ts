@@ -7,24 +7,51 @@ Variables and Values
 Webz Area (if available)
 */
 import { EditorView, basicSetup } from "codemirror";
-import { EditorState } from "@codemirror/state";
+import { EditorState, Extension } from "@codemirror/state";
 import { javascript } from "@codemirror/lang-javascript";
+import { css } from "@codemirror/lang-css";
+import { html } from "@codemirror/lang-html";
+import { markdown } from "@codemirror/lang-markdown";
+import { json } from "@codemirror/lang-json";
+import { yaml } from "@codemirror/lang-yaml";
 import { KettleConsole } from "./ts_console";
 import ts from "typescript";
+import {
+    VirtualFileTypeExtension,
+    VirtualFileSet,
+    newFile,
+} from "./virtual_files";
+import { createTabInterface } from "./editor_tab_creation";
 
 /*import 'jquery.fancytree/dist/skin-lion/ui.fancytree.less';  // CSS or LESS
 import {createTree} from 'jquery.fancytree';
 import 'jquery.fancytree/dist/modules/jquery.fancytree.edit';
 import 'jquery.fancytree/dist/modules/jquery.fancytree.filter';*/
 
+export const CodeMirrorExtensions: Record<
+    VirtualFileTypeExtension,
+    Extension[]
+> = {
+    js: [basicSetup, javascript()],
+    ts: [basicSetup, javascript({ typescript: true })],
+    jsx: [basicSetup, javascript({ jsx: true })],
+    tsx: [basicSetup, javascript({ jsx: true, typescript: true })],
+    css: [basicSetup, css() as Extension],
+    html: [basicSetup, html()],
+    md: [basicSetup, markdown()],
+    json: [basicSetup, json()],
+    yaml: [basicSetup, yaml()],
+    txt: [basicSetup],
+};
+export const DEFAULT_CODE_MIRROR_EXTENSIONS = [basicSetup];
 
 export interface RunControls {
     runButton: HTMLButtonElement;
+    runThisFileButton: HTMLButtonElement;
     status: HTMLElement;
     timing: HTMLElement;
     spinner: HTMLElement;
 }
-
 
 export class ExecutionUI {
     private static uniqueIDCounter = 0;
@@ -36,14 +63,21 @@ export class ExecutionUI {
     public testResults: HTMLElement;
     public variables: HTMLElement;
     public webz: HTMLElement;
+    public codeStates: Record<string, EditorState>;
+    public currentPath: string;
+    public initialFiles: VirtualFileSet;
 
     constructor(
         root: HTMLElement,
-        initialCode: string,
+        mainPath: string,
+        initialFiles: VirtualFileSet,
         private iframe: HTMLIFrameElement,
     ) {
         this.root = root;
-        this.codeEditor = this.createCodeEditor(initialCode);
+        this.codeStates = {};
+        this.currentPath = mainPath;
+        this.initialFiles = { ...initialFiles };
+        this.codeEditor = this.createCodeEditor(initialFiles, mainPath);
         this.runControls = this.createRunControls();
         this.testResults = this.createTestResults();
         this.variables = this.createVariables();
@@ -51,15 +85,48 @@ export class ExecutionUI {
         this.console = this.createConsole();
     }
 
-    createCodeEditor(initialCode: string) {
-        const initialState = EditorState.create({
-            doc: initialCode,
-            extensions: [basicSetup, javascript()],
+    createCodeEditor(initialFiles: VirtualFileSet, mainPath: string) {
+        Object.keys(initialFiles).forEach((path) => {
+            const code = initialFiles[path].contents;
+            const fileExtension = initialFiles[path].type;
+            const extensions =
+                fileExtension in CodeMirrorExtensions ?
+                    CodeMirrorExtensions[fileExtension]
+                :   DEFAULT_CODE_MIRROR_EXTENSIONS;
+            extensions.push(
+                EditorView.updateListener.of((evt) => {
+                    if (evt.docChanged && this.currentPath === path) {
+                        this.codeStates[path] = evt.state;
+                    }
+                }),
+            );
+            const initialState = EditorState.create({
+                doc: code,
+                extensions,
+            });
+            this.codeStates[path] = initialState;
         });
+        if (!Object.keys(this.codeStates).length) {
+            throw new Error("No files provided for code editor");
+        }
+        if (!(mainPath in this.codeStates)) {
+            console.error(
+                `Main path ${mainPath} not found in initial files`,
+                Object.keys(this.codeStates),
+            );
+            mainPath = Object.keys(this.codeStates)[0];
+        }
         const editor = new EditorView({
-            state: initialState,
+            state: this.codeStates[mainPath],
             parent: this.root,
         });
+        if (Object.keys(this.codeStates).length > 1) {
+            createTabInterface(this.root, this.codeStates, (filename) => {
+                this.currentPath = filename;
+                editor.setState(this.codeStates[filename]);
+            });
+        }
+
         /*editor.getSession().setUseWorker(false);
         editor.setFontSize(14);
         editor.getSession().setTabSize(2);
@@ -71,22 +138,62 @@ export class ExecutionUI {
     }
     createRunControls() {
         const runControlBox = document.createElement("div");
+        runControlBox.classList.add("btn-group"); // Bootstrap button group
         this.root.appendChild(runControlBox);
+
+        // Primary Run Button
         const runButton = document.createElement("button");
         runButton.classList.add("btn", "btn-success");
         runButton.appendChild(document.createTextNode("Run"));
         runControlBox.appendChild(runButton);
+
+        // Dropdown Toggle Button
+        const dropdownButton = document.createElement("button");
+        dropdownButton.classList.add(
+            "btn",
+            "btn-success",
+            "dropdown-toggle",
+            "dropdown-toggle-split",
+        );
+        dropdownButton.setAttribute("data-bs-toggle", "dropdown");
+        dropdownButton.setAttribute("aria-expanded", "false");
+        // Add hidden span with visually hidden text for screen readers
+        const visuallyHidden = document.createElement("span");
+        visuallyHidden.classList.add("visually-hidden");
+        visuallyHidden.appendChild(document.createTextNode("Toggle Dropdown"));
+        dropdownButton.appendChild(visuallyHidden);
+        runControlBox.appendChild(dropdownButton);
+
+        // Dropdown Menu
+        const dropdownMenu = document.createElement("ul");
+        dropdownMenu.classList.add("dropdown-menu");
+
+        // "Run This File" Option
+        const runThisFileItem = document.createElement("li");
+        const runThisFileButton = document.createElement("button");
+        runThisFileButton.classList.add("dropdown-item");
+        runThisFileButton.textContent = "Run This File";
+
+        // Add the extra run options to the dropdown menu
+        runThisFileItem.appendChild(runThisFileButton);
+        dropdownMenu.appendChild(runThisFileItem);
+        runControlBox.appendChild(dropdownMenu);
+
+        // Status spinner and message
         const spinner = document.createElement("span");
         spinner.classList.add("spinner-border", "spinner-border-sm");
         spinner.style.display = "none";
         runControlBox.appendChild(spinner);
+
         const status = document.createElement("span");
         status.classList.add("ms-2");
         runControlBox.appendChild(status);
+
         const timing = document.createElement("span");
         timing.classList.add("float-end");
         runControlBox.appendChild(timing);
-        return { runButton, status, timing, spinner };
+
+        return { runButton, runThisFileButton, status, timing, spinner };
     }
     createConsole() {
         const consoleBox = document.createElement("div");
@@ -132,7 +239,7 @@ export class ExecutionUI {
         webzBox.appendChild(iframe);
         // Webz is initially hidden
         // webzBox.style.display = "none";
-        console.log(">", iframe);
+        //console.log(">", iframe);
         return webzBox;
     }
 
@@ -162,7 +269,11 @@ export class ExecutionUI {
         this.console.log(message);
     }
 
-    updateTestResults(totalPassed: number, totalTests: number, assertions: string[]) {
+    updateTestResults(
+        totalPassed: number,
+        totalTests: number,
+        assertions: string[],
+    ) {
         if (totalTests === 0) {
             this.testResults.style.display = "none";
             return;
@@ -197,7 +308,25 @@ export class ExecutionUI {
         }
     }
 
-    getCode() {
-        return this.codeEditor.state.doc.toString();
+    getCode(filename: string | undefined = undefined) {
+        if (filename === undefined) {
+            filename = this.currentPath;
+        }
+        return this.codeStates[filename].doc.toString();
+    }
+
+    getMainFilename(useMain: boolean = true) {
+        return useMain ? Object.keys(this.codeStates)[0] : this.currentPath;
+    }
+
+    /**
+     * Returns an immutable copy of the current code states
+     */
+    getFiles(): VirtualFileSet {
+        const files: VirtualFileSet = {};
+        Object.keys(this.codeStates).forEach((filename) => {
+            files[filename] = newFile(filename, this.getCode(filename));
+        });
+        return files;
     }
 }
