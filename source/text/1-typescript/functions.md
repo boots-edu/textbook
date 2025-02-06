@@ -45,14 +45,14 @@ Once declared, we can **call** (**use**) that function anywhere in our code to e
 
 ### An Example Function
 
+{:.no-run}
+
 ```typescript
 function areaOfCircle(radius: number): number {
     let pi: number = 3.1415927;
     return pi * radius * radius;
 }
 ```
-
-{:.no-run}
 
 In this example, we have a function named `areaOfCircle`. It takes one parameter, `radius`, which is a `number`. The function returns a `number`.
 
@@ -64,13 +64,13 @@ The final line of the function is a **`return`** statement. This statement retur
 
 ### Another Example Function
 
+{:.no-run}
+
 ```typescript
 function addTwoNumbers(a: number, b: number): number {
     return a + b;
 }
 ```
-
-{:.no-run}
 
 In this example, we have two parameters, `a` and `b`, both of which are `number`s. The function returns a `number`. The parameters are separated by commas.
 
@@ -147,11 +147,11 @@ test("Test addTwoNumbers", () => {
 });
 ```
 
-{:.no-run}
-
 We can test our functions by calling them with different arguments and checking the return value. Usually, testing in TypeScript is done with a **testing framework** like **Jest**. The tests will be placed in a separate file from the code being tested, and the testing framework will run the tests and report the results. These testing frameworks have built-in functions like `expect` and `toBe` that make it easy to write tests, and organize them into test suites using the `test` and `describe` functions. Much of these details are not important for now, but you should be aware that testing is an important part of software development.
 
 ## Documenting Functions
+
+{:.no-run}
 
 ```typescript
 /**
@@ -164,8 +164,6 @@ function areaOfCircle(radius: number): number {
     return pi * radius * radius;
 }
 ```
-
-{:.no-run}
 
 We can document our functions by adding a **comment** above the function declaration. This comment should describe what the function does, what parameters it takes, and what it returns. This is called a **JSDoc** comment. It is a special type of comment that is used to document functions, variables, and classes in TypeScript. It is important to document your code so that others can understand it, and so that you can remember what you were thinking when you wrote it. We'll talk more about **documentation** later.
 
