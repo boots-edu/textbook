@@ -19,12 +19,13 @@ parent: Introduction
 </details>
 
 ## Overview
+
 This section helps you figure out how to setup your environment, install everything, and make sure your environment is correct.
 
 If everything goes well, this will only take you about 20 minutes. But it is very normal to encounter issues if you are
 not used to this workflow. Don't worry, you will be an expert soon!
 
-Making web applications is super complicated, so we are going to be really pushy about your environment's setup and the eventual structure of our web application. If this seems limiting, that's the idea. 
+Making web applications is super complicated, so we are going to be really pushy about your environment's setup and the eventual structure of our web application. If this seems limiting, that's the idea.
 Please try to stay within the bounds we give you, as you experiment and try things out!
 
 Do not skip steps.
@@ -37,7 +38,7 @@ Read error messages, and ask questions. Talk to humans as needed to get help, an
 
 **Download [Visual Studio Code](https://code.visualstudio.com/download)**
 
-VS Code is an IDE (Integrated Development Environment) that you will program in. 
+VS Code is an IDE (Integrated Development Environment) that you will program in.
 
 When you have VS Code downloaded, open the application. You will need to install two extensions.
 
@@ -71,8 +72,8 @@ to manage, install, and update node packages. You need both of these!
 The installer will ask you to select where you want to install the package; keep the default location that already
 appears.
 
-  * For Windows: `C:\Program Files\nodejs`
-  * For Mac: `/usr/local/bin/node`
+-   For Windows: `C:\Program Files\nodejs`
+-   For Mac: `/usr/local/bin/node`
 
 Once the installer is finished, you should see this screen:
 
@@ -117,10 +118,9 @@ $ npm --version
 
 You should see `10.2.4` or later appear if everything is installed correctly.
 
+{: .warning-title}
 **Note:** If Node and/or Git appear to not be working correctly or do not seem installed, completely quit and re-open
 VS Code before troubleshooting. Sometimes VS Code will not recognize the install immediately.
-
-{: .warning-title}
 
 ### Get Git
 
@@ -144,7 +144,6 @@ $ brew install git
 ```
 
 After that you should be done. Once you have verified that everything has been installed correctly, you are ready to move on!
-
 
 ### Create GitHub Account
 
@@ -177,12 +176,12 @@ local copy of the repository that you can freely edit.
 
 You will need to run the "Git: Clone" command in VS Code:
 
-* Type `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to bring up the Command Palette
-* Type `Git: Clone` and press enter
-* Type `Ctrl+V` (Windows) or `Cmd+V` (Mac) to paste the previously copied link and press enter
-* You may be asked to authenticate on GitHub; do so.
-* A folder select window will pop up and ask "Choose a folder to clone <url> into". We recommend that you create a `CISC-181` folder in your User directory, and store all your assignments in there. If you select that `CISC-181` folder, then a new folder will be created there for this assignment.
-* When completed, it will ask if you would like to "open the cloned repository". Click "Open" to open the repository in the current window.
+-   Type `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to bring up the Command Palette
+-   Type `Git: Clone` and press enter
+-   Type `Ctrl+V` (Windows) or `Cmd+V` (Mac) to paste the previously copied link and press enter
+-   You may be asked to authenticate on GitHub; do so.
+-   A folder select window will pop up and ask "Choose a folder to clone <url> into". We recommend that you create a `CISC-181` folder in your User directory, and store all your assignments in there. If you select that `CISC-181` folder, then a new folder will be created there for this assignment.
+-   When completed, it will ask if you would like to "open the cloned repository". Click "Open" to open the repository in the current window.
 
 ## Inspecting the Project
 
@@ -214,10 +213,9 @@ Click on the `basic.test.ts` file to view the file's contents:
 
 ![open-test.png](../../images/setup/open-test.png)
 
+{: .warning-title}
 Note: If you single clicked on the `basic.ts`, file, then clicking `basic.test.ts` replaces the file in the current
 view. To keep the file open even when you click on other files, double click the filenames instead.
-
-{: .warning-title}
 
 Oh dear, there appear to be red squiggles in our code, the universal sign of trouble. What has gone wrong?
 
@@ -230,7 +228,7 @@ The interface is reporting an error: it "`Cannot find name 'describe'.`" It goes
 Should you take the advice of the machine? The answer will always be "it depends". If you know what you are doing and
 the advice is correct, then you should certainly use a tool like this. But if you are not sure, then **you should not run commands you do not understand**.
 
-In this case, the system is letting us know that we never installed the necessary modules required to run our program. 
+In this case, the system is letting us know that we never installed the necessary modules required to run our program.
 This is one of the first steps when starting a project - to install the necessary dependencies onto your system.
 We'll need to do this every time we clone a new assignment repository.
 
@@ -279,19 +277,19 @@ This is a test file written with a library named "**Jest** ". You have previousl
 Bakery's `assert_equal` function, but Jest is a much more sophisticated testing framework. Let's look at each part of
 the file in turn.
 
-  * At the top of the file (on line 1), we `import` the `addition` function from the `basic.ts` file, which is in the `src` directory. Since that function was `export`ed, we are able to `import` the function in this file.
-  * The next line of code (line 3) is a call to the `describe` function, which is a Jest function for organizing a suite of unit tests. It takes the `string` name of a collection of tests and then an anonymous function that has all the tests inside. Don't worry about that "anonymous function" term just yet; for now, just think of it as a block of code that Jest will run for us.
-  * The inside of the `describe` function call is a sequence of four calls to the `test` function (on lines 4, 9, 14, and 19). The test function is another Jest function, once again for organizing related unit tests. We give names to the tests, and sometimes we will also let you know how much that test is worth to us when we grade the assignment. Then there is another anonymous function to have the actual assertions.
-  * On lines 5, 6, 10, 11, 15, 16, and 20, we see the actual assertions, which are equivalent to the `assert_equal` function you saw previously. In Jest, they are written using the `expect` function, which consumes one expression (almost always a function call for the function we are testing). The result of the `expect` function is an object that has a `toEqual` method, which allows us to check the expected result. Again, don't worry about the terms just yet, just focus on the comparable idea for writing tests between Bakery and Jest:
+-   At the top of the file (on line 1), we `import` the `addition` function from the `basic.ts` file, which is in the `src` directory. Since that function was `export`ed, we are able to `import` the function in this file.
+-   The next line of code (line 3) is a call to the `describe` function, which is a Jest function for organizing a suite of unit tests. It takes the `string` name of a collection of tests and then an anonymous function that has all the tests inside. Don't worry about that "anonymous function" term just yet; for now, just think of it as a block of code that Jest will run for us.
+-   The inside of the `describe` function call is a sequence of four calls to the `test` function (on lines 4, 9, 14, and 19). The test function is another Jest function, once again for organizing related unit tests. We give names to the tests, and sometimes we will also let you know how much that test is worth to us when we grade the assignment. Then there is another anonymous function to have the actual assertions.
+-   On lines 5, 6, 10, 11, 15, 16, and 20, we see the actual assertions, which are equivalent to the `assert_equal` function you saw previously. In Jest, they are written using the `expect` function, which consumes one expression (almost always a function call for the function we are testing). The result of the `expect` function is an object that has a `toEqual` method, which allows us to check the expected result. Again, don't worry about the terms just yet, just focus on the comparable idea for writing tests between Bakery and Jest:
 
 ```python
-# Bakery version in Python  
-assert_equal(addition(1, 2, 3), 6)  
+# Bakery version in Python
+assert_equal(addition(1, 2, 3), 6)
 ```
 
 ```typescript
-// Jest Version in Typescript  
-expect(addition(1, 2, 3)).toEqual(6)
+// Jest Version in Typescript
+expect(addition(1, 2, 3)).toEqual(6);
 ```
 
 The two approaches are basically the same, but Jest has a lot of features for organizing the unit tests. Jest also has a
@@ -312,10 +310,10 @@ might look something like this:
 
 The bottom of the output has a summary of what happened.
 
-  * We had one test suite ("addition function")
-  * With four total tests 
-    * Three of which failed ("Positive Numbers", "Negative Numbers", and "Mixed Numbers")
-    * One of which passed ("Zeros")
+-   We had one test suite ("addition function")
+-   With four total tests
+    -   Three of which failed ("Positive Numbers", "Negative Numbers", and "Mixed Numbers")
+    -   One of which passed ("Zeros")
 
 Scrolling up through the output, you can see more details about exactly which tests failed, and the specific `expect`
 assertions that went wrong.
@@ -380,9 +378,9 @@ When you are done the assignment, you can **push** your commits to the remote re
 
 We will discuss these terms a lot more in lecture, but here are some basic definitions:
 
-  * Stage: Mark locally edited files as being ready to save.
-  * Commit: Save a group of files' current state along with a message describing the change made to them.
-  * Push: Move a bunch of local commits to a remote repository.
+-   Stage: Mark locally edited files as being ready to save.
+-   Commit: Save a group of files' current state along with a message describing the change made to them.
+-   Push: Move a bunch of local commits to a remote repository.
 
 To stage and commit files, we will use the Source Control panel, accessible from the left navigation bar.
 
@@ -443,13 +441,18 @@ Click "OK", because that is exactly what we want to do.
 
 The Source Control panel will now be partially greyed out since you have nothing left to commit.
 
+{: .warning-title }
+
+> "Need to Configure Git"
+>
 > If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the Terminal, substituting your email address and name.
+>
 > ```
-> git config --global user.email "YOUREMAIL@udel.edu"  
+> git config --global user.email "YOUREMAIL@udel.edu"
 > git config --global user.name "YOUR NAME"
 > ```
-> Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., "Austin Bart").
-{: .info-warning}
+>
+> Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., `Austin Bart`).
 
 If everything went well, you should be able to see your new commit on the GitHub repository website.
 
@@ -486,15 +489,15 @@ remain as it is. However, if the autograder reports any issues, you should defin
 
 Let us review all the steps we took in this assignment:
 
-  * Created a fork of the assignment on GitHub Classroom
-  * Cloned the repository onto your computer
-  * Installed the project's modules using npm install
-  * Ran the project's tests using npm run test
-  * Edited the Typescript source code files for the project in the src/ directory
-  * Reran the tests to make sure everything worked
-  * Staged, Commited, and Pushed the changes to your repository
-  * Submitted the repository below to GradeScope
-  * Confirmed that we passed all the autograder tests
+-   Created a fork of the assignment on GitHub Classroom
+-   Cloned the repository onto your computer
+-   Installed the project's modules using npm install
+-   Ran the project's tests using npm run test
+-   Edited the Typescript source code files for the project in the src/ directory
+-   Reran the tests to make sure everything worked
+-   Staged, Commited, and Pushed the changes to your repository
+-   Submitted the repository below to GradeScope
+-   Confirmed that we passed all the autograder tests
 
 This will be the workflow for the rest of the semester, so get used to it!
 
@@ -506,6 +509,6 @@ While Python and Typescript (and many other languages) are different, the basic 
 
 Concepts such as variables, operators, functions, conditionals and looping might have different syntax, but largely operate in the same way between languages.
 
-If you understand the basic concepts, picking up a new language like Typescript is easier.  This is a critical skill as new languages and paradigms come into fashion all the time.  Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
+If you understand the basic concepts, picking up a new language like Typescript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
 
 Let's start with variables: [Variables &raquo;](../1-typescript/variables.md)
