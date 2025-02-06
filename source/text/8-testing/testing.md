@@ -18,7 +18,7 @@ parent: Testing
 {:toc}
 </details>
 
-##  Key Idea
+## Key Idea
 
 **_Software Testing_** is the process of validating that software is bug free and meets requirements.
 
@@ -104,6 +104,7 @@ Here is some simple code that adds the root of the passed value to an array.
 
 ```typescript
 const valueArray: number[] = [];
+
 /**
  * @description Takes a number and adds its square root to the array valueArray
  * @param value {number} - The number to be squared
@@ -115,6 +116,10 @@ function addToRootArray(value: number): number {
     valueArray.push(root);
     return root;
 }
+
+console.log(addToRootArray(4));
+console.log(addToRootArray(9));
+console.log(valueArray);
 ```
 
 Let's start by asking what we might want to know about how this code behaves, and how we could test that:
@@ -134,6 +139,8 @@ Let's start by asking what we might want to know about how this code behaves, an
 -   Are those behaviors what we expect and what is documented?
 
 Here is another example.
+
+{: .no-run }
 
 ```typescript
 export class Elements {
