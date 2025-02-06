@@ -132,11 +132,11 @@ console.log(first); // Output: orange
 
 The **`splice`** method gives us a mechanism for editing the middle of an array. With the **`splice`** method, we can remove, replace, or insert elements in the middle of an array.
 
+{: .no-run}
+
 ```typescript
 array.splice(index,[howMany],[element1],[..., elementN]);
 ```
-
-{: .no-run}
 
 -   index: The array index at which to start changing the array
 -   howMany: The number of array elements to remove starting at index, defaults to all of them if no value is passed.

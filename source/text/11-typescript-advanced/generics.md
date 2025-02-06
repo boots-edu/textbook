@@ -26,6 +26,8 @@ parent: Advanced Typescript
 
 In the last chapter we discussed the Webz _Notifier_ class. This class was a **_generic_** class that we could pass **_type parameters_** to during creation.
 
+{: .no-run}
+
 ```typescript
 event: Notifier = new Notifier();
 event2: Notifier<number> = new Notifier<number>();
@@ -33,8 +35,6 @@ event3: Notifier<string> = new Notifier<string>();
 event4: Notifier<SomeClass> = new Notifier<SomeClass>();
 event5: Notifier<string[]> = new Notifier<string[]>();
 ```
-
-{: .no-run}
 
 This is a single class definition that works on any type of data. We can make our own generic functions, classes, interfaces, or type aliases by creating them with one or more **_type parameters_** that can be specified by the caller. Overall, this allows us to create reusable code that works on various types of data.
 
@@ -219,6 +219,8 @@ If no parameter is provided, then the type must match the default if we use the 
 
 Let's return to the Webz `Notifier` class and loot at the source code for it.
 
+{: .no-run}
+
 ```typescript
 export class Notifier<T = void> {
     constructor() {}
@@ -236,8 +238,6 @@ export class Notifier<T = void> {
     }
 }
 ```
-
-{: .no-run}
 
 -   `T` defaults to `void` if no parameter is provided.
 -   `subscribe` takes a function whose parameter has type `T`.

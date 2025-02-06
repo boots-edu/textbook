@@ -74,6 +74,8 @@ So with creative use of subclass polymorphism, we can provide a generic interfac
 
 Returning to the drawing example, if we added a `draw` method to the drawable class that does nothing, then implemented the `draw` method in each of our subclasses, then we could store a drawing as an array of `Drawable`s, iterate through the array, and call the `draw` method. This is acceptable because `Drawable` has a `draw` method, but the correct `draw` method (depending on the type of object) will be called for us automatically. This is **_polymorphism_**:
 
+{: .no-run}
+
 ```typescript
 class Drawable {
   public color: Color;
@@ -104,8 +106,6 @@ let obj:Drawable=new Line(new Point(0,0),new Point(1,1),
   new Color());
 obj.draw(this.drawingSurface);
 ```
-
-{: .no-run}
 
 > Note: You can install the drawing library using in this example with the page object using npm.  
 > `npm i --save @boots-edu/web-draw`

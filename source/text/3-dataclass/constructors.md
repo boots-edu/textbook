@@ -32,6 +32,8 @@ So far, to create a class we:
 
 It would be much easier to have a function that takes the parameters we want to set and updates the object as it is being created.
 
+{: .no-run}
+
 ```typescript
 class Color {
     public red: number = 0;
@@ -45,9 +47,9 @@ class Color {
 }
 ```
 
-{: .no-run}
-
 By giving our class a constructor, we can create an instance of the class and initialize its values in one line:
+
+{: .no-run}
 
 ```typescript
 let veryRed: Color = new Color(255, 0, 0);
@@ -55,8 +57,6 @@ let veryBlue: Color = new Color(0, 0, 255);
 let anotherColor: Color = new Color(27, 115, 98);
 console.log(veryRed, veryBlue, anotherColor);
 ```
-
-{: .no-run}
 
 > Note that now we are creating and initializing our objects in one line.
 
@@ -104,6 +104,8 @@ What other classes do we need:
 
 The Line class simply needs two points (start and end) and a color. We define the class to have those three components and initialize them with a constructor
 
+{: .no-run}
+
 ```typescript
 class Color {
     constructor(
@@ -127,8 +129,6 @@ class Rectangle {
 }
 ```
 
-{: .no-run}
-
 ## Polygons
 
 Now we can represent basic shapes in a coordinate system and each shape has a color, but what about polygons. First, let's list what we know about them:
@@ -138,13 +138,13 @@ Now we can represent basic shapes in a coordinate system and each shape has a co
 
 Since we don't know how many points there are to start with, we can represent the list of points using an array.
 
+{: .no-run}
+
 ```typescript
 class Polygon {
     constructor(public points: Point[], public color: Color) {}
 }
 ```
-
-{: .no-run}
 
 The polygon class is initialized by and contains a public member whose type is an array of Point classes. It also has an instance of a Color class.
 

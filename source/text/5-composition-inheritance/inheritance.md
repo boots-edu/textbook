@@ -39,6 +39,8 @@ We can inherit the properties and methods of an existing class and extend that c
 
 Suppose I have a class _Users_ that represents a system user on a University's central IT system.
 
+{: .no-run}
+
 ```typescript
 class Users {
     constructor(private name: string, private age: number) {}
@@ -51,8 +53,6 @@ class Users {
 }
 ```
 
-{: .no-run}
-
 This class has private properties name and age, and two functions to retrieve the values in these properties. In other words, users of the class CANNOT change the name or age, but they can retrieve them.
 
 Now suppose I want to create two new classes called Students and Faculty. I want them to have all of the abilities of a User, but they also need some additional capabilities based on the type.
@@ -64,12 +64,12 @@ So how do we deal with this type of relationship between classes?
 
 We can extend an existing class when the relationship between the objects is an **_is a_** relationship. Our new classes act like the old class unless we add some functionality to it.
 
+{: .no-run}
+
 ```typescript
 class Student extends Users {}
 class Faculty extends Users {}
 ```
-
-{: .no-run}
 
 We can now define objects of type Student and Teacher, and instantiate them with new and they work just like our Users class.
 
@@ -96,6 +96,8 @@ While all Users share some things in common,there are a lot of things that are u
 -   Students have a gradTerm and a gpa. They are still users, but they are a **_type of_** user.
 -   Faculty has a department, an office, and a list of classes they teach. Again, they are still a **_type of_** user.
 
+{: .no-run}
+
 ```typescript
 class Student extends Users {
     private gradTerm: string = "";
@@ -108,8 +110,6 @@ class Teacher extends Users {
 }
 ```
 
-{: .no-run}
-
 In more formal terms, the Student class **_inherits_** from the Users class.
 We say that Student is a **_subclass_** of Users and that Users is a **_superclass_** of Student (and Faculty).
 Implementing this sort of relationship (type of, is a, etc.) in this manner is referred to as **_inheritance_**.
@@ -120,6 +120,8 @@ We inherit everything about the superclass, but still are a distinct type with o
 If we want to create a constructor to initialize our object, we must remember that it is a User so its constructor must also be responsible for the name and age fields from the parent or superclass, otherwise, how would they ever get set?
 
 It is easy to initialize gradTerm and gpa, but how do we initialize the members from the superclass?
+
+{: .no-run}
 
 ```typescript
 class Student extends Users {
@@ -133,10 +135,10 @@ class Student extends Users {
 }
 ```
 
-{: .no-run}
-
 We can call the superclass' constructor within our constructor by calling the super() method. This will take the same arguments as the constructor of the superclass.
 Here those arguments are name and age. This calls the constructor in Users which takes care of its part of the initialization.
+
+{: .no-run}
 
 ```typescript
 class Student extends Users {
@@ -151,8 +153,6 @@ class Student extends Users {
     }
 }
 ```
-
-{: .no-run}
 
 Here is a completed example:
 

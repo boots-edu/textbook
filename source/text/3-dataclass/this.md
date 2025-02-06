@@ -30,6 +30,8 @@ There is a special keyword **`this`** that can be used from inside the `construc
 
 Consider our color class
 
+{: .no-run}
+
 ```typescript
 class Color {
     constructor(
@@ -40,9 +42,9 @@ class Color {
 }
 ```
 
-{: .no-run}
-
 What if instead of passing in values for `red`, `green`, and `blue`, we wanted to pass in a string (either `"red"`, `"green"`, or `"blue"`) to initialize our color to one of these three colors. We can go back to our original syntax and define the members explicitly, and change our constructor to take a string that is not marked with the `public` or `private` keywords since we only need it to initialize the members.
+
+{: .no-run}
 
 ```typescript
 class Color {
@@ -54,8 +56,6 @@ class Color {
     }
 }
 ```
-
-{: .no-run}
 
 The idea is that we can use the string to determine how to set the members. We can use the **`this`** keyword to access the member variables of the current instance.
 

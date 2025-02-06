@@ -32,6 +32,8 @@ A class with methods can be viewed as a self-contained entity which **_encapsula
 
 Let's consider our drawing example from the previous chapter
 
+{: .no-run}
+
 ```typescript
 class Color {
     constructor(
@@ -55,9 +57,9 @@ class Rectangle {
 }
 ```
 
-{: .no-run}
-
 Specifically, if we look at our Line class which contains two points with x and y coordinates, we might want an easy way to get a line's length. We can expand our definition of a line to contain a method to accomplish this. The `getLength()` method can be added inside the class definition.
+
+{: .no-run}
 
 ```typescript
 class Line {
@@ -71,8 +73,6 @@ class Line {
     }
 }
 ```
-
-{: .no-run}
 
 > Note that we don't need to know how the line is represented to use this method. If we have a line and want it's length, we simply call the `getLength` method. This is important because in the future we might change the internal representation of a line, but this method would still work if we rewrote it. The calling program would not need to change.
 
@@ -126,6 +126,8 @@ console.log(defaultColor);
 
 Let's try to add a `getArea()` method to our `Rectangle` class. This should be straight forward since we have the corners.
 
+{: .no-run}
+
 ```typescript
 class Rectangle {
     constructor(public corner1: Point, corner2: Point, color: Color) {}
@@ -139,8 +141,6 @@ class Rectangle {
     }
 }
 ```
-
-{: .no-run}
 
 The area is the length of the line from (`corner1.x`, `corner1.y`) to (`corner2.x`, `corner1.y`) times the length of the line from (`corner1.x`, `corner1.y`) to (`corner1.x`, `corner2.y`)
 
@@ -268,17 +268,17 @@ console.log(rect.getDiagonalLength());
 import {Color,Point} from 'ch4/drawing1';
 
 class Line{
-	constructor(public start:Point, public end:Point, public color:Color){}
-	getLength():number{
-		let x=this.start.x-this.end.x;
-		let y=this.start.y-this.end.y;
-		let len:number=Math.sqrt(x*x+y*y);
-		return len;
-	}
+constructor(public start:Point, public end:Point, public color:Color){}
+getLength():number{
+let x=this.start.x-this.end.x;
+let y=this.start.y-this.end.y;
+let len:number=Math.sqrt(x*x+y*y);
+return len;
+}
 }
 
 class Rectangle{
-	constructor(public corner1:Point,public corner2:Point,public color:Color){}
+constructor(public corner1:Point,public corner2:Point,public color:Color){}
 
     getArea():number{
     	let corner3:Point=new Point(this.corner2.x,this.corner1.y,new Color());
@@ -343,13 +343,13 @@ One thing to notice is that we had to compute the missing corners in every funct
 So now we can add methods to our classes to create robust objects that encapsulate not just some heterogeneous data, but also methods that can work on that data.
 We can use the classes to create instances with the new operator which store their own data, and have methods that work on the data inside the instance.
 
+
+{: .no-run}
 ```typescript
 let color1=new Color(0,0,0);
 let color2=new Color(255,255,255);
 color1.red=255;
 ````
-
-{: .no-run}
 
 > NOTE: `color2` is unchanged. It is a distinct instance of our class `Color`.
 

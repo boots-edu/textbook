@@ -26,6 +26,8 @@ parent: Classes
 
 Consider our `Rectangle` class again:
 
+{: .no-run}
+
 ```typescript
 class Rectangle {
     constructor(
@@ -36,11 +38,11 @@ class Rectangle {
 }
 ```
 
-{: .no-run}
-
 We made all of the member variables (properties) public for simplicity, but now we cannot change the internal representation.
 Making members `private` hides them from everything outside the class making them inaccessible.  
 We can rewrite this class making our `Point` members `private`.
+
+{: .no-run}
 
 ```typescript
 class Rectangle {
@@ -52,8 +54,6 @@ class Rectangle {
 }
 ```
 
-{: .no-run}
-
 Nothing changes except we cannot access corner1 and corner2 outside our class, but our methods (`diagonal`, `area`, `perimeter`) that we wrote in the exercise in the previous chapter are fine because they are inside the class.
 We can still create a rectangle and call our methods on it, we just can't get the corners any more. If we really need them, we can write methods to get them or change them.
 
@@ -62,6 +62,8 @@ We can still create a rectangle and call our methods on it, we just can't get th
 > Also, many of the methods we wrote required us to compute the missing corners. If we stored all 4 corners, then we could do all of these things without breaking the 100,000 lines of external code.
 
 We can make the change easily without breaking anything outside our code. We will renumber the corners from the upper left clockwise for simplicity. Note that we do not change the **_signature_** of the constructor, only the hidden data.
+
+{: .no-run}
 
 ```typescript
 class Rectangle {
@@ -77,8 +79,6 @@ class Rectangle {
     }
 }
 ```
-
-{: .no-run}
 
 > Nothing is changed in how you create instances of this class, but now we have all 4 points stored. Now we could add a `rotate` method if we choose.
 

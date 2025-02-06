@@ -162,6 +162,8 @@ In our polygon class, I can create polygons with no points, 1 point, or 2 points
 Good documentation can help, but using exceptions will prevent it.
 Can I use exception handling to make sure it is not possible to create an invalid polygon?
 
+{: .no-run}
+
 ```typescript
 const MAX_POINTS:number = 10;
 class Polygon extends Drawable {
@@ -180,14 +182,14 @@ class Polygon extends Drawable {
 }
 ```
 
-{: .no-run}
-
 Now, if I try to create a polygon with less than 3 or more than 10 points, an exception is thrown. If not, then program execution continues normally.
 If we don't handle this exception, the program will terminate (letting us know to either handle the exception, or fix the calling code to prevent it.
 
 Where else might exception handling help us find issues with our drawing program?
 
 How about a circle with 0 or negative radius?
+
+{: .no-run}
 
 ```typescript
 class Circle extends Drawable {
@@ -205,11 +207,11 @@ class Circle extends Drawable {
 }
 ```
 
-{: .no-run}
-
 A line where the two points are the same
 
 First it might be useful to add a method to compare to points. We can then use that method to determine if two points have the same value (not the same object reference).
+
+{: .no-run}
 
 ```typescript
 class Point {
@@ -232,8 +234,6 @@ class Point {
 }
 ```
 
-{: .no-run}
-
 > Remember if a and b are Point objects, then a===b asks if they are the same object reference in memory, but a.equals(b) checks if they have the same coordinates, whether or not they are the same physical object reference.
 
 We can use the `equals` to validate our line object. If the two points have the same coordinates, regardless of if they are references to the same object, the constructor will throw an exception.
@@ -242,6 +242,8 @@ Now our Line is guaranteed to have start and end points with different coordinat
 > Because `Color` throws an exception if the values are invalid, we don't need to check that here. The call to the color constructor will throw an exception if the color is invalid, so we don't need to worry about it here.
 
 We could do something similar with our polygon class to verify that none of the points are the same. This would also handle things for our `Rectangle` and `Triangle` classes since they are now **_derived_** from `Polygon`
+
+{: .no-run}
 
 ```typescript
 class Polygon extends Drawable {
@@ -271,8 +273,6 @@ class Polygon extends Drawable {
 }
 ```
 
-{: .no-run}
-
 > Note the **_Brute force_** approach to searching for duplicates. For each element, check all the remaining elements for duplicates. Also note that we still need to make sure there are at least 3 and not more than `MAX_POINTS` points in the polygon. Now we are also making them unique.
 
 > Thought Question: Why does `j` start at `i+1` and not `0`?
@@ -288,6 +288,8 @@ It would be better if we were able to catch the exception somewhere in the call 
 
 We can use the try/catch/finally approach to handle errors thrown by methods that we call.
 
+{: .no-run}
+
 ```typescript
 try {
     //do something which might throw an exception
@@ -297,8 +299,6 @@ try {
     //do something after regardless of the try/catch result
 }
 ```
-
-{: .no-run}
 
 If we do one or more operations which might throw an error within a `try` block, if an exception occurs within that code or any code that is called within the block, that code exits immediately, and the `catch` block is called, where `e` is the `Error` derived object that was passed to `throw` within the code.
 This will prevent the program from exiting and consume the exception and the program will continue normally after the `try`/`catch`/`finally` block. You can rethrow the error in the catch block, which will continue to "bubble up" the exception so our caller can handle the error after we recognize it (maybe we log, then rethrow).

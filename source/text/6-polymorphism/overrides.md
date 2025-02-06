@@ -29,6 +29,8 @@ In the previous sections, we learned that when we **_inherit_** or **_subclass_*
 Let's consider that we want to add a getArea method to all of our drawable classes. This doesn't really make sense for Drawable and Line, but does for the rest. The calculation is, however, very different.  
 If we add a default getArea method to our Drawable with the same signature as it has elsewhere in the class hierarchy, then objects that do not implement getArea, will inherit the default behavior, and objects that define the method will get the new behavior
 
+{: .no-run}
+
 ```typescript
 class Drawable {
   public color: Color;
@@ -42,11 +44,11 @@ class Drawable {
 }
 ```
 
-{: .no-run}
-
 If a subclass implements getArea (like rectangle, circle, and triangle), then the version in the subclass is used, otherwise, the version in the base class is used. This is called **_overriding_** a class method.
 
 Consider a new class for the drawing example. A circle:
+
+{: .no-run}
 
 ```typescript
 class Circle extends Drawable {
@@ -60,8 +62,6 @@ class Circle extends Drawable {
   }
 }
 ```
-
-{: .no-run}
 
 Now if the object is a circle, we get its area. If the object is a line, we get the message, and a value of 0. If we add getArea to the drawables that make sense, then only those classes that do not override getArea will use the implementation in the superclass.
 If it is implemented in the subclass, then the subclass version will be used.

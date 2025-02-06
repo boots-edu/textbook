@@ -26,6 +26,8 @@ parent: Overrides and Polymorphism
 
 It is ok to store an object of a subclassed type in a variable typed to the superclass.
 
+{: .no-run}
+
 ```typescript
 let dObj: Drawable = new Line(
     new Point(1, 2),
@@ -34,31 +36,29 @@ let dObj: Drawable = new Line(
 );
 ```
 
-{: .no-run}
-
 Calling methods on that variable will call the method in `Line` if it is implemented, and fall back to calling the method in `Drawable` if it is not.
+
+{: .no-run}
 
 ```typescript
 dObj.draw(this.drawingSurface);
 ```
 
-{: .no-run}
-
 If a class has no intended use on its own, but only is used as a parent class, then we can make it abstract, meaning that it cannot be created with new.
+
+{: .no-run}
 
 ```typescript
 abstract class Drawable {
 ```
 
-{: .no-run}
-
 If we have methods that make no sense in the superclass, and must be implemented in the subclass, then we can declare them as abstract as well to support dispatch.
+
+{: .no-run}
 
 ```typescript
 abstract draw(page: any): void;
 ```
-
-{: .no-run}
 
 ### An Example
 

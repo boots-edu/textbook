@@ -59,6 +59,8 @@ The most common tags available to us for jsdoc are:
 
 Some of these are for constructs we have not learned yet, but all but 2 can be understood now.
 
+{ .no-run }
+
 ```typescript
 /**
  * A class that represents a polygon.
@@ -74,8 +76,6 @@ class Polygon extends Drawable {
    . . .
 }
 ```
-
-{ .no-run }
 
 Here is a well formatted comment for the polygon class.
 Note it tells us everything we need to know about the class to use it.
@@ -111,6 +111,8 @@ We should also comment the methods inside our class. This is what a comment for 
 
 The clone method as well:
 
+{: .no-run}
+
 ```typescript
     /**
      * Return a deep copy of our polygon object in a new one.
@@ -130,8 +132,6 @@ The clone method as well:
      */
     clone(): Polygon {
 ```
-
-{: .no-run}
 
 -   We see the parameters and their types and description.
 -   The return values

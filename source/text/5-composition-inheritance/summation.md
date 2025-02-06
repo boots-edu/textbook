@@ -47,6 +47,8 @@ What should we call our new class?
 
 We want something descriptive that supports the **_is a_** relationship with all the other classes. For this example, I will choose to create a class _Drawable_.
 
+{: .no-run}
+
 ```typescript
 class Drawable {
     public color: Color;
@@ -59,9 +61,10 @@ class Drawable {
 }
 ```
 
-{: .no-run}
 Here is a simple drawable class. It contains a color (**_composition_**), a clone method, and automatically makes a deep copy of the color object in the constructor.
 It just holds our color object, so we will extend this to make all of our other drawables.
+
+{: .no-run}
 
 ```typescript
 export class Point extends Drawable {
@@ -78,11 +81,11 @@ export class Point extends Drawable {
 }
 ```
 
-{: .no-run}
-
 Our point class inherits color from the Drawable class. Our Point constructor calls the constructor for our Drawable class and passes it the color so it can do its initialization (all drawables have a color). It does this by passing color to `super`
 
 > Notice, that the public interface is unchanged, but we don't have to worry about the color, the drawable does.
+
+{: .no-run}
 
 ```typescript
 class Line extends Drawable {
@@ -99,14 +102,14 @@ class Line extends Drawable {
 }
 ```
 
-{: .no-run}
-
 Our Line class can also inherit from our Drawable class. Again it calls super to initialize the Drawable portion of the object.
 Note also that the constructor clones the corner points.
 Reminder:
 
 -   Drawable is the **_superclass, base class, parent class_**
 -   Line is the **_subclass, child class_**
+
+{: .no-run}
 
 ```typescript
 class Polygon extends Drawable{
@@ -124,8 +127,6 @@ class Polygon extends Drawable{
 	}
 }
 ```
-
-{: .no-run}
 
 Our polygon class can also inherit from our Drawable class. Again it calls super to initialize the Drawable portion of the object.
 Note also that the constructor clones the array of points by cloning each point and pushing them onto a new array before setting the member variable points.

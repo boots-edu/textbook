@@ -37,6 +37,8 @@ If we wish to combine data into a more complex type that represents the combinat
 
 To declare a class in typescript, we use the `class` keyword. The structure of a class internally is a set of data objects that make up the class.
 
+{: .no-run}
+
 ```typescript
 class MyType {
     //list of variables and types
@@ -46,16 +48,14 @@ class MyType {
 }
 ```
 
-{: .no-run}
-
 > Remember a class is a definition of a type. You must create an instance of that type in order to use it.
 > We can define a variable of our new type and use it.
+
+{: .no-run}
 
 ```typescript
 let myObj: MyType = new MyType();
 ```
-
-{: .no-run}
 
 ## Motivation
 

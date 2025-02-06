@@ -30,6 +30,8 @@ If we examine the objects we have proposed for our drawing program (points, line
 
 Our class should contain 3 numbers (Red, Green, and Blue). We can define our class as described previously, since this contains only the primitive type number.
 
+{: .no-run}
+
 ```typescript
 class Color {
     public red: number = 0;
@@ -38,17 +40,15 @@ class Color {
 }
 ```
 
-{: .no-run}
-
 > Note the **_public_** keyword before each member variable (sometimes called a property) of the class. This denotes that the property is accessible by methods and code outside the class. We could also mark it as **_private_** or **_protected_**.
 
 As you can see, our class definition is quite simple. We simply group the three components together and give it a name. We can then create objects of this type with the new keyword.
 
+{: .no-run}
+
 ```typescript
 let myColor: Color = new Color();
 ```
-
-{: .no-run}
 
 And for a full example:
 

@@ -43,13 +43,13 @@ Examining this code in more detail, we see that each time new is called, we are 
 
 Consider the following code:
 
+{: .no-run}
+
 ```typescript
 let red: Color = new Color(255, 0, 0);
 let point: Point = new Point(0, 0, red);
 let point2: Point = point;
 ```
-
-{: .no-run}
 
 Graphically, this looks like:
 

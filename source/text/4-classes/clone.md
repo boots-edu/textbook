@@ -173,6 +173,8 @@ console.log(poly, poly2);
 
 Let's consider how using `clone` affects the layout of our objects in memory. This can be a good way to understand what is going on in your program.
 
+{: .no-run}
+
 ```typescript
 let point1: Point = new Point(0, 0, new Color(255, 0, 0));
 let point2: Point = new Point(100, 100, new Color(255, 0, 0));
@@ -180,19 +182,17 @@ let line: Line = new Line(point1, point2, new Color(255, 0, 0));
 let line2: Line = line.clone();
 ```
 
-{: .no-run}
-
 ![](../../assets/images/clonemem_1_v2.png)
 
 Notice `point1` and `point2` are still the same references as we have in line. We can clone the points making them distinct.
+
+{: .no-run}
 
 ```typescript
 let point1: Point = new Point(0, 0, new Color(255, 0, 0));
 let point2: Point = new Point(100, 100, new Color(255, 0, 0));
 let line: Line = new Line(point1.clone(), point2.clone(), new Color(255, 0, 0));
 ```
-
-{: .no-run}
 
 ![](../../assets/images/clonemem_2_v2.png)
 
