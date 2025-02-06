@@ -20,14 +20,14 @@ parent: Introduction To Typescript
 
 ## Key Idea
 
-A  __conditional__  is a way to alter program flow based on the value (truthiness) of some boolean expression.
+A **conditional** is a way to alter program flow based on the value (truthiness) of some boolean expression.
 
 ## The `if` Statement
 
-In typescript, the most common conditional is the  __`if`__ statement.
+In typescript, the most common conditional is the **`if`** statement.
 
-* The `if` statement evaluates a __conditional__ (or __logical__) expression and executes the code inside the `if` statement only _if_ that expression is `true`.
-* The `if` statement can have an `else` branch. The `else` branch is only executed if the expression evaluates to `false`.
+-   The `if` statement evaluates a **conditional** (or **logical**) expression and executes the code inside the `if` statement only _if_ that expression is `true`.
+-   The `if` statement can have an `else` branch. The `else` branch is only executed if the expression evaluates to `false`.
 
 Using `if` statements we can execute different code based on the values of variables at run time, allowing us to create programs that are reactive to different states as the program runs.
 
@@ -42,8 +42,9 @@ if (year !== "senior") {
 ```
 
 Consider the case of a program that asks the user their year.
-* If they are not a senior, the program registers them for next semester.
-* If they are a senior then the program does nothing.
+
+-   If they are not a senior, the program registers them for next semester.
+-   If they are a senior then the program does nothing.
 
 ```typescript
 let year = "senior";
@@ -56,7 +57,7 @@ if (year !== "senior") {
 ### Example of an `if` Statement with an `else` Branch
 
 Now suppose instead of doing nothing special when the user enters senior, we want to send them an invitation to graduation.
-We can handle this with an  __`else`__ branch on our `if` statement.
+We can handle this with an **`else`** branch on our `if` statement.
 
 ```typescript
 let year = "senior";
@@ -87,91 +88,98 @@ function registerForClasses(year: string): string {
 }
 
 test("Test registerForClasses", () => {
-    expect(registerForClasses("freshman")).toBe("You must register for classes");
+    expect(registerForClasses("freshman")).toBe(
+        "You must register for classes"
+    );
     expect(registerForClasses("senior")).toBe("Come to graduation");
 });
 ```
-### The else if construct
-Consider the code
+
+### The `else if` construct
+
+The following code will execute the first block if `x` is greater than `4`, otherwise it will execute the second block. Inside of the second block, if `x` is greater than `2`, it will execute the third block, otherwise it will execute the fourth block.
+
+{: .no-run}
+
 ```typescript
-if (x>4){
+if (x > 4) {
     //do something
 } else {
-    if (x>2){
+    if (x > 2) {
         //do something else
     } else {
         //do a third thing
     }
 }
 ```
+
+Using the `else if` construct, we can rewrite this code to be more readable:
+
 {: .no-run}
 
-We can see that this will behave as expected.
-If x is > 4, the first block will execute, otherwise the second block will execute.  Within the second block if x >2 the //do something else will execute, otherwise the do a third thing will happen. This is exactly like the else if behavior we want, just a little ugly.
-
-We can rewrite this as
 ```typescript
-if (x>4){
+if (x > 4) {
     //do something
-} else if (x>2){
+} else if (x > 2) {
     //do something else
 } else {
     //do a third thing
 }
 ```
-{: .no-run}
 
-It turns out that if the block inside an if or else is only one statement long, we are allowed to drop the {}.  The compiler will then assume only the next statement is inside the block. Even though the if is multiple lines, it is a single if statement with body, so this still works.
+It turns out that if the block inside an `if` or `else` is only one statement long, we are allowed to drop the `{ }`. The compiler will then assume only the next statement is inside the block. Even though the `if` is multiple lines, it is a single `if` statement with body, so this still works.
 We end up with something that does the same thing, but looks a lot better.
-We have simply dropped the {} around the first else block, since the (if x>2){...} statement is the only thing inside of it.
+We have simply dropped the {} around the first else block, since the `if (x > 2) {...}` statement is the only thing inside of it.
 
 ## Comparison Operators for Equality and Ordering
 
 As a reminder, there are six main comparison operators in TypeScript:
 
-* Equality:
-  * `X === Y`: `true` if `X` and `Y` are equal
-  * `X !== Y`: `true` if `X` and `Y` are not equal
-* Ordering:
-  * `X < Y`: `true` if `X` is less than `Y`
-  * `X > Y`: `true` if `X` is greater than `Y`
-  * `X >= Y`: `true` if `X` is greater than or equal to `Y`
-  * `X <= Y`: `true` if `X` is less than or equal to `Y`
+-   Equality:
+    -   `X === Y`: `true` if `X` and `Y` are equal
+    -   `X !== Y`: `true` if `X` and `Y` are not equal
+-   Ordering:
+    -   `X < Y`: `true` if `X` is less than `Y`
+    -   `X > Y`: `true` if `X` is greater than `Y`
+    -   `X >= Y`: `true` if `X` is greater than or equal to `Y`
+    -   `X <= Y`: `true` if `X` is less than or equal to `Y`
 
 All of these operators are comparison operators, but they are also either equality operators or ordering operators.
 
 ### Boolean Operators
 
 We can use Boolean operators to combine boolean expressions:
-* __and__ (`&&`): true when both conditions are true
-* __or__ (`||`): true when at least one of the conditions is true, and also when both are true
+
+-   **and** (`&&`): true when both conditions are true
+-   **or** (`||`): true when at least one of the conditions is true, and also when both are true
 
 ```typescript
 let happiness: number = 8;
 let luckiness: number = 9;
 
-let happyLucky: boolean = (happiness >= 7 && luckiness > 7);
+let happyLucky: boolean = happiness >= 7 && luckiness > 7;
 // Sets happyLucky to true when both conditions are true
 
-let happyOrLucky: boolean = (happiness >= 7 || luckiness > 7);
+let happyOrLucky: boolean = happiness >= 7 || luckiness > 7;
 // Sets happyOrLucky to true when at least one of the conditions is true
-console.log("Happy and Lucky: "+happyLucky);
-console.log("Happy or Lucky: "+happyOrLucky);
+console.log("Happy and Lucky: " + happyLucky);
+console.log("Happy or Lucky: " + happyOrLucky);
 ```
 
 Just think of this in words:
-* A and B implies both.
-* A or B implies either.
+
+-   A and B implies both.
+-   A or B implies either.
 
 ### The Not Operator (`!`)
 
-An additional Boolean operator that we have available is the not (`!`) operator (also called the __negation operator__).
+An additional Boolean operator that we have available is the not (`!`) operator (also called the **negation operator**).
 Unlike the other operator, this operator simply negates whatever comes next.
 
-* `!A && B`: `true` when `A` is `false` and `B` is `true`
-* `!(A && B)`: `true` when at least one of `A` and `B` are `false`
-* `!A || !B`: `true` when at least one of `A` and `B` are `false` (DeMorgan's Law)
-* `!(A && B) || C`: `true` when at least one of `A` and `B` are `false` or any time `C` is `true`
+-   `!A && B`: `true` when `A` is `false` and `B` is `true`
+-   `!(A && B)`: `true` when at least one of `A` and `B` are `false`
+-   `!A || !B`: `true` when at least one of `A` and `B` are `false` (DeMorgan's Law)
+-   `!(A && B) || C`: `true` when at least one of `A` and `B` are `false` or any time `C` is `true`
 
 By using a combination of comparison operators, logical connectors, and nots we can build complex logic to test state to use in conditionals and loops...
 
@@ -200,16 +208,18 @@ test("Test bringUmbrella", () => {
     expect(bringUmbrella(false, 60)).toBe("Bring an umbrella");
     expect(bringUmbrella(true, 60)).toBe("Bring an umbrella and a jacket");
     expect(bringUmbrella(false, 80)).toBe("No need for an umbrella");
-    expect(bringUmbrella(true, 80)).toBe("No need for an umbrella, but bring a jacket");
+    expect(bringUmbrella(true, 80)).toBe(
+        "No need for an umbrella, but bring a jacket"
+    );
 });
 ```
 
 ## Summary
 
-* An `if` statement is a way to alter program flow based on the value of some boolean expression. 
-* An `else` branch can be added to an `if` statement to handle the case when the expression is `false`.
-* We can use comparison operators to compare values and logical operators to combine multiple conditions. 
-* An `if` statement can be nested inside of a function to create complex logic.
+-   An `if` statement is a way to alter program flow based on the value of some boolean expression.
+-   An `else` branch can be added to an `if` statement to handle the case when the expression is `false`.
+-   We can use comparison operators to compare values and logical operators to combine multiple conditions.
+-   An `if` statement can be nested inside of a function to create complex logic.
 
 # Next Up
 
