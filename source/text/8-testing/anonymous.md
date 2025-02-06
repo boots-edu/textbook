@@ -5,7 +5,7 @@ nav_order: 8.3
 parent: Testing
 ---
 
-# Annoymous Functions
+# Anonymous Functions
 
 [&laquo; Return to the Chapter Index](index.md)
 
@@ -27,21 +27,22 @@ A function that is declared with no name is an **_anonymous function_**.
 Normally, when we create a function or method, we define it with a name that we can use to reference it (call it) later.
 
 ```typescript
+// Define the function myName
 function MyName(a: number, b: number): number {
     return a + b;
 }
+
+// Define the class MyClass
 class MyClass {
-    MyName(a: number, b: number): number {
+    myName(a: number, b: number): number {
         return a + b;
     }
 }
-```
 
-We can then call or reference that method by its defined name
-
-```typescript
+// We can then call ("reference") a function by its defined name
 let a = MyName(1, 2);
-let b = new MyClass().MyName(1, 2);
+// And we can call a method by its defined name
+let b = new MyClass().myName(1, 2);
 ```
 
 This is normal and a reasonable way to access methods and function in any programming language.
@@ -52,6 +53,8 @@ Sometimes, however, we just need a function right where we want to use it, and i
 We have already seen this in our jest tests in both the describe method and the test method.  
 Let's take a closer look at the second parameter to the describe and test methods.
 
+{: .no-run}
+
 ```typescript
 describe("Test Name", () => {
     test("Test MyName", () => {
@@ -59,7 +62,7 @@ describe("Test Name", () => {
         expect(a).toBe(3);
     });
     test("Test MyClass", () => {
-        let b = new MyClass().MyName(1, 2);
+        let b = new MyClass().myName(1, 2);
         expect(b).toBe(3);
     });
 });
@@ -70,7 +73,7 @@ This parameter is an anonymous function. It is a function that takes no argument
 NOTE: We are not calling this method, we are just passing it in as an argument to describe or test.
 
 We could do this the hard way, and create a named function and pass that as the second parameter, but we are only using it once, and it is much easier to see what is going on this way.
-Anonymous functions behave like any other function. We can declare them, call them, and pass them around as parameters to functions. Functions in typescript are what is referred to as **_first class objects_**.
+Anonymous functions behave like any other function. We can declare them, call them, and pass them around as parameters to functions. Functions in typescript are what is referred to as **First Class Objects**.
 
 ### Syntax
 
@@ -79,9 +82,9 @@ Let's look at the overall structure of an anonymous function:
 
 So what can we do with this:
 
--   We have already seen that we can pass it as a parameter to another method as in "describe" and "test"
--   Many methods in typescript can take a function as a parameter including filter, map, find, reduce, etc. We can use anonymous functions there as well.
--   Since functions are first class objects, we can also store them in variables (i.e. function as value)
+-   We have already seen that we can pass it as a parameter to another method as in `describe` and `test`
+-   Many methods in typescript can take a function as a parameter including `filter`, `map`, `find`, `reduce`, etc. We can use anonymous functions there as well.
+-   Since functions are **First Class Objects**, we can also store them in variables (i.e. function as value)
 
 ### Example
 
@@ -101,6 +104,8 @@ function removeNegativesFor(): number[] {
     }
     return newArr;
 }
+
+console.log(removeNegativesFor());
 ```
 
 There is another way to accomplish this using the typescript `Array.filter` method
