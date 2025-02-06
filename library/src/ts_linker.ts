@@ -34,10 +34,6 @@ export function linkObjects(result: ProgramExecutionRequest) {
             console.error("Error loading module", moduleName, e);
             throw e;
         }
-        // console.log("Loaded", moduleName, exports);
-        if ((exports as any)["default"]) {
-            return (exports as any)["default"] as any[];
-        }
         return exports;
     }
     require = $importModule;

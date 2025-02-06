@@ -187,6 +187,7 @@ const removeExports: (
                     // return ts.createVariableDeclarationList([], ts.NodeFlags.Const);
                     const importChild = node as ts.ImportDeclaration;
                     let identifier: string | ts.BindingName;
+                    let isDefault = false;
                     if (
                         importChild.importClause?.namedBindings?.kind ===
                         ts.SyntaxKind.NamedImports
@@ -205,12 +206,18 @@ const removeExports: (
                         );
                     } else {
                         identifier = importChild.importClause?.getText() || "";
+                        isDefault = true;
                     }
                     const moduleName = importChild.moduleSpecifier
                         .getText()
                         .replaceAll('"', "")
                         .replaceAll("'", "");
                     importFile(moduleName);
+                    const importModuleCall = ts.factory.createCallExpression(
+                        ts.factory.createIdentifier("$importModule"),
+                        undefined,
+                        [ts.factory.createStringLiteral(moduleName)],
+                    );
                     return ts.factory.createVariableStatement(
                         undefined,
                         ts.factory.createVariableDeclarationList(
@@ -219,17 +226,14 @@ const removeExports: (
                                     identifier,
                                     undefined,
                                     undefined,
-                                    ts.factory.createCallExpression(
-                                        ts.factory.createIdentifier(
-                                            "$importModule",
-                                        ),
-                                        undefined,
-                                        [
-                                            ts.factory.createStringLiteral(
-                                                moduleName,
+                                    isDefault ?
+                                        ts.factory.createPropertyAccessExpression(
+                                            importModuleCall,
+                                            ts.factory.createIdentifier(
+                                                "default",
                                             ),
-                                        ],
-                                    ),
+                                        )
+                                    :   importModuleCall,
                                 ),
                             ],
                             ts.NodeFlags.Const,
