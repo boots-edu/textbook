@@ -20,20 +20,22 @@ parent: Testing
 
 ## Key Idea
 
-**_Jest_** is a test runner and testing framework that works with javascript and Typescript
+**_Jest_** is a test runner and testing framework that works with Javascript and Typescript. We've been using Jest the entire time!
 
 ## Jest Syntax
 
-A few simple commands we need:
+There are just a few Jest functions that you need to know to get started:
 
--   describe: Create a new test section
--   test: Write a specific test
--   expect: expect an expression to behave a certain way
+-   `describe`: Create a new test section
+-   `test`: Write a specific test
+-   `expect`: expect an expression to behave a certain way
     -   Example: `expect(value).toBeInstanceOf(MyClass)`
 
-There are many others, but we can get by with these three for now.
+There are many methods we'll need to learn about, but we can get by with these three functions for now.
 
 Back to the example from the previous section, let's look at what we want to do for each of these:
+
+{: .no-run}
 
 ```typescript
 class Elements {
@@ -54,13 +56,17 @@ class Elements {
 
 We will start with a describe block for the Elements class:
 
+{: .no-run}
+
 ```typescript
 describe("Elements", () => {
     //Our tests go here
 });
 ```
 
-Can I construct one of these?
+Let's write a test to see if we can construct an instance of the class:
+
+{: .no-run}
 
 ```typescript
 describe("Elements", () => {
@@ -73,14 +79,19 @@ describe("Elements", () => {
 
 Does it work normally? Just create a test block that populates some items and then verify them.
 
+{: .no-run}
+
 ```typescript
 describe("Elements", () => {
     test("Array populated 2 or more", () => {
         const elements = new Elements();
         elements.stringArray = ["a", "b", "c"];
+        // Check the length
         expect(elements.stringArray.length).toBe(3);
+        // Extract the last element
         const value = elements.getLastElement();
         expect(value).toBe("c");
+        // Now check the length again
         expect(elements.stringArray.length).toBe(2);
         expect(elements.stringArray).toContain("a");
         expect(elements.stringArray).toContain("b");
@@ -89,7 +100,9 @@ describe("Elements", () => {
 });
 ```
 
-Test what happens when the array is empty.
+This will test the normal case of the function. What about the edge case where the array is empty?
+
+{: .no-run}
 
 ```typescript
 describe("Elements", () => {
@@ -102,7 +115,9 @@ describe("Elements", () => {
 });
 ```
 
-This test fails because we don't throw an exception and neither does pop which we are using to implement this. We need to fix the code.
+This test fails because we don't throw an exception, and neither does `pop` which we are using to implement this. We need to fix the code.
+
+{: .no-run}
 
 ```typescript
 class Elements {
@@ -126,6 +141,8 @@ class Elements {
 Note that now getLastElement throws an exception if the array is empty, so our test will now pass.
 What happens if the array has only one element in it?
 
+{: .no-run}
+
 ```typescript
 test("Array populated 1 item", () => {
     const elements = new Elements();
@@ -141,7 +158,6 @@ test("Array populated 1 item", () => {
 So what does our final test suite for this code look like?
 
 ```typescript
-// Currently does not work due to incomplete Jest implementation.
 class Elements {
     public stringArray: string[] = [];
     /**
