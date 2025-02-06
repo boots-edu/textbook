@@ -190,7 +190,7 @@ Each time, we are searching a smaller list, so eventually we will find what we w
 
 Our stop condition in code:
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 if (list.length === 0) {
@@ -204,7 +204,7 @@ if (list[mid] === target) {
 
 Our recursive step simply calls itself on the correct half of the array:
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 else if (list[mid] < target){

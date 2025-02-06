@@ -73,7 +73,8 @@ To implement the behavior, we will use the **_@Timer_** decorator to decorate a 
 Passing 1000 to the timer method causes onTimer to be called once a second while the page is displayed (forever: more on this later). 1 second= 1000 milliseconds
 Each time it is called, we check a counter that will keep track of how many dots are displayed. When we get to 3, we set it back to 0. Otherwise, we draw the correct number of dots (count+1 because count goes from 0-2) by updating our displayDots property which is bound to the page.
 
-{ .no-run }
+{: .no-run }
+
 ```typescript
 @Timer(1000)
 private onTimer() {

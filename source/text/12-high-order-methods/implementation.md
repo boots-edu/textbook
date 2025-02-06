@@ -30,7 +30,8 @@ Note that you do not have to implement these methods yourself - they are built i
 
 For more information about the built-in array methods, see the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 /**
  * Implementation of a "List", which will just be a wrapper around an array.
@@ -52,7 +53,8 @@ class List<T> {
 
 # `forEach` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
     /**
      * This method will call the callback function for each item in the List.
@@ -69,7 +71,8 @@ class List<T> {
 
 # `filter` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
     /**
      * This method will create a new List with only the items that pass the test in the callback function.
@@ -90,7 +93,8 @@ class List<T> {
 
 # `some` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -111,7 +115,8 @@ class List<T> {
 
 # `every` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -132,7 +137,8 @@ class List<T> {
 
 # `map` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -154,7 +160,8 @@ class List<T> {
 
 # `reduce` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -186,7 +193,8 @@ class List<T> {
 
 # `rightReduce` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -218,7 +226,8 @@ class List<T> {
 
 # `find` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -240,7 +249,8 @@ class List<T> {
 
 # `findIndex` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -264,7 +274,8 @@ class List<T> {
 
 # `findLast` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -289,7 +300,8 @@ class List<T> {
 
 # `findLastIndex` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**
@@ -314,7 +326,8 @@ class List<T> {
 
 # `sort` Method
 
-{.no-run}
+{: .no-run}
+
 ```typescript
 
     /**

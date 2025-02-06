@@ -235,7 +235,8 @@ A tree node should encapsulate the things we can do to a tree so we won't need e
 For our implementation of insert, it is pretty straight forward.
 We just remove the tree parameter, and instead call the member method on the appropriate subtree which is not null since we already checked that.
 
-{ .no-run }
+{: .no-run }
+
 ```typescript
 class TreeNode{
 	...
@@ -264,7 +265,8 @@ class TreeNode{
 
 For the search method, it is a little less straight forward. We need to check for a null subtree before we make the recursive call instead of stopping when the tree is null (otherwise we will not have an object to call search on).
 
-{ .no-run }
+{: .no-run }
+
 ```typescript
 	treeSearch(value: number): boolean {
 		if (this.value === value) {

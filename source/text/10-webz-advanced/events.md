@@ -48,7 +48,7 @@ First, let's look at the Notifier class that we will be using:
 What type of object is data? Because Notifier is Generic we get to choose.
 When we create a variable of type Notifier we can supply a type parameter to tell us what type of object Notifier emits.
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 event: Notifier = new Notifier();
@@ -69,7 +69,7 @@ The <> syntax is used to specify one or more **type parameters** that alter the 
 Now we can pass that type of data to the notify method.
 The type parameter specifies the type expected for the next method. Using the wrong type will be an error.
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 this.event.notify();

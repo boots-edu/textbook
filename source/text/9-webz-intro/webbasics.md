@@ -34,6 +34,8 @@ That's right, the web is basically just a bunch of text files (and a lot of cat 
 
 HTML is a simple tag based language where elements are defined with an opening and closing tag
 
+{: .no-run }
+
 ```html
 <p>Something</p>
 <button>Click Me</button>
@@ -76,6 +78,8 @@ The 2 paragraph tags simply output the text to the browser with paragraph spacin
 
 If we want less spacing between the two lines of text, we can use a line break instead of putting the text in paragraph tags.
 
+{: .no-run }
+
 ```html
 <div>
     Here is the first paragraph of text<br />
@@ -88,6 +92,8 @@ If we want less spacing between the two lines of text, we can use a line break i
 By removing the `<p></p>` tags, and adding a `<br/>` I get line spacing instead of paragraph spacing.
 
 You can set various attributes on each tag. Here is a simple login screen:
+
+{: .no-run }
 
 ```html
 <div>
@@ -106,6 +112,8 @@ You can set various attributes on each tag. Here is a simple login screen:
 
 Here is a set of radio buttons:
 
+{: .no-run }
+
 ```html
 <div>
     Please select an option:<br />
@@ -123,6 +131,8 @@ Here is a set of radio buttons:
 > If radio buttons have the same name property, they will act as a group, where selecting one deselects the others.
 
 Here is a dropdown box:
+
+{: .no-run }
 
 ```html
 <div>
@@ -158,6 +168,8 @@ There are basically a few ways to style:
 
 Returning to our login screen example, we have added _id_ and _class_ attributes to our elements to allow us to style them.
 
+{: .no-run }
+
 ```html
 <div id="loginForm">
     <input type="text" id="username" placeholder="User Name" /><br />
@@ -172,6 +184,8 @@ Returning to our login screen example, we have added _id_ and _class_ attributes
 
 First let's style the div. It has an id, so we will style it by id. To reference an id in a style, we put a # in front.
 The style for the outer div tag is `#loginForm`
+
+{: .no-run }
 
 ```css
 #loginForm {
@@ -191,6 +205,8 @@ The second is a combination of rule selectors. This rule says to style all input
 Now our content is centered in the div, and there is a 5 pixel margin around all of the input elements in the div.
 
 How about the buttons. They were both defined with the class `btn` and because we want them to look the same, we can use the class name to style both of them. For classes we specify the style rule by preceiding the class name with a ".", so `btn` is references as `.btn`
+
+{: .no-run }
 
 ```css
 .btn {

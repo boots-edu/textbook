@@ -59,7 +59,7 @@ The most common tags available to us for jsdoc are:
 
 Some of these are for constructs we have not learned yet, but all but 2 can be understood now.
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 /**

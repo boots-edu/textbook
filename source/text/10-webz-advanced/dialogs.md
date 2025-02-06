@@ -34,15 +34,15 @@ Webz provides two methods for doing this:
 
 The popup window is provided as an easy way to interact with your user for a quick message or question. This is similar to the javascript alert/confirm methods, but looks a lot better and is more flexible. To show a popup we simply call the popup method of the `WebzDialog` class. This is a static method (means it does not exist on an instance of `WebzDialog` but rather can be called directly on the type).
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
-EzDialog.popup(attachTo: EzComponent, message: string, title?: string, buttons?: string[], btnClass?: string):Notifier<string>
+EzDialog.popup(attachTo: WebzComponent, message: string, title?: string, buttons?: string[], btnClass?: string):Notifier<string>
 ```
 
 We can call this method to show a dialog box:
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 WebzDialog.popup(
@@ -68,7 +68,7 @@ Let's examine this in detail:
 
 Back to our point of sale example, we can use a popup to notify the user that a comment was added.
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 	@Click("addCommentButton")
@@ -98,7 +98,7 @@ With this screen, the only thing I can do is click ok.
 
 Let's look at a more complex example:
 
-{ .no-run }
+{: .no-run }
 
 ```typescript
 	@Click("addCommentButton")
@@ -186,7 +186,8 @@ For the body of our dialog, we will just center a string that says "Please Wait.
 
 In the parent, we create a property for our dialog and add it to the component.
 
-{ .no-run }
+{: .no-run }
+
 ```typescript
 plsWait: PleaseWaitDialog = new PleaseWaitDialog();
 
@@ -197,7 +198,8 @@ constructor(){
 
 When we want the dialog we can simply display it while some time consuming task is occurring, then hide it after.
 
-{ .no-run }
+{: .no-run }
+
 ```typescript
 this.plsWait.show(true);
 //do something that takes a while
