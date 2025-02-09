@@ -19,9 +19,7 @@ parent: Appendix
 
 ## Key Idea
 
-When working with a forked repository, it is important to keep your fork up to date with the original repository.  This is done by pulling changes from the original repository into your fork.
-
-So the instructor messed up and released a repository with mistakes. Now you need to get the latest version of the assignment.
+When working with a forked repository, it is important to keep your fork up to date with the original repository.  This is done by pulling changes from the original repository into your fork. The steps can be a little tricky the first time you do them.
 
 Don't panic, just follow this guide!
 
