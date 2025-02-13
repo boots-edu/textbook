@@ -7,7 +7,7 @@ has_children: true
 
 # Chapter 0 - Introduction
 
-[&laquo; Return to the Table of Contents](../index.md)
+[&laquo; Return to the Table of Contents](../../index.md)
 
 ***Welcome to our textbook!!!***\
   This book will cover Object Oriented Programming, introduce the basics of web development, and reinforce basic concepts of Computer Science.  In order to use the samples in this book and the accompanying materials, you will need to have your environment set up correctly.
