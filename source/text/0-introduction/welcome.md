@@ -53,4 +53,4 @@ Computer Science is hard until it is not.  Be patient with yourself and be persi
 
 # Next Step
 
-Let's get your environment setup: [Setup &raquo;](../1-introduction/setup.md)
+Let's get your environment setup: [Setup &raquo;](../0-introduction/setup.md)
