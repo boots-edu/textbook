@@ -315,11 +315,15 @@ This imports the `BoopButtonComponent` class from the `boop-button.component.ts`
 
 3. Define a new private field in the `MainComponent` class called `boopButton` of type `BoopButtonComponent`. This field will hold an instance of the Boop Button component that should be created when the `MainComponent` is instantiated.
 
+{: .no-run }
+
 ```typescript
 private boopButton: BoopButtonComponent = new BoopButtonComponent();
 ```
 
 4. Although the `MainComponent` class now has a `boopButton` field, it is not yet being displayed on the page. To do this, we need to add the HTML for the Boop Button component to the `main.component.html` file. Open `main.component.html` and add the following line after the `p` tags, but before the final `</div>`:
+
+{: .no-run }
 
 ```html
 <div id="boop-button"></div>
@@ -344,6 +348,8 @@ private boopButton: BoopButtonComponent = new BoopButtonComponent();
 </details>
 
 5. Next, we have to actually add the component instance from the private field to the content of the `MainComponent`. Open `main.component.ts` and add the following line to the `constructor` method, after the call to `super`:
+
+{: .no-run }
 
 ```typescript
 this.addComponent(this.boopButton, "boop-button");
@@ -412,6 +418,8 @@ export class BoopButtonComponent extends WebzComponent {
 ```
 
 8. When clicked, the button will not do anything yet, because we have not added any event handling to the Boop Button component. We need to add an event handler to the button that will update the `boops` field every time the button is clicked. To do this, we need to add a new method to the `BoopButtonComponent` class that will be called when the button is clicked. We will decorate that button with a special `Click` decorator (which must be imported from `@boots-edu/webz`. Add the following method to the `BoopButtonComponent` class:
+
+{: .no-run }
 
 ```typescript
 @Click("booper")
