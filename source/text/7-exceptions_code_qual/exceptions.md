@@ -322,7 +322,7 @@ const end = new Point(200, 200);
 try {
     color = new Color(0, 300, 0);
 } catch (e) {
-    console.log(Error: e);
+    console.log("Error: ",e);
     color = new Color();
 } finally {
     line = new Line(start, end, color);
@@ -332,25 +332,11 @@ try {
 Here we try to create a color. If the color is valid, it is created, if not, the error is logged to the console, and a default color object is created.
 The finally block runs after either way. It creates a line with the newly defined color. We have handled the exception and our code will work, even if the value of green is invalid. It will either create a green line if green>=0 && green<=256 or the default colored line if not.
 
-```typescript
-import { Color, Point, Line } from "ch7/drawing5";
-
-let color: Color;
-let line: Line;
-const start = new Point(100, 100);
-const end = new Point(200, 200);
-try {
-    color = new Color(0, green, 0);
-} catch (e) {
-    console.log(e);
-    color = new Color();
-}
-line = new Line(start, end, color);
-```
-
 A note about finally. In this code it is not necessary since the code continues after the `try`/`catch` either way, so we can remove it and just let the program continue with creating the line. There are many use cases where we don't need a `finally` block, but there are some where we do.
 
 Here is a case where `finally` is useful:
+
+{: .no-run}
 
 ```typescript
 import * as fs from "fs";
