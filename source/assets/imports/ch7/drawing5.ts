@@ -1,5 +1,12 @@
 export class Color{
-	constructor(public red:number=0, public green:number=0,public blue:number=0){ }
+	public red:number=0;
+	public green:number=0;
+	public blue:number=0;
+	constructor(red:number=0, green:number=0,blue:number=0){ 
+		this.red=red;
+		this.green=green;
+		this.blue=blue;
+	}
 	clone():Color{
 		return new Color(this.red,this.green,this.blue);
 	}
