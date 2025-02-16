@@ -140,4 +140,4 @@ And with all of this, we have an elegant way to design programs that leverages t
 
 # Next Step
 
-Next we'll learn about exceptions: [Exceptions &raquo;](../7-exceptions/index.md)
+Next we'll learn about exceptions: [Exceptions &raquo;](../7-exceptions_code_qual/index.md)

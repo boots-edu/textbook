@@ -107,7 +107,7 @@ let obj:Drawable=new Line(new Point(0,0),new Point(1,1),
 obj.draw(this.drawingSurface);
 ```
 
-> Note: You can install the drawing library using in this example with the page object using npm.  
+> Note: You can install the drawing library used in this example with the page object using npm.  
 > `npm i --save @boots-edu/web-draw`
 
 It is safe to call `draw` on a `Drawable` object, it just doesn't do anything.
