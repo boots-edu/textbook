@@ -314,14 +314,15 @@ This will prevent the program from exiting and consume the exception and the pro
 ```typescript
 import { Color, Point, Line } from "ch7/drawing5";
 
+
 let color: Color;
 let line: Line;
 const start = new Point(100, 100);
 const end = new Point(200, 200);
 try {
-    color = new Color(0, green, 0);
+    color = new Color(0, 300, 0);
 } catch (e) {
-    console.log(e);
+    console.log(Error: e);
     color = new Color();
 } finally {
     line = new Line(start, end, color);
