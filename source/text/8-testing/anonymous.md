@@ -110,6 +110,8 @@ console.log(removeNegativesFor());
 
 There is another way to accomplish this using the typescript `Array.filter` method
 
+{: .no-run}
+
 ```typescript
 let arr: number[] = [1, -2, 3, -4, 5];
 function removeNegatives(): number[] {
@@ -143,6 +145,7 @@ Being **_first class objects_** functions can be used in many places.
 
 -   As a paramter to methods
 
+{: .no-run}
 ```typescript
 function removeNegatives(): number[] {
     return arr.filter((x: number) => x >= 0);
@@ -151,11 +154,15 @@ function removeNegatives(): number[] {
 
 -   As the value of a variable or class property
 
+{: .no-run}
+
 ```typescript
 let f: (z: number) => boolean = (x: number) => x >= 0;
 ```
 
 -   As the return value of a function
+
+{: .no-run}
 
 ```typescript
 function getGTFunction(num: number): (x: number) => boolean {
@@ -168,12 +175,16 @@ function getGTFunction(num: number): (x: number) => boolean {
 A function type is defined by its parameters and return type
 We can define variables to be of that type, then store functions in that variable.
 
+{: .no-run}
+
 ```typescript
 let f: (x: number) => Boolean;
 f = (x: number) => x >= 0;
 ```
 
 We can them call those functions just like we would if they were defined with a name.
+
+{: .no-run}
 
 ```typescript
 let f: (x: number) => boolean = (x: number) => x >= 0;
@@ -182,6 +193,8 @@ let c = f(-4);
 ```
 
 We can even declare a type to use for our functions.
+
+{: .no-run}
 
 ```typescript
 declare type ChkFunction = (x: number) => boolean;

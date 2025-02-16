@@ -180,5 +180,4 @@ Designing good tests and testing methodologies will help create software that ca
 
 # Next Step
 
-You may have noticed the odd syntax, before we continue, let's cover **_anonymous functions_** which will help us better understand the testing syntax.  
-[Annonymous Functions &raquo;](../8-testing/anonymous.md)
+Next we'll learn how to write tests is Jest [Testing in Jest &raquo;](../8-testing/jest.md)
