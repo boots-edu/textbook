@@ -70,6 +70,8 @@ We can use exceptions to improve our software design and make it react in a stru
 
 Let's consider the code for our drawing program again.
 
+{: .no-run}
+
 ```typescript
 class Color {
     constructor(
@@ -98,6 +100,8 @@ Valid color values in our program are numbers between 0 and 255. What happens if
 
 We can use exceptions to prevent this.
 
+{: .no-run}
+
 ```typescript
 export class Color {
   constructor(
@@ -124,6 +128,8 @@ We can check the values in the constructor, and throw an exception if they are i
 
 If the calling code does not "handle" the exception, then the program will terminate with an error message (the one you threw) and the call stack to help you figure out where the exception occurred in the execution of your program.
 
+{: .no-run}
+
 ```typescript
 const color: Color = new Color(400, 400, 400);
 ```
@@ -133,6 +139,8 @@ Throws (or "raises") an exception with the message `"Invalid red value"`. Again,
 ### Custom Errors
 
 If we want to pass more information with our Error, we can create our own class that extends error, and throw that.
+
+{: .no-run}
 
 ```typescript
 class ColorError extends Error {
@@ -304,6 +312,8 @@ If we do one or more operations which might throw an error within a `try` block,
 This will prevent the program from exiting and consume the exception and the program will continue normally after the `try`/`catch`/`finally` block. You can rethrow the error in the catch block, which will continue to "bubble up" the exception so our caller can handle the error after we recognize it (maybe we log, then rethrow).
 
 ```typescript
+import { Color, Point, Line } from "ch7/drawing4";
+
 let color: Color;
 let line: Line;
 const start = new Point(100, 100);
@@ -322,6 +332,8 @@ Here we try to create a color. If the color is valid, it is created, if not, the
 The finally block runs after either way. It creates a line with the newly defined color. We have handled the exception and our code will work, even if the value of green is invalid. It will either create a green line if green>=0 && green<=256 or the default colored line if not.
 
 ```typescript
+import { Color, Point, Line } from "ch7/drawing4";
+
 let color: Color;
 let line: Line;
 const start = new Point(100, 100);
@@ -370,6 +382,8 @@ On success it prints the contents, and on error it throws an exception
 -   If we want the exception to continue to bubble, we must rethrow it, or throw a new exception of our own.
 
 Here is what we mean by rethrowing an exception:
+
+{: .no-run}
 
 ```typescript
 try {
