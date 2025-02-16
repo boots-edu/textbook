@@ -5,7 +5,7 @@ nav_order: 8.2
 parent: Testing
 ---
 
-# Testing im Jest
+# Testing in Jest
 
 [&laquo; Return to the Chapter Index](index.md)
 
