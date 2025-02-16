@@ -74,7 +74,7 @@ class Point {
 }
 
 let red: Color = new Color(255, 0, 0);
-let origin: Point = new Point(0, 0, red);
+let orig: Point = new Point(0, 0, red);
 ```
 
 Recognizing the relationship between concepts that are to be represented as Classes is critical to Object Oriented Programming. Here are some simple examples:
