@@ -61,7 +61,7 @@ console.log(red, blue);
 Our `Point` class is more difficult in that it contains a `Color` object. Here a **_deep copy_** is required to not only copy the `Point` object into a new instance, but also create a new instance of the `Color` object. Luckily the `Color` object already has a `clone` method.
 
 ```typescript
-import { Color } from "ch5/drawing2";
+import { Color, Point } from "ch5/drawing2";
 
 class Point {
     constructor(public x: number, public y: number, public color: Color) {}
