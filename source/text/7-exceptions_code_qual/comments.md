@@ -83,6 +83,8 @@ It also describes the exceptions that it may throw.
 
 We should also comment the methods inside our class. This is what a comment for the constructor might look like:
 
+{: .no-run}
+
 ```typescript
     /**
      * Create a new polygon object.

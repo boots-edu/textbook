@@ -312,7 +312,7 @@ If we do one or more operations which might throw an error within a `try` block,
 This will prevent the program from exiting and consume the exception and the program will continue normally after the `try`/`catch`/`finally` block. You can rethrow the error in the catch block, which will continue to "bubble up" the exception so our caller can handle the error after we recognize it (maybe we log, then rethrow).
 
 ```typescript
-import { Color, Point, Line } from "ch7/drawing4";
+import { Color, Point, Line } from "ch7/drawing5";
 
 let color: Color;
 let line: Line;
@@ -332,7 +332,7 @@ Here we try to create a color. If the color is valid, it is created, if not, the
 The finally block runs after either way. It creates a line with the newly defined color. We have handled the exception and our code will work, even if the value of green is invalid. It will either create a green line if green>=0 && green<=256 or the default colored line if not.
 
 ```typescript
-import { Color, Point, Line } from "ch7/drawing4";
+import { Color, Point, Line } from "ch7/drawing5";
 
 let color: Color;
 let line: Line;

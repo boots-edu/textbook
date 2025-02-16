@@ -5,7 +5,7 @@ export class Color{
 	}
 }
 export class Point{
-	constructor(public x:number,public y:number,public color:Color){}
+	constructor(public x:number,public y:number,public color:Color=new Color()){}
 	clone(): Point{
 		return new Point(this.x,this.y,this.color.clone());
 	}
