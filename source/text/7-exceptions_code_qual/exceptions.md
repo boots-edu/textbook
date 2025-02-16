@@ -261,8 +261,8 @@ class Polygon extends Drawable {
 		if (points.length < 3 || points.length > MAX_POINTS)
 			throw new Error(
 				`A polygon must have at least 3 points and at most ${MAX_POINTS} points`,
-			); 	 
-		// Check for duplicate points
+			);
+    // Check for duplicate points
 		for (let i = 0; i < points.length; i++) {
 			for (let j = i + 1; j < points.length; j++) {
 				if (points[i].equals(points[j])) {
