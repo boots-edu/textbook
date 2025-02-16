@@ -61,7 +61,7 @@ console.log(red, blue);
 Our `Point` class is more difficult in that it contains a `Color` object. Here a **_deep copy_** is required to not only copy the `Point` object into a new instance, but also create a new instance of the `Color` object. Luckily the `Color` object already has a `clone` method.
 
 ```typescript
-import { Color, Point } from "ch5/drawing2";
+import { Color } from "ch5/drawing2";
 
 class Point {
     constructor(public x: number, public y: number, public color: Color) {}
@@ -81,7 +81,7 @@ console.log(p, q);
 Likewise, we can add a `clone` method to our Line class as well. Again, since this class contains references to objects, we must **_deep copy_** the line class. Luckily each of the object types (`Color` and `Line`) already has a `clone` method we can use.
 
 ```typescript
-import { Color } from "ch5/drawing3";
+import { Color, Point } from "ch5/drawing3";
 
 class Line {
     constructor(public start: Point, public end: Point, public color: Color) {}
