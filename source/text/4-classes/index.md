@@ -7,7 +7,7 @@ has_children: true
 
 # Chapter 4 - Classes
 
-[&laquo; Return to the Table of Contents](../index.md)
+[&laquo; Return to the Table of Contents](../../index.md)
 
 Let's learn about more generalized Classes.  
 

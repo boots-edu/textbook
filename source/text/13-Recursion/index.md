@@ -7,6 +7,6 @@ has_children: true
 
 # Chapter 13 - Recursion
 
-[&laquo; Return to the Table of Contents](../index.md)
+[&laquo; Return to the Table of Contents](../../index.md)
 
 Recursion

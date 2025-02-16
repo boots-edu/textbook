@@ -7,6 +7,6 @@ has_children: true
 
 # Chapter 5 - Composition and Inheritance
 
-[&laquo; Return to the Table of Contents](../index.md)
+[&laquo; Return to the Table of Contents](../../index.md)
 
 Building complex objects can be accomplished by combining classes in various ways.  Let's learn to primary methods for doing this ***Composition*** and ***Unheritance***.
