@@ -3,9 +3,11 @@ export class Color{
 	public green:number=0;
 	public blue:number=0;
 	constructor(red:number=0, green:number=0,blue:number=0){ 
-		this.red=red;
-		this.green=green;
-		this.blue=blue;
+		{
+			if (red<0 || red>255) throw new Error("Invalid red value");
+			if (green<0 || green>255) throw new Error("Invalid green value");
+			if (blue<0 || blue>255) throw new Error("Invalid blue value");
+	  }
 	}
 	clone():Color{
 		return new Color(this.red,this.green,this.blue);
