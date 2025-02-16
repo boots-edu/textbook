@@ -21,8 +21,6 @@ parent: Webz Introduction
 ***Webz*** can be used to create an interactive website.
 
 
-# Webz Basics Walkthrough
-
 This walkthrough will help you build and deploy your first Webz application. You will learn how to create components, bind values, and handle basic events.
 
 ## 0) Setup
