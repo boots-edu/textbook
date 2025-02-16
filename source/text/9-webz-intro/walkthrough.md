@@ -98,6 +98,8 @@ Let's start by adding some dynamic text to the page. We'll need to edit the `Mai
 
 2. Open `main.component.html`. You will see that it contains the following code:
 
+{: .no-run }
+
 ```html
 <div>
     <div class="header">
@@ -110,6 +112,8 @@ This is the default content that comes with the starter repo. The `div` tag is a
 
 3. Change the text inside the `div` with the class `title` to something else. For example, you could change it to:
 
+{: .no-run }
+
 ```html
 <div class="title">My First Webz Application</div>
 ```
@@ -118,11 +122,15 @@ This is the default content that comes with the starter repo. The `div` tag is a
 
 5. Now, let's add a new element to the page with some more text. Add the following code after the `div` with the class `header`, but inside the outer `div`. The `p` tag is used to create a paragraph of text.
 
+{: .no-run }
+
 ```html
 <p>Welcome from the HTML side!</p>
 ```
 
 If you did this correctly, the HTML should look something like the HTML below. Pay close attention to the structure of your HTML, and make sure you are closing all of your tags properly. The location of tags is important, as it determines how the elements are displayed on the page.
+
+{: .no-run }
 
 ```html
 <div>
@@ -136,6 +144,8 @@ If you did this correctly, the HTML should look something like the HTML below. P
 6. Save the file, and confirm that the new text is displayed in the browser window.
 7. We're going to modify the `p` tag to include an `id` attribute. This will make it easier to test our application later on. Add the `id` attribute to the `p` tag, like so:
 
+{: .no-run }
+
 ```html
 <p id="example-text">Welcome from the HTML side!</p>
 ```
@@ -144,12 +154,16 @@ Make sure you use the exact `id` value (`example-text`) as shown above. When you
 
 8. Now, let's add some dynamic text to the page. We're going to use TypeScript to change the text of a new `p` tag. Make a second, empty `p` tag with an `id` after the existing one, like so:
 
+{: .no-run }
+
 ```html
 <p id="example-target"></p>
 ```
 
 <details markdown="block">
 <summary>Click here to see the full HTML so far</summary>
+
+{: .no-run }
 
 ```html
 <div>
@@ -170,6 +184,8 @@ Make sure you use the exact `id` value (`example-text`) as shown above. When you
 > Make sure you are matching the `id` values exactly as shown above. This will become important when we run the tests later!
 
 9. Open `main.component.ts`. This is the TypeScript file that defines the `MainComponent` class. This is where the application logic will go. You will see that it contains the following code:
+
+{: .no-run }
 
 ```typescript
 import html from "./main.component.html";
@@ -192,11 +208,15 @@ In Webz, components are defined as classes that extend the `WebzComponent` class
 
 10. Add a new private `string` field to the `MainComponent` class called `myText`, with the initial value `"Hello from the TypeScript side!"`. This field will hold the text that we want to display on the page.
 
+{: .no-run }
+
 ```typescript
 private myText: string = "Hello from the TypeScript side!";
 ```
 
 11. On its own, just creating a field doesn't do anything interesting. We need to *bind* the field to the HTML so that the text is displayed on the page. We can do this by using the `BindValue` decorator. Add the following code directly above the `myText` field:
+
+{: .no-run }
 
 ```typescript
 @BindValue("example-target")
@@ -206,6 +226,8 @@ The `@BindValue` decorator is used to bind a field to an element in the HTML; in
 
 12.  In order to use the decorator, we must also import the `BindValue` decorator from the `@boots-edu/webz` package. Modify the existing import statement at the top of the file to include the `BindValue` decorator:
 
+{: .no-run }
+
 ```typescript
 import { WebzComponent, BindValue } from '@boots-edu/webz';
 ```
@@ -214,6 +236,8 @@ import { WebzComponent, BindValue } from '@boots-edu/webz';
 
 <details markdown="block">
 <summary>Click here to see the full TypeScript file so far</summary>
+
+{: .no-run }
 
 ```typescript
 import html from "./main.component.html";
@@ -281,6 +305,8 @@ That folder will have the following files: `boop-button.component.ts`, `boop-but
 
 1. The component has been created, but it is not yet being used in the `MainComponent`. Open `main.component.ts` and add the following import statement at the top of the file:
 
+{: .no-run }
+
 ```typescript
 import { BoopButtonComponent } from './boop-button/boop-button.component';
 ```
@@ -301,6 +327,8 @@ private boopButton: BoopButtonComponent = new BoopButtonComponent();
 
 <details markdown="block">
 <summary>Click here to see the <code>main.component.html</code> file so far</summary>
+
+{: .no-run }
 
 ```html
 <div>
@@ -326,6 +354,8 @@ This takes the component stored in the `boopButton` field and adds it to the `Ma
 <details markdown="block">
 <summary>Click here to see the full <code>main.component.ts</code> file so far</summary>
 
+{: .no-run }
+
 ```typescript
 import html from "./main.component.html";
 import css from "./main.component.css";
@@ -350,6 +380,8 @@ export class MainComponent extends WebzComponent {
 
 6. When you save these files, the Boop Button component should now be displayed on the page. However, there is not yet any button or functionality in the Boop Button component, just the default text that comes from creating a new component. Open the `boop-button/boop-button.component.html` file and replace the existing content with the following code:
 
+{: .no-run }
+
 ```html
 <div>
     <button id="booper">Boop!</button>
@@ -360,6 +392,8 @@ export class MainComponent extends WebzComponent {
 This HTML creates a button with the text "Boop!" and a paragraph that displays the boop record, with a `span` tag holding the actual `boops` data. A `span` tag is meant to hold a short, inline snippet of text (inside of a paragraph tag or div). The `boops` span is initially empty, but it will be updated every time the button is clicked. We have also added an `id` attribute to the button (`booper`) and the span element (`boops`), which we will use to bind the button click event and the boop record text. Make sure you get the names of the `id` attributes exactly right, as they will be used in the TypeScript code to bind the elements.
 
 7. Now, we need to add some functionality to the Boop Button component. Open the `boop-button/boop-button.component.ts` file and add a new private `string` field named `boops` to the `BoopButtonComponent` class, initially an empty string. You also need to import the `BindValue` decorator from the `@boots-edu/webz` package to *bind* the `boops` field to the `span` with the same `id` in the HTML.
+
+{: .no-run }
 
 ```typescript
 import { WebzComponent, BindValue } from '@boots-edu/webz';
@@ -397,6 +431,8 @@ The `@Click` decorator is used to bind a method to an event on an element. In th
 
 <details markdown="block">
 <summary>Click here to see the full <code>boop-button.component.ts</code> file so far</summary>
+
+{: .no-run }
 
 ```typescript
 import { BindValue, Click, WebzComponent } from "@boots-edu/webz";
@@ -484,6 +520,8 @@ Just like last time, this will create a new folder in the `src/app` directory wi
 <details markdown="block">
 <summary>Click here to see what the <code>main.component.ts</code> file should look like when you have done this!</summary>
 
+{: .no-run }
+
 ```typescript
 import html from "./main.component.html";
 import css from "./main.component.css";
@@ -515,12 +553,16 @@ export class MainComponent extends WebzComponent {
 
 2. Similarly, you must also add in a new `div` element with the `id` `calculator` to the `main.component.html` file. This will be the location where the Simple Calculator component will be displayed on the page. Open `main.component.html` and add the following line after the `boop-button` `div`, but before the final `</div>`:
 
+{: .no-run }
+
 ```html
 <div id="calculator"></div>
 ```
 
 <details markdown="block">
 <summary>Click here to see the <code>main.component.html</code> file when you have done this correctly.</summary>
+
+{: .no-run }
 
 ```html
 <div>
@@ -537,6 +579,8 @@ export class MainComponent extends WebzComponent {
 </details>
 
 3. Once those files are saved, we can see the Simple Calculator component on the live webpage, although it will still just have the default content that comes from creating a new component. Open the `simple-calculator/simple-calculator.component.html` file and replace the existing content with the following code:
+
+{: .no-run }
 
 ```html
 <div>
@@ -566,6 +610,8 @@ Let's break down all the new elements in the Simple Calculator component:
 
 4. Next, we need to add some TypeScript functionality to the Simple Calculator component. Open the `simple-calculator/simple-calculator.component.ts` file and add a new private field to the `SimpleCalculatorComponent` class called `firstNumber` of type `number`, initially set to `7`. You also need to import the `BindValueToNumber` decorator from the `@boots-edu/webz` package to *bind* the `result` field to the `span` with the same `id` in the HTML. Note that we are using `BindValueToNumber` instead of `BindValue` because the input fields are of type `number`!
 
+{: .no-run }
+
 ```typescript
 import { BindValueToNumber, WebzComponent } from "@boots-edu/webz";
 import html from "./simple-calculator.component.html";
@@ -585,6 +631,8 @@ When saved, the `firstNumber` field should be bound to the `first-number` input 
 
 5. We need to add a new method to the `SimpleCalculatorComponent` class that will be called every time the value in the `first-number` input field changes. We will decorate this method with a special `Input` decorator (which must be imported from `@boots-edu/webz`, along with another class named `ValueEvent`). Add the following method to the `SimpleCalculatorComponent` class:
 
+{: .no-run }
+
 ```typescript
 @Input("first-number")
 onFirstNumberChange(event: ValueEvent) {
@@ -601,6 +649,8 @@ The `@Input` decorator is used to bind a method to an "Input" event on an `input
 
 6. Now we need to do the same thing for the `second-number` input field. Add a new private field to the `SimpleCalculatorComponent` class called `secondNumber` of type `number`, initially set to `3`. Then, add a new method to the `SimpleCalculatorComponent` class that will be called every time the value in the `second-number` input field changes. As before, we will decorate this method with a special `Input` decorator. Add the following code to the `SimpleCalculatorComponent` class:
 
+{: .no-run }
+
 ```typescript
 @BindValueToNumber("second-number")
 private secondNumber: number = 3;
@@ -614,6 +664,8 @@ onSecondNumberChange(event: ValueEvent) {
 ```
 
 7. Next, we need to add a new private field to the `SimpleCalculatorComponent` class called `operationSelect` of type `string`, initially set to `"add"`. This field will hold the value of the selected operation from the dropdown box. We also need to import the `BindValue` decorator from the `@boots-edu/webz` package to *bind* the `operationSelect` field to the `select` box with the same `id` in the HTML.
+
+{: .no-run }
 
 ```typescript
 import { BindValue, BindValueToNumber, WebzComponent, Input, ValueEvent } from "@boots-edu/webz";
@@ -631,6 +683,8 @@ export class SimpleCalculatorComponent extends WebzComponent {
 
 8. We need to add a new method to the `SimpleCalculatorComponent` class that will be called every time the value in the `operation-select` select box changes. We will decorate this method with a special `Change` decorator (which must, as always, be imported!). Add the following method to the `SimpleCalculatorComponent` class:
 
+{: .no-run }
+
 ```typescript
 @Change("operation-select")
 onOperationChange(event: ValueEvent) {
@@ -642,12 +696,16 @@ The `@Change` decorator is used to bind a method to a "Change" event on a `selec
 
 9. We need to add a new private field to the `SimpleCalculatorComponent` class called `result` of type `number`, initially set to `0`. This field will hold the result of the calculation. This field will be bound to the `result` span in the HTML.
 
+{: .no-run }
+
 ```typescript
 @BindValueToNumber("result")
 private result: number = 0;
 ```
 
 10. Finally, we need to add a new method to the `SimpleCalculatorComponent` class that will be called every time the button is clicked. We will decorate this method with the `Click` decorator. Add the following method to the `SimpleCalculatorComponent` class:
+
+{: .no-run }
 
 ```typescript
 @Click("calculate-button")
@@ -761,6 +819,8 @@ Just like last time, this will create a new folder in the `src/app` directory wi
 
 4. With the component added to the content of the `MainComponent`, we can see the Box Editor component on the live webpage. However, it will still just have the default content that comes from creating a new component. Open the `box-editor/box-editor.component.html` file and replace the existing content with the following code:
 
+{: .no-run }
+
 ```html
 <div class="frame">
     Box Editor:
@@ -795,6 +855,8 @@ There's a lot of new stuff in this HTML, so let's break it down:
 
 5. We need to choose an image to display inside the box. You can use any image you like, although we recommend one that is not too large. We used a picture of our dog Ada. Save the image to the `assets` directory and replace the `___` in the `img` tag with the name of the image file. For example, if the image is named `ada.jpg`, the `img` tag should look like this:
 
+{: .no-run }
+
 ```html
 <img src="assets/ada.jpg" id="image" class="frame" />
 ```
@@ -805,6 +867,8 @@ There's a lot of new stuff in this HTML, so let's break it down:
 > The `src` attribute of the `img` tag should point to the correct location of the image file. If the image is not displayed, double-check the path to the image file. Make sure you put the file in the `assets` directory and that the path in the `src` attribute is correct, and does not have unnecessary slashes (`/`). Also double check that you have the right file extension (`.jpg`, `.png`, etc.).
 
 6. Before we add the TypeScript functionality to the Box Editor component, we need to add some CSS styling to make the box frame visible. Open the `box-editor/box-editor.component.css` file and add the following CSS code:
+
+{: .no-run }
 
 ```css
 #image {
@@ -830,6 +894,8 @@ CSS is very powerful and allows you to style the page in a lot of different ways
 
 9. Just changing the padding and margin values won't be enough to see the changes on the page. We need to bind the padding and margin values to the actual CSS properties of the box frame. To do this, we need to use a special `BindStyleToNumberAppendPx` decorator that will bind the padding and margin values to the `padding` and `margin` CSS properties of the image (these style attributes are measured in pixels, so the decorator appends `"px"` to the numbers automatically). Add the following code to the `BoxEditorComponent` fields:
 
+{: .no-run }
+
 ```typescript
 @BindStyleToNumberAppendPx("image", "padding")
 @BindValueToNumber("padding-input")
@@ -846,6 +912,8 @@ Now you should be able to change the padding and margin values in the input fiel
 
 11. To make the background color change whenever we change the `background` field, we need to bind the `background` field to the `background-color` CSS property of the image. To do this, we need to use a special `BindStyle` decorator that will bind the `background` field to the `backgroundColor` CSS property of the image. Add the following code to the `BoxEditorComponent` fields:
 
+{: .no-run }
+
 ```typescript
 @BindStyle("image", "backgroundColor")
 @BindValue("background-select")
@@ -859,6 +927,8 @@ background: string = "red";
 
 <details markdown="block">
 <summary>Click here to see the full <code>box-editor.component.ts</code> file when this is done correctly.</summary>
+
+{: .no-run }
 
 ```typescript
 import {
