@@ -248,6 +248,7 @@ Map is very useful for extracting data from an array of objects.
 
 The flatMap method executes a function and returns a new array consisting of the return values of the function applied to each element in a nested array.
 
+{: .no-run}
 
 ```typescript
 interface Person {
@@ -346,6 +347,7 @@ let stats: Stats = vals.reduce(
         stdev: 0,
     }
 );
+console.log(stats);
 ```
 
 We can even use it to combine map and filter in a single step.
@@ -464,8 +466,10 @@ If we provide a comparison function, we can define the sort order. The function 
 
 ```typescript
 let vals = [1, 3, 2, 6, 5, 4];
+//make a clone since sort is destructive
+let vals2 = Array.from(vals);
 const ascending = vals.sort((a, b) => a - b);
-const descending = vals.sort((a, b) => b - a);
+const descending = vals2.sort((a, b) => b - a);
 console.log(ascending);
 console.log(descending);
 ```
