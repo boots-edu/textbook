@@ -254,4 +254,4 @@ Using **_generics_**, we can create more reusable code by allowing our code to w
 
 # Next Step
 
-Next we'll learn about interfaces [Typescript Interfaces &raquo;](../11-Advanced%20Typescript/interfaces.md)
+Next we'll learn about interfaces [Typescript Interfaces &raquo;](./interfaces.md)

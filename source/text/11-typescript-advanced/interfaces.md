@@ -68,6 +68,7 @@ class DrawPoint implements Point {
     }
 }
 const point: Point = new DrawPoint(4, 5, "red");
+console.log(point);
 ```
 
 Now I can refer to the DrawPoint object as a Point and I know it contains an x and a y without having to know anything else about DrawPoint.
@@ -79,6 +80,8 @@ We are guaranteed that DrawPoint contains an x and a y member, because it implem
 Interfaces can contain methods as well. They don't include the implementation, they are just stating that the class must contain that method in order to compile, so users of the class know it contains that method.
 
 ```typescript
+import { Point } from "ch11/drawing6";
+
 interface Drawable {
     points: Point[];
     draw(): void;
@@ -105,10 +108,10 @@ A class cannot extend more than one class in typescript, but it can implement ma
 interface Serializable {
     serialize(): string;
 }
-interface Iterable<T> {
+interface IterableList<T> {
     next(): T;
 }
-class MyList implements Serializable, Iterable<number> {
+class MyList implements Serializable, IterableList<number> {
     values: number[] = [];
     pos: number = 0;
     next(): number {
@@ -126,6 +129,8 @@ Here we have a class that implements two interfaces. We can see that it provides
 Now I can use it to write a function:
 
 ```typescript
+import { Point } from "ch11/list";
+
 function serializeAll(obj: Serializable[]) {
     let result: string[] = [];
     for (let o of obj) {
@@ -152,12 +157,16 @@ interface Point {
 
 -   Describe certain features that we want to enforce when we create a class so that if we know the class implements the interface, we know that the interface members actually exist in the class and are implemented for us.
 
+{: .no-run }
+
 ```typescript
 interface Drawable{points: Point[];draw():void;}
 class Triangle implements Drawable{ . . . }
 ```
 
 -   Using interfaces we can simplify coding by having multiple (very different) classes that all implement the interface, then we can call the interface methods on the objects even though they are otherwise
+
+{: .no-run }
 
 ```typescript
 class Elephant implements Serializable{ . . . }
@@ -178,4 +187,4 @@ class Tomato implements Serializable{ . . . }
 
 # Next Step
 
-Next we'll learn about Union Types [Webz Timers &raquo;](../11-Advanced%20Typescript/unions.md)
+Next we'll learn about Union Types [Union Types &raquo;](./unions.md)

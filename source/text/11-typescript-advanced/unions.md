@@ -41,6 +41,8 @@ We might want it to take a string to prepend
 function padString(value: string, padding: string) {
     return padding + value;
 }
+
+console.log(padString("World","Hello ");
 ```
 
 We might want it to take a number and add that many spaces to the front
@@ -49,6 +51,7 @@ We might want it to take a number and add that many spaces to the front
 function padString2(value: string, padding: number) {
     return Array(padding + 1).join(" ") + value;
 }
+console.log(padString2("World","Hello");
 ```
 
 It would be great if we could combine these into one function, but not allow invalid types.
