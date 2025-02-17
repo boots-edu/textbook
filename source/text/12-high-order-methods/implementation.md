@@ -424,7 +424,7 @@ class Pet {
         return new Pet(this.name, this.kind);
     }
 }
-const myPets = new List([
+const myPets = new MyList([
     new Pet("Ada", "dog"),
     new Pet("Babbage", "dog"),
     new Pet("Captain", "cat"),
