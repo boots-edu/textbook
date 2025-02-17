@@ -78,10 +78,19 @@ for (let value of arr) {
 We can use our new higher order **_forEach_** method to accomplish the same thing. Notice that the only difference is that we are passing a simple method to the **_forEach_** function which accomplishes whatever we want to do in the loop body by calling that function on each element of the array.
 
 ```typescript
-const arr: string[] = ["a", "b", "c"];
-arr.forEach((value) => {
-    console.log(value);
-});
+class ArrayTest{
+    arr: string[] = ["a", "b", "c"];
+    test(val:string):void{
+        console.log(val);
+    }
+    go(){
+        arr.forEach((value) => {
+            this.test(value);
+        });
+    }
+}
+
+new ArrayTest().go();
 ```
 
 If we want to call a member function instead, we can simply call it in the body of the anonymous function.
