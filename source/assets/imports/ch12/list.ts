@@ -6,7 +6,7 @@
  * will be the same type for all the items in the List and the same type for the parameter
  * of the callback functions.
  */
-class MyList<T> {
+export class MyList<T> {
 	private items: T[];
 	constructor(items: T[]) {
 		this.items = items;
