@@ -22,7 +22,7 @@ parent: Higher Order Methods
 
 A **_higher order function_** is a function that takes as an argument and/or returns a function.
 
-# Overview
+## Overview
 
 This page provides an example implementation of **_higher order methods_** in TypeScript. We will re-implement all of the higher-order array methods in our own custom `List` class.
 
@@ -69,7 +69,7 @@ class List<T> {
     }
 ```
 
-# `filter` Method
+## `filter` Method
 
 {: .no-run}
 
@@ -91,7 +91,7 @@ class List<T> {
     }
 ```
 
-# `some` Method
+## `some` Method
 
 {: .no-run}
 
@@ -113,7 +113,7 @@ class List<T> {
     }
 ```
 
-# `every` Method
+## `every` Method
 
 {: .no-run}
 
@@ -135,7 +135,7 @@ class List<T> {
     }
 ```
 
-# `map` Method
+## `map` Method
 
 {: .no-run}
 
@@ -158,7 +158,7 @@ class List<T> {
     }
 ```
 
-# `reduce` Method
+## `reduce` Method
 
 {: .no-run}
 
@@ -191,7 +191,7 @@ class List<T> {
     }
 ```
 
-# `rightReduce` Method
+## `rightReduce` Method
 
 {: .no-run}
 
@@ -224,7 +224,7 @@ class List<T> {
     }
 ```
 
-# `find` Method
+## `find` Method
 
 {: .no-run}
 
@@ -247,7 +247,7 @@ class List<T> {
     }
 ```
 
-# `findIndex` Method
+## `findIndex` Method
 
 {: .no-run}
 
@@ -272,7 +272,7 @@ class List<T> {
     }
 ```
 
-# `findLast` Method
+## `findLast` Method
 
 {: .no-run}
 
@@ -298,7 +298,7 @@ class List<T> {
     }
 ```
 
-# `findLastIndex` Method
+## `findLastIndex` Method
 
 {: .no-run}
 
@@ -324,7 +324,7 @@ class List<T> {
     }
 ```
 
-# `sort` Method
+## `sort` Method
 
 {: .no-run}
 
@@ -355,7 +355,7 @@ class List<T> {
 }
 ```
 
-# Usage Examples
+## Usage Examples
 
 The following is an example of how you could use our new `List` class:
 
@@ -412,7 +412,7 @@ list.sort((a, b) => a - b);
 console.log(list);
 ```
 
-## More Examples
+### More Examples
 
 ```typescript
 // Another set of more exotic examples
