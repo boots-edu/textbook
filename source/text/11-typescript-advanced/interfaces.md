@@ -129,7 +129,7 @@ Here we have a class that implements two interfaces. We can see that it provides
 Now I can use it to write a function:
 
 ```typescript
-import { Point } from "ch11/list";
+import { Serializable,MyList } from "ch11/list";
 
 function serializeAll(obj: Serializable[]) {
     let result: string[] = [];
