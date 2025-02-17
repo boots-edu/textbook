@@ -23,7 +23,7 @@ When working with a forked repository, it is important to keep your fork up to d
 
 Don't panic, just follow this guide!
 
-### Step 1) Sync Your Remote
+## Step 1) Sync Your Remote
 
 Visit your remote repository for the assignment on the Github web interface. This should have your name in the repository title, like "UD-S24-CISC181/hw3-classes-and-objects-**acbart**". If there are upstream changes to sync into your repository, you will see some message like the following:
 
@@ -65,7 +65,7 @@ If the changes are easy to merge then it will offer you the ability to "Update b
     </tbody>
 </table>
 
-### Step 2) Pulling Remotes Locally
+## Step 2) Pulling Remotes Locally
 
 Remember, if you just used "Update branch", then you can skip over this step and go directly to [Step 3](#step-3-pulling-the-local-changes).
 
@@ -123,7 +123,7 @@ Choose the "Merge" option.
 
 If there are merge conflicts, then go to [Step 4](#step-4-resolving-local-merge-conflicts). Otherwise, you are probably done and ready to continue working with the latest changes.
 
-### Step 3) Pulling the Local Changes
+## Step 3) Pulling the Local Changes
 
 Hopefully you have now updated the repository on Github. Now, you just need to pull the latest changes.
 
@@ -137,7 +137,7 @@ This last step can go wrong if your local changes have merge conflicts with the 
 
 If nothing goes wrong, then you should get the new version of the files and you are done.
 
-### Step 4) Resolving Local Merge Conflicts
+## Step 4) Resolving Local Merge Conflicts
 
 If the Source Control panel has files listed under "Merge Changes" with red exclamation marks, then you have merge conflicts to resolve.
 
