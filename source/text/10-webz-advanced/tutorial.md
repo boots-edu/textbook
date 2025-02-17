@@ -21,8 +21,6 @@ parent: Advanced Webz
 **Notifier** is a powerful class for facilitating inter-component data transfer in Webz.
 
 
-# Webz Advanced Tutorial
-
 This tutorial will walk you through building a more complex Webz application with multiple components and dynamic content. This will involve creating a new component, binding data between components, and handling events. By the end of this tutorial, you will have a better understanding of how to build more complex applications with Webz.
 
 # The Image Editor
@@ -169,6 +167,8 @@ This way, an image can be written as a 2D array of palette indices, where each i
 
 This would translate to the following 2D number array in TypeScript:
 
+{: .no-run }
+
 ```typescript
 const smileyFace: number[][] = [
     [5, 5, 5, 5, 5],
@@ -182,6 +182,8 @@ const smileyFace: number[][] = [
 <details markdown="block">
 <summary>Which is much more compact than the <code>Color[][]</code> representation would be.</summary>
 
+{: .no-run }
+
 ```typescript
 const smileyFace: Color[][] = [
     [new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0), new Color(255, 255, 0)],
@@ -194,6 +196,8 @@ const smileyFace: Color[][] = [
 </details>
 
 4. To make it possible to support palettes, we will need a `PALETTE` array that holds the colors of the palette. This array should be a constant array of `number[]` triples (arrays of length 3), where each index corresponds to the index of the color in the palette. For example, `PALETTE[0]` should be black (`[0, 0, 0]`), `PALETTE[1]` should be white (`[255, 255, 255]`), and so on. You will need to export the `PALETTE` array so that the test can access it.
+
+{: .no-run }
 
 ```typescript
 export const PALETTE: number[][] = [
@@ -247,6 +251,8 @@ A new directory called `pixel` will be created in the `src/app/` directory. This
 
 This class is going to be used by many other classes, but we don't actually place it in on the screen until we have a Grid or Toolbar to place it in. However, during development, you may find it easier to add a `PixelComponent` Component to the `Main` component so that you can see it in the browser. You can do this by adding the following code to the `Main` component:
 
+{: .no-run }
+
 ```typescript
 import { PixelComponent } from "./pixel/pixel.component";
 
@@ -267,6 +273,8 @@ export class MainComponent extends WebzComponent {
 ```
 
 1. To further test your `PixelComponent`, we created some tests that are specifically for the `PixelComponent`. Since you just created the `PixelComponent`, these tests are not yet in the `pixel.component.test.ts` file. You'll need to add them yourself. Copy all of the following code and paste it into the `pixel.component.test.ts` file, making sure to replace any existing code in that file.
+
+{: .no-run }
 
 ```typescript
 import { describe, expect, test, beforeAll } from "@jest/globals";
@@ -348,6 +356,8 @@ The tests will fail until we implement the `PixelComponent`.
 
 7. We need the `color` of the `PixelComponent` class to update the background color of the `div` element in the HTML. To do this, we need to use the `BindStyle` decorator on the `color` member variable. This decorator will bind the `color` property to the `background-color` style of the `div` element in the HTML. Add the following code to the `pixel.component.ts` file:
 
+{: .no-run }
+
 ```typescript
 import { BindStyle } from "@boots-edu/webz";
 
@@ -379,6 +389,8 @@ A new directory called `toolbar` will be created in the `src/app/` directory. Th
 
 2. In the `toolbar.component.html` file, you can use the following HTML to create a `div` element with the id `swatches` (styled to be in a row). This element will contain the Pixel components representing the colors in the palette. You can also create a `div` element with the id `active` to display the currently active color. We put a horizontal rule (`<hr>`) at the bottom of the toolbar to separate it from the rest of the page, but you can remove that if you like. We could also have styled the `swatches` in the `css` file instead of the `html` file, or left the swatches in a vertical column.
 
+{: .no-run }
+
 ```html
 <div>
     <span>Choose a color:</span>
@@ -407,6 +419,8 @@ However, the active pixel should not be clickable (what would it even do?). Sinc
 
 8. Do NOT run the `webz component` command to create the `ClickablePixelComponent`. Instead, create a new file in the `src/app/pixel/` directory called `clickable-pixel.component.ts`. In this file, create a new class called `ClickablePixelComponent` that extends `PixelComponent`. This class should extend the `PixelComponent` class:
 
+{: .no-run }
+
 ```typescript
 import { PixelComponent } from "./pixel.component";
 
@@ -420,6 +434,8 @@ export class ClickablePixelComponent extends PixelComponent {
 Our new `ClickablePixelComponent` class is now a subclass of the `PixelComponent` class. This means that it has all the properties and methods of the `PixelComponent` class, but it can also have additional properties and methods that are unique to the `ClickablePixelComponent` class. The main difference between the `PixelComponent` and the `ClickablePixelComponent` is that the `ClickablePixelComponent` will have the `Click` decorator on it so that it supports clicking.
 
 9. In the `clickable-pixel.component.ts` file, define a new function named `onClick` that consumes nothing and returns nothing. This function should be empty for now. Next, attach the `Click` decorator with the id `pixel` to the `onClick` function. This will make the `onClick` function run whenever the `div` element with the id `pixel` is clicked.
+
+{: .no-run }
 
 ```typescript
 import { Click } from "@boots-edu/webz";
@@ -447,6 +463,8 @@ A `Notifier` has two halves:
 
 10. In this case, we'll have our `ClickablePixelComponent` be the inner class and the `ToolbarComponent` be the outer class. The `ClickablePixelComponent` will call `notify` when it is clicked, and the `ToolbarComponent` will subscribe to the `ClickablePixelComponent` to update the active color when `notify` is called. The `Notifier` itself will be stored in a field named `clickEvent` in the `ClickablePixelComponent` class. Here is the new definition of the `ClickablePixelComponent` class:
 
+{: .no-run }
+
 ```typescript
 import { Click, Notifier } from "@boots-edu/webz";
 import { PixelComponent } from "./pixel.component";
@@ -466,6 +484,8 @@ export class ClickablePixelComponent extends PixelComponent {
 ```
 
 11. All that is left is to update the `ToolbarComponent` to subscribe to the `ClickablePixelComponent` when it is created. In the `ToolbarComponent` constructor, where you originally created the `PixelComponent` inside of a `for` loop, you should now instead create a `ClickablePixelComponent` and subscribe to its `clickEvent`. When the `clickEvent` is called, the `ToolbarComponent` should update the `active` pixel to the color of the clicked pixel. You will need to import the `ClickablePixelComponent` class at the top of the file. Here is an example of how you might do this:
+
+{: .no-run }
 
 ```typescript
 import { ClickablePixelComponent } from "../pixel/clickable-pixel.component";
@@ -514,6 +534,8 @@ webz component grid
 ```
 
 2. In the `grid.component.html` file, you can use the following HTML with CSS styling:
+
+{: .no-run }
 
 ```html
 <div
@@ -580,6 +602,8 @@ Keep in mind all of the following when you are tackling the `loadImage` method:
 
 9. In your `MainComponent` class, define a new public constant member variable named `DEFAULT_IMAGE` that is a 2D array of `Color` objects. This array should represent a simple image (e.g., a smiley face) that you can use to test the `GridComponent`. The image must be square and at least 5 pixels wide and tall. You can use the `convertPalette` function to convert a 2D array of palette indices to a 2D array of `Color` objects. For example, the smiley face would look like:
 
+{: .no-run }
+
 ```typescript
 DEFAULT_IMAGE = convertPalette([
     [5, 5, 5, 5, 5],
@@ -593,6 +617,8 @@ DEFAULT_IMAGE = convertPalette([
 10. Call the new `loadImage` method inside of the `MainComponent` constructor, passing in your `DEFAULT_IMAGE` constant, on your Preview's `GridComponent` instance. This will load the default image into the grid when the page is loaded.
 
 If you run your tests (`npm run watch preview`) at this point, you will fail one labeled `The loadImage method correctly clears old pixels`. You can see why if you try calling `loadImage` more than once. Instead of clearing out the old image, the new image is just added below of the old one. You will need to add a new method to the `GridComponent` class to clear out the old image before loading a new one. This method is named `clearPixels`, takes no arguments, and should be called just before you start adding new pixels to the grid in `loadImage`. The `clearPixels` function is partially implemented for you below:
+
+{: .no-run }
 
 ```typescript
 clearPixels() {
@@ -761,4 +787,4 @@ In addition to passing our tests, you will also be graded on the successful depl
 
 # Next Step
 
-Next we'll learn more features of TypeScript and how to use them in [Advanced TypeScript &raquo;](../10-webz-advanced/index.md)
+Next we'll learn more features of TypeScript and how to use them in [Advanced TypeScript &raquo;](../11-typescript-advanced/index.md)

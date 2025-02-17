@@ -97,6 +97,8 @@ When the child calls `notify(...)`, the method passed in the first parameter is 
 
 In the parent, we can call subscribe to attach an anonymous function that will run each time the child calls `notify(...)` and optionally, another to hand when the child calls `error(...)`.
 
+{: .no-run }
+
 ```typescript
 this.event2.subscribe(
     (value: number) => {
@@ -115,6 +117,8 @@ this.event2.subscribe(
 
 Let's apply this to our LineCommentComponent from the previous section. First we need to define it:
 
+{: .no-run }
+
 ```html
 <div class="line-comment">
     Comment:
@@ -122,12 +126,16 @@ Let's apply this to our LineCommentComponent from the previous section. First we
 </div>
 ```
 
+{: .no-run }
+
 ```css
 .line-comment {
     border-bottom: 1px solid black;
     padding: 10px;
 }
 ```
+
+{: .no-run }
 
 ```typescript
 export class LineCommentComponent extends WebzComponent {
@@ -144,6 +152,8 @@ export class LineCommentComponent extends WebzComponent {
 Keeping it simple, we are just getting the input event from the text input box and calling a method (onItemInputChange).
 
 Now we can add our Notifier to the class and use it to notify when the text changes:
+
+{: .no-run }
 
 ```typescript
 export class LineCommentComponent extends WebzComponent {
@@ -168,6 +178,8 @@ We would do something similar for each of the fields in a line item.
 
 Now we have to subscribe to the event in the parent. We can do this when we create the child so that we will be notified about changes to each comment.
 
+{: .no-run }
+
 ```typescript
 @Click("addCommentButton")
 onNewCommentClick() {
@@ -182,6 +194,8 @@ onNewCommentClick() {
 ```
 
 Since we never threw an error, we did not bother with a method to handle the error. Now each time the user types in any of the input boxes for comments, the value will be logged by the parent. Of course so far, we are just looging the comment. Let's create an array and counter to store the comments and update them when they change.
+
+{: .no-run }
 
 ```typescript
 private commentText:string[]=[];
@@ -214,6 +228,8 @@ We could do this by querying each child component for its value when we need it,
 ### How Does Notifier Work?
 
 Notifier is a simple class that holds a list of functions that are called when the notify method is called. The subscribe method adds a function to the list. The notify method calls each function in the list with the data passed to notify. The data is of the type specified in the type parameter of the Notifier.
+
+{: .no-run }
 
 ```typescript
 type Subscriber<InputType> = (data: InputType) => void;

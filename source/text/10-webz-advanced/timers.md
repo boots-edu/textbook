@@ -41,12 +41,16 @@ This can be useful to provide more interactivity to your site.
 Returning to our PleaseWait dialog, we can use a timer to make it more interesting.
 First, we will bind a variable to the text we are displaying:
 
-```
+{: .no-run }
+
+```typescript
 @BindValue("displayDots")
 displayDots: string = "";
 ```
 
 We will modify the html and add a div with the id displayDots.
+
+{: .no-run }
 
 ```html
 <div class="content">
@@ -58,6 +62,8 @@ We will modify the html and add a div with the id displayDots.
 ```
 
 And style it so that it has a fixed width and will appear inline after the words Please Wait.
+
+{: .no-run }
 
 ```css
 #displayDots {

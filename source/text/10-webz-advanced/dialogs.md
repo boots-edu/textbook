@@ -136,6 +136,8 @@ Like webz component, this creates a new component, but it will behave and look l
 The default implementation is a simple popup with an ok button that closes when the user clicks it. We can close a window by calling the member method this.show(true/false).
 We add it just like any other component using addComponent, then display it by calling show(true).
 
+{: .no-run }
+
 ```typescript
 dialog: MyDialog = new MyDialog();
 constructor() {
@@ -167,11 +169,15 @@ First we will create a new dialog with the cli: `webz dialog Pleasewait`
 
 For the body of our dialog, we will just center a string that says "Please Wait..."
 
+{: .no-run }
+
 ```html
 <div class="content">
     <div class="body">Please Wait...</div>
 </div>
 ```
+
+{: .no-run }
 
 ```css
 .content {

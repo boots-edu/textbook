@@ -32,6 +32,8 @@ Say we wanted to make a simple point of sale system.
 
 Let's start by creating a simple page in html/css for the things we know how to do, and a `div` to hold our line items once we create them.
 
+{: .no-run }
+
 ```html
 <div class="form-container">
     Customer Name: <input type="text" id="customerName" /><br />
@@ -44,6 +46,8 @@ Let's start by creating a simple page in html/css for the things we know how to 
     <div id="orderDetails"></div>
 </div>
 ```
+
+{: .no-run }
 
 ```css
 .detail-header {
@@ -60,6 +64,8 @@ Let's start by creating a simple page in html/css for the things we know how to 
 
 Now in the typescript file, we need to create variables to hold our order number and customer name. These will be updated, but not bound directly (they could be).
 We also need functions that are bound to the @Input event of these text boxes. Finally we need functions bound to our add buttons.
+
+{: .no-run }
 
 ```typescript
 class LineItemComponent extends WebzComponent {
@@ -100,6 +106,8 @@ So what do we do inside the click handlers? Assume we have created components fo
 -   Increment the counter (`count`) if its an item
 
 > Note: Since `count` is already bound to the counter div, all we have to do is update the variable to update the counter on the screen.
+
+{: .no-run }
 
 ```typescript
 class MainComponent extends WebzComponent {
