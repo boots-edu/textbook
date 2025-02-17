@@ -347,6 +347,3 @@ console.log(treeRoot);
 
 **_Trees_** are an important data structure in Computer Science. They allow us to store data in a structured way that represeents parent/child relationships. In other words, a parent can have many children, but a child can only have one parent. A **_binary tree_** is a tree where each node has at most two children. A special case of a **_binary tree_** is a **_binary search tree_**. In a binary search tree each node in the left subtree of all nodes must be of lower value than the root, and each node in the right subtree of all nodes must be greater than the value of the root.
 
-# Next Step
-
-Next we'll learn about Trees [Trees &raquo;](../13-Recursion/trees.md)
