@@ -73,6 +73,31 @@ export class MyList<T> {
 		}
 		return result;
 	}
+	    /**
+     * This method will call the apply the callback function to each element ALONG with an accumulator value,
+     * and return the final value of the accumulator. This can be used to sum all the items, or to concatenate
+     * them together, or to do any other kind of reduction. Note that the function ALSO takes an initial value
+     * for the accumulator.
+     *
+     * @param callback The function to call for each item. It should return the new value for the accumulator.
+     * @param initialValue The initial value for the accumulator.
+     * @returns The final value of the accumulator.
+     */
+		reduce<U>(
+			callback: (
+				accumulator: U,
+				currentValue: T,
+				index: number,
+				array: T[],
+			) => U,
+			initialValue: U,
+		) {
+			let accumulator = initialValue;
+			for (let i = 0; i < this.items.length; i++) {
+				accumulator = callback(accumulator, this.items[i], i, this.items);
+			}
+			return accumulator;
+		}
 	/**
  * This method will call the apply the callback function to each element ALONG with an accumulator value,
  * and return the final value of the accumulator. Unlike `reduce`, it will start from the right side of the
@@ -187,5 +212,8 @@ export class MyList<T> {
 				}
 			}
 		}
+		this.items.reduce
 	}
+
+
 }
