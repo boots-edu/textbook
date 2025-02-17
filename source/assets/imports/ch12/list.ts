@@ -99,15 +99,15 @@ export class MyList<T> {
 			return accumulator;
 		}
 	/**
- * This method will call the apply the callback function to each element ALONG with an accumulator value,
- * and return the final value of the accumulator. Unlike `reduce`, it will start from the right side of the
- * array and go to the left (aka backwards). This can be used to do the same things as `reduce`, but in reverse.
- * Note that the function ALSO takes an initial value for the accumulator.
- *
- * @param callback The function to call for each item. It should return the new value for the accumulator.
- * @param initialValue The initial value for the accumulator.
- * @returns The final value of the accumulator.
- */
+ 	* This method will call the apply the callback function to each element ALONG with an accumulator value,
+ 	* and return the final value of the accumulator. Unlike `reduce`, it will start from the right side of the
+ 	* array and go to the left (aka backwards). This can be used to do the same things as `reduce`, but in reverse.
+ 	* Note that the function ALSO takes an initial value for the accumulator.
+ 	*
+ 	* @param callback The function to call for each item. It should return the new value for the accumulator.
+ 	* @param initialValue The initial value for the accumulator.
+ 	* @returns The final value of the accumulator.
+ 	*/
 	rightReduce<U>(
 		callback: (
 			accumulator: U,
@@ -121,14 +121,15 @@ export class MyList<T> {
 		for (let i = this.items.length - 1; i >= 0; i--) {
 			accumulator = callback(accumulator, this.items[i], i, this.items);
 		}
+		return accumulator;
 	}
 	/**
-  * This method will call the apply the callback function to each element, and return the first item that
-  * passes the test. If no item passes the test, it will return `undefined`.
-  *
-  * @param callback The function to call for each item. It should return true if the item passes the test.
-  * @returns The first item that passes the test, or `undefined` if none do.
-  */
+  	* This method will call the apply the callback function to each element, and return the first item that
+  	* passes the test. If no item passes the test, it will return `undefined`.
+  	*
+  	* @param callback The function to call for each item. It should return true if the item passes the test.
+  	* @returns The first item that passes the test, or `undefined` if none do.
+  	*/
 	find(callback: (currentValue: T, index: number, array: T[]) => boolean) {
 		for (let i = 0; i < this.items.length; i++) {
 			if (callback(this.items[i], i, this.items)) {
@@ -156,13 +157,13 @@ export class MyList<T> {
 		return -1;
 	}
 	/**
- * This method will call the apply the callback function to each element, and return the last item that
- * passes the test. If no item passes the test, it will return `undefined`. This is the same as `find`,
- * but it starts from the end of the array and goes to the beginning.
- *
- * @param callback The function to call for each item. It should return true if the item passes the test.
- * @returns The last item that passes the test, or `undefined` if none do.
- */
+ 	* This method will call the apply the callback function to each element, and return the last item that
+ 	* passes the test. If no item passes the test, it will return `undefined`. This is the same as `find`,
+ 	* but it starts from the end of the array and goes to the beginning.
+ 	*
+ 	* @param callback The function to call for each item. It should return true if the item passes the test.
+ 	* @returns The last item that passes the test, or `undefined` if none do.
+ 	*/
 	findLast(
 		callback: (currentValue: T, index: number, array: T[]) => boolean,
 	) {
@@ -174,13 +175,13 @@ export class MyList<T> {
 		return undefined;
 	}
 	/**
-* This method will call the apply the callback function to each element, and return the index of the last item that
-* passes the test. If no item passes the test, it will return `-1`. This is the same as `findIndex`,
-* but it starts from the end of the array and goes to the beginning.
-*
-* @param callback The function to call for each item. It should return true if the item passes the test.
-* @returns The index of the last item that passes the test, or `-1` if none do.
-*/
+	* This method will call the apply the callback function to each element, and return the index of the last item that
+	* passes the test. If no item passes the test, it will return `-1`. This is the same as `findIndex`,
+	* but it starts from the end of the array and goes to the beginning.
+	*
+	* @param callback The function to call for each item. It should return true if the item passes the test.
+	* @returns The index of the last item that passes the test, or `-1` if none do.
+	*/
 	findLastIndex(
 		callback: (currentValue: T, index: number, array: T[]) => boolean,
 	) {
@@ -192,15 +193,15 @@ export class MyList<T> {
 		return -1;
 	}
 	/**
-* This method will sort the items in the List using the given callback function to compare them.
-* The callback function should return a negative number if `a` should come before `b`, a positive number
-* if `a` should come after `b`, and 0 if they are equal.
-*
-* Unlike the built-in `sort` method, this will modify the original List.
-*
-* @param callback The function to compare two items. It should return a negative number if `a` should come before `b`, a positive number if `a` should come after `b`, and 0 if they are equal.
-* @sideEffect This method will modify the original List.
-*/
+	* This method will sort the items in the List using the given callback function to compare them.
+	* The callback function should return a negative number if `a` should come before `b`, a positive number
+	* if `a` should come after `b`, and 0 if they are equal.
+	*
+	* Unlike the built-in `sort` method, this will modify the original List.
+	*
+	* @param callback The function to compare two items. It should return a negative number if `a` should come before `b`, a positive number if `a` should come after `b`, and 0 if they are equal.
+	* @sideEffect This method will modify the original List.
+	*/
 	sort(callback: (a: T, b: T) => number) {
 		let len = this.items.length;
 		for (let i = 0; i < len; i++) {
@@ -214,6 +215,4 @@ export class MyList<T> {
 		}
 		this.items.reduce
 	}
-
-
 }
