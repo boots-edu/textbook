@@ -51,7 +51,7 @@ class List<T> {
 }
 ```
 
-# `forEach` Method
+## `forEach` Method
 
 {: .no-run}
 
@@ -352,7 +352,6 @@ class List<T> {
             }
         }
     }
-}
 ```
 
 ## Usage Examples
@@ -360,10 +359,9 @@ class List<T> {
 The following is an example of how you could use our new `List` class:
 
 ```typescript
-// If the List class is in a separate file, you would import it like this:
-// import { List } from "./list";
+ import { MyList } from "ch12/list";
 
-let list = new List([1, 3, 4, 5, 2]);
+let list = new MyList([1, 3, 4, 5, 2]);
 
 list.forEach((item, index) => {
     console.log(item, index);
@@ -416,8 +414,10 @@ console.log(list);
 
 ```typescript
 // Another set of more exotic examples
-const myGrades = new List([90, 86, 97, 9]);
-const myFruit = new List(["apple", "orange", "lychee", "banana"]);
+ import { MyList } from "ch12/list";
+
+const myGrades = new MyList([90, 86, 97, 9]);
+const myFruit = new MyList(["apple", "orange", "lychee", "banana"]);
 class Pet {
     constructor(public name: string, public kind: string) {}
     clone(): Pet {
