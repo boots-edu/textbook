@@ -37,6 +37,8 @@ describe("MainComponent", () => {
 
 We also saw this in the Webz library with the Notifier class' subscribe method:
 
+{: .no-run}
+
 ```typescript
 child.elementAdded.subscribe((value: boolean) => {
     console.log(value);
@@ -47,6 +49,8 @@ In Typescript, when passing a function as an argument, it is often convenient to
 
 Since functions in typescript are **_first order objects_**, we can use them as parameters and return values.
 We can specify the shape or signature of the expected parameter or return type when we declare the method.
+
+{: .no-run}
 
 ```typescript
 subscribe(callback: (value: T) => void, error?: (value: Error) => void):number
@@ -85,7 +89,7 @@ If we want to call a member function instead, we can simply call it in the body 
 ```typescript
 const arr: string[] = ["a", "b", "c"];
 arr.forEach((value) => {
-    this.doWork(value);
+    console.log(value);
 });
 ```
 
@@ -194,6 +198,16 @@ Since it does not mutate the original array, you must capture the return value.
 The map method executes a function that returns a new array consisting of the return values of the function applied to each element of the array.
 
 ```typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+const people: Person[] = [
+    { name: "John", age: 17 },
+    { name: "Jane", age: 22 },
+];
+
 const ages: number[] = people.map((person) => person.age);
 console.log(ages); //outputs an array of ages.
 ```
@@ -203,6 +217,16 @@ In the example, the method is called on each person object, and returns the age 
 It is not critical that the method USE the element of the array, suppose I wanted to create an array containing 0's for each element in our array.
 
 ```typescript
+interface Person {
+    name: string;
+    age: number;
+}
+
+const people: Person[] = [
+    { name: "John", age: 17 },
+    { name: "Jane", age: 22 },
+];
+
 const zeros: number[] = people.map((person) => 0);
 console.log(zeros);
 ```
@@ -214,6 +238,7 @@ Map is very useful for extracting data from an array of objects.
 ### The flatMap method
 
 The flatMap method executes a function and returns a new array consisting of the return values of the function applied to each element in a nested array.
+
 
 ```typescript
 interface Person {
@@ -243,6 +268,7 @@ The **_reduce_** function ignores empty array elements.
 ```typescript
 let vals: number[] = [1, 2, 3, 4, 5];
 let sum = vals.reduce((acc, val) => acc + val, 0);
+console.log(sum);
 ```
 
 In the example we are summing up the numbers in an array by adding each number to acc. The initial value of acc is the second parameter to reduce.
@@ -252,6 +278,7 @@ Here is a product example (note that for this we set the initial value of accumu
 ```typescript
 let vals: number[] = [1, 2, 3, 4, 5];
 let product = vals.reduce((acc, val) => acc * val, 1);
+console.log(product);
 ```
 
 For something a little bit more interesting, we can compute some basic statistics on an array.
@@ -267,6 +294,7 @@ let stdev = Math.sqrt(
         return acc + (val - average) ** 2;
     }, 0) / vals.length
 );
+console.log(min,max,average,stdev);
 ```
 
 > Notice that without the braces {} the value is returned automatically by the anonymous function (as in min, max, and average above), but with the braces I must explicitly call return (as in stdev above). This is true of all anonymous functions.
@@ -275,15 +303,18 @@ We can exclude some values from our count, and also map some values first. Here 
 
 ```typescript
 let vals = [1, 2, 3, 4, 5];
-sumOdd = vals.reduce((acc, val) => {
+const sumOdd = vals.reduce((acc, val) => {
     if (val % 2) return acc + val;
     else return acc;
 }, 0);
+console.log(sumOdd);
 ```
 
 Even though we are supposed to return a single value, that value can be a complex object. Here we compute all the statistics in a single pass through the array.
 
 ```typescript
+let vals = [1, 2, 3, 4, 5];
+
 interface Stats {
     max: number;
     min: number;
@@ -312,10 +343,11 @@ We can even use it to combine map and filter in a single step.
 
 ```typescript
 let vals=[1,2,3,4,5];
-let OddSqrs = vals.reduce((acc: number[], val: number) => {
+let oddSqrs = vals.reduce((acc: number[], val: number) => {
 	if (val%2) return [...acc, val * val];
 	else return [...acc];
 }, []);
+console.log(oddSqrs);
 ```
 
 This example creates an array of the squares of the odd numbers in the array.
@@ -328,7 +360,9 @@ Consider the following array:
 We will use this function to sum the array.
 
 ```typescript
+let vals = [1, 2, 3, 4, 5];
 let sum = vals.reduce((acc, val) => acc + val, 0);
+console.log(sum);
 ```
 
 The first parameter is our function which takes the accumulator variable and a variable to receive each element of our array. The second parameter is the initial value of the accumulator.
@@ -372,7 +406,9 @@ Since we have made calls on each element of the array we are done, and **_reduce
 There is a variant of the **_reduce_** method that traverses the array in reverse order (i.e. right to left instead of left to right). This method is **_reduceRight_**.
 
 ```typescript
+let vals = [1, 2, 3, 4, 5];
 let sum = vals.reduceRight((acc, val) => acc + val, 0);
+console.log(sum);
 ```
 
 Obviously, for the examples so far, this makes no difference (sum and product are communative), but there are cases wehre it would.
@@ -381,20 +417,22 @@ Consider the following:
 
 ```typescript
 let vals = [1, 2, 3, 4, 5];
-firstEven = vals.reduce((acc: number, val) => {
+let firstEven = vals.reduce((acc: number, val) => {
     if (val % 2 === 0 && acc === 0) return val;
     else return acc;
 }, 0);
+console.log(firstEven);
 ```
 
 This returns the first even number. If we use reduceRight instead of reduce, it would return the last even number in the list.
 
 ```typescript
 let vals = [1, 2, 3, 4, 5];
-lastEven = vals.reduceRight((acc: number, val) => {
+let lastEven = vals.reduceRight((acc: number, val) => {
     if (val % 2 === 0 && acc === 0) return val;
     else return acc;
 }, 0);
+console.log(lastEven);
 ```
 
 > This does not mutate the array in any way.
@@ -404,7 +442,7 @@ lastEven = vals.reduceRight((acc: number, val) => {
 With no arguments, **_sort_** returns the elments in the array in ascending or alphabetical order.
 
 ```typescript
-let vals = [1, 2, 3, 4, 5];
+let vals = [3, 2, 1, 4, 5];
 vals.sort();
 console.log(vals);
 ```
@@ -417,8 +455,10 @@ If we provide a comparison function, we can define the sort order. The function 
 
 ```typescript
 let vals = [1, 3, 2, 6, 5, 4];
-ascending = vals.sort((a, b) => a - b);
-descending = vals.sort((a, b) => b - a);
+const ascending = vals.sort((a, b) => a - b);
+const descending = vals.sort((a, b) => b - a);
+console.log(ascending);
+console.log(descending);
 ```
 
 Since we pass a function, we can sort arrays of complex objects or classes in any way we wish.
@@ -431,4 +471,4 @@ Since we pass a function, we can sort arrays of complex objects or classes in an
 
 # Next Step
 
-Next we'll learn see how we could re-implement these higher-order methods ourselves in [Implementation of HO Methods &raquo;](./implementation.md)
+Next we'll learn see how we could re-implement these higher-order methods ourselves in [Implementation of Higher Order Methods &raquo;](./implementation.md)
