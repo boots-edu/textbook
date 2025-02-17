@@ -215,4 +215,12 @@ export class MyList<T> {
 		}
 		this.items.reduce
 	}
+
+	/**
+	 * This method will return the number of items in the List.
+	 * @returns The number of items in the List.
+	 */
+	length():number{
+		return this.items.length;
+	}
 }
