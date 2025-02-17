@@ -217,7 +217,7 @@ If no parameter is provided, then the type must match the default if we use the 
 
 ## Inside the Webz Notifier class
 
-Let's return to the Webz `Notifier` class and loot at the source code for it.
+Let's return to the Webz `Notifier` class and look at the source code for it.
 
 {: .no-run}
 

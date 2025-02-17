@@ -1,10 +1,10 @@
-interface Serializable {
+export interface Serializable {
     serialize(): string;
 }
-interface Iterables<T> {
+export interface Iterables<T> {
     next(): T;
 }
-class MyList implements Serializable, Iterables<number> {
+export class MyList implements Serializable, Iterables<number> {
     values: number[] = [];
     pos: number = 0;
     next(): number {
