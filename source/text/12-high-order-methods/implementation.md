@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Example Implementation of HO Methods
+title: Example Implementation of Higher Order Methods
 nav_order: 12.2
 parent: Higher Order Methods
 ---

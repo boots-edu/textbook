@@ -29,7 +29,7 @@ class MyList<T> {
 	* @returns A new List with only the items that pass the test.
 	*/
 	filter(callback: (currentValue: T, index: number, array: T[]) => boolean) {
-		let result = new List<T>([]);
+		let result = new MyList<T>([]);
 		for (let i = 0; i < this.items.length; i++) {
 			if (callback(this.items[i], i, this.items)) {
 				result.items.push(this.items[i]);
@@ -67,7 +67,7 @@ class MyList<T> {
 		return true;
 	}
 	map<U>(callback: (currentValue: T, index: number, array: T[]) => U) {
-		let result = new List<U>([]);
+		let result = new MyList<U>([]);
 		for (let i = 0; i < this.items.length; i++) {
 			result.items.push(callback(this.items[i], i, this.items));
 		}
