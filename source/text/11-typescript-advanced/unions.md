@@ -51,7 +51,7 @@ We might want it to take a number and add that many spaces to the front
 function padString2(value: string, padding: number) {
     return Array(padding + 1).join(" ") + value;
 }
-console.log(padString2("World","Hello"));
+console.log(padString2("World",6));
 ```
 
 It would be great if we could combine these into one function, but not allow invalid types.
