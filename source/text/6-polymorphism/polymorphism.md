@@ -114,6 +114,39 @@ It is safe to call `draw` on a `Drawable` object, it just doesn't do anything.
 If we call it on a `Line` object, it draws the line.
 If we call it on a `Line` object stored in a `Drawable` variable (which is allowed since it is a `Drawable`), it calls the method in the `Line` class.
 
+## Another Example
+
+Consider the following example.  We would like the ```console.log``` expression to print the value of x, but the default behavior of ```Object.toString()``` is not what we really want.
+```typescript
+  class myObj{
+    x:number=42;
+  }
+  console.log(new myObj().toString());
+```
+To rectify this, we can override the ```toString()``` method to control how the conversion to a string takes place.
+
+```typescript
+  class myObj extends Object{
+    x:number=42;
+    override toString():string{
+      return this.x.toString();
+    }
+  }
+  console.log(new myObj().toString());
+```
+
+> Note: If you do not extend Object, you cannot use the override keyword, however this still works and provides the same behavior.
+
+```typescript
+  class myObj{
+    x:number=42;
+    toString():string{
+      return this.x.toString();
+    }
+  }
+  console.log(new myObj().toString());
+```
+
 ## Summary
 
 **_Polymorphism_** in general denotes the idea of several different types of objects having the same public interface. Specifically, in this section we examined **_subtype_** or **_subclass_** polymorphism which is when we **_override_** methods in a superclass allowing us to call the methods on a variable of the superclass type which contains an object of the subclass type. This causes the system to **_dispatch_** the call to the correct subclass.
