@@ -20,13 +20,13 @@ parent: Introduction
 
 ## Overview
 
-This section helps you figure out how to setup your environment, install everything, and make sure your environment is correct.
+This section helps you set up a working environment for this text.  Through this process you will install and verify your development environment.
 
-If everything goes well, this will only take you about 20 minutes. But it is very normal to encounter issues if you are
+If everything goes well, this should only take you about 20 minutes. But it is very normal to encounter issues if you are
 not used to this workflow. Don't worry, you will be an expert soon!
 
-Making web applications is super complicated, so we are going to be really pushy about your environment's setup and the eventual structure of our web application. If this seems limiting, that's the idea.
-Please try to stay within the bounds we give you, as you experiment and try things out!
+Making web applications is complicated, so it is critical that your environment's setup and the eventual structure of our web application follow these instructions precisely. If this seems limiting, that's the point.
+Please try to stay within the bounds given as you experiment and try things out!
 
 Do not skip steps.
 
@@ -111,6 +111,9 @@ properly finished. If it has, open the installer again and verify that the desti
 ones listed above.
 
 Once you have verified that Node was installed, enter the command (without the dollar sign):
+
+{: .warning-title}
+Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a *Command Prompt* terminal window instead.
 
 ```
 $ npm --version
