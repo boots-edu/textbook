@@ -100,7 +100,7 @@ console.log(answer);
 
 ## Declaration Syntax
 
-TODO: Convert this to an image with annotations, perhaps
+![](../../images/variable.jpg)
 
 Some key notes on the syntax of declaring a variable:
 
