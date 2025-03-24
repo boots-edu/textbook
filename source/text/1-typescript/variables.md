@@ -121,7 +121,18 @@ There are other more complex types we will examine later (like arrays) and we ca
 
 ## The ***const*** keyword
 
-Often times we use a variable to represent a value that never changes like a mathematical or scientific constant (pi, e, speed of light, etc).  To enforce this, we can use the const keyword.  This specifies that the variable is ***immutable*** and will cause a compiler error to warn you if you attempt to change it.  
+The ```const``` keyword in TypeScript is used to declare variables whose values are intended to remain constant once assigned. It provides developers with a way to ensure that the variable cannot be reassigned, promoting safer and more predictable code.
+
+**Immutable Binding:** The ```const``` keyword ensures that a variable cannot be reassigned after it is initialized. This is particularly useful for defining constants or values that should not change throughout the execution of your program.
+
+```
+const PI = 3.14; 
+PI = 3.14159; // Error: Cannot reassign a const variable.
+```
+
+While this might seem unnecessary, using ***const*** allows the programmer to express intention which is both helpful to make code more readable, and useful in debugging.
+
+An example of some defined constants.
 
 {:.no-run}
 
