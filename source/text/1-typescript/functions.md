@@ -49,7 +49,7 @@ Once declared, we can **call** (**use**) that function anywhere in our code to e
 
 ```typescript
 function areaOfCircle(radius: number): number {
-    let pi: number = 3.1415927;
+    const pi: number = 3.1415927;
     return pi * radius * radius;
 }
 ```
@@ -78,7 +78,7 @@ In this example, we have two parameters, `a` and `b`, both of which are `number`
 
 ```typescript
 function areaOfCircle(radius: number): number {
-    let pi: number = 3.1415927;
+    const pi: number = 3.1415927;
     return pi * radius * radius;
 }
 
@@ -92,7 +92,7 @@ This code will call our function `areaOfCircle` and substitute `2` for the param
 
 ## Printing with `console.log`
 
-You may have noticed the user of `console.log` in our previous examples. `console.log` is a very important built-in function in TypeScript. This function takes any number of arguments and prints them to the console.
+You may have noticed the use of `console.log` in our previous examples. `console.log` is a very important built-in function in TypeScript. This function takes any number of arguments and prints them to the console.
 
 ```typescript
 console.log("Hello, world!");
@@ -102,6 +102,7 @@ This code will print `Hello, world!` to the console.
 
 ### Calling and Printing
 
+{: .warning-title}
 A common misconception is that functions print their return value. This is not true. Functions return a value, but they do not print it. If you want to see the value, you must print it.
 
 ```typescript

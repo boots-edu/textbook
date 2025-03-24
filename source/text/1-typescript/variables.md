@@ -119,11 +119,24 @@ Typescript has only three basic types.
 
 There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
+## The ***const*** keyword
+
+Often times we use a variable to represent a value that never changes like a mathematical or scientific constant (pi, e, speed of light, etc).  To enforce this, we can use the const keyword.  This specifies that the variable is ***immutable*** and will cause a compiler error to warn you if you attempt to change it.  
+
+{:.no-run}
+
+```typescript
+const pi: number=3.1415927;
+const sol_ms: number=299792458; //speed of light in m/s
+```
+
+> In some programming languages, using ```const``` can also lead to more efficient memory access as those values do not need to be changed.
+
 ## Combining Variables
 
 ```typescript
 // Code to compute the area of a circle with radius 2.
-let pi: number = 3.1415927;
+const pi: number = 3.1415927;
 let r: number = 2;
 let answer: number = pi * r * r;
 console.log(answer);
@@ -136,7 +149,7 @@ Later we will look at turning this code into a **function** that can be called w
 If we assign a non-numeric value to `r` (which makes no sense) we would get a compiler error telling us where the problem is so we can fix it.
 
 ```typescript
-let pi: number = 3.1415927;
+const pi: number = 3.1415927;
 let r: number = "Hello";
 let answer: number = pi * r * r;
 console.log(answer);

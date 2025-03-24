@@ -31,10 +31,12 @@ We can declare a variable to be of type string directly:
 
 ```typescript
 let username: string = "gauss";
-let password: string = "captain";
+let password: string = 'captain';
 ```
 
 Notice how we can use either single or double quotes to define a string.
+
+>Note: While you can use either single or double quotes, in practice, you should be consistent.
 
 ## String Methods and operations
 
@@ -47,7 +49,7 @@ We will look at some of the most common ones briefly, but there are actually man
 
 You can use the `charAt`, `indexOf`, and `lastIndexOf` methods to get information about the characters in a string.
 
--   `charAt(index)`: This method will return character at the specified index, or an empty string if the index is out of range.
+-   `charAt(index)`: This method will return a string containing the single character at the specified index, or an empty string if the index is out of range.
 -   `indexOf(value)`: This method will return the index of the first occurrence of the specified value, or -1 if not found.
 -   `lastIndexOf(value)`: This method will return the index of the last occurrence of the specified value, or -1 if not found.
 
@@ -63,6 +65,8 @@ console.log(myStr.indexOf("lo")); // 3
 console.log(myStr.lastIndexOf("o")); // 7
 console.log(myStr.lastIndexOf("z")); // -1
 ```
+
+> Note that the index passed to ```charAt``` is 0 based (i.e. 0 is the index of the first charater in the string).  In general all string (and array) operations in Typescript (and most other languages) are 0 based.
 
 ### Square Bracket Access of Strings
 
@@ -165,19 +169,31 @@ The advantages of `concat` are that:
 -   You can combine more than two strings at once with a single operation
 -   You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
-### The `substring` method
+### The `split` and `substring` method
 
 -   Assume the string `let myStr="Hello World";`
 -   **split():** Splits the specified String object into an array of strings.
     -   myStr.split(" "); //returns the array \["Hello","World"\]
+
+    ```typescript
+    let myStr="Hello World";
+    console.log(myStr.split(" "));
+    ```
+
 -   **substring():** Returns character of string between two define indexes.
     -   myStr.substring(2); // returns "llo World"
     -   myStr.substring(2,5); // returns "llo"
         > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
 
-The `substring` and `slice` methods are very similar, with two differences:
+    ```typescript
+    let myStr="Hello World";
+    console.log(myStr.substring(2)); // returns "llo World"
+    console.log(myStr.substring(2,5)); // returns "llo"
+    ```
 
--   The main difference is that if the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
+The `substring` and `slice` methods are very similar, with two primary differences:
+
+-   If the second parameter is less than the first, the `substring` method will swap them. The `slice` method will return an empty string in this case.
 -   The `substring` method does not support negative indexes.
 
 ### The `toLowerCase` and `toUpperCase` methods
@@ -197,7 +213,7 @@ Notice how the methods take no arguments; the parentheses are still required to 
 
 What if the string contains a number and we want to convert it to a number type? We can use two approaches:
 
--   `parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return `NaN`.
+-   `parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return the special value `NaN`.
 -   `+`: The unary addition operator can be placed before a value to convert the value to a number. This is different than the binary addition operator, which will add two numbers or strings together. The unary addition operator is less explicit than `parseInt`, but it is a common shorthand.
 
 ```typescript
