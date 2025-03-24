@@ -102,12 +102,12 @@ The following code will execute the first block if `x` is greater than `4`, othe
 {: .no-run}
 
 ```typescript
-if (x > 4) {
-    //do something
-} else {
-    if (x > 2) {
+if (x > 4) { //first block
+    //do something 
+} else { //second block
+    if (x > 2) { //third block
         //do something else
-    } else {
+    } else { //fourth block
         //do a third thing
     }
 }
@@ -174,14 +174,14 @@ Just think of this in words:
 ### The Not Operator (`!`)
 
 An additional Boolean operator that we have available is the not (`!`) operator (also called the **negation operator**).
-Unlike the other operator, this operator simply negates whatever comes next.
+Unlike the other operators, this operator simply negates whatever comes next.
 
 -   `!A && B`: `true` when `A` is `false` and `B` is `true`
 -   `!(A && B)`: `true` when at least one of `A` and `B` are `false`
 -   `!A || !B`: `true` when at least one of `A` and `B` are `false` (DeMorgan's Law)
 -   `!(A && B) || C`: `true` when at least one of `A` and `B` are `false` or any time `C` is `true`
 
-By using a combination of comparison operators, logical connectors, and nots we can build complex logic to test state to use in conditionals and loops...
+By using a combination of comparison operators, logical connectors, and *not*'s we can build complex logic to test state to use in conditionals and loops...
 
 ## A Complex Example
 
