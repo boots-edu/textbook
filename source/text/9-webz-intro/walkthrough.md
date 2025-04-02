@@ -1047,11 +1047,13 @@ Click on the "deploy" button on the left sidebar to see the details of the deplo
 
 ![Deployment Details](../../assets/images/webz_walkthrough/click_again.png)
 
-Assuming nothing goes wrong during deployment, the final step can be expanded to get the URL of your live site. Click on the URL to visit your site!
+Assuming nothing goes wrong during deployment, you should see checkmarks next to all the steps.
 
-![Live Site](../../assets/images/webz_walkthrough/final_link.png)
+<!-- ![Live Site](../../assets/images/webz_walkthrough/final_link.png)-->
 
-If that URL is not visible, then you can also find the URL by going back to the "Settings" tab and scrolling down to the "Github Pages" section. The URL should be displayed there.
+You can find the URL of your live site by going back to the "Settings" tab and scrolling down to the "Github Pages" section. The URL should be displayed there.
+
+![Final Live URL](../../assets/images/webz_walkthrough/github_live_url.png)
 
 ## 6) Submission
 
