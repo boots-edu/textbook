@@ -67,7 +67,7 @@ event5: Notifier<string[]> = new Notifier<string[]>();
 The <> syntax is used to specify one or more **type parameters** that alter the class internally to support that type.
 
 Now we can pass that type of data to the notify method.
-The type parameter specifies the type expected for the next method. Using the wrong type will be an error.
+The type parameter specifies the type expected for the notify method. Using the wrong type will be an error.
 
 {: .no-run }
 
@@ -110,8 +110,8 @@ this.event2.subscribe(
 );
 ```
 
--   event2.next(4) called in the child would print 5 from the parent.
--   Event2.error(new Error("Bad stuff")) would print the error object as an error from the parent.
+-   `event2.notify(4)` called in the child would print 5 from the parent.
+-   `Event2.error(new Error("Bad stuff"))` would print the error object as an error from the parent.
 
 > Note: This second parameter is optional if you don't want error notifications.
 
@@ -170,8 +170,8 @@ export class LineCommentComponent extends WebzComponent {
 }
 ```
 
--   The public property commentChange is of type Notify and emits a string.
--   The method now calls next with the new value.
+-   The public property commentChange is of type `Notify` and emits a string.
+-   The method now calls `notify` with the new value.
 
 And that's it, our child class now emits to its subscriptions whenever the user types and this will happen for each line comment we create.
 We would do something similar for each of the fields in a line item.
@@ -243,8 +243,8 @@ export class Notifier<T> {
         }
     }
 
-    subscribe(next: Subscriber<T>) {
-        this.subscriptions.push(next);
+    subscribe(subscription: Subscriber<T>) {
+        this.subscriptions.push(subscription);
     }
 }
 ```
