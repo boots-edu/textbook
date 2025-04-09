@@ -28,7 +28,7 @@ Sometimes we want to create an overlay window that sits on top of our page, prev
 Webz provides two methods for doing this:
 
 -   `Popup`: Creates a popup window with a title, some text, and buttons that returns the text on the button through a Notifier.
--   `Dialog`: Creates a popup window whose content is determined by a component. These can be created with the cli (`webz dialog my-dialog`).
+-   `Dialog`: Creates a popup window whose content is determined by a component. These can be created with the cli (`webz dialog myDlg`).
 
 ## Popups
 
@@ -37,7 +37,7 @@ The popup window is provided as an easy way to interact with your user for a qui
 {: .no-run }
 
 ```typescript
-EzDialog.popup(attachTo: WebzComponent, message: string, title?: string, buttons?: string[], btnClass?: string):Notifier<string>
+WebzDialog.popup(attachTo: WebzComponent, message: string, title?: string, buttons?: string[], btnClass?: string):Notifier<string>
 ```
 
 We can call this method to show a dialog box:
@@ -64,7 +64,7 @@ Let's examine this in detail:
 -   `title` (optional): The title for your popup, displayed at the top.
 -   `buttons` (optional): An array of strings that are the labels of the buttons that you want to display. By default there is a single OK button.
 -   `btnClass` (optional): An optional css class string to style the buttons. This allows you to optionally attach a css class to the button for styling.
--   Returns: An event subject that emits the label of the pressed button.
+-   Returns: A ```notifier``` that emits the label of the pressed button.
 
 Back to our point of sale example, we can use a popup to notify the user that a comment was added.
 
@@ -121,9 +121,9 @@ Let's look at a more complex example:
 ```
 
 Here we have added a popup to ask the user if they are sure before adding the item, and then only adding it if they click the "Yes" button.
-We subscribe to the EventSubject returned by the popup method to see when the window closes and which button was pressed.
+We subscribe to the ```Notifier``` returned by the popup method to see when the window closes and which button was pressed.
 
-> Note: We moved all of the code inside the anonymous function so that it will only be called after the dialog is closed.
+> Note: We moved all of the code inside the anonymous function so that it will only be called after the popup is closed.
 
 ![](../../assets/images/webz_7.jpg)
 
@@ -139,7 +139,7 @@ We add it just like any other component using addComponent, then display it by c
 {: .no-run }
 
 ```typescript
-dialog: MyDialog = new MyDialog();
+dialog: MyDlgDialog = new MyDlgDialog();
 constructor() {
 	super(html, css);
 	this.addComponent(this.dialog);
@@ -190,6 +190,8 @@ For the body of our dialog, we will just center a string that says "Please Wait.
 }
 ```
 
+> Note: We are not showing the typescript for ```PlsWaitDialog``` as it is unmodified.
+
 In the parent, we create a property for our dialog and add it to the component.
 
 {: .no-run }
@@ -212,10 +214,74 @@ this.plsWait.show(true);
 this.plsWait.show(false);
 ```
 
-![](../../assets/images/webz_7.jpg)
+![](../../assets/images/webz_8.jpg)
 
 Here you can see the output after a call to plsWait.show(true).
 Just like the popup, the rest of the website is grayed out and cannot be interacted with.
+
+## Working Example
+
+Here is a working example of the please wait dialog in action.  Note that we never close the dialog as we don't have anything time consuming to do.  In the next sections we will learn about ```Timers``` which allow us to execute code after a delay.
+
+{:data-filename="main.component.ts"}
+
+```typescript
+import html from "./main.component.html";
+import {WebzComponent} from "@boots-edu/webz";
+import { PleaseWaitDialog } from "./please-wait.dialog";
+
+export class MainComponent extends WebzComponent {
+	plsWait: PleaseWaitDialog = new PleaseWaitDialog();
+    constructor() {
+        super(html, "");
+		this.addComponent(this.plsWait);
+		this.showDialog();
+    }
+	
+	showDialog(){
+		this.plsWait.show(true);
+	}
+	
+	hideDialog(){
+		this.plsWait.show(false);
+	}		
+}
+```
+
+{:data-filename="main.component.html"}
+
+```html
+<div class="container">
+Example Dialog
+</div>
+```
+
+{:data-filename="please-wait.dialog.html"}
+
+```html
+<div class="content">
+    <div class="body">Please Wait...</div>
+</div>
+```
+
+{:data-filename="please-wait.dialog.ts"}
+
+```typescript
+import { WebzDialog } from "@boots-edu/webz";
+import html from './please-wait.dialog.html';
+
+export class PleaseWaitDialog extends WebzDialog {
+    constructor() {
+        super(html,
+			    `
+				.body {
+    				text-align: center;
+    				font-size: 40px;
+    				line-height: 100px;
+				}`);
+    }
+}
+```
 
 ## Summary
 
