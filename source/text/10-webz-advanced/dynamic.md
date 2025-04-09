@@ -165,6 +165,44 @@ This is what our website looks like after we press new item twice, comment twice
 ## Working Example
 Here we pull all of the code for our dynamic component so that you can work with it and see it in action.
 
+{:data-filename="LineItem.component.html"}
+
+```html
+<p>LineItem Component</p>
+```
+
+{:data-filename="LineItem.component.ts"}
+
+```typescript
+import { WebzComponent } from "@boots-edu/webz";
+import html from "./LineItem.component.html";
+
+export class LineItemComponent extends WebzComponent {
+    constructor() {
+        super(html, "");
+    }
+}
+```
+
+{:data-filename="LineComment.component.html"}
+
+```html
+<p>LineComment Component</p>
+```
+
+{:data-filename="LineComment.component.ts"}
+
+```typescript
+import { WebzComponent } from "@boots-edu/webz";
+import html from "./LineItem.component.html";
+
+export class LineCommentComponent extends WebzComponent {
+    constructor() {
+        super(html, "");
+    }
+}
+```
+
 {:data-filename="main.component.html"}
 
 ```html
@@ -244,44 +282,6 @@ export class MainComponent extends WebzComponent {
     }
 }
 ```
-{:data-filename="LineItem.component.html"}
-
-```html
-<p>LineItem Component</p>
-```
-
-{:data-filename="LineItem.component.ts"}
-
-```typescript
-import { WebzComponent } from "@boots-edu/webz";
-import html from "./LineItem.component.html";
-
-export class LineItemComponent extends WebzComponent {
-    constructor() {
-        super(html, "");
-    }
-}
-```
-
-{:data-filename="LineComment.component.html"}
-
-```html
-<p>LineComment Component</p>
-```
-
-{:data-filename="LineComment.component.ts"}
-
-```typescript
-import { WebzComponent } from "@boots-edu/webz";
-import html from "./LineItem.component.html";
-
-export class LineCommentComponent extends WebzComponent {
-    constructor() {
-        super(html, "");
-    }
-}
-```
-
 
 ## Summary
 
