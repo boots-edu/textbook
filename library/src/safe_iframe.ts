@@ -114,9 +114,13 @@ const iframeContent = /*html*/`<!DOCTYPE html>
 </body>
 </html>`;
 
-export function makeIFrame() {
+export function makeIFrame() { 
     const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
+    iframe.style.width="100%";
+    iframe.style.overflow="auto";
+    iframe.style.border="1px black solid";
+    iframe.style.marginBottom="10px;";
     iframe.srcdoc = iframeContent;
     document.body.appendChild(iframe);
     return iframe;

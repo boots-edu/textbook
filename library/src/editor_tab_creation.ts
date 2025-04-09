@@ -16,9 +16,10 @@ export function createTabInterface(
 ) {
     // Create the button group container
     const buttonGroup = document.createElement("div");
-    buttonGroup.classList.add("btn-group", "mb-3");
+    buttonGroup.classList.add( "mb-3");
     buttonGroup.role = "group";
-
+    buttonGroup.style.width = "100%";
+    buttonGroup.style.overflow="wrap"
     // Create buttons for each file in editorViews
     Object.keys(editorViews).forEach((filename) => {
         const button = document.createElement("button");

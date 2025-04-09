@@ -231,6 +231,7 @@ export class ExecutionUI {
     createWebz(iframe: HTMLIFrameElement) {
         const webzBox = document.createElement("div");
         webzBox.id = `webz-${this.uniqueID}`;
+        webzBox.style.width= "100%";
         this.root.appendChild(webzBox);
         // Create header for box
         const header = document.createElement("strong");
