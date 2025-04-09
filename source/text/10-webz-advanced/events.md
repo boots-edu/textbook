@@ -81,15 +81,11 @@ this.event5.notify(["hello", "notifier", "world"]);
 
 Let's look at the two methods we will be using (there are others, but we don't need them yet).
 
-### `notify`
-
-**`_notify(data:T):void_`**
+**`notify(data:T):void`**
 
 We call notify to ask the Notifier to emit our data (call any subscribed methods).
 We pass it the data we want to emit which must be of the type specified in the type parameter we used to create the property.
 Calling this repeatedly will repeatedly call the subscribed methods. In other words, the subscriptions last until they are unsubscribed.
-
-### `subscribe`
 
 `subscribe((data:T)=>void, ?(err:Error)=>void)`
 
@@ -170,13 +166,13 @@ export class LineCommentComponent extends WebzComponent {
 }
 ```
 
--   The public property commentChange is of type `Notify` and emits a string.
+-   The public property commentChange is of type `Notifier` and emits a string.
 -   The method now calls `notify` with the new value.
 
 And that's it, our child class now emits to its subscriptions whenever the user types and this will happen for each line comment we create.
-We would do something similar for each of the fields in a line item.
+We could do something similar for each of the fields in a line item.
 
-Now we have to subscribe to the event in the parent. We can do this when we create the child so that we will be notified about changes to each comment.
+Now we have to subscribe to the event in the parent. We can do this when we create the child so that we will be notified about changes to each comment.  The following code would appear in ```MainComponent```.
 
 {: .no-run }
 
@@ -187,9 +183,9 @@ onNewCommentClick() {
 	this.comments.push(comment);
 	this.addComponent(comment, "orderDetails");
 	comment.commentChange.subscribe((comment:string) => {
+        //Store the comment here
 		console.log(comment);
 	});
-	//Add the comment here
 }
 ```
 
@@ -245,6 +241,155 @@ export class Notifier<T> {
 
     subscribe(subscription: Subscriber<T>) {
         this.subscriptions.push(subscription);
+    }
+}
+```
+## Working Example
+Here we pull all of the code for our event notifier together so that you can work with it and see it in action.
+
+{:data-filename="main.component.ts"}
+
+```typescript
+import html from "./main.component.html";
+import css from "./main.component.css";
+import {BindValueToNumber, Click, Input, ValueEvent, WebzComponent} from "@boots-edu/webz";
+import { LineItemComponent } from "./LineItem.component";
+import { LineCommentComponent } from "./LineComment.component";
+
+export class MainComponent extends WebzComponent {
+    constructor() {
+        super(html, css);
+    }
+
+    private commentText: string[] = [];
+    private commentCount: number = 0;
+
+    orderNumber: string = "";
+    customerName: string = "";
+
+    @BindValueToNumber("counter", " items in cart")
+    count: number = 0;
+
+    //Arrays added to hold custom components.  Initially empty.
+    items: LineItemComponent[] = [];
+    comments: LineCommentComponent[] = [];
+
+    @Input("orderNumber")
+    onOrderNumberChange(e: ValueEvent) {
+        this.orderNumber = e.value;
+    }
+
+    @Input("customerName")
+    onCustomerNameChange(e: ValueEvent) {
+        this.customerName = e.value;
+    }
+
+    @Click("addItemButton")
+    onNewItemClick() {
+        const item = new LineItemComponent();
+        this.items.push(item);
+        this.addComponent(item, "orderDetails");
+        this.count++;
+    }
+    @Click("addCommentButton")
+    onNewCommentClick() {
+        const comment = new LineCommentComponent();
+        this.comments.push(comment);
+        this.commentText.push("");
+        this.addComponent(comment, "orderDetails");
+        let index = this.commentCount++;
+        comment.commentChange.subscribe((comment: string) => {
+            this.commentText[index] = comment;
+            console.log(this.commentText);
+        });
+    }
+}
+```
+
+
+{:data-filename="main.component.html"}
+
+```html
+<div class="form-container">
+    Customer Name: <input type="text" id="customerName" /><br /><br />
+    Order Number: <input type="text" id="orderNumber" /><br /><br />
+    <div class="detail-header">
+        Order Details: <br />
+        <button id="addItemButton">New Item</button>
+        <button id="addCommentButton">New Comment</button>
+        <div id="counter">0</div>
+    </div>
+    <div id="orderDetails"></div>
+</div>
+```
+
+{:data-filename="main.component.css"}
+
+```css
+.detail-header {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    background-color: black;
+    padding: 10px;
+}
+#counter {
+    display: inline-block;
+}
+```
+
+{:data-filename="LineItem.component.html"}
+
+```html
+<p>LineItem Component</p>
+```
+
+{:data-filename="LineItem.component.ts"}
+
+```typescript
+import { WebzComponent } from "@boots-edu/webz";
+import html from "./LineItem.component.html";
+
+export class LineItemComponent extends WebzComponent {
+    constructor() {
+        super(html, "");
+    }
+}
+```
+
+{:data-filename="LineComment.component.html"}
+
+```html
+<div class="line-comment">
+    Comment:
+    <input id="comment" type="text" />
+</div>
+```
+
+{:data-filename="LineComment.component.css"}
+
+```css
+.line-comment {
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+```
+
+{:data-filename="LineComment.component.ts"}
+
+```typescript
+import { Input, Notifier, ValueEvent, WebzComponent } from "@boots-edu/webz";
+import html from "./LineComment.component.html";
+
+export class LineCommentComponent extends WebzComponent {
+    commentChange: Notifier<string> = new Notifier<string>();
+    
+    constructor() {
+        super(html, "");
+    }
+     @Input("comment")
+    onItemInputChange(e: ValueEvent) {
+        this.commentChange.notify(e.value);
     }
 }
 ```
