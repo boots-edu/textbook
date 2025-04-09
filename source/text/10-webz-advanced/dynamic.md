@@ -165,74 +165,6 @@ This is what our website looks like after we press new item twice, comment twice
 ## Working Example
 Here we pull all of the code for our dynamic component so that you can work with it and see it in action.
 
-{:data-filename="LineItem.component.html"}
-
-```html
-<p>LineItem Component</p>
-```
-
-{:data-filename="LineItem.component.ts"}
-
-```typescript
-import { WebzComponent } from "@boots-edu/webz";
-import html from "./LineItem.component.html";
-
-export class LineItemComponent extends WebzComponent {
-    constructor() {
-        super(html, "");
-    }
-}
-```
-
-{:data-filename="LineComment.component.html"}
-
-```html
-<p>LineComment Component</p>
-```
-
-{:data-filename="LineComment.component.ts"}
-
-```typescript
-import { WebzComponent } from "@boots-edu/webz";
-import html from "./LineItem.component.html";
-
-export class LineCommentComponent extends WebzComponent {
-    constructor() {
-        super(html, "");
-    }
-}
-```
-
-{:data-filename="main.component.html"}
-
-```html
-<div class="form-container">
-    Customer Name: <input type="text" id="customerName" /><br />
-    Order Number: <input type="text" id="orderNumber" />
-    <div class="detail-header">
-        Order Details: <button id="addItemButton">New Item</button>
-        <button id="addCommentButton">New Comment</button>
-        <div id="counter">0</div>
-    </div>
-    <div id="orderDetails"></div>
-</div>
-```
-
-{:data-filename="main.component.css"}
-
-```css
-.detail-header {
-    font-size: 20px;
-    color: white;
-    margin-bottom: 20px;
-    background-color: black;
-    padding: 10px;
-}
-#counter {
-    display: inline-block;
-}
-```
-
 {:data-filename="main.component.ts"}
 
 ```typescript
@@ -282,6 +214,78 @@ export class MainComponent extends WebzComponent {
     }
 }
 ```
+
+
+{:data-filename="main.component.html"}
+
+```html
+<div class="form-container">
+    Customer Name: <input type="text" id="customerName" /><br /><br />
+    Order Number: <input type="text" id="orderNumber" /><br /><br />
+    <div class="detail-header">
+        Order Details: <br />
+        <button id="addItemButton">New Item</button>
+        <button id="addCommentButton">New Comment</button>
+        <div id="counter">0</div>
+    </div>
+    <div id="orderDetails"></div>
+</div>
+```
+
+{:data-filename="main.component.css"}
+
+```css
+.detail-header {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    background-color: black;
+    padding: 10px;
+}
+#counter {
+    display: inline-block;
+}
+```
+
+{:data-filename="LineItem.component.html"}
+
+```html
+<p>LineItem Component</p>
+```
+
+{:data-filename="LineItem.component.ts"}
+
+```typescript
+import { WebzComponent } from "@boots-edu/webz";
+import html from "./LineItem.component.html";
+
+export class LineItemComponent extends WebzComponent {
+    constructor() {
+        super(html, "");
+    }
+}
+```
+
+{:data-filename="LineComment.component.html"}
+
+```html
+<p>LineComment Component</p>
+```
+
+{:data-filename="LineComment.component.ts"}
+
+```typescript
+import { WebzComponent } from "@boots-edu/webz";
+import html from "./LineComment.component.html";
+
+export class LineCommentComponent extends WebzComponent {
+    constructor() {
+        super(html, "");
+    }
+}
+```
+
+As you can see, we can dynamically add (or remove) components from our site as needed based on user input.
 
 ## Summary
 
