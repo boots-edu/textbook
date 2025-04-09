@@ -68,7 +68,7 @@ We also need functions that are bound to the @Input event of these text boxes. F
 {: .no-run }
 
 ```typescript
-class LineItemComponent extends WebzComponent {
+class MainComponent extends WebzComponent {
     orderNumber: string = "";
     customerName: string = "";
 
@@ -111,8 +111,25 @@ So what do we do inside the click handlers? Assume we have created components fo
 
 ```typescript
 class MainComponent extends WebzComponent {
+    orderNumber: string = "";
+    customerName: string = "";
+    @BindValueToNumber("counter", " items in cart")
+    count: number = 0;
+
+    //Arrays added to hold custom components.  Initially empty.
     items: LineItemComponent[] = [];
     comments: LineCommentComponent[] = [];
+
+    @Input("orderNumber")
+    onOrderNumberChange(e: ValueEvent) {
+        this.orderNumber = e.value;
+    }
+
+    @Input("customerName")
+    onCustomerNameChange(e: ValueEvent) {
+        this.customerName = e.value;
+    }
+
     @Click("addItemButton")
     onNewItemClick() {
         const item = new LineItemComponent();
