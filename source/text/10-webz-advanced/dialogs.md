@@ -142,7 +142,7 @@ We add it just like any other component using addComponent, then display it by c
 dialog: MyDlgDialog = new MyDlgDialog();
 constructor() {
 	super(html, css);
-	//note: "root" is a special component id for the entire page body.
+	//note: "root" is a special component id for the entire page body and is the default if omitted.
 	this.addComponent(this.dialog,"root");
 }
 showDialog(){
@@ -201,7 +201,7 @@ In the parent, we create a property for our dialog and add it to the component.
 plsWait: PleaseWaitDialog = new PleaseWaitDialog();
 
 constructor(){
-	//note: "root" is a special component id for the entire page body.
+	//note: "root" is a special component id for the entire page body and is the default if omitted.
 	this.addComponent(this.plsWait,"root");
 }
 ```
@@ -236,7 +236,7 @@ export class MainComponent extends WebzComponent {
 	plsWait: PleaseWaitDialog = new PleaseWaitDialog();
     constructor() {
         super(html, "");
-		//note: "root" is a special component id for the entire page body.
+		//note: "root" is a special component id for the entire page body and is the default if omitted.
 		this.addComponent(this.plsWait,"root");
 		this.showDialog();
     }

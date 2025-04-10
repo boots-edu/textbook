@@ -266,7 +266,7 @@ export class MainComponent extends WebzComponent {
         const testPixel = new PixelComponent(0, 0);
         testPixel.setColor(new Color(255, 0, 0)); // Red
         testPixel.setSize(50); // 50px by 50px
-        this.addComponent(testPixel);
+        this.addComponent(testPixel,"pixels");
         // Delete this before you are finished!
     }
 }
