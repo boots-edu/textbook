@@ -296,7 +296,6 @@ There are MANY other methods available to the string type, but these are some of
 -   Strings are a fundamental data type in TypeScript, used to store text data.
 -   There are many methods available to manipulate strings, and we have only covered a few of the most common ones here:
     -   `charAt`, `indexOf`, and `lastIndexOf` to get information about characters in a string
-    -   `slice` to extract parts of a string
     -   `concat` and `+` to combine strings
     -   `substring` to get a substring of a string
     -   `toLowerCase` and `toUpperCase` to change the case of a string
