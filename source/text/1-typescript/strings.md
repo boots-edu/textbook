@@ -180,10 +180,10 @@ The advantages of `concat` are that:
     console.log(myStr.split(" "));
     ```
 
--   **substring():** Returns character of string between two define indexes.
+-   **substring():** Returns characters from the string between two defined indexes.
     -   myStr.substring(2); // returns "llo World"
     -   myStr.substring(2,5); // returns "llo"
-        > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned._
+        > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
 
     ```typescript
     let myStr="Hello World";
