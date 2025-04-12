@@ -75,7 +75,7 @@ We can build in some default behaviors to our superclasses, and override those b
 Here is an example of an overridden method that calls the parent's version of the method, but then adds some functionality of its own.
 
 > Notice the code super.getDescription()
-> While we user super() to call the constructor of the superclass, we can use super.methodname() to call any method on the superclass even if it is overridden.
+> While we use super() to call the constructor of the superclass, we can use super.methodname() to call any method on the superclass even if it is overridden.
 
 ```typescript
 class Fruit {
