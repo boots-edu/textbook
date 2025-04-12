@@ -116,7 +116,7 @@ class Rectangle extends Polygon{
 
 Notice that now we are deriving from Polygon instead of Drawable. Because a polygon can already represent a rectangle, we don't need any other properties (we can delete the corners).
 
-We call the superclasses constrctor with the array of points for the particular 4 sided polygon that this rectangle represents.
+We call the superclasses constructor with the array of points for the particular 4 sided polygon that this rectangle represents.
 We would need to rewrite the area, perimeter and diagonals methods to use our new implementation, but users of our class will see no change in how they use it.
 
 Because we are passing the points to the Polygon constructor, and that constructor clones the points when it builds the member variable points, we do not need to do it here. It would work if we did, but we would have short lived, unnecessary copies of the points in memory.
