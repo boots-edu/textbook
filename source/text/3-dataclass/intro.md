@@ -59,7 +59,7 @@ let myObj: MyType = new MyType();
 
 ## Motivation
 
-Some things things belong together as they describe a more complex thing that we want to represent.
+Some things belong together as they describe a more complex thing that we want to represent. Sometimes it is useful to combine data into a single unit which can be referenced together.
 
 As an example, consider a simple drawing program we might want to build.
 
@@ -68,6 +68,8 @@ As an example, consider a simple drawing program we might want to build.
 -   Rectangles can be defined by 2 points (opposite corners)
 -   Polygons can be defined by an arbitrary list of points (The vertices)
 -   Each of these objects may have a color associated with it. (Color itself might contain components for Red, Green, and Blue as numbers.
+
+By combining two numbers to represent the x and y coordinates of a ```Point``` object, we can reference a point and get its position.
 
 ## Summary
 
