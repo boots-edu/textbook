@@ -209,7 +209,7 @@ console.log(myStr.toUpperCase()); // "HELLO WORLD"
 
 Notice how the methods take no arguments; the parentheses are still required to call the method, even with nothing in between them. These are **nullary** methods because they take no arguments.
 
-### Number to String Conversion with `parseInt` and `+`
+### String to Number Conversion with `parseInt` and `+`
 
 What if the string contains a number and we want to convert it to a number type? We can use two approaches:
 
