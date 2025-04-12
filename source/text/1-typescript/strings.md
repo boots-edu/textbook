@@ -111,7 +111,7 @@ console.log(myStr.slice(2, 5)); // "llo"
 console.log(myStr.slice(-1)); // "d"
 console.log(myStr.slice(-3)); // "rld"
 console.log(myStr.slice(0, -1)); // "Hello Worl"
-console.log(myStr.slice(5, -3)); // " World"
+console.log(myStr.slice(5, -3)); // " Wo"
 console.log(myStr.slice(5, 3)); // ""
 console.log(myStr.slice(4, 5)); // "o"
 ```
