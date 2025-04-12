@@ -26,7 +26,7 @@ In addition to properties and constructors which we saw in our discussion of **_
 
 A class with methods can be viewed as a self-contained entity which **_encapsulates_** some concept, allowing us to use the class without knowing anything about its internal structure or implementation.
 
-> **_Encapsulation_** is a key concept of this course. The idea of creating reusable, self contained types which contain both data, and functions ot operate on that data is central to _Object-Oriented Programming_
+> **_Encapsulation_** is a key concept of this course. The idea of creating reusable, self contained types which contain both data, and functions to operate on that data is central to _Object-Oriented Programming_
 
 ## Adding functionality to a class
 
