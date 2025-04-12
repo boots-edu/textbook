@@ -247,7 +247,7 @@ export class Notifier<T> {
 ## Working Example
 Here we pull all of the code for our event notifier together so that you can work with it and see it in action.
 
-{:data-filename="main.component.ts"}
+{:data-filename="main.component.ts" data-iframe-height="400px"}
 
 ```typescript
 import html from "./main.component.html";

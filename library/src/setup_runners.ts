@@ -74,8 +74,12 @@ export function setupRunners() {
         areaGroups.forEach((areaGroup) => {
             const fileSet: VirtualFileSet = {};
             const filenameElements: HTMLElement[] = [];
+            let height="200px";
             areaGroup.forEach((area) => {
                 const filename = getFilenameFromElement(area as Element);
+                if (area.hasAttribute("data-iframe-height")) {
+                    height = area.getAttribute("data-iframe-height") || "200px";
+                }
                 if (area.hasAttribute("data-filename")) {
                     const filenameElement = document.createElement("span");
                     filenameElement.textContent = filename;
@@ -116,6 +120,8 @@ export function setupRunners() {
                         mainPath,
                         fileSet,
                         false,
+                        height,
+        
                     ),
                 );
                 areaGroup[0].after(engineArea);

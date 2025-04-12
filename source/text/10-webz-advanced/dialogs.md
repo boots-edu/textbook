@@ -225,7 +225,7 @@ Just like the popup, the rest of the website is grayed out and cannot be interac
 
 Here is a working example of the please wait dialog in action.  Note that we never close the dialog as we don't have anything time consuming to do.  In the next sections we will learn about ```Timers``` which allow us to execute code after a delay.
 
-{:data-filename="main.component.ts"}
+{:data-filename="main.component.ts" data-iframe-height="400px"}
 
 ```typescript
 import html from "./main.component.html";

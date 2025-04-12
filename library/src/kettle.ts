@@ -52,6 +52,7 @@ export class ExecutionEngine {
         mainPath: string,
         initialFiles: VirtualFileSet,
         private isDebugMode: boolean,
+        private iframeHeight: string="200px",
     ) {
         this.root = root;
         this.iframe = makeIFrame();
@@ -61,6 +62,7 @@ export class ExecutionEngine {
             initialFiles,
             this.iframe,
         );
+        this.iframe.style.height = this.iframeHeight;
         this.timeClock = undefined;
         this.executionConfirmation = window.setTimeout(() => {}, 0);
         this.executionTimer = new Timer(this.ui.runControls.timing);
