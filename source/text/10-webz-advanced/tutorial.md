@@ -95,7 +95,7 @@ Our goal is to eventually create a simple image editor, but that all begins with
 
 1. Create a new file in the `src/app` directory called `color.ts`. Create and export a class called `Color` with three private properties: `red`, `green`, and `blue`. These properties should be numbers that represent the red, green, and blue values of the color. The constructor should take three parameters, one for each property, in this order.
 
-2. Define a method in the class named `toString()` that consumes nothing and returns a string. This method should return a string that represents the color in the format `rgb(red, green, blue)`. For example, if the color has `red=255`, `green=0`, and `blue=0`, the `toString()` method should return the string `rgb(255, 0, 0)`.
+2. Define a method in the class named `toString()` that consumes nothing and returns a string. This method should return a string that represents the color in the format `rgb(red, green, blue)`. For example, if the color has `red=255`, `green=0`, and `blue=0`, the `toString()` method should return the string `rgb(255,0,0)`.
 
 3. Define a method in the class named `asNumbers()` that consumes nothing and returns an array of three numbers. This method should return a newly created array with the red, green, and blue values of the color in that order.
 
