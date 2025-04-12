@@ -143,7 +143,7 @@ But wait, there's more.
 
 Being **_first class objects_** functions can be used in many places.
 
--   As a paramter to methods
+-   As a parameter to methods
 
 {: .no-run}
 ```typescript
