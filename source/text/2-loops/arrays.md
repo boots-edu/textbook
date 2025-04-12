@@ -104,7 +104,7 @@ Note the **`.`** notation. We will learn more about this later.
 
 ### The pop method
 
-Using **`pop`** we can remove elmeents from the end of an array. The **`pop`** method not only removes the last element, but it returns that value from the pop function.
+Using **`pop`** we can remove elements from the end of an array. The **`pop`** method not only removes the last element, but it returns that value from the pop function.
 
 ```typescript
 let fruits: string[] = ["apple", "banana", "orange"];
