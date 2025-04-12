@@ -403,7 +403,7 @@ diff ("difference").
 ![image.png](../../images/setup/setup_source_diff.png)
 
 The dark red line was deleted from the left, so it shows up as a grey hatched line on the right. Similarly, the light
-red line was modified on the left, so it shows up as a green line on the right. This was indeed the changes we made to
+red line was modified on the left, so it shows up as a green line on the right. These were indeed the changes we made to
 the file.
 
 We're happy with these changes, so the time has come to **stage** the files.
@@ -480,7 +480,7 @@ When you click to authorize GitHub with Gradescope, the embedded page may fail t
 <https://gradescope.com>, go into the course and assignment (`"Homework 0- Setup Check"`), and authorize there. The
 permissions should work fine in a separate browser tab.
 
-Type the name of your repository and choose it from the dropdown. It should start with `hw1`.
+Type the name of your repository and choose it from the dropdown. It should start with `hw0`.
 
 From the branch dropdown, choose the `main` branch.
 
