@@ -124,9 +124,7 @@ Knowing how the parent works informs how we write the subclass.
 
 > If no **_access specifier_** (public,private,protected) is given, the compiler will default to public.
 
-### Important points on experience
-
-Some important points on inheritance.
+### Important points on inheritance
 
 -   You do not need to reimplement the properties of the parent class as you are inheriting them.
 -   `super(...)` calls the constructor of the parent class and takes whatever arguments the parent constructor takes.
