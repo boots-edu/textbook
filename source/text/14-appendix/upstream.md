@@ -56,10 +56,10 @@ If the changes are easy to merge then it will offer you the ability to "Update b
         </tr>
         <tr>
             <td>
-                <p><img style="border: 1px solid lightgray; margin: 4px;" src="../../assets/images/pfu/update_branch.png" /></p>
+                <p><img style="border: 1px solid lightgray; margin: 4px;" src="../../assets/images/pfu/open_pull_request.png"/>\</p>
             </td>
             <td>
-                <p><img style="border: 1px solid lightgray; margin: 4px;" src="../../assets/images/pfu/open_pull_request.png"/>\</p>
+                <p><img style="border: 1px solid lightgray; margin: 4px;" src="../../assets/images/pfu/update_branch.png" /></p>
             </td>
         </tr>
     </tbody>
