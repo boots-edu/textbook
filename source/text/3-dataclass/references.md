@@ -24,7 +24,7 @@ parent: Data Classes
 
 ## Understanding Instances and References
 
-When we define a class using the **_class_** keyword, we are creating a **_type_**. This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class. When we use the `new` keyword, we create an **instance** of the class in memory and return a **reference** to the in memory object. If we call new again, we get a second instance of the class and a second **reference** to the new memory location.
+When we define a class using the **_class_** keyword, we are creating a **_type_**. This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class. When we use the `new` keyword, we create an **instance** of the class in memory and return a **reference** to the object in memory. If we call new again, we get a second instance of the class and a second **reference** to a new memory location.
 
 ```typescript
 import { Color, Point, Polygon } from "ch2/drawing1";
