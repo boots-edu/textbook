@@ -24,11 +24,11 @@ In this text, we will continue to study the field of computer science delving de
 
 ## Details
 
-This text uses the language *TypeScript*.  *TypeScript* is a free and open-source programming language that adds static typing and type annotations to JavaScript.
+This text uses the language TypeScript.  TypeScript is a free and open-source programming language that adds static typing and type annotations to JavaScript.
 
-*TypeScript* is used widely and has become the most common language for developing applications for the web.
+TypeScript is used widely and has become the most common language for developing applications for the web.
 
-Through this text and its associated materials you will become familiar with the *TypeScript* language and developing well engineered software solutions.
+Through this text and its associated materials you will become familiar with the TypeScript language and developing well engineered software solutions.
 
 ## ChatGPT and Co-Pilot
 

@@ -22,7 +22,7 @@ parent: Introduction
 
 This section helps you set up a working environment for this text.  Through this process you will install and verify your development environment.
 
-If everything goes well, this should only take you about 20 minutes. But it is very normal to encounter issues if you are
+If everything goes well, this should only take you about 20 minutes; however, it is very normal to encounter issues if you are
 not used to this workflow. Don't worry, you will be an expert soon!
 
 Making web applications is complicated, so it is critical that your environment's setup and the eventual structure of our web application follow these instructions precisely. If this seems limiting, that's the point.
@@ -30,7 +30,7 @@ Please try to stay within the bounds given as you experiment and try things out!
 
 Do not skip steps.
 
-Read error messages, and ask questions. Talk to humans as needed to get help, and use google intelligently.
+Read error messages, and ask questions. Talk to humans as needed to get help, and use Google intelligently.
 
 ## Get Software
 
@@ -44,13 +44,13 @@ When you have VS Code downloaded, open the application. You will need to install
 
 To open the extension menu, you can type `Ctrl+Shift+X` (Windows) or `Cmd+Shift+X` (Mac). There is also a navigation bar on the left side of your screen and you can click the extensions menu that looks like this:
 
-![extension icon](../../images/setup/setup_extension_icon.png)
+![extension](../../images/setup/setup_extension.jpg)
 
-A search bar will appear at the top of the menu. Type `ESLint` and click install:
+A search bar will appear at the top of the menu. Type `ESLint` and click "Install":
 
 ![eslint menu](../../images/setup/setup_install_eslint.png)
 
-Then, search for `Prettier` and click install:
+Then, search for `Prettier` and click "Install":
 
 ![prettier install](../../images/setup/setup_install_prettier.png)
 
@@ -58,7 +58,7 @@ Make sure you have installed the extensions that are in the images above. These 
 
 ### Get Node
 
-**Next, Download and Install [Node](https://nodejs.org/en/download/)**
+**Next, download and install [Node](https://nodejs.org/en/download/)**
 
 You should use the installer for the most recent **LTS** version. The link will take you to the correct download page.
 
@@ -67,7 +67,7 @@ Once you have downloaded the installer, open it.
 ![node-open-1.png](../../images/setup/node-open-1.png)
 
 You may notice that it is installing both Node and something called npm. Node Package Manager (npm) will make it easier
-to manage, install, and update node packages. You need both of these!
+to manage, install, and update node packages. You need both of these.
 
 The installer will ask you to select where you want to install the package; keep the default location that already
 appears.
@@ -79,9 +79,9 @@ Once the installer is finished, you should see this screen:
 
 ![node-done.png](../../images/setup/node-done.png)
 
-Now we need to verify that the installation was successful. Navigate back to VS Code and open a Terminal.
+Now we need to verify that the installation was successful. Navigate back to VS Code and open a terminal.
 
-At the top of your VS Code window, click Terminal and then click New Terminal:
+At the top of your VS Code window, click "Terminal" and then click "New Terminal":
 
 ![new-terminal-1.png](../../images/setup/new-terminal-1.png)
 
@@ -93,7 +93,7 @@ might see something like this:
 You should not be in any folders for this step! This should not be an issue if you have not opened a project in VS Code
 yet.
 
-The blue box is the cursor where I can type commands. In the future, we will give instructions on what to write by
+The blue box is the cursor where you can type commands. In the future, we will give instructions on what to write by
 writing boxes like this:
 
 ```
@@ -113,7 +113,7 @@ ones listed above.
 Once you have verified that Node was installed, enter the command (without the dollar sign):
 
 {: .warning-title}
-Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a *Command Prompt* terminal window instead.
+Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a "command prompt" terminal window instead.
 
 ```
 $ npm --version
@@ -132,7 +132,7 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 For Windows: You can download and use the installer. It should be straightforward, and you can move onto the next section once it finishes.
 
 For Mac: There are a few options you can choose from on the download page.
-We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign!) and hit enter:
+We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign!) and hit "Enter":
 
 ```bash
 $ /bin/bash -c "$(curl-fsSLhttps://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -140,7 +140,7 @@ $ /bin/bash -c "$(curl-fsSLhttps://raw.githubusercontent.com/Homebrew/install/HE
 
 When it asks for password, type yours in. It'll output a lot of text, and then beneath a large list of tags, you see a purple arrow with `"Next Steps"`.
 
-Then type `brew help` and hit enter, to confirm that Homebrew was correctly installed. Wait a second for it to spew words and then, when able, type:
+Then type `brew help` and hit "Enter", to confirm that Homebrew was correctly installed. Wait a second for it to spew words and then, when able, type:
 
 ```bash
 $ brew install git
@@ -158,7 +158,7 @@ This account is an important part of your professional identity. You will use it
 
 Now that you have a programming environment, it is time to complete the first coding exercise to test everything.
 
-On the original Canvas Assignment page that took you to this page, there should be a link to the GitHub Classroom assignment. Click on that link to go to the starter assignment on Github Classroom.
+On the original Canvas Assignment page that took you to this page, there should be a link to the GitHub Classroom assignment. Click on that link to go to the starter assignment on GitHub Classroom.
 
 You may need to reload the page manually. The process should not take long. When the repository is ready, you should see
 a new link:
@@ -182,8 +182,8 @@ You will need to run the "Git: Clone" command in VS Code:
 -   Type `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to bring up the Command Palette
 -   Type `Git: Clone` and press enter
 -   Type `Ctrl+V` (Windows) or `Cmd+V` (Mac) to paste the previously copied link and press enter
--   You may be asked to authenticate on GitHub; do so.
--   A folder select window will pop up and ask "Choose a folder to clone <url> into". We recommend that you create a `CISC-181` folder in your User directory, and store all your assignments in there. If you select that `CISC-181` folder, then a new folder will be created there for this assignment.
+-   If you are asked to authenticate on GitHub, do so.
+-   A folder select window will prompt you to "Choose a folder to clone <url> into". We recommend that you create a "CISC-181" folder in your User directory, and store all your assignments in there. If you select that "CISC-181" folder, then a new folder will be created there for this assignment.
 -   When completed, it will ask if you would like to "open the cloned repository". Click "Open" to open the repository in the current window.
 
 ## Inspecting the Project
@@ -191,7 +191,7 @@ You will need to run the "Git: Clone" command in VS Code:
 If everything went well in the previous step, you now have the repository downloaded locally and open in VS Code.
 
 There are a lot of files already in this repository, but we only need to look closely at two of them. If the file are
-not already visible, click the document icon in the topleft of the left navigation bar to see the Explorer view.
+not already visible, click the document icon in the topleft of the left navigation bar to see the Explorer View.
 
 ![explorer.png](../../images/setup/explorer.png)
 
@@ -218,7 +218,7 @@ Click on the `basic.test.ts` file to view the file's contents:
 
 {: .warning-title}
 Note: If you single clicked on the `basic.ts`, file, then clicking `basic.test.ts` replaces the file in the current
-view. To keep the file open even when you click on other files, double click the filenames instead.
+view. To keep the file open even when you click on other files, double click the filename instead.
 
 Oh dear, there appear to be red squiggles in our code, the universal sign of trouble. What has gone wrong?
 
@@ -226,7 +226,7 @@ To find out more details, hover over the first word with the red squiggles (`des
 
 ![image.png](../../images/setup/setup_red_squiggles.png)
 
-The interface is reporting an error: it "`Cannot find name 'describe'.`" It goes on to suggest installing "`type definitions for a test runner`" and even offers a command and some `Quick Fix` actions.
+The interface is reporting an error: it `Cannot find name 'describe'.` It goes on to suggest installing `type definitions for a test runner` and even offers a command and some `Quick Fix` actions.
 
 Should you take the advice of the machine? The answer will always be "it depends". If you know what you are doing and
 the advice is correct, then you should certainly use a tool like this. But if you are not sure, then **you should not run commands you do not understand**.
@@ -237,9 +237,9 @@ We'll need to do this every time we clone a new assignment repository.
 
 ## Install Modules
 
-The next step is to open a Terminal that we can run instructions in.
+The next step is to open a terminal that we can run instructions in.
 
-At the top of your VS Code window, click Terminal and then click New Terminal. You've done this before, but this time,
+At the top of your VS Code window, click "Terminal" and then click "New Terminal". You've done this before, but this time,
 you need to be in the assignment directory. VS Code will do this for you!
 
 A new terminal will appear at the bottom of your screen, and it will look something like this (notice you are in
@@ -253,17 +253,17 @@ Run the command (without the dollar sign):
 $ npm install
 ```
 
-A whole bunch of messages will appear, some of which may look alarming. Just because you see red text does not mean you
+Several messages will appear, some of which may look alarming. Just because you see red text does not mean you
 have errors, though.
 
 ![npm-install.png](../../images/setup/npm-install.png)
 
-Hopefully, you get a message like the one shown above. It says that it "`added 877 packages`".
+Hopefully, you get a message like the one shown above. It says that it `added 877 packages`.
 
-The message also says that "`3 vulnerabilities`" were detected in the packages, and offers a command to fix them. Again,
+The message also says that `3 vulnerabilities` were detected in the packages, and offers a command to fix them. Again,
 you might be wondering if you should take the advice of a machine? Remember, do not run commands you do not understand.
 
-Modern Typescript development requires a large number of packages, even for simple projects. Often, these projects will
+Modern TypeScript development requires a large number of packages, even for simple projects. Often, these projects will
 have small vulnerabilities that are rigorously tracked by the community. If you were going to deploy a website for a
 large bank or trusted government entity, then it would be very important to address these vulnerabilities.
 
@@ -276,7 +276,7 @@ The `basic.test.ts` file we were looking at before no longer has red squiggles! 
 
 ![image.png](../../images/setup/setup_example_test.png)
 
-This is a test file written with a library named "**Jest** ". You have previously seen unit tests written using the
+This is a test file written with a library named **Jest**. You have previously seen unit tests written using the
 Bakery's `assert_equal` function, but Jest is a much more sophisticated testing framework. Let's look at each part of
 the file in turn.
 
@@ -291,7 +291,7 @@ assert_equal(addition(1, 2, 3), 6)
 ```
 
 ```typescript
-// Jest Version in Typescript
+// Jest Version in TypeScript
 expect(addition(1, 2, 3)).toEqual(6);
 ```
 
@@ -332,7 +332,7 @@ Let us return to our source code file, `basic.ts`, where the addition function w
 
 ![lint-issue.png](../../images/setup/lint-issue.png)
 
-There is a new red squiggle waiting for us! We can hover over the squiggle to find out what it is about.
+There is a new red squiggle waiting for us! We can hover over the squiggle to find out what it is alerting us to.
 
 ![image-d2caeff8-cb6a-4294-bb32-69a5d8b5199a.png](../../images/setup/setup_new_squiggle.png)
 
@@ -367,7 +367,7 @@ Now that you've fixed the code and saved the file, you can return to the termina
 $ npm run test
 ```
 
-And the resulting output this time should look a lot happier.
+And the resulting output this time should look a lot better.
 
 ![test-success.png](../../images/setup/test-success.png)
 
@@ -437,25 +437,25 @@ After committing, the button will change to "Sync Changes", allowing you to **pu
 
 ![image.png](../../images/setup/setup_pull_push.png)
 
-Click the Sync Changes button, and you will be told "This action will pull and push commits from and to "origin/main"".
-Click "OK", because that is exactly what we want to do.
+Click the Sync Changes button, and you will be told "This action will pull and push commits from and to `origin/main`".
+Click "Ok", because that is exactly what we want to do.
 
 ![image.png](../../images/setup/setup_sync_changes.png)
 
-The Source Control panel will now be partially greyed out since you have nothing left to commit.
+The source control panel will now be partially greyed out since you have nothing left to commit.
 
 {: .warning-title }
 
 > "Need to Configure Git"
 >
-> If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the Terminal, substituting your email address and name.
+> If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the terminal, substituting your email address and name.
 >
 > ```
 > git config --global user.email "YOUREMAIL@udel.edu"
 > git config --global user.name "YOUR NAME"
 > ```
 >
-> Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., `Austin Bart`).
+> Make sure you replace `YOUREMAIL` with your UD Email, and `YOUR NAME` with your name (e.g., `Jill Smith`).
 
 If everything went well, you should be able to see your new commit on the GitHub repository website.
 
@@ -496,9 +496,9 @@ Let us review all the steps we took in this assignment:
 -   Cloned the repository onto your computer
 -   Installed the project's modules using npm install
 -   Ran the project's tests using npm run test
--   Edited the Typescript source code files for the project in the src/ directory
+-   Edited the TypeScript source code files for the project in the src/ directory
 -   Reran the tests to make sure everything worked
--   Staged, Commited, and Pushed the changes to your repository
+-   Staged, commited, and pushed the changes to your repository
 -   Submitted the repository below to GradeScope
 -   Confirmed that we passed all the autograder tests
 
@@ -508,10 +508,10 @@ This will be the workflow for the rest of the semester, so get used to it!
 
 It has been a couple of months since you completed your CS1 course, so let's review some concepts from last semester.
 
-While Python and Typescript (and many other languages) are different, the basic concepts we learned in CS1 are still valid.
+While Python and TypeScript (and many other languages) are different from each other, the basic concepts we learned in CS1 are still valid.
 
 Concepts such as variables, operators, functions, conditionals and looping might have different syntax, but largely operate in the same way between languages.
 
-If you understand the basic concepts, picking up a new language like Typescript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
+If you understand the basic concepts, picking up a new language like TypeScript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
 
-Let's start with variables: [Variables &raquo;](../1-typescript/variables.md)
+Let's start with [Variables &raquo;](../1-typescript/variables.md)
