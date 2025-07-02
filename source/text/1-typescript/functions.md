@@ -35,7 +35,6 @@ We **declare** (or **define**) a function in TypeScript by specifying its:
 
 Once declared, we can **call** (**use**) that function anywhere in our code to execute it without worrying about the code inside. As long as we know how to call it and the meaning of what it returns, we can use it.
 
-{: .warning-title}
 
 > "Call" Functions, "Use" Variables
 >

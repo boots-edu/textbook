@@ -164,10 +164,7 @@ let combined: string = myStr1 + " " + myStr2;
 console.log(combined); // "Hello World"
 ```
 
-The advantages of `concat` are that:
-
--   You can combine more than two strings at once with a single operation
--   You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
+The advantages of `concat` are that;y ou can combine more than two strings at once with a single operation and you can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
 ### The `split` and `substring` method
 
@@ -183,7 +180,7 @@ The advantages of `concat` are that:
 -   **substring():** Returns characters from the string between two defined indexes.
     -   myStr.substring(2); // returns "llo World"
     -   myStr.substring(2,5); // returns "llo"
-        > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
+        > Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
 
     ```typescript
     let myStr="Hello World";
@@ -247,7 +244,7 @@ let myNumStr: string = myNum.toString();
 console.log(myNumStr);
 ```
 
-The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, booleans, and other more complex types (although that is not always useful, as we will see).
+The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, Booleans, and other more complex types (although that is not always useful, as we will see).
 
 ### Implicit String Conversion with `+`
 
