@@ -2,7 +2,7 @@
 layout: default
 title: Variables
 nav_order: 1.3
-parent: Introduction To Typescript
+parent: Introduction To TypeScript
 ---
 
 # Variables
@@ -55,7 +55,7 @@ The equation `y = mx + c` represents every possible straight line.
 
 `y = 2x + 4` represents a specific line. By assigning a value to the variable `x` we can compute the appropriate `y` for this line.
 
-Just like we can use variables in math to create an expression that represents a line, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values.
+Just like we can use variables in math to create an expression that represents a line, in computer science we can use the same idea to create code that computes the correct answer for a variety of input values.
 
 ## Variables Have Types
 
@@ -84,10 +84,9 @@ It depends on the language we are using, but in general, we specify:
 {: .warning-title}
 
 > Assign Before Use
->
 > Note, if we do not specify a variable's initial value, then we cannot read the variable's value until we do.
 
-In this short Typescript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
+In this short TypeScript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
 We declare the variable `answer` as a `number`, but do not give it a value.
 We then compute `myValue+3` and store it in answer.
 
@@ -111,7 +110,7 @@ Some key notes on the syntax of declaring a variable:
 
 ## Types in TypeScript
 
-Typescript has only three basic types.
+TypeScript has only three basic types.
 
 -   `number`: Holds any numeric data (e.g. `42` or `3.14159`)
 -   `string`: Holds a string of characters (e.g. `"Hello World"`)
@@ -170,7 +169,7 @@ console.log(answer);
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with:
+In TypeScript, we do this with:
 
 -   `===`: test if equal
 -   `!==`: test if not equal
@@ -182,7 +181,7 @@ In typescript, we do this with:
 {: .info-title}
 Note that the equality operator is `===` (three equal signs) and not `==` (two equal signs). There is a double equal operator (`==`) operator, but it is not recommended to use it since it is not type safe. Most modern TypeScript code will use the triple equal operator (`===`).
 
-The result of the expression will have the type **boolean**. That is, it will be either `true` or `false`.
+The result of the expression will have the type **Boolean**. That is, it will be either `true` or `false`.
 
 ```typescript
 let myValue: number = 5;

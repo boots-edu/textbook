@@ -94,7 +94,7 @@ Start at the unit level (function) and validate that the function behaves as exp
 
 ## Understanding what to test
 
-We will be using jest to write tests in Typescript. You have already seen this in lab, but now we are going to write our own tests.
+We will be using jest to write tests in TypeScript. You have already seen this in lab, but now we are going to write our own tests.
 Jest provides a format for writing tests in a simple and organized way.
 Jest can run tests on the entire system or on individual components.
 Jest can produce a coverage report to let you know which lines are not "covered" by the test (i.e. functions not called, branches not taken, etc.)

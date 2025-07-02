@@ -60,7 +60,7 @@ console.log(veryRed, veryBlue, anotherColor);
 
 > Note that now we are creating and initializing our objects in one line.
 
-While much better, the definition of Color still seems repetative. While 100% correct, Typescript gives us a shorthand.
+While much better, the definition of Color still seems repetative. While 100% correct, TypeScript gives us a shorthand.
 
 ```typescript
 class Color {
@@ -77,7 +77,7 @@ console.log(veryRed);
 
 > Note that without the public or private keywords, the parameter is just local to the constructor function, but when included, the parameter becomes a member variable (property) and gets initialized to the value passed in.
 
-Back to the drawing program, we can now rebuild our classes using constructors and the Typescript shorthand.
+Back to the drawing program, we can now rebuild our classes using constructors and the TypeScript shorthand.
 
 ```typescript
 class Color {

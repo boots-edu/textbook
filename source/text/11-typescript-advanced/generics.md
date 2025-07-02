@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Typescript Generics
+title: TypeScript Generics
 nav_order: 11.1
-parent: Advanced Typescript
+parent: Advanced TypeScript
 ---
 
-# Typescript Generics
+# TypeScript Generics
 
 [&laquo; Return to the Chapter Index](index.md)
 
@@ -22,7 +22,7 @@ parent: Advanced Typescript
 
 **_Generics_** allow for creation of reusable code that where internal types can be specified externally.
 
-## Generics in Typescript
+## Generics in TypeScript
 
 In the last chapter we discussed the Webz _Notifier_ class. This class was a **_generic_** class that we could pass **_type parameters_** to during creation.
 
@@ -74,7 +74,7 @@ printResult<string>("Hello World");
 
 Here we have added a **_type parameter_** (T), and we use that paramter to set type type of the function's parameter (result). When we call our function, we can specify the type of the data when we call it.
 
-It turns out that typescript can _infer_ the type from the parameter, so we can leave it out when we call the function (However it is not incorrect to include it).
+It turns out that TypeScript can _infer_ the type from the parameter, so we can leave it out when we call the function (However it is not incorrect to include it).
 
 ```typescript
 function printResult<T>(result: T) {
@@ -254,4 +254,4 @@ Using **_generics_**, we can create more reusable code by allowing our code to w
 
 # Next Step
 
-Next we'll learn about interfaces [Typescript Interfaces &raquo;](./interfaces.md)
+Next we'll learn about interfaces [TypeScript Interfaces &raquo;](./interfaces.md)

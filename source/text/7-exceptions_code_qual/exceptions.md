@@ -22,7 +22,7 @@ parent: Exceptions and Code Quality
 
 An **_Exception_** is the process of responding to the occurrence of exceptions – anomalous or exceptional conditions at run time.
 
-## Exceptions in Typescript
+## Exceptions in TypeScript
 
 What is an exception?
 
@@ -62,7 +62,7 @@ Error: This is an error
     at node:internal/main/run_main_module:28:49
 ```
 
-> Note: The call stack shows us all the places where we could have caught the error as well as all the internal code that is part of the Typescript system. In this example, the first 2 lines show where we could have caught the exception.
+> Note: The call stack shows us all the places where we could have caught the error as well as all the internal code that is part of the TypeScript system. In this example, the first 2 lines show where we could have caught the exception.
 
 ### Using exceptions
 

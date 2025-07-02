@@ -191,7 +191,7 @@ For the body of our dialog, we will just center a string that says "Please Wait.
 }
 ```
 
-> Note: We are not showing the typescript for ```PlsWaitDialog``` as it is unmodified.
+> Note: We are not showing the TypeScript for ```PlsWaitDialog``` as it is unmodified.
 
 In the parent, we create a property for our dialog and add it to the component.
 

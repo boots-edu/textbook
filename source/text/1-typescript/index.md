@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Introduction To Typescript
+title: Introduction To TypeScript
 nav_order: 1
 has_children: true
 ---
 
-# Chapter 1 - Introduction To Typescript
+# Chapter 1 - Introduction To TypeScript
 
 [&laquo; Return to the Table of Contents](../../index.md)
 

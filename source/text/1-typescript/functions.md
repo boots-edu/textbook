@@ -2,7 +2,7 @@
 layout: default
 title: Functions
 nav_order: 1.4
-parent: Introduction To Typescript
+parent: Introduction To TypeScript
 ---
 
 # Functions
@@ -26,7 +26,7 @@ A **function** is a collection of code which performs a specific task. It can ta
 
 For now, we will discuss functions as named blocks of code. Later we will learn how to create **anonymous functions** which do not have a name, but for this review, functions will have names.
 
-We **declare** (or **define**) a function in typescript by specifying its:
+We **declare** (or **define**) a function in TypeScript by specifying its:
 
 -   **Name**: The name of the function
 -   **Parameters**: Local variables that are set to the value of the **arguments** passed into the call

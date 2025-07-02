@@ -2,7 +2,7 @@
 layout: default
 title: Conditionals
 nav_order: 1.5
-parent: Introduction To Typescript
+parent: Introduction To TypeScript
 ---
 
 # Conditionals
@@ -24,7 +24,7 @@ A **conditional** is a way to alter program flow based on the value (truthiness)
 
 ## The `if` Statement
 
-In typescript, the most common conditional is the **`if`** statement.
+In TypeScript, the most common conditional is the **`if`** statement.
 
 -   The `if` statement evaluates a **conditional** (or **logical**) expression and executes the code inside the `if` statement only _if_ that expression is `true`.
 -   The `if` statement can have an `else` branch. The `else` branch is only executed if the expression evaluates to `false`.

@@ -2,7 +2,7 @@
 layout: default
 title: Union Types
 nav_order: 11.3
-parent: Advanced Typescript
+parent: Advanced TypeScript
 ---
 
 # Union Types
@@ -22,9 +22,9 @@ parent: Advanced Typescript
 
 **_Union types_** are a way of declaring a variable that can hold values of two or more different types.
 
-## Combining types in Typescript
+## Combining types in TypeScript
 
-We know we can declare new types in typescript by creating classes and interfaces, and we can use these types in our programs.
+We know we can declare new types in TypeScript by creating classes and interfaces, and we can use these types in our programs.
 What if we don't know the type, but we know that it one of a finite number of types:
 
 -   It could be a number or a string

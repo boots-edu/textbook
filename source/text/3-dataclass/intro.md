@@ -24,7 +24,7 @@ parent: Data Classes
 
 ## Complex Types
 
-If we wish to combine data into a more complex type that represents the combination of various related data items, then there are two methods available to us in Typescript
+If we wish to combine data into a more complex type that represents the combination of various related data items, then there are two methods available to us in TypeScript
 
 -   **The interface**
     -   Interfaces describe the data that goes into an object and its types, but do not provide default values, or any additional logic.
@@ -33,9 +33,9 @@ If we wish to combine data into a more complex type that represents the combinat
 
 > We will discuss interfaces and how and when to use them, later in the text. For the time being we will focus on classes, and specifically **_Data Classes_**.
 
-## Classes in Typescript
+## Classes in TypeScript
 
-To declare a class in typescript, we use the `class` keyword. The structure of a class internally is a set of data objects that make up the class.
+To declare a class in TypeScript, we use the `class` keyword. The structure of a class internally is a set of data objects that make up the class.
 
 {: .no-run}
 
@@ -73,7 +73,7 @@ By combining two numbers to represent the x and y coordinates of a ```Point``` o
 
 ## Summary
 
-Sometimes it makes sense to group data together. In these cases Typescript provides multiple mechanisms with which to do that. In the section we have introduced the idea of creating a **_class_** that represents a set of heterogeneous data. (i.e. strings, numbers, booleans, arrays, and other classes).
+Sometimes it makes sense to group data together. In these cases TypeScript provides multiple mechanisms with which to do that. In the section we have introduced the idea of creating a **_class_** that represents a set of heterogeneous data. (i.e. strings, numbers, booleans, arrays, and other classes).
 
 # Next Step
 

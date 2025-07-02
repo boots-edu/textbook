@@ -83,7 +83,7 @@ Here we can initialize our members indirectly by using the value of the paramete
 
 ## Summary
 
-Typescript allows the use of the **`this`** keyword in order to access the members of the current instance of the class. From within the class, using the **`this`** keyword allows us access to all of the member properties (public or private) within the class instance.
+TypeScript allows the use of the **`this`** keyword in order to access the members of the current instance of the class. From within the class, using the **`this`** keyword allows us access to all of the member properties (public or private) within the class instance.
 
 ## Chapter Summary
 

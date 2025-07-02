@@ -73,7 +73,7 @@ This parameter is an anonymous function. It is a function that takes no argument
 NOTE: We are not calling this method, we are just passing it in as an argument to describe or test.
 
 We could do this the hard way, and create a named function and pass that as the second parameter, but we are only using it once, and it is much easier to see what is going on this way.
-Anonymous functions behave like any other function. We can declare them, call them, and pass them around as parameters to functions. Functions in typescript are what is referred to as **First Class Objects**.
+Anonymous functions behave like any other function. We can declare them, call them, and pass them around as parameters to functions. Functions in TypeScript are what is referred to as **First Class Objects**.
 
 ### Syntax
 
@@ -83,7 +83,7 @@ Let's look at the overall structure of an anonymous function:
 So what can we do with this:
 
 -   We have already seen that we can pass it as a parameter to another method as in `describe` and `test`
--   Many methods in typescript can take a function as a parameter including `filter`, `map`, `find`, `reduce`, etc. We can use anonymous functions there as well.
+-   Many methods in TypeScript can take a function as a parameter including `filter`, `map`, `find`, `reduce`, etc. We can use anonymous functions there as well.
 -   Since functions are **First Class Objects**, we can also store them in variables (i.e. function as value)
 
 ### Example
@@ -108,7 +108,7 @@ function removeNegativesFor(): number[] {
 console.log(removeNegativesFor());
 ```
 
-There is another way to accomplish this using the typescript `Array.filter` method
+There is another way to accomplish this using the TypeScript `Array.filter` method
 
 {: .no-run}
 
