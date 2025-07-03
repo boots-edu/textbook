@@ -38,7 +38,7 @@ Once declared, we can **call** (**use**) that function anywhere in our code to e
 
 > "Call" Functions, "Use" Variables
 >
-> Remember, you should only use the verb "call" when you are talking about invoking a function. When you are talking about defining a function or variable, use the verb "declare" or "define". When you are talking about using a variable, use the verb "use", "access", or "get". You should never use the verb "call" when talking about accessing a variable (unless that variable is a function).
+> Remember, you should only use the verb "call" when you are talking about invoking a function. When you are talking about defining a function or variable, use the verb "declare" or "define." When you are talking about using a variable, use the verb "use," "access," or "get." You should never use the verb "call" when talking about accessing a variable (unless that variable is a function).
 
 ## Examples
 
@@ -173,4 +173,4 @@ Functions are blocks of code that perform a specific task. They can take paramet
 
 # Next Step
 
-Next we'll review [Conditionals &raquo;](../1-typescript/conditionals.md)
+Next we'll review [Conditionals.](../1-typescript/conditionals.md)

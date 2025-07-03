@@ -102,7 +102,7 @@ $ node --version
 
 Note that you do not write the dollar sign (`$`); that just indicates the start of a new command. Sometimes folks will write an angle bracket (`>`) or some other symbol.
 
-In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer.  
+In this case, you need to type `node --version` and then press "Enter". The version that should appear is `v20.11.0` or newer.  
 If an older version appears, you need to go back and install the **LTS version** ; some packages may only support the latest
 LTS version of Node, so it's better to fix it now.
 
@@ -474,10 +474,10 @@ against the tests we gave you. Make sure you follow all the instructions!
 
 In the box below, click Submit and then choose "GitHub" as the submission method.
 
-The first time you submit your repository, you will need to authorize Gradescope to access your git repository.
+The first time you submit your repository, you will need to authorize Gradescope to access your Git repository.
 
 When you click to authorize GitHub with Gradescope, the embedded page may fail to load. If this happens, just open
-<https://gradescope.com>, go into the course and assignment (`"Homework 0- Setup Check"`), and authorize there. The
+<https://gradescope.com>, go into the course and assignment (`Homework 0- Setup Check`), and authorize there. The
 permissions should work fine in a separate browser tab.
 
 Type the name of your repository and choose it from the dropdown. It should start with `hw0`.

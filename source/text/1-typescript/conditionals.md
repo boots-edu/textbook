@@ -181,7 +181,7 @@ Unlike the other operators, this operator simply negates whatever comes next.
 -   `!A || !B`: `true` when at least one of `A` and `B` are `false` (DeMorgan's Law)
 -   `!(A && B) || C`: `true` when at least one of `A` and `B` are `false` or any time `C` is `true`
 
-By using a combination of comparison operators, logical connectors, and *not*'s we can build complex logic to test state for conditionals and loops.
+By using a combination of comparison operators, logical connectors, and *not* we can build complex logic to test state for conditionals and loops.
 
 ## A Complex Example
 
@@ -216,11 +216,11 @@ test("Test bringUmbrella", () => {
 
 ## Summary
 
--   An `if` statement is a way to alter program flow based on the value of some boolean expression.
+-   An `if` statement is a way to alter program flow based on the value of some Boolean expression.
 -   An `else` branch can be added to an `if` statement to handle the case when the expression is `false`.
 -   We can use comparison operators to compare values and logical operators to combine multiple conditions.
 -   An `if` statement can be nested inside of a function to create complex logic.
 
-# Next Up
+# Next Step
 
-Now onto the next chapter: [Strings &raquo;](../1-typescript/strings.md)
+Now onto the next chapter: [Strings](../1-typescript/strings.md)

@@ -44,7 +44,7 @@ This is the basic idea of why we use variables. We can write a single expression
 
 ### Another Math Example
 
-![Visualization of the mathematical equation of a line, representing the slope between two points P and Q offset by C](../../images/CISC181-Week%2011.png)
+![Visualization of the mathematical equation of a line, representing the slope between two points P and Q offset by C](../../images/CISC181-Week%2011.jpg)
 
 Using variables we can represent concepts like the equation of a line. In the visualization shown:
 
@@ -88,7 +88,7 @@ It depends on the language we are using, but in general, we specify:
 
 In this short TypeScript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
 We declare the variable `answer` as a `number`, but do not give it a value.
-We then compute `myValue+3` and store it in answer.
+We then compute `myValue+3` and store it in the variable named answer.
 
 ```typescript
 let myValue: number = 4;
@@ -118,7 +118,7 @@ TypeScript has only three basic types.
 
 There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
-## The ***const*** keyword
+## The ***const*** Keyword
 
 The ```const``` keyword in TypeScript is used to declare variables whose values are intended to remain constant once assigned. It provides developers with a way to ensure that the variable cannot be reassigned, promoting safer and more predictable code.
 
@@ -211,4 +211,4 @@ Throughout this text we will use variables to create reusable code. We will late
 
 # Next Step
 
-Next we'll review [Functions &raquo;](../1-typescript/functions.md)
+Next we'll review [Functions](../1-typescript/functions.md)

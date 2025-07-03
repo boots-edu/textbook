@@ -164,12 +164,12 @@ let combined: string = myStr1 + " " + myStr2;
 console.log(combined); // "Hello World"
 ```
 
-The advantages of `concat` are that;y ou can combine more than two strings at once with a single operation and you can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
+The advantages of `concat` are that you can combine more than two strings at once with a single operation and you can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
 ### The `split` and `substring` method
 
 -   Assume the string `let myStr="Hello World";`
--   **split():** Splits the specified String object into an array of strings.
+-   **split():** This will Split the specified String object into an array of strings.
     -   myStr.split(" "); //returns the array \["Hello","World"\]
 
     ```typescript
@@ -180,13 +180,14 @@ The advantages of `concat` are that;y ou can combine more than two strings at on
 -   **substring():** Returns characters from the string between two defined indexes.
     -   myStr.substring(2); // returns "llo World"
     -   myStr.substring(2,5); // returns "llo"
-        > Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
 
-    ```typescript
-    let myStr="Hello World";
-    console.log(myStr.substring(2)); // returns "llo World"
-    console.log(myStr.substring(2,5)); // returns "llo"
-    ```
+> Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
+
+```typescript
+let myStr="Hello World";
+console.log(myStr.substring(2)); // returns "llo World"
+console.log(myStr.substring(2,5)); // returns "llo"
+```
 
 The `substring` and `slice` methods are very similar, with two primary differences:
 
@@ -303,4 +304,4 @@ There are MANY other methods available to the string type, but these are some of
 
 # Next Step
 
-Now onto the next chapter: [Loops and Arrays &raquo;](../2-loops/index.md)
+Now onto the next chapter: [Loops and Arrays](../2-loops/index.md)
