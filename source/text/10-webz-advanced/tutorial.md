@@ -6,7 +6,7 @@ parent: Advanced Webz
 ---
 
 # Webz Advanced Tutorial
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -787,4 +787,4 @@ In addition to passing our tests, you will also be graded on the successful depl
 
 # Next Step
 
-Next we'll learn more features of TypeScript and how to use them in [Advanced TypeScript &raquo;](../11-typescript-advanced/index.md)
+Next we'll learn more features of TypeScript and how to use them in [Advanced TypeScript](../11-typescript-advanced/index.md)

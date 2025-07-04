@@ -7,7 +7,7 @@ parent: Higher Order Methods
 
 # Example Implementation of HO Methods
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -506,4 +506,4 @@ There is nothing special about these built-in methods, except that they are conv
 
 # Next Step
 
-Next we'll learn about Recursion [Recursion &raquo;](../13-Recursion/index.md)
+Next we'll learn about Recursion [Recursion](../13-Recursion/index.md)

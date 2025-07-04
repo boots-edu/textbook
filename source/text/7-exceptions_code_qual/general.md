@@ -7,7 +7,7 @@ parent: Exceptions and Code Quality
 
 # General Code Quality
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -46,4 +46,4 @@ Code should be readable, maintainable, and understandable. Good comments are cri
 
 # Next Step
 
-Next we'll examine testing: [Testing &raquo;](../8-testing/index.md)
+Next we'll examine testing: [Testing](../8-testing/index.md)

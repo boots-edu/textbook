@@ -7,7 +7,7 @@ parent: Loops and Arrays
 
 # Arrays
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -76,7 +76,7 @@ We would expect this code to print out **`"Jan"`**. Initially, the second elemen
 
 There are a number of methods that operate on arrays. We will cover some of the simple ones here. These should allow us to add elements, remove elements, and otherwise modify an array.
 
-> The idea of an object (like an array) having its own methods which operate on it will be central to our discussion of object oriented programming later in the text.
+> The idea of an object (like an array) having its own methods which operate on it will be central to our discussion of object-oriented programming later in the text.
 
 ### The length property
 
@@ -243,8 +243,8 @@ This is much cleaner, doesn't require getting the length of the array, and acces
 
 ## Summary
 
-Arrays provide a simple data structure to store collections of objects. These objects can be simple types (string, boolean, number), or complex types including other arrays. We can access elements in the array by their index which is 0 based (i.e. 0 is first element). There are also a number of functions to mutate the array by adding and removing elements to the back, front, or middle of an array. Array elements can be extracted from an array using the spread (...) operator. A special version of the for loop (for..of) can be used to automatically iterate through the elements of an array.
+Arrays provide a simple data structure to store collections of objects. These objects can be simple types (string, Boolean, number), or complex types including other arrays. We can access elements in the array by their index which is 0 based (i.e. 0 is first element). There are also a number of functions to mutate the array by adding and removing elements to the back, front, or middle of an array. Array elements can be extracted from an array using the spread (...) operator. A special version of the for loop (for..of) can be used to automatically iterate through the elements of an array.
 
 # Next Step
 
-Next we'll learn about Data Classes: [Data Classes &raquo;](../3-dataclass/index.md)
+Next we'll learn about [Data Classes](../3-dataclass/index.md)

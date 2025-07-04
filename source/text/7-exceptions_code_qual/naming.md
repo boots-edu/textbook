@@ -7,7 +7,7 @@ parent: Exceptions and Code Quality
 
 # Naming
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -125,4 +125,4 @@ When writing code, choosing good names that represent the objects or purpose of 
 
 # Next Step
 
-Next we'll learn about some general practices to improve code quality: [General Code Quality &raquo;](../7-exceptions_code_qual/general.md)
+Next we'll learn about some general practices to improve code quality: [General Code Quality](../7-exceptions_code_qual/general.md)

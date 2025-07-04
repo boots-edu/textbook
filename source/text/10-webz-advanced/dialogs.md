@@ -7,7 +7,7 @@ parent: Advanced Webz
 
 # Webz Dialogs
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -292,4 +292,4 @@ Creating a good user interface is critical to having your software accepted by u
 
 # Next Step
 
-Next we'll learn about timers [Webz Timers &raquo;](../10-webz-advanced/timers.md)
+Next we'll learn about timers [Webz Timers](../10-webz-advanced/timers.md)

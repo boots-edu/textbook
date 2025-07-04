@@ -7,7 +7,7 @@ parent: Classes
 
 # Class methods
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -359,4 +359,4 @@ Classes in TypeScript can contain only data (Data Classes) or they can contain a
 
 # Next Step
 
-Next we'll learn about Data Hiding: [Data Hiding &raquo;](./private.md)
+Next we'll learn about Data Hiding: [Data Hiding](./private.md)

@@ -7,7 +7,7 @@ parent: Testing
 
 # Anonymous Functions
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -207,4 +207,4 @@ let f: ChkFunction = (x: number) => x >= 0;
 
 # Next Step
 
-Next we'll start to learn about web programming: [Introduction to Webz &raquo;](../9-webz-intro/index.md)
+Next we'll start to learn about web programming: [Introduction to Webz](../9-webz-intro/index.md)

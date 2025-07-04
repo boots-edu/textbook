@@ -7,7 +7,7 @@ parent: Webz Introduction
 
 # Web Basics
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -254,4 +254,4 @@ Learning HTML is an important skill as web applications are pervasive both for i
 
 # Next Step
 
-Next we'll introduce Webz, a lightweight web framework for application development [Beginning Webz &raquo;](../9-webz-intro/beginning_webz.md)
+Next we'll introduce Webz, a lightweight web framework for application development [Beginning Webz](../9-webz-intro/beginning_webz.md)

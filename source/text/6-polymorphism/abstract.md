@@ -7,7 +7,7 @@ parent: Overrides and Polymorphism
 
 # Abstract Classes
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -112,4 +112,4 @@ A base class that wants to express a public interface for its subclasses, but do
 
 # Next Step
 
-Next we'll summarize what we have learned about polymorphism: [Polymorphism Notes &raquo;](../6-polymorphism/notes.md)
+Next we'll summarize what we have learned about polymorphism: [Polymorphism Notes](../6-polymorphism/notes.md)

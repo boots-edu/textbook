@@ -7,7 +7,7 @@ has_children: true
 
 # Chapter 3 - Data Classes
 
-[&laquo; Return to the Table of Contents](../../index.md)
+[Return to the Table of Contents](../../index.md)
 
 Let's learn about Data Classes.
 

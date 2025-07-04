@@ -7,7 +7,7 @@ parent: Webz Introduction
 
 # Beginning Webz
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -523,4 +523,4 @@ In this section we learned about the Webz framework and how we can build a simpl
 
 # Next Step
 
-Next we'll walkthrough building a Webz application, step by step, with the [Webz Basics Walkthrough &raquo;](./walkthrough.md)
+Next we'll walkthrough building a Webz application, step by step, with the [Webz Basics Walkthrough](./walkthrough.md)

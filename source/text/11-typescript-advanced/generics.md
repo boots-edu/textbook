@@ -7,7 +7,7 @@ parent: Advanced TypeScript
 
 # TypeScript Generics
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -254,4 +254,4 @@ Using **_generics_**, we can create more reusable code by allowing our code to w
 
 # Next Step
 
-Next we'll learn about interfaces [TypeScript Interfaces &raquo;](./interfaces.md)
+Next we'll learn about interfaces [TypeScript Interfaces](./interfaces.md)

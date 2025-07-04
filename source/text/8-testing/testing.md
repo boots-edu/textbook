@@ -7,7 +7,7 @@ parent: Testing
 
 # Testing
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -180,4 +180,4 @@ Designing good tests and testing methodologies will help create software that ca
 
 # Next Step
 
-Next we'll learn how to write tests is Jest [Testing in Jest &raquo;](../8-testing/jest.md)
+Next we'll learn how to write tests is Jest [Testing in Jest](../8-testing/jest.md)

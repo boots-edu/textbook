@@ -7,6 +7,6 @@ has_children: true
 
 # Chapter 12 - Higher Order Methods
 
-[&laquo; Return to the Table of Contents](../../index.md)
+[Return to the Table of Contents](../../index.md)
 
 Higher Order Methods

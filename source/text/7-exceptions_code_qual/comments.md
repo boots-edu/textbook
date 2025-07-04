@@ -7,7 +7,7 @@ parent: Exceptions and Code Quality
 
 # Comments
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -163,4 +163,4 @@ Clear, straight forward comments on our code make our code more useful. We can s
 
 # Next Step
 
-Next we'll learn about the importance of naming: [Naming &raquo;](../7-exceptions_code_qual/naming.md)
+Next we'll learn about the importance of naming: [Naming](../7-exceptions_code_qual/naming.md)

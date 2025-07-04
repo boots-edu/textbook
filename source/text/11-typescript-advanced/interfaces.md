@@ -7,7 +7,7 @@ parent: Advanced TypeScript
 
 # TypeScript Interfaces
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -187,4 +187,4 @@ class Tomato implements Serializable{ . . . }
 
 # Next Step
 
-Next we'll learn about Union Types [Union Types &raquo;](./unions.md)
+Next we'll learn about Union Types [Union Types](./unions.md)

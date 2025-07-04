@@ -7,7 +7,7 @@ parent: Recursion
 
 # Trees
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>

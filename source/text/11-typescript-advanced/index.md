@@ -7,6 +7,6 @@ has_children: true
 
 # Chapter 11 - Advanced TypeScript
 
-[&laquo; Return to the Table of Contents](../../index.md)
+[Return to the Table of Contents](../../index.md)
 
 Advanced TypeScript

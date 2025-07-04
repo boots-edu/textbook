@@ -7,7 +7,7 @@ parent: Higher Order Methods
 
 # Higher Order String Methods
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -484,4 +484,4 @@ Since we pass a function, we can sort arrays of complex objects or classes in an
 
 # Next Step
 
-Next we'll learn see how we could re-implement these higher-order methods ourselves in [Implementation of Higher Order Methods &raquo;](./implementation.md)
+Next we'll learn see how we could re-implement these higher-order methods ourselves in [Implementation of Higher Order Methods](./implementation.md)

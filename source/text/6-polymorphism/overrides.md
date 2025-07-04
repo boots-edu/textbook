@@ -7,7 +7,7 @@ parent: Overrides and Polymorphism
 
 # Overrides
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -119,4 +119,4 @@ When we subclass a class, we get all of its members, both properties and methods
 
 # Next Step
 
-Next we'll learn learn about polymorphism: [Polymorphism &raquo;](../6-polymorphism/polymorphism.md)
+Next we'll learn learn about polymorphism: [Polymorphism](../6-polymorphism/polymorphism.md)

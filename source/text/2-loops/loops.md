@@ -7,7 +7,7 @@ parent: Loops and Arrays
 
 # Loops
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -126,4 +126,4 @@ We can create more complex program logic by repeating sections of our code to so
 
 # Next Step
 
-Next we'll learn about arrays: [Arrays &raquo;](../2-loops/arrays.md)
+Next we'll learn about [Arrays ](../2-loops/arrays.md)

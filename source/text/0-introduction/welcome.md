@@ -7,7 +7,7 @@ parent: Introduction
 
 # Welcome!
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -50,4 +50,4 @@ Computer science is hard until it is not.  Be patient with yourself, and be pers
 
 # Next Step
 
-Let's get your environment setup: [Setup &raquo;](../0-introduction/setup.md)
+Let's get your environment setup: [Setup](../0-introduction/setup.md)

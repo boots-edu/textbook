@@ -7,7 +7,7 @@ parent: Recursion
 
 # Description and Definition of Recursion
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -242,4 +242,4 @@ console.log(binSearch(list, 11));
 
 # Next Step
 
-Next we'll learn about Trees [Trees &raquo;](../13-Recursion/trees.md)
+Next we'll learn about Trees [Trees](../13-Recursion/trees.md)

@@ -7,7 +7,7 @@ parent: Classes
 
 # Public and Private
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -168,4 +168,4 @@ If we provide a **_public interface_** to our class that is consistent, then we 
 
 # Next Step
 
-Next we'll learn about object cloning: [Object Cloning &raquo;](../4-classes/clone.md)
+Next we'll learn about object cloning: [Object Cloning](../4-classes/clone.md)

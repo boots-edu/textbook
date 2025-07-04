@@ -7,7 +7,7 @@ parent: Classes
 
 # Object Cloning
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -208,4 +208,4 @@ In addition to storing data (Data Classes), classes can also contain methods. Th
 
 # Next Step
 
-Next we'll learn about Composition and Inheritance: [Composition and Inheritance &raquo;](../5-composition-inheritance/index.md)
+Next we'll learn about Composition and Inheritance: [Composition and Inheritance](../5-composition-inheritance/index.md)

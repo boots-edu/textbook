@@ -7,7 +7,7 @@ parent: Advanced Webz
 
 # Dynamic Components
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -293,4 +293,4 @@ We can create dynamic components by adding them to an existing component using t
 
 # Next Step
 
-Next we'll learn about component communication [Webz Events &raquo;](../10-webz-advanced/events.md)
+Next we'll learn about component communication [Webz Events](../10-webz-advanced/events.md)

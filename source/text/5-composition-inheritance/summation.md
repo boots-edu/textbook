@@ -7,7 +7,7 @@ parent: Composition and Inheritance
 
 # Putting it all together
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -161,4 +161,4 @@ In this chapter we have introduced two ways to build up a class from other class
 
 # Next Step
 
-Next we'll learn about Overrides and Polymorphism: [Overrides and Polymorphism &raquo;](../6-polymorphism/index.md)
+Next we'll learn about Overrides and Polymorphism: [Overrides and Polymorphism](../6-polymorphism/index.md)

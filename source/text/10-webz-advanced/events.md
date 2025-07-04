@@ -7,7 +7,7 @@ parent: Advanced Webz
 
 # Webz Events
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -400,4 +400,4 @@ Passing information between components is critical to developing web application
 
 # Next Step
 
-Next we'll learn about dialogs and popups [Webz Dialogs &raquo;](../10-webz-advanced/dialogs.md)
+Next we'll learn about dialogs and popups [Webz Dialogs](../10-webz-advanced/dialogs.md)

@@ -7,7 +7,7 @@ parent: Advanced Webz
 
 # Webz Timers
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -98,4 +98,4 @@ We can use a timer to cause a function to be called periodically. The @Timer dir
 
 # Next Step
 
-Next we'll build an image editor in Webz by following the [Advanced Webz tutorial &raquo;](./tutorial.md)
+Next we'll build an image editor in Webz by following the [Advanced Webz tutorial](./tutorial.md)

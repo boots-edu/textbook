@@ -7,7 +7,7 @@ parent: Overrides and Polymorphism
 
 # Member Access
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -139,4 +139,4 @@ We can control access to the members of a class (both properties and methods) by
 
 # Next Step
 
-Next we'll learn learn about overriding class methods: [Overrides &raquo;](../6-polymorphism/overrides.md)
+Next we'll learn learn about overriding class methods: [Overrides](../6-polymorphism/overrides.md)

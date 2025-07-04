@@ -7,7 +7,7 @@ parent: Exceptions and Code Quality
 
 # Exceptions
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -393,4 +393,4 @@ In summary, when writing our code we should program defensively.
 
 # Next Step
 
-Next we'll learn about comments: [Comments &raquo;](../7-exceptions_code_qual/comments.md)
+Next we'll learn about comments: [Comments](../7-exceptions_code_qual/comments.md)

@@ -7,7 +7,7 @@ parent: Overrides and Polymorphism
 
 # Polymorphism
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -153,4 +153,4 @@ To rectify this, we can override the ```toString()``` method to control how the 
 
 # Next Step
 
-Next we'll learn learn about abstract methods and classes: [Abstract Classes &raquo;](../6-polymorphism/abstract.md)
+Next we'll learn learn about abstract methods and classes: [Abstract Classes](../6-polymorphism/abstract.md)

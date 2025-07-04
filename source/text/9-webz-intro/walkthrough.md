@@ -6,7 +6,7 @@ parent: Webz Introduction
 ---
 
 # Webz Basics Walkthrough
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -1064,4 +1064,4 @@ In addition to passing our tests, you will also be graded on the successful depl
 
 # Next Step
 
-Next we'll learn more advanced features of Webz and how to use them [Advanced Webz &raquo;](../10-webz-advanced/index.md)
+Next we'll learn more advanced features of Webz and how to use them [Advanced Webz](../10-webz-advanced/index.md)

@@ -7,7 +7,7 @@ parent: Composition and Inheritance
 
 # Inheritance
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -241,4 +241,4 @@ We encapsulate their commonality in the Users class, then extend Users to make n
 
 # Next Step
 
-Next we'll learn put these concepts to use: [Putting it all together &raquo;](../5-composition-inheritance/summation.md)
+Next we'll learn put these concepts to use: [Putting it all together](../5-composition-inheritance/summation.md)

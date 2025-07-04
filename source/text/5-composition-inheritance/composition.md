@@ -7,7 +7,7 @@ parent: Composition and Inheritance
 
 # Composition
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -122,4 +122,4 @@ console.log(basket.getPrice());
 
 # Next Step
 
-Next we'll learn about Inheritance: [Inheritance &raquo;](../5-composition-inheritance/inheritance.md)
+Next we'll learn about Inheritance: [Inheritance](../5-composition-inheritance/inheritance.md)

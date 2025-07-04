@@ -7,7 +7,7 @@ parent: Data Classes
 
 # Creating Basic Data Classes
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -20,7 +20,7 @@ parent: Data Classes
 
 ## Key Idea
 
-**_Data Classes_** allow us to combine data into a grouping and use that grouping as a data type in our programs.
+Data classes allow us to combine data into a grouping and use that grouping as a data type in our programs.
 
 ## Drawing Program Classes
 
@@ -28,7 +28,7 @@ parent: Data Classes
 
 If we examine the objects we have proposed for our drawing program (points, lines, rectangles, polygons, color) we can see that just about everything has a color. The definition for a type that represents color would be useful as then we could group the things that make up a color. For our example we want to store a color as three numbers between 0 and 255 representing the red, green, and blue intensities.
 
-Our class should contain 3 numbers (Red, Green, and Blue). We can define our class as described previously, since this contains only the primitive type number.
+Our class should contain 3 numbers (red, green, and blue). We can define our class as described previously since this contains only the primitive type number.
 
 {: .no-run}
 
@@ -93,7 +93,7 @@ myPoint.color.green = 10;
 console.log(myPoint);
 ```
 
-> Notice that we use the class Color inside of the class Point. This is referred to as **_composition_** and is a critical concept in understanding classes and Object Oriented Programming.
+> Notice that we use the class "Color" inside of the class "Point". This is referred to as **composition** and is a critical concept in understanding classes and Object Oriented Programming.
 
 We can build up complex objects by including other objects inside of them. Now every point will have a position (x, y) and a color contained inside the point itself.
 
@@ -103,4 +103,4 @@ Complex objects can be built from simpler ones by creating a **_class_** to repr
 
 # Next Step
 
-Next we'll learn about constructors: [Data Class Constructors &raquo;](constructors.md)
+Next we'll learn about [Data Class Constructors](constructors.md)

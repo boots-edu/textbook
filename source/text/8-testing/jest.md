@@ -7,7 +7,7 @@ parent: Testing
 
 # Testing in Jest
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -254,4 +254,4 @@ If we add `--coverageDirectory='./coverage'` to our jest command with `–covera
 # Next Step
 
 You may have noticed the odd syntax, before we continue, let's cover **_anonymous functions_** which will help us better understand the testing syntax.  
-[Annonymous Functions &raquo;](../8-testing/anonymous.md)
+[Annonymous Functions](../8-testing/anonymous.md)

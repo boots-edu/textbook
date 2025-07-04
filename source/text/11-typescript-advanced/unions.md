@@ -7,7 +7,7 @@ parent: Advanced TypeScript
 
 # Union Types
 
-[&laquo; Return to the Chapter Index](index.md)
+[Return to the Chapter Index](index.md)
 
 <details open markdown="block">
   <summary>
@@ -138,4 +138,4 @@ A simple way to combine the functionality of multiple types is a **_Union Type_*
 
 # Next Step
 
-Next we'll learn about higher order methods [Higher Order Methods &raquo;](../12-high-order-methods/index.md)
+Next we'll learn about higher order methods [Higher Order Methods](../12-high-order-methods/index.md)

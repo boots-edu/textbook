@@ -7,6 +7,6 @@ has_children: true
 
 # Chapter 14 - Appendix
 
-[&laquo; Return to the Table of Contents](../../index.md)
+[Return to the Table of Contents](../../index.md)
 
 This is the appendix.  It contains additional information that is not part of the main text.  It is here for reference and additional learning.
