@@ -1,0 +1,36 @@
+div.main-content {
+    counter-reset: stepper;
+  }
+  
+  .main-content {
+  
+    img {
+      border: 1px solid #ddd;
+    }
+  
+    h1, h2 {
+      counter-reset: stepper;
+    }
+  
+    ol {
+      counter-reset: none;
+  
+      > li {
+        &::before {
+          content: counter(stepper) ".";
+          counter-increment: stepper;
+        }
+      }
+  
+      ol {
+        counter-reset: none;
+  
+        > li {
+          &::before {
+            content: counter(list-item, lower-alpha) ".";
+            counter-increment: none;
+          }
+        }
+      }
+    }
+  }
