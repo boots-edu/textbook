@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Typescript Interfaces
+title: TypeScript Interfaces
 nav_order: 11.2
-parent: Advanced Typescript
+parent: Advanced TypeScript
 ---
 
-# Typescript Interfaces
+# TypeScript Interfaces
 
 [&laquo; Return to the Chapter Index](index.md)
 
@@ -22,7 +22,7 @@ parent: Advanced Typescript
 
 An **_interface_** is a contract that describes the shape of data without values or implementation.
 
-## Interfaces in Typescript
+## Interfaces in TypeScript
 
 Sometimes we want to describe the shape of our data.
 Sometimes we want to describe the methods and values that a class contains without detailing the entire class.
@@ -102,7 +102,7 @@ If a class implements an interface, then the class can be referenced as an objec
 
 ## Multiple Interfaces
 
-A class cannot extend more than one class in typescript, but it can implement many interfaces.
+A class cannot extend more than one class in TypeScript, but it can implement many interfaces.
 
 ```typescript
 interface Serializable {
@@ -178,7 +178,7 @@ class Tomato implements Serializable{ . . . }
 -   Interfaces allow us to further type our data by specifying what methods and properties an object must contain.
 -   Unlike extending classes (inheritance), we can implement multiple interfaces in a single class.
 -   If a class implements an interface, then that class can be stored in a variable whose type is the interface, and we can access the interfaces members through that variable.
--   Interfaces can be very useful to describe typescript objects that are otherwise untyped (like complex data returned from an API call). Once described, the interface will enforce that the object is indeed the correct shape and contains all of the interface members (methods and properties).
+-   Interfaces can be very useful to describe TypeScript objects that are otherwise untyped (like complex data returned from an API call). Once described, the interface will enforce that the object is indeed the correct shape and contains all of the interface members (methods and properties).
 -   Interfaces are common in most Object Oriented programming languages and provide a convenient means to strengthen typing within our code.
 
 ## Summary

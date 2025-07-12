@@ -62,7 +62,7 @@ Let's start by creating a simple page in html/css for the things we know how to 
 }
 ```
 
-Now in the typescript file, we need to create variables to hold our order number and customer name. These will be updated, but not bound directly (they could be).
+Now in the TypeScript file, we need to create variables to hold our order number and customer name. These will be updated, but not bound directly (they could be).
 We also need functions that are bound to the @Input event of these text boxes. Finally we need functions bound to our add buttons.
 
 {: .no-run }

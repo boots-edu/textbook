@@ -45,9 +45,9 @@ child.elementAdded.subscribe((value: boolean) => {
 });
 ```
 
-In Typescript, when passing a function as an argument, it is often convenient to use an **_anonymous function_** which we have talked about already. You can always spot this because it will have the => operator.
+In TypeScript, when passing a function as an argument, it is often convenient to use an **_anonymous function_** which we have talked about already. You can always spot this because it will have the => operator.
 
-Since functions in typescript are **_first order objects_**, we can use them as parameters and return values.
+Since functions in TypeScript are **_first order objects_**, we can use them as parameters and return values.
 We can specify the shape or signature of the expected parameter or return type when we declare the method.
 
 {: .no-run}
@@ -56,9 +56,9 @@ We can specify the shape or signature of the expected parameter or return type w
 subscribe(callback: (value: T) => void, error?: (value: Error) => void):number
 ```
 
-In this signature for the subscribe method, the parameter named callback is of type (value: T) => void and the parameter named error is of type (value:Error)=>void where T is a type parameter used when creating an instance of the class and Error is the error type provided by Typescript.
+In this signature for the subscribe method, the parameter named callback is of type (value: T) => void and the parameter named error is of type (value:Error)=>void where T is a type parameter used when creating an instance of the class and Error is the error type provided by TypeScript.
 
-This language feature of typescript (and many other languages where functions are **_first order objects_**) allows for some useful and interesting ways to write code and typescript (javascript) provides some built-in functions that take advantage of this.
+This language feature of TypeScript (and many other languages where functions are **_first order objects_**) allows for some useful and interesting ways to write code and TypeScript (javascript) provides some built-in functions that take advantage of this.
 
 Use of these built-in methods will make your code shorter, simpler and more readable. There is nothing these can do that we could not write in some other way, but they simplify things considerably. We will examine several methods that can be applied to arrays including map, filter, reduce, reduceRight, every, some, find, findIndex, findLastIndex, flatMap, forEach, and sort,
 

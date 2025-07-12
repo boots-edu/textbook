@@ -26,7 +26,7 @@ An array is an ordered list of values of the same type where each element in the
 
 Arrays are an extremely important data structure because they allow us to store a collection of objects. We can build arrays out of any built-in or user-defined type we want, including out of other arrays.
 
-In Typescript, the size of the array does not need to be defined. It will grow as necessary to hold the data placed into it (NOT TRUE IN C or C++).
+In TypeScript, the size of the array does not need to be defined. It will grow as necessary to hold the data placed into it (NOT TRUE IN C or C++).
 
 Each element in the array has an index (starting at 0) which we can use to access the individual elements
 
@@ -34,7 +34,7 @@ Each element in the array has an index (starting at 0) which we can use to acces
 
 ## Defining Arrays
 
-In typescript we define an array just like any other variable
+In TypeScript we define an array just like any other variable
 
 {: .no-run}
 
@@ -180,7 +180,7 @@ console.log(removed); //[]
 
 ## Merging Arrays
 
-There are a number of ways to merge arrays in typescript, but one of the simplest is to use the **_spread_** operator (three dots `...`). The spread operator extracts the elements of the array. This allows the elements to be combined into a new array.
+There are a number of ways to merge arrays in TypeScript, but one of the simplest is to use the **_spread_** operator (three dots `...`). The spread operator extracts the elements of the array. This allows the elements to be combined into a new array.
 
 ```typescript
 let fruits: string[] = ["apple", "banana", "orange"];

@@ -22,7 +22,7 @@ parent: Classes
 
 **_Classes_** allow us to combine data and methods into a grouping or class and use that grouping as a data type in our programs.
 
-In addition to properties and constructors which we saw in our discussion of **_Data Classes_**, generalized classes in typescript can also contain functions (called methods) that can access both _public_ and _private_ members of the class.
+In addition to properties and constructors which we saw in our discussion of **_Data Classes_**, generalized classes in TypeScript can also contain functions (called methods) that can access both _public_ and _private_ members of the class.
 
 A class with methods can be viewed as a self-contained entity which **_encapsulates_** some concept, allowing us to use the class without knowing anything about its internal structure or implementation.
 
@@ -355,7 +355,7 @@ color1.red=255;
 
 ## Summary
 
-Classes in typescript can contain only data (Data Classes) or they can contain a combination of data and methods that operate on that data. The methods can access the properties of the class instance by using the **`this`** keyword. In this way, we can create classes that not only combine data that goes together, but also encapsulate it with the methods that act upon that data.
+Classes in TypeScript can contain only data (Data Classes) or they can contain a combination of data and methods that operate on that data. The methods can access the properties of the class instance by using the **`this`** keyword. In this way, we can create classes that not only combine data that goes together, but also encapsulate it with the methods that act upon that data.
 
 # Next Step
 

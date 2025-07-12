@@ -20,7 +20,7 @@ parent: Testing
 
 ## Key Idea
 
-**_Jest_** is a test runner and testing framework that works with Javascript and Typescript. We've been using Jest the entire time!
+**_Jest_** is a test runner and testing framework that works with Javascript and TypeScript. We've been using Jest the entire time!
 
 ## Jest Syntax
 

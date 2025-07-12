@@ -81,9 +81,9 @@ This time when we call on the left subtree, our root is the value we are looking
 
 > Note: if we had been looking for 99, we would search the left subtree, which would be empty and we would return tat we did not find it.
 
-### Implementing Binary Search Trees in Typescript
+### Implementing Binary Search Trees in TypeScript
 
-First we need a way to represent a tree in typescript. Since every node in a tree is itself a tree root, we should implement the node of a tree, then just keep a reference to that node as the root of the tree.
+First we need a way to represent a tree in TypeScript. Since every node in a tree is itself a tree root, we should implement the node of a tree, then just keep a reference to that node as the root of the tree.
 
 We will create a node class that will contain a number and 2 children. Those children themselves will be nodes (possibly empty).
 

@@ -45,7 +45,7 @@ Our classes will be easier to use if our public interface uses names that make s
 
 ## Comments
 
-At this point, you should be convinced you that comments are worth your time. Now lets look at how to format a comment in typescript to make it more usable.
+At this point, you should be convinced you that comments are worth your time. Now lets look at how to format a comment in TypeScript to make it more usable.
 We are using the jsdoc format for our comments. This is a good solution because we can automatically generate our documentation of our classes and methods, as well as provide tool tip help in vscode (and other IDEs).
 
 The most common tags available to us for jsdoc are:

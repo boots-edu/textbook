@@ -22,7 +22,7 @@ parent: Composition and Inheritance
 
 Using **_composition_**, we can build complex objects in order to define new types that has a **_contains a_** relationship with some existing type.
 
-## Composition in Typescript
+## Composition in TypeScript
 
 So far we have examined classes which contain both data and methods. We can combine classes by including another class as a member of our class
 

@@ -20,7 +20,7 @@ parent: Webz Introduction
 
 ## Key Idea
 
-**_Webz_** is a lightweight web framework designed for this book. It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on Typescript development
+**_Webz_** is a lightweight web framework designed for this book. It uses many of the same principals as more advanced web frameworks such as React and Angular, but simplifies operations to focus on TypeScript development
 
 # Working Example of Webz
 
@@ -74,7 +74,7 @@ button {
 
 ## Overview
 
-Once we have some html, we would like it to do something. That's where the typescript comes in.
+Once we have some html, we would like it to do something. That's where the TypeScript comes in.
 You can create a web application without a framework, but it can be difficult and requires a deeper knowledge of how a web browser works.
 Many frameworks exist, but because they are for commercial purposes, they are large and have steep learning curves (Angular, VueJS, React, etc.)
 We created Webz to be a lighter weight, easier to learn framework that will prepare you for more complex frameworks that may come later and allow you to create impressive applications without a steep learning curve (still a curve, just not as steep).
@@ -141,7 +141,7 @@ First the html (`main.component.html`) (note the `div` is where the new componen
 <button id="next">Next</button>
 ```
 
-And the typescript class (`main.component.ts`):
+And the TypeScript class (`main.component.ts`):
 
 {: .no-run }
 
@@ -194,7 +194,7 @@ export class FancyImageComponent extends WebzComponent {
 }
 ```
 
-To connect html elements and class properties, we use typescript decorators to specify how to attach that variable to the html. In this case we want to set the src attribute of the element with id `image`. This will cause the src attribute of the element with id `image` to contain the text in the member property `imagePath`.
+To connect html elements and class properties, we use TypeScript decorators to specify how to attach that variable to the html. In this case we want to set the src attribute of the element with id `image`. This will cause the src attribute of the element with id `image` to contain the text in the member property `imagePath`.
 
 {: .no-run }
 

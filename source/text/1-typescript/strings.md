@@ -2,7 +2,7 @@
 layout: default
 title: Strings
 nav_order: 1.6
-parent: Introduction To Typescript
+parent: Introduction To TypeScript
 ---
 
 # Strings
@@ -24,7 +24,7 @@ A string is sequence of character values used to store text data.
 
 ## Overview
 
-The `string` type is a primitive data type in Typescript.
+The `string` type is a primitive data type in TypeScript.
 We can declare a variable to be of type string directly:
 
 {: .no-run}
@@ -40,7 +40,7 @@ Notice how we can use either single or double quotes to define a string.
 
 ## String Methods and operations
 
-There are several functions which we can use to operate on strings in Typescript.
+There are several functions which we can use to operate on strings in TypeScript.
 We will look at some of the most common ones briefly, but there are actually many more!
 
 ![](../../images/CISC181-Week%2013.jpg)
@@ -66,7 +66,7 @@ console.log(myStr.lastIndexOf("o")); // 7
 console.log(myStr.lastIndexOf("z")); // -1
 ```
 
-> Note that the index passed to ```charAt``` is 0 based (i.e. 0 is the index of the first charater in the string).  In general all string (and array) operations in Typescript (and most other languages) are 0 based.
+> Note that the index passed to ```charAt``` is 0 based (i.e. 0 is the index of the first charater in the string).  In general all string (and array) operations in TypeScript (and most other languages) are 0 based.
 
 ### Square Bracket Access of Strings
 

@@ -24,7 +24,7 @@ Using **_Inheritance_**, we can build complex hierarchies of objects in order to
 
 ## Understanding the relationship
 
-In the previous section we discussed **_composition_** which allowed us to represent a _contains_ or _has a_ relationship between two classes. Recall that a course has a final and a fruit basket contains fruit. While useful in many situations, we often want to represent a **_type of_** relationship. In typescript, the `extend` keyword allows us to represent a class in terms of another class that it is a _type of_.
+In the previous section we discussed **_composition_** which allowed us to represent a _contains_ or _has a_ relationship between two classes. Recall that a course has a final and a fruit basket contains fruit. While useful in many situations, we often want to represent a **_type of_** relationship. In TypeScript, the `extend` keyword allows us to represent a class in terms of another class that it is a _type of_.
 
 Consider the following:
 

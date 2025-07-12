@@ -109,11 +109,11 @@ console.log(point2);
 
 ![](../../assets/images/ref4.jpg)
 
-This is probably what we wanted. This is called a **_deep copy_**. While there are some ways to do this automatically in Typescript, they do not work in all cases, and can be problematic. We can do this manually as in this example, but we will look at better ways later.
+This is probably what we wanted. This is called a **_deep copy_**. While there are some ways to do this automatically in TypeScript, they do not work in all cases, and can be problematic. We can do this manually as in this example, but we will look at better ways later.
 
 ## Summary
 
-Understanding references and instances is critical in nearly all programming languages. In typescript, every variable whose type is not a primitive type (string, boolean, number) stores a reference to the object. From our examples:
+Understanding references and instances is critical in nearly all programming languages. In TypeScript, every variable whose type is not a primitive type (string, boolean, number) stores a reference to the object. From our examples:
 
 -   point2=point; //makes a copy of the reference to the one and only object
 -   A **_shallow copy_** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object.

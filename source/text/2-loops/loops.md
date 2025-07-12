@@ -72,7 +72,7 @@ console.log(sillyMultiply(5,4));
 
 ## For Loops
 The other primary type of loop we will be discussing is the for loop.
-While you have seen for loops in other languages, they are somewhat different in typescript, and there are a couple of different versions.
+While you have seen for loops in other languages, they are somewhat different in TypeScript, and there are a couple of different versions.
 Let's start with the simplest form.
 
 ![](../../assets/images/forloop.jpg)
@@ -122,7 +122,7 @@ console.log(sillyMultiply(5,4));
 </details>
 
 ## Summary
-We can create more complex program logic by repeating sections of our code to solve problems.  This is important for many reasons including readability, reducing potential for errors, and variability of the number of times something must execute based on inputs.  The two primary loops in Typescript are the while loop and the for loop.  This section examined the while loop, and one of the formats of the for loop.  We will examine the other for loop in the next section as it explicitly operates on collections which we will cover next.
+We can create more complex program logic by repeating sections of our code to solve problems.  This is important for many reasons including readability, reducing potential for errors, and variability of the number of times something must execute based on inputs.  The two primary loops in TypeScript are the while loop and the for loop.  This section examined the while loop, and one of the formats of the for loop.  We will examine the other for loop in the next section as it explicitly operates on collections which we will cover next.
 
 # Next Step
 

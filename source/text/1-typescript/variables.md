@@ -2,7 +2,7 @@
 layout: default
 title: Variables
 nav_order: 1.3
-parent: Introduction To Typescript
+parent: Introduction To TypeScript
 ---
 
 # Variables
@@ -87,7 +87,7 @@ It depends on the language we are using, but in general, we specify:
 >
 > Note, if we do not specify a variable's initial value, then we cannot read the variable's value until we do.
 
-In this short Typescript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
+In this short TypeScript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
 We declare the variable `answer` as a `number`, but do not give it a value.
 We then compute `myValue+3` and store it in answer.
 
@@ -170,7 +170,7 @@ console.log(answer);
 
 Since a variable can take on many values, we might want to compare the value to something to see if it is the same, or greater than or less than.
 
-In typescript, we do this with:
+In TypeScript, we do this with:
 
 -   `===`: test if equal
 -   `!==`: test if not equal

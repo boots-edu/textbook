@@ -263,7 +263,7 @@ Hopefully, you get a message like the one shown above. It says that it "`added 8
 The message also says that "`3 vulnerabilities`" were detected in the packages, and offers a command to fix them. Again,
 you might be wondering if you should take the advice of a machine? Remember, do not run commands you do not understand.
 
-Modern Typescript development requires a large number of packages, even for simple projects. Often, these projects will
+Modern TypeScript development requires a large number of packages, even for simple projects. Often, these projects will
 have small vulnerabilities that are rigorously tracked by the community. If you were going to deploy a website for a
 large bank or trusted government entity, then it would be very important to address these vulnerabilities.
 
@@ -291,7 +291,7 @@ assert_equal(addition(1, 2, 3), 6)
 ```
 
 ```typescript
-// Jest Version in Typescript
+// Jest Version in TypeScript
 expect(addition(1, 2, 3)).toEqual(6);
 ```
 
@@ -496,7 +496,7 @@ Let us review all the steps we took in this assignment:
 -   Cloned the repository onto your computer
 -   Installed the project's modules using npm install
 -   Ran the project's tests using npm run test
--   Edited the Typescript source code files for the project in the src/ directory
+-   Edited the TypeScript source code files for the project in the src/ directory
 -   Reran the tests to make sure everything worked
 -   Staged, Commited, and Pushed the changes to your repository
 -   Submitted the repository below to GradeScope
@@ -508,10 +508,10 @@ This will be the workflow for the rest of the semester, so get used to it!
 
 It has been a couple of months since you completed your CS1 course, so let's review some concepts from last semester.
 
-While Python and Typescript (and many other languages) are different, the basic concepts we learned in CS1 are still valid.
+While Python and TypeScript (and many other languages) are different, the basic concepts we learned in CS1 are still valid.
 
 Concepts such as variables, operators, functions, conditionals and looping might have different syntax, but largely operate in the same way between languages.
 
-If you understand the basic concepts, picking up a new language like Typescript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
+If you understand the basic concepts, picking up a new language like TypeScript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
 
 Let's start with variables: [Variables &raquo;](../1-typescript/variables.md)
