@@ -22,7 +22,7 @@ parent: Introduction
 
 This section helps you set up a working environment for this text.  Through this process you will install and verify your development environment.
 
-If everything goes well, this should only take you about 20 minutes. But it is very normal to encounter issues if you are
+If everything goes well, this should only take about 20 minutes. However, it is very normal to encounter issues if you are
 not used to this workflow. Don't worry, you will be an expert soon!
 
 Making web applications is complicated, so it is critical that your environment's setup and the eventual structure of our web application follow these instructions precisely. If this seems limiting, that's the point.
@@ -30,7 +30,7 @@ Please try to stay within the bounds given as you experiment and try things out!
 
 Do not skip steps.
 
-Read error messages, and ask questions. Talk to humans as needed to get help, and use google intelligently.
+Read error messages, and ask questions. Talk to humans as needed to get help, and use Google intelligently.
 
 ## Get Software
 
@@ -46,11 +46,11 @@ To open the extension menu, you can type `Ctrl+Shift+X` (Windows) or `Cmd+Shift+
 
 ![extension icon](../../images/setup/setup_extension_icon.png)
 
-A search bar will appear at the top of the menu. Type `ESLint` and click install:
+A search bar will appear at the top of the menu. Type `ESLint` and click "install":
 
 ![eslint menu](../../images/setup/setup_install_eslint.png)
 
-Then, search for `Prettier` and click install:
+Then, search for `Prettier` and click "install":
 
 ![prettier install](../../images/setup/setup_install_prettier.png)
 
@@ -58,7 +58,7 @@ Make sure you have installed the extensions that are in the images above. These 
 
 ### Get Node
 
-**Next, Download and Install [Node](https://nodejs.org/en/download/)**
+**Next, download and install [Node](https://nodejs.org/en/download/)**
 
 You should use the installer for the most recent **LTS** version. The link will take you to the correct download page.
 
@@ -67,7 +67,7 @@ Once you have downloaded the installer, open it.
 ![node-open-1.png](../../images/setup/node-open-1.png)
 
 You may notice that it is installing both Node and something called npm. Node Package Manager (npm) will make it easier
-to manage, install, and update node packages. You need both of these!
+to manage, install, and update node packages. You need both of these.
 
 The installer will ask you to select where you want to install the package; keep the default location that already
 appears.
@@ -79,9 +79,9 @@ Once the installer is finished, you should see this screen:
 
 ![node-done.png](../../images/setup/node-done.png)
 
-Now we need to verify that the installation was successful. Navigate back to VS Code and open a Terminal.
+Now we need to verify that the installation was successful. Navigate back to VS Code and open a terminal.
 
-At the top of your VS Code window, click Terminal and then click New Terminal:
+At the top of your VS Code window, click "Terminal" and then click "New Terminal":
 
 ![new-terminal-1.png](../../images/setup/new-terminal-1.png)
 
@@ -93,18 +93,16 @@ might see something like this:
 You should not be in any folders for this step! This should not be an issue if you have not opened a project in VS Code
 yet.
 
-The blue box is the cursor where I can type commands. In the future, we will give instructions on what to write by
+The blue box is the cursor where you can type commands. In the future, we will give instructions on what to write by
 writing boxes like this:
 
 ```
 $ node --version
 ```
 
-Note that you do not write the dollar sign (`$`); that just indicates the start of a new command. Sometimes folks will write an angle bracket (`>`) or some other symbol.
+> Note that you do not write the dollar sign (`$`); that just indicates the start of a new command. Sometimes folks will write an angle bracket (`>`) or some other symbol.
 
-In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer.  
-If an older version appears, you need to go back and install the **LTS version** ; some packages may only support the latest
-LTS version of Node, so it's better to fix it now.
+In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer.  If an older version appears, you need to go back and install the **LTS version**; some packages may only support the latest LTS version of Node, so it's better to fix it now.
 
 If `node: command not found` appears, it means something went wrong with your installation. Check that the installer is
 properly finished. If it has, open the installer again and verify that the destination of your installation matches the
@@ -113,7 +111,7 @@ ones listed above.
 Once you have verified that Node was installed, enter the command (without the dollar sign):
 
 {: .warning-title}
-Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a *Command Prompt* terminal window instead.
+Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a command prompt terminal window instead.
 
 ```
 $ npm --version
@@ -132,7 +130,7 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 For Windows: You can download and use the installer. It should be straightforward, and you can move onto the next section once it finishes.
 
 For Mac: There are a few options you can choose from on the download page.
-We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign!) and hit enter:
+We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign) and hit "enter":
 
 ```bash
 $ /bin/bash -c "$(curl-fsSLhttps://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -140,7 +138,7 @@ $ /bin/bash -c "$(curl-fsSLhttps://raw.githubusercontent.com/Homebrew/install/HE
 
 When it asks for password, type yours in. It'll output a lot of text, and then beneath a large list of tags, you see a purple arrow with `"Next Steps"`.
 
-Then type `brew help` and hit enter, to confirm that Homebrew was correctly installed. Wait a second for it to spew words and then, when able, type:
+Then type `brew help` and hit "enter", to confirm that Homebrew was correctly installed. Wait for some words to appear and when able type:
 
 ```bash
 $ brew install git
@@ -158,7 +156,7 @@ This account is an important part of your professional identity. You will use it
 
 Now that you have a programming environment, it is time to complete the first coding exercise to test everything.
 
-On the original Canvas Assignment page that took you to this page, there should be a link to the GitHub Classroom assignment. Click on that link to go to the starter assignment on Github Classroom.
+On the original Canvas assignment page that took you to this page, there should be a link to the GitHub Classroom assignment. Click on that link to go to the starter assignment on GitHub Classroom.
 
 You may need to reload the page manually. The process should not take long. When the repository is ready, you should see
 a new link:
@@ -179,19 +177,19 @@ local copy of the repository that you can freely edit.
 
 You will need to run the "Git: Clone" command in VS Code:
 
--   Type `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to bring up the Command Palette
--   Type `Git: Clone` and press enter
+-   Type `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to bring up the command palette
+-   Type `Git: Clone` and press "Enter"
 -   Type `Ctrl+V` (Windows) or `Cmd+V` (Mac) to paste the previously copied link and press enter
--   You may be asked to authenticate on GitHub; do so.
--   A folder select window will pop up and ask "Choose a folder to clone <url> into". We recommend that you create a `CISC-181` folder in your User directory, and store all your assignments in there. If you select that `CISC-181` folder, then a new folder will be created there for this assignment.
--   When completed, it will ask if you would like to "open the cloned repository". Click "Open" to open the repository in the current window.
+-   If you are asked to authenticate on GitHub, do so.
+-   A folder select window will prompt you to "Choose a folder to clone <url> into." We recommend that you create a "CISC-181" folder in your user directory, and store all your assignments in there. If you select that CISC-181 folder, then a new folder will be created there for this assignment.
+-   When completed, it will ask if you would like to "open the cloned repository." Click "Open" to open the repository in the current window.
 
 ## Inspecting the Project
 
 If everything went well in the previous step, you now have the repository downloaded locally and open in VS Code.
 
 There are a lot of files already in this repository, but we only need to look closely at two of them. If the file are
-not already visible, click the document icon in the topleft of the left navigation bar to see the Explorer view.
+not already visible, click the document icon in the topleft of the left navigation bar to see the "Explorer View."
 
 ![explorer.png](../../images/setup/explorer.png)
 
@@ -218,7 +216,7 @@ Click on the `basic.test.ts` file to view the file's contents:
 
 {: .warning-title}
 Note: If you single clicked on the `basic.ts`, file, then clicking `basic.test.ts` replaces the file in the current
-view. To keep the file open even when you click on other files, double click the filenames instead.
+view. To keep the file open even when you click on other files, double click the filename instead.
 
 Oh dear, there appear to be red squiggles in our code, the universal sign of trouble. What has gone wrong?
 
@@ -226,7 +224,7 @@ To find out more details, hover over the first word with the red squiggles (`des
 
 ![image.png](../../images/setup/setup_red_squiggles.png)
 
-The interface is reporting an error: it "`Cannot find name 'describe'.`" It goes on to suggest installing "`type definitions for a test runner`" and even offers a command and some `Quick Fix` actions.
+The interface is reporting an error: it `Cannot find name 'describe'.` It goes on to suggest installing `type definitions for a test runner` and even offers a command and some `Quick Fix` actions.
 
 Should you take the advice of the machine? The answer will always be "it depends". If you know what you are doing and
 the advice is correct, then you should certainly use a tool like this. But if you are not sure, then **you should not run commands you do not understand**.
@@ -237,31 +235,31 @@ We'll need to do this every time we clone a new assignment repository.
 
 ## Install Modules
 
-The next step is to open a Terminal that we can run instructions in.
+The next step is to open a terminal that we can run instructions in.
 
-At the top of your VS Code window, click Terminal and then click New Terminal. You've done this before, but this time,
-you need to be in the assignment directory. VS Code will do this for you!
+At the top of your VS Code window, click "Terminal" and then click "New Terminal." You've done this before, but this time,
+you need to be in the assignment directory. VS Code will do this for you. 
 
 A new terminal will appear at the bottom of your screen, and it will look something like this (notice you are in
 `hw0-setup-check`):
 
 ![terminal.png](../../images/setup/terminal.png)
 
-Run the command (without the dollar sign):
+Run the command (without the dollar sign).
 
 ```
 $ npm install
 ```
 
-A whole bunch of messages will appear, some of which may look alarming. Just because you see red text does not mean you
+Several messages will appear, some of which may look alarming. Just because you see red text does not mean you
 have errors, though.
 
 ![npm-install.png](../../images/setup/npm-install.png)
 
-Hopefully, you get a message like the one shown above. It says that it "`added 877 packages`".
+Hopefully, you get a message like the one shown above. It says that it `added 877 packages` (The number may be different from 877).
 
 The message also says that "`3 vulnerabilities`" were detected in the packages, and offers a command to fix them. Again,
-you might be wondering if you should take the advice of a machine? Remember, do not run commands you do not understand.
+you might be wondering if you should take the advice of a machine. Remember: Do not run commands you do not understand.
 
 Modern TypeScript development requires a large number of packages, even for simple projects. Often, these projects will
 have small vulnerabilities that are rigorously tracked by the community. If you were going to deploy a website for a
@@ -276,14 +274,14 @@ The `basic.test.ts` file we were looking at before no longer has red squiggles! 
 
 ![image.png](../../images/setup/setup_example_test.png)
 
-This is a test file written with a library named "**Jest** ". You have previously seen unit tests written using the
+This is a test file written with a library named "**Jest**." You have previously seen unit tests written using the
 Bakery's `assert_equal` function, but Jest is a much more sophisticated testing framework. Let's look at each part of
 the file in turn.
 
 -   At the top of the file (on line 1), we `import` the `addition` function from the `basic.ts` file, which is in the `src` directory. Since that function was `export`ed, we are able to `import` the function in this file.
 -   The next line of code (line 3) is a call to the `describe` function, which is a Jest function for organizing a suite of unit tests. It takes the `string` name of a collection of tests and then an anonymous function that has all the tests inside. Don't worry about that "anonymous function" term just yet; for now, just think of it as a block of code that Jest will run for us.
 -   The inside of the `describe` function call is a sequence of four calls to the `test` function (on lines 4, 9, 14, and 19). The test function is another Jest function, once again for organizing related unit tests. We give names to the tests, and sometimes we will also let you know how much that test is worth to us when we grade the assignment. Then there is another anonymous function to have the actual assertions.
--   On lines 5, 6, 10, 11, 15, 16, and 20, we see the actual assertions, which are equivalent to the `assert_equal` function you saw previously. In Jest, they are written using the `expect` function, which consumes one expression (almost always a function call for the function we are testing). The result of the `expect` function is an object that has a `toEqual` method, which allows us to check the expected result. Again, don't worry about the terms just yet, just focus on the comparable idea for writing tests between Bakery and Jest:
+-   On lines 5, 6, 10, 11, 15, 16, and 20, we see the actual assertions, which are equivalent to the `assert_equal` function you saw previously. In Jest, they are written using the `expect` function, which consumes one expression (almost always a function call for the function we are testing). The result of the `expect` function is an object that has a `toEqual` method, which allows us to check the expected result. Again, don't worry about the terms just yet, just focus on the comparable idea for writing tests between Bakery and Jest.
 
 ```python
 # Bakery version in Python
@@ -318,8 +316,7 @@ The bottom of the output has a summary of what happened.
     -   Three of which failed ("Positive Numbers", "Negative Numbers", and "Mixed Numbers")
     -   One of which passed ("Zeros")
 
-Scrolling up through the output, you can see more details about exactly which tests failed, and the specific `expect`
-assertions that went wrong.
+Scrolling up through the output, you can see more details about exactly which tests failed and the specific `expect` assertions that went wrong.
 
 ![initial-test-top.png](../../images/setup/initial-test-top.png)
 
@@ -332,7 +329,7 @@ Let us return to our source code file, `basic.ts`, where the addition function w
 
 ![lint-issue.png](../../images/setup/lint-issue.png)
 
-There is a new red squiggle waiting for us! We can hover over the squiggle to find out what it is about.
+There is a new red squiggle waiting for us! We can hover over the squiggle to find out what it is alerting us to.
 
 ![image-d2caeff8-cb6a-4294-bb32-69a5d8b5199a.png](../../images/setup/setup_new_squiggle.png)
 
@@ -340,8 +337,8 @@ The feedback from the environment has nothing to do with the correctness of our 
 (**eslint**) complaining about the formatting of our file. Specifically, the system wants us to add a newline at the end
 of our file.
 
-Sometimes, you may disagree with what the Linter says. There is a lot of subjective opinions about how code should be
-formatted. On a good development team, all the developers will agree on a set of linting rules that they can live with.
+Sometimes, you may disagree with what the linter says. There are a lot of subjective opinions about how code should be
+formatted. On a good development team, all the developers will agree on a set of linting rules.
 However, while you are starting out (and even sometimes when you are established), you may have to live with rules you
 do not like. In this case, we need everyone to follow linting rules to make our ability to help you more effective.
 Clean, well-formatted code is much easier to read and debug!
@@ -356,18 +353,18 @@ We will not tell you the error, but you have probably already noticed it. Either
 ![image.png](../../images/setup/setup_incorrect_addition.png)
 
 You may notice a black dot next to the name of the `basic.ts` file in the tab. This indicates that the file has not been
-saved. Save the file now (either using the appropriate keyboard shortcut or the File menu). If you do not fix AND save
+saved. Save the file now (either using the appropriate keyboard shortcut or the file menu). If you do not fix AND save
 the file, then the next step will not work.
 
 ## Run the Tests Again
 
-Now that you've fixed the code and saved the file, you can return to the terminal to run the tests again:
+Now that you've fixed the code and saved the file, you can return to the terminal to run the tests again.
 
 ```
 $ npm run test
 ```
 
-And the resulting output this time should look a lot happier.
+And the resulting output this time should look a lot better.
 
 ![test-success.png](../../images/setup/test-success.png)
 
@@ -385,11 +382,11 @@ We will discuss these terms a lot more in lecture, but here are some basic defin
 -   Commit: Save a group of files' current state along with a message describing the change made to them.
 -   Push: Move a bunch of local commits to a remote repository.
 
-To stage and commit files, we will use the Source Control panel, accessible from the left navigation bar.
+To stage and commit files, we will use the source control panel, accessible from the left navigation bar.
 
 ![image.png](../../images/setup/setup_source_control.png)
 
-The Source Control panel gives us a graphical user interface for running Git commands. We could also run them from the
+The source control panel gives us a graphical user interface for running Git commands. We could also run them from the
 terminal, but for now it will most likely be easier to use this interface.
 
 VS Code has identified two files that we have edited: `basic.ts` and `package-lock.json`.
@@ -408,11 +405,11 @@ the file.
 
 We're happy with these changes, so the time has come to **stage** the files.
 
-Click the plus button next to each file to Stage them.
+Click the plus button next to each file to stage them.
 
 ![image.png](../../images/setup/setup_stage_file.png)
 
-When staged, the files are moved to the "Staged Changes" section, and are ready to be committed.
+When staged, the files are moved to the "Staged Changes" section and are ready to be committed.
 
 ![image.png](../../images/setup/setup_commit_file.png)
 
@@ -433,22 +430,22 @@ Once you have typed your message, click the Commit button to **commit** your sta
 
 ![image.png](../../images/setup/setup_actual_commit.png)
 
-After committing, the button will change to "Sync Changes", allowing you to **push** your commits to GitHub.
+After committing, the button will change to "Sync Changes," allowing you to **push** your commits to GitHub.
 
 ![image.png](../../images/setup/setup_pull_push.png)
 
-Click the Sync Changes button, and you will be told "This action will pull and push commits from and to "origin/main"".
-Click "OK", because that is exactly what we want to do.
+Click the "Sync Changes" button, and you will be told "This action will pull and push commits from and to `origin/main`".
+Click "OK" because that is exactly what we want to do.
 
 ![image.png](../../images/setup/setup_sync_changes.png)
 
-The Source Control panel will now be partially greyed out since you have nothing left to commit.
+The source control panel will now be partially greyed out since you have nothing left to commit.
 
 {: .warning-title }
 
 > "Need to Configure Git"
 >
-> If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the Terminal, substituting your email address and name.
+> If you encounter an error like "need to configure git" before you can push, then you can run the following commands in the terminal, substituting your email address and name.
 >
 > ```
 > git config --global user.email "YOUREMAIL@udel.edu"
@@ -469,7 +466,7 @@ At the bottom of the assignment page on Canvas, you will see a box with GradeSco
 platform for running student code through instructor unit tests, which will give you automatic feedback and score you.
 
 For this assignment, GradeScope will run the same tests that we gave you. But in future assignments, we may have hidden
-tests. This helps make sure that you are fulfilling all the parts of the assignment, and not just coding directly
+tests. This helps make sure that you are fulfilling all the parts of the assignment and not just coding directly
 against the tests we gave you. Make sure you follow all the instructions!
 
 In the box below, click Submit and then choose "GitHub" as the submission method.
@@ -477,7 +474,7 @@ In the box below, click Submit and then choose "GitHub" as the submission method
 The first time you submit your repository, you will need to authorize Gradescope to access your git repository.
 
 When you click to authorize GitHub with Gradescope, the embedded page may fail to load. If this happens, just open
-<https://gradescope.com>, go into the course and assignment (`"Homework 0- Setup Check"`), and authorize there. The
+<https://gradescope.com>, go into the course and assignment (`Homework 0- Setup Check`), and authorize there. The
 permissions should work fine in a separate browser tab.
 
 Type the name of your repository and choose it from the dropdown. It should start with `hw0`.
@@ -486,7 +483,7 @@ From the branch dropdown, choose the `main` branch.
 
 You can submit multiple times before the deadline. Your last submission will determine your grade. For many assignments,
 we will give you additional feedback beyond what the autograder will give you, so do not assume that your grade will
-remain as it is. However, if the autograder reports any issues, you should definitely handle them now!
+remain as it is. However, if the autograder reports any issues, you should attend to them now!
 
 ## Summary
 
@@ -498,7 +495,7 @@ Let us review all the steps we took in this assignment:
 -   Ran the project's tests using npm run test
 -   Edited the TypeScript source code files for the project in the src/ directory
 -   Reran the tests to make sure everything worked
--   Staged, Commited, and Pushed the changes to your repository
+-   Staged, commited, and pushed the changes to your repository
 -   Submitted the repository below to GradeScope
 -   Confirmed that we passed all the autograder tests
 
@@ -510,8 +507,8 @@ It has been a couple of months since you completed your CS1 course, so let's rev
 
 While Python and TypeScript (and many other languages) are different, the basic concepts we learned in CS1 are still valid.
 
-Concepts such as variables, operators, functions, conditionals and looping might have different syntax, but largely operate in the same way between languages.
+Concepts such as variables, operators, functions, conditionals and looping might have different syntax but largely operate in the same way between languages.
 
-If you understand the basic concepts, picking up a new language like TypeScript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a Computer Scientist.
+If you understand the basic concepts, picking up a new language like TypeScript is easier. This is a critical skill as new languages and paradigms come into fashion all the time. Learning how to apply your core knowledge to a new situation is critical to stay current throughout your career as a computer scientist.
 
-Let's start with variables: [Variables &raquo;](../1-typescript/variables.md)
+Let's start with [Variables &raquo;](../1-typescript/variables.md)
