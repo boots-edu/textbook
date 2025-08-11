@@ -55,7 +55,7 @@ The equation `y = mx + c` represents every possible straight line.
 
 `y = 2x + 4` represents a specific line. By assigning a value to the variable `x` we can compute the appropriate `y` for this line.
 
-Just like we can use variables in math to create an expression that represents a line, in Computer Science we can use the same idea to create code that computes the correct answer for a variety of input values.
+Just like we can use variables in math to create an expression that represents a line, in computer science we can use the same idea to create code that computes the correct answer for a variety of input values.
 
 ## Variables Have Types
 
@@ -89,7 +89,7 @@ It depends on the language we are using, but in general, we specify:
 
 In this short TypeScript code snippet, we declare the variable `myValue` to hold a number and assign it an initial value of `4`.
 We declare the variable `answer` as a `number`, but do not give it a value.
-We then compute `myValue+3` and store it in answer.
+We then compute `myValue+3` and store it in the variable answer.
 
 ```typescript
 let myValue: number = 4;
@@ -111,7 +111,7 @@ Some key notes on the syntax of declaring a variable:
 
 ## Types in TypeScript
 
-Typescript has only three basic types.
+TypeScript has only three basic types.
 
 -   `number`: Holds any numeric data (e.g. `42` or `3.14159`)
 -   `string`: Holds a string of characters (e.g. `"Hello World"`)
@@ -119,7 +119,7 @@ Typescript has only three basic types.
 
 There are other more complex types we will examine later (like arrays) and we can even create our own types to use in our programs.
 
-## The ***const*** keyword
+## The ***const*** Keyword
 
 The ```const``` keyword in TypeScript is used to declare variables whose values are intended to remain constant once assigned. It provides developers with a way to ensure that the variable cannot be reassigned, promoting safer and more predictable code.
 
@@ -182,7 +182,7 @@ In TypeScript, we do this with:
 {: .info-title}
 Note that the equality operator is `===` (three equal signs) and not `==` (two equal signs). There is a double equal operator (`==`) operator, but it is not recommended to use it since it is not type safe. Most modern TypeScript code will use the triple equal operator (`===`).
 
-The result of the expression will have the type **boolean**. That is, it will be either `true` or `false`.
+The result of the expression will have the type **Boolean**. That is, it will be either `true` or `false`.
 
 ```typescript
 let myValue: number = 5;
