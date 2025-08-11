@@ -471,7 +471,7 @@ against the tests we gave you. Make sure you follow all the instructions!
 
 In the box below, click Submit and then choose "GitHub" as the submission method.
 
-The first time you submit your repository, you will need to authorize Gradescope to access your git repository.
+The first time you submit your repository, you will need to authorize Gradescope to access your Git repository.
 
 When you click to authorize GitHub with Gradescope, the embedded page may fail to load. If this happens, just open
 <https://gradescope.com>, go into the course and assignment (`Homework 0- Setup Check`), and authorize there. The
