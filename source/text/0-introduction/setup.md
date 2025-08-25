@@ -343,6 +343,14 @@ However, while you are starting out (and even sometimes when you are established
 do not like. In this case, we need everyone to follow linting rules to make our ability to help you more effective.
 Clean, well-formatted code is much easier to read and debug!
 
+The linter gives feedback through red squiggles in the editor. However, you can also run the linter through the command line, just like we do the tests:
+
+```
+npm run lint
+```
+
+It's a good habit to run the linter along with the tests when you think you are done, to make sure that you've fixed the error. Either way, the issue in this file is the same.
+
 {: .info-title}
 
 Add a blank line at the end of the file to make the squiggle go away.
