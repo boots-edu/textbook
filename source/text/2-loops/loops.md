@@ -19,7 +19,7 @@ parent: Loops and Arrays
 </details>
 
 ## Key Idea
-A loop is a control flow structure in programming that allows us to repeat a section of code until some boolean condition is met.
+A loop is a control flow structure in programming that allows us to repeat a section of code until some Boolean condition is met.
 
 ## Overview
 In programming we often have to do things more than once. Rather than copying and pasting our code over and over again, we can use a loop to run the same section of code repeatedly.
@@ -126,4 +126,4 @@ We can create more complex program logic by repeating sections of our code to so
 
 # Next Step
 
-Next we'll learn about arrays: [Arrays &raquo;](../2-loops/arrays.md)
+Next we'll learn about [Arrays &raquo;](../2-loops/arrays.md)
