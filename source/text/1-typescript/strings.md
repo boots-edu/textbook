@@ -80,8 +80,7 @@ console.log(myStr[4]); // "o"
 console.log(myStr[10]); // "d"
 ```
 
-#### No Negative Indices with Brackets
-
+>> **NO NEGATIVE INDICES WITH BRACKETS**<br/>
 Unlike Python, you cannot access characters in a string using negative indexes in TypeScript. The result will be the special value `undefined`.
 
 ```typescript
@@ -118,8 +117,7 @@ console.log(myStr.slice(4, 5)); // "o"
 
 ### Indexes and Slices in Strings
 
-![](../../images/intro_strings_tip.png)
-
+<img src="../../images/intro_strings_tip.png" style="background:white"/>
 It can be difficult to remember how string slicing works, compared to regular indexes. The image above should help you remember how to slice strings:
 
 -   When indexing, put numbers directly below the characters
@@ -164,26 +162,25 @@ let combined: string = myStr1 + " " + myStr2;
 console.log(combined); // "Hello World"
 ```
 
-The advantages of `concat` are that:
-
--   You can combine more than two strings at once with a single operation
--   You can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
+The advantages of `concat` are that you can combine more than two strings at once with a single operation and you can make sure that you are only combining strings (no numbers or other types), since `concat` only works with strings. With the `+` operator, you can accidentally add numbers to strings, which can lead to unexpected results (since JavaScript will convert the number to a string and concatenate it).
 
 ### The `split` and `substring` method
 
--   Assume the string `let myStr="Hello World";`
--   **split():** Splits the specified String object into an array of strings.
-    -   myStr.split(" "); //returns the array \["Hello","World"\]
+ Assume the string `let myStr="Hello World";`
+
+**split():** This method splits the specified string object into an array of string objects.
+
+myStr.split(" "); //returns the array \["Hello","World"\]
 
     ```typescript
     let myStr="Hello World";
     console.log(myStr.split(" "));
     ```
 
--   **substring():** Returns characters from the string between two defined indexes.
-    -   myStr.substring(2); // returns "llo World"
-    -   myStr.substring(2,5); // returns "llo"
-        > _Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
+**substring():** Returns characters from the string between two defined indexes:
+- myStr.substring(2); // returns "llo World"
+- myStr.substring(2,5); // returns "llo"
+> Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
 
     ```typescript
     let myStr="Hello World";
@@ -213,8 +210,9 @@ Notice how the methods take no arguments; the parentheses are still required to 
 
 What if the string contains a number and we want to convert it to a number type? We can use two approaches:
 
--   `parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return the special value `NaN`.
--   `+`: The unary addition operator can be placed before a value to convert the value to a number. This is different than the binary addition operator, which will add two numbers or strings together. The unary addition operator is less explicit than `parseInt`, but it is a common shorthand.
+`parseInt`: This function will convert a string to a number, but only if the string contains a valid number. If the string does not contain a valid number, `parseInt` will return the special value `NaN`.
+
+> `+`: The unary addition operator can be placed before a value to convert the value to a number. This is different than the binary addition operator, which will add two numbers or strings together. The unary addition operator is less explicit than `parseInt`, but it is a common shorthand.
 
 ```typescript
 let myNumStr: string = "42";
@@ -247,7 +245,7 @@ let myNumStr: string = myNum.toString();
 console.log(myNumStr);
 ```
 
-The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, booleans, and other more complex types (although that is not always useful, as we will see).
+The `toString` method is available on all non-string types in TypeScript, by default. That means we can use it on numbers, Booleans, and other more complex types (although that is not always useful, as we will see).
 
 ### Implicit String Conversion with `+`
 
@@ -306,4 +304,4 @@ There are MANY other methods available to the string type, but these are some of
 
 # Next Step
 
-Now onto the next chapter: [Loops and Arrays &raquo;](../2-loops/index.md)
+Now onto  [Loops and Arrays &raquo;](../2-loops/index.md)
