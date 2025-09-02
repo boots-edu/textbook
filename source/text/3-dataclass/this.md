@@ -5,7 +5,7 @@ nav_order: 3.5
 parent: Data Classes
 ---
 
-# Instances and References
+# The `this` keyword
 
 [&laquo; Return to the Chapter Index](index.md)
 
@@ -20,11 +20,11 @@ parent: Data Classes
 
 ## Key Idea
 
-**_Data Classes_** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+Sometimes we need to access the data inside a **Data class** from inside the constructor.  We can accomplish this by using the `this` keyword.
 
 ## Overview
 
-There is a special keyword **`this`** that can be used from inside the `constructor` (or any method inside the class) that will allow us access to the member variables of the object.
+There is a special keyword `this` that can be used from inside the `constructor` (or any method inside the class) that will allow us access to the member variables of the object.
 
 ## Abstracting the constructor
 
@@ -79,16 +79,16 @@ console.log(new Color("green"));
 console.log(new Color("blue"));
 ```
 
-Here we can initialize our members indirectly by using the value of the parameter `colorStr`. The **`this`** keyword allows us access to our own members from within the instance. If the string is not recognized (i.e. not `red`, `green`, or `blue`) then the default values of (0,0,0) remain which is our intention. We would want to make a comment on our `constructor` that this is the behavior to help users of our class to know how to use it.
+Here we can initialize our members indirectly by using the value of the parameter `colorStr`. The **`this`** keyword allows us access to our own members from within the instance. If the string is not recognized (i.e. not `red`, `green`, or `blue`) then the default values of (0, 0, 0) remain which is our intention. We would want to make a comment on our `constructor` that this is the behavior to help users of our class to know how to use it.
 
 ## Summary
 
-Typescript allows the use of the **`this`** keyword in order to access the members of the current instance of the class. From within the class, using the **`this`** keyword allows us access to all of the member properties (public or private) within the class instance.
+TypeScript allows the use of the `this` keyword in order to access the members of the current instance of the class. From within the class, using the `this` keyword allows us access to all of the member properties (public or private) within the class instance.
 
 ## Chapter Summary
 
-Now we have the ability to create complex data types of our own using the class keyword. These data types can contain any other type of object including another class, a primitive type, or an array. There is no limitation on what the array or embedded class contain (other class objects, arrays of primitives, arrays of other class objects, etc.) We have a special method in our objects called a `constructor`. The `constructor` can be used to initialize our object, or by using the `public` and `private` keywords, it can define members of our object. Parameters without these keywords behave just like parameters to any other function, but with these keywords, that parameter also becomes a member of the object. We can access the members of our class instance using the **`this`** keyword.
+Now we have the ability to create complex data types of our own using the class keyword. These data types can contain any other type of object including another class, a primitive type, or an array. There is no limitation on what the array or embedded class contains (other class objects, arrays of primitives, arrays of other class objects, etc.) We have a special method in our objects called a `constructor`. The `constructor` can be used to initialize our object, or by using the `public` and `private` keywords, it can define members of our object. Parameters without these keywords behave just like parameters to any other function, but with these keywords, that parameter also becomes a member of the object. We can access the members of our class instance using the **`this`** keyword.
 
 # Next Step
 
-Next we'll learn about generalized classes: [DataClasses &raquo;](../4-classes/index.md)
+Next we'll learn about [generalized classes &raquo;](../4-classes/index.md)

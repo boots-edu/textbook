@@ -20,11 +20,11 @@ parent: Data Classes
 
 ## Key Idea
 
-**_Data Classes_** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+When we create a new **instance** of a **Data class**, we create a new location in memory to store the data inside the class and are returned a **reference**.
 
 ## Understanding Instances and References
 
-When we define a class using the **_class_** keyword, we are creating a **_type_**. This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class. When we use the `new` keyword, we create an **instance** of the class in memory and return a **reference** to the object in memory. If we call new again, we get a second instance of the class and a second **reference** to a new memory location.
+When we define a class using the `class` keyword, we are creating a **type**. This type does not exist in memory, but is a template for creating objects that have the methods and fields described in the class. When we use the `new` keyword, we create an **instance** of the class in memory and return a **reference** to the object in memory. If we call the `new` keyword again, we get a second instance of the class and a second **reference** to a new memory location.
 
 ```typescript
 import { Color, Point, Polygon } from "ch2/drawing1";
@@ -39,7 +39,7 @@ let redTriangle: Polygon = new Polygon(points1, red);
 console.log(redTriangle);
 ```
 
-Examining this code in more detail, we see that each time new is called, we are creating an **instance** of the class. That means that each time we call `new`, we are allocating a new chunk of memory to hold the values of that instance. What is returned, is not the value of the class, but a **reference** to the created object.
+Examining this code in more detail, we see that each time new is called, we are creating an **instance** of the class. That means that each time we call `new`, we are allocating a new chunk of memory to hold the values of that instance. What is returned is not the value of the class but a **reference** to the created object.
 
 Consider the following code:
 
@@ -55,7 +55,7 @@ Graphically, this looks like:
 
 ![](../../assets/images/ref1.jpg)
 
-What would happen if we update `point.x`. In this case we would also update the instance pointed to by `point2`, because they are the same instance. When we set `point2 = point;` we are setting the variable `point2` to contain the reference stored in `point`, and thus they reference the same chunk of memory allocated by the one and only call to `new Point(...)`.
+What would happen if we update `point.x`. In this case we would also update the instance pointed to by `point2`, because they are the same instance. When we set `point2 = point;` we are setting the variable `point2` to contain the reference stored in `point`. Thus, they reference the same chunk of memory allocated by the one and only call to `new Point(...)`.
 
 Let's see that in action.
 
@@ -71,11 +71,11 @@ console.log(point2);
 
 ![](../../assets/images/ref2.jpg)
 
-As you can see, updating point updates the memory location referenced by point which is the same memory location referenced by point2. In other words, we only have one point, but we have two **references** or **aliases** to that point. Changing either one, changes the one and only object that the variables point and point2 refer to.
+As you can see, updating point updates the memory location referenced by point which is the same memory location referenced by point2. In other words, we only have one point, but we have two **references** or **aliases** to that point. Changing either one alters the one and only object that the variables point and point2 refer to.
 
-> Note: Sometimes this is what we want, but sometimes IT IS NOT!!!
+> Note: Sometimes this is what we want, but sometimes it is not!
 
-Later, we will look at other methods to create new objects based on existing objects, but for now, we would have to call **_new_** again and set point2 to that new object, then update its properties with the properties of point.
+Later, we will look at other methods to create new objects based on existing objects, but for now, we would have to call `new` again and set point2 to that new object, then update its properties with the properties of point.
 
 ```typescript
 import { Color, Point } from "ch2/drawing1";
@@ -91,9 +91,9 @@ console.log(point2);
 ![](../../assets/images/ref3.jpg)
 
 This is a **_shallow copy_** of an object as we are only copying the top level.
-This will make a new object, but only copy the top level or primitive types (number, boolean, string). Any deeper objects or arrays still remain as references.
+This will make a new object, but only copy the top level or primitive types (number, Boolean, string). Any deeper objects or arrays still remain as references.
 
-What if we want a **_deep copy_**. In other words, each point will, in addition to having a unique memory location for its primitive values, will also have a reference to a different Color object.
+What if we want a **_deep copy_**? In other words, each point will, in addition to having a unique memory location for its primitive values, will also have a reference to a different Color object.
 
 ```typescript
 import { Color, Point } from "ch2/drawing1";
@@ -113,12 +113,12 @@ This is probably what we wanted. This is called a **_deep copy_**. While there a
 
 ## Summary
 
-Understanding references and instances is critical in nearly all programming languages. In TypeScript, every variable whose type is not a primitive type (string, boolean, number) stores a reference to the object. From our examples:
+Understanding references and instances is critical in nearly all programming languages. In TypeScript, every variable whose type is not a primitive type (string, Boolean, number) stores a reference to the object. From our examples:
 
 -   point2=point; //makes a copy of the reference to the one and only object
 -   A **_shallow copy_** of the object only copies the top level primitive types, but does not duplicate any contained objects, rather it copies the reference to the same object.
--   A **_deep copy_** of the object makes copies of all of the objects, nested objects and primitive types. Gives you a true clone of the object that is independent of the original. Later, we will learn how to clone the object, but for now, we have to create an independent object with the same values.
+-   A **_deep copy_** of the object makes copies of all of the objects, nested objects and primitive types. This gives you a true clone of the object that is independent of the original. Later, we will learn how to clone the object, but for now, we have to create an independent object with the same values.
 
 # Next Step
 
-Next we'll learn about the **_this_** keyword: [this keyword &raquo;](this.md)
+Next we'll learn about the [`this` keyword &raquo;](this.md)

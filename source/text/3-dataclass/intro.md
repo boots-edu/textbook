@@ -20,18 +20,16 @@ parent: Data Classes
 
 ## Key Idea
 
-**_Data Classes_** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+**Data classes** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
 
 ## Complex Types
 
 If we wish to combine data into a more complex type that represents the combination of various related data items, then there are two methods available to us in TypeScript
 
--   **The interface**
-    -   Interfaces describe the data that goes into an object and its types, but do not provide default values, or any additional logic.
--   **The class**
-    -   Classes also describe the data that goes into an object, but provide a mechanism to set default values, construct the objects dynamically, and even define methods to operate on the internal data.
+- ***Interfaces*** describe the data that goes into an object and its types but do not provide default values, or any additional logic.
+- ***Classes*** also describe the data that goes into an object but provide a mechanism to set default values, construct the objects dynamically, and even define methods to operate on the internal data.
 
-> We will discuss interfaces and how and when to use them, later in the text. For the time being we will focus on classes, and specifically **_Data Classes_**.
+> We will discuss interfaces and how and when to use them, later in the text. For the time being we will focus on classes, and specifically **data classes**.
 
 ## Classes in TypeScript
 
@@ -73,8 +71,8 @@ By combining two numbers to represent the x and y coordinates of a ```Point``` o
 
 ## Summary
 
-Sometimes it makes sense to group data together. In these cases TypeScript provides multiple mechanisms with which to do that. In the section we have introduced the idea of creating a **_class_** that represents a set of heterogeneous data. (i.e. strings, numbers, booleans, arrays, and other classes).
+Sometimes it makes sense to group data together. In these cases TypeScript provides multiple mechanisms with which to do that. In the section we have introduced the idea of creating a **_class_** that represents a set of heterogeneous data. (i.e. strings, numbers, Booleans, arrays, and other classes).
 
 # Next Step
 
-Next we'll learn about creating basic data classes: [Basic Data Classes &raquo;](basic.md)
+Next we'll learn about creating [Basic Data Classes &raquo;](basic.md)

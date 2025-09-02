@@ -20,7 +20,7 @@ parent: Data Classes
 
 ## Key Idea
 
-**_Data Classes_** allow us to combine data into a grouping or class and use that grouping as a data type in our programs.
+**Data classes** can be created using a special function called a **constructor** which can be included in the class definition.
 
 ## Class constructors
 
@@ -28,7 +28,7 @@ So far, to create a class we:
 
 -   Create an instance of a class with the **new** keyword and store it in a variable
 -   Use the variable to modify the properties of the class individually
-    -   For our Color example, this means setting red, green, and blue independently.
+    -   For our color example, this means setting red, green, and blue independently.
 
 It would be much easier to have a function that takes the parameters we want to set and updates the object as it is being created.
 
@@ -60,7 +60,7 @@ console.log(veryRed, veryBlue, anotherColor);
 
 > Note that now we are creating and initializing our objects in one line.
 
-While much better, the definition of Color still seems repetative. While 100% correct, TypeScript gives us a shorthand.
+While much better, the definition of Color still seems repetitive. While 100% correct, TypeScript gives us a shorthand.
 
 ```typescript
 class Color {
@@ -100,9 +100,7 @@ console.log(myOtherPoint);
 
 ## Other Drawing classes
 
-What other classes do we need:
-
-The Line class simply needs two points (start and end) and a color. We define the class to have those three components and initialize them with a constructor
+The other class we need is a Line class.  The Line class simply needs two points (start and end) and a color. We define the class to have those three components and initialize them with a constructor
 
 {: .no-run}
 
@@ -198,8 +196,8 @@ With this code, drawing represents a drawing with two triangles (red and blue). 
 
 ## Summary
 
-To simplify the creation and initialization of a data class, we can provide a constructor method that takes parameters and can be used to set initial values for the member properties. If the parameters are preceeded by the words public or private, they automatically become member variables and get initialized to the values passed to the constructor. The constructor is called by using the **_new_** keyword to create an new instance of the class.
+To simplify the creation and initialization of a data class, we can provide a constructor method that takes parameters and can be used to set initial values for the member properties. If the parameters are preceded by the words public or private, they automatically become member variables and get initialized to the values passed to the constructor. The constructor is called by using the **_new_** keyword to create a new instance of the class.
 
 # Next Step
 
-Next we'll learn about instances and references: [Instances and References &raquo;](references.md)
+Next we'll learn about [Instances and References &raquo;](references.md)
