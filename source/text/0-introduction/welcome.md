@@ -38,6 +38,16 @@ For this text, use of these tools is not recommended. These tools, while impress
 
 > Once you achieve mastery, you will be able to use these tools in the future. When used correctly they are powerful, but used incorrectly, they are dangerous.
 
+## About this Text
+
+This textbook is free and open-source. It is licensed as follows:
+
+    Creative Commons Attribution Share Alike 4.0 International
+    Permissions: Commercial Use, Modification, Distribution, Private Use
+    Limitations: Liability, Trademark use, Patent use, Warranty
+    Conditions: License and copyright notice, State changes, Same license
+
+More information can be found at <https://creativecommons.org/licenses/by-sa/4.0/>
 
 ## Final thoughts before we begin
 
