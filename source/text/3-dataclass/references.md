@@ -111,6 +111,29 @@ console.log(point2);
 
 This is probably what we wanted. This is called a **_deep copy_**. While there are some ways to do this automatically in TypeScript, they do not work in all cases, and can be problematic. We can do this manually as in this example, but we will look at better ways later.
 
+## Constant Variables
+
+We discussed in the Array chapter how declaring a constant does not make its value immutable, just the variable itself. This is true of all variables that hold references to objects. If we declare a variable as a constant, we cannot change the reference stored in that variable, but we can change the object that it references.
+
+```typescript
+import { Color, Point } from "ch2/drawing1";
+
+const red: Color = new Color(255, 0, 0);
+red.r = 26;
+console.log(red);
+// Color { r: 26, g: 0, b: 0 }
+```
+
+If you try to change the reference stored in a constant variable, you will get an error.
+
+```typescript
+import { Color, Point } from "ch2/drawing1";
+
+const red: Color = new Color(255, 0, 0);
+red = new Color(0, 255, 0);
+// Error: Cannot assign to 'red' because it is a constant.
+```
+
 ## Summary
 
 Understanding references and instances is critical in nearly all programming languages. In TypeScript, every variable whose type is not a primitive type (string, Boolean, number) stores a reference to the object. From our examples:

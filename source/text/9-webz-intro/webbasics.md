@@ -204,7 +204,7 @@ The second is a combination of rule selectors. This rule says to style all input
 
 Now our content is centered in the div, and there is a 5 pixel margin around all of the input elements in the div.
 
-How about the buttons. They were both defined with the class `btn` and because we want them to look the same, we can use the class name to style both of them. For classes we specify the style rule by preceiding the class name with a ".", so `btn` is references as `.btn`
+How about the buttons. They were both defined with the class `btn` and because we want them to look the same, we can use the class name to style both of them. For classes we specify the style rule by preceding the class name with a ".", so `btn` is references as `.btn`
 
 {: .no-run }
 
@@ -250,7 +250,7 @@ This is an incredibly useful skill that is worth learning for your futures.
 
 ## Summary
 
-Learning HTML is an important skill as web applications are pervasive both for internet and local applications. While the number of tags and styles that are available is large, with a few tags and styles we can build beautiful web application displays. We will learn much more about this as we begin to build applicaitons instead of static web pages.
+Learning HTML is an important skill as web applications are pervasive both for internet and local applications. While the number of tags and styles that are available is large, with a few tags and styles we can build beautiful web application displays. We will learn much more about this as we begin to build applications instead of static web pages.
 
 # Next Step
 

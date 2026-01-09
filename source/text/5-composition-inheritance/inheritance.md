@@ -237,7 +237,7 @@ We encapsulate their commonality in the Users class, then extend Users to make n
 
 ## Summary
 
-**_Inheritance_** allows the programmer to represent an **_is a_** or **_type of_** relationship. Using inheritence through the `extends` keyword, we can express both the similarities and differents between objects in these types of relationships. We can call the constructor (we must actually) of our superclass in the constructor of our subclass by calling the `super` method and passing it the same list of parameters we would pass to the **_superclasses_** constructor.
+**_Inheritance_** allows the programmer to represent an **_is a_** or **_type of_** relationship. Using inheritance through the `extends` keyword, we can express both the similarities and differences between objects in these types of relationships. We can call the constructor (we must actually) of our superclass in the constructor of our subclass by calling the `super` method and passing it the same list of parameters we would pass to the **_superclasses_** constructor.
 
 # Next Step
 

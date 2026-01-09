@@ -54,7 +54,7 @@ Say we have a treeSearch method
 function treeSearch(tree: TreeNode, target: number){
 ```
 
-and we want to find the number 100 in the tree. We woudl start by comapring it to 44. Since 100 > 44 we know the answer must be in the right subtree if this is a **_binary search tree_**.
+and we want to find the number 100 in the tree. We would start by comparing it to 44. Since 100 > 44 we know the answer must be in the right subtree if this is a **_binary search tree_**.
 
 |         ![](../../assets/images/tree_2.jpg)          |
 | :--------------------------------------------------: |
@@ -79,7 +79,7 @@ This time when we call on the left subtree, our root is the value we are looking
 | :--------------------------------------: |
 | _Root is in orange, subtrees are empty._ |
 
-> Note: if we had been looking for 99, we would search the left subtree, which would be empty and we would return tat we did not find it.
+> Note: if we had been looking for 99, we would search the left subtree, which would be empty and we would return that we did not find it.
 
 ### Implementing Binary Search Trees in TypeScript
 
@@ -97,14 +97,14 @@ export class TreeNode{
 
 ### Searching Binary Search Trees
 
-Now we can right our treeSearch function to recursively search our tree.
+Now we can write our treeSearch function to recursively search our tree.
 
 Our function should have **_stop conditions_** when the tree is empty or when the value in the root of the tree is the one we are looking for.
 
 ```
-if (tree === undefined) {  			//tree is emtpy
+if (tree === undefined) {  			// tree is empty
 	return false;
-} else if (tree.value === value) {		//root of tree is our value
+} else if (tree.value === value) {		// root of tree is our value
 	return true;
 }
 ```
@@ -133,7 +133,7 @@ function treeSearch(tree: TreeNode | undefined, value: number): boolean {
 		return true;
 	} else if (tree.value<value){
 		return treeSearch(tree.right, value);
-	} else {   //must be > value, it is the only posibility left
+	} else {   //must be > value, it is the only possibility left
 		return treeSearch(tree.left, value);
 	}  
 }
@@ -181,7 +181,7 @@ function treeSearch(tree: TreeNode | undefined, value: number): boolean {
     } else if (tree.value < value) {
         return treeSearch(tree.right, value);
     } else {
-        //must be > value, it is the only posibility left
+        //must be > value, it is the only possibility left
         return treeSearch(tree.left, value);
     }
 }
@@ -214,7 +214,7 @@ console.log(treeSearch(treeRoot, 100));
 console.log(treeRoot);
 ```
 
-THis example implements the **_binary search tree_** in the previous example, then searches it for 100.
+This example implements the **_binary search tree_** in the previous example, then searches it for 100.
 
 > If I inserted them in a different order, I would have gotten a different tree.
 
@@ -287,7 +287,7 @@ For the search method, it is a little less straight forward. We need to check fo
 	}
 ```
 
-Now we stop in the parent node if the child node is undefined instead of stopping in the child when it is itself undefined.
+Now we check in the parent node if the child node is undefined before making the recursive call
 
 Here is a complete example of our tree program:
 
@@ -345,5 +345,4 @@ console.log(treeRoot);
 
 ## Summary
 
-**_Trees_** are an important data structure in Computer Science. They allow us to store data in a structured way that represeents parent/child relationships. In other words, a parent can have many children, but a child can only have one parent. A **_binary tree_** is a tree where each node has at most two children. A special case of a **_binary tree_** is a **_binary search tree_**. In a binary search tree each node in the left subtree of all nodes must be of lower value than the root, and each node in the right subtree of all nodes must be greater than the value of the root.
-
+**_Trees_** are an important data structure in Computer Science. They allow us to store data in a structured way that represents parent/child relationships. In other words, a parent can have many children, but a child can only have one parent. A **_binary tree_** is a tree where each node has at most two children. A special case of a **_binary tree_** is a **_binary search tree_**. In a binary search tree each node in the left subtree of all nodes must be of lower value than the root, and each node in the right subtree of all nodes must be greater than the value of the root.

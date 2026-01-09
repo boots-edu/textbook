@@ -48,7 +48,7 @@ Eventually, we will find a yellow ball, or we will empty the container making th
 
 ## Recursion Terminology
 
-When we find a yellow ball we are done. The answer is "yes" there is a yellow ball. When the container is empty we are done. The answer is "no" because there are clearly no yellow balls in the empty container, and while making it empty, we didn't see any. These cases where the answer is trivial are know as **_stop conditions_** or the **_base case_** of the recursion.
+When we find a yellow ball we are done. The answer is "yes" there is a yellow ball. When the container is empty we are done. The answer is "no" because there are clearly no yellow balls in the empty container, and while making it empty, we didn't see any. These cases where the answer is trivial are known as **_stop conditions_** or the **_base case_** of the recursion.
 
 So how do we get there? We need to make sure that whatever we do when the stop conditions are not met _approaches_ the stop condition. If we keep removing balls one at a time, either we find the yellow ball or we reduce the number of balls by one. Clearly in all cases, this approaches the stop conditions of finding a yellow ball or emptying the container. The step that handles non-stop conditions and approaches the stop conditions is referred to as the **_recursive step_**.
 
@@ -82,7 +82,7 @@ function findYellowBall(container:string[]):boolean{
 }
 </code></pre>
 
-The highlighted section above is the **_recursive step_**. Since we know it is not the first element, we simply reinitiate our search on the rest of the array (elements 2...n) by slicing the array and passing the result to our function.
+The highlighted section above is the **_recursive step_**. Since we know it is not the first element, we simply re-initiate our search on the rest of the array (elements 2...n) by slicing the array and passing the result to our function.
 
 ## Recursion Rules
 
@@ -92,7 +92,7 @@ The highlighted section above is the **_recursive step_**. Since we know it is n
 
 ## A simple Example
 
-Consider the porblem of computing factorial.
+Consider the problem of computing factorial.
 
 Factorial is defined as: _n! = n \* (n-1) \* (n-2) \* (n-3) \* ... \* 1_
 
@@ -148,7 +148,7 @@ In the jar of marbles and factorial examples, we could very easily solve these p
 Let's look at a simple example of binary search.
 
 -   In binary search, we start with a sorted list. Instead of checking every element, we check the middle element.
--   Since the list is sorted, if the value is less than the middle element, then we don't have to search the second half of the list. If it is greater, than we don't have to search the first half.
+-   Since the list is sorted, if the value is less than the middle element, then we don't have to search the second half of the list. If it is greater, then we don't have to search the first half.
 
 Consider:
 
@@ -165,8 +165,8 @@ Eventually the list will have 0 or 1 elements in it.
 So to complete the example on the array [1,2,3,4,5,6,7,8,9] trying to find 4.
 
 -   4 < 5 so we only search for 4 in [1,2,3,4]
--   The middle element is either 2 or 3, os if we pick 3 4>3 so we search for 4 in [4]
--   The list contians 1 element, and that element is the 4 we are looking for.
+-   The middle element is either 2 or 3, so if we pick 3 4>3 so we search for 4 in [4]
+-   The list contains 1 element, and that element is the 4 we are looking for.
 
 Another example, search for 11 in the same array.
 

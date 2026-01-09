@@ -30,7 +30,7 @@ Code quality is a general measure of how good the code is. It includes:
 -   Readability
     -   Comments, naming, indenting, consistency of the code, adherence to standards, etc.
 -   Usability
-    -   How easy to use is the code. If it is a class, how easy is it to create objects or extend. How easy is it to make changes. If a program, how what is the user experience like?
+    -   How easy to use is the code. If it is a class, how easy is it to create objects or extend. How easy is it to make changes. If a program, what is the user experience like?
 
 ## Why Care About Code Quality?
 
@@ -45,7 +45,7 @@ Our classes will be easier to use if our public interface uses names that make s
 
 ## Comments
 
-At this point, you should be convinced you that comments are worth your time. Now lets look at how to format a comment in TypeScript to make it more usable.
+At this point, you should be convinced that comments are worth your time. Now lets look at how to format a comment in TypeScript to make it more usable.
 We are using the jsdoc format for our comments. This is a good solution because we can automatically generate our documentation of our classes and methods, as well as provide tool tip help in vscode (and other IDEs).
 
 The most common tags available to us for jsdoc are:

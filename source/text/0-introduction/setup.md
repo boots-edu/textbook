@@ -20,7 +20,7 @@ parent: Introduction
 
 ## Overview
 
-This section helps you set up a working environment for this text.  Through this process you will install and verify your development environment.
+This section helps you set up a working environment for this text. Through this process you will install and verify your development environment.
 
 If everything goes well, this should only take about 20 minutes. However, it is very normal to encounter issues if you are
 not used to this workflow. Don't worry, you will be an expert soon!
@@ -102,7 +102,7 @@ $ node --version
 
 > Note that you do not write the dollar sign (`$`); that just indicates the start of a new command. Sometimes folks will write an angle bracket (`>`) or some other symbol.
 
-In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer.  If an older version appears, you need to go back and install the **LTS version**; some packages may only support the latest LTS version of Node, so it's better to fix it now.
+In this case, you need to type `node --version` and then press enter. The version that should appear is `v20.11.0` or newer. If an older version appears, you need to go back and install the **LTS version**; some packages may only support the latest LTS version of Node, so it's better to fix it now.
 
 If `node: command not found` appears, it means something went wrong with your installation. Check that the installer is
 properly finished. If it has, open the installer again and verify that the destination of your installation matches the
@@ -111,7 +111,7 @@ ones listed above.
 Once you have verified that Node was installed, enter the command (without the dollar sign):
 
 {: .warning-title}
-Note: On some Windows systems, security prevents the running of node from powershell.  If this is the case you can open a command prompt terminal window instead.
+Note: On some Windows systems, security prevents the running of node from powershell. If this is the case you can open a command prompt terminal window instead.
 
 ```
 $ npm --version
@@ -127,7 +127,7 @@ VS Code before troubleshooting. Sometimes VS Code will not recognize the install
 
 **Next, Download and Install [Git](https://git-scm.com/downloads)**
 
-For Windows: You can download and use the installer. It should be straightforward, and you can move onto the next section once it finishes.
+For Windows: You can download and use the installer. It should be straight forward, and you can move onto the next section once it finishes.
 
 For Mac: There are a few options you can choose from on the download page.
 We recommend installing [Homebrew](https://brew.sh/), which you can use to install Git. There are several ways to install Homebrew, but here is the current easiest way that we know about. You will need to open up a Terminal, and then copy this (without the dollar sign) and hit "enter":
@@ -238,7 +238,7 @@ We'll need to do this every time we clone a new assignment repository.
 The next step is to open a terminal that we can run instructions in.
 
 At the top of your VS Code window, click "Terminal" and then click "New Terminal." You've done this before, but this time,
-you need to be in the assignment directory. VS Code will do this for you. 
+you need to be in the assignment directory. VS Code will do this for you.
 
 A new terminal will appear at the bottom of your screen, and it will look something like this (notice you are in
 `hw0-setup-check`):

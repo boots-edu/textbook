@@ -58,7 +58,7 @@ function printStringResult(result: string) {
 printStringResult("Hello World");
 ```
 
-While we could write different functions for each type we wish to support, it would be better if we could right a single method for all of them. Let's examine this code further:
+While we could write different functions for each type we wish to support, it would be better if we could write a single method for all of them. Let's examine this code further:
 
 ## Generic Functions
 
@@ -72,7 +72,7 @@ printResult<number>(5);
 printResult<string>("Hello World");
 ```
 
-Here we have added a **_type parameter_** (T), and we use that paramter to set type type of the function's parameter (result). When we call our function, we can specify the type of the data when we call it.
+Here we have added a **_type parameter_** (T), and we use that parameter to set type type of the function's parameter (result). When we call our function, we can specify the type of the data when we call it.
 
 It turns out that TypeScript can _infer_ the type from the parameter, so we can leave it out when we call the function (However it is not incorrect to include it).
 
@@ -106,7 +106,7 @@ console.log(result);
 
 ... you will get compiler errors. Try it and you will see the errors in the console.
 
-> It is much easier to fix compiler errors where the compiler gives us a line number and description then it is to fix run time errors where the program either crashes, or just gives the wrong answer.
+> It is much easier to fix compiler errors where the compiler gives us a line number and description than it is to fix run time errors where the program either crashes, or just gives the wrong answer.
 
 ### Controlling types
 
@@ -119,7 +119,7 @@ function makePair<T extends string | number, S>(x: T, y: S): [T, S] {
 console.log(makePair(4, ["Hello"]));
 ```
 
-> Note: `string \| number` is referred to as a **_Union Type_** which we will talk more about later, but basically we can combine types with a \| and then either type would be acceptable.
+> Note: `string | number` is referred to as a **_Union Type_** which we will talk more about later, but basically we can combine types with a \| and then either type would be acceptable.
 
 If we use _extends_ with a class type, we could use elements of that class or any class that derives from the class specified in the **_type parameter's_** extends clause.
 
@@ -162,9 +162,9 @@ list.addItem(4);
 console.log(list);
 ```
 
-What if we wanted to extend this so it worked on a list of any type, even a list of lists.
-We could use a generic definition to make ItemList work on any type, and not just on numbers
-As always we can limit the acceptable types using the extend keyword.
+What if we wanted to extend this so it worked on a list of any type, even a list of lists?
+We could use a generic definition to make ItemList work on any type, and not just on numbers.
+As always we can limit the acceptable types using the `extend` keyword.
 
 ```typescript
 class ItemList<T> {

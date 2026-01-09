@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Annoymous Functions
+title: Anoymous Functions
 nav_order: 8.3
 parent: Testing
 ---
@@ -146,6 +146,7 @@ Being **_first class objects_** functions can be used in many places.
 -   As a parameter to methods
 
 {: .no-run}
+
 ```typescript
 function removeNegatives(): number[] {
     return arr.filter((x: number) => x >= 0);

@@ -78,12 +78,12 @@ for (let value of arr) {
 We can use our new higher order **_forEach_** method to accomplish the same thing. Notice that the only difference is that we are passing a simple method to the **_forEach_** function which accomplishes whatever we want to do in the loop body by calling that function on each element of the array.
 
 ```typescript
-class ArrayTest{
+class ArrayTest {
     arr: string[] = ["a", "b", "c"];
-    test(val:string):void{
+    test(val: string): void {
         console.log(val);
     }
-    go(){
+    go() {
         arr.forEach((value) => {
             this.test(value);
         });
@@ -264,14 +264,14 @@ console.log(groups);
 ```
 
 In the example, the method is called on each person object, but the function returns an array which is then combined with the other arrays returned into a single array (merge).
-Here map would return `[['admin','user'],['editor']`, but flatMap flattens it into `['admin','user','editor']`
+Here map would return `[['admin','user'],['editor']]`, but flatMap flattens it into `['admin','user','editor']`
 
 > This does not mutate the array in any way.
 
 ### The reduce method
 
-The **_reduce_** method takes a function of two parameters. The first is the array element and the second is an accumulator variable which gets passed to each function along with the array element.  
-The accumulator value is passed from one function call to the next allowing us to Reduce the array into a single value. The **_reduce_** method returns a single value that is the accumulated result of all of the functions calls on each element of the array.
+The **_reduce_** method takes a function of two parameters. The first is the accumulator variable and the second is an array element.  
+The accumulator value is passed from one function call to the next allowing us to _reduce_ the array into a single value. The **_reduce_** method returns a single value that is the accumulated result of all of the functions calls on each element of the array.
 
 The **_reduce_** function ignores empty array elements.
 
@@ -304,7 +304,7 @@ let stdev = Math.sqrt(
         return acc + (val - average) ** 2;
     }, 0) / vals.length
 );
-console.log(min,max,average,stdev);
+console.log(min, max, average, stdev);
 ```
 
 > Notice that without the braces {} the value is returned automatically by the anonymous function (as in min, max, and average above), but with the braces I must explicitly call return (as in stdev above). This is true of all anonymous functions.
@@ -320,7 +320,7 @@ const sumOdd = vals.reduce((acc, val) => {
 console.log(sumOdd);
 ```
 
-Even though we are supposed to return a single value, that value can be a complex object. Here we compute all the statistics in a single pass through the array.
+Even though we are supposed to return a single value, that value can be a complex object. Here we compute all the statistics in a single pass through the array, although we do need to do some calculations afterwards. The `Accumulator` object is used to keep track of the values we need to compute the statistics, and then we compute the final statistics from the accumulator after we have processed all of the elements in the array.
 
 ```typescript
 let vals = [1, 2, 3, 4, 5];
@@ -331,32 +331,55 @@ interface Stats {
     average: number;
     stdev: number;
 }
-let stats: Stats = vals.reduce(
+
+interface Accumulator {
+    count: number;
+    mean: number;
+    m2: number;
+    max: number;
+    min: number;
+}
+
+const acc = vals.reduce<Accumulator>(
     (acc, val) => {
+        const count = acc.count + 1;
+        const delta = val - acc.mean;
+        const mean = acc.mean + delta / count;
+        const delta2 = val - mean;
+
         return {
+            count,
+            mean,
+            m2: acc.m2 + delta * delta2,
             max: Math.max(acc.max, val),
             min: Math.min(acc.min, val),
-            average: acc.average + val,
-            stdev: acc.stdev + (val - acc.average) ** 2,
         };
     },
     {
+        count: 0,
+        mean: 0,
+        m2: 0,
         max: -Infinity,
         min: Infinity,
-        average: 0,
-        stdev: 0,
     }
 );
+const stats: Stats = {
+    max: acc.max,
+    min: acc.min,
+    average: acc.mean,
+    stdev: Math.sqrt(acc.m2 / acc.count),
+};
+
 console.log(stats);
 ```
 
 We can even use it to combine map and filter in a single step.
 
 ```typescript
-let vals=[1,2,3,4,5];
+let vals = [1, 2, 3, 4, 5];
 let oddSqrs = vals.reduce((acc: number[], val: number) => {
-	if (val%2) return [...acc, val * val];
-	else return [...acc];
+    if (val % 2) return [...acc, val * val];
+    else return [...acc];
 }, []);
 console.log(oddSqrs);
 ```
@@ -422,7 +445,7 @@ let sum = vals.reduceRight((acc, val) => acc + val, 0);
 console.log(sum);
 ```
 
-Obviously, for the examples so far, this makes no difference (sum and product are communative), but there are cases wehre it would.
+Obviously, for the examples so far, this makes no difference (sum and product are commutative), but there are cases where it would.
 
 Consider the following:
 
@@ -450,7 +473,7 @@ console.log(lastEven);
 
 ### The sort method
 
-With no arguments, **_sort_** returns the elments in the array in ascending or alphabetical order.
+With no arguments, **_sort_** returns the elements in the array in ascending or alphabetical order.
 
 ```typescript
 let vals = [3, 2, 1, 4, 5];

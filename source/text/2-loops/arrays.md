@@ -210,6 +210,25 @@ In this example `allFood` is an array of string arrays containing two elements.
     -   `allFood[0]` has 3 string elements
     -   `allFood[1]` has 2 string elements
 
+## Const Arrays
+
+In TypeScript, we can declare a variable as a constant using the `const` keyword. Despite the name, we can still modify the _contents_ of an array stored in a constant variable.
+
+```typescript
+const fruits: string[] = ["apple", "banana", "orange"];
+fruits.push("grape"); // This is allowed
+console.log(fruits); // Output: ["apple", "banana", "orange", "grape"]
+```
+
+The only restriction is that we cannot reassign the `fruits` variable to a new array:
+
+```typescript
+const fruits: string[] = ["apple", "banana", "orange"];
+fruits = ["grape", "kiwi"]; // This will cause an error
+```
+
+In TypeScript, the `const` keyword prevents reassignment of the variable itself, but it does not make the contents of the array immutable. Therefore, we can still modify the array's contents using methods like `push`, `pop`, `splice`, etc., even if the variable is declared as `const`.
+
 ## More to see
 
 There are many other methods for manipulating arrays. We will cover many of these in later chapters. This set should be sufficient for the time being.

@@ -24,15 +24,15 @@ We can pass events between components so that our components can communicate.
 
 ## Component Hierarchy
 
-We can view the component hierarchy as a tree where MainComponent is the root. Each time MainComponent creates a new component, it is a _child_ of MainComponent. Those children can themselves create and attach new components. What we are left with is a heirarchy of components related to each other as _parent_ and _child_
+We can view the component hierarchy as a tree where MainComponent is the root. Each time MainComponent creates a new component, it is a _child_ of MainComponent. Those children can themselves create and attach new components. What we are left with is a hierarchy of components related to each other as _parent_ and _child_
 
 ## Talking to our children
 
-Talking to our children is easy. We created them, so we probably have (or at least we should have) a reference to them. Through this reference we can modify public properties and call public methods on the child. In this way we can communicate important information (that something has changed or some action is required) to the child. For deeper heirarchies, we can have each parent notify its child down the heirarchy until the child we wish to notify is reached.
+Talking to our children is easy. We created them, so we probably have (or at least we should have) a reference to them. Through this reference we can modify public properties and call public methods on the child. In this way we can communicate important information (that something has changed or some action is required) to the child. For deeper hierarchies, we can have each parent notify its child down the hierarchy until the child we wish to notify is reached.
 
 ## Talking to our parents
 
-Unlike communicating with children, a child likely does not have a reference to the parent object. This means we need a mechanism for a child to send inforamtion to its parent that some event has occurred.
+Unlike communicating with children, a child likely does not have a reference to the parent object. This means we need a mechanism for a child to send information to its parent that some event has occurred.
 
 ### The Webz Notifier
 
@@ -172,7 +172,7 @@ export class LineCommentComponent extends WebzComponent {
 And that's it, our child class now emits to its subscriptions whenever the user types and this will happen for each line comment we create.
 We could do something similar for each of the fields in a line item.
 
-Now we have to subscribe to the event in the parent. We can do this when we create the child so that we will be notified about changes to each comment.  The following code would appear in ```MainComponent```.
+Now we have to subscribe to the event in the parent. We can do this when we create the child so that we will be notified about changes to each comment. The following code would appear in `MainComponent`.
 
 {: .no-run }
 
@@ -189,7 +189,7 @@ onNewCommentClick() {
 }
 ```
 
-Since we never threw an error, we did not bother with a method to handle the error. Now each time the user types in any of the input boxes for comments, the value will be logged by the parent. Of course so far, we are just looging the comment. Let's create an array and counter to store the comments and update them when they change.
+Since we never threw an error, we did not bother with a method to handle the error. Now each time the user types in any of the input boxes for comments, the value will be logged by the parent. Of course so far, we are just logging the comment. Let's create an array and counter to store the comments and update them when they change.
 
 {: .no-run }
 
@@ -244,7 +244,9 @@ export class Notifier<T> {
     }
 }
 ```
+
 ## Working Example
+
 Here we pull all of the code for our event notifier together so that you can work with it and see it in action.
 
 {:data-filename="main.component.ts" data-iframe-height="400px"}
@@ -252,7 +254,13 @@ Here we pull all of the code for our event notifier together so that you can wor
 ```typescript
 import html from "./main.component.html";
 import css from "./main.component.css";
-import {BindValueToNumber, Click, Input, ValueEvent, WebzComponent} from "@boots-edu/webz";
+import {
+    BindValueToNumber,
+    Click,
+    Input,
+    ValueEvent,
+    WebzComponent,
+} from "@boots-edu/webz";
 import { LineItemComponent } from "./LineItem.component";
 import { LineCommentComponent } from "./LineComment.component";
 
@@ -305,7 +313,6 @@ export class MainComponent extends WebzComponent {
     }
 }
 ```
-
 
 {:data-filename="main.component.html"}
 
@@ -383,11 +390,11 @@ import html from "./LineComment.component.html";
 
 export class LineCommentComponent extends WebzComponent {
     commentChange: Notifier<string> = new Notifier<string>();
-    
+
     constructor() {
         super(html, "");
     }
-     @Input("comment")
+    @Input("comment")
     onItemInputChange(e: ValueEvent) {
         this.commentChange.notify(e.value);
     }

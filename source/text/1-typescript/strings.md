@@ -31,12 +31,12 @@ We can declare a variable to be of type string directly:
 
 ```typescript
 let username: string = "gauss";
-let password: string = 'captain';
+let password: string = "captain";
 ```
 
 Notice how we can use either single or double quotes to define a string.
 
->Note: While you can use either single or double quotes, in practice, you should be consistent.
+> Note: While you can use either single or double quotes, in practice, you should be consistent.
 
 ## String Methods and operations
 
@@ -66,7 +66,7 @@ console.log(myStr.lastIndexOf("o")); // 7
 console.log(myStr.lastIndexOf("z")); // -1
 ```
 
-> Note that the index passed to ```charAt``` is 0 based (i.e. 0 is the index of the first charater in the string).  In general all string (and array) operations in TypeScript (and most other languages) are 0 based.
+> Note that the index passed to `charAt` is 0 based (i.e. 0 is the index of the first character in the string). In general all string (and array) operations in TypeScript (and most other languages) are 0 based.
 
 ### Square Bracket Access of Strings
 
@@ -80,8 +80,8 @@ console.log(myStr[4]); // "o"
 console.log(myStr[10]); // "d"
 ```
 
->> **NO NEGATIVE INDICES WITH BRACKETS**<br/>
-Unlike Python, you cannot access characters in a string using negative indexes in TypeScript. The result will be the special value `undefined`.
+> > **NO NEGATIVE INDICES WITH BRACKETS**<br/>
+> > Unlike Python, you cannot access characters in a string using negative indexes in TypeScript. The result will be the special value `undefined`.
 
 ```typescript
 let myStr: string = "Hello World";
@@ -166,7 +166,7 @@ The advantages of `concat` are that you can combine more than two strings at onc
 
 ### The `split` and `substring` method
 
- Assume the string `let myStr="Hello World";`
+Assume the string `let myStr="Hello World";`
 
 **split():** This method splits the specified string object into an array of string objects.
 
@@ -178,15 +178,17 @@ myStr.split(" "); //returns the array \["Hello","World"\]
     ```
 
 **substring():** Returns characters from the string between two defined indexes:
-- myStr.substring(2); // returns "llo World"
-- myStr.substring(2,5); // returns "llo"
-> Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned.  If the second parameter is not provided, the remainder of the string is returned.
 
-    ```typescript
-    let myStr="Hello World";
-    console.log(myStr.substring(2)); // returns "llo World"
-    console.log(myStr.substring(2,5)); // returns "llo"
-    ```
+-   myStr.substring(2); // returns "llo World"
+-   myStr.substring(2,5); // returns "llo"
+
+    > Note: the first parameter is the index of the first character to return, and the second is the index of the first character NOT returned. If the second parameter is not provided, the remainder of the string is returned.
+
+        ```typescript
+        let myStr="Hello World";
+        console.log(myStr.substring(2)); // returns "llo World"
+        console.log(myStr.substring(2,5)); // returns "llo"
+        ```
 
 The `substring` and `slice` methods are very similar, with two primary differences:
 
@@ -304,4 +306,4 @@ There are MANY other methods available to the string type, but these are some of
 
 # Next Step
 
-Now onto  [Loops and Arrays &raquo;](../2-loops/index.md)
+Now onto [Loops and Arrays &raquo;](../2-loops/index.md)

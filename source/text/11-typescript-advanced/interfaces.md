@@ -129,7 +129,7 @@ Here we have a class that implements two interfaces. We can see that it provides
 Now I can use it to write a function:
 
 ```typescript
-import { Serializable,MyList } from "ch11/list";
+import { Serializable, MyList } from "ch11/list";
 
 function serializeAll(obj: Serializable[]) {
     let result: string[] = [];
@@ -183,7 +183,7 @@ class Tomato implements Serializable{ . . . }
 
 ## Summary
 
-**_Interfaces_** provide another powerful mechanism for creating type safe reusable code. By specifying the _contract_ that a class or method must adhere to, users of the class or type can be assured that the type contains the members specified in the interface. In this way, disperate objects can be used as if they are the same object so long as they implement a given interface.
+**_Interfaces_** provide another powerful mechanism for creating type safe reusable code. By specifying the _contract_ that a class or method must adhere to, users of the class or type can be assured that the type contains the members specified in the interface. In this way, disparate objects can be used as if they are the same object so long as they implement a given interface.
 
 # Next Step
 

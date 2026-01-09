@@ -25,7 +25,7 @@ parent: Advanced TypeScript
 ## Combining types in TypeScript
 
 We know we can declare new types in TypeScript by creating classes and interfaces, and we can use these types in our programs.
-What if we don't know the type, but we know that it one of a finite number of types:
+What if we don't know the exact type, but we know that it is one of a finite number of types:
 
 -   It could be a number or a string
 -   It could be a class instance or null
@@ -42,7 +42,7 @@ function padString(value: string, padding: string) {
     return padding + value;
 }
 
-console.log(padString("World","Hello "));
+console.log(padString("World", "Hello "));
 ```
 
 We might want it to take a number and add that many spaces to the front
@@ -51,7 +51,7 @@ We might want it to take a number and add that many spaces to the front
 function padString2(value: string, padding: number) {
     return Array(padding + 1).join(" ") + value;
 }
-console.log(padString2("World",6));
+console.log(padString2("World", 6));
 ```
 
 It would be great if we could combine these into one function, but not allow invalid types.
