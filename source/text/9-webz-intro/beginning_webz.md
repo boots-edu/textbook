@@ -179,7 +179,7 @@ Add CSS to set its size:
 }
 ```
 
-How we have a place for our image, and we have set its size. What we want to do is have a variable in our class that is the name of the image we want to display: the `imagePath` property in the following code.
+Now we have a place for our image, and we have set its size. What we want to do is have a variable in our class that is the name of the image we want to display: the `imagePath` property in the following code.
 Here in this online version of the book, we use the path `../../assets/images/pet-ada.jpg`; but you would be able to use `assets/images/pet-ada.jpg` in your local environment (as long as you place a file named `pet-ada.jpg` in the `assets/images` folder).
 
 {: .no-run }
