@@ -116,6 +116,10 @@ console.log(basket.getPrice());
 
 **_Composition_** allows us to reuse our fruit class for various types of fruit and combine them into a basket. Our basket can then expose public methods (like `getPrice()` which have access to the member fruits) to sum up the price of all the fruits, add it to the price of the basket, and return a total price which is dependent on the fruits inside.
 
+## Phrasing
+
+We often say as programmers that two classes related in this way are in a **contains-a** or **has-a** relationship. This is the [actual phrasing](https://en.wikipedia.org/wiki/Has-a) of the term. Soon, we will learn about "is-a" relationships, in terms of inheritance.
+
 ## Summary
 
 **_Composition_** gives the programmer the ability to represent a **_has a_** or a **_contains_** relationship. The relationship is the key to understanding when to use **_composition_** over other methods.
