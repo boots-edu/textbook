@@ -20,7 +20,7 @@ parent: Introduction To TypeScript
 
 ## Key Idea
 
-A string is sequence of character values used to store text data.
+A string is a sequence of character values used to store text data.
 
 ## Overview
 
