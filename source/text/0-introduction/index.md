@@ -12,3 +12,4 @@ has_children: true
   This book will cover **object-oriented programming**, introduce the basics of web development, and reinforce basic concepts of computer science.  In order to use the samples in this book and the accompanying materials, you will need to have your environment set up correctly.
 
 In this introduction, we are going to introduce the organization of this textbook and help you setup your development environment.
+We will also start with a short HTML/CSS/browser primer so that web material can be integrated throughout the term.

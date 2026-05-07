@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Webz Introduction
+title: Browser APIs Foundations
 nav_order: 9
 has_children: true
 ---
 
-# Chapter 9 - Webz Introduction
+# Chapter 9 - Browser APIs Foundations
 
 [&laquo; Return to the Table of Contents](../../index.md)
 
-Webz is a simple web framework designed to minimize the learning curve for web application development. It was designed to use many design concepts from more complex web platforms, but to simplify the learning curve for the purposes of this text.
+In this chapter we move from static pages to interactive programs using the browser's native APIs. We will use the DOM as an object model, connect events with callback functions, and build features directly with TypeScript and standard web platform tools.

@@ -10,3 +10,4 @@ has_children: true
 [&laquo; Return to the Table of Contents](../../index.md)
 
 Higher Order Methods
+Browser API connection: callback-based array methods pair naturally with event-driven browser programming.

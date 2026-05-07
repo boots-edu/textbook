@@ -10,3 +10,4 @@ has_children: true
 [&laquo; Return to the Table of Contents](../../index.md)
 
 Advanced TypeScript
+Browser API connection: generics and unions are useful when typing reusable event payloads and parsed browser data.

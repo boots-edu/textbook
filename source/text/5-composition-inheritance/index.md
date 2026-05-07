@@ -10,3 +10,4 @@ has_children: true
 [&laquo; Return to the Table of Contents](../../index.md)
 
 Building complex objects can be accomplished by combining classes in various ways.  Let's learn to primary methods for doing this ***Composition*** and ***Inheritance***.
+Browser API connection: we will apply inheritance with custom elements that extend built-in browser classes.

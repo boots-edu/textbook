@@ -11,3 +11,4 @@ has_children: true
 
 In this chapter, we are going to explain the basics of TypeScript.
 This will include variables, values, types, and functions. 
+Browser API connection: we will use these basics to read and update simple values from DOM elements.

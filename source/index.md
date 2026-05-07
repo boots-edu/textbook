@@ -9,6 +9,7 @@ nav_order: 0
 Let's learn how to write object-oriented TypeScript code!
 - [Introduction](text/0-introduction/index.md)
    - [Welcome](text/0-introduction/welcome.md)
+   - [HTML and CSS Primer](text/0-introduction/html-css-primer.md)
    - [Setup](text/0-introduction/setup.md) 
 
 1. [Introduction To Typescript](text/1-typescript/index.md)
@@ -48,16 +49,16 @@ Let's learn how to write object-oriented TypeScript code!
     1. [Testing](text/8-testing/testing.md)
     2. [Testing in Jest](text/8-testing/jest.md)
     3. [Anonymous Functions](text/8-testing/anonymous.md)
-9. [Webz Introduction](text/9-webz-intro/index.md)
-    1. [Web Basics](text/9-webz-intro/webbasics.md)
-    2. [Beginning Webz](text/9-webz-intro/beginning_webz.md)
-    3. [Webz basics Walkthrough](text/9-webz-intro/walkthrough.md)
-10. [Advanced Webz](text/10-webz-advanced/index.md)
-    1. [Dynamic Components](text/10-webz-advanced/dynamic.md)
-    2. [Webz Events](text/10-webz-advanced/events.md)
-    3. [Webz Dialogs](text/10-webz-advanced/dialogs.md)
-    4. [Webz Timers](text/10-webz-advanced/timers.md)
-    5. [Webz Tutorial](text/10-webz-advanced/tutorial.md)
+9. [Browser APIs Foundations](text/9-webz-intro/index.md)
+    1. [HTML, CSS, and the DOM](text/9-webz-intro/webbasics.md)
+    2. [DOM Objects and Element Creation](text/9-webz-intro/beginning_webz.md)
+    3. [Browser API Walkthrough](text/9-webz-intro/walkthrough.md)
+10. [Browser APIs in Practice](text/10-webz-advanced/index.md)
+    1. [Dynamic DOM Trees](text/10-webz-advanced/dynamic.md)
+    2. [Events and EventTarget](text/10-webz-advanced/events.md)
+    3. [Dialogs, Forms, and File Input](text/10-webz-advanced/dialogs.md)
+    4. [Timers, Animation, and Canvas](text/10-webz-advanced/timers.md)
+    5. [Browser API Project Tutorial](text/10-webz-advanced/tutorial.md)
 11. [Advanced Typescript](text/11-typescript-advanced/index.md)
     1. [Typescript Generics](text/11-typescript-advanced/generics.md)
     2. [Typescript Interfaces](text/11-typescript-advanced/interfaces.md)
@@ -71,5 +72,3 @@ Let's learn how to write object-oriented TypeScript code!
 14. [Appendix](text/14-appendix/index.md)
     1. [Pulling from Upstream](text/14-appendix/upstream.md)
 {:start="0"}
-
-

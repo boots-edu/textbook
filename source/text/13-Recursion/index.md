@@ -10,3 +10,4 @@ has_children: true
 [&laquo; Return to the Table of Contents](../../index.md)
 
 Recursion
+Browser API connection: DOM trees provide an immediate recursive structure to traverse and transform.
