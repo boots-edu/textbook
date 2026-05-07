@@ -72,7 +72,7 @@ printResult<number>(5);
 printResult<string>("Hello World");
 ```
 
-Here we have added a **_type parameter_** (T), and we use that parameter to set type type of the function's parameter (result). When we call our function, we can specify the type of the data when we call it.
+Here we have added a **_type parameter_** (T), and we use that parameter to set the type of the function's parameter (result). When we call our function, we can specify the type of the data when we call it.
 
 It turns out that TypeScript can _infer_ the type from the parameter, so we can leave it out when we call the function (However it is not incorrect to include it).
 
