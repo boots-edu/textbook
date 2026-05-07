@@ -113,7 +113,8 @@ Reminder:
 
 ```typescript
 class Polygon extends Drawable{
-	public points: Point[],
+	public points: Point[];
+
 	constructor(points: Point[], color: Color ) {
 		super(color);
 		let newPoints=[];
