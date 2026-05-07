@@ -62,7 +62,7 @@ abstract draw(page: any): void;
 
 ### An Example
 
-Remember our `Users`/`Student`/`Faculty` classes.
+Remember our `Users`/`Students`/`Faculty` classes.
 Here is a simplified and updated version for us to look at.
 The base class `Users` implements name, age, and two methods to access them.
 It is abstract and cannot be created.
