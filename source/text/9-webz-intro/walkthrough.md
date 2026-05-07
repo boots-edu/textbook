@@ -1035,7 +1035,7 @@ For now, this is a good place to stop. You have learned how to create components
 
 ![Check Workflow](../../assets/images/webz_walkthrough/check_workflow.png)
 
-If the workflow doesn't seem to be running, click "Deploy dev build on main push" and then click "Run workflow". This will manually trigger the workflow to run, although you may have to reload the page to see it.
+If the workflow doesn't seem to be running, click "Deploy dev build on main push" (or whatever phrasing is given under Workflow) and then click "Run workflow". This will manually trigger the workflow to run, although you may have to reload the page to see it.
 
 ![Run Workflow](../../assets/images/webz_walkthrough/run_workflow.png)
 
