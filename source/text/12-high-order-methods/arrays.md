@@ -35,13 +35,13 @@ describe("MainComponent", () => {
 });
 ```
 
-We also saw this in the Webz library with the Notifier class' subscribe method:
+We also saw this in the browser with the `addEventListener` method:
 
 {: .no-run}
 
 ```typescript
-child.elementAdded.subscribe((value: boolean) => {
-    console.log(value);
+document.addEventListener("click", (event: MouseEvent) => {
+    console.log(event.clientX, event.clientY);
 });
 ```
 
@@ -53,10 +53,10 @@ We can specify the shape or signature of the expected parameter or return type w
 {: .no-run}
 
 ```typescript
-subscribe(callback: (value: T) => void, error?: (value: Error) => void):number
+addEventListener(type: string, listener: (event: Event) => void): void
 ```
 
-In this signature for the subscribe method, the parameter named callback is of type (value: T) => void and the parameter named error is of type (value:Error)=>void where T is a type parameter used when creating an instance of the class and Error is the error type provided by TypeScript.
+In this signature for `addEventListener`, the parameter named `listener` is a function value. The browser stores that function and calls it later when the event occurs. This is exactly the higher-order pattern we want to practice in this chapter.
 
 This language feature of TypeScript (and many other languages where functions are **_first order objects_**) allows for some useful and interesting ways to write code and TypeScript (javascript) provides some built-in functions that take advantage of this.
 

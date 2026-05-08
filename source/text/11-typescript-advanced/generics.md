@@ -24,16 +24,21 @@ parent: Advanced TypeScript
 
 ## Generics in TypeScript
 
-In the last chapter we discussed the Webz _Notifier_ class. This class was a **_generic_** class that we could pass **_type parameters_** to during creation.
+In the last chapter we discussed browser `CustomEvent` objects. In TypeScript, `CustomEvent` is a **_generic_** class because the type of its `detail` payload can be specified when we create it.
 
 {: .no-run}
 
 ```typescript
-event: Notifier = new Notifier();
-event2: Notifier<number> = new Notifier<number>();
-event3: Notifier<string> = new Notifier<string>();
-event4: Notifier<SomeClass> = new Notifier<SomeClass>();
-event5: Notifier<string[]> = new Notifier<string[]>();
+const event1: CustomEvent<void> = new CustomEvent("done");
+const event2: CustomEvent<number> = new CustomEvent<number>("score-change", {
+    detail: 10,
+});
+const event3: CustomEvent<string> = new CustomEvent<string>("message", {
+    detail: "hello",
+});
+const event4: CustomEvent<string[]> = new CustomEvent<string[]>("tags", {
+    detail: ["dom", "events"],
+});
 ```
 
 This is a single class definition that works on any type of data. We can make our own generic functions, classes, interfaces, or type aliases by creating them with one or more **_type parameters_** that can be specified by the caller. Overall, this allows us to create reusable code that works on various types of data.
@@ -215,38 +220,32 @@ console.log(list, list2, list3);
 If a parameter is provided, the default is ignored.
 If no parameter is provided, then the type must match the default if we use the class (i.e. we must pass a number, anything else will cause a type error at compile time).
 
-## Inside the Webz Notifier class
+## Inside the browser's `CustomEvent` type
 
-Let's return to the Webz `Notifier` class and look at the source code for it.
+We cannot see the browser's full implementation here, but conceptually the generic part of `CustomEvent` behaves something like this simplified version:
 
 {: .no-run}
 
 ```typescript
-export class Notifier<T = void> {
-    constructor() {}
-    subscribe(callback: (value: T) => void, error?: (value: Error) => void) {
-        //something goes here
-    }
-    unsubscribe(id: number) {
-        //something goes here
-    }
-    notify(value: T) {
-        //something goes here
-    }
-    error(value: Error) {
-        //something goes here
+class CustomEvent<T = void> extends Event {
+    detail: T;
+
+    constructor(type: string, detail: T) {
+        super(type);
+        this.detail = detail;
     }
 }
 ```
 
 -   `T` defaults to `void` if no parameter is provided.
--   `subscribe` takes a function whose parameter has type `T`.
--   `notify` takes a value of type `T`
+-   `detail` stores a value of type `T`.
+-   A `CustomEvent<number>` carries a numeric payload.
+-   A `CustomEvent<string[]>` carries an array of strings.
 
-This is as expected when you consider how we used `Notifier` previously.
+This matches how we used `CustomEvent` in the browser chapter.
 
--   With no type argument its data is `void` (nothing)
--   With a type parameter, the type it works with is the value specified for `T`.
+-   With no type argument its payload can be treated as `void`.
+-   With a type parameter, the payload type is whatever we choose for `T`.
 
 ## Summary
 

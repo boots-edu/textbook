@@ -32,8 +32,8 @@ Specifically, we will study **objects and Object-Oriented Programming** techniqu
 6. Chapter 6 will introduce abstraction, overrides, and polymorphism: This will let us create even more flexible and reusable code.
 7. Chapter 7 will introduce exceptions and error handling: This will let us write code that can gracefully handle unexpected errors.
 8. Chapter 8 will introduce testing and anonymous functions: This will let us write code that is more robust and less likely to have bugs, and create little reusable function snippets.
-9. Chapter 9 will introduce the Webz framework and how to create web applications: This will let us create interactive applications that run in a web browser.
-10. Chapter 10 will introduce more advanced Webz concepts and techniques: This will let us create more complex and powerful web applications.
+9. Chapter 9 will introduce the browser DOM and how to create web applications with native APIs: This will let us create interactive applications that run in a web browser.
+10. Chapter 10 will introduce more advanced browser APIs and techniques: This will let us create more complex and powerful web applications.
 11. Chapter 11 will introduce advanced TypeScript concepts such as generics and unions: This will give us even more ways to represent complicated data.
 12. Chapter 12 will introduce high-order methods and functional programming techniques: This will let us write more concise and powerful code for working with arrays and other data structures.
 13. Chapter 13 will introduce recursion and recursive data structures: This will let us represent and work with more complex data structures such as trees and graphs.
