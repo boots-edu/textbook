@@ -353,6 +353,12 @@ color1.red=255;
 
 > NOTE: `color2` is unchanged. It is a distinct instance of our class `Color`.
 
+## In the Browser
+
+Browser objects give us many real examples of class methods. Once a page is loaded, an `HTMLElement` object has methods such as `setAttribute(...)`, `getBoundingClientRect()`, and `remove()`. Its `classList` property also exposes methods such as `add(...)`, `remove(...)`, and `toggle(...)`.
+
+That means when you write code like `button.classList.add("primary")`, you are doing the same kind of thing we have been practicing in this chapter: calling a method on an object to ask that object to update or report on its own state. The browser is full of classes whose methods behave just like the methods we define in our own programs.
+
 ## Summary
 
 Classes in TypeScript can contain only data (Data Classes) or they can contain a combination of data and methods that operate on that data. The methods can access the properties of the class instance by using the **`this`** keyword. In this way, we can create classes that not only combine data that goes together, but also encapsulate it with the methods that act upon that data.

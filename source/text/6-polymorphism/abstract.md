@@ -106,6 +106,12 @@ abstract class Drawable {
 Now any class that derives from Drawable will not compile if it does not implement clone and draw itself.
 However, since they are still defined in the superclass, we can still call it on any object derived from Drawable and it will still dispatch to the correct subclass method. If we removed it altogether, it would not dispatch correctly when called.
 
+## Abstract Classes in the Browser DOM
+
+The browser's `Node` type behaves a lot like the abstract classes we have discussed here. In practice, programmers do not create some generic raw node and stop there. They work with concrete subclasses such as `Document`, `Element`, or `Text`.
+
+This is one of the reasons the DOM is such a helpful mental model. It shows that abstract ideas are not just classroom exercises. Real software libraries often define general base types so that concrete subclasses can share a common interface while still providing specialized behavior.
+
 ## Summary
 
 A base class that wants to express a public interface for its subclasses, but does not provide an implementation for that interface is called an **_abstract class_**. Any methods within the class that do not have implementations are called **_abstract methods_**. We denote both a class or a method being abstract by using the `abstract` keyword.

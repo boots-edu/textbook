@@ -208,4 +208,4 @@ let f: ChkFunction = (x: number) => x >= 0;
 
 # Next Step
 
-Next we'll start to learn about web programming: [Introduction to Webz &raquo;](../9-webz-intro/index.md)
+Next we'll start to learn about web programming in the browser: [The Browser DOM &raquo;](../9-dom-intro/index.md)

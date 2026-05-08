@@ -235,6 +235,12 @@ They also have some differences:
 
 We encapsulate their commonality in the Users class, then extend Users to make new classes that express the differences.
 
+## In the Browser
+
+The DOM hierarchy in the browser is a direct example of inheritance. An `HTMLButtonElement` extends `HTMLElement`, which extends `Element`, which extends `Node`. Every button is therefore also an `HTMLElement`, an `Element`, and a `Node`.
+
+This is exactly the same “is a” reasoning we have been using in this chapter. A button does not merely contain a node. It **is a** more specialized kind of node, with extra fields and methods that make sense for buttons specifically.
+
 ## Summary
 
 **_Inheritance_** allows the programmer to represent an **_is a_** or **_type of_** relationship. Using inheritance through the `extends` keyword, we can express both the similarities and differences between objects in these types of relationships. We can call the constructor (we must actually) of our superclass in the constructor of our subclass by calling the `super` method and passing it the same list of parameters we would pass to the **_superclasses_** constructor.

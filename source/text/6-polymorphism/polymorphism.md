@@ -147,6 +147,12 @@ To rectify this, we can override the ```toString()``` method to control how the 
   console.log(new myObj().toString());
 ```
 
+## Polymorphism in the Browser DOM
+
+The browser gives us a concrete example of polymorphism through the DOM hierarchy. The `remove()` method is defined high enough in that hierarchy that it can be called on many different node types. A paragraph, button, list item, image, or text node can all be removed from the document through the same method name.
+
+This is exactly the benefit of polymorphism: we can write code against a general type and still get the correct behavior for the specific object we are holding. When browser code works with a value typed as `Node` or `Element`, method dispatch still goes to the concrete object that is actually present.
+
 ## Summary
 
 **_Polymorphism_** in general denotes the idea of several different types of objects having the same public interface. Specifically, in this section we examined **_subtype_** or **_subclass_** polymorphism which is when we **_override_** methods in a superclass allowing us to call the methods on a variable of the superclass type which contains an object of the subclass type. This causes the system to **_dispatch_** the call to the correct subclass.

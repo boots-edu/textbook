@@ -306,4 +306,4 @@ There are MANY other methods available to the string type, but these are some of
 
 # Next Step
 
-Now onto [Loops and Arrays &raquo;](../2-loops/index.md)
+Before we leave the introduction chapter, let's briefly look at how browsers represent pages with markup and style: [HTML, CSS, and the Browser &raquo;](./webbasics.md)

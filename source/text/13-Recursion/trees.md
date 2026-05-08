@@ -343,6 +343,26 @@ console.log(treeRoot.treeSearch(100));
 console.log(treeRoot);
 ```
 
+## The DOM is a Tree
+
+One of the nicest real-world examples of a tree is the browser's DOM. The `document` object has child nodes. Those child nodes have their own children, and so on. A recursive function can walk this structure naturally.
+
+{:.no-run}
+
+```typescript
+function countNodes(node: Node): number {
+    let total = 1;
+    for (const child of node.childNodes) {
+        total += countNodes(child);
+    }
+    return total;
+}
+
+console.log(countNodes(document));
+```
+
+This function treats every node as the root of a smaller tree, which is exactly the same recursive perspective we used for binary trees. The DOM therefore gives us both a practical programming target and a very natural recursive data structure.
+
 ## Summary
 
 **_Trees_** are an important data structure in Computer Science. They allow us to store data in a structured way that represents parent/child relationships. In other words, a parent can have many children, but a child can only have one parent. A **_binary tree_** is a tree where each node has at most two children. A special case of a **_binary tree_** is a **_binary search tree_**. In a binary search tree each node in the left subtree of all nodes must be of lower value than the root, and each node in the right subtree of all nodes must be greater than the value of the root.

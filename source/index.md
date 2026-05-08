@@ -16,6 +16,7 @@ Let's learn how to write object-oriented TypeScript code!
    2. [Functions](text/1-typescript/functions.md)
    3. [Conditionals](text/1-typescript/conditionals.md)
    4. [Strings](text/1-typescript/strings.md)
+   5. [HTML, CSS, and the Browser](text/1-typescript/webbasics.md)
 2. [Loops and Arrays](text/2-loops/index.md)
    1. [Loops](text/2-loops/loops.md)
    2. [Arrays](text/2-loops/arrays.md)
