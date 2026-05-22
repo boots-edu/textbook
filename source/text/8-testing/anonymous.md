@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Anoymous Functions
+title: Anonymous Functions
 nav_order: 8.3
 parent: Testing
 ---
