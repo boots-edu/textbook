@@ -24,7 +24,7 @@ Using **_Inheritance_**, we can build complex hierarchies of objects in order to
 
 ## Understanding the relationship
 
-In the previous section we discussed **_composition_** which allowed us to represent a _contains_ or _has a_ relationship between two classes. Recall that a course has a final and a fruit basket contains fruit. While useful in many situations, we often want to represent a **_type of_** relationship. In TypeScript, the `extend` keyword allows us to represent a class in terms of another class that it is a _type of_.
+In the previous section we discussed **_composition_** which allowed us to represent a _contains_ or _has a_ relationship between two classes. Recall that a course has a final and a fruit basket contains fruit. While useful in many situations, we often want to represent a **_type of_** relationship. In TypeScript, the `extends` keyword allows us to represent a class in terms of another class that it is a _type of_.
 
 Consider the following:
 
@@ -221,7 +221,7 @@ console.log(
 );
 ```
 
-> Both Lisa and Jan can call getNme because it is inherited from Users in both Student and Faculty classes, but only Jan can call getGPA, because it is only defined in the _child_ or _subclass_ Student. Likewise, Lisa can call getDepartment, but Jan can't because it is only defined in the _subclass_ Faculty.
+> Both Lisa and Jan can call getName because it is inherited from Users in both Student and Faculty classes, but only Jan can call getGPA, because it is only defined in the _child_ or _subclass_ Student. Likewise, Lisa can call getDepartment, but Jan can't because it is only defined in the _subclass_ Faculty.
 
 Another way to think about this is that Teachers and Students share some things in common:
 

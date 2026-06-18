@@ -106,7 +106,7 @@ let basket: FruitBasket = new FruitBasket(
     [
         new Fruit("apple", "red", 0.5),
         new Fruit("orange", "orange", 0.92),
-        new Fruit("lemmon", "yellow", 1.5),
+        new Fruit("lemon", "yellow", 1.5),
     ],
     4.0
 );
